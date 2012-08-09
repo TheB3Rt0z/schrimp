@@ -27,7 +27,7 @@ class error extends controller
 			case 404 :
 			{
 				$this->_handler_404();
-				$sitemap = main::make_sitemap();
+				$sitemap = navigator::make_sitemap();
 				$this->_set_article($sitemap);
 				break;
 			}

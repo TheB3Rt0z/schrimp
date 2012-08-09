@@ -87,11 +87,6 @@ class main
 	{
 		header("Location: " . main::resolve_uri($url));
 	}
-
-	static function make_sitemap()
-	{
-		return array();
-	}
 }
 
 $main = new main($_SERVER['REQUEST_URI']);
