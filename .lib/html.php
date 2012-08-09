@@ -8,25 +8,15 @@ class html
 
     private $_html = '';
 
-	private $_tags = array
-    (
-        'single' => array
-        (
-        	'meta',
-        	'link',
-        	'img',
-        ),
-
-        'container' => array
-        (
-        	'script',
-            'div',
-            'h1',
-            'h2',
-            'h3',
-            'p',
-        ),
-    );
+	private $_tags = array('single' => array('meta',
+        	                                 'link',
+        	                                 'img'),
+					       'container' => array('script',
+					                            'div',
+					                            'h1',
+					                            'h2',
+					                            'h3',
+					                            'p'));
 
     function __construct($tag,
                          $attributes = array(),
@@ -123,12 +113,9 @@ class html
                          $rel,
                          $type)
     {
-    	$attributes = array
-    	(
-    		'href' => main::resolve_uri($href),
-    		'rel' => $rel,
-    		'type' => $type,
-    	);
+    	$attributes = array('href' => main::resolve_uri($href),
+    		                'rel' => $rel,
+    		                'type' => $type);
 
     	$self = new self('link',
     	                 $attributes);
@@ -192,12 +179,9 @@ class html
     					$alt,
                         $title = '')
     {
-    	$attributes = array
-    	(
-    		'src' => main::resolve_uri($filename),
-    		'alt' => $alt,
-    		'title' => $title,
-    	);
+    	$attributes = array('src' => main::resolve_uri($filename),
+    		                'alt' => $alt,
+    		                'title' => $title);
 
     	$self = new self('img',
     	                 $attributes);
