@@ -40,7 +40,7 @@ class error extends controller
 
 			default :
 			{
-				$this->relocate_to($url = "error/404");
+				$this->relocate_to("error/404");
 			}
 		}
 
@@ -80,7 +80,13 @@ class error extends controller
 	{
 		$this->_set_title("ERROR 500: some interne error");
 		$this->_set_header(html::h1("Ooops!!! " . $this->get_title() . "!"));
-		$this->_set_section(html::h2("Something has not worked right here!"));
+		$this->_set_section(html::h2("Something has not worked right "
+		                           . (isset($this->_args[0]) ? "here:" : "now!")));
+
+		if (isset($this->_args[0]))
+		{
+			$this->_set_article(html::h3(urldecode($this->_args[0])));
+		}
 	}
 }
 

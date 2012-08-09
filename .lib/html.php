@@ -8,15 +8,15 @@ class html
 
     private $_html = '';
 
-	private $_tags = array('single' => array('meta',
-        	                                 'link',
-        	                                 'img'),
-					       'container' => array('script',
-					                            'div',
+	private $_tags = array('single' => array('br',
+        	                                 'img',
+        	                                 'link'),
+					       'container' => array('div',
 					                            'h1',
 					                            'h2',
 					                            'h3',
-					                            'p'));
+					                            'p',
+					                            'script'));
 
     function __construct($tag,
                          $attributes = array(),
@@ -109,66 +109,16 @@ class html
     	                           $this->_html);
     }
 
-    static function link($href,
-                         $rel,
-                         $type)
+    static function br()
     {
-    	$attributes = array('href' => main::resolve_uri($href),
-    		                'rel' => $rel,
-    		                'type' => $type);
-
-    	$self = new self('link',
-    	                 $attributes);
-
-    	return $self->_html . "\n";
-    }
-
-    static function script($type,
-                           $src = false,
-                           $content = '')
-    {
-    	$attributes = array
-    	(
-    		'type' => $type,
-    	);
-
-    	if ($src)
-    	{
-    		$attributes['src'] = $src;
-    		$self = new self('script',
-    	                     $attributes);
-    	}
-    	else
-    	{
-    		$self = new self('script',
-    	                     $attributes,
-    	                     $content);
-    	}
-
-    	return $self->_html . "\n";
-    }
-
-    static function h1($content)
-    {
-    	$self = new self('h1',
-    	                 array(),
-    	                 $content);
+    	$self = new self(__FUNCTION__);
 
     	return $self->_html;
     }
 
-    static function h2($content)
+    static function div($content)
     {
-    	$self = new self('h2',
-    	                 array(),
-    	                 $content);
-
-    	return $self->_html;
-    }
-
-    static function h3($content)
-    {
-    	$self = new self('h3',
+    	$self = new self(__FUNCTION__,
     	                 array(),
     	                 $content);
 
@@ -183,10 +133,85 @@ class html
     		                'alt' => $alt,
     		                'title' => $title);
 
-    	$self = new self('img',
+    	$self = new self(__FUNCTION__,
     	                 $attributes);
 
     	return $self->_html;
+    }
+
+    static function h1($content)
+    {
+    	$self = new self(__FUNCTION__,
+    	                 array(),
+    	                 $content);
+
+    	return $self->_html;
+    }
+
+    static function h2($content)
+    {
+    	$self = new self(__FUNCTION__,
+    	                 array(),
+    	                 $content);
+
+    	return $self->_html;
+    }
+
+    static function h3($content)
+    {
+    	$self = new self(__FUNCTION__,
+    	                 array(),
+    	                 $content);
+
+    	return $self->_html;
+    }
+
+    static function link($href,
+                         $rel,
+                         $type)
+    {
+    	$attributes = array('href' => main::resolve_uri($href),
+    		                'rel' => $rel,
+    		                'type' => $type);
+
+    	$self = new self(__FUNCTION__,
+    	                 $attributes);
+
+    	return $self->_html . "\n";
+    }
+
+    static function p($content)
+    {
+    	$self = new self(__FUNCTION__,
+    	                 array(),
+    	                 $content);
+
+    	return $self->_html;
+    }
+
+    static function script($type,
+                           $src = false,
+                           $content = '')
+    {
+    	$attributes = array
+    	(
+    		'type' => $type,
+    	);
+
+    	if ($src)
+    	{
+    		$attributes['src'] = $src;
+    		$self = new self(__FUNCTION__,
+    	                     $attributes);
+    	}
+    	else
+    	{
+    		$self = new self(__FUNCTION__,
+    	                     $attributes,
+    	                     $content);
+    	}
+
+    	return $self->_html . "\n";
     }
 }
 

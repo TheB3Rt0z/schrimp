@@ -43,7 +43,7 @@ class main
 		{
 			if (!file_exists(".app/" . $components[0] . ".php"))
 			{
-				$this->relocate_to($url = "error/404");
+				$this->relocate_to("error/404");
 			}
 
 			$controller = array_shift($components);
