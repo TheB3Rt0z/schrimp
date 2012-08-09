@@ -15,6 +15,9 @@ class html
 					                            'h1',
 					                            'h2',
 					                            'h3',
+					                            'h4',
+					                            'h5',
+					                            'h6',
 					                            'p',
 					                            'script'));
 
@@ -158,6 +161,33 @@ class html
     }
 
     static function h3($content)
+    {
+    	$self = new self(__FUNCTION__,
+    	                 array(),
+    	                 $content);
+
+    	return $self->_html;
+    }
+
+    static function h4($content)
+    {
+    	$self = new self(__FUNCTION__,
+    	                 array(),
+    	                 $content);
+
+    	return $self->_html;
+    }
+
+    static function h5($content)
+    {
+    	$self = new self(__FUNCTION__,
+    	                 array(),
+    	                 $content);
+
+    	return $self->_html;
+    }
+
+    static function h6($content)
     {
     	$self = new self(__FUNCTION__,
     	                 array(),
