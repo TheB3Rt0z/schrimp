@@ -2,7 +2,7 @@ article
 {
     min-width: 50%;
     float: left;
-    padding: 3px;
+    padding: 0px;
     margin: 0;
     border: 0;
 }
@@ -11,7 +11,7 @@ aside
 {
     max-width: 50%;
     float: right;
-    padding: 3px;
+    padding: 0px;
     margin: 0;
     border: 0;
 }

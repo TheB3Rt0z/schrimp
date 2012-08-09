@@ -112,11 +112,11 @@ class html
     	                           $this->_html);
     }
 
-    static function br()
+    static function br($lines = 1)
     {
     	$self = new self(__FUNCTION__);
 
-    	return $self->_html;
+    	return str_repeat($self->_html, $lines) . "\n";
     }
 
     static function div($content)

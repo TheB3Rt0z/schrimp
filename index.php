@@ -123,6 +123,7 @@ $main = new main($_SERVER['REQUEST_URI']);
 		</nav>
 		<section>
 			<?php echo $main->section; ?>
+			<?php echo html::br(); ?>
 			<article>
 				<?php echo $main->article; ?>
 			</article>
