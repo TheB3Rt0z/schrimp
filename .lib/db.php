@@ -1,6 +1,6 @@
 <?php
 
-define('DB_TYPE', "mysqls");
+define('DB_TYPE', "mysql");
 define('DB_HOST', "127.0.0.1");
 define('DB_USER', "root");
 define('DB_PASSWORD', '');
@@ -24,7 +24,9 @@ class db
 
 			default :
 			{
-				$msg = "Database type (" . DB_TYPE . ") not recognized";
+				$msg = language::translate('error',
+                                           "unknown %s database type",
+				                           DB_TYPE);
 				main::relocate_to("error/500/" . urlencode($msg));
 			}
 		}
