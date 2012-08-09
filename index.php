@@ -1,7 +1,7 @@
 <?php
 
 define('PATH', "/schrimp");
-define('PROJECT', "Das SCHRIMP!");
+define('PROJECT', "SCHRIMP Productivity Suite");
 
 class main
 {
@@ -103,16 +103,16 @@ $main = new main($_SERVER['REQUEST_URI']);
 		<title>
 			<?php echo PROJECT . " | " . $main->title; ?>
 		</title>
-		<?php echo html::link(".inc/das_schrimp.ico",
+		<?php echo html::link(".inc/schrimp_favicon.ico",
 						      "icon",
 						      "image/x-icon"); ?>
-	    <?php echo html::link(".inc/default_style.css",
+	    <?php echo html::link(".inc/style.css",
 						      "stylesheet",
 						      "text/css"); ?>
 		<?php echo html::script("text/javascript",
-		                        ".inc/jquery_min.js"); ?>
+		                        ".inc/jquery.js"); ?>
 		<?php echo html::script("text/javascript",
-		                        ".inc/jquery_ui_min.js"); ?>
+		                        ".inc/jquery_ui.js"); ?>
 	</head>
 	<body>
 		<header>

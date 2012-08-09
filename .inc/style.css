@@ -3,7 +3,7 @@ body
     padding: 0;
     margin: 0;
     border: 0;
-    background-image: url('das_schrimp_opacity.png');
+    background-image: url('schrimp_background.png');
     background-repeat: no-repeat;
     background-position: center center; 
     background-attachment: fixed;

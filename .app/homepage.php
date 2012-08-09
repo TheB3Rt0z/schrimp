@@ -4,7 +4,7 @@ class homepage extends controller
 {
 	function initialize()
 	{
-		$this->_set_title("Homepage");
+		$this->_set_title("Home");
 	}
 }
 
