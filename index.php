@@ -1,6 +1,6 @@
 <?php
 
-define('PATH', "/wraps");
+define('PATH', "/schrimp");
 define('PROJECT', "Das SCHRIMP!");
 
 class main
