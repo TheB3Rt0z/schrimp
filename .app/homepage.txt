@@ -1,0 +1,4 @@
+home page title
+de|Startseite
+en|Home Page
+it|Homepage

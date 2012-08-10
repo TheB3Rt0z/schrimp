@@ -27,7 +27,7 @@ class db
 				$msg = language::translate('error',
                                            "unknown %s database type",
 				                           DB_TYPE);
-				main::relocate_to("error/500/" . urlencode($msg));
+				main::launch_error($msg);
 			}
 		}
 	}

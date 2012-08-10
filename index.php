@@ -1,5 +1,6 @@
 <?php
 
+define('PROTOCOL', "http");
 define('PATH', "/schrimp");
 define('PROJECT', "SCHRIMP Productivity Suite");
 
@@ -8,6 +9,8 @@ class main
 	private $_controller = null;
 	private $_action = false;
 	private $_args = array();
+
+	var $controller = false;
 
 	var $title = '';
 
@@ -46,7 +49,7 @@ class main
 				$this->relocate_to("error/404");
 			}
 
-			$controller = array_shift($components);
+			$this->controller = array_shift($components);
 
 			if (isset($components[0]))
 			{
@@ -60,13 +63,13 @@ class main
 		}
 		else
 		{
-			$controller = 'homepage';
+			$this->controller = 'homepage';
 		}
 
-		require_once(".app/" . $controller . ".php");
+		require_once(".app/" . $this->controller . ".php");
 
-		$this->_controller = new $controller($this->_action,
-	                                         $this->_args);
+		$this->_controller = new $this->controller($this->_action,
+	                                               $this->_args);
 
 	    $this->title = $this->_controller->get_title() . "\n";
 
@@ -80,12 +83,23 @@ class main
 
 	static function resolve_uri($uri)
 	{
-		return "http://" . $_SERVER['HTTP_HOST'] . PATH . "/" . $uri;
+		return PROTOCOL . "://" . $_SERVER['HTTP_HOST'] . PATH . "/" . $uri;
 	}
 
 	static function relocate_to($url = '')
 	{
 		header("Location: " . main::resolve_uri($url));
+	}
+
+	static function launch_error($msg)
+	{
+		$msg = str_replace("/",
+				           "\\",
+						   $msg);
+
+		$msg = urlencode($msg);
+
+		main::relocate_to("error/500/" . $msg);
 	}
 }
 
@@ -102,6 +116,9 @@ $main = new main($_SERVER['REQUEST_URI']);
 						      "icon",
 						      "image/x-icon"); ?>
 	    <?php echo html::link(".inc/style.css",
+						      "stylesheet",
+						      "text/css"); ?>
+		<?php echo html::link(".app/" . $main->controller . ".css",
 						      "stylesheet",
 						      "text/css"); ?>
 		<?php echo html::script("text/javascript",

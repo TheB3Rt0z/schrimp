@@ -128,11 +128,19 @@ class html
     	return $self->_html;
     }
 
-    static function img($filename,
+    static function img($src,
     					$alt,
                         $title = '')
     {
-    	$attributes = array('src' => main::resolve_uri($filename),
+    	if (!file_exists($_SERVER['DOCUMENT_ROOT'] . PATH . "/" . $src))
+		{
+			$msg = language::translate('error',
+                                       "required file (%s) not exists",
+				                       $src);
+			main::launch_error($msg);
+		}
+
+    	$attributes = array('src' => main::resolve_uri($src),
     		                'alt' => $alt,
     		                'title' => $title);
 
@@ -200,6 +208,14 @@ class html
                          $rel,
                          $type)
     {
+    	if (!file_exists($_SERVER['DOCUMENT_ROOT'] . PATH . "/" . $href))
+		{
+			$msg = language::translate('error',
+                                       "required file (%s) not exists",
+				                       $href);
+			main::launch_error($msg);
+		}
+
     	$attributes = array('href' => main::resolve_uri($href),
     		                'rel' => $rel,
     		                'type' => $type);

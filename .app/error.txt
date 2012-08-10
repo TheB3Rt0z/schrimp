@@ -1,3 +1,8 @@
+required file (%s) not exists
+de|Die benötigte Datei (%s) existiert scheibar nicht
+en|Required file (%s) not seems to exist
+it|Il file richiesto (%s) non pare esistere
+
 unknown %s database type
 de|Datenbank-Typ "%s" nicht erkannt
 en|Database type "%s" not recognized

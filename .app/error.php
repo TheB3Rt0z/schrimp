@@ -1,5 +1,5 @@
 <?php
-
+//TODO: tradurre tutti i messaggi di testo e infilarli nel error.txt
 class error extends controller
 {
 	function initialize()
