@@ -1,4 +1,4 @@
-<?php
+<?php //TODO: web-storage, session su PHP o memcache o DB? pspell&gettext
 
 define('PROTOCOL', "http");
 define('PATH', "/schrimp");
@@ -97,14 +97,17 @@ class main
 				           "\\",
 						   $msg);
 
-		$msg = urlencode($msg);
+		$url = "error/500/" . urlencode($msg);
 
-		main::relocate_to("error/500/" . $msg);
+		if ($_SERVER['REQUEST_URI'] != PATH . "/" . $url)
+		{
+			main::relocate_to($url);
+		}
 	}
 }
 
 $main = new main($_SERVER['REQUEST_URI']);
-//TODO: errori nei link e script fissi qui sotto risultano in redirect-loop infiniti!
+
 ?><!DOCTYPE html>
 	<head>
 		<meta charset="UTF-8">
@@ -138,11 +141,6 @@ $main = new main($_SERVER['REQUEST_URI']);
 			<?php echo html::br(); ?>
 			<article>
 				<?php echo $main->article; ?>
-
-				<div class="notes">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris convallis pretium turpis, eget varius ipsum sodales quis. Nunc a dictum libero. Nulla quis mattis nulla. Pellentesque placerat, lorem et tristique rhoncus, neque nibh vulputate ipsum, nec dignissim nisi nisi nec orci. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce urna elit, faucibus non dapibus sed, pretium a ipsum. Etiam ac erat nec tellus vulputate congue a at mauris. Cras sem enim, feugiat at egestas et, viverra eu leo. Phasellus nec felis purus, vel ullamcorper augue. Sed nec urna magna, eu fermentum dui. Sed velit eros, lacinia venenatis consequat eget, dapibus sit amet eros. Aenean nibh velit, viverra vel fermentum at, aliquet sed massa. Sed eget mauris felis. Proin vestibulum aliquam ullamcorper.
-				</div>
-
 			</article>
 			<aside>
 				<?php echo $main->aside; ?>
