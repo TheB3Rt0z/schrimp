@@ -4,6 +4,8 @@ define('PROTOCOL', "http");
 define('PATH', "/schrimp");
 define('PROJECT', "SCHRIMP Productivity Suite");
 
+define('HOME_COMPONENT', "homepage");
+
 class main
 {
 	private $_controller = null;
@@ -63,7 +65,7 @@ class main
 		}
 		else
 		{
-			$this->controller = 'homepage';
+			$this->controller = HOME_COMPONENT;
 		}
 
 		require_once(".app/" . $this->controller . ".php");
@@ -107,7 +109,7 @@ class main
 }
 
 $main = new main($_SERVER['REQUEST_URI']);
-
+$navigator = new navigator;
 ?><!DOCTYPE html>
 	<head>
 		<meta charset="UTF-8">

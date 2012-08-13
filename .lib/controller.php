@@ -2,6 +2,8 @@
 
 abstract class controller
 {
+	const VISIBLE_IN_NAVIGATION = true;
+	
 	protected $_action = false;
 	protected $_args = array();
 

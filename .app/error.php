@@ -2,6 +2,8 @@
 
 class error extends controller
 {
+	const VISIBLE_IN_NAVIGATION = false;
+
 	function initialize()
 	{
 		switch ($this->_action)
