@@ -2,7 +2,7 @@
 
 define('PROTOCOL', "http");
 define('PATH', "/schrimp");
-define('PROJECT', "SCHRIMP Productivity Suite");
+define('PROJECT', "SCHRIMP Suite");
 
 define('HOME_COMPONENT', "homepage");
 
@@ -83,6 +83,12 @@ class main
 		$this->footer = $this->_controller->get_footer() . "\n";
 	}
 
+	static function is_memcached()
+	{
+		//TODO: verificare che effettivamente il servizio funzioni con almeno un server..
+		return extension_loaded('memcache');
+	}
+
 	static function resolve_uri($uri)
 	{
 		return PROTOCOL . "://" . $_SERVER['HTTP_HOST'] . PATH . "/" . $uri;
@@ -109,7 +115,7 @@ class main
 }
 
 $main = new main($_SERVER['REQUEST_URI']);
-$navigator = new navigator;
+
 ?><!DOCTYPE html>
 	<head>
 		<meta charset="UTF-8">
