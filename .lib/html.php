@@ -1,4 +1,4 @@
-<?php
+<?php //TODO: sistemare l'indentazione, per quanto possibile..
 
 class html
 {
@@ -18,8 +18,10 @@ class html
 					                            'h4',
 					                            'h5',
 					                            'h6',
+					                            'li',
 					                            'p',
-					                            'script'));
+					                            'script',
+					                            'ul'));
 
     function __construct($tag,
                          $attributes = array(),
@@ -38,6 +40,11 @@ class html
 	        else
 	        {
 	            $this->_html .= ">";
+
+	            if ($content)
+	            {
+	            	$this->_html .= "\n";
+	            }
 
 	            if ($this->_is_container())
 	            {
@@ -204,6 +211,23 @@ class html
     	return $self->_html;
     }
 
+    static function li($content,
+                       $classes = '')
+    {
+    	$attributes = array();
+
+    	if ($classes)
+    	{
+    		$attributes['class'] = trim($classes);
+    	}
+
+    	$self = new self(__FUNCTION__,
+    	                 $attributes,
+    	                 $content);
+
+    	return $self->_html . "\n";
+    }
+
     static function link($href,
                          $rel,
                          $type)
@@ -256,6 +280,23 @@ class html
     	                     $attributes,
     	                     $content);
     	}
+
+    	return $self->_html . "\n";
+    }
+
+    static function ul($content,
+                       $classes = '')
+    {
+    	$attributes = array();
+
+    	if ($classes)
+    	{
+    		$attributes['class'] = trim($classes);
+    	}
+
+    	$self = new self(__FUNCTION__,
+    	                 $attributes,
+    	                 $content);
 
     	return $self->_html . "\n";
     }

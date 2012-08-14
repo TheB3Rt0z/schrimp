@@ -32,6 +32,19 @@ class navigator
 		}
 	}
 
+	static function render_ul()
+	{
+		$self = new self;
+
+		$content = '';
+		foreach ($self->_structure[HOME_COMPONENT] as $key => $value)
+		{
+			$content .= html::li($key);
+		}
+
+		return html::ul($content);
+	}
+
 	static function make_sitemap()
 	{
 		return array();

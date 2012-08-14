@@ -14,6 +14,13 @@ class homepage extends controller
 		</div>
         <?php
         $this->_set_aside(ob_get_clean());
+
+        $this->_handler();
+	}
+
+	private function _handler()
+	{
+		$this->_set_nav(navigator::render_ul());
 	}
 }
 
