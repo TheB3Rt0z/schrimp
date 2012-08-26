@@ -83,6 +83,14 @@ class main
 		$this->footer = $this->_controller->get_footer() . "\n";
 	}
 
+	static function get_version()
+	{
+		return number_format(date('y') - 13
+		                   + (date('n') - 10) / 12
+		                   + (date('j') - 3) / date('t') / 10,
+		                     2);
+	}
+
 	static function is_memcached()
 	{
 		//TODO: verificare che effettivamente il servizio funzioni con almeno un server..
@@ -121,7 +129,7 @@ $main = new main($_SERVER['REQUEST_URI']);
 		<meta charset="UTF-8">
 		<meta name="viewport" content="user-scalable=no,width=device-width" />
 		<title>
-			<?php echo PROJECT . " | " . $main->title; ?>
+			<?php echo PROJECT . " v" . main::get_version() . " | " . $main->title; ?>
 		</title>
 		<?php echo html::link(".inc/schrimp_favicon.ico",
 						      "icon",
