@@ -1,7 +1,16 @@
 <?php //TODO: web-storage, session su PHP o memcache o DB? pspell&gettext
 
 define('PROTOCOL', "http");
-define('PATH', "/schrimp");
+
+if ($_SERVER['HTTP_HOST'] == "localhost")
+{
+	define('PATH', "/schrimp");
+}
+else
+{
+	define('PATH', '');
+}
+
 define('PROJECT', "SCHRIMP Suite");
 
 define('HOME_COMPONENT', "homepage");
