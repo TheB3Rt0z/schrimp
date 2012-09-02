@@ -23,6 +23,10 @@ class html
 					                            'script',
 					                            'ul'));
 
+	static private $_linked_files = array();
+
+	static private $_loaded_scripts = array();
+
     function __construct($tag,
                          $attributes = array(),
                          $content = '')
@@ -119,14 +123,14 @@ class html
     	                           $this->_html);
     }
 
-    static function br($lines = 1)
+    private static function br($lines = 1)
     {
     	$self = new self(__FUNCTION__);
 
     	return str_repeat($self->_html, $lines) . "\n";
     }
 
-    static function div($content)
+    private static function div($content)
     {
     	$self = new self(__FUNCTION__,
     	                 array(),
@@ -135,9 +139,9 @@ class html
     	return $self->_html;
     }
 
-    static function img($src,
-    					$alt,
-                        $title = '')
+    private static function img($src,
+    					        $alt,
+                                $title = '')
     {
     	if (!file_exists($_SERVER['DOCUMENT_ROOT'] . PATH . "/" . $src))
 		{
@@ -157,7 +161,7 @@ class html
     	return $self->_html;
     }
 
-    static function h1($content)
+    private static function h1($content)
     {
     	$self = new self(__FUNCTION__,
     	                 array(),
@@ -166,7 +170,7 @@ class html
     	return $self->_html;
     }
 
-    static function h2($content)
+    private static function h2($content)
     {
     	$self = new self(__FUNCTION__,
     	                 array(),
@@ -175,7 +179,7 @@ class html
     	return $self->_html;
     }
 
-    static function h3($content)
+    private static function h3($content)
     {
     	$self = new self(__FUNCTION__,
     	                 array(),
@@ -184,7 +188,7 @@ class html
     	return $self->_html;
     }
 
-    static function h4($content)
+    private static function h4($content)
     {
     	$self = new self(__FUNCTION__,
     	                 array(),
@@ -193,7 +197,7 @@ class html
     	return $self->_html;
     }
 
-    static function h5($content)
+    private static function h5($content)
     {
     	$self = new self(__FUNCTION__,
     	                 array(),
@@ -202,7 +206,7 @@ class html
     	return $self->_html;
     }
 
-    static function h6($content)
+    private static function h6($content)
     {
     	$self = new self(__FUNCTION__,
     	                 array(),
@@ -211,8 +215,8 @@ class html
     	return $self->_html;
     }
 
-    static function li($content,
-                       $classes = '')
+    private static function li($content,
+                               $classes = '')
     {
     	$attributes = array();
 
@@ -228,9 +232,9 @@ class html
     	return $self->_html . "\n";
     }
 
-    static function link($href,
-                         $rel,
-                         $type)
+    private static function link($href,
+                                 $rel,
+                                 $type)
     {
     	if (!file_exists($_SERVER['DOCUMENT_ROOT'] . PATH . "/" . $href))
 		{
@@ -239,18 +243,27 @@ class html
 				                       $href);
 			main::launch_error($msg);
 		}
+		elseif ($href
+			&& !in_array($href, html::$_linked_files))
+		{
+			$attributes = array('href' => main::resolve_uri($href),
+    		                    'rel' => $rel,
+    		                    'type' => $type);
 
-    	$attributes = array('href' => main::resolve_uri($href),
-    		                'rel' => $rel,
-    		                'type' => $type);
+    	    $self = new self(__FUNCTION__,
+    	                     $attributes);
 
-    	$self = new self(__FUNCTION__,
-    	                 $attributes);
+			html::$_linked_files[] = $href;
+		}
+		else
+		{
+			return false;
+		}
 
     	return $self->_html . "\n";
     }
 
-    static function p($content)
+    private static function p($content)
     {
     	$self = new self(__FUNCTION__,
     	                 array(),
@@ -259,33 +272,51 @@ class html
     	return $self->_html;
     }
 
-    static function script($type,
-                           $src = false,
-                           $content = '')
+    private static function script($type,
+                                   $src = false,
+                                   $content = '')
     {
     	$attributes = array
     	(
     		'type' => $type,
     	);
 
-    	if ($src)
+    	if ($src
+    		&& !in_array($src, html::$_loaded_scripts))
     	{
+    		if (!file_exists($_SERVER['DOCUMENT_ROOT'] . PATH . "/" . $src))
+			{
+				$msg = language::translate('error',
+	                                       "required file (%s) not exists",
+					                       $src);
+				main::launch_error($msg);
+			}
+
     		$attributes['src'] = $src;
     		$self = new self(__FUNCTION__,
     	                     $attributes);
+
+    		html::$_loaded_scripts[] = $src;
     	}
-    	else
+    	elseif ($content
+    		&& !in_array($content, html::$_loaded_scripts))
     	{
     		$self = new self(__FUNCTION__,
     	                     $attributes,
     	                     $content);
+
+    	    html::$_loaded_scripts[] = $content;
+    	}
+    	else
+    	{
+    		return false;
     	}
 
     	return $self->_html . "\n";
     }
 
-    static function ul($content,
-                       $classes = '')
+    static private function ul($content,
+                               $classes = '')
     {
     	$attributes = array();
 
@@ -299,6 +330,33 @@ class html
     	                 $content);
 
     	return $self->_html . "\n";
+    }
+
+    static function add_favicon($href)
+    {
+    	echo self::link($href,
+    	                "icon",
+						"image/x-icon");
+    }
+
+    static function add_stylesheet($href)
+    {
+    	echo self::link($href,
+                        "stylesheet",
+                        "text/css");
+    }
+
+    static function add_js_file($src)
+    {
+    	echo self::script("text/javascript",
+    	                  $src);
+    }
+
+    static function add_js_script($content)
+    {
+    	echo self::script("text/javascript",
+    	                  false,
+    	                  $content);
     }
 }
 

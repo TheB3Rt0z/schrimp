@@ -138,21 +138,16 @@ $main = new main($_SERVER['REQUEST_URI']);
 		<meta charset="UTF-8">
 		<meta name="viewport" content="user-scalable=no,width=device-width" />
 		<title>
-			<?php echo PROJECT . " v" . main::get_version() . " | " . $main->title; ?>
+			<?php echo PROJECT . " v" . $main->get_version() . " | " . $main->title; ?>
 		</title>
-		<?php echo html::link(".inc/schrimp_favicon.ico",
-						      "icon",
-						      "image/x-icon"); ?>
-	    <?php echo html::link(".inc/style.css",
-						      "stylesheet",
-						      "text/css"); ?>
-		<?php echo html::link(".app/" . $main->controller . ".css",
-						      "stylesheet",
-						      "text/css"); ?>
-		<?php echo html::script("text/javascript",
-		                        ".inc/jquery.js"); ?>
-		<?php echo html::script("text/javascript",
-		                        ".inc/jquery_ui.js"); ?>
+		<?php
+		html::add_favicon(".inc/schrimp_favicon.ico");
+	    html::add_stylesheet(".inc/style.css");
+		html::add_stylesheet(".app/" . $main->controller . ".css");
+		html::add_js_file(".inc/jquery.js");
+		html::add_js_file(".inc/jquery_ui.js");
+		html::add_js_file(".inc/jquery_webcam/jquery.webcam.js");
+		?>
 	</head>
 	<body>
 		<header>
@@ -163,7 +158,6 @@ $main = new main($_SERVER['REQUEST_URI']);
 		</nav>
 		<section>
 			<?php echo $main->section; ?>
-			<?php echo html::br(); ?>
 			<article>
 				<?php echo $main->article; ?>
 			</article>
