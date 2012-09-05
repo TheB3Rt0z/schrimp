@@ -11,7 +11,8 @@ class html
 	private $_tags = array('single' => array('br',
         	                                 'img',
         	                                 'link'),
-					       'container' => array('div',
+					       'container' => array('a',
+					       		 				'div',
 					                            'h1',
 					                            'h2',
 					                            'h3',
@@ -19,6 +20,7 @@ class html
 					                            'h5',
 					                            'h6',
 					                            'li',
+					                            'ol',
 					                            'p',
 					                            'script',
 					                            'ul'));
@@ -121,6 +123,23 @@ class html
     	$this->_html = str_replace("__CONTENT__",
     	                           $this->_content,
     	                           $this->_html);
+    }
+
+    private static function a($href,
+                              $content)
+    {
+    	if (!strpos($href, "://"))
+    	{
+    		$href = main::resolve_uri($href);
+    	}
+
+    	$attributes = array('href' => $href);
+
+    	$self = new self(__FUNCTION__,
+    	                 $attributes,
+    	                 $content);
+
+    	return $self->_html;
     }
 
     private static function br($lines = 1)
@@ -263,6 +282,23 @@ class html
     	return $self->_html . "\n";
     }
 
+    static private function ol($content,
+                               $classes = '')
+    {
+    	$attributes = array();
+
+    	if ($classes)
+    	{
+    		$attributes['class'] = trim($classes);
+    	}
+
+    	$self = new self(__FUNCTION__,
+    	                 $attributes,
+    	                 $content);
+
+    	return $self->_html . "\n";
+    }
+
     private static function p($content)
     {
     	$self = new self(__FUNCTION__,
@@ -357,6 +393,26 @@ class html
     	echo self::script("text/javascript",
     	                  false,
     	                  $content);
+    }
+
+    static function array_to_list($tree,
+                                  $type = 'ul')
+    {
+    	$content = '';
+
+		foreach ($tree as $key => $value)
+		{
+			$content .= html::li(html::a($key,
+			                             $value['name']));
+
+			if (isset($value['actions']))
+			{
+				$content .= self::array_to_list($value['actions'],
+				                                $type);
+			}
+		}
+
+		return self::$type($content);
     }
 }
 

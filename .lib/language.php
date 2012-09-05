@@ -21,7 +21,7 @@ class language
 		{
 			if ($placeholder == $value)
 			{
-				while ($text = explode("|", $texts[++$key]))
+				while ($text = explode("||", $texts[++$key]))
 				{
 					if ($text[0] == $language
 						|| $text[0] == LANGUAGE_DEFAULT)

@@ -5,7 +5,7 @@ class homepage extends controller
 	function initialize()
 	{
 		$this->_set_title(language::translate(__CLASS__,
-                                              "home page title"));
+                                              "COMPONENT VISIBLE NAME"));
 
         ob_start();
         ?>
@@ -18,9 +18,9 @@ class homepage extends controller
         $this->_handler();
 	}
 
-	private function _handler()
+	protected function _handler()
 	{
-		$this->_set_nav(navigator::render_ul());
+		$this->_set_nav(navigator::render_list());
 	}
 }
 

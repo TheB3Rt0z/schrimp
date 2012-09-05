@@ -1,4 +1,4 @@
-<?php
+<?php // navigazione ricorsiva basata sugli handler con underscore multipli
 
 class navigator
 {
@@ -20,29 +20,42 @@ class navigator
 
     		if ($rc->getConstant('VISIBLE_IN_NAVIGATION'))
     		{
-    			$this->_structure[HOME_COMPONENT][$branch] = array();
+    			$this->_structure[HOME_COMPONENT][$branch] = array('name' => language::translate($branch,
+                                                                                                 'COMPONENT VISIBLE NAME'));
+
+    			$subbranch =& $this->_structure[HOME_COMPONENT][$branch];
 
     			foreach ($rc->getMethods(ReflectionMethod::IS_PRIVATE | !ReflectionMethod::IS_PROTECTED) as $object)
     			{
-    				$this->_structure[HOME_COMPONENT][$branch]['actions'][str_replace("_handler_",
-                                                                                      '',
-                                                                                      $object->name)] = array();
-    			}
+    				$item = explode("_", str_replace("_handler_", '', $object->name));
+
+    				foreach ($item as $name)
+    				{
+    					if (!isset($subbranch['actions'][$name]))
+    					{
+    						$subbranch['actions'][$name] = array('name' => language::translate($branch,
+    						                                                                   $object->name));
+    					}
+
+    					$subbranch =& $subbranch['actions'][$name];
+    				}
+
+    				$subbranch =& $this->_structure[HOME_COMPONENT][$branch];
+				}
     		}
 		}
 	}
 
-	static function render_ul()
+	static function render_list()
 	{
 		$self = new self;
 
-		$content = '';
-		foreach ($self->_structure[HOME_COMPONENT] as $key => $value)
-		{
-			$content .= html::li($key);
-		}
+		return html::array_to_list($self->_structure[HOME_COMPONENT]);
+	}
 
-		return html::ul($content);
+	static function render_breadcrumb()
+	{
+
 	}
 
 	static function make_sitemap()

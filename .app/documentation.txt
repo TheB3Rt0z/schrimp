@@ -1,0 +1,14 @@
+COMPONENT VISIBLE NAME
+de||Dokumentation
+en||Documentation
+it||Documentazione
+
+_handler_list
+de||Übersicht
+en||Overview
+it||Sommario
+
+_handler_list_files
+de||Dateienliste
+en||File list
+it||Lista dei file

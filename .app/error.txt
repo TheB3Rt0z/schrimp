@@ -1,9 +1,14 @@
+COMPONENT VISIBLE NAME
+de||Fehler!
+en||Error!
+it||Errore!
+
 required file (%s) not exists
-de|Die benötigte Datei (%s) existiert scheibar nicht
-en|Required file (%s) not seems to exist
-it|Il file richiesto (%s) non pare esistere
+de||Die benötigte Datei (%s) existiert scheibar nicht
+en||Required file (%s) not seems to exist
+it||Il file richiesto (%s) non pare esistere
 
 unknown %s database type
-de|Datenbank-Typ "%s" nicht erkannt
-en|Database type "%s" not recognized
-it|Tipo del database "%s" sconosciuto
+de||Datenbank-Typ "%s" nicht erkannt
+en||Database type "%s" not recognized
+it||Tipo del database "%s" sconosciuto
