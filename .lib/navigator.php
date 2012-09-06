@@ -29,15 +29,19 @@ class navigator
     			{
     				$item = explode("_", str_replace("_handler_", '', $object->name));
 
+    				$link = $branch;
+
     				foreach ($item as $name)
     				{
-    					if (!isset($subbranch['actions'][$name]))
+    					$link .= "/" . $name;
+
+    					if (!isset($subbranch['actions'][$link]))
     					{
-    						$subbranch['actions'][$name] = array('name' => language::translate($branch,
-    						                                                                   $object->name));
+    						$subbranch['actions'][$link] = array('name' => language::translate($branch,
+    						                                                                  $object->name));
     					}
 
-    					$subbranch =& $subbranch['actions'][$name];
+    					$subbranch =& $subbranch['actions'][$link];
     				}
 
     				$subbranch =& $this->_structure[HOME_COMPONENT][$branch];
