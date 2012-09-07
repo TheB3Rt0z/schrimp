@@ -15,7 +15,7 @@ class documentation extends controller
 
 			case 'list' :
 			{
-				if (isset($this->_args[0]))
+				if (!empty($this->_args))
 				{
 					switch ($this->_args[0])
 					{

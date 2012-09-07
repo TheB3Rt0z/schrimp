@@ -405,7 +405,7 @@ class html
 			$content .= html::li(html::a($key,
 			                             $value['name']));
 
-			if (isset($value['actions']))
+			if (!empty($value['actions']))
 			{
 				$content .= self::array_to_list($value['actions'],
 				                                $type);

@@ -38,7 +38,7 @@ class navigator
     					if (!isset($subbranch['actions'][$link]))
     					{
     						$subbranch['actions'][$link] = array('name' => language::translate($branch,
-    						                                                                  $object->name));
+    						                                                                   $object->name));
     					}
 
     					$subbranch =& $subbranch['actions'][$link];

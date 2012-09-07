@@ -11,21 +11,21 @@ class error extends controller
 			case false :
 			{
 				$this->_handler();
-				
+
 				break;
 			}
 
 			case 401 :
 			{
 				$this->_handler_401();
-				
+
 				break;
 			}
 
 			case 403 :
 			{
 				$this->_handler_403();
-				
+
 				break;
 			}
 
@@ -34,14 +34,14 @@ class error extends controller
 				$this->_handler_404();
 				$sitemap = navigator::make_sitemap();
 				$this->_set_article($sitemap);
-				
+
 				break;
 			}
 
 			case 500 :
 			{
 				$this->_handler_500();
-				
+
 				break;
 			}
 
@@ -87,10 +87,10 @@ class error extends controller
 	{
 		$this->_set_title("ERROR 500: some interne error");
 		$this->_set_header(html::h1("Ooops!!! " . $this->get_title() . "!"));
-		$ending = isset($this->_args[0]) ? "here:" : "now!";
+		$ending = !empty($this->_args) ? "here:" : "now!";
 		$this->_set_section(html::h2("Something has not worked right " . $ending));
 
-		if (isset($this->_args[0]))
+		if (!empty($this->_args))
 		{
 			$this->_set_article(html::h3(urldecode($this->_args[0])));
 		}

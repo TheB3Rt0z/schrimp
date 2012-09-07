@@ -62,7 +62,7 @@ class main
 
 			$this->controller = array_shift($components);
 
-			if (isset($components[0]))
+			if (!empty($components))
 			{
 				$this->_action = array_shift($components);
 
