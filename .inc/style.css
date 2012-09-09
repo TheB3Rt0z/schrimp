@@ -1,3 +1,21 @@
+a
+{
+	color: whitesmoke;
+	transition: all .5s;
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	-o-transition: all .5s;
+}
+
+a:hover
+{
+	color: white;
+	text-shadow: 0 0 5px white;
+	-webkit-text-shadow: 0 0 5px white;
+	-moz-text-shadow: 0 0 5px white;
+	-o-text-shadow: 0 0 5px white;
+}
+
 article
 {
     min-width: 50%;
@@ -27,6 +45,7 @@ body
     background-attachment: fixed;
     background-size: contain;
     background-color: dimgrey;
+    color: lavender;
 }
 
 footer
