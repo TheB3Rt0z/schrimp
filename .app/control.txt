@@ -1,0 +1,4 @@
+COMPONENT VISIBLE NAME
+de||Einstellungen
+en||Settings
+it||Impostazioni
