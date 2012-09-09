@@ -2,10 +2,14 @@
 
 class navigator
 {
-	private $_structure = array(HOME_COMPONENT => array());
+	private $_structure = false;
 
 	function __construct()
 	{
+		if (!empty($this->_structure)) return; // singleton
+
+		$this->_structure = array(HOME_COMPONENT => array());
+
 		foreach (array_filter(glob(".app/*.php"),
 		                      function($value)
 		                      {
@@ -62,9 +66,11 @@ class navigator
 
 	}
 
-	static function make_sitemap()
+	static function render_sitemap()
 	{
-		return array();
+		$self = new self;
+
+		return html::array_to_list($self->_structure[HOME_COMPONENT], 'ol');
 	}
 }
 
