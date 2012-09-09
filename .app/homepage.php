@@ -4,8 +4,7 @@ class homepage extends controller
 {
 	function initialize()
 	{
-		$this->_set_title(language::translate(__CLASS__,
-                                              "COMPONENT VISIBLE NAME"));
+		$this->_set_title(translate("COMPONENT VISIBLE NAME"));
 
         ob_start();
         ?>

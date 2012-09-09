@@ -1,4 +1,4 @@
-<?php //TODO: tradurre tutti i messaggi di testo e infilarli nel error.txt
+<?php
 
 class error extends controller
 {
@@ -103,7 +103,8 @@ class error extends controller
 
 	private function _handler_500()
 	{
-		$this->_set_title("ERROR 500: some interne error");
+		$this->_set_title($this->translate("COMPONENT VISIBLE NAME")
+                        . " 500: some interne error");
 		$this->_set_header(html::title(1,
                                        "Ooops!!! " . $this->get_title() . "!"));
 		$ending = !empty($this->_args) ? "here:" : "now!";

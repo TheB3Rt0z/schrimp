@@ -3,7 +3,7 @@
 abstract class controller
 {
 	const VISIBLE_IN_NAVIGATION = true;
-	
+
 	protected $_action = false;
 	protected $_args = array();
 
@@ -59,6 +59,12 @@ abstract class controller
 	protected function _set_footer($html)
 	{
 		$this->_footer = $html;
+	}
+
+	protected function translate($placeholder)
+	{
+		return language::translate(get_class($this),
+		                           $placeholder);
 	}
 
 	function get_title()

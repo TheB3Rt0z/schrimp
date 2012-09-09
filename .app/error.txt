@@ -1,7 +1,7 @@
 COMPONENT VISIBLE NAME
-de||Fehler!
-en||Error!
-it||Errore!
+de||Fehler
+en||Error
+it||Errore
 
 required file (%s) not exists
 de||Die benötigte Datei (%s) existiert scheibar nicht

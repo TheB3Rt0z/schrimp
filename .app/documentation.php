@@ -49,8 +49,7 @@ class documentation extends controller
 
 	protected function _handler()
 	{
-		$this->_set_title(language::translate(__CLASS__,
-                                              "COMPONENT VISIBLE NAME"));
+		$this->translate("COMPONENT VISIBLE NAME");
 	}
 
 	private function _handler_list()
