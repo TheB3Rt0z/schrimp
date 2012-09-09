@@ -63,7 +63,9 @@ class navigator
 
 	static function render_breadcrumb()
 	{
+		$self = new self;
 
+		// return array_to_??? in forma di link e testi in base alla posizione
 	}
 
 	static function render_sitemap()
