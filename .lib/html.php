@@ -414,6 +414,27 @@ class html
 
 		return self::$type($content);
     }
+
+    static function title($level,
+                          $content)
+    {
+    	if (is_int($level)
+    		&& $level > 0
+    		&& $level < 7)
+    	{
+    		$level = "h" . $level;
+        	return self::$level($content);
+    	}
+    }
+
+    static function image($src,
+    					  $alt,
+                          $title = '')
+    {
+    	return self::img($src,
+    					 $alt,
+                         $title);
+    }
 }
 
 ?>

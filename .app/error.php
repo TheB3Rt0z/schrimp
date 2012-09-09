@@ -52,55 +52,68 @@ class error extends controller
 			}
 		}
 
-		$this->_set_aside(html::img(".inc/schrimp.png",
-		                            PROJECT));
+		$this->_set_aside(html::image(".inc/schrimp.png",
+		                              PROJECT));
 	}
 
 	protected function _handler()
 	{
 		$this->_set_title("UNKNOWN ERROR: schrimp KO");
-		$this->_set_header(html::h1("Ooops!!! " . $this->get_title() . "!"));
-		$this->_set_section(html::h2("Some disturbing problem occurred here.."));
+		$this->_set_header(html::title(1,
+                                       "Ooops!!! " . $this->get_title() . "!"));
+		$this->_set_section(html::title(1,
+                                        "Some disturbing problem occurred here.."));
 	}
 
 	private function _handler_400()
 	{
 		$this->_set_title("ERROR 400: that's a bad request");
-		$this->_set_header(html::h1("Ooops!!! " . $this->get_title() . "!"));
-		$this->_set_section(html::h2("It seems, that you are a little too bad!"));
+		$this->_set_header(html::title(1,
+                                       "Ooops!!! " . $this->get_title() . "!"));
+		$this->_set_section(html::title(2,
+                                        "It seems, that you are a little too bad!"));
 	}
 
 	private function _handler_401()
 	{
 		$this->_set_title("ERROR 401: un-authorized user");
-		$this->_set_header(html::h1("Ooops!!! " . $this->get_title() . "!"));
-		$this->_set_section(html::h2("Please log you in to access this resource!"));
+		$this->_set_header(html::title(1,
+                                       "Ooops!!! " . $this->get_title() . "!"));
+		$this->_set_section(html::title(2,
+                                        "Please log you in to access this resource!"));
 	}
 
 	private function _handler_403()
 	{
 		$this->_set_title("ERROR 403: resource forbidden");
-		$this->_set_header(html::h1("Ooops!!! " . $this->get_title() . "!"));
-		$this->_set_section(html::h2("You're trying to access our restricted contents!"));
+		$this->_set_header(html::title(1,
+                                       "Ooops!!! " . $this->get_title() . "!"));
+		$this->_set_section(html::title(2,
+                                        "You're trying to access our restricted contents!"));
 	}
 
 	private function _handler_404()
 	{
 		$this->_set_title("ERROR 404: resource not found");
-		$this->_set_header(html::h1("Ooops!!! " . $this->get_title() . "!"));
-		$this->_set_section(html::h2("What you search doesn't seem to exist!"));
+		$this->_set_header(html::title(1,
+                                       "Ooops!!! " . $this->get_title() . "!"));
+		$this->_set_section(html::title(2,
+                                        "What you search doesn't seem to exist!"));
 	}
 
 	private function _handler_500()
 	{
 		$this->_set_title("ERROR 500: some interne error");
-		$this->_set_header(html::h1("Ooops!!! " . $this->get_title() . "!"));
+		$this->_set_header(html::title(1,
+                                       "Ooops!!! " . $this->get_title() . "!"));
 		$ending = !empty($this->_args) ? "here:" : "now!";
-		$this->_set_section(html::h2("Something has not worked right " . $ending));
+		$this->_set_section(html::title(2,
+                                        "Something has not worked right " . $ending));
 
 		if (!empty($this->_args))
 		{
-			$this->_set_article(html::h3(urldecode($this->_args[0])));
+			$this->_set_article(html::title(3,
+			                                urldecode($this->_args[0])));
 		}
 	}
 }
