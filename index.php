@@ -11,7 +11,7 @@ else
 	define('PATH', '');
 }
 
-define('PROJECT', "SCHRIMP Suite");
+define('PROJECT', "Das SCHRIMP");
 
 define('HOME_COMPONENT', "homepage");
 
