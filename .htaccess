@@ -1,1 +1,5 @@
+ErrorDocument 400 /schrimp/error/400
+ErrorDocument 401 /schrimp/error/401
+ErrorDocument 403 /schrimp/error/403
 ErrorDocument 404 /schrimp/index.php
+ErrorDocument 500 /schrimp/error/500
