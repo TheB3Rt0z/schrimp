@@ -4,7 +4,7 @@ class homepage extends controller
 {
 	function initialize()
 	{
-		$this->_set_title(translate("COMPONENT VISIBLE NAME"));
+		$this->_set_title($this->_translate("COMPONENT VISIBLE NAME"));
 
         ob_start();
         ?>

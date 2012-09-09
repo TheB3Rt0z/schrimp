@@ -1,4 +1,4 @@
-<?php // tradurre le cazzate per i set title, e infilarli nel documentation.txt
+<?php
 
 class documentation extends controller
 {
@@ -49,17 +49,21 @@ class documentation extends controller
 
 	protected function _handler()
 	{
-		$this->translate("COMPONENT VISIBLE NAME");
+		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME'));
 	}
 
 	private function _handler_list()
 	{
-		$this->_set_title("Documentation &raquo; Overview");
+		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
+		                . BREADCRUMB_SEPARATOR
+		                . $this->_translate(__FUNCTION__));
 	}
 
 	private function _handler_list_files()
 	{
-		$this->_set_title("Documentation &raquo; File listing");
+		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
+		                . BREADCRUMB_SEPARATOR
+		                . $this->_translate(__FUNCTION__));
 	}
 }
 

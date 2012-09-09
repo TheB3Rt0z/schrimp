@@ -1,4 +1,6 @@
-<?php //TODO: sistemare l'indentazione, per quanto possibile..
+<?php
+
+define('BREADCRUMB_SEPARATOR', " &raquo; ");
 
 class html
 {

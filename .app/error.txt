@@ -1,7 +1,67 @@
 COMPONENT VISIBLE NAME
-de||Fehler
-en||Error
-it||Errore
+de||fehler
+en||error
+it||errore
+
+unknown error
+de||unerkannte Fehler
+en||unknown error
+it||errore sconosciuto
+
+a disturbing problem
+de||Hier ist ein beunruhigende Problem aufgetreten..
+en||Some disturbing problem occurred here..
+it||Qui è capitato qualcosa di strano..
+
+a bad request
+de||hä, schlechte Anfrage
+en||that's a bad request
+it||ah che birba che sei
+
+little too bad
+de||Es scheint, dass du ein wenig böse bist
+en||It seems, that you are a little too bad
+it||Sembra che tu sia un tantino furbetto
+
+unauthorized
+de||unerlaubte Benutzer
+en||un-authorized user
+it||accesso non concesso
+
+please log in
+de||Bitte melden Sie sich an, um weiterzugehen
+en||Please log you in to access this resource
+it||Per favore fare il login prima di proseguire
+
+resource forbidden
+de||Zugang verboten
+en||resource forbidden
+it||accesso vietato
+
+restricted contents
+de||Sie versuchen, eingeschränkte Inhalte zuzugreifen
+en||You're trying to access our restricted contents
+it||Stai cercando di accedere a risorse riservate
+
+resource not found
+de||Ressource nicht gefunden
+en||resource not found
+it||risorsa non trovata
+
+content not found
+de||Was Sie suchen scheint nicht zu existieren
+en||What you search doesn't seem to exist
+it||Quel che tu cerchi qui non si trova
+
+some internal error
+de||einige interne Fehler
+en||some internal error
+it||errore interno
+
+something not worked
+de||Etwas hat nicht funktioniert gerade
+en||Something has not worked right
+it||Qualcosa non ha funzionato proprio
 
 required file (%s) not exists
 de||Die benötigte Datei (%s) existiert scheibar nicht

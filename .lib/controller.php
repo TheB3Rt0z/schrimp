@@ -61,7 +61,7 @@ abstract class controller
 		$this->_footer = $html;
 	}
 
-	protected function translate($placeholder)
+	protected function _translate($placeholder)
 	{
 		return language::translate(get_class($this),
 		                           $placeholder);

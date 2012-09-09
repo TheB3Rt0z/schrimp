@@ -35,8 +35,7 @@ class error extends controller
 			case 404 :
 			{
 				$this->_handler_404();
-				$sitemap = navigator::make_sitemap();
-				$this->_set_article($sitemap);
+				$this->_set_article(navigator::render_sitemap());
 				break;
 			}
 
@@ -48,7 +47,7 @@ class error extends controller
 
 			default :
 			{
-				$this->relocate_to("error/404");
+				main::relocate_to("error/404");
 			}
 		}
 
@@ -58,58 +57,78 @@ class error extends controller
 
 	protected function _handler()
 	{
-		$this->_set_title("UNKNOWN ERROR: schrimp KO");
+		$this->_set_title(ucfirst($this->_translate('unknown error'))
+		                . ": " . PROJECT . " KO");
+
 		$this->_set_header(html::title(1,
                                        "Ooops!!! " . $this->get_title() . "!"));
+
 		$this->_set_section(html::title(1,
-                                        "Some disturbing problem occurred here.."));
+                                        $this->_translate('a disturbing problem')));
 	}
 
 	private function _handler_400()
 	{
-		$this->_set_title("ERROR 400: that's a bad request");
+		$this->_set_title(ucfirst($this->_translate('COMPONENT VISIBLE NAME'))
+                        . " 400: " . $this->_translate('a bad request'));
+
 		$this->_set_header(html::title(1,
                                        "Ooops!!! " . $this->get_title() . "!"));
+
 		$this->_set_section(html::title(2,
-                                        "It seems, that you are a little too bad!"));
+                                        $this->_translate('little too bad') . "!"));
 	}
 
 	private function _handler_401()
 	{
-		$this->_set_title("ERROR 401: un-authorized user");
+		$this->_set_title(ucfirst($this->_translate('COMPONENT VISIBLE NAME'))
+                        . " 401: " . $this->_translate('unauthorized'));
+
 		$this->_set_header(html::title(1,
                                        "Ooops!!! " . $this->get_title() . "!"));
+
 		$this->_set_section(html::title(2,
-                                        "Please log you in to access this resource!"));
+                                        $this->_translate('please log in') . "!"));
 	}
 
 	private function _handler_403()
 	{
-		$this->_set_title("ERROR 403: resource forbidden");
+		$this->_set_title(ucfirst($this->_translate('COMPONENT VISIBLE NAME'))
+                        . " 403: " . $this->_translate('resource forbidden'));
+
 		$this->_set_header(html::title(1,
                                        "Ooops!!! " . $this->get_title() . "!"));
+
 		$this->_set_section(html::title(2,
-                                        "You're trying to access our restricted contents!"));
+                                        $this->_translate('restricted contents') . "!"));
 	}
 
 	private function _handler_404()
 	{
-		$this->_set_title("ERROR 404: resource not found");
+		$this->_set_title(ucfirst($this->_translate('COMPONENT VISIBLE NAME'))
+                        . " 404: " . $this->_translate('resource not found'));
+
 		$this->_set_header(html::title(1,
                                        "Ooops!!! " . $this->get_title() . "!"));
+
 		$this->_set_section(html::title(2,
-                                        "What you search doesn't seem to exist!"));
+                                        $this->_translate('content not found') . "!"));
 	}
 
 	private function _handler_500()
 	{
-		$this->_set_title($this->translate("COMPONENT VISIBLE NAME")
-                        . " 500: some interne error");
+		$this->_set_title(ucfirst($this->_translate('COMPONENT VISIBLE NAME'))
+                        . " 500: " . $this->_translate('some internal error'));
+
 		$this->_set_header(html::title(1,
                                        "Ooops!!! " . $this->get_title() . "!"));
-		$ending = !empty($this->_args) ? "here:" : "now!";
+
+		$ending = !empty($this->_args[0])
+		          ? $this->_translate('here') . ":"
+		          : $this->_translate('now') . "!";
+
 		$this->_set_section(html::title(2,
-                                        "Something has not worked right " . $ending));
+                                        $this->_translate('something not worked') . " " . $ending));
 
 		if (!empty($this->_args))
 		{

@@ -1,9 +1,16 @@
 <?php
 
-define('LANGUAGE_DEFAULT', "en");
+define('FALLBACK_LANGUAGE', "en");
 
 class language
 {
+	static $_base_translations = array("here" => array('de' => "hier",
+	                                                      'en' => "here",
+	                                                      'it' => "qua"),
+	                                   "now" => array('de' => "jetzt",
+	                                                  'en' => "now",
+	                                                  'it' => "ora"));
+
 	static function translate($component,
 	                          $placeholder)
 	{
@@ -15,7 +22,16 @@ class language
 
 		$language = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
 
-		$translation = "TRANSLATION FOR \"" . array_shift($args) . "\" NOT FOUND";
+		$translation = "[" . strtoupper(str_replace(" ", "_", array_shift($args))) . "]";
+
+		if (isset(self::$_base_translations[$placeholder][$language]))
+		{
+			$translation = self::$_base_translations[$placeholder][$language];
+		}
+		elseif (isset(self::$_base_translations[$placeholder][FALLBACK_LANGUAGE]))
+		{
+			$translation = self::$_base_translations[$placeholder][FALLBACK_LANGUAGE];
+		}
 
 		foreach ($texts as $key => $value)
 		{
@@ -24,7 +40,7 @@ class language
 				while ($text = explode("||", $texts[++$key]))
 				{
 					if ($text[0] == $language
-						|| $text[0] == LANGUAGE_DEFAULT)
+						|| $text[0] == FALLBACK_LANGUAGE)
 					{
 						$translation = $text[1];
 					}
