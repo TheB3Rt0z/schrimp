@@ -9,7 +9,6 @@ class documentation extends controller
 			case false :
 			{
 				$this->_handler();
-
 				break;
 			}
 
@@ -22,7 +21,6 @@ class documentation extends controller
 						case 'files' :
 						{
 							$this->_handler_list_files();
-
 							break;
 						}
 
@@ -36,7 +34,6 @@ class documentation extends controller
 				{
 					$this->_handler_list();
 				}
-
 				break;
 			}
 

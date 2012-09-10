@@ -58,11 +58,9 @@ class main
 			}
 
 			$this->controller = array_shift($components);
-
 			if (!empty($components))
 			{
 				$this->_action = array_shift($components);
-
 				if ($components)
 				{
 					$this->_args = $components;
@@ -134,9 +132,16 @@ $main = new main($_SERVER['REQUEST_URI']);
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="user-scalable=no,width=device-width" />
+
 		<title>
-			<?php echo PROJECT . " v" . $main->get_version() . " | " . $main->title; ?>
+			<?php
+			echo PROJECT
+			   . " v" . $main->get_version()
+	           . " | "
+               . $main->title;
+			?>
 		</title>
+
 		<?php
 		html::add_favicon(".inc/img/schrimp_favicon.ico");
 	    html::add_stylesheet(".inc/style.css");

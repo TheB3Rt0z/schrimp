@@ -64,7 +64,7 @@ class error extends controller
                                        "Ooops!!! " . $this->get_title() . "!"));
 
 		$this->_set_section(html::title(1,
-                                        $this->_translate('a disturbing problem')));
+                                        $this->_translate('a ugly problem')));
 	}
 
 	private function _handler_400()
@@ -76,7 +76,7 @@ class error extends controller
                                        "Ooops!!! " . $this->get_title() . "!"));
 
 		$this->_set_section(html::title(2,
-                                        $this->_translate('little too bad') . "!"));
+                                        $this->_translate('little bad') . "!"));
 	}
 
 	private function _handler_401()
@@ -88,7 +88,7 @@ class error extends controller
                                        "Ooops!!! " . $this->get_title() . "!"));
 
 		$this->_set_section(html::title(2,
-                                        $this->_translate('please log in') . "!"));
+                                        $this->_translate('please log') . "!"));
 	}
 
 	private function _handler_403()
@@ -100,7 +100,7 @@ class error extends controller
                                        "Ooops!!! " . $this->get_title() . "!"));
 
 		$this->_set_section(html::title(2,
-                                        $this->_translate('restricted contents') . "!"));
+                                        $this->_translate('no entry') . "!"));
 	}
 
 	private function _handler_404()
@@ -112,7 +112,7 @@ class error extends controller
                                        "Ooops!!! " . $this->get_title() . "!"));
 
 		$this->_set_section(html::title(2,
-                                        $this->_translate('content not found') . "!"));
+                                        $this->_translate('no content') . "!"));
 	}
 
 	private function _handler_500()
@@ -128,7 +128,8 @@ class error extends controller
 		          : $this->_translate('now') . "!";
 
 		$this->_set_section(html::title(2,
-                                        $this->_translate('something not worked') . " " . $ending));
+                                        $this->_translate('something not works')
+				                      . " " . $ending));
 
 		if (!empty($this->_args))
 		{

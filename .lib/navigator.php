@@ -21,31 +21,38 @@ class navigator
     		$branch = str_replace(array(".app/", ".php"), '', $filename);
 
     		$rc = new ReflectionClass($branch);
-
     		if ($rc->getConstant('VISIBLE_IN_NAVIGATION'))
     		{
-    			$this->_structure[HOME_COMPONENT][$branch] = array('name' => language::translate($branch,
-                                                                                                 'COMPONENT VISIBLE NAME'));
+    			$this->_structure[HOME_COMPONENT][$branch] = array
+    			(
+    			    'name' => language::translate($branch,
+                                                  'COMPONENT VISIBLE NAME')
+    		    );
 
     			$subbranch =& $this->_structure[HOME_COMPONENT][$branch];
 
-    			foreach ($rc->getMethods(ReflectionMethod::IS_PRIVATE | !ReflectionMethod::IS_PROTECTED) as $object)
+    			foreach ($rc->getMethods(ReflectionMethod::IS_PRIVATE
+    				   | !ReflectionMethod::IS_PROTECTED) as $object)
     			{
-    				$item = explode("_", str_replace("_handler_", '', $object->name));
-
     				$link = $branch;
 
+    				$item = explode("_", str_replace("_handler_",
+    						                         '',
+    						                         $object->name));
     				foreach ($item as $name)
     				{
     					$link .= "/" . $name;
 
-    					if (!isset($subbranch['actions'][$link]))
+    					if (!isset($subbranch['sub'][$link]))
     					{
-    						$subbranch['actions'][$link] = array('name' => language::translate($branch,
-    						                                                                   $object->name));
+    						$subbranch['sub'][$link] = array
+    						(
+    						    'name' => language::translate($branch,
+    						                                  $object->name)
+    					    );
     					}
 
-    					$subbranch =& $subbranch['actions'][$link];
+    					$subbranch =& $subbranch['sub'][$link];
     				}
 
     				$subbranch =& $this->_structure[HOME_COMPONENT][$branch];
@@ -57,21 +64,18 @@ class navigator
 	static function render_list()
 	{
 		$self = new self;
-
 		return html::array_to_list($self->_structure[HOME_COMPONENT]);
 	}
 
 	static function render_breadcrumb()
 	{
 		$self = new self;
-
 		// return array_to_??? in forma di link e testi in base alla posizione
 	}
 
 	static function render_sitemap()
 	{
 		$self = new self;
-
 		return html::array_to_list($self->_structure[HOME_COMPONENT], 'ol');
 	}
 }

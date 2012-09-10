@@ -40,7 +40,6 @@ class html
     	if ($this->_validate_tag())
     	{
     		$this->_html .= "<" . $this->_tag . "__ATTRIBUTES__";
-
     		if ($this->_is_single())
 	        {
 	            $this->_html .= " /";
@@ -48,20 +47,12 @@ class html
 	        else
 	        {
 	            $this->_html .= ">";
-
-	            if ($content)
-	            {
-	            	$this->_html .= "\n";
-	            }
-
 	            if ($this->_is_container())
 	            {
 	                $this->_html .= "__CONTENT__";
 	            }
-
 	            $this->_html .= "</" . $this->_tag;
 	        }
-
 	        $this->_html .= ">";
 
 	        $this->_set_attributes($attributes);
@@ -167,7 +158,7 @@ class html
     	if (!file_exists($_SERVER['DOCUMENT_ROOT'] . PATH . "/" . $src))
 		{
 			$msg = language::translate('error',
-                                       "required file (%s) not exists",
+                                       'required file (%s) not exists',
 				                       $src);
 			main::launch_error($msg);
 		}
@@ -240,7 +231,6 @@ class html
                                $classes = '')
     {
     	$attributes = array();
-
     	if ($classes)
     	{
     		$attributes['class'] = trim($classes);
@@ -260,7 +250,7 @@ class html
     	if (!file_exists($_SERVER['DOCUMENT_ROOT'] . PATH . "/" . $href))
 		{
 			$msg = language::translate('error',
-                                       "required file (%s) not exists",
+                                       'required file (%s) not exists',
 				                       $href);
 			main::launch_error($msg);
 		}
@@ -288,7 +278,6 @@ class html
                                $classes = '')
     {
     	$attributes = array();
-
     	if ($classes)
     	{
     		$attributes['class'] = trim($classes);
@@ -325,7 +314,7 @@ class html
     		if (!file_exists($_SERVER['DOCUMENT_ROOT'] . PATH . "/" . $src))
 			{
 				$msg = language::translate('error',
-	                                       "required file (%s) not exists",
+	                                       'required file (%s) not exists',
 					                       $src);
 				main::launch_error($msg);
 			}
@@ -357,7 +346,6 @@ class html
                                $classes = '')
     {
     	$attributes = array();
-
     	if ($classes)
     	{
     		$attributes['class'] = trim($classes);
@@ -406,10 +394,9 @@ class html
 		{
 			$content .= html::li(html::a($key,
 			                             $value['name']));
-
-			if (!empty($value['actions']))
+			if (!empty($value['sub']))
 			{
-				$content .= self::array_to_list($value['actions'],
+				$content .= self::array_to_list($value['sub'],
 				                                $type);
 			}
 		}
