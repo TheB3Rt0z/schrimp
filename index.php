@@ -88,7 +88,7 @@ class main
 	}
 
 	static function get_version()
-	{
+	{// si potrebbe legare a questa funzione un controllo per la doc..
 		return number_format(date('y') - 13
 		                   + (date('n') - 10) / 12
 		                   + (date('j') - 3) / date('t') / 10,
