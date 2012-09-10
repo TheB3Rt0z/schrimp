@@ -4,14 +4,9 @@ define('PROTOCOL', getenv('HTTPS') == 'on'
 		           ? HTTPS_SERVER
 		           : HTTP_SERVER);
 
-if ($_SERVER['HTTP_HOST'] == "localhost")
-{
-	define('PATH', "/schrimp");
-}
-else
-{
-	define('PATH', '');
-}
+define('PATH', $_SERVER['HTTP_HOST'] == "localhost"
+		       ? "/schrimp"
+		       : '');
 
 define('PROJECT', "Das SCHRIMP");
 
@@ -148,7 +143,7 @@ $main = new main($_SERVER['REQUEST_URI']);
 		html::add_stylesheet(".app/" . $main->controller . ".css");
 		html::add_js_file(".inc/jquery.js");
 		html::add_js_file(".inc/jquery_ui.js");
-		html::add_js_file(".inc/jquery_webcam/jquery.webcam.js");
+		//html::add_js_file(".inc/jquery_webcam/jquery.webcam.js");
 		?>
 	</head>
 	<body>
