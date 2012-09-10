@@ -1,10 +1,8 @@
 <?php //TODO: web-storage, session su PHP o memcache o DB? pspell&gettext
 
-define('PROTOCOL', getenv('HTTPS') == 'on'
-		           ? HTTPS_SERVER
-		           : HTTP_SERVER);
+define('PROTOCOL', "http" . (getenv('HTTPS') == 'on' ? "s" : ''));
 
-define('PATH', $_SERVER['HTTP_HOST'] == "localhost"
+define('PATH', $_SERVER[strtoupper(PROTOCOL) . '_HOST'] == "localhost"
 		       ? "/schrimp"
 		       : '');
 
