@@ -51,7 +51,7 @@ class error extends controller
 			}
 		}
 
-		$this->_set_aside(html::image(".inc/schrimp.png",
+		$this->_set_aside(html::image(".inc/img/schrimp.png",
 		                              PROJECT));
 	}
 

@@ -138,11 +138,11 @@ $main = new main($_SERVER['REQUEST_URI']);
 			<?php echo PROJECT . " v" . $main->get_version() . " | " . $main->title; ?>
 		</title>
 		<?php
-		html::add_favicon(".inc/schrimp_favicon.ico");
+		html::add_favicon(".inc/img/schrimp_favicon.ico");
 	    html::add_stylesheet(".inc/style.css");
 		html::add_stylesheet(".app/" . $main->controller . ".css");
-		html::add_js_file(".inc/jquery.js");
-		html::add_js_file(".inc/jquery_ui.js");
+		html::add_js_file(".inc/js/jquery.js");
+		html::add_js_file(".inc/js/jquery_ui.js");
 		//html::add_js_file(".inc/jquery_webcam/jquery.webcam.js");
 		?>
 	</head>
