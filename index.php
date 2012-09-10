@@ -1,6 +1,8 @@
 <?php //TODO: web-storage, session su PHP o memcache o DB? pspell&gettext
 
-define('PROTOCOL', "http");
+define('PROTOCOL', getenv('HTTPS') == 'on'
+		           ? HTTPS_SERVER
+		           : HTTP_SERVER);
 
 if ($_SERVER['HTTP_HOST'] == "localhost")
 {
