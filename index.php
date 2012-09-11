@@ -1,4 +1,10 @@
-<?php //TODO: web-storage, session su PHP o memcache o DB? pspell&gettext
+<?php
+
+//TODOs: web-storage, session su PHP o memcache o DB? pspell&gettext
+//       implementazione metodo toString per classi e/o metodi, con calcoli
+//       scrivere funzioni per analisi del listato e calcolo indici (documentation)
+//       index fondamentale 12 warning, 24 per error e 36 per lunghezza massima
+//       di un metodo/funzione e 84 per larghezza massima di una singola linea
 
 define('PROTOCOL', "http" . (getenv('HTTPS') == 'on' ? "s" : ''));
 
@@ -9,6 +15,8 @@ define('PATH', $_SERVER[strtoupper(PROTOCOL) . '_HOST'] == "localhost"
 define('PROJECT', "Das SCHRIMP");
 
 define('HOME_COMPONENT', "homepage");
+
+define('COMPLEXITY_INDEX', 12);
 
 class main
 {

@@ -1,4 +1,6 @@
-<?php // navigazione ricorsiva basata sugli handler con underscore multipli
+<?php
+
+// TODO: mouse gesture circolare per far apparire menu a scomparsa
 
 class navigator
 {
