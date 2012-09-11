@@ -139,7 +139,7 @@ class html
     {
     	$self = new self(__FUNCTION__);
 
-    	return str_repeat($self->_html, $lines) . "\n";
+    	return str_repeat($self->_html, $lines);
     }
 
     private static function div($content)
@@ -240,7 +240,7 @@ class html
     	                 $attributes,
     	                 $content);
 
-    	return $self->_html . "\n";
+    	return $self->_html;
     }
 
     private static function link($href,
@@ -271,7 +271,7 @@ class html
 			return false;
 		}
 
-    	return $self->_html . "\n";
+    	return $self->_html;
     }
 
     static private function ol($content,
@@ -287,7 +287,7 @@ class html
     	                 $attributes,
     	                 $content);
 
-    	return $self->_html . "\n";
+    	return $self->_html;
     }
 
     private static function p($content)
@@ -339,7 +339,7 @@ class html
     		return false;
     	}
 
-    	return $self->_html . "\n";
+    	return $self->_html;
     }
 
     static private function ul($content,
@@ -355,7 +355,7 @@ class html
     	                 $attributes,
     	                 $content);
 
-    	return $self->_html . "\n";
+    	return $self->_html;
     }
 
     static function add_favicon($href)

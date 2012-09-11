@@ -4,9 +4,7 @@
 
 define('PROTOCOL', "http" . (getenv('HTTPS') == 'on' ? "s" : ''));
 
-define('PATH', $_SERVER[strtoupper(PROTOCOL) . '_HOST'] == "localhost"
-		       ? "/schrimp"
-		       : '');
+define('PATH', "/schrimp");
 
 define('PROJECT', "Das SCHRIMP");
 
@@ -132,11 +130,12 @@ class main
 
 $main = new main($_SERVER['REQUEST_URI']);
 
+ob_start();
+
 ?><!DOCTYPE html>
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="user-scalable=no,width=device-width" />
-
 		<title>
 			<?php
 			echo PROJECT
@@ -145,7 +144,6 @@ $main = new main($_SERVER['REQUEST_URI']);
                . $main->title;
 			?>
 		</title>
-
 		<?php
 		html::add_favicon(".inc/img/schrimp_favicon.ico");
 	    html::add_stylesheet(".inc/style.css");
@@ -169,10 +167,10 @@ $main = new main($_SERVER['REQUEST_URI']);
 			</article>
 			<aside>
 				<?php echo $main->aside; ?>
-			</aside>
+            </aside>
 		</section>
 		<footer>
 			<?php echo $main->footer; ?>
 		</footer>
 	</body>
-</html>
+</html><?php echo str_replace(array("\t", "\n", "\r", "  "), '', ob_get_clean()); ?>
