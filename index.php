@@ -1,10 +1,6 @@
 <?php
 
-//TODOs: web-storage, session su PHP o memcache o DB? pspell&gettext
-//       implementazione metodo toString per classi e/o metodi, con calcoli
-//       scrivere funzioni per analisi del listato e calcolo indici (documentation)
-//       index fondamentale 12 warning, 24 per error e 36 per lunghezza massima
-//       di un metodo/funzione e 84 per larghezza massima di una singola linea
+//TODO: web-storage, session su PHP o memcache o DB? pspell&gettext
 
 define('PROTOCOL', "http" . (getenv('HTTPS') == 'on' ? "s" : ''));
 
@@ -94,7 +90,9 @@ class main
 	}
 
 	static function get_version()
-	{// si potrebbe legare a questa funzione un controllo per la doc..
+	{
+		// si potrebbe legare a questa funzione un controllo per la doc..
+		// se non esiste il file docs_v#.##.nfo lo si crea e si cancella gli altri
 		return number_format(date('y') - 13
 		                   + (date('n') - 10) / 12
 		                   + (date('j') - 3) / date('t') / 10,

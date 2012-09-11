@@ -1,0 +1,1 @@
+set "AllowOverride All" directive for .htaccess local files
