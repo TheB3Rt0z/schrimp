@@ -174,3 +174,69 @@ ob_start();
 		</footer>
 	</body>
 </html><?php echo str_replace(array("\t", "\n", "\r", "  "), '', ob_get_clean()); ?>
+
+<?php
+$op_on = ".75";
+$op_off = ".50";
+$trans = "all .5s ease";
+// applicare lo stesso effetto ai link? text-shadow invee di box..
+// processare quel foglio con palestra e idee per lo schrimp!
+?>
+
+<style>
+    .exp
+    {
+        box-shadow: 1px 2px 3px black;
+        -webkit-box-shadow: 1px 2px 3px black;
+        -moz-box-shadow: 1px 2px 3px black;
+        -o-box-shadow: 1px 2px 3px black;
+        float: left;
+        margin: 10px;
+        background-color: white;
+        opacity: <?php echo $op_off; ?>;
+        -webkit-opacity: <?php echo $op_off; ?>;
+        -moz--opacity: <?php echo $op_off; ?>;
+        -o-opacity: <?php echo $op_off; ?>;
+        padding: 5px;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -o-border-radius: 5px;
+        transition: <?php echo $trans; ?>;
+        -webkit-transition: <?php echo $trans; ?>;
+        -moz-transition: <?php echo $trans; ?>;
+        -o-transition: <?php echo $trans; ?>;
+        border: solid 1px;
+        border-top-color: #ccc;
+        border-left-color: #999;
+        border-right-color: #666;
+        border-bottom-color: #333;
+    }
+    .exp:hover
+    {
+        opacity: <?php echo $op_on; ?>;
+        -webkit-opacity: <?php echo $op_on; ?>;
+        -moz--opacity: <?php echo $op_on; ?>;
+        -o-opacity: <?php echo $op_on; ?>;
+        box-shadow: 2px 4px 6px black;
+        -webkit-box-shadow: 2px 4px 6px black;
+        -moz-box-shadow: 2px 4px 6px black;
+        -o-box-shadow: 2px 4px 6px black;
+        border-bottom-right-radius: 15px;
+        -webkit-border-bottom-right-radius: 15px;
+        -moz-border-bottom-right-radius: 15px;
+        -o-border-bottom-right-radius: 15px;
+    }
+</style>
+
+<div style="background-color: dimgrey; padding: 50px; height: 200px;">
+
+<div class="exp">
+    NUMERO 1
+</div>
+
+<div class="exp">
+    NUMERO 2
+</div>
+
+</div>
