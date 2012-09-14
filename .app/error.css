@@ -1,0 +1,44 @@
+h1
+{
+	animation: red_alert .75s ease-out infinite alternate;
+	-webkit-animation: red_alert .75s ease-out infinite alternate;
+    -moz-animation: red_alert .75s ease-out infinite alternate;
+    -o-animation: red_alert .75s ease-out infinite alternate;
+}
+
+	@keyframes red_alert
+	{
+	    from {}
+	    to
+	    {
+	        color: red;
+	        text-shadow: 0 0 10px red;
+	    }  
+	}
+	@-webkit-keyframes red_alert
+	{
+	    from {}
+	    to
+	    {
+	        color: red;
+	        text-shadow: 0 0 10px red;
+	    }  
+	}
+	@-moz-keyframes red_alert
+	{
+	    from {}
+	    to
+	    {
+	        color: red;
+	        text-shadow: 0 0 10px red;
+	    }  
+	}
+	@-o-keyframes red_alert
+	{
+	    from {}
+	    to
+	    {
+	        color: red;
+	        text-shadow: 0 0 10px red;
+	    }  
+	}
