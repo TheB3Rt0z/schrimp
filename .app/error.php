@@ -6,49 +6,18 @@ class error extends controller
 
 	function initialize()
 	{
-		switch ($this->_action)
+		if (!$this->_action)
 		{
-			case false :
-			{
-				$this->_handler();
-				break;
-			}
-
-			case 400 :
-			{
-				$this->_handler_400();
-				break;
-			}
-
-			case 401 :
-			{
-				$this->_handler_401();
-				break;
-			}
-
-			case 403 :
-			{
-				$this->_handler_403();
-				break;
-			}
-
-			case 404 :
-			{
-				$this->_handler_404();
-				$this->_set_article(navigator::render_sitemap());
-				break;
-			}
-
-			case 500 :
-			{
-				$this->_handler_500();
-				break;
-			}
-
-			default :
-			{
-				main::relocate_to("error/404");
-			}
+			$this->_handler();
+		}
+		elseif (is_numeric($this->_action)
+		    && method_exists(__CLASS__, '_handler_' . $this->_action))
+		{
+			call_user_func(array(__CLASS__, '_handler_' . $this->_action));
+		}
+		else
+		{
+			main::relocate_to("error/404");
 		}
 
 		$this->_set_aside(html::image(".inc/img/schrimp.png",
@@ -113,6 +82,8 @@ class error extends controller
 
 		$this->_set_section(html::title(2,
                                         $this->_translate('no content') . "!"));
+
+        $this->_set_article(navigator::render_sitemap());
 	}
 
 	private function _handler_500()
@@ -130,7 +101,7 @@ class error extends controller
 		$this->_set_section(html::title(2,
                                         $this->_translate('something not works')
 				                      . " " . $ending));
-
+// qui si potrebbe usare il SOAP per passare header e contenuto (messaggio)
 		if (!empty($this->_args))
 		{
 			$this->_set_article(html::title(3,

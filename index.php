@@ -46,7 +46,7 @@ class main
 	}
 
 	private function _initialize($route)
-	{
+	{// verificare se troppo errordocument fa problemi SEO ecc
 		$components = explode("/",
 		                      $route);
 
