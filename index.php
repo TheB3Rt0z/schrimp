@@ -176,8 +176,8 @@ ob_start();
 </html><?php echo str_replace(array("\t", "\n", "\r", "  "), '', ob_get_clean()); ?>
 
 <?php
-$op_on = ".75";
-$op_off = ".50";
+$op_on = ".99";
+$op_off = ".66";
 $trans = "all .5s ease";
 // applicare lo stesso effetto ai link? text-shadow invee di box..
 // processare quel foglio con palestra e idee per lo schrimp!
@@ -222,10 +222,6 @@ $trans = "all .5s ease";
         -webkit-box-shadow: 2px 4px 6px black;
         -moz-box-shadow: 2px 4px 6px black;
         -o-box-shadow: 2px 4px 6px black;
-        border-bottom-right-radius: 15px;
-        -webkit-border-bottom-right-radius: 15px;
-        -moz-border-bottom-right-radius: 15px;
-        -o-border-bottom-right-radius: 15px;
     }
 </style>
 

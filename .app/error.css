@@ -1,5 +1,6 @@
 h1
 {
+	color: #666;
 	animation: red_alert .75s ease-out infinite alternate;
 	-webkit-animation: red_alert .75s ease-out infinite alternate;
     -moz-animation: red_alert .75s ease-out infinite alternate;
@@ -42,3 +43,8 @@ h1
 	        text-shadow: 0 0 10px red;
 	    }  
 	}
+	
+h2
+{
+	color: lavender;
+}
