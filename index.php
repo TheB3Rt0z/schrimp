@@ -14,11 +14,11 @@ define('COMPLEXITY_INDEX', 12);
 
 class main
 {
-	private $_controller = null;
-	private $_action = false;
-	private $_args = array();
+	private $_call = null;
 
-	var $controller = false;
+	static $controller = null;
+	static $action = false;
+	static $args = array();
 
 	var $title = '';
 
@@ -57,34 +57,34 @@ class main
 				$this->relocate_to("error/404");
 			}
 
-			$this->controller = array_shift($components);
+			self::$controller = array_shift($components);
 			if (!empty($components))
 			{
-				$this->_action = array_shift($components);
+				self::$action = array_shift($components);
 				if ($components)
 				{
-					$this->_args = $components;
+					self::$args = $components;
 				}
 			}
 		}
 		else
 		{
-			$this->controller = HOME_COMPONENT;
+			self::$controller = HOME_COMPONENT;
 		}
 
-		require_once(".app/" . $this->controller . ".php");
+		require_once(".app/" . self::$controller . ".php");
 
-		$this->_controller = new $this->controller($this->_action,
-	                                               $this->_args);
+		$this->_call = new self::$controller(self::$action,
+	                                         self::$args);
 
-	    $this->title = $this->_controller->get_title() . "\n";
+	    $this->title = $this->_call->get_title() . "\n";
 
-	    $this->header = $this->_controller->get_header() . "\n";
-	    $this->nav = $this->_controller->get_nav() . "\n";
-	    $this->section = $this->_controller->get_section() . "\n";
-	    $this->article = $this->_controller->get_article() . "\n";
-	    $this->aside = $this->_controller->get_aside() . "\n";
-		$this->footer = $this->_controller->get_footer() . "\n";
+	    $this->header = $this->_call->get_header() . "\n";
+	    $this->nav = $this->_call->get_nav() . "\n";
+	    $this->section = $this->_call->get_section() . "\n";
+	    $this->article = $this->_call->get_article() . "\n";
+	    $this->aside = $this->_call->get_aside() . "\n";
+		$this->footer = $this->_call->get_footer() . "\n";
 	}
 
 	static function get_version()
@@ -147,7 +147,7 @@ ob_start();
 		<?php
 		html::add_favicon(".inc/img/schrimp_favicon.ico");
 	    html::add_stylesheet(".inc/style.css");
-		html::add_stylesheet(".app/" . $main->controller . ".css");
+		html::add_stylesheet(".app/" . main::$controller . ".css");
 		html::add_js_file(".inc/js/jquery.js");
 		html::add_js_file(".inc/js/jquery_ui.js");
 		//html::add_js_file(".inc/jquery_webcam/jquery.webcam.js");
@@ -156,6 +156,7 @@ ob_start();
 	<body>
 		<header>
 			<?php echo $main->header; ?>
+			<?php navigator::render_breadcrumb(); ?>
 		</header>
 		<nav>
 			<?php echo $main->nav; ?>
