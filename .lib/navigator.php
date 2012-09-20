@@ -10,7 +10,14 @@ class navigator
 	{
 		if (!empty($this->_structure)) return; // singleton
 
-		$this->_structure = array(HOME_COMPONENT => array());
+		$this->_structure = array
+		(
+			HOME_COMPONENT => array
+			(
+				'name' => language::translate(HOME_COMPONENT,
+                                              'COMPONENT VISIBLE NAME'),
+            ),
+        );
 
 		foreach (array_filter(glob(".app/*.php"),
 		                      function($value)
@@ -72,7 +79,33 @@ class navigator
 	static function render_breadcrumb()
 	{
 		$self = new self;
-		// return array_to_??? in forma di link e testi in base alla posizione
+
+		if (!empty(main::$controller))
+		{
+			echo "<a href=\"" . main::resolve_uri('') . "\">"
+			    . $self->_structure[HOME_COMPONENT]['name'] . "</a>";
+
+			if (!empty(main::$action))
+			{
+				echo "<a href=\""
+				    . main::resolve_uri('/' . main::$controller) . "\">"
+				    . $self->_structure[HOME_COMPONENT][main::$controller]['name']
+				    . "</a>";
+var_dump(main::$action);
+				if (!empty(main::$args))
+				{
+					// e qui è un casino..
+				}
+				else
+				{
+					echo $self->_structure[HOME_COMPONENT][main::$controller]['sub'][main::$controller . '/' . main::$action ]['name'];
+				}
+			}
+			else
+			{
+				echo $self->_structure[HOME_COMPONENT][main::$controller]['name'];
+			}
+		}
 	}
 
 	static function render_sitemap()
