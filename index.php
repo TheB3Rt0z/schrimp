@@ -162,6 +162,7 @@ ob_start();
 		<script type="text/javascript">
 		JQ = jQuery.noConflict();
 		</script>
+		https://developers.google.com/speed/libraries/devguide#jquery
 		//html::add_js_file(".inc/jquery_webcam/jquery.webcam.js");
 		?>
 	</head>
