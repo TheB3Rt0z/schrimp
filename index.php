@@ -158,6 +158,10 @@ ob_start();
 		html::add_stylesheet(".app/" . main::$controller . ".css");
 		html::add_js_file(".inc/js/jquery.js");
 		html::add_js_file(".inc/js/jquery_ui.js");
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script type="text/javascript">
+		JQ = jQuery.noConflict();
+		</script>
 		//html::add_js_file(".inc/jquery_webcam/jquery.webcam.js");
 		?>
 	</head>
