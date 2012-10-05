@@ -3,6 +3,8 @@
 abstract class controller
 {
 	const VISIBLE_IN_NAVIGATION = true;
+	
+	const RENDER_BREADCRUMB = true;
 
 	protected $_action = false;
 	protected $_args = array();

@@ -8,7 +8,8 @@ class navigator
 
 	function __construct()
 	{
-		if (!empty($this->_structure)) return; // singleton
+		if (!empty($this->_structure))
+			return;
 
 		$this->_structure = array
 		(
@@ -32,13 +33,13 @@ class navigator
     		$rc = new ReflectionClass($branch);
     		if ($rc->getConstant('VISIBLE_IN_NAVIGATION'))
     		{
-    			$this->_structure[HOME_COMPONENT][$branch] = array
+    			$this->_structure[HOME_COMPONENT]['sub'][$branch] = array
     			(
     			    'name' => language::translate($branch,
                                                   'COMPONENT VISIBLE NAME')
     		    );
 
-    			$subbranch =& $this->_structure[HOME_COMPONENT][$branch];
+    			$subbranch =& $this->_structure[HOME_COMPONENT]['sub'][$branch];
 
     			foreach ($rc->getMethods(ReflectionMethod::IS_PRIVATE
     				   | !ReflectionMethod::IS_PROTECTED) as $object)
@@ -53,18 +54,16 @@ class navigator
     					$link .= "/" . $name;
 
     					if (!isset($subbranch['sub'][$link]))
-    					{
     						$subbranch['sub'][$link] = array
     						(
     						    'name' => language::translate($branch,
     						                                  $object->name)
     					    );
-    					}
 
     					$subbranch =& $subbranch['sub'][$link];
     				}
 
-    				$subbranch =& $this->_structure[HOME_COMPONENT][$branch];
+    				$subbranch =& $this->_structure[HOME_COMPONENT]['sub'][$branch];
 				}
     		}
 		}
@@ -73,45 +72,50 @@ class navigator
 	static function render_list()
 	{
 		$self = new self;
-		return html::array_to_list($self->_structure[HOME_COMPONENT]);
+
+		return html::array_to_list($self->_structure[HOME_COMPONENT]['sub']);
 	}
 
 	static function render_breadcrumb()
 	{
+		$controller = main::$controller;
+
+		if (!$controller::RENDER_BREADCRUMB)
+			return;
+
 		$self = new self;
 
-		if (!empty(main::$controller))
+		if ($controller != HOME_COMPONENT)
 		{
-			echo "<a href=\"" . main::resolve_uri('') . "\">"
-			    . $self->_structure[HOME_COMPONENT]['name'] . "</a>";
+			$structure = $self->_structure[HOME_COMPONENT];
+
+			echo html::hyperlink('',
+				                 $structure['name']) . BREADCRUMB_SEPARATOR;
 
 			if (!empty(main::$action))
 			{
-				echo "<a href=\""
-				    . main::resolve_uri('/' . main::$controller) . "\">"
-				    . $self->_structure[HOME_COMPONENT][main::$controller]['name']
-				    . "</a>";
-var_dump(main::$action);
+				echo html::hyperlink($controller,
+				                     $structure['sub'][$controller]['name']) . BREADCRUMB_SEPARATOR;
+
 				if (!empty(main::$args))
 				{
-					// e qui è un casino..
+					echo html::hyperlink($controller . '/' . main::$action,
+				                         $structure['sub'][$controller]['sub'][$controller . '/' . main::$action]['name']) . BREADCRUMB_SEPARATOR;
+				    // ciclo degli handler basati sulle acrtion args
 				}
 				else
-				{
-					echo $self->_structure[HOME_COMPONENT][main::$controller]['sub'][main::$controller . '/' . main::$action ]['name'];
-				}
+					echo $structure['sub'][$controller]['sub'][$controller . '/' . main::$action]['name'];
 			}
 			else
-			{
-				echo $self->_structure[HOME_COMPONENT][main::$controller]['name'];
-			}
+				echo $structure['sub'][$controller]['name'];
 		}
 	}
 
 	static function render_sitemap()
 	{
 		$self = new self;
-		return html::array_to_list($self->_structure[HOME_COMPONENT], 'ol');
+
+		return html::array_to_list($self->_structure[HOME_COMPONENT]['sub'], 'ol');
 	}
 }
 

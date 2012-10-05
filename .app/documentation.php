@@ -21,7 +21,6 @@ class documentation extends controller
 			case 'list' :
 			{
 				if (!empty($this->_args))
-				{
 					switch ($this->_args[0])
 					{
 						case 'files' :
@@ -31,22 +30,15 @@ class documentation extends controller
 						}
 
 						default :
-						{
 							main::relocate_to("/error/404");
-						}
 					}
-				}
 				else
-				{
 					$this->_handler_list();
-				}
 				break;
 			}
 
 			default :
-			{
 				main::relocate_to("/error/404");
-			}
 		}
 	}
 

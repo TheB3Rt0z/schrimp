@@ -41,16 +41,12 @@ class html
     	{
     		$this->_html .= "<" . $this->_tag . "__ATTRIBUTES__";
     		if ($this->_is_single())
-	        {
 	            $this->_html .= " /";
-	        }
 	        else
 	        {
 	            $this->_html .= ">";
 	            if ($this->_is_container())
-	            {
 	                $this->_html .= "__CONTENT__";
-	            }
 	            $this->_html .= "</" . $this->_tag;
 	        }
 	        $this->_html .= ">";
@@ -58,9 +54,7 @@ class html
 	        $this->_set_attributes($attributes);
 
 	        if ($this->_is_container($this->_tag))
-	        {
 	            $this->_set_content($content);
-	        }
     	}
     }
 
@@ -92,14 +86,10 @@ class html
     		$attributes .= " " . trim(strtolower($key)) . "=\"";
 
     		if (is_array($value))
-    		{
     			$attributes .= implode(" ",
     			                       $value);
-    		}
     		else
-    		{
     			$attributes .= $value;
-    		}
 
     		$attributes .= "\"";
     	}
@@ -122,9 +112,7 @@ class html
                               $content)
     {
     	if (!strpos($href, "://"))
-    	{
     		$href = main::resolve_uri($href);
-    	}
 
     	$attributes = array('href' => $href);
 
@@ -232,9 +220,7 @@ class html
     {
     	$attributes = array();
     	if ($classes)
-    	{
     		$attributes['class'] = trim($classes);
-    	}
 
     	$self = new self(__FUNCTION__,
     	                 $attributes,
@@ -267,9 +253,7 @@ class html
 			html::$_linked_files[] = $href;
 		}
 		else
-		{
 			return false;
-		}
 
     	return $self->_html;
     }
@@ -279,9 +263,7 @@ class html
     {
     	$attributes = array();
     	if ($classes)
-    	{
     		$attributes['class'] = trim($classes);
-    	}
 
     	$self = new self(__FUNCTION__,
     	                 $attributes,
@@ -311,7 +293,8 @@ class html
     	if ($src
     		&& !in_array($src, html::$_loaded_scripts))
     	{
-    		if (!file_exists($_SERVER['DOCUMENT_ROOT'] . PATH . "/" . $src))
+    		if (!file_exists($_SERVER['DOCUMENT_ROOT'] . PATH . "/" . $src)
+    			&& !parse_url($src))
 			{
 				$msg = language::translate('error',
 	                                       'required file (%s) not exists',
@@ -335,9 +318,7 @@ class html
     	    html::$_loaded_scripts[] = $content;
     	}
     	else
-    	{
     		return false;
-    	}
 
     	return $self->_html;
     }
@@ -347,9 +328,7 @@ class html
     {
     	$attributes = array();
     	if ($classes)
-    	{
     		$attributes['class'] = trim($classes);
-    	}
 
     	$self = new self(__FUNCTION__,
     	                 $attributes,
@@ -395,13 +374,27 @@ class html
 			$content .= html::li(html::a($key,
 			                             $value['name']));
 			if (!empty($value['sub']))
-			{
 				$content .= self::array_to_list($value['sub'],
 				                                $type);
-			}
 		}
 
 		return self::$type($content);
+    }
+
+    static function hyperlink($href,
+                              $content = false)
+    {
+    	return self::a($href,
+                       (!$content ? $href : $content));
+    }
+
+    static function image($src,
+    					  $alt,
+                          $title = '')
+    {
+    	return self::img($src,
+    					 $alt,
+                         $title);
     }
 
     static function title($level,
@@ -414,15 +407,6 @@ class html
     		$level = "h" . $level;
         	return self::$level($content);
     	}
-    }
-
-    static function image($src,
-    					  $alt,
-                          $title = '')
-    {
-    	return self::img($src,
-    					 $alt,
-                         $title);
     }
 }
 

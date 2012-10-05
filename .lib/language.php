@@ -23,16 +23,11 @@ class language
 		             . "]";
 
 		if (isset(self::$_translations[$marker][$language]))
-		{
 			$translation = self::$_translations[$marker][$language];
-		}
 		elseif (isset(self::$_translations[$marker][FALLBACK_LANGUAGE]))
-		{
 			$translation = self::$_translations[$marker][FALLBACK_LANGUAGE];
-		}
 
 		foreach ($texts as $key => $value)
-		{
 			if ($marker == $value)
 			{
 				while ($text = explode("||", $texts[++$key]))
@@ -50,7 +45,6 @@ class language
 					}
 				}
 			}
-		}
 
 		return vsprintf($translation, $args);
 	}

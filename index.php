@@ -16,7 +16,7 @@ class main
 {
 	private $_call = null;
 
-	static $controller = null;
+	static $controller = '';
 	static $action = false;
 	static $args = array();
 
@@ -40,17 +40,13 @@ class main
 	private function _load_libraries()
 	{
 		foreach (glob(".lib/*.php") as $filename)
-		{
     		require_once($filename);
-		}
 
 		// creare micro-alias delle funzioni + utili (direttamente nela libreria?)
 
 		// bisogna immaginarsi qualcosa per la risoluzione di eventuali conflitti
 		foreach (glob("lib/*.php") as $filename)
-		{
 			require_once($filename);
-		}
 	}
 
 	private function _initialize($route)
@@ -61,24 +57,18 @@ class main
 		if ($components[0])
 		{
 			if (!file_exists(".app/" . $components[0] . ".php"))
-			{
 				$this->relocate_to("error/404");
-			}
 
 			self::$controller = array_shift($components);
 			if (!empty($components))
 			{
 				self::$action = array_shift($components);
 				if ($components)
-				{
 					self::$args = $components;
-				}
 			}
 		}
 		else
-		{
 			self::$controller = HOME_COMPONENT;
-		}
 
 		require_once(".app/" . self::$controller . ".php");
 
@@ -95,6 +85,11 @@ class main
 		$this->footer = $this->_call->get_footer() . "\n";
 	}
 
+	function get_call()
+	{
+		return $this->_call;
+	}
+
 	static function get_version()
 	{
 		// si potrebbe legare a questa funzione un controllo per la doc..
@@ -108,7 +103,7 @@ class main
 		return extension_loaded('memcache');
 	}
 
-	static function resolve_uri($uri)
+	static function resolve_uri($uri = '')
 	{
 		return PROTOCOL . "://" . $_SERVER['HTTP_HOST'] . PATH . "/" . $uri;
 	}
@@ -127,9 +122,7 @@ class main
 		$url = "error/500/" . urlencode($msg);
 
 		if ($_SERVER['REQUEST_URI'] != PATH . "/" . $url)
-		{
 			main::relocate_to($url);
-		}
 	}
 }
 
@@ -214,7 +207,7 @@ $trans = "all .5s ease";
         -webkit-transition: <?php echo $trans; ?>;
         -moz-transition: <?php echo $trans; ?>;
         -o-transition: <?php echo $trans; ?>;
-        border: solid 1px;
+        border: solid 2px;
         border-top-color: #ccc;
         border-left-color: #999;
         border-right-color: #666;

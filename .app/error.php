@@ -4,21 +4,19 @@ class error extends controller
 {
 	const VISIBLE_IN_NAVIGATION = false;
 
+	const RENDER_BREADCRUMB = false;
+
 	function initialize()
 	{
 		if (!$this->_action)
-		{
 			$this->_handler();
-		}
 		elseif (is_numeric($this->_action)
-		    && method_exists(__CLASS__, '_handler_' . $this->_action))
+			&& method_exists(__CLASS__, '_handler_' . $this->_action))
 		{
 			call_user_func(array(__CLASS__, '_handler_' . $this->_action));
 		}
 		else
-		{
 			main::relocate_to("error/404");
-		}
 
 		$this->_set_aside(html::image(".inc/img/schrimp.png",
 		                              PROJECT));
@@ -103,10 +101,8 @@ class error extends controller
 				                      . " " . $ending));
 // qui si potrebbe usare il SOAP per passare header e contenuto (messaggio)
 		if (!empty($this->_args))
-		{
 			$this->_set_article(html::title(3,
 			                                urldecode($this->_args[0])));
-		}
 	}
 }
 
