@@ -99,9 +99,9 @@ class main
 	{
 		// si potrebbe legare a questa funzione un controllo per la doc..
 		// se non esiste il file docs_v#.##.nfo lo si crea e si cancella gli altri
-		return number_format(date('y') - 13
-		                   + (date('n') - 10) / 12
-		                   + (date('j') - 3) / date('t') / 10,
+		return number_format(date('y') - 12
+		                   + (date('n') - 9) / 12
+		                   + (date('j') - 21) / date('t') / 10,
 		                     2);
 	}
 
