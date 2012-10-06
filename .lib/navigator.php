@@ -57,7 +57,8 @@ class navigator
     						$subbranch['sub'][$link] = array
     						(
     						    'name' => language::translate($branch,
-    						                                  $object->name)
+    						                                  $object->name),
+    						    'handler' => $object->name
     					    );
 
     					$subbranch =& $subbranch['sub'][$link];
@@ -94,17 +95,38 @@ class navigator
 
 			if (!empty(main::$action))
 			{
+				$branch = $structure['sub'][$controller];
+
 				echo html::hyperlink($controller,
-				                     $structure['sub'][$controller]['name']) . BREADCRUMB_SEPARATOR;
+				                     $branch['name']) . BREADCRUMB_SEPARATOR;
+
+				$link = $controller . "/" . main::$action;
+
+				 $name = $branch['sub'][$link]['handler'] .= '_' . main::$args[0];
 
 				if (!empty(main::$args))
 				{
-					echo html::hyperlink($controller . '/' . main::$action,
-				                         $structure['sub'][$controller]['sub'][$controller . '/' . main::$action]['name']) . BREADCRUMB_SEPARATOR;
-				    // ciclo degli handler basati sulle acrtion args
+					echo html::hyperlink($link,
+				                         $branch['sub'][$link]['name'])
+				       . BREADCRUMB_SEPARATOR;
+
+				    if (count(main::$args) > 1)
+					{
+						$name = language::translate($controller,
+    						                        $name);
+
+						echo html::hyperlink($link .= "/" . main::$args[0],
+				                         	 $name) . BREADCRUMB_SEPARATOR;
+
+						echo urldecode(implode(BREADCRUMB_SEPARATOR,
+						                       array_slice(main::$args, 1)));
+					}
+					else
+						echo language::translate($controller,
+					                             $name);
 				}
 				else
-					echo $structure['sub'][$controller]['sub'][$controller . '/' . main::$action]['name'];
+					echo $branch['sub'][$link]['name'];
 			}
 			else
 				echo $structure['sub'][$controller]['name'];
