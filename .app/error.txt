@@ -1,7 +1,7 @@
 COMPONENT VISIBLE NAME
-de||fehler
-en||error
-it||errore
+de||Fehler
+en||Error
+it||Errore
 
 unknown error
 de||unerkannte Fehler
@@ -13,6 +13,11 @@ de||Hier ist ein beunruhigende Problem aufgetreten..
 en||Some disturbing problem occurred here..
 it||Qui è capitato qualcosa di strano..
 
+_handler_400
+de||HTTP-Fehler 400
+en||HTTP error 400
+it||Errore HTTP 400
+
 a bad request
 de||hä, schlechte Anfrage
 en||that's a bad request
@@ -22,6 +27,11 @@ little bad
 de||Es scheint, dass du ein wenig böse bist
 en||It seems, that you are a little too bad
 it||Sembra che tu sia un tantino furbetto
+
+_handler_401
+de||HTTP-Fehler 401
+en||HTTP error 401
+it||Errore HTTP 401
 
 unauthorized
 de||unerlaubte Benutzer
@@ -33,6 +43,11 @@ de||Bitte melden Sie sich an, um weiterzugehen
 en||Please log you in to access this resource
 it||Per favore fare il login prima di proseguire
 
+_handler_403
+de||HTTP-Fehler 403
+en||HTTP error 403
+it||Errore HTTP 403
+
 resource forbidden
 de||Zugang verboten
 en||resource forbidden
@@ -43,6 +58,11 @@ de||Sie versuchen, eingeschränkte Inhalte zuzugreifen
 en||You're trying to access our restricted contents
 it||Stai cercando di accedere a risorse riservate
 
+_handler_404
+de||HTTP-Fehler 404
+en||HTTP error 404
+it||Errore HTTP 404
+
 resource not found
 de||Ressource nicht gefunden
 en||resource not found
@@ -52,6 +72,11 @@ no content
 de||Was Sie suchen scheint nicht zu existieren
 en||What you search doesn't seem to exist
 it||Quel che tu cerchi qui non si trova
+
+_handler_500
+de||HTTP-Fehler 500
+en||HTTP error 500
+it||Errore HTTP 500
 
 some internal error
 de||einige interne Fehler

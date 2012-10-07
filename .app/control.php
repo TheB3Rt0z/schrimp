@@ -4,7 +4,7 @@ class control extends controller
 {
 	function initialize()
 	{
-
+		
 	}
 
 	protected function _handler()
@@ -23,6 +23,11 @@ class control extends controller
 	}
 
 	private function _handler_core_controller()
+	{
+
+	}
+
+	private function _handler_core_escort()
 	{
 
 	}
@@ -47,9 +52,39 @@ class control extends controller
 
 	}
 
-	private function _handler_components()
+	private function _handler_plugins()
+	{
+		// directory lib
+	}
+
+	private function _handler_modules()
 	{
 
+	}
+
+	private function _handler_modules_homepage()
+	{
+
+	}
+
+	private function _handler_modules_control()
+	{
+
+	}
+
+	private function _handler_modules_documentation()
+	{
+
+	}
+
+	private function _handler_modules_error()
+	{
+
+	}
+
+	private function _handler_applications()
+	{
+		// directory app
 	}
 }
 

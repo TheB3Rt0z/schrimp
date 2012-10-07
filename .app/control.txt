@@ -2,3 +2,78 @@ COMPONENT VISIBLE NAME
 de||Einstellungen
 en||Settings
 it||Impostazioni
+
+_handler_core
+de||Hauptbibliothek
+en||Core libraries
+it||Librerie principali
+
+_handler_core_db
+de||Datenbank
+en||Database
+it||Banca dati
+
+_handler_core_controller
+de||Kontrolleur
+en||Controller
+it||Controllore
+
+_handler_core_escort
+de||Gehilfe
+en||Escort
+it||Assistente
+
+_handler_core_navigator
+de||Navigation
+en||Navigator
+it||Navigatore
+
+_handler_core_html
+de||HTML Markup
+en||HTML Markup
+it||HTML Markup
+
+_handler_core_widget
+de||Dingsbums
+en||Widgets
+it||Gadgets
+
+_handler_core_language
+de||Übersetzer
+en||Translator
+it||Traduttore
+
+_handler_plugins
+de||Anwendungsbibliothek
+en||Application libraries
+it||Librerie addizionali
+
+_handler_modules
+de||Hauptmodule
+en||Core modules
+it||Moduli principali
+
+_handler_modules_homepage
+de||Hauptseite
+en||Main page
+it||Prima pagina
+
+_handler_modules_control
+de||Verwaltung
+en||Administration
+it||Amministrazione
+
+_handler_modules_documentation
+de||Dokumentation
+en||Documentation
+it||Documentazione
+
+_handler_modules_error
+de||Fehlerbehandlung
+en||Erro handling
+it||Gestione errori
+
+_handler_applications
+de||Anwendungsmodule
+en||Applications modules
+it||Moduli addizionali
