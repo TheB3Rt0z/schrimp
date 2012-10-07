@@ -145,9 +145,9 @@ class html
     {
     	if (!file_exists($_SERVER['DOCUMENT_ROOT'] . PATH . "/" . $src))
 		{
-			$msg = language::translate('error',
-                                       'required file (%s) not exists',
-				                       $src);
+			$msg = t('error',
+                     'required file (%s) not exists',
+				     $src);
 			main::launch_error($msg);
 		}
 
@@ -235,9 +235,9 @@ class html
     {
     	if (!file_exists($_SERVER['DOCUMENT_ROOT'] . PATH . "/" . $href))
 		{
-			$msg = language::translate('error',
-                                       'required file (%s) not exists',
-				                       $href);
+			$msg = t('error',
+                     'required file (%s) not exists',
+				     $href);
 			main::launch_error($msg);
 		}
 		elseif ($href
@@ -296,9 +296,9 @@ class html
     		if (!file_exists($_SERVER['DOCUMENT_ROOT'] . PATH . "/" . $src)
     			&& !parse_url($src))
 			{
-				$msg = language::translate('error',
-	                                       'required file (%s) not exists',
-					                       $src);
+				$msg = t('error',
+	                     'required file (%s) not exists',
+					     $src);
 				main::launch_error($msg);
 			}
 

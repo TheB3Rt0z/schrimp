@@ -24,9 +24,9 @@ class db
 
 			default :
 			{
-				$msg = language::translate('error',
-                                           "unknown %s database type",
-				                           DB_TYPE);
+				$msg = t('error',
+                         "unknown %s database type",
+				         DB_TYPE);
 				main::launch_error($msg);
 			}
 		}

@@ -1,6 +1,10 @@
 a
 {
 	color: #CCC;
+	text-shadow: 0 1px 2px black;
+    -webkit-text-shadow: 0 1px 2px black;
+    -moz-text-shadow: 0 1px 2px black;
+    -o-text-shadow: 0 1px 2px black;
 	transition: all .25s;
 	-webkit-transition: all .25s;
 	-moz-transition: all .25s;
@@ -10,10 +14,10 @@ a
 	a:hover
 	{
 		color: white;
-		text-shadow: 0 0 5px white;
-		-webkit-text-shadow: 0 0 5px white;
-		-moz-text-shadow: 0 0 5px white;
-		-o-text-shadow: 0 0 5px white;
+		text-shadow: 0 0 3px white;
+		-webkit-text-shadow: 0 0 3px white;
+		-moz-text-shadow: 0 0 3px white;
+		-o-text-shadow: 0 0 3px white;
 	}
 
 article

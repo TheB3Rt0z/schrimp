@@ -4,12 +4,21 @@ define('FALLBACK_LANGUAGE', "en");
 
 class language
 {
+	static private $_languages = array('de',
+								       'en',
+								       'it');
+
 	static $_translations = array('here' => array('de' => "hier",
 	                                              'en' => "here",
 	                                              'it' => "qua"),
 	                              'now' => array('de' => "jetzt",
 	                                             'en' => "now",
 	                                             'it' => "ora"));
+
+	static function is_supported($language)
+	{
+		return in_array($language, self::$_languages);
+	}
 
 	static function translate($component,
 	                          $marker)
@@ -48,6 +57,13 @@ class language
 
 		return vsprintf($translation, $args);
 	}
+}
+
+function t($component,
+	       $marker)
+{
+	return language::translate($component,
+	                           $marker);
 }
 
 ?>

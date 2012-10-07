@@ -73,7 +73,7 @@ de||Fehlerbehandlung
 en||Erro handling
 it||Gestione errori
 
-_handler_applications
+_handler_application
 de||Anwendungsmodule
-en||Applications modules
+en||Application modules
 it||Moduli addizionali

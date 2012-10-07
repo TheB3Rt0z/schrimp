@@ -15,8 +15,8 @@ class navigator
 		(
 			HOME_COMPONENT => array
 			(
-				'name' => language::translate(HOME_COMPONENT,
-                                              'COMPONENT VISIBLE NAME'),
+				'name' => t(HOME_COMPONENT,
+                            'COMPONENT VISIBLE NAME'),
             ),
         );
 
@@ -35,8 +35,8 @@ class navigator
     		{
     			$this->_structure[HOME_COMPONENT]['sub'][$branch] = array
     			(
-    			    'name' => language::translate($branch,
-                                                  'COMPONENT VISIBLE NAME')
+    			    'name' => t($branch,
+                                'COMPONENT VISIBLE NAME')
     		    );
 
     			$subbranch =& $this->_structure[HOME_COMPONENT]['sub'][$branch];
@@ -56,7 +56,7 @@ class navigator
     					if (!isset($subbranch['sub'][$link]))
     						$subbranch['sub'][$link] = array
     						(
-    						    'name' => language::translate($branch,
+    						    'name' => t($branch,
     						                                  $object->name),
     						    'handler' => $object->name
     					    );
@@ -102,28 +102,30 @@ class navigator
 
 				$link = $controller . "/" . main::$action;
 
-				 $name = $branch['sub'][$link]['handler'] .= '_' . main::$args[0];
-
 				if (!empty(main::$args))
 				{
 					echo html::hyperlink($link,
 				                         $branch['sub'][$link]['name'])
 				       . BREADCRUMB_SEPARATOR;
 
+				    $branch['sub'][$link]['handler'] .= '_' . main::$args[0];
+
 				    if (count(main::$args) > 1)
 					{
-						$name = language::translate($controller,
-    						                        $name);
+						$name = t($controller,
+    						      $branch['sub'][$link]['handler']);
 
 						echo html::hyperlink($link .= "/" . main::$args[0],
-				                         	 $name) . BREADCRUMB_SEPARATOR;
+				                         	 $name)
+				           . BREADCRUMB_SEPARATOR . main::$args[1];
 
-						echo urldecode(implode(BREADCRUMB_SEPARATOR,
-						                       array_slice(main::$args, 1)));
+						if (!empty(main::$args[2]))
+							echo " (" . urldecode(implode(", ",
+						                          array_slice(main::$args, 2))) . ")";
 					}
 					else
-						echo language::translate($controller,
-					                             $name);
+						echo t($controller,
+					           $branch['sub'][$link]['handler']);
 				}
 				else
 					echo $branch['sub'][$link]['name'];

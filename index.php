@@ -50,27 +50,32 @@ class main
 	}
 
 	private function _initialize($route)
-	{// verificare se troppo errordocument fa problemi SEO ecc
+	{
 		$components = explode("/",
 		                      $route);
 
 		if ($components[0])
 		{
-			if (!file_exists(".app/" . $components[0] . ".php"))
+			if (!file_exists(".app/" . $components[0] . ".php")
+				|| substr_count($components[0] , "_"))
+			{
 				$this->relocate_to("error/404");
+			}
 
 			self::$controller = array_shift($components);
 			if (!empty($components))
 			{
 				self::$action = array_shift($components);
 				if ($components)
-					self::$args = $components;
+					self::$args = array_filter($components);
 			}
 		}
 		else
 			self::$controller = HOME_COMPONENT;
 
 		require_once(".app/" . self::$controller . ".php");
+		foreach (glob(".app/" . self::$controller . "_*.php") as $filename)
+    		require_once($filename);
 
 		$this->_call = new self::$controller(self::$action,
 	                                         self::$args);
@@ -187,10 +192,10 @@ $trans = "all .5s ease";
 <style>
     .exp
     {
-        box-shadow: 1px 2px 3px black;
-        -webkit-box-shadow: 1px 2px 3px black;
-        -moz-box-shadow: 1px 2px 3px black;
-        -o-box-shadow: 1px 2px 3px black;
+        box-shadow: 0 1px 2px black;
+        -webkit-box-shadow: 0 1px 2px black;
+        -moz-box-shadow: 0 1px 2px black;
+        -o-box-shadow: 0 1px 2px black;
         float: left;
         margin: 10px;
         background-color: white;
@@ -207,7 +212,7 @@ $trans = "all .5s ease";
         -webkit-transition: <?php echo $trans; ?>;
         -moz-transition: <?php echo $trans; ?>;
         -o-transition: <?php echo $trans; ?>;
-        border: solid 2px;
+        border: solid 1px;
         border-top-color: #ccc;
         border-left-color: #999;
         border-right-color: #666;
@@ -219,10 +224,10 @@ $trans = "all .5s ease";
         -webkit-opacity: <?php echo $op_on; ?>;
         -moz--opacity: <?php echo $op_on; ?>;
         -o-opacity: <?php echo $op_on; ?>;
-        box-shadow: 2px 4px 6px black;
-        -webkit-box-shadow: 2px 4px 6px black;
-        -moz-box-shadow: 2px 4px 6px black;
-        -o-box-shadow: 2px 4px 6px black;
+        box-shadow: 1px 2px 3px black;
+        -webkit-box-shadow: 1px 2px 3px black;
+        -moz-box-shadow: 1px 2px 3px black;
+        -o-box-shadow: 1px 2px 3px black;
     }
 </style>
 

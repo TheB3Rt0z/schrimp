@@ -65,8 +65,8 @@ abstract class controller
 
 	protected function _translate($placeholder)
 	{
-		return language::translate(get_class($this),
-		                           $placeholder);
+		return t(get_class($this),
+		         $placeholder);
 	}
 
 	function get_title()
