@@ -145,7 +145,7 @@ ob_start();
 			   . " v" . $main->get_version()
 	           . " | "
                . $main->title
-			   . " r". exec("git describe --always --tag");
+			   . " r" . exec("git describe --always --tag");
 			?>
 		</title>
 		<?php
