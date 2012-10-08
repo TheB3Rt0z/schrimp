@@ -144,7 +144,8 @@ ob_start();
 			echo PROJECT
 			   . " v" . $main->get_version()
 	           . " | "
-               . $main->title;
+               . $main->title
+			   . " r". exec("git describe --always --tag");
 			?>
 		</title>
 		<?php
