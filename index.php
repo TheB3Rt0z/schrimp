@@ -97,9 +97,18 @@ class main
 
 	static function get_version()
 	{
-		// si potrebbe legare a questa funzione un controllo per la doc..
+		// si potrebbe legare a questa o la seguentefunzione un controllo per la doc..
 		// se non esiste il file docs_v#.##.nfo lo si crea e si cancella gli altri
 		return number_format(((mktime(date('H'), date('i'), date('s'), date('n'), date('j'), date('Y')) - mktime(17, 11, 33, 9, 21, 2012)) / 31557600), 2);
+	}
+
+	static function get_release()
+	{
+		return (($release = shell_exec("svnversion"))
+			   ? "r" . $release
+			   : ($release = shell_exec("git describe --tags --always"))
+			     ? "r" . $release
+			     : '');
 	}
 
 	static function is_memcached()
@@ -143,9 +152,9 @@ ob_start();
 			<?php
 			echo PROJECT
 			   . " v" . $main->get_version()
-	           . " | "
-               . $main->title
-			   . " r" . exec("git describe --always --tag");
+			   . $main->get_release()
+			   . " | "
+               . $main->title;
 			?>
 		</title>
 		<?php
@@ -193,10 +202,10 @@ $trans = "all .5s ease";
 <style>
     .exp
     {
-        box-shadow: 0 1px 2px black;
-        -webkit-box-shadow: 0 1px 2px black;
-        -moz-box-shadow: 0 1px 2px black;
-        -o-box-shadow: 0 1px 2px black;
+        box-shadow: 0 1px 1px black;
+        -webkit-box-shadow: 0 1px 1px black;
+        -moz-box-shadow: 0 1px 1px black;
+        -o-box-shadow: 0 1px 1px black;
         float: left;
         margin: 10px;
         background-color: white;
@@ -225,10 +234,10 @@ $trans = "all .5s ease";
         -webkit-opacity: <?php echo $op_on; ?>;
         -moz--opacity: <?php echo $op_on; ?>;
         -o-opacity: <?php echo $op_on; ?>;
-        box-shadow: 1px 2px 3px black;
-        -webkit-box-shadow: 1px 2px 3px black;
-        -moz-box-shadow: 1px 2px 3px black;
-        -o-box-shadow: 1px 2px 3px black;
+        box-shadow: 0 2px 2px black;
+        -webkit-box-shadow: 0 2px 2px black;
+        -moz-box-shadow: 0 2px 2px black;
+        -o-box-shadow: 0 2px 2px black;
     }
 </style>
 
