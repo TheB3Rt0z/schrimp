@@ -239,6 +239,7 @@ class html
                      'required file (%s) not exists',
 				     $href);
 			main::launch_error($msg);
+			return;
 		}
 		elseif ($href
 			&& !in_array($href, html::$_linked_files))
@@ -300,6 +301,7 @@ class html
 	                     'required file (%s) not exists',
 					     $src);
 				main::launch_error($msg);
+				return;
 			}
 
     		$attributes['src'] = $src;

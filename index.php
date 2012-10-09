@@ -105,10 +105,17 @@ class main
 	static function get_release()
 	{
 		return (($release = shell_exec("svnversion"))
-			   ? "r" . $release
+			   ? $release
 			   : ($release = shell_exec("git describe --tags --always"))
-			     ? "r" . $release
-			     : '');
+			     ? $release
+			     : false);
+	}
+
+	static function get_build()
+	{
+		$release = main::get_release();
+		return " v" . main::get_version()
+			 . ($release ? "r" . $release : '');
 	}
 
 	static function is_memcached()
@@ -135,7 +142,7 @@ class main
 
 		$url = "error/500/" . urlencode($msg);
 
-		if ($_SERVER['REQUEST_URI'] != PATH . "/" . $url)
+		if ($_SERVER['REQUEST_URI'] != (PATH . "/" . $url))
 			main::relocate_to($url);
 	}
 }
@@ -151,8 +158,7 @@ ob_start();
 		<title>
 			<?php
 			echo PROJECT
-			   . " v" . $main->get_version()
-			   . $main->get_release()
+			   . $main->get_build()
 			   . " | "
                . $main->title;
 			?>
