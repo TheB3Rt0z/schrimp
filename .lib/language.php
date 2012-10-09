@@ -62,8 +62,7 @@ class language
 function t($component,
 	       $marker)
 {
-	return language::translate($component,
-	                           $marker);
+	return call_user_func_array('language::translate', func_get_args());
 }
 
 ?>
