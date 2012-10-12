@@ -143,7 +143,7 @@ class html
     					        $alt,
                                 $title = '')
     {
-    	if (!file_exists($_SERVER['DOCUMENT_ROOT'] . PATH . "/" . $src))
+    	if (!main::exists_file($src))
 		{
 			$msg = t('error',
                      'required file (%s) not exists',
@@ -233,8 +233,8 @@ class html
                                  $rel,
                                  $type)
     {
-    	if (!file_exists($_SERVER['DOCUMENT_ROOT'] . PATH . "/" . $href))
-		{
+    	if (!main::exists_file($href))
+    	{
 			$msg = t('error',
                      'required file (%s) not exists',
 				     $href);
@@ -294,7 +294,7 @@ class html
     	if ($src
     		&& !in_array($src, html::$_loaded_scripts))
     	{
-    		if (!file_exists($_SERVER['DOCUMENT_ROOT'] . PATH . "/" . $src)
+    		if (!main::exists_file($src)
     			&& !parse_url($src))
 			{
 				$msg = t('error',

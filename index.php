@@ -56,7 +56,7 @@ class main
 
 		if ($components[0])
 		{
-			if (!file_exists(".app/" . $components[0] . ".php")
+			if (!$this->exists_file(".app/" . $components[0] . ".php")
 				|| substr_count($components[0] , "_"))
 			{
 				$this->relocate_to("error/404");
@@ -103,12 +103,12 @@ class main
 	}
 
 	static function get_release()
-	{
+	{// forse é meglio eseguire prima un which(command) per vedere quel che cé e dove sta..
 		return (($release = shell_exec("svnversion"))
 			   ? $release
-			   : ($release = shell_exec("git describe --tags --always"))
-			     ? $release
-			     : false);
+			   : (($release = shell_exec("/usr/local/git/bin/git describe --tags --always"))//. ' > /dev/null; echo $?'))
+			     ? strtoupper($release)
+			     : false));
 	}
 
 	static function get_build()
@@ -122,6 +122,11 @@ class main
 	{
 		//TODO: verificare che effettivamente il servizio funzioni con almeno un server..
 		return extension_loaded('memcache');
+	}
+
+	static function exists_file($path)
+	{
+		return file_exists(realpath($path));
 	}
 
 	static function resolve_uri($uri = '')
@@ -173,6 +178,7 @@ ob_start();
 		html::add_js_file("//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js");
 		//html::add_js_file(".inc/jquery_webcam/jquery.webcam.js");
 		?>
+<!--<link href='http://fonts.googleapis.com/css?family=Amaranth:700' rel='stylesheet' type='text/css'>-->
 	</head>
 	<body>
 		<header>

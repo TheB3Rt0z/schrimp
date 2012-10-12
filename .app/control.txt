@@ -70,7 +70,7 @@ it||Documentazione
 
 _handler_modules_error
 de||Fehlerbehandlung
-en||Erro handling
+en||Error handling
 it||Gestione errori
 
 _handler_application
