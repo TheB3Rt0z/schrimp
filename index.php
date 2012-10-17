@@ -204,9 +204,9 @@ ob_start();
 </html><?php echo str_replace(array("\t", "\n", "\r", "  "), '', ob_get_clean()); ?>
 
 <?php
-$op_on = ".99";
-$op_off = ".66";
-$trans = "all .5s ease";
+$op_on = ".999";
+$op_off = ".666";
+$trans = "all .25s ease";
 // applicare lo stesso effetto ai link? text-shadow invee di box..
 // processare quel foglio con palestra e idee per lo schrimp!
 ?>

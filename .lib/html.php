@@ -251,7 +251,7 @@ class html
     	    $self = new self(__FUNCTION__,
     	                     $attributes);
 
-			html::$_linked_files[] = $href;
+			html::$_linked_files[] = $rel . '_' . $href;
 		}
 		else
 			return false;
@@ -344,6 +344,10 @@ class html
     	echo self::link($href,
     	                "icon",
 						"image/x-icon");
+
+    	echo self::link($href,
+    			        "shortcut icon",
+    			        "image/x-icon");
     }
 
     static function add_stylesheet($href)
