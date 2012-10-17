@@ -313,6 +313,7 @@ class html
     	elseif ($content
     		&& !in_array($content, html::$_loaded_scripts))
     	{
+    		$attributes['charset'] = "utf-8";
     		$self = new self(__FUNCTION__,
     	                     $attributes,
     	                     $content);
