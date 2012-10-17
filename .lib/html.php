@@ -308,7 +308,7 @@ class html
     		$self = new self(__FUNCTION__,
     	                     $attributes);
 
-    		html::$_loaded_scripts[] = $src;
+    		html::$_loaded_scripts[] = $type . '_' . $src;
     	}
     	elseif ($content
     		&& !in_array($content, html::$_loaded_scripts))
