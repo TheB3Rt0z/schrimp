@@ -158,7 +158,7 @@ ob_start();
 
 ?><!DOCTYPE html>
 	<head>
-		<meta charset="UTF-8">
+		<meta charset="UTF-8" />
 		<meta name="viewport" content="user-scalable=no,width=device-width" />
 		<title>
 			<?php
