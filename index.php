@@ -1,6 +1,7 @@
 <?php
 
 //TODO: web-storage, session su PHP o memcache o DB? pspell&gettext
+//      optional admin bar to measure run time performance (gApis)
 
 define('PROTOCOL', "http" . (getenv('HTTPS') == 'on' ? "s" : ''));
 
