@@ -33,6 +33,8 @@ define('HOME_COMPONENT', "homepage");
 
 define('COMPLEXITY_INDEX', 12);
 
+define('OUTPUT_COMPRESSION', true);
+
 class main
 {
 	private $_call = null;
@@ -222,7 +224,12 @@ ob_start();
 			<?php echo $main->footer; ?>
 		</footer>
 	</body>
-</html><?php echo str_replace(array("\t", "\n", "\r", "  "), '', ob_get_clean()); ?>
+</html><?php
+if (OUTPUT_COMPRESSION)
+	echo str_replace(array("\t", "\n", "\r", "  "), '', ob_get_clean());
+else
+	echo ob_get_clean();
+?>
 
 <?php
 $op_on = ".999";
