@@ -4,9 +4,29 @@
 
 define('PROTOCOL', "http" . (getenv('HTTPS') == 'on' ? "s" : ''));
 
-define('PATH', "/schrimp");
+$kern_idea = array
+(
+	'System',
+	'Control',
+	'Heading_to_a',
+	'Raw',
+	'Increase_of',
+    'Mental',
+	'Productivity',
+);
 
-define('PROJECT', "Das SCHRIMP");
+define('PATH', "/" . strtolower(implode(array_map(function($value)
+											      {
+												      return substr($value, 0, 1);
+												  },
+                                                  $kern_idea))));
+
+define('PROJECT', "Das " . implode(".",
+                                   array_map(function($value)
+											 {
+										         return substr($value, 0, 1);
+										     },
+                                             $kern_idea)));
 
 define('HOME_COMPONENT', "homepage");
 
