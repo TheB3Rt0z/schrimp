@@ -2,6 +2,7 @@
 
 //TODO: web-storage, session su PHP o memcache o DB? pspell&gettext
 //      optional admin bar to measure run time performance (gApis)
+//      tocca cominciare a separare un pò sto file index (conf, main e qui html..)
 
 define('PROTOCOL', "http" . (getenv('HTTPS') == 'on' ? "s" : ''));
 
