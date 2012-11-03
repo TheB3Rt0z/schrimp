@@ -8,9 +8,8 @@ class control extends controller
 
 	private $_application_modules = array();
 
-	function initialize()
+	function initialize() // initialize app and lib lists..
 	{
-		// initialize app and lib lists..
 		$method = '_handler' . (!empty( $this->_action)
 						       ? '_' . $this->_action
 						       : '')
@@ -83,15 +82,11 @@ class control extends controller
 
 	private function _handler_core_language()
 	{
-		if (!func_num_args())
-		{
+		//if (!func_num_args())
 			// normal language settings
-		}
-		elseif (language::is_supported(func_get_arg(0)))
-		{
+		//elseif (language::is_supported(func_get_arg(0)))
 			// operation for supported language
-		}
-		else
+		//else
 			main::relocate_to("error/404");
 
 		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
@@ -99,12 +94,11 @@ class control extends controller
 		                . $this->_translate(__FUNCTION__));
 	}
 
-	private function _handler_plugins()
+	private function _handler_plugins() // directory lib
 	{
 		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
 		                . BREADCRUMB_SEPARATOR
 		                . $this->_translate(__FUNCTION__));
-		// directory lib
 	}
 
 	private function _handler_modules()
@@ -142,12 +136,11 @@ class control extends controller
 		                . $this->_translate(__FUNCTION__));
 	}
 
-	private function _handler_application()
+	private function _handler_application() // directory app
 	{
 		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
 		                . BREADCRUMB_SEPARATOR
 		                . $this->_translate(__FUNCTION__));
-		// directory app
 	}
 }
 
