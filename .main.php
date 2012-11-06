@@ -3,7 +3,7 @@
 //TODO: web-storage, session su PHP o memcache o DB? pspell&gettext
 //      optional admin bar to measure run time performance (gApis)
 
-require_once('.configuration.php');
+require_once ".configuration.php";
 
 class main
 {
@@ -33,13 +33,13 @@ class main
     private function _load_libraries()
     {
         foreach (glob(".lib/*.php") as $filename)
-            require_once($filename);
+            require_once $filename;
 
         // creare micro-alias delle funzioni + utili (direttamente nela libreria?)
 
         // bisogna immaginarsi qualcosa per la risoluzione di eventuali conflitti
         foreach (glob("lib/*.php") as $filename)
-            require_once($filename);
+            require_once $filename;
     }
 
     private function _initialize($route)
@@ -66,9 +66,9 @@ class main
         else
             self::$controller = HOME_COMPONENT;
 
-        require_once(".app/" . self::$controller . ".php");
+        require_once ".app/" . self::$controller . ".php";
         foreach (glob(".app/" . self::$controller . "_*.php") as $filename)
-            require_once($filename);
+            require_once $filename;
 
         $this->_call = new self::$controller(self::$action,
                                              self::$args);

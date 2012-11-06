@@ -1,6 +1,6 @@
 <?php
 
-require_once('.main.php');
+require_once ".main.php";
 
 $main = new main($_SERVER['REQUEST_URI']);
 
@@ -24,8 +24,8 @@ ob_start();
 		html::add_stylesheet(".app/" . main::$controller . ".css");
 		html::add_js_file(".inc/js/jquery.js");
 		html::add_js_file(".inc/js/jquery_ui.js");
-		html::add_js_file("//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js");
-		html::add_js_file("//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js");
+		//html::add_js_file("//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js");
+		//html::add_js_file("//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js");
 		//html::add_js_file(".inc/jquery_webcam/jquery.webcam.js");
 		?>
 <!--<link href='http://fonts.googleapis.com/css?family=Amaranth:700' rel='stylesheet' type='text/css'>-->

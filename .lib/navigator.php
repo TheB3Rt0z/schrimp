@@ -26,7 +26,7 @@ class navigator
 		                          return !substr_count($value, HOME_COMPONENT);
 		                      }) as $filename)
 		{
-			require_once($filename);
+			require_once $filename;
 
     		$branch = str_replace(array(".app/", ".php"), '', $filename);
 
