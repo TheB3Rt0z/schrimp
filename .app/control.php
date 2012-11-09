@@ -4,10 +4,6 @@ class control extends controller
 {
 	private $_helper = null;
 
-	private $_plugins_libraries = array();
-
-	private $_application_modules = array();
-
 	function initialize() // initialize app and lib lists..
 	{
 		$fallback_method = '_handler' . (!empty( $this->_action)
@@ -95,8 +91,18 @@ class control extends controller
 		                . $this->_translate(__FUNCTION__));
 	}
 
-	private function _handler_plugins() // directory lib
+	private function _handler_plugins() // from lib directory
 	{
+		static $options = "\$output = array();
+		                   foreach (glob(\"lib/*.php\") as \$filename)
+				           {
+							   \$option = str_replace(array(\"lib/\", \".php\"),
+				                                      '',
+				                                      \$filename);
+			                   \$output[\$option] = '';
+		                   }
+				           return \$output;";
+
 		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
 		                . BREADCRUMB_SEPARATOR
 		                . $this->_translate(__FUNCTION__));
@@ -137,8 +143,18 @@ class control extends controller
 		                . $this->_translate(__FUNCTION__));
 	}
 
-	private function _handler_application() // directory app
+	private function _handler_application() // from app directory
 	{
+		static $options = "\$output = array();
+		                   foreach (glob(\"app/*.php\") as \$filename)
+				           {
+							   \$option = str_replace(array(\"app/\", \".php\"),
+				                                      '',
+				                                      \$filename);
+			                   \$output[\$option] = '';
+		                   }
+				           return \$output;";
+
 		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
 		                . BREADCRUMB_SEPARATOR
 		                . $this->_translate(__FUNCTION__));

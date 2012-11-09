@@ -65,7 +65,11 @@ class navigator
     				$static_variables = $object->getStaticVariables();
     				if (isset($static_variables['options']))
     				{
-						foreach ($static_variables['options'] as $key => $value)
+    					$options = $static_variables['options'];
+    					if (!is_array($options))
+    						$options = eval($options); // dynamic from static code!
+
+						foreach ($options as $key => $value)
 						{
 							$subbranch['sub'][$link . "/" . $key] = array
 							(
