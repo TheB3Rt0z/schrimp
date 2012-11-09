@@ -1,34 +1,23 @@
 <?php
 
-define('PROTOCOL', "http" . (getenv('HTTPS') == 'on' ? "s" : ''));
+define('SALT', "System Control Heading_to_a Raw Increase_of Mental Productivity");
 
-$kern_idea = array
-(
-    'System',
-    'Control',
-    'Heading_to_a',
-    'Raw',
-    'Increase_of',
-    'Mental',
-    'Productivity',
-);
+define('PROTOCOL', "http" . (getenv('HTTPS') == 'on' ? "s" : '')); // auto
 
-define('PATH', "/" . strtolower(implode(array_map(function($value)
-                                                  {
-                                                      return substr($value, 0, 1);
-                                                  },
-                                                  $kern_idea))));
+define('PATH', "/schrimp"); // '' if server root is used (worth as base-path)
 
 define('PROJECT', "Das " . implode(array_map(function($value)
                                              {
                                                  return substr($value, 0, 1) . ".";
                                              },
-                                             $kern_idea)));
+                                             explode(" ", SALT)))); // E-3
 
 define('HOME_COMPONENT', "homepage");
 
-define('COMPLEXITY_INDEX', 12);
+define('CYCLOMATIC_COMPLEXITY', 12); // base complexity index
+define('METHODS_COMPLEXITY', CYCLOMATIC_COMPLEXITY * 3); // ATM 36 max code lines
+define('BLOCK_COMPLEXITY', CYCLOMATIC_COMPLEXITY * 7); // ATM 84 max code line length
 
-define('OUTPUT_COMPRESSION', true);
+define('OUTPUT_COMPRESSION', true); // set output flatting on html finale rendering
 
 ?>
