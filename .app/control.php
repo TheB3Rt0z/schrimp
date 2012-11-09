@@ -19,7 +19,7 @@ class control extends controller
 
 		if (method_exists(__CLASS__, $method))
 		{
-			$this->_helper = new control_helper();
+			$this->_helper = new control_helper(); // si potrebbe fare standard..
 			call_user_func_array(array($this, $method), array_slice(main::$args, 1));
 		}
 		else
@@ -141,6 +141,24 @@ class control extends controller
 		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
 		                . BREADCRUMB_SEPARATOR
 		                . $this->_translate(__FUNCTION__));
+	}
+
+	private function _handler_phpinfo()
+	{
+		static $options = array // from PHP documentation
+		(
+			'general' => 1, //	The configuration line, php.ini location, build date, Web Server, System and more.
+			'credits' => 2, //	PHP Credits. See also phpcredits().
+			'configuration' => 4, // Current Local and Master values for PHP directives. See also ini_get().
+			'modules' => 8, // Loaded modules and their respective settings. See also get_loaded_extensions().
+			'environment' => 16, // Environment Variable information that's also available in $_ENV.
+			'general' => 32, // Shows all predefined variables from EGPCS (Environment, GET, POST, Cookie, Server).
+			'license' => 64, // PHP License information. See also the » license FAQ.
+		);
+
+		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
+				        . BREADCRUMB_SEPARATOR
+				        .  $this->_translate(__FUNCTION__));
 	}
 }
 

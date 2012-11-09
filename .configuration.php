@@ -12,7 +12,7 @@ define('PROJECT', "Das " . implode(array_map(function($value)
                                              },
                                              explode(" ", SALT)))); // E-3
 
-define('HOME_COMPONENT', "homepage");
+define('HOME_COMPONENT', "admin");
 
 define('CYCLOMATIC_COMPLEXITY', 12); // base complexity index
 define('METHODS_COMPLEXITY', CYCLOMATIC_COMPLEXITY * 3); // ATM 36 max code lines

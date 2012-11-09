@@ -1,6 +1,6 @@
 <?php
 
-class homepage extends controller
+class admin extends controller
 {
 	function initialize()
 	{

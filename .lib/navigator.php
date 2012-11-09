@@ -1,17 +1,15 @@
 <?php
 
-// TODO: mouse gesture circolare per far apparire menu a scomparsa
-
 class navigator
 {
-	private $_structure = false;
+	private static $_structure = false;
 
 	function __construct()
 	{
-		if (!empty($this->_structure))
-			return;
+		if (!empty(self::$_structure))
+			return true;
 
-		$this->_structure = array
+		self::$_structure = array
 		(
 			HOME_COMPONENT => array
 			(
@@ -33,13 +31,13 @@ class navigator
     		$rc = new ReflectionClass($branch);
     		if ($rc->getConstant('VISIBLE_IN_NAVIGATION'))
     		{
-    			$this->_structure[HOME_COMPONENT]['sub'][$branch] = array
+    			self::$_structure[HOME_COMPONENT]['sub'][$branch] = array
     			(
     			    'name' => t($branch,
                                 'COMPONENT VISIBLE NAME')
     		    );
 
-    			$subbranch =& $this->_structure[HOME_COMPONENT]['sub'][$branch];
+    			$subbranch =& self::$_structure[HOME_COMPONENT]['sub'][$branch];
 
     			foreach ($rc->getMethods(ReflectionMethod::IS_PRIVATE
     				   | !ReflectionMethod::IS_PROTECTED) as $object)
@@ -64,17 +62,31 @@ class navigator
     					$subbranch =& $subbranch['sub'][$link];
     				}
 
-    				$subbranch =& $this->_structure[HOME_COMPONENT]['sub'][$branch];
-				}
+    				$static_variables = $object->getStaticVariables();
+    				if (isset($static_variables['options']))
+    				{
+						foreach ($static_variables['options'] as $key => $value)
+						{
+							$subbranch['sub'][$link . "/" . $key] = array
+							(
+								'name' => t($branch,
+										    $object->name . "_" . $key),
+								'handler' => $object->name . "_" . $key
+							);
+						}
+    				}
+
+    				$subbranch =& self::$_structure[HOME_COMPONENT]['sub'][$branch];
+    			}
     		}
 		}
 	}
 
-	static function render_list()
+	static function render_list() // TODO questo lo vorrei far apparire con una mouse gesture
 	{
 		$self = new self;
 
-		return html::array_to_list($self->_structure[HOME_COMPONENT]['sub']);
+		return html::array_to_list(self::$_structure[HOME_COMPONENT]['sub']);
 	}
 
 	static function render_breadcrumb()
@@ -88,7 +100,7 @@ class navigator
 
 		if ($controller != HOME_COMPONENT)
 		{
-			$structure = $self->_structure[HOME_COMPONENT];
+			$structure = self::$_structure[HOME_COMPONENT];
 
 			echo html::hyperlink('',
 				                 $structure['name']) . BREADCRUMB_SEPARATOR;
@@ -139,7 +151,7 @@ class navigator
 	{
 		$self = new self;
 
-		return html::array_to_list($self->_structure[HOME_COMPONENT]['sub'], 'ol');
+		return html::array_to_list(self::$_structure[HOME_COMPONENT]['sub'], 'ol');
 	}
 }
 

@@ -77,3 +77,8 @@ _handler_application
 de||Anwendungsmodule
 en||Application modules
 it||Moduli addizionali
+
+_handler_phpinfo
+de||System-Informationen
+en||System information
+it||Informazioni sul sistema
