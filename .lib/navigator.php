@@ -73,8 +73,8 @@ class navigator
 						{
 							$subbranch['sub'][$link . "/" . $key] = array
 							(
-								'name' => t($branch,
-										    $object->name . "_" . $key),
+								'name' => t($key,
+   										    $value),
 								'handler' => $object->name . "_" . $key
 							);
 						}

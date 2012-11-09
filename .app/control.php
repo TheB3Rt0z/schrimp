@@ -148,10 +148,10 @@ class control extends controller
 		static $options = "\$output = array();
 		                   foreach (glob(\"app/*.php\") as \$filename)
 				           {
-							   \$option = str_replace(array(\"app/\", \".php\"),
-				                                      '',
-				                                      \$filename);
-			                   \$output[\$option] = '';
+							   \$key = str_replace(array(\"app/\", \".php\"),
+				                                   '',
+				                                   \$filename);
+							   \$output[\$key] = 'COMPONENT VISIBLE NAME';
 		                   }
 				           return \$output;";
 
@@ -164,13 +164,13 @@ class control extends controller
 	{
 		static $options = array // from PHP documentation
 		(
-			'general' => 1, //	The configuration line, php.ini location, build date, Web Server, System and more.
-			'credits' => 2, //	PHP Credits. See also phpcredits().
-			'configuration' => 4, // Current Local and Master values for PHP directives. See also ini_get().
-			'modules' => 8, // Loaded modules and their respective settings. See also get_loaded_extensions().
-			'environment' => 16, // Environment Variable information that's also available in $_ENV.
-			'general' => 32, // Shows all predefined variables from EGPCS (Environment, GET, POST, Cookie, Server).
-			'license' => 64, // PHP License information. See also the » license FAQ.
+			'general' => '_handler_phpinfo_general', //	The configuration line, php.ini location, build date, Web Server, System and more.
+			'credits' => '_handler_phpinfo_credits', //	PHP Credits. See also phpcredits().
+			'configuration' => '_handler_phpinfo_configuration', // Current Local and Master values for PHP directives. See also ini_get().
+			'modules' => '_handler_phpinfo_modules', // Loaded modules and their respective settings. See also get_loaded_extensions().
+			'environment' => '_handler_phpinfo_environment', // Environment Variable information that's also available in $_ENV.
+			'general' => '_handler_phpinfo_general', // Shows all predefined variables from EGPCS (Environment, GET, POST, Cookie, Server).
+			'license' => '_handler_phpinfo_license', // PHP License information. See also the » license FAQ.
 		);
 
 		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')

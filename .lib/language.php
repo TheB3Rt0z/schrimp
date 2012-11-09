@@ -24,7 +24,12 @@ class language
 	                          $marker)
 	{
 		$args = func_get_args();
-		$texts = array_map('trim', file(".app/" . array_shift($args) . ".txt"));
+		$component = array_shift($args);
+		$texts = (array)@file(".app/" . $component . ".txt");
+		$application_texts = (array)@file("app/" . $component . ".txt");
+		$texts = array_map('trim',
+				           array_merge($texts,
+				           		       $application_texts));
 		$texts[] = '';
 		$language = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
 		$translation = "["
