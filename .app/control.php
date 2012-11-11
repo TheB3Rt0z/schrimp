@@ -16,7 +16,7 @@ class control extends controller
 		if (method_exists(__CLASS__, $method = $method)
 			|| method_exists(__CLASS__, $method = $fallback_method))
 		{
-			$this->_helper = new control_helper(); // si potrebbe fare standard..
+			$this->_helper = new control_helper(); // standardize?
 			call_user_func_array(array($this, $method), array_slice(main::$args, 1));
 		}
 		else

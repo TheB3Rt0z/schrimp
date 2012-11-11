@@ -34,9 +34,6 @@ class main
     {
         foreach (glob(".lib/*.php") as $filename)
             require_once $filename;
-
-        // creare micro-alias delle funzioni + utili (direttamente nela libreria?)
-
         // bisogna immaginarsi qualcosa per la risoluzione di eventuali conflitti
         foreach (glob("lib/*.php") as $filename)
             require_once $filename;
