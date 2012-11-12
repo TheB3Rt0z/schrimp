@@ -99,7 +99,7 @@ class control extends controller
 							   \$option = str_replace(array(\"lib/\", \".php\"),
 				                                      '',
 				                                      \$filename);
-			                   \$output[\$option] = '';
+			                   \$output[\$option] = '_handler_plugins_' . \$option;
 		                   }
 				           return \$output;";
 
@@ -148,10 +148,10 @@ class control extends controller
 		static $options = "\$output = array();
 		                   foreach (glob(\"app/*.php\") as \$filename)
 				           {
-							   \$key = str_replace(array(\"app/\", \".php\"),
-				                                   '',
-				                                   \$filename);
-							   \$output[\$key] = 'COMPONENT VISIBLE NAME';
+							   \$option = str_replace(array(\"app/\", \".php\"),
+				                                      '',
+				                                      \$filename);
+							   \$output[\$option] = false;
 		                   }
 				           return \$output;";
 
@@ -169,7 +169,7 @@ class control extends controller
 			'configuration' => '_handler_phpinfo_configuration', // Current Local and Master values for PHP directives. See also ini_get().
 			'modules' => '_handler_phpinfo_modules', // Loaded modules and their respective settings. See also get_loaded_extensions().
 			'environment' => '_handler_phpinfo_environment', // Environment Variable information that's also available in $_ENV.
-			'general' => '_handler_phpinfo_general', // Shows all predefined variables from EGPCS (Environment, GET, POST, Cookie, Server).
+			'variables' => '_handler_phpinfo_variables', // Shows all predefined variables from EGPCS (Environment, GET, POST, Cookie, Server).
 			'license' => '_handler_phpinfo_license', // PHP License information. See also the » license FAQ.
 		);
 

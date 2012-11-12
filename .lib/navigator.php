@@ -71,10 +71,21 @@ class navigator
 
 						foreach ($options as $key => $value)
 						{
+							if (empty($value))
+							{
+								$option_component = $key;
+								$option_value = 'COMPONENT VISIBLE NAME';
+							}
+							else
+							{
+								$option_component = $branch;
+								$option_value = $value;
+							}
+
 							$subbranch['sub'][$link . "/" . $key] = array
 							(
-								'name' => t($key,
-   										    $value),
+								'name' => t($option_component,
+   										    $option_value),
 								'handler' => $object->name . "_" . $key
 							);
 						}

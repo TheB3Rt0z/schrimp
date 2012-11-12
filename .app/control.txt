@@ -82,3 +82,8 @@ _handler_phpinfo
 de||System-Informationen
 en||System information
 it||Informazioni sul sistema
+
+_handler_phpinfo_general
+de||Allgemeine Informationen
+en||General information
+it||Informazioni generali
