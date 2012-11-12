@@ -25,6 +25,7 @@ class main
     function __construct($uri)
     {
         $this->_load_libraries();
+        //documentation::check($this->get_version());
         $this->_initialize(str_replace(PATH . "/",
                                        '',
                                        $uri));
