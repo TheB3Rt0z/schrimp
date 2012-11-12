@@ -12,8 +12,8 @@ ob_start();
 		<meta name="viewport" content="user-scalable=no,width=device-width" />
 		<title>
 			<?php
-			echo PROJECT
-			   . $main->get_build()
+			echo PROJECT . " "
+			   . $main->get_version()
 			   . " | "
                . $main->title;
 			?>
