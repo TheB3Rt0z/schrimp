@@ -25,13 +25,19 @@ class main
     function __construct($uri)
     {
         $this->_load_libraries();
-        $doc_file = "doc" . $this->get_version() . ".nfo";
-        if (!file_exists($doc_file))
+
+        if (DEVELOPMENT_MODE)
         {
-        	$docfile_handler = fopen($doc_file, 'w') or die("can't open file");
+        	if (!$docfile_handler = fopen("doc_" . $this->get_version(1) . ".nfo", 'w'))
+        	{
+        		$msg = t('error',
+        				 'documentation file pointer not writable');
+        		$this->launch_error($msg);
+        	}
         	//documentation::check($this->get_version());
         	fclose($doc_file);
         }
+
         $this->_initialize(str_replace(PATH . "/",
                                        '',
                                        $uri));
@@ -92,14 +98,14 @@ class main
         return $this->_call;
     }
 
-    static function get_version()
+    static function get_version($precision = 2)
     {
         // si potrebbe legare a questa o la seguentefunzione un controllo per la doc..
         // se non esiste il file docs_v#.##.nfo lo si crea e si cancella gli altri
         return "v" . number_format(((mktime(date('H'), date('i'), date('s'),
         		                            date('n'), date('j'), date('Y'))
         	                       - mktime(17, 11, 33,
-        	                       		    9, 21, 2012)) / 31557600), 2);
+        	                       		    9, 21, 2012)) / 31557600), $precision);
     }
 
     static function is_memcached()
