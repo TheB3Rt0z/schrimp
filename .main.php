@@ -25,7 +25,13 @@ class main
     function __construct($uri)
     {
         $this->_load_libraries();
-        //documentation::check($this->get_version());
+        $doc_file = "doc" . $this->get_version() . ".nfo";
+        if (!file_exists($doc_file))
+        {
+        	$docfile_handler = fopen($doc_file, 'w') or die("can't open file");
+        	//documentation::check($this->get_version());
+        	fclose($doc_file);
+        }
         $this->_initialize(str_replace(PATH . "/",
                                        '',
                                        $uri));
@@ -35,7 +41,7 @@ class main
     {
         foreach (glob(".lib/*.php") as $filename)
             require_once $filename;
-        // bisogna immaginarsi qualcosa per la risoluzione di eventuali conflitti
+        // bisogna immaginarsi qualcosa per la risoluzione di eventuali conflitti!
         foreach (glob("lib/*.php") as $filename)
             require_once $filename;
     }
