@@ -22,20 +22,23 @@ class main
     var $aside = '';
     var $footer = '';
 
-    function __construct($uri)
+    function __construct($uri, $documentation = '')
     {
         $this->_load_libraries();
 
         if (DEVELOPMENT_MODE)
         {
-        	if (!$docfile_handler = fopen("doc_" . $this->get_version(1) . ".nfo", 'w'))
+         	$documentation .= PROJECT . " " . $this->get_version() . "\n";
+        	$documentation .= str_repeat("=", strlen($documentation) - 1);
+
+        	$doc_file = "README.md";
+        	if (!@file_put_contents($doc_file, $documentation)) // markdown format
         	{
         		$msg = t('error',
-        				 'documentation file pointer not writable');
+        				 'documentation file "%s" not writable',
+        				 $doc_file);
         		$this->launch_error($msg);
         	}
-        	//documentation::check($this->get_version());
-        	fclose($doc_file);
         }
 
         $this->_initialize(str_replace(PATH . "/",

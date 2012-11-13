@@ -1,7 +1,2 @@
-Ich bin das Schrimp! 8-3
+Das S.C.H.R.I.M.P. v0.15
 ========================
-
-Ich bin neu hier 8-3 8-3
-------------------------
-
-Ich lebe seit 21.09.2012

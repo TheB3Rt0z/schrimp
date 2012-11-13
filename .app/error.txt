@@ -93,10 +93,10 @@ de||Die benötigte Datei (%s) existiert scheibar nicht
 en||Required file (%s) not seems to exist
 it||Il file richiesto (%s) non pare esistere
 
-documentation file pointer not writable
-de||Dokumentationdatei kann nicht geschrieben werden
-en||Documentation file can not be (over)written
-it||Il file di documentazione non può essere scritto
+documentation file "%s" not writable
+de||Dokumentationdatei "%s" kann nicht geschrieben werden
+en||Documentation file "%s" can not be (over)written ATM
+it||Il file di documentazione "%s" non può essere scritto
 
 unknown %s database type
 de||Datenbank-Typ "%s" nicht erkannt
