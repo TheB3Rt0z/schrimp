@@ -55,7 +55,7 @@ class main
             require_once $filename;
     }
 
-    private function _initialize($route)
+    private function _initialize($route) // set "AllowOverride All" directive for .htaccess file
     {
         $components = explode("/",
                               $route);

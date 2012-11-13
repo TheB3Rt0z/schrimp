@@ -18,7 +18,7 @@ ob_start();
                . $main->title;
 			?>
 		</title>
-		<?php
+		<?php // SVG inline editing (php driven) if css + js != enough
 		html::add_favicon(".inc/img/schrimp_favicon.ico");
 	    html::add_stylesheet(".inc/style.css");
 		html::add_stylesheet(".app/" . main::$controller . ".css");
