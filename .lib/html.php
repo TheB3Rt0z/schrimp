@@ -10,22 +10,32 @@ class html
 
     private $_html = '';
 
-	private $_tags = array('single' => array('br',
-        	                                 'img',
-        	                                 'link'),
-					       'container' => array('a',
-					       		 				'div',
-					                            'h1',
-					                            'h2',
-					                            'h3',
-					                            'h4',
-					                            'h5',
-					                            'h6',
-					                            'li',
-					                            'ol',
-					                            'p',
-					                            'script',
-					                            'ul'));
+	private $_tags = array
+	        (
+	            'single' => array
+	        	(
+	        		'br',
+        	        'img',
+        	        'link',
+	        	),
+				'container' => array
+	        	(
+	        		'a',
+					'div',
+					'h1',
+                    'h2',
+                    'h3',
+                    'h4',
+                    'h5',
+                    'h6',
+					'h7', // experimental
+                    'li',
+                    'ol',
+                    'p',
+                    'script',
+                    'ul',
+	        	)
+	        );
 
 	static private $_linked_files = array();
 
@@ -211,6 +221,15 @@ class html
     	$self = new self(__FUNCTION__,
     	                 array(),
     	                 $content);
+
+    	return $self->_html;
+    }
+
+    private static function h7($content)
+    {
+    	$self = new self(__FUNCTION__,
+    			array(),
+    			$content);
 
     	return $self->_html;
     }
@@ -409,7 +428,7 @@ class html
     {
     	if (is_int($level)
     		&& $level > 0
-    		&& $level < 7)
+    		&& $level <= 7)
     	{
     		$level = "h" . $level;
         	return self::$level($content);

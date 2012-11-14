@@ -22,17 +22,18 @@ class main
     var $aside = '';
     var $footer = '';
 
+    var $documentation = false;
+
     function __construct($uri, $documentation = '')
     {
         $this->_load_libraries();
 
         if (DEVELOPMENT_MODE)
         {
-         	$documentation .= PROJECT . " " . $this->get_version() . "\n";
-        	$documentation .= str_repeat("=", strlen($documentation) - 1);
+         	$this->documentation = $this->get_documentation();
 
         	$doc_file = "README.md";
-        	if (!@file_put_contents($doc_file, $documentation)) // markdown format
+        	if (@!file_put_contents($doc_file, $this->documentation)) // markdown format
         	{
         		$msg = t('error',
         				 'documentation file "%s" not writable',
@@ -109,6 +110,13 @@ class main
         		                            date('n'), date('j'), date('Y'))
         	                       - mktime(17, 11, 33,
         	                       		    9, 21, 2012)) / 31557600), $precision);
+    }
+
+    static function get_documentation()
+    {
+    	return md::title(1, PROJECT . " " . main::get_version())
+    	     . md::title(2, "testo di prova in sottotitolo")
+    	     . md::title(3, "ciccio pasticcio va alla guerra");
     }
 
     static function is_memcached()
