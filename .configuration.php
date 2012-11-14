@@ -12,7 +12,9 @@ define('PROJECT', "Das " . implode(array_map(function($value)
                                              {
                                                  return substr($value, 0, 1) . ".";
                                              },
-                                             explode(" ", SALT)))); // E-3
+                                             explode(" ", SALT)))); // 8-3 Aurelian
+
+define ('COPYRIGHT', "Copyright © 2011-" . date('Y') . " " . PROJECT);
 
 define('HOME_COMPONENT', DEVELOPMENT_MODE ? "admin" : "homepage"); // convention
 

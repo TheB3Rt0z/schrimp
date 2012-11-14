@@ -3,9 +3,9 @@ Das S.C.H.R.I.M.P. v0.15
 
 
 
-testo di prova in sottotitolo
------------------------------
 
 
-ciccio pasticcio va alla guerra
 
+
+
+Copyright © 2011-2012 Das S.C.H.R.I.M.P.

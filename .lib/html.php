@@ -258,7 +258,7 @@ class html
                      'required file (%s) not exists',
 				     $href);
 			main::launch_error($msg);
-			return;
+			return; // stops link binding execution to avoid "problems"
 		}
 		elseif ($href
 			&& !in_array($href, html::$_linked_files))

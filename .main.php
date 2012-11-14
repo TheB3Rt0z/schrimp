@@ -115,8 +115,8 @@ class main
     static function get_documentation()
     {
     	return md::title(1, PROJECT . " " . main::get_version())
-    	     . md::title(2, "testo di prova in sottotitolo")
-    	     . md::title(3, "ciccio pasticcio va alla guerra");
+    	     // adding real documentation with h2, h3, text and others..
+    	     . str_repeat("\n", 5) . md::text(COPYRIGHT);
     }
 
     static function is_memcached()

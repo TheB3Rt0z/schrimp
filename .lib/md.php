@@ -19,6 +19,7 @@ class md
 			                               strlen(\$this->_content))
 			                  . \"\n\n\n\";",
 			    'h3' => "return \"\n\n\";",
+	        	'text' => '',
 	       	);
 
 	function __construct($tag,
@@ -77,7 +78,7 @@ class md
 	private static function h3($content) // not so experimental..
 	{
 		$self = new self(__FUNCTION__,
-				$content);
+				         $content);
 
 		return $self->_md;
 	}
@@ -92,6 +93,14 @@ class md
 			$level = "h" . $level;
 			return self::$level($content);
 		}
+	}
+
+	static function text($content) // direct construct generator
+	{
+		$self = new self(__FUNCTION__,
+				         $content);
+
+		return $self->_md;
 	}
 }
 
