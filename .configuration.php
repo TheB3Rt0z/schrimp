@@ -14,7 +14,7 @@ define('PROJECT', "Das " . implode(array_map(function($value)
                                              },
                                              explode(" ", SALT)))); // 8-3 Aurelian
 
-define ('COPYRIGHT', "Copyright © 2011-" . date('Y') . " " . PROJECT);
+define ('COPYRIGHT', "Copyright © 2011-" . date('Y') . " | " . PROJECT . " Project");
 
 define('HOME_COMPONENT', DEVELOPMENT_MODE ? "admin" : "homepage"); // convention
 
