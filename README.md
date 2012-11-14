@@ -3,7 +3,7 @@ Das S.C.H.R.I.M.P. v0.15
 
 
 
-![](http://localhost/schrimp/.inc/img/schrimp_favicon.ico "")![](http://localhost/schrimp/.inc/img/schrimp.png "")
+![](.inc/img/schrimp_favicon.ico "")![](.inc/img/schrimp.png "")
 
 
 

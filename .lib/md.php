@@ -102,7 +102,7 @@ class md
 			main::launch_error($msg);
 		}
 
-		$attributes = array('src' => main::resolve_uri($src),
+		$attributes = array('src' => $src,
 							'alt' => $alt,
 							'title' => $title);
 
