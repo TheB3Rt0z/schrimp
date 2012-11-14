@@ -114,7 +114,7 @@ class main
 
     static function get_documentation()
     {
-    	$title = PROJECT . " " . main::get_version() . " "
+    	$title = PROJECT . " " . main::get_version() . "   "
     		   . md::image(".inc/img/schrimp_favicon_mini.ico");
 
     	return md::title(1, $title)
