@@ -87,3 +87,18 @@ _handler_phpinfo_general
 de||Allgemeine Informationen
 en||General information
 it||Informazioni generali
+
+_handler_phpinfo_configuration
+de||Server-Konfiguration
+en||Server configuration
+it||Configurazione server
+
+_handler_phpinfo_environment
+de||Umgebungsvariablen
+en||Environment variables
+it||Variabili d'ambiente
+
+_handler_phpinfo_variables
+de||PHP-Variablen
+en||PHP variables
+it||Variabili PHP

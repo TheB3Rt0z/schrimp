@@ -165,12 +165,12 @@ class control extends controller
 		static $options = array // from PHP documentation
 		(
 			'general' => '_handler_phpinfo_general', //	The configuration line, php.ini location, build date, Web Server, System and more.
-			'credits' => '_handler_phpinfo_credits', //	PHP Credits. See also phpcredits().
+			//'credits' => '_handler_phpinfo_credits', //	PHP Credits. See also phpcredits().
 			'configuration' => '_handler_phpinfo_configuration', // Current Local and Master values for PHP directives. See also ini_get().
-			'modules' => '_handler_phpinfo_modules', // Loaded modules and their respective settings. See also get_loaded_extensions().
+			//'modules' => '_handler_phpinfo_modules', // Loaded modules and their respective settings. See also get_loaded_extensions().
 			'environment' => '_handler_phpinfo_environment', // Environment Variable information that's also available in $_ENV.
 			'variables' => '_handler_phpinfo_variables', // Shows all predefined variables from EGPCS (Environment, GET, POST, Cookie, Server).
-			'license' => '_handler_phpinfo_license', // PHP License information. See also the » license FAQ.
+			//'license' => '_handler_phpinfo_license', // PHP License information. See also the » license FAQ.
 		);
 
 		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
