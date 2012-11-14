@@ -22,6 +22,6 @@ define('CYCLOMATIC_COMPLEXITY', 12); // base complexity index
 define('METHODS_COMPLEXITY', CYCLOMATIC_COMPLEXITY * 3); // ATM 36 max code lines
 define('BLOCK_COMPLEXITY', CYCLOMATIC_COMPLEXITY * 7); // ATM 84 max code line length
 
-define('OUTPUT_COMPRESSION', DEVELOPMENT_MODE); // set output flatting on html finale rendering
+define('OUTPUT_COMPRESSION', !DEVELOPMENT_MODE); // set output flatting on html finale rendering
 
 ?>
