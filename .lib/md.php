@@ -4,6 +4,7 @@ class md
 {
 	private $_tag = false;
 	private $_content = '';
+	private $_attributes = array();
 	private $_formatting = '';
 
 	private $_md = '';
@@ -19,11 +20,15 @@ class md
 			                               strlen(\$this->_content))
 			                  . \"\n\n\n\";",
 			    'h3' => "return \"\n\n\";",
+	        	'img' => "return '![' . \$this->_attributes['alt'] . ']('
+	        		           . \$this->_attributes['src']
+	        		           . ' \"' . \$this->_attributes['title'] . '\")';",
 	        	'text' => '',
 	       	);
 
 	function __construct($tag,
-			             $content = '')
+						 $content = '',
+						 $attributes = array())
 	{
 		$this->_tag = $tag;
 
@@ -31,7 +36,7 @@ class md
 		{
 			$this->_md = "__CONTENT____FORMATTING__"; // to be checked
 			$this->_set_content($content);
-			$this->_set_formatting();
+			$this->_set_formatting($attributes);
 		}
 	}
 
@@ -41,21 +46,23 @@ class md
 				                $this->_tags);
 	}
 
-	private function _set_formatting() // maybe apply_formatting in the future..
-	{
-		$this->_formatting = eval($this->_tags[$this->_tag]);
-
-		$this->_md = str_replace("__FORMATTING__",
-				                 $this->_formatting,
-				                 $this->_md);
-	}
-
 	private function _set_content($content = '')
 	{
 		$this->_content = $content;
 
 		$this->_md = str_replace("__CONTENT__",
 				                 $this->_content,
+								 $this->_md);
+	}
+
+	private function _set_formatting($attributes) // maybe apply_formatting in the future..
+	{
+		$this->_attributes = $attributes;
+
+		$this->_formatting = eval($this->_tags[$this->_tag]);
+
+		$this->_md = str_replace("__FORMATTING__",
+				                 $this->_formatting,
 				                 $this->_md);
 	}
 
@@ -83,6 +90,44 @@ class md
 		return $self->_md;
 	}
 
+	private static function img($src,
+			                    $alt,
+								$title = '')
+	{
+		if (!main::exists_file($src))
+		{
+			$msg = t('error',
+					 'required file (%s) not exists',
+					 $src);
+			main::launch_error($msg);
+		}
+
+		$attributes = array('src' => main::resolve_uri($src),
+							'alt' => $alt,
+							'title' => $title);
+
+		$self = new self(__FUNCTION__,
+				         '',
+				         $attributes);
+
+		return $self->_md;
+	}
+
+	static function image($src,
+						  $alt = '')
+	{
+		return self::img($src,
+				         $alt);
+	}
+
+	static function text($content) // direct construct generator
+	{
+		$self = new self(__FUNCTION__,
+				         $content);
+
+		return $self->_md;
+	}
+
 	static function title($level,
 			              $content)
 	{
@@ -93,14 +138,6 @@ class md
 			$level = "h" . $level;
 			return self::$level($content);
 		}
-	}
-
-	static function text($content) // direct construct generator
-	{
-		$self = new self(__FUNCTION__,
-				         $content);
-
-		return $self->_md;
 	}
 }
 
