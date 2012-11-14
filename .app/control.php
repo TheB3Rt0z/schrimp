@@ -173,9 +173,20 @@ class control extends controller
 			//'license' => '_handler_phpinfo_license', // PHP License information. See also the » license FAQ.
 		);
 
-		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
-				        . BREADCRUMB_SEPARATOR
-				        . $this->_translate(__FUNCTION__));
+		$title = $this->_translate('COMPONENT VISIBLE NAME')
+			   . BREADCRUMB_SEPARATOR
+			   . $this->_translate(__FUNCTION__);
+
+		if (!empty($this->_args[0]))
+		{
+			if (!array_key_exists($this->_args[0], $options))
+				main::relocate_to("error/404");
+			else
+				$title .= BREADCRUMB_SEPARATOR
+				        . $this->_translate($options[$this->_args[0]]);
+		}
+
+		$this->_set_title($title);
 	}
 }
 
