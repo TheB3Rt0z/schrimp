@@ -58,8 +58,9 @@ class language
 			{
 				while ($text = explode("||", $texts[++$key]))
 				{
-					if ($text[0] == $language
-						|| $text[0] == FALLBACK_LANGUAGE)
+					if (($text[0] == $language
+						    || $text[0] == FALLBACK_LANGUAGE)
+						&& !empty($text[1]))
 					{
 						$translation = $text[1];
 					}
