@@ -4,16 +4,28 @@ define('FALLBACK_LANGUAGE', "en");
 
 class language
 {
-	static private $_languages = array('de',
-								       'en',
-								       'it');
+	static private $_languages = array
+	               (
+	                   'de',
+					   'en',
+					   'it',
+	               );
 
-	static $_translations = array('here' => array('de' => "hier",
-	                                              'en' => "here",
-	                                              'it' => "qua"),
-	                              'now' => array('de' => "jetzt",
-	                                             'en' => "now",
-	                                             'it' => "ora"));
+	static $_translations = array
+		   (
+			   'here' => array
+		   	   (
+		   	       'de' => "hier",
+	               'en' => "here",
+	               'it' => "qua"
+		   	   ),
+	           'now' => array
+		   	   (
+		   	   	   'de' => "jetzt",
+	               'en' => "now",
+	               'it' => "ora",
+		   	   )
+		   );
 
 	static function is_supported($language)
 	{
