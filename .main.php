@@ -114,8 +114,8 @@ class main
 
     static function get_documentation()
     {
-    	return md::title(1, PROJECT . " " . main::get_version())
-    	     . md::image(".inc/img/schrimp_favicon.ico")
+    	return md::image(".inc/img/schrimp_favicon.ico")
+    	     . md::title(1, PROJECT . " " . main::get_version())
     	     . md::image(".inc/img/schrimp.png")
     	     // adding real documentation with h2, h3, text and others..
     	     . str_repeat("\n", 5) . md::text(COPYRIGHT);

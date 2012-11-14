@@ -1,9 +1,9 @@
-Das S.C.H.R.I.M.P. v0.15
+![](schrimp/master/.inc/img/schrimp_favicon.ico "")Das S.C.H.R.I.M.P. v0.15
 ========================
 
 
 
-![](schrimp/blob/master/.inc/img/schrimp_favicon.ico "")![](schrimp/blob/master/.inc/img/schrimp.png "")
+![](schrimp/master/.inc/img/schrimp.png "")
 
 
 
