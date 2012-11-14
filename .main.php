@@ -114,8 +114,8 @@ class main
 
     static function get_documentation()
     {
-    	$title = PROJECT . " " . main::get_version() . "   "
-    		   . md::image(".inc/img/schrimp_favicon_mini.ico");
+    	$title = md::image(".inc/img/schrimp_favicon_md.ico")
+    	       . " " . PROJECT . " " . main::get_version();
 
     	return md::title(1, $title)
     	     // adding real documentation with h2, h3, text and others..
