@@ -102,7 +102,7 @@ class md
 			main::launch_error($msg);
 		}
 
-		$attributes = array('src' => $src,
+		$attributes = array('src' => GITHUB_PATH . $src,
 							'alt' => $alt,
 							'title' => $title);
 

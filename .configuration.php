@@ -8,6 +8,8 @@ define('PROTOCOL', "http" . (getenv('HTTPS') == 'on' ? "s" : '')); // auto
 
 define('PATH', "/schrimp"); // '' if server root is used (worth as base-path)
 
+define('GITHUB_PATH', "schrimp/blob/master/"); // prefix valid for static contents on github
+
 define('PROJECT', "Das " . implode(array_map(function($value)
                                              {
                                                  return substr($value, 0, 1) . ".";
