@@ -2,3 +2,8 @@ COMPONENT VISIBLE NAME
 de||Macht zu Mir
 en||Power to Me
 it||Potere a Me
+
+_handler_application_power
+de||Macht zu Mir
+en||Power to Me
+it||Potere a Me

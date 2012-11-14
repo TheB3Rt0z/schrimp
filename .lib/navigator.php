@@ -75,6 +75,7 @@ class navigator
 							{
 								$option_component = $key;
 								$option_value = 'COMPONENT VISIBLE NAME';
+								$subbranch['controller'] = $key;
 							}
 							else
 							{
@@ -86,7 +87,7 @@ class navigator
 							(
 								'name' => t($option_component,
    										    $option_value),
-								'handler' => $object->name . "_" . $key
+								'handler' => $object->name . "_" . $key,
 							);
 						}
     				}
@@ -147,11 +148,15 @@ class navigator
 				           . BREADCRUMB_SEPARATOR . main::$args[1];
 
 						if (!empty(main::$args[2]))
-							echo " (" . urldecode(implode(", ",
-						                          array_slice(main::$args, 2))) . ")";
+							echo " ("
+							   . urldecode(implode(", ",
+						                           array_slice(main::$args, 2)))
+						       . ")";
 					}
 					else
-						echo t($controller,
+						echo t((!empty($branch['sub'][$link]['controller'])
+							   ? $branch['sub'][$link]['controller']
+							   : $controller),
 					           $branch['sub'][$link]['handler']);
 				}
 				else
