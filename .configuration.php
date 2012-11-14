@@ -8,7 +8,7 @@ define('PROTOCOL', "http" . (getenv('HTTPS') == 'on' ? "s" : '')); // auto
 
 define('PATH', "/schrimp"); // '' if server root is used (worth as base-path)
 
-define('GITHUB_PATH', "schrimp/master/"); // prefix valid for static contents on github
+define('GITHUB_PATH', "https://raw.github.com/TheB3Rt0z/schrimp/master/"); // prefix valid for static contents on github
 
 define('PROJECT', "Das " . implode(array_map(function($value)
                                              {
