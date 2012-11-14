@@ -1,9 +1,9 @@
-![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon.ico "") Das S.C.H.R.I.M.P. v0.15
-=========================
+Das S.C.H.R.I.M.P. v0.15 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon.ico "")
+=============================================================================================================
 
 
 
-![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp.png "")
+
 
 
 
