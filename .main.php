@@ -28,18 +28,11 @@ class main
     {
         $this->_load_libraries();
 
-        if (DEVELOPMENT_MODE)
+        if (DEVELOPMENT_MODE) // only for developers, no further error 500 required
         {
          	$this->documentation = $this->get_documentation();
-
         	$doc_file = "README.md";
-        	if (@!file_put_contents($doc_file, $this->documentation)) // markdown format
-        	{
-        		$msg = t('error',
-        				 'documentation file "%s" not writable',
-        				 $doc_file);
-        		$this->launch_error($msg);
-        	}
+        	file_put_contents($doc_file, $this->documentation); // markdown format
         }
 
         $this->_initialize(str_replace(PATH . "/",
