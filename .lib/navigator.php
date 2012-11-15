@@ -98,7 +98,7 @@ class navigator
 		}
 	}
 
-	static function render_list() // TODO questo lo vorrei far apparire con una mouse gesture
+	static function render_list() // TODO this should appear on a mouse gesture..
 	{
 		$self = new self;
 

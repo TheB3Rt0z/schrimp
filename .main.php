@@ -1,6 +1,6 @@
 <?php
 
-//TODO: web-storage, session su PHP o memcache o DB? pspell&gettext
+//TODO: escort: session su PHP poi DB se webstore & memcache fail?
 //      optional admin bar to measure run time performance (gApis)
 
 require_once ".configuration.php";
@@ -22,7 +22,7 @@ class main
     var $aside = '';
     var $footer = '';
 
-    var $documentation = false;
+    var $documentation = false; // this remain false on production servers..
 
     function __construct($uri, $documentation = '')
     {
@@ -107,6 +107,8 @@ class main
 
     static function get_documentation()
     {
+    	// TODO use PHP's highlight_string to rapresent code excerpts
+
     	$title = md::image(".inc/img/schrimp_favicon_md.ico")
     	       . " " . PROJECT . " " . main::get_version();
 
@@ -115,9 +117,14 @@ class main
     	     . str_repeat("\n", 5) . md::text(COPYRIGHT);
     }
 
+    static function is_webstoraged()
+    {
+
+    }
+
     static function is_memcached()
     {
-        //TODO: verificare che effettivamente il servizio funzioni con almeno un server..
+    	// TODO verify hier, if at least one mem-server works
         return extension_loaded('memcache');
     }
 

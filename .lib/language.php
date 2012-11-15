@@ -2,7 +2,7 @@
 
 define('FALLBACK_LANGUAGE', "en");
 
-class language
+class language // it could be interessant to use pspell&gettext
 {
 	static private $_languages = array
 	               (
