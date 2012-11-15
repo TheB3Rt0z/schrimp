@@ -4,6 +4,11 @@ require_once ".main.php";
 
 $main = new main($_SERVER['REQUEST_URI']);
 
+function vd($what)
+{
+	main::var_dump($what);
+}
+
 ob_start();
 
 ?><!DOCTYPE html>

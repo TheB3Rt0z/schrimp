@@ -95,6 +95,11 @@ class main
         return $this->_call;
     }
 
+    function var_dump($what)
+    {
+    	echo html::preform($what);
+    }
+
     static function get_version($precision = 2)
     {
         // si potrebbe legare a questa o la seguentefunzione un controllo per la doc..
@@ -107,19 +112,26 @@ class main
 
     static function get_documentation()
     {
-    	// TODO use PHP's highlight_string to rapresent code excerpts
+    	// TODO use PHP's highlight_string/file to rappresent code excerpts
 
     	$title = md::image(".inc/img/schrimp_favicon_md.ico")
     	       . " " . PROJECT . " " . main::get_version();
 
+    	$const_list = '';
+    	$constants = get_defined_constants(true);
+    	foreach ($constants['user'] as $key => $value)
+			$const_list .= "	" . $key . ": " . $value . "\n";
+
     	return md::title(1, $title)
-    	     // adding real documentation with h2, h3, text and others..
+    	     . md::title(2, "System Core Information")
+    	     . md::title(3, "Predefined configuation constants:")
+    	     . $const_list
     	     . str_repeat("\n", 5) . md::text(COPYRIGHT);
     }
 
     static function is_webstoraged()
     {
-
+		// local and/or session storage are available? with js
     }
 
     static function is_memcached()

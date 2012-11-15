@@ -32,6 +32,7 @@ class html
                     'li',
                     'ol',
                     'p',
+	        		'pre',
                     'script',
                     'ul',
 	        	)
@@ -155,9 +156,9 @@ class html
     {
     	if (!main::exists_file($src))
 		{
-			$msg = t('error',
-                     'required file (%s) not exists',
-				     $src);
+			$msg = tr('error',
+                      'required file (%s) not exists',
+				      $src);
 			main::launch_error($msg);
 		}
 
@@ -254,9 +255,9 @@ class html
     {
     	if (!main::exists_file($href))
     	{
-			$msg = t('error',
-                     'required file (%s) not exists',
-				     $href);
+			$msg = tr('error',
+                      'required file (%s) not exists',
+				      $href);
 			main::launch_error($msg);
 			return; // stops link binding execution to avoid "problems"
 		}
@@ -301,6 +302,15 @@ class html
     	return $self->_html;
     }
 
+    private static function pre($content)
+    {
+    	$self = new self(__FUNCTION__,
+    					 array(),
+    					 $content);
+
+    	return $self->_html;
+    }
+
     private static function script($type,
                                    $src = false,
                                    $content = '')
@@ -316,9 +326,9 @@ class html
     		if (!main::exists_file($src)
     			&& !parse_url($src))
 			{
-				$msg = t('error',
-	                     'required file (%s) not exists',
-					     $src);
+				$msg = tr('error',
+	                      'required file (%s) not exists',
+					      $src);
 				main::launch_error($msg);
 				return;
 			}
@@ -433,6 +443,11 @@ class html
     		$level = "h" . $level;
         	return self::$level($content);
     	}
+    }
+
+    static function preform($content)
+    {
+    	return self::pre(var_export($content, true));
     }
 }
 

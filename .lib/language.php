@@ -77,10 +77,10 @@ class language // it could be interessant to use pspell&gettext
 	}
 }
 
-function t($component,
-	       $marker)
+function tr($component,
+	        $marker)
 {
-	return call_user_func_array('language::translate', func_get_args());
+	return call_user_func_array('language::translate', func_get_args()); // quick-alias
 }
 
 ?>

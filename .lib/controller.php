@@ -3,7 +3,7 @@
 abstract class controller
 {
 	const VISIBLE_IN_NAVIGATION = true;
-	
+
 	const RENDER_BREADCRUMB = true;
 
 	protected $_action = false;
@@ -65,8 +65,8 @@ abstract class controller
 
 	protected function _translate($placeholder)
 	{
-		return t(get_class($this),
-		         $placeholder);
+		return tr(get_class($this),
+		          $placeholder);
 	}
 
 	function get_title()

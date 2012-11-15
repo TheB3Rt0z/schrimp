@@ -13,8 +13,8 @@ class navigator
 		(
 			HOME_COMPONENT => array
 			(
-				'name' => t(HOME_COMPONENT,
-                            'COMPONENT VISIBLE NAME'),
+				'name' => tr(HOME_COMPONENT,
+                             'COMPONENT VISIBLE NAME'),
             ),
         );
 
@@ -33,8 +33,8 @@ class navigator
     		{
     			self::$_structure[HOME_COMPONENT]['sub'][$branch] = array
     			(
-    			    'name' => t($branch,
-                                'COMPONENT VISIBLE NAME')
+    			    'name' => tr($branch,
+                                 'COMPONENT VISIBLE NAME')
     		    );
 
     			$subbranch =& self::$_structure[HOME_COMPONENT]['sub'][$branch];
@@ -54,8 +54,8 @@ class navigator
     					if (!isset($subbranch['sub'][$link]))
     						$subbranch['sub'][$link] = array
     						(
-    						    'name' => t($branch,
-    						                $object->name),
+    						    'name' => tr($branch,
+    						                 $object->name),
     						    'handler' => $object->name
     					    );
 
@@ -85,8 +85,8 @@ class navigator
 
 							$subbranch['sub'][$link . "/" . $key] = array
 							(
-								'name' => t($option_component,
-   										    $option_value),
+								'name' => tr($option_component,
+   										     $option_value),
 								'handler' => $object->name . "_" . $key,
 							);
 						}
@@ -140,8 +140,8 @@ class navigator
 
 				    if (count(main::$args) > 1)
 					{
-						$name = t($controller,
-    						      $branch['sub'][$link]['handler']);
+						$name = tr($controller,
+    						       $branch['sub'][$link]['handler']);
 
 						echo html::hyperlink($link .= "/" . main::$args[0],
 				                         	 $name)
@@ -154,10 +154,10 @@ class navigator
 						       . ")";
 					}
 					else
-						echo t((!empty($branch['sub'][$link]['controller'])
-							   ? $branch['sub'][$link]['controller']
-							   : $controller),
-					           $branch['sub'][$link]['handler']);
+						echo tr((!empty($branch['sub'][$link]['controller'])
+							    ? $branch['sub'][$link]['controller']
+							    : $controller),
+					            $branch['sub'][$link]['handler']);
 				}
 				else
 					echo $branch['sub'][$link]['name'];

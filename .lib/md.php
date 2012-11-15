@@ -23,7 +23,7 @@ class md
 	        	'img' => "return '![' . \$this->_attributes['alt'] . ']('
 	        		           . \$this->_attributes['src']
 	        		           . ' \"' . \$this->_attributes['title'] . '\")';",
-	        	'text' => '',
+	        	'text' => "return \"\n\";",
 	       	);
 
 	function __construct($tag,
@@ -96,9 +96,9 @@ class md
 	{
 		if (!main::exists_file($src))
 		{
-			$msg = t('error',
-					 'required file (%s) not exists',
-					 $src);
+			$msg = tr('error',
+					  'required file (%s) not exists',
+					  $src);
 			main::launch_error($msg);
 		}
 
