@@ -167,6 +167,11 @@ class navigator
 		}
 	}
 
+	static function render_active_breadcrumb()
+	{
+		// a breadcrumb with dynamic same-level-select trunks, maybe widget?
+	}
+
 	static function render_sitemap()
 	{
 		$self = new self;
