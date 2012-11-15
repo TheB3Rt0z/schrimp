@@ -117,15 +117,17 @@ class main
     	$title = md::image(".inc/img/schrimp_favicon_md.ico")
     	       . " " . PROJECT . " " . main::get_version();
 
-    	$const_list = '';
+    	$consts_list = '';
     	$constants = get_defined_constants(true);
-    	foreach ($constants['user'] as $key => $value)
-			$const_list .= "	" . $key . ": " . $value . "\n";
+    	$user_consts = $constants['user'];
+    	ksort($user_consts);
+    	foreach ($user_consts as $key => $value)
+			$consts_list .= "	" . $key . ": " . $value . "\n";
 
     	return md::title(1, $title)
-    	     . md::title(2, "System Core Information")
-    	     . md::title(3, "Predefined configuation constants:")
-    	     . $const_list
+    	     . md::title(2, "General reference")
+    	     . md::title(3, "Configuration constants:")
+    	     . $consts_list
     	     . str_repeat("\n", 5) . md::text(COPYRIGHT);
     }
 
