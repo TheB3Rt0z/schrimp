@@ -1,6 +1,6 @@
 <?php
 
-define('MD_NEWLINE', "\n  "); // markdown-style new line with br conversion
+define('MD_NEWLINE', "   \n"); // markdown-style new line with br conversion
 
 class md
 {
