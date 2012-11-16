@@ -433,6 +433,11 @@ class html
                          $title);
     }
 
+    static function preform($content)
+    {
+    	return self::pre(var_export($content, true));
+    }
+
     static function title($level,
                           $content)
     {
@@ -443,11 +448,6 @@ class html
     		$level = "h" . $level;
         	return self::$level($content);
     	}
-    }
-
-    static function preform($content)
-    {
-    	return self::pre(var_export($content, true));
     }
 }
 
