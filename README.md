@@ -7,7 +7,7 @@ General reference
 -----------------  
   
   
-**CONFIGURATION CONSTANTS:**  
+**CONFIGURATION CONSTANTS**  
   
 - **BLOCK_COMPLEXITY** &#10140; 84
 - **BREADCRUMB_SEPARATOR** &#10140; ' &raquo; '
@@ -31,6 +31,11 @@ General reference
 - **PROJECT** &#10140; 'Das S.C.H.R.I.M.P.'
 - **PROTOCOL** &#10140; 'http'
 - **SALT** &#10140; 'System Control Heading_to_a Raw Increase_of Mental Productivity'
+  
+***  
+  
+**MAIN APPLICATION:**  
+  
   
 ***  
   
