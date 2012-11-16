@@ -126,8 +126,9 @@ class main
 
     	return md::title(1, $title)
     	     . md::title(2, "General reference")
-    	     . md::title(3, "Configuration constants:")
-    	     . $consts_list
+    	       . md::title(3, "Configuration constants:")
+    	         . $consts_list
+    	       . md::hr()
     	     . str_repeat("\n", 5) . md::text(COPYRIGHT);
     }
 
