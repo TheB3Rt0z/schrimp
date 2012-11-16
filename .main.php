@@ -122,7 +122,7 @@ class main
     	$user_consts = $constants['user'];
     	ksort($user_consts);
     	foreach ($user_consts as $key => $value)
-			$consts_list .= "	" . $key . ": " . $value . "\n";
+			$consts_list .= "	**" . $key . "** : " . $value . "\n";
 
     	return md::title(1, $title)
     	     . md::title(2, "General reference")
