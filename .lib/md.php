@@ -20,6 +20,7 @@ class md
 			                               strlen(\$this->_content))
 			                  . \"\n\n\n\";",
 			    'h3' => "return \"\n\n\";",
+	        	'hr' => "return \"\n***\n\n\";",
 	        	'img' => "return '![' . \$this->_attributes['alt'] . ']('
 	        		           . \$this->_attributes['src']
 	        		           . ' \"' . \$this->_attributes['title'] . '\")';",
@@ -118,6 +119,13 @@ class md
 	{
 		return self::img($src,
 				         $alt);
+	}
+
+	static function hr() // direct constructing without any content
+	{
+		$self = new self(__FUNCTION__);
+
+		return $self->_md;
 	}
 
 	static function text($content) // direct construct generator
