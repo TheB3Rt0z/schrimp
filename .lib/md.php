@@ -1,5 +1,7 @@
 <?php
 
+define('MD_NEWLINE', "  \n"); // markdown-style new line with br conversion
+
 class md
 {
 	private $_tag = false;
@@ -11,10 +13,10 @@ class md
 
 	private $_tags = array
 	        (
-	        	'h1' => "return \"\n\"
+	        	'h1' => "return MD_NEWLINE
 			                  . str_repeat(\"=\",
 			                               strlen(\$this->_content))
-		                      . \"\n\n\n\n\";",
+		                      . str_repeat(MD_NEWLINE, 4);",
 			    'h2' => "return \"\n\"
 			                  . str_repeat(\"-\",
 			                               strlen(\$this->_content))

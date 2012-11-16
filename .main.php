@@ -121,25 +121,13 @@ class main
     	ksort($user_consts);
     	foreach ($user_consts as $key => $value)
     	{
-    		switch ($value)
-    		{
-    			case true :
-    			{
-    				$value = 'true';
-    				break;
-    			}
-    			case false :
-    			{
-    				$value = 'false';
-    				break;
-    			}
-    			case '' :
-    			{
-    				$value = 'null';
-    				break;
-    			}
-    		}
-    		if (!is_numeric($value))
+    		if ($value === true)
+    			$value = "true";
+    		elseif ($value === false)
+    			$value = "false";
+    		elseif ($value === '')
+    			$value = "null";
+			elseif (!is_numeric($value))
     			$value = "'" . $value . "'";
 			$consts_list .= "- **" . $key . "** &#10140; " . $value . "\n";
     	}
