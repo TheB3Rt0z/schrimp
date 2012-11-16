@@ -111,9 +111,7 @@ class main
     }
 
     static function get_documentation()
-    {
-    	// TODO use PHP's highlight_string/file to rappresent code excerpts
-
+    {// TODO use PHP's highlight_string/file to rappresent code excerpts
     	$title = md::image(".inc/img/schrimp_favicon_md.ico")
     	       . " " . PROJECT . " " . main::get_version();
 
@@ -122,7 +120,29 @@ class main
     	$user_consts = $constants['user'];
     	ksort($user_consts);
     	foreach ($user_consts as $key => $value)
-			$consts_list .= "- **" . $key . "**: '" . $value . "'\n";
+    	{
+    		switch ($value)
+    		{
+    			case true :
+    			{
+    				$value = 'true';
+    				break;
+    			}
+    			case false :
+    			{
+    				$value = 'false';
+    				break;
+    			}
+    			case '' :
+    			{
+    				$value = 'null';
+    				break;
+    			}
+    		}
+    		if (!is_numeric($value))
+    			$value = "'" . $value . "'";
+			$consts_list .= "- **" . $key . "** &#10140; " . $value . "\n";
+    	}
 
     	return md::title(1, $title)
     	     . md::title(2, "General reference")
