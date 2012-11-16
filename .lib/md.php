@@ -85,7 +85,7 @@ class md
 	private static function h3($content) // not so experimental..
 	{
 		$self = new self(__FUNCTION__,
-				         strtoupper($content));
+				         '**' . strtoupper($content) . '**');
 
 		return $self->_md;
 	}
