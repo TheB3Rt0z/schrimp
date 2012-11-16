@@ -1,6 +1,6 @@
 <?php
 
-define('MD_NEWLINE', "  \n"); // markdown-style new line with br conversion
+define('MD_NEWLINE', "\n  "); // markdown-style new line with br conversion
 
 class md
 {
@@ -17,16 +17,21 @@ class md
 			                  . str_repeat(\"=\",
 			                               strlen(\$this->_content))
 		                      . str_repeat(MD_NEWLINE, 4);",
-			    'h2' => "return \"\n\"
+
+			    'h2' => "return MD_NEWLINE
 			                  . str_repeat(\"-\",
 			                               strlen(\$this->_content))
-			                  . \"\n\n\n\";",
-			    'h3' => "return \"\n\n\";",
-	        	'hr' => "return \"\n***\n\n\";",
+			                  . str_repeat(MD_NEWLINE, 3);",
+
+			    'h3' => "return str_repeat(MD_NEWLINE, 2);",
+
+	        	'hr' => "return MD_NEWLINE . '***' . str_repeat(MD_NEWLINE, 2);",
+
 	        	'img' => "return '![' . \$this->_attributes['alt'] . ']('
 	        		           . \$this->_attributes['src']
 	        		           . ' \"' . \$this->_attributes['title'] . '\")';",
-	        	'text' => "return \"\n\";",
+
+	        	'text' => "return MD_NEWLINE;",
 	       	);
 
 	function __construct($tag,
