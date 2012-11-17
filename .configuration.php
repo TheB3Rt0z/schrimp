@@ -1,29 +1,26 @@
 <?php
 
-define('DEVELOPMENT_MODE', true);
+define('SET_DEVELOPMENT_MODE', true);
+define('SET_GITHUB_RAWPATH', "https://raw.github.com/TheB3Rt0z/schrimp/master/"); // prefix valid for static contents on github
+define('SET_HOME_COMPONENT', SET_DEVELOPMENT_MODE ? "admin" : "homepage"); // convention
+define('SET_LOCAL_PATH', "/schrimp"); // '' if server root is used (worth as base-path)
+define('SET_OUTPUT_COMPRESSION', !SET_DEVELOPMENT_MODE); // set output flatting on html final rendering
+define('SET_TRANSPORT_PROTOCOL', "http" . (getenv('HTTPS') == 'on' ? "s" : '')); // auto
 
-define('SALT', "System Control Heading_to_a Raw Increase_of Mental Productivity");
+define('MAX_CYCLOMATIC_COMPLEXITY', 12); // base complexity index
+define('MAX_METHODS_COMPLEXITY', MAX_CYCLOMATIC_COMPLEXITY * 3); // ATM 36 max code lines
+define('MAX_BLOCK_COMPLEXITY', MAX_CYCLOMATIC_COMPLEXITY * 7); // ATM 84 max code line length
 
-define('PROTOCOL', "http" . (getenv('HTTPS') == 'on' ? "s" : '')); // auto
+define('STR_KERNEL_SALT', "Sstm Cntrl Hdng_t_ Rw Incrs_f Mntl Prdctvt");
 
-define('PATH', "/schrimp"); // '' if server root is used (worth as base-path)
-
-define('GITHUB_RAWPATH', "https://raw.github.com/TheB3Rt0z/schrimp/master/"); // prefix valid for static contents on github
-
-define('PROJECT', "Das " . implode(array_map(function($value)
+define('STR_PROJECT_NAME', "Das "
+		                 . implode(array_map(function($value)
                                              {
                                                  return substr($value, 0, 1) . ".";
                                              },
-                                             explode(" ", SALT)))); // 8-3 Aurelian
+                                             explode(" ", STR_KERNEL_SALT)))); // 8-3 Aurelian
 
-define('COPYRIGHT', "Copyright © 2011-" . date('Y') . " | " . PROJECT . " Project");
-
-define('HOME_COMPONENT', DEVELOPMENT_MODE ? "admin" : "homepage"); // convention
-
-define('CYCLOMATIC_COMPLEXITY', 12); // base complexity index
-define('METHODS_COMPLEXITY', CYCLOMATIC_COMPLEXITY * 3); // ATM 36 max code lines
-define('BLOCK_COMPLEXITY', CYCLOMATIC_COMPLEXITY * 7); // ATM 84 max code line length
-
-define('OUTPUT_COMPRESSION', !DEVELOPMENT_MODE); // set output flatting on html final rendering
+define('STR_COPYRIGHT_SIGNATURE', "Copyright © 2011-" . date('Y') . " | "
+		                        . STR_PROJECT_NAME . " Project");
 
 ?>

@@ -17,7 +17,7 @@ ob_start();
 		<meta name="viewport" content="user-scalable=no,width=device-width" />
 		<title>
 			<?php
-			echo PROJECT . " "
+			echo STR_PROJECT_NAME . " "
 			   . $main->get_version()
 			   . " | "
                . $main->title;
@@ -58,7 +58,7 @@ ob_start();
 	</body>
 </html><?php
 
-if (OUTPUT_COMPRESSION)
+if (SET_OUTPUT_COMPRESSION)
 	echo str_replace(array("\t", "\n", "\r", "  "), '', ob_get_clean());
 else
 	echo ob_get_clean();

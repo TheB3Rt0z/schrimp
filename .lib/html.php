@@ -1,6 +1,6 @@
 <?php
 
-define('BREADCRUMB_SEPARATOR', " &raquo; ");
+define('HTML_BREADCRUMB_SEPARATOR', " &raquo; ");
 
 class html
 {

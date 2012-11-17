@@ -28,14 +28,14 @@ class main
     {
         $this->_load_libraries();
 
-        if (DEVELOPMENT_MODE) // only for developers, no further error 500 required
+        if (SET_DEVELOPMENT_MODE) // only for developers, no further error 500 required
         {
          	$this->documentation = $this->get_documentation();
         	$doc_file = "README.md";
         	file_put_contents($doc_file, $this->documentation); // markdown format
         }
 
-        $this->_initialize(str_replace(PATH . "/",
+        $this->_initialize(str_replace(SET_LOCAL_PATH . "/",
                                        '',
                                        $uri));
     }
@@ -71,7 +71,7 @@ class main
             }
         }
         else
-            self::$controller = HOME_COMPONENT;
+            self::$controller = SET_HOME_COMPONENT;
 
         require_once ".app/" . self::$controller . ".php";
         foreach (glob(".app/" . self::$controller . "_*.php") as $filename)
@@ -113,7 +113,7 @@ class main
     static function get_documentation()
     {// TODO use PHP's highlight_string/file to rappresent code excerpts
     	$title = md::image(".inc/img/schrimp_favicon_md.ico")
-    	       . " " . PROJECT . " " . main::get_version();
+    	       . " " . STR_PROJECT_NAME . " " . main::get_version();
 
     	$consts_list = '';
     	$constants = get_defined_constants(true);
@@ -140,7 +140,7 @@ class main
     	       . md::title(3, "Main application:")
     	         // first class analysys
     	       . md::hr()
-    	     . str_repeat("\n", 4) . md::text(COPYRIGHT);
+    	     . str_repeat("\n", 4) . md::text(STR_COPYRIGHT_SIGNATURE);
     }
 
     static function is_webstoraged()
@@ -161,7 +161,10 @@ class main
 
     static function resolve_uri($uri = '')
     {
-        return PROTOCOL . "://" . $_SERVER['HTTP_HOST'] . PATH . "/" . $uri;
+        return SET_TRANSPORT_PROTOCOL . "://"
+        	 . $_SERVER['HTTP_HOST']
+             . SET_LOCAL_PATH
+             . "/" . $uri;
     }
 
     static function relocate_to($url = '')

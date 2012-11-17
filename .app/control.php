@@ -31,49 +31,49 @@ class control extends controller
 	private function _handler_core()
 	{
 		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
-		                . BREADCRUMB_SEPARATOR
+		                . HTML_BREADCRUMB_SEPARATOR
 		                . $this->_translate(__FUNCTION__));
 	}
 
 	private function _handler_core_db()
 	{
 		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
-		                . BREADCRUMB_SEPARATOR
+		                . HTML_BREADCRUMB_SEPARATOR
 		                . $this->_translate(__FUNCTION__));
 	}
 
 	private function _handler_core_controller()
 	{
 		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
-		                . BREADCRUMB_SEPARATOR
+		                . HTML_BREADCRUMB_SEPARATOR
 		                . $this->_translate(__FUNCTION__));
 	}
 
 	private function _handler_core_escort()
 	{
 		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
-		                . BREADCRUMB_SEPARATOR
+		                . HTML_BREADCRUMB_SEPARATOR
 		                . $this->_translate(__FUNCTION__));
 	}
 
 	private function _handler_core_navigator()
 	{
 		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
-		                . BREADCRUMB_SEPARATOR
+		                . HTML_BREADCRUMB_SEPARATOR
 		                . $this->_translate(__FUNCTION__));
 	}
 
 	private function _handler_core_html()
 	{
 		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
-		                . BREADCRUMB_SEPARATOR
+		                . HTML_BREADCRUMB_SEPARATOR
 		                . $this->_translate(__FUNCTION__));
 	}
 
 	private function _handler_core_widget()
 	{
 		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
-		                . BREADCRUMB_SEPARATOR
+		                . HTML_BREADCRUMB_SEPARATOR
 		                . $this->_translate(__FUNCTION__));
 	}
 
@@ -87,7 +87,7 @@ class control extends controller
 			main::relocate_to("error/404");
 
 		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
-		                . BREADCRUMB_SEPARATOR
+		                . HTML_BREADCRUMB_SEPARATOR
 		                . $this->_translate(__FUNCTION__));
 	}
 
@@ -104,42 +104,42 @@ class control extends controller
 				           return \$output;";
 
 		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
-		                . BREADCRUMB_SEPARATOR
+		                . HTML_BREADCRUMB_SEPARATOR
 		                . $this->_translate(__FUNCTION__));
 	}
 
 	private function _handler_modules()
 	{
 		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
-		                . BREADCRUMB_SEPARATOR
+		                . HTML_BREADCRUMB_SEPARATOR
 		                . $this->_translate(__FUNCTION__));
 	}
 
 	private function _handler_modules_homepage()
 	{
 		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
-		                . BREADCRUMB_SEPARATOR
+		                . HTML_BREADCRUMB_SEPARATOR
 		                . $this->_translate(__FUNCTION__));
 	}
 
 	private function _handler_modules_control()
 	{
 		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
-		                . BREADCRUMB_SEPARATOR
+		                . HTML_BREADCRUMB_SEPARATOR
 		                . $this->_translate(__FUNCTION__));
 	}
 
 	private function _handler_modules_documentation()
 	{
 		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
-		                . BREADCRUMB_SEPARATOR
+		                . HTML_BREADCRUMB_SEPARATOR
 		                . $this->_translate(__FUNCTION__));
 	}
 
 	private function _handler_modules_error()
 	{
 		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
-		                . BREADCRUMB_SEPARATOR
+		                . HTML_BREADCRUMB_SEPARATOR
 		                . $this->_translate(__FUNCTION__));
 	}
 
@@ -156,7 +156,7 @@ class control extends controller
 				           return \$output;";
 
 		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
-		                . BREADCRUMB_SEPARATOR
+		                . HTML_BREADCRUMB_SEPARATOR
 		                . $this->_translate(__FUNCTION__));
 	}
 
@@ -174,7 +174,7 @@ class control extends controller
 		);
 
 		$title = $this->_translate('COMPONENT VISIBLE NAME')
-			   . BREADCRUMB_SEPARATOR
+			   . HTML_BREADCRUMB_SEPARATOR
 			   . $this->_translate(__FUNCTION__);
 
 		if (!empty($this->_args[0]))
@@ -182,7 +182,7 @@ class control extends controller
 			if (!array_key_exists($this->_args[0], $options))
 				main::relocate_to("error/404");
 			else
-				$title .= BREADCRUMB_SEPARATOR
+				$title .= HTML_BREADCRUMB_SEPARATOR
 				        . $this->_translate($options[$this->_args[0]]);
 		}
 

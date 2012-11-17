@@ -110,7 +110,7 @@ class md
 			main::launch_error($msg);
 		}
 
-		$attributes = array('src' => GITHUB_RAWPATH . $src,
+		$attributes = array('src' => SET_GITHUB_RAWPATH . $src,
 							'alt' => $alt,
 							'title' => $title);
 

@@ -50,14 +50,14 @@ class documentation extends controller
 	private function _handler_list()
 	{
 		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
-		                . BREADCRUMB_SEPARATOR
+		                . HTML_BREADCRUMB_SEPARATOR
 		                . $this->_translate(__FUNCTION__));
 	}
 
 	private function _handler_list_files()
 	{
 		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
-		                . BREADCRUMB_SEPARATOR
+		                . HTML_BREADCRUMB_SEPARATOR
 		                . $this->_translate(__FUNCTION__));
 	}
 }

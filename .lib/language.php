@@ -1,6 +1,6 @@
 <?php
 
-define('FALLBACK_LANGUAGE', "en");
+define('LANGUAGE_FALLBACK_LANG', "en");
 
 class language // it could be interessant to use pspell&gettext
 {
@@ -50,8 +50,8 @@ class language // it could be interessant to use pspell&gettext
 
 		if (isset(self::$_translations[$marker][$language]))
 			$translation = self::$_translations[$marker][$language];
-		elseif (isset(self::$_translations[$marker][FALLBACK_LANGUAGE]))
-			$translation = self::$_translations[$marker][FALLBACK_LANGUAGE];
+		elseif (isset(self::$_translations[$marker][LANGUAGE_FALLBACK_LANG]))
+			$translation = self::$_translations[$marker][LANGUAGE_FALLBACK_LANG];
 
 		foreach ($texts as $key => $value)
 			if ($marker == $value)
@@ -59,7 +59,7 @@ class language // it could be interessant to use pspell&gettext
 				while ($text = explode("||", $texts[++$key]))
 				{
 					if (($text[0] == $language
-						    || $text[0] == FALLBACK_LANGUAGE)
+						    || $text[0] == LANGUAGE_FALLBACK_LANG)
 						&& !empty($text[1]))
 					{
 						$translation = $text[1];
