@@ -140,7 +140,7 @@ class main
     	       . md::title(3, "Main application:")
     	         // first class analysys
     	       . md::hr()
-    	     . str_repeat("\n", 5) . md::text(COPYRIGHT);
+    	     . str_repeat("\n", 4) . md::text(COPYRIGHT);
     }
 
     static function is_webstoraged()
