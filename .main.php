@@ -128,14 +128,37 @@ class main
     		elseif ($value === '')
     			$value = "null";
 			elseif (!is_numeric($value))
-    			$value = "'" . $value . "'";
+    			$value = "\"" . $value . "\"";
 			$consts_list .= "- **" . $key . "** &#10140; " . $value . "\n";
+    	}
+
+    	$funcs_list = '';
+    	$functions = get_defined_functions();
+    	$user_funcs = $functions['user'];
+    	sort($user_funcs);
+    	foreach ($user_funcs as $function)
+    	{
+    		$function = new ReflectionFunction($function);
+    		$parameters = array();
+    		foreach ($function->getParameters() as $parameter)
+    			$parameters[] = "$" . $parameter->getName()
+    		                  . ($parameter->isOptional()
+    		                    ? " = " . $parameter->getDefaultValue() // to be formatted like costants
+    		                    : '');
+    		$funcs_list .= "- **" . $function->getName() . "("
+    				     . implode($parameters, ", ") . ")** &#10140; "
+    				     . str_replace(realpath('') . "/",
+    				     		       '',
+    				     		       $function->getFileName()) . "\n";
     	}
 
     	return md::title(1, $title)
     	     . md::title(2, "General reference")
     	       . md::title(3, "Configuration constants")
     	         . $consts_list
+    	       . md::hr()
+    	       . md::title(3, "Function aliases")
+    	         . $funcs_list // add more information
     	       . md::hr()
     	       . md::title(3, "Main application:")
     	         // first class analysys
@@ -183,6 +206,15 @@ class main
         if ($_SERVER['REQUEST_URI'] != (PATH . "/" . $url))
             main::relocate_to($url);
     }
+}
+
+/**
+ * Alias for main::var_dump()
+ * @param unknown $what
+ */
+function vd($what)
+{
+	main::var_dump($what);
 }
 
 ?>
