@@ -36,6 +36,10 @@ General reference
   
 **FUNCTION ALIASES**  
   
+- **fe($path)** &#10140; .main.php on line 231,
+  returns boolean if realpath path exists on running server;
+  @param string $path
+
 - **tr($component, $marker)** &#10140; .lib/language.php on line 85,
   executes language translation of marker identifier, referring to given component;
   @param string $component

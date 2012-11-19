@@ -56,7 +56,7 @@ class main
 
         if ($components[0])
         {
-            if (!$this->exists_file(".app/" . $components[0] . ".php")
+            if (!fe(".app/" . $components[0] . ".php")
                 || substr_count($components[0] , "_"))
             {
                 $this->relocate_to("error/404");
@@ -222,6 +222,15 @@ class main
 function vd($what)
 {
 	main::var_dump($what);
+}
+
+/**
+ * returns boolean if realpath path exists on running server;
+ * @param string $path
+ */
+function fe($path)
+{
+	return main::exists_file($path);
 }
 
 ?>

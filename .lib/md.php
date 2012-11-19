@@ -102,7 +102,7 @@ class md
 			                    $alt,
 								$title = '')
 	{
-		if (!main::exists_file($src))
+		if (!fe($src))
 		{
 			$msg = tr('error',
 					  'required file (%s) not exists',

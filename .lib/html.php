@@ -154,7 +154,7 @@ class html
     					        $alt,
                                 $title = '')
     {
-    	if (!main::exists_file($src))
+    	if (!fe($src))
 		{
 			$msg = tr('error',
                       'required file (%s) not exists',
@@ -253,7 +253,7 @@ class html
                                  $rel,
                                  $type)
     {
-    	if (!main::exists_file($href))
+    	if (!fe($href))
     	{
 			$msg = tr('error',
                       'required file (%s) not exists',
@@ -323,7 +323,7 @@ class html
     	if ($src
     		&& !in_array($src, html::$_loaded_scripts))
     	{
-    		if (!main::exists_file($src)
+    		if (!fe($src)
     			&& !parse_url($src))
 			{
 				$msg = tr('error',
