@@ -77,6 +77,11 @@ class language // it could be interessant to use pspell&gettext
 	}
 }
 
+/**
+ * executes language translation of marker identifier, referring to given component;
+ * @param string $component
+ * @param string $marker
+ */
 function tr($component,
 	        $marker)
 {

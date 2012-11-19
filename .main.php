@@ -153,9 +153,9 @@ class main
     				     		       $function->getFileName())
     				     . " on line " . $function->getStartLine()
      				     . ($doc_comment
-     				       ? trim(str_replace(array("*", "/"),
-     				     		              '',
-     				     		              $doc_comment), " ")
+     				       ? "," . trim(str_replace(array("*", "/"),
+     				     		                     '',
+     				     		                     $doc_comment), " ")
      				       : '') . "\n";
     	}
 
@@ -216,7 +216,7 @@ class main
 }
 
 /**
- * Returns pre-formatted mixed variables
+ * returns pre-formatted mixed variables;
  * @param mixed $what
  */
 function vd($what)
