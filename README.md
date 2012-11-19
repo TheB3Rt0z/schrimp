@@ -36,8 +36,11 @@ General reference
   
 **FUNCTION ALIASES**  
   
-- **tr($component, $marker)** &#10140; .lib/language.php
-- **vd($what)** &#10140; .main.php
+- **tr($component, $marker)** &#10140; .lib/language.php on line 80
+- **vd($what)** &#10140; .main.php on line 222
+  Returns pre-formatted mixed variables
+  @param mixed $what
+
   
 ***  
   

@@ -139,6 +139,7 @@ class main
     	foreach ($user_funcs as $function)
     	{
     		$function = new ReflectionFunction($function);
+    		$doc_comment = $function->getDocComment();
     		$parameters = array();
     		foreach ($function->getParameters() as $parameter)
     			$parameters[] = "$" . $parameter->getName()
@@ -149,7 +150,13 @@ class main
     				     . implode($parameters, ", ") . ")** &#10140; "
     				     . str_replace(realpath('') . "/",
     				     		       '',
-    				     		       $function->getFileName()) . "\n";
+    				     		       $function->getFileName())
+    				     . " on line " . $function->getStartLine()
+     				     . ($doc_comment
+     				       ? trim(str_replace(array("*", "/"),
+     				     		              '',
+     				     		              $doc_comment), " ")
+     				       : '') . "\n";
     	}
 
     	return md::title(1, $title)
@@ -209,8 +216,8 @@ class main
 }
 
 /**
- * Alias for main::var_dump()
- * @param unknown $what
+ * Returns pre-formatted mixed variables
+ * @param mixed $what
  */
 function vd($what)
 {
