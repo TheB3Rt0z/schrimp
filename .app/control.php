@@ -102,10 +102,13 @@ class control extends controller
 			                   \$output[\$option] = '_handler_plugins_' . \$option;
 		                   }
 				           return \$output;";
-
+var_dump($this->_args);
 		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
 		                . HTML_BREADCRUMB_SEPARATOR
-		                . $this->_translate(__FUNCTION__));
+ 		                . $this->_translate(__FUNCTION__
+ 		                		          . (!empty($this->_args[0])
+ 		                		            ? '_' . $this->_args[0]
+ 		                		            : '')));
 	}
 
 	private function _handler_modules()
@@ -157,7 +160,13 @@ class control extends controller
 
 		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
 		                . HTML_BREADCRUMB_SEPARATOR
-		                . $this->_translate(__FUNCTION__));
+		                . language::translate((!empty($this->_args[0])
+		                					  ? $this->_args[0]
+		                					  : __CLASS__),
+		                		  			  __FUNCTION__
+ 		                		            . (!empty($this->_args[0])
+ 		                		              ? '_' . $this->_args[0]
+ 		                		              : '')));
 	}
 
 	private function _handler_phpinfo()
@@ -173,20 +182,12 @@ class control extends controller
 			//'license' => '_handler_phpinfo_license', // PHP License information. See also the » license FAQ.
 		);
 
-		$title = $this->_translate('COMPONENT VISIBLE NAME')
-			   . HTML_BREADCRUMB_SEPARATOR
-			   . $this->_translate(__FUNCTION__);
-
-		if (!empty($this->_args[0]))
-		{
-			if (!array_key_exists($this->_args[0], $options))
-				main::relocate_to("error/404");
-			else
-				$title .= HTML_BREADCRUMB_SEPARATOR
-				        . $this->_translate($options[$this->_args[0]]);
-		}
-
-		$this->_set_title($title);
+		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
+			            . HTML_BREADCRUMB_SEPARATOR
+			            . $this->_translate(__FUNCTION__
+ 		                		          . (!empty($this->_args[0])
+ 		                		            ? '_' . $this->_args[0]
+ 		                		            : '')));
 	}
 }
 
