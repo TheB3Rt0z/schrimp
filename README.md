@@ -1,5 +1,5 @@
-![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P. Documentation v0.2  
-=============================================================================================================================  
+![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.2  
+==============================================================================================================================  
   
   
   
@@ -36,7 +36,7 @@ General reference
   
 **FUNCTION ALIASES**  
   
-- **fe($path)** &#10140; .main.php on line 231,
+- **fe($path)** &#10140; .main.php on line 233,
   returns boolean if realpath path exists on running server;
   @param string $path
 
@@ -45,7 +45,7 @@ General reference
   @param string $component
   @param string $marker
 
-- **vd($what)** &#10140; .main.php on line 222,
+- **vd($what)** &#10140; .main.php on line 224,
   returns pre-formatted mixed variables;
   @param mixed $what
 

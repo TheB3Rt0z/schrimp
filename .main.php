@@ -104,16 +104,18 @@ class main
     {
         // si potrebbe legare a questa o la seguentefunzione un controllo per la doc..
         // se non esiste il file docs_v#.##.nfo lo si crea e si cancella gli altri
-        return "v" . number_format(((mktime(date('H'), date('i'), date('s'),
-        		                            date('n'), date('j'), date('Y'))
-        	                       - mktime(17, 11, 33,
-        	                       		    9, 21, 2012)) / 31557600), $precision);
+        return (is_int($precision/2) ? "v": '')
+             . number_format(((mktime(date('H'), date('i'), date('s'),
+        		                      date('n'), date('j'), date('Y'))
+        	                 - mktime(17, 11, 33,
+        	                       	  9, 21, 2012)) / 31557600), $precision);
     }
 
     static function get_documentation()
     {// TODO use PHP's highlight_string/file to rappresent code excerpts
     	$title = md::image(".inc/img/schrimp_favicon_md.ico")
-    	       . " " . STR_PROJECT_NAME . "'s Documentation " . main::get_version(1);
+    	       . " " . STR_PROJECT_NAME . "'s Documentation "
+    	       . main::get_version(1);
 
     	$consts_list = '';
     	$constants = get_defined_constants(true);
