@@ -113,7 +113,7 @@ class main
     static function get_documentation()
     {// TODO use PHP's highlight_string/file to rappresent code excerpts
     	$title = md::image(".inc/img/schrimp_favicon_md.ico")
-    	       . " " . STR_PROJECT_NAME . " " . main::get_version();
+    	       . " " . STR_PROJECT_NAME . " Documentation " . main::get_version(1);
 
     	$consts_list = '';
     	$constants = get_defined_constants(true);
