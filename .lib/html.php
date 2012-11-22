@@ -410,8 +410,8 @@ class html
 			$content .= html::li(html::a($key,
 			                             $value['name']));
 			if (!empty($value['sub']))
-				$content .= self::array_to_list($value['sub'],
-				                                $type);
+				$content .= html::li(self::array_to_list($value['sub'],
+				                                         $type));
 		}
 
 		return self::$type($content);
