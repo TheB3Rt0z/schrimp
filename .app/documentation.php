@@ -1,13 +1,13 @@
 <?php
 
-//TODOs: implementazione metodo toString per classi e/o metodi, con calcoli
-//       scrivere funzioni per analisi del listato e calcolo indici (documentation)
-//       index fondamentale 12 warning, 24 per error e 36 per lunghezza massima
-//       di un metodo/funzione e 84 per larghezza massima di una singola linea
-//       filtrando [...]:: != self calcolare le dipendenze implicite tra classi
-
 class documentation extends controller
 {
+	private static $_todo = array
+	(
+			'method toString' => "implementare per analisi del codice e calcolini",
+			'[...]:: != self' => "filtro per calcolare le dipendenze implicite..",
+	);
+
 	function initialize()
 	{
 		switch ($this->_action)

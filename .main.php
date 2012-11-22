@@ -1,12 +1,17 @@
 <?php
 
-//TODO: escort: session su PHP poi DB se webstore & memcache fail?
-//      optional admin bar to measure run time performance (gApis)
-
 require_once ".configuration.php";
 
 class main
 {
+	private static $_todo = array
+	(
+		'documentation' => "PHP's highlight_string/file to rapresent code excerpts",
+		'escort library' => "session su PHP poi DB se webstore & memcache fail?",
+		'? admin bar' => "optional control to measure run time performance (gApis)",
+		'memcache support' => "verify in method, if at least one mem-server works",
+	);
+
     private $_call = null;
 
     static $controller = '';
@@ -112,7 +117,7 @@ class main
     }
 
     static function get_documentation()
-    {// TODO use PHP's highlight_string/file to rappresent code excerpts
+    {
     	$title = md::image(".inc/img/schrimp_favicon_md.ico")
     	       . " " . STR_PROJECT_NAME . "'s Documentation "
     	       . main::get_version(1);
@@ -169,9 +174,13 @@ class main
     	       . md::title(3, "Function aliases")
     	         . $funcs_list // add more information
     	       . md::hr()
-    	       . md::title(3, "Main application:")
-    	         // first class analysys
+    	     . md::title(2, "Main application:")
+    	       . md::title(3, "Code reference:")
+    			 // first class analisys (add <?php copyright on first line!)
     	       . md::hr()
+    	       . md::title(3, 'TODOs')
+    	         // read this from class static array trough reflection!
+    		   . md::hr()
     	     . str_repeat("\n", 4) . md::text(STR_COPYRIGHT_SIGNATURE);
     }
 
@@ -182,7 +191,6 @@ class main
 
     static function is_memcached()
     {
-    	// TODO verify hier, if at least one mem-server works
         return extension_loaded('memcache');
     }
 

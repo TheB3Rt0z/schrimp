@@ -2,6 +2,11 @@
 
 class navigator
 {
+	private static $_todo = array
+	(
+			'render_list' => "this should be CSS3 and appear on a mouse gesture..",
+	);
+
 	private static $_structure = false;
 
 	function __construct()
@@ -98,7 +103,7 @@ class navigator
 		}
 	}
 
-	static function render_list() // TODO this should appear on a mouse gesture..
+	static function render_list()
 	{
 		$self = new self;
 
