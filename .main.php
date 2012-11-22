@@ -107,8 +107,6 @@ class main
 
     static function get_version($precision = 2)
     {
-        // si potrebbe legare a questa o la seguentefunzione un controllo per la doc..
-        // se non esiste il file docs_v#.##.nfo lo si crea e si cancella gli altri
         return (is_int($precision/2) ? "v": '')
              . number_format(((mktime(date('H'), date('i'), date('s'),
         		                      date('n'), date('j'), date('Y'))

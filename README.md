@@ -36,7 +36,7 @@ General reference
   
 **FUNCTION ALIASES**  
   
-- **fe($path)** &#10140; .main.php on line 233,
+- **fe($path)** &#10140; .main.php on line 239,
   returns boolean if realpath path exists on running server;
   @param string $path
 
@@ -45,14 +45,23 @@ General reference
   @param string $component
   @param string $marker
 
-- **vd($what)** &#10140; .main.php on line 224,
+- **vd($what)** &#10140; .main.php on line 230,
   returns pre-formatted mixed variables;
   @param mixed $what
 
   
 ***  
   
-**MAIN APPLICATION:**  
+Main application:  
+-----------------  
+  
+  
+**CODE REFERENCE:**  
+  
+  
+***  
+  
+**TODOS**  
   
   
 ***  
