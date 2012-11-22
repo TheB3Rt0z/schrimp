@@ -1,0 +1,118 @@
+unit px
+&darkblue = #8b9498
+&lightblue = #b3b9bc
+&lightblue2 = #c6cdd1
+&darkertext = #444
+&yellow = #FC0
+&codepcss = #eee
+&fontdef = font-family:Ubuntu, 'Segoe UI', sans-serif
+&fontcode = font-family:'Consolas','Courier New',monospaced
+
+body{ &fontdef; BOUNDS:0,0; BGCOLOR:#98aab3; BGIMG:bg.png; REPEATY; FIXEDBG; } 
+
+code, .code{ &fontcode }
+
+h1{ BOUNDS:20 30,20; FIXED; BGIMG:logo.png; CENTERBG; NOREPEAT; S:245 245;
+    span{ HIDE; }
+}
+
+#content{ BOUNDS:20 40 10 420,0; S:700 a }
+
+h2{ BOUNDS:50 25 20 40,0 0 0 380; font-size:42px; BGCOLOR:&darkblue; WHITE; }
+
+h4{ FSIZE:26; color:&darkertext; BOUNDS:0,8 0 20 }
+
+#features{ BOUNDS:15 20,0 0 20; BGCOLOR:&lightblue; RADIUS:15; STROKE:4 #fff; font-weight:300; FSIZE:14; LINEH:19; SHADOW:10 10 #778;
+    p{ BOUNDS:8 15,0 0 8; BGCOLOR:&yellow; RADIUS:10; font-weight:700; }
+    ul{ BOUNDS:0,10 0 0;
+        li{ LISTNONE; BOUNDS:0 0 12 25,a; BGIMG:bullet.png; NOREPEAT; LINEH:16; NOBOLD; }        
+    }
+}
+
+#example{ BGCOLOR:&darkblue; BOUNDS:0 15 15, 0; RADIUS:15; WHITE; SHADOW:10 10 #778; STROKE:4 #fff;
+    code{ white-space:pre-wrap; background-color:rgba(0,0,0,.2); BLOCK; RADIUS:10; BOUNDS:0 8,a }
+    code.resultingcss{ background-color:rgba(255,255,255,.5); BLACK; }
+    code.pcss{ BGCOLOR:rgba(0,0,0,.3); }
+}
+
+#download{ FIXED; POS:52 300; BGCOLOR:#000; RADIUS:15; S:201 88; WHITE; BOUNDS:12 20 15,a; TRANSITIONS:all .5s ease-in; Z:1;
+    h3{ BOUNDS:0,0; }
+    p{ RADIUS:10; background-color:rgba(255,255,255,.2); BOUNDS:8 15,8 0; BLOCK;
+        a{ color:&yellow; text-decoration:none; }
+        a:hover{ WHITE; }
+        small{ color:#bbb; FSIZE:11; }
+    }
+}
+
+#nav{ FIXED; POS:52 430; BGCOLOR:#454a4c; RADIUS:15; S:201 23; WHITE; BOUNDS:12 20 15,a; TRANSITIONS:all .5s ease-in; Z:2; overflow:hidden;
+    a.top{ FRIGHT; BLOCK; FSIZE:12; NODECO; color:&yellow; }
+    a.top:hover{ WHITE; }
+    h3{ BOUNDS:0,0; }
+    ul{ RADIUS:10; background-color:rgba(255,255,255,.1); BOUNDS:8 15,8 0; }
+    li{ LISTNONE; BOUNDS:0,0 0 3; 
+        a{ color:&yellow; NODECO; FSIZE:14; }
+        a:hover{ WHITE; }
+    }
+}
+#nav:hover{ Z:10; S:a 238;
+    ul{ BLOCK; }
+}
+#postnav{ POS:52 a; bottom:10px; FIXED;
+    a{ BLOCK; RADIUS:15; BGCOLOR:&darkblue; WHITE; S:201 23; BOUNDS:12 20 15,0 0 15; NODECO; FSIZE:18; BOLD; }
+    a:hover{ BGCOLOR:#54595b; }
+}
+
+#documentation{ BOUNDS:0,90 0 0; }
+
+.topic{ BOUNDS:12 15,70 0 20; background:&lightblue2; RADIUS:15; STROKE:4 #fff; font-weight:300; FSIZE:14; LINEH:19; SHADOW:10 10 #778;
+    h5{ BOUNDS:10 15,0; background:&yellow; RADIUS:10; UPPERCASE; FSIZE:14; }
+    h6{ FSIZE:19; BOUNDS:0 0 5,25 0 8; font-weight:300; border-bottom:1px dotted &darkblue; }
+    code{ BLOCK; RADIUS:10; BOUNDS:8 12,a; background-color:rgba(0,0,0,.1); }
+    code.pcss{ BGCOLOR:rgba(0,0,0,0.3); WHITE; }
+    code.resultingcss{ background-color:rgba(255,255,255,.5); BGIMG:defimage.png; NOREPEAT; BGPOS:12 5; padding-top:25px; margin-left:30px;
+        span.obs{ BLOCK; FSIZE:11; margin-bottom:10px; &fontdef; color:&darkblue; KERN:1; UPPERCASE; }
+    }
+    code+code.resultingcss{ margin-top:5px; }
+    p{
+        a{ font-weight:700; color:&darkertext; NODECO; }
+        a:hover{ UNDERLINE; color:#888; }
+        var{ BLACK; BOUNDS:2 4,0 1; background:rgba(255,255,255,0.4); NOITALICS; RADIUS:6; }
+        small{ BLOCK; }
+    }
+}
+
+// constants
+
+.contentintro{ LINEH:24; BOUNDS:0,8 0 20;
+    a{ BLACK; }
+}
+p.categoria{ ABSOLUTE; BOUNDS:8 12,0; S:120 a }
+.constantgroup{ background-color:rgba(0,0,0,.1); BOUNDS:8 8 8 150,0 0 10; RADIUS:12; CLEARFIX; }
+.constant{ background-color:rgba(0,0,0,.2); BOUNDS:4 8,0 0 4; CLEARFIX; RADIUS:6; WHITE;
+    .word{ S:200 a; float:left;  }
+    .obs{ HIDE; }
+    .code{ S:312 a; float:left; BOUNDS:3 6,0; RADIUS:4; background-color:rgba(255,255,255,.5); BLACK; }
+}
+#return{ FIXED; POS:52 299; BGCOLOR:#454a4c; RADIUS:15; S:201 23; WHITE; BOUNDS:12 20 15,a; overflow:hidden; NODECO;
+    h3{ BOUNDS:0,0; }    
+}
+#return:hover{ BGCOLOR:#000 }
+
+// functions
+
+.function{ BOUNDS:12 15,0 0 50; background:&lightblue2; RADIUS:15; STROKE:4 #fff; font-weight:300; FSIZE:14; LINEH:19; SHADOW:10 10 #778;
+    .name{ BOUNDS:10 15,0; background:&yellow; RADIUS:10; UPPERCASE; FSIZE:14; BLOCK; BOLD; }
+    .usage{ BLOCK; RADIUS:10; BOUNDS:8 12,5 0 10; BGCOLOR:rgba(0,0,0,0.15); WHITE; &fontcode; }
+    .example{ BLOCK; RADIUS:10; BOUNDS:8 12,a; BGCOLOR:rgba(0,0,0,0.3); WHITE; &fontcode;
+        .generates{ BGCOLOR:#e3e6e8; BGIMG:defimage.png; NOREPEAT; BGPOS:12 5; padding-top:25px; margin-left:30px; BLOCK; RADIUS:6; color:#222; BOUNDS:20 10 5 10,8 0 8 20;           
+            span{ BLOCK; FSIZE:11; margin-top:5px; &fontdef; color:&darkblue; KERN:1; UPPERCASE; BOLD; }
+        }
+        .generates:last-child{ margin-bottom:0; }
+    }
+    .definition{ BOUNDS:10 0 5,0; BLOCK;
+        a{ font-weight:700; color:&darkertext; NODECO; }
+        a:hover{ UNDERLINE; color:#888; }
+        var{ BLACK; BOUNDS:2 4,0 1; background:rgba(255,255,255,0.4); NOITALICS; RADIUS:6; }
+        small{ BLOCK; }
+    }
+}
