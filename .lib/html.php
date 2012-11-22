@@ -428,6 +428,12 @@ class html
 						 'box');
     }
 
+	static function highbox($content)
+    {
+		return self::div($content,
+						 'box high');
+    }
+
     static function hyperlink($href,
                               $content = false)
     {
