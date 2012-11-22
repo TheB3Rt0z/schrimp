@@ -141,10 +141,15 @@ class html
     	return str_repeat($self->_html, $lines);
     }
 
-    private static function div($content)
+    private static function div($content,
+    							$classes = '')
     {
+    	$attributes = array();
+    	if ($classes)
+    		$attributes['class'] = trim($classes);
+
     	$self = new self(__FUNCTION__,
-    	                 array(),
+    	                 $attributes,
     	                 $content);
 
     	return $self->_html;
@@ -415,6 +420,12 @@ class html
 		}
 
 		return self::$type($content);
+    }
+
+    static function box($content)
+    {
+		return self::div($content,
+						 'box');
     }
 
     static function hyperlink($href,

@@ -10,7 +10,7 @@ class admin extends controller
 
 	protected function _handler()
 	{
-		$this->_set_nav(navigator::render_list());
+		$this->_set_nav(html::box(navigator::render_list()));
 	}
 }
 
