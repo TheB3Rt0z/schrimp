@@ -8,7 +8,6 @@ class main
 	(
 		'documentation' => "PHP's highlight_string/file to rapresent code excerpts",
 		'escort library' => "session su PHP poi DB se webstore & memcache fail?",
-		'? admin bar' => "optional control to measure run time performance (gApis)",
 		'memcache support' => "verify in method, if at least one mem-server works",
 	);
 
@@ -164,6 +163,22 @@ class main
      				       : '') . "\n";
     	}
 
+    	$todos_list = '';
+    	foreach (unserialize(TODOS) as $key => $value)
+    		$todos_list .= "- **" . $key . "** &#10140; " . $value . "\n";
+
+    	$classes_list = '';
+    	foreach (get_declared_classes() as $class)
+    	{
+			$class = new ReflectionClass($class);
+			if ($class->isUserDefined())
+			{
+				$classes_list .= md::title(2, "Class " . strtoupper($class->name))
+				                 . md::title(3, "Code reference:")
+				               . md::hr();
+			}
+    	}
+
     	return md::title(1, $title)
     	     . md::title(2, "General reference")
     	       . md::title(3, "Configuration constants")
@@ -172,13 +187,10 @@ class main
     	       . md::title(3, "Function aliases")
     	         . $funcs_list // add more information
     	       . md::hr()
-    	     . md::title(2, "Main application:")
-    	       . md::title(3, "Code reference:")
-    			 // first class analisys (add <?php copyright on first line!)
-    	       . md::hr()
     	       . md::title(3, 'TODOs')
-    	         // read this from class static array trough reflection!
+    	         . $todos_list
     		   . md::hr()
+    		 . $classes_list
     	     . str_repeat("\n", 4) . md::text(STR_COPYRIGHT_SIGNATURE);
     }
 

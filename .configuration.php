@@ -1,5 +1,10 @@
 <?php
 
+define('TODOS', serialize(array
+(
+	'? admin bar' => "optional control to measure run time performance (gApis)",
+)));
+
 define('SET_DEVELOPMENT_MODE', true);
 define('SET_GITHUB_RAWPATH', "https://raw.github.com/TheB3Rt0z/schrimp/master/"); // prefix valid for static contents on github
 define('SET_HOME_COMPONENT', SET_DEVELOPMENT_MODE ? "admin" : "homepage"); // convention
