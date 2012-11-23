@@ -2,9 +2,9 @@
 
 class navigator
 {
-	private static $_todo = array
+	public static $_todos = array
 	(
-			'render_list' => "this should be CSS3 and appear on a mouse gesture..",
+		'render_list' => "this should be CSS3 and appear on a mouse gesture..",
 	);
 
 	private static $_structure = false;

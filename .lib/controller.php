@@ -2,6 +2,8 @@
 
 abstract class controller
 {
+	public static $_todos = array();
+
 	const VISIBLE_IN_NAVIGATION = true;
 
 	const RENDER_BREADCRUMB = true;

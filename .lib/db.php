@@ -9,6 +9,8 @@ define('DB_TABLE_PREFIX', '');
 
 class db
 {
+	public static $_todos = array();
+
 	function __construct()
 	{
 		switch (DB_DATABASE_TYPE)

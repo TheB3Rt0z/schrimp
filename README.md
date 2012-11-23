@@ -36,11 +36,11 @@ General reference
   
 **FUNCTION ALIASES**  
   
-- **fe($path)** &#10140; .main.php on line 258,
+- **fe($path)** &#10140; .main.php on line 265,
   returns boolean if realpath path exists on running server;
   @param string $path
 
-- **rt($url = )** &#10140; .main.php on line 267,
+- **rt($url = )** &#10140; .main.php on line 274,
   relocates to given relative url or to base path on default;
   @param string $url
 
@@ -49,7 +49,7 @@ General reference
   @param string $component
   @param string $marker
 
-- **vd($what)** &#10140; .main.php on line 249,
+- **vd($what)** &#10140; .main.php on line 256,
   returns pre-formatted mixed variables;
   @param mixed $what
 
@@ -68,6 +68,9 @@ Class MAIN
   
 **CODE REFERENCE:**  
   
+**TODOS**  
+  
+- **? admin bar** &#10140; optional control to measure run time performance (gApis)
   
 ***  
   
@@ -77,6 +80,9 @@ Class CONTROLLER
   
 **CODE REFERENCE:**  
   
+**TODOS**  
+  
+- **? admin bar** &#10140; optional control to measure run time performance (gApis)
   
 ***  
   
@@ -86,6 +92,9 @@ Class DB
   
 **CODE REFERENCE:**  
   
+**TODOS**  
+  
+- **? admin bar** &#10140; optional control to measure run time performance (gApis)
   
 ***  
   
@@ -95,6 +104,9 @@ Class ESCORT
   
 **CODE REFERENCE:**  
   
+**TODOS**  
+  
+- **? admin bar** &#10140; optional control to measure run time performance (gApis)
   
 ***  
   
@@ -104,6 +116,9 @@ Class HTML
   
 **CODE REFERENCE:**  
   
+**TODOS**  
+  
+- **? admin bar** &#10140; optional control to measure run time performance (gApis)
   
 ***  
   
@@ -113,6 +128,9 @@ Class LANGUAGE
   
 **CODE REFERENCE:**  
   
+**TODOS**  
+  
+- **? admin bar** &#10140; optional control to measure run time performance (gApis)
   
 ***  
   
@@ -122,6 +140,9 @@ Class MD
   
 **CODE REFERENCE:**  
   
+**TODOS**  
+  
+- **? admin bar** &#10140; optional control to measure run time performance (gApis)
   
 ***  
   
@@ -131,6 +152,9 @@ Class NAVIGATOR
   
 **CODE REFERENCE:**  
   
+**TODOS**  
+  
+- **? admin bar** &#10140; optional control to measure run time performance (gApis)
   
 ***  
   
@@ -140,6 +164,9 @@ Class WIDGETS
   
 **CODE REFERENCE:**  
   
+**TODOS**  
+  
+- **? admin bar** &#10140; optional control to measure run time performance (gApis)
   
 ***  
   
