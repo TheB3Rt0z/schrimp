@@ -212,7 +212,7 @@ class main
 
     static function is_webstoraged()
     {
-		// local and/or session storage are available? with js
+		// local and/or session storage are available? only with js..
     }
 
     static function is_memcached()

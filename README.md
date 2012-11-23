@@ -164,6 +164,7 @@ Class NAVIGATOR
 **TODOS**  
   
 - **render_list** &#10140; this should be CSS3 and appear on a mouse gesture..
+- **active breadcrumb** &#10140; dynamic same-level-select trunks, or maybe widget?
   
 ***  
   

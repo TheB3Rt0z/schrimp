@@ -29,7 +29,6 @@ abstract class controller
 		$this->_args = $args;
 		$this->initialize();
 		$helper = get_class($this) . '_helper';
-		// loading helper dynamically
 		$this->_helper = new $helper; // loading helper dynamically
 	}
 

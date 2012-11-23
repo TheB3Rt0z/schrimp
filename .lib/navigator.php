@@ -5,6 +5,7 @@ class navigator
 	public static $todos = array
 	(
 		'render_list' => "this should be CSS3 and appear on a mouse gesture..",
+		'active breadcrumb' => "dynamic same-level-select trunks, or maybe widget?",
 	);
 
 	private static $_structure = false;
@@ -174,7 +175,7 @@ class navigator
 
 	static function render_active_breadcrumb()
 	{
-		// a breadcrumb with dynamic same-level-select trunks, maybe widget?
+
 	}
 
 	static function render_sitemap()
