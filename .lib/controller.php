@@ -2,7 +2,7 @@
 
 abstract class controller
 {
-	public static $_todos = array();
+	public static $todos = array();
 
 	const VISIBLE_IN_NAVIGATION = true;
 

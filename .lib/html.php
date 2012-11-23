@@ -4,7 +4,7 @@ define('HTML_BREADCRUMB_SEPARATOR', " &raquo; ");
 
 class html
 {
-	public static $_todos = array();
+	public static $todos = array();
 
 	private $_tag = false;
 	private $_attributes = array();

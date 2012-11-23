@@ -2,6 +2,11 @@
 
 class error extends controller
 {
+	public static $todos = array
+	(
+		'error 500' => "si potrebbe usare il SOAP per passare header e contenuto..",
+	);
+
 	const VISIBLE_IN_NAVIGATION = false;
 
 	const RENDER_BREADCRUMB = false;
@@ -99,7 +104,7 @@ class error extends controller
 		$this->_set_section(html::title(2,
                                         $this->_translate('something not works')
 				                      . " " . $ending));
-// qui si potrebbe usare il SOAP per passare header e contenuto (messaggio)
+
 		if (!empty($this->_args))
 			$this->_set_article(html::title(3,
 			                                urldecode($this->_args[0])));

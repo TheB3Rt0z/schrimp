@@ -4,7 +4,7 @@ require_once ".configuration.php";
 
 class main
 {
-	public static $_todos = array
+	public static $todos = array
 	(
 		'documentation' => "PHP's highlight_string/file to rapresent code excerpts",
 		'escort library' => "session su PHP poi DB se webstore & memcache fail?",
@@ -181,7 +181,7 @@ class main
 			if ($class->isUserDefined())
 			{
 				$class_todos = '';
-				foreach ($class->getStaticPropertyValue('_todos') as $key => $value)
+				foreach ($class->getStaticPropertyValue('todos') as $key => $value)
 					$class_todos .= "- **" . $key . "** &#10140; " . $value . "\n";
 
 				$classes_list .= md::title(2, "Class " . strtoupper($class->name))

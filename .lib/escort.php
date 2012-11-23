@@ -2,7 +2,7 @@
 
 class escort
 {
-	public static $_todos = array();
+	public static $todos = array();
 }
 
 ?>

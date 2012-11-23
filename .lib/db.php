@@ -4,7 +4,7 @@ define('DB_TABLE_PREFIX', '');
 
 class db
 {
-	public static $_todos = array();
+	public static $todos = array();
 
 	const DATABASE_TYPE = "mysql";
 	const SERVER_HOST = "127.0.0.1";
