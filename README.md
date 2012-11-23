@@ -36,16 +36,20 @@ General reference
   
 **FUNCTION ALIASES**  
   
-- **fe($path)** &#10140; .main.php on line 253,
+- **fe($path)** &#10140; .main.php on line 258,
   returns boolean if realpath path exists on running server;
   @param string $path
 
-- **tr($component, $marker)** &#10140; .lib/language.php on line 85,
+- **rt($url = )** &#10140; .main.php on line 267,
+  relocates to given relative url or to base path on default;
+  @param string $url
+
+- **tr($component, $marker)** &#10140; .lib/language.php on line 90,
   executes language translation of marker identifier, referring to given component;
   @param string $component
   @param string $marker
 
-- **vd($what)** &#10140; .main.php on line 244,
+- **vd($what)** &#10140; .main.php on line 249,
   returns pre-formatted mixed variables;
   @param mixed $what
 

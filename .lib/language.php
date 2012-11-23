@@ -2,30 +2,35 @@
 
 define('LANGUAGE_FALLBACK_LANG', "en");
 
-class language // it could be interessant to use pspell&gettext
+class language
 {
+	static private $_todos = array
+	(
+		'automatic translation' => "it could be interessant to use pspell&gettext",
+	);
+
 	static private $_languages = array
-	               (
-	                   'de',
-					   'en',
-					   'it',
-	               );
+    (
+        'de',
+		'en',
+		'it',
+    );
 
 	static $_translations = array
-		   (
-			   'here' => array
-		   	   (
-		   	       'de' => "hier",
-	               'en' => "here",
-	               'it' => "qua"
-		   	   ),
-	           'now' => array
-		   	   (
-		   	   	   'de' => "jetzt",
-	               'en' => "now",
-	               'it' => "ora",
-		   	   )
-		   );
+	(
+		'here' => array
+	   	(
+	   		'de' => "hier",
+            'en' => "here",
+            'it' => "qua"
+	   	),
+        'now' => array
+	    (
+	   		'de' => "jetzt",
+            'en' => "now",
+            'it' => "ora",
+	   	)
+	);
 
 	static function is_supported($language)
 	{

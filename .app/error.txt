@@ -102,3 +102,8 @@ unknown %s database type
 de||Datenbank-Typ "%s" nicht erkannt
 en||Database type "%s" not recognized
 it||Tipo del database "%s" sconosciuto
+
+unknown %s component
+de||Komponente "%s" ist nirgendwo zu finden
+en||Unable to find "%s" component
+it||Il componente "%s" non si trova

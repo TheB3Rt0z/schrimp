@@ -30,7 +30,7 @@ class documentation extends controller
 						}
 
 						default :
-							main::relocate_to("error/404");
+							rt("error/404");
 					}
 				else
 					$this->_handler_list();
@@ -38,7 +38,7 @@ class documentation extends controller
 			}
 
 			default :
-				main::relocate_to("error/404");
+				rt("error/404");
 		}
 	}
 

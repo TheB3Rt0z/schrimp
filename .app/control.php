@@ -2,7 +2,7 @@
 
 class control extends controller
 {
-	function initialize() // initialize app and lib lists..
+	function initialize()
 	{
 		$fallback_method = '_handler' . (!empty( $this->_action)
 						                ? '_' . $this->_action
@@ -17,7 +17,7 @@ class control extends controller
 			call_user_func_array(array($this, $method), array_slice(main::$args, 1));
 		}
 		else
-			main::relocate_to("error/404");
+			rt("error/404");
 	}
 
 	protected function _handler()
@@ -81,7 +81,7 @@ class control extends controller
 		//elseif (language::is_supported(func_get_arg(0)))
 			// operation for supported language
 		//else
-			main::relocate_to("error/404");
+			rt("error/404");
 
 		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
 		                . HTML_BREADCRUMB_SEPARATOR
@@ -148,10 +148,13 @@ var_dump($this->_args);
 		static $options = "\$output = array();
 		                   foreach (glob(\"app/*.php\") as \$filename)
 				           {
-							   \$option = str_replace(array(\"app/\", \".php\"),
-				                                      '',
-				                                      \$filename);
-							   \$output[\$option] = false;
+							   if (!substr_count(\$filename, \"_\"))
+							   {
+							       \$option = str_replace(array(\"app/\", \".php\"),
+				                                          '',
+				                                          \$filename);
+							       \$output[\$option] = false;
+							   }
 		                   }
 				           return \$output;";
 

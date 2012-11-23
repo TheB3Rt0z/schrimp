@@ -16,7 +16,7 @@ class error extends controller
 			call_user_func(array(__CLASS__, '_handler_' . $this->_action));
 		}
 		else
-			main::relocate_to("error/404");
+			rt("error/404");
 
 		$this->_set_aside(html::image(".inc/img/schrimp.png",
 		                              STR_PROJECT_NAME));

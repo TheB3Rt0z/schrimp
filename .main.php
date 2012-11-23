@@ -9,9 +9,11 @@ class main
 		'documentation' => "PHP's highlight_string/file to rapresent code excerpts",
 		'escort library' => "session su PHP poi DB se webstore & memcache fail?",
 		'memcache support' => "verify in method, if at least one mem-server works",
+		'load_libraries' => "find someway to avoid conflicts between libs/plugins",
 	);
 
     private $_call = null;
+    private $_path = ".app/";
 
     static $controller = '';
     static $action = false;
@@ -48,7 +50,6 @@ class main
     {
         foreach (glob(".lib/*.php") as $filename)
             require_once $filename;
-        // bisogna immaginarsi qualcosa per la risoluzione di eventuali conflitti!
         foreach (glob("lib/*.php") as $filename)
             require_once $filename;
     }
@@ -60,11 +61,15 @@ class main
 
         if ($components[0])
         {
-            if (!fe(".app/" . $components[0] . ".php")
-                || substr_count($components[0] , "_"))
-            {
-                $this->relocate_to("error/404");
-            }
+        	if (!substr_count($components[0], "_"))
+        	{
+        		if (fe("app/" . $components[0] . ".php"))
+        			$this->_path = "app/"; // using external module
+        		elseif (!fe(".app/" . $components[0] . ".php"))
+        			rt("error/404");
+        	}
+        	else
+        		rt("error/404");
 
             self::$controller = array_shift($components);
             if (!empty($components))
@@ -77,8 +82,8 @@ class main
         else
             self::$controller = SET_HOME_COMPONENT;
 
-        require_once ".app/" . self::$controller . ".php";
-        foreach (glob(".app/" . self::$controller . "_*.php") as $filename)
+        require_once $this->_path . self::$controller . ".php";
+        foreach (glob($this->_path . self::$controller . "_*.php") as $filename)
             require_once $filename;
 
         $this->_call = new self::$controller(self::$action,
@@ -233,7 +238,7 @@ class main
         $url = "error/500/" . urlencode($msg);
 
         if ($_SERVER['REQUEST_URI'] != (PATH . "/" . $url))
-            main::relocate_to($url);
+            rt($url);
     }
 }
 
@@ -253,6 +258,15 @@ function vd($what)
 function fe($path)
 {
 	return main::exists_file($path);
+}
+
+/**
+ * relocates to given relative url or to base path on default;
+ * @param string $url
+ */
+function rt($url = '')
+{
+	main::relocate_to($url);
 }
 
 ?>
