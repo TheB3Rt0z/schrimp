@@ -31,13 +31,12 @@ General reference
 - **STR_COPYRIGHT_SIGNATURE** &#10140; "Copyright © 2011-2012 | Das S.C.H.R.I.M.P. Project"
 - **STR_KERNEL_SALT** &#10140; "Sstm Cntrl Hdng_t_ Rw Incrs_f Mntl Prdctvt"
 - **STR_PROJECT_NAME** &#10140; "Das S.C.H.R.I.M.P."
-- **TODOS** &#10140; "a:1:{s:11:"? admin bar";s:56:"optional control to measure run time performance (gApis)";}"
   
 ***  
   
 **FUNCTION ALIASES**  
   
-- **fe($path)** &#10140; .main.php on line 251,
+- **fe($path)** &#10140; .main.php on line 253,
   returns boolean if realpath path exists on running server;
   @param string $path
 
@@ -46,7 +45,7 @@ General reference
   @param string $component
   @param string $marker
 
-- **vd($what)** &#10140; .main.php on line 242,
+- **vd($what)** &#10140; .main.php on line 244,
   returns pre-formatted mixed variables;
   @param mixed $what
 
@@ -79,6 +78,15 @@ Class CONTROLLER
   
 Class DB  
 --------  
+  
+  
+**CODE REFERENCE:**  
+  
+  
+***  
+  
+Class ESCORT  
+------------  
   
   
 **CODE REFERENCE:**  

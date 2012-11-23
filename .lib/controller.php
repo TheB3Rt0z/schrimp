@@ -18,12 +18,17 @@ abstract class controller
 	private $_aside = '';
 	private $_footer = '';
 
+	private $_helper = null;
+
 	function __construct($action,
 	                     $args)
 	{
 		$this->_action = $action;
 		$this->_args = $args;
 		$this->initialize();
+		$helper = get_class($this) . '_helper';
+		// loading helper dynamically
+		$this->_helper = new $helper; // loading helper dynamically
 	}
 
 	abstract function initialize();

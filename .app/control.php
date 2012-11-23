@@ -2,8 +2,6 @@
 
 class control extends controller
 {
-	private $_helper = null;
-
 	function initialize() // initialize app and lib lists..
 	{
 		$fallback_method = '_handler' . (!empty( $this->_action)
@@ -16,7 +14,6 @@ class control extends controller
 		if (method_exists(__CLASS__, $method = $method)
 			|| method_exists(__CLASS__, $method = $fallback_method))
 		{
-			$this->_helper = new control_helper(); // standardize?
 			call_user_func_array(array($this, $method), array_slice(main::$args, 1));
 		}
 		else
