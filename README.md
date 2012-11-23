@@ -31,11 +31,11 @@ General reference
   
 **FUNCTION ALIASES**  
   
-- **fe($path)** &#10140; .main.php on line 267,
+- **fe($path)** &#10140; .main.php on line 271,
   returns boolean if realpath path exists on running server;
   @param string $path
 
-- **rt($url = )** &#10140; .main.php on line 276,
+- **rt($url = )** &#10140; .main.php on line 280,
   relocates to given relative url or to base path on default;
   @param string $url
 
@@ -44,7 +44,7 @@ General reference
   @param string $component
   @param string $marker
 
-- **vd($what)** &#10140; .main.php on line 258,
+- **vd($what)** &#10140; .main.php on line 262,
   returns pre-formatted mixed variables;
   @param mixed $what
 
@@ -61,8 +61,6 @@ Class MAIN
 ----------  
   
   
-**CLASS CONFIGURATION CONSTANTS:**  
-  
 **CODE REFERENCE:**  
   
 **TODOS**  
@@ -78,11 +76,7 @@ Class CONTROLLER
 ----------------  
   
   
-**CLASS CONFIGURATION CONSTANTS:**  
-  
 **CODE REFERENCE:**  
-  
-**TODOS**  
   
   
 ***  
@@ -91,11 +85,7 @@ Class DB
 --------  
   
   
-**CLASS CONFIGURATION CONSTANTS:**  
-  
 **CODE REFERENCE:**  
-  
-**TODOS**  
   
   
 ***  
@@ -104,11 +94,7 @@ Class ESCORT
 ------------  
   
   
-**CLASS CONFIGURATION CONSTANTS:**  
-  
 **CODE REFERENCE:**  
-  
-**TODOS**  
   
   
 ***  
@@ -117,11 +103,7 @@ Class HTML
 ----------  
   
   
-**CLASS CONFIGURATION CONSTANTS:**  
-  
 **CODE REFERENCE:**  
-  
-**TODOS**  
   
   
 ***  
@@ -129,8 +111,6 @@ Class HTML
 Class LANGUAGE  
 --------------  
   
-  
-**CLASS CONFIGURATION CONSTANTS:**  
   
 **CODE REFERENCE:**  
   
@@ -144,11 +124,7 @@ Class MD
 --------  
   
   
-**CLASS CONFIGURATION CONSTANTS:**  
-  
 **CODE REFERENCE:**  
-  
-**TODOS**  
   
   
 ***  
@@ -156,8 +132,6 @@ Class MD
 Class NAVIGATOR  
 ---------------  
   
-  
-**CLASS CONFIGURATION CONSTANTS:**  
   
 **CODE REFERENCE:**  
   
@@ -172,11 +146,7 @@ Class WIDGETS
 -------------  
   
   
-**CLASS CONFIGURATION CONSTANTS:**  
-  
 **CODE REFERENCE:**  
-  
-**TODOS**  
   
   
 ***  

@@ -185,12 +185,16 @@ class main
 					$class_todos .= "- **" . $key . "** &#10140; " . $value . "\n";
 
 				$classes_list .= md::title(2, "Class " . strtoupper($class->name))
-								 . md::title(3, "Class configuration constants:")
-								   // unprotected (no '_XXX') constants here
+								 . (!empty($class_consts)
+								   ? md::title(3, "Class configuration constants:")
+								   . $class_consts // unprotected (no '_XXX') constants here
+								   : '')
 				                 . md::title(3, "Code reference:")
 				                   // function reference here
-								 . md::title(3, 'TODOs')
+								 . (!empty($class_todos)
+								   ? md::title(3, "TODOs")
 								   . $class_todos
+								   : '')
 				               . md::hr();
 			}
     	}
