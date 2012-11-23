@@ -166,7 +166,7 @@ class html
 			$msg = tr('error',
                       'required file (%s) not exists',
 				      $src);
-			main::launch_error($msg);
+			le($msg);
 		}
 
     	$attributes = array('src' => main::resolve_uri($src),
@@ -265,7 +265,7 @@ class html
 			$msg = tr('error',
                       'required file (%s) not exists',
 				      $href);
-			main::launch_error($msg);
+			le($msg);
 			return; // stops link binding execution to avoid "problems"
 		}
 		elseif ($href
@@ -336,7 +336,7 @@ class html
 				$msg = tr('error',
 	                      'required file (%s) not exists',
 					      $src);
-				main::launch_error($msg);
+				le($msg);
 				return;
 			}
 

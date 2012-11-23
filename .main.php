@@ -180,6 +180,8 @@ class main
 			$class = new ReflectionClass($class);
 			if ($class->isUserDefined())
 			{
+				$class_consts = '';
+
 				$class_todos = '';
 				foreach ($class->getStaticPropertyValue('todos') as $key => $value)
 					$class_todos .= "- **" . $key . "** &#10140; " . $value . "\n";
@@ -280,6 +282,15 @@ function fe($path)
 function rt($url = '')
 {
 	main::relocate_to($url);
+}
+
+/**
+ * launches a customizable error 500;
+ * @param string $msg
+ */
+function le($msg)
+{
+	main::launch_error($msg);
 }
 
 ?>

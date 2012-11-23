@@ -109,7 +109,7 @@ class md
 			$msg = tr('error',
 					  'required file (%s) not exists',
 					  $src);
-			main::launch_error($msg);
+			le($msg);
 		}
 
 		$attributes = array('src' => SET_GITHUB_RAWPATH . $src,

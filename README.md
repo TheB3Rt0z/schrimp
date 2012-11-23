@@ -31,11 +31,15 @@ General reference
   
 **FUNCTION ALIASES**  
   
-- **fe($path)** &#10140; .main.php on line 271,
+- **fe($path)** &#10140; .main.php on line 273,
   returns boolean if realpath path exists on running server;
   @param string $path
 
-- **rt($url = )** &#10140; .main.php on line 280,
+- **le($msg)** &#10140; .main.php on line 291,
+  launches a customizable error 500;
+  @param string $msg
+
+- **rt($url = )** &#10140; .main.php on line 282,
   relocates to given relative url or to base path on default;
   @param string $url
 
@@ -44,7 +48,7 @@ General reference
   @param string $component
   @param string $marker
 
-- **vd($what)** &#10140; .main.php on line 262,
+- **vd($what)** &#10140; .main.php on line 264,
   returns pre-formatted mixed variables;
   @param mixed $what
 

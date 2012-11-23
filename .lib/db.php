@@ -30,7 +30,7 @@ class db
 				$msg = tr('error',
                           "unknown %s database type",
 				          DATABASE_TYPE);
-				main::launch_error($msg);
+				le($msg);
 			}
 		}
 	}
