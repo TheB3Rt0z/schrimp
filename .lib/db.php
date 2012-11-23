@@ -1,15 +1,16 @@
 <?php
 
-define('DB_DATABASE_TYPE', "mysql");
-define('DB_SERVER_HOST', "127.0.0.1");
-define('DB_ACCOUNT_USER', "root");
-define('DB_ACCOUNT_PASSWORD', '');
-define('DB_DATABASE_NAME', "schrimp");
 define('DB_TABLE_PREFIX', '');
 
 class db
 {
 	public static $_todos = array();
+
+	const DATABASE_TYPE = "mysql";
+	const SERVER_HOST = "127.0.0.1";
+	const ACCOUNT_USER = "root";
+	const ACCOUNT_PASSWORD = '';
+	const DATABASE_NAME = "schrimp";
 
 	function __construct()
 	{
@@ -17,10 +18,10 @@ class db
 		{
 			case 'mysql' :
 			{
-				mysql_connect(DB_SERVER_HOST,
-				              DB_ACCOUNT_USER,
-				              DB_ACCOUNT_PASSWORD);
-    			mysql_select_db(DB_DATABASE_NAME);
+				mysql_connect(SERVER_HOST,
+				              ACCOUNT_USER,
+				              ACCOUNT_PASSWORD);
+    			mysql_select_db(DATABASE_NAME);
 				break;
 			}
 
@@ -28,7 +29,7 @@ class db
 			{
 				$msg = tr('error',
                           "unknown %s database type",
-				          DB_DATABASE_TYPE);
+				          DATABASE_TYPE);
 				main::launch_error($msg);
 			}
 		}

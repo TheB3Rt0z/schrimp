@@ -7,13 +7,8 @@ General reference
 -----------------  
   
   
-**CONFIGURATION CONSTANTS**  
+**GLOBAL CONFIGURATION CONSTANTS**  
   
-- **DB_ACCOUNT_PASSWORD** &#10140; null
-- **DB_ACCOUNT_USER** &#10140; "root"
-- **DB_DATABASE_NAME** &#10140; "schrimp"
-- **DB_DATABASE_TYPE** &#10140; "mysql"
-- **DB_SERVER_HOST** &#10140; "127.0.0.1"
 - **DB_TABLE_PREFIX** &#10140; null
 - **HTML_BREADCRUMB_SEPARATOR** &#10140; " &raquo; "
 - **LANGUAGE_FALLBACK_LANG** &#10140; "en"
@@ -36,11 +31,11 @@ General reference
   
 **FUNCTION ALIASES**  
   
-- **fe($path)** &#10140; .main.php on line 265,
+- **fe($path)** &#10140; .main.php on line 267,
   returns boolean if realpath path exists on running server;
   @param string $path
 
-- **rt($url = )** &#10140; .main.php on line 274,
+- **rt($url = )** &#10140; .main.php on line 276,
   relocates to given relative url or to base path on default;
   @param string $url
 
@@ -49,7 +44,7 @@ General reference
   @param string $component
   @param string $marker
 
-- **vd($what)** &#10140; .main.php on line 256,
+- **vd($what)** &#10140; .main.php on line 258,
   returns pre-formatted mixed variables;
   @param mixed $what
 
@@ -66,6 +61,8 @@ Class MAIN
 ----------  
   
   
+**CLASS CONFIGURATION CONSTANTS:**  
+  
 **CODE REFERENCE:**  
   
 **TODOS**  
@@ -81,6 +78,8 @@ Class CONTROLLER
 ----------------  
   
   
+**CLASS CONFIGURATION CONSTANTS:**  
+  
 **CODE REFERENCE:**  
   
 **TODOS**  
@@ -91,6 +90,8 @@ Class CONTROLLER
 Class DB  
 --------  
   
+  
+**CLASS CONFIGURATION CONSTANTS:**  
   
 **CODE REFERENCE:**  
   
@@ -103,6 +104,8 @@ Class ESCORT
 ------------  
   
   
+**CLASS CONFIGURATION CONSTANTS:**  
+  
 **CODE REFERENCE:**  
   
 **TODOS**  
@@ -114,6 +117,8 @@ Class HTML
 ----------  
   
   
+**CLASS CONFIGURATION CONSTANTS:**  
+  
 **CODE REFERENCE:**  
   
 **TODOS**  
@@ -124,6 +129,8 @@ Class HTML
 Class LANGUAGE  
 --------------  
   
+  
+**CLASS CONFIGURATION CONSTANTS:**  
   
 **CODE REFERENCE:**  
   
@@ -137,6 +144,8 @@ Class MD
 --------  
   
   
+**CLASS CONFIGURATION CONSTANTS:**  
+  
 **CODE REFERENCE:**  
   
 **TODOS**  
@@ -147,6 +156,8 @@ Class MD
 Class NAVIGATOR  
 ---------------  
   
+  
+**CLASS CONFIGURATION CONSTANTS:**  
   
 **CODE REFERENCE:**  
   
@@ -159,6 +170,8 @@ Class NAVIGATOR
 Class WIDGETS  
 -------------  
   
+  
+**CLASS CONFIGURATION CONSTANTS:**  
   
 **CODE REFERENCE:**  
   
