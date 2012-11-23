@@ -70,7 +70,10 @@ Class MAIN
   
 **TODOS**  
   
-- **? admin bar** &#10140; optional control to measure run time performance (gApis)
+- **documentation** &#10140; PHP's highlight_string/file to rapresent code excerpts
+- **escort library** &#10140; session su PHP poi DB se webstore & memcache fail?
+- **memcache support** &#10140; verify in method, if at least one mem-server works
+- **load_libraries** &#10140; find someway to avoid conflicts between libs/plugins
   
 ***  
   
@@ -82,7 +85,6 @@ Class CONTROLLER
   
 **TODOS**  
   
-- **? admin bar** &#10140; optional control to measure run time performance (gApis)
   
 ***  
   
@@ -94,7 +96,6 @@ Class DB
   
 **TODOS**  
   
-- **? admin bar** &#10140; optional control to measure run time performance (gApis)
   
 ***  
   
@@ -106,7 +107,6 @@ Class ESCORT
   
 **TODOS**  
   
-- **? admin bar** &#10140; optional control to measure run time performance (gApis)
   
 ***  
   
@@ -118,7 +118,6 @@ Class HTML
   
 **TODOS**  
   
-- **? admin bar** &#10140; optional control to measure run time performance (gApis)
   
 ***  
   
@@ -130,7 +129,7 @@ Class LANGUAGE
   
 **TODOS**  
   
-- **? admin bar** &#10140; optional control to measure run time performance (gApis)
+- **automatic translation** &#10140; it could be interessant to use pspell&gettext
   
 ***  
   
@@ -142,7 +141,6 @@ Class MD
   
 **TODOS**  
   
-- **? admin bar** &#10140; optional control to measure run time performance (gApis)
   
 ***  
   
@@ -154,7 +152,7 @@ Class NAVIGATOR
   
 **TODOS**  
   
-- **? admin bar** &#10140; optional control to measure run time performance (gApis)
+- **render_list** &#10140; this should be CSS3 and appear on a mouse gesture..
   
 ***  
   
@@ -166,7 +164,6 @@ Class WIDGETS
   
 **TODOS**  
   
-- **? admin bar** &#10140; optional control to measure run time performance (gApis)
   
 ***  
   

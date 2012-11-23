@@ -188,7 +188,7 @@ class main
 				                 . md::title(3, "Code reference:")
 				                   // function reference here
 								 . md::title(3, 'TODOs')
-								   . $todos_list
+								   . $class_todos
 				               . md::hr();
 			}
     	}
