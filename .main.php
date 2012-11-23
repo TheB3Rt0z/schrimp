@@ -123,6 +123,8 @@ class main
     	$constants = get_defined_constants(true);
     	$user_consts = $constants['user'];
     	ksort($user_consts);
+    	if (!empty($user_consts['TODOS']))
+    		unset($user_consts['TODOS']); // no needed at this time
     	foreach ($user_consts as $key => $value)
     	{
     		if ($value === true)
