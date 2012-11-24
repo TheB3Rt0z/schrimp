@@ -39,7 +39,7 @@ General reference
   launches a customizable error 500;
   @param string $msg
 
-- **rt($url = )** &#10140; .main.php on line 282,
+- **rt($url = ''')** &#10140; .main.php on line 282,
   relocates to given relative url or to base path on default;
   @param string $url
 

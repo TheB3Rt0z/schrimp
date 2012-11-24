@@ -155,7 +155,7 @@ class main
     		foreach ($function->getParameters() as $parameter)
     			$parameters[] = "$" . $parameter->getName()
     		                  . ($parameter->isOptional()
-    		                    ? " = " . $parameter->getDefaultValue() // to be formatted like costants
+    		                    ? " = ''" . $parameter->getDefaultValue() . "'" // to be formatted like costants
     		                    : '');
     		$funcs_list .= "- **" . $function->getName() . "("
     				     . implode($parameters, ", ") . ")** &#10140; "
