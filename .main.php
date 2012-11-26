@@ -191,8 +191,10 @@ class main
 								   ? md::title(3, "Class configuration constants:")
 								   . $class_consts // unprotected (no '_XXX') constants here
 								   : '')
-				                 . md::title(3, "Code reference:")
-				                   // function reference here
+				                 . (!empty($reference)
+				                   ? md::title(3, "Code reference:")
+				                   . $reference
+				                   : '')
 								 . (!empty($class_todos)
 								   ? md::title(3, "TODOs")
 								   . $class_todos

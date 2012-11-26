@@ -31,15 +31,15 @@ General reference
   
 **FUNCTION ALIASES**  
   
-- **fe($path)** &#10140; .main.php on line 273,
+- **fe($path)** &#10140; .main.php on line 275,
   returns boolean if realpath path exists on running server;
   @param string $path
 
-- **le($msg)** &#10140; .main.php on line 291,
+- **le($msg)** &#10140; .main.php on line 293,
   launches a customizable error 500;
   @param string $msg
 
-- **rt($url = '')** &#10140; .main.php on line 282,
+- **rt($url = '')** &#10140; .main.php on line 284,
   relocates to given relative url or to base path on default;
   @param string $url
 
@@ -48,7 +48,7 @@ General reference
   @param string $component
   @param string $marker
 
-- **vd($what)** &#10140; .main.php on line 264,
+- **vd($what)** &#10140; .main.php on line 266,
   returns pre-formatted mixed variables;
   @param mixed $what
 
@@ -65,8 +65,6 @@ Class MAIN
 ----------  
   
   
-**CODE REFERENCE:**  
-  
 **TODOS**  
   
 - **documentation** &#10140; PHP's highlight_string/file to rapresent code excerpts
@@ -80,16 +78,12 @@ Class CONTROLLER
 ----------------  
   
   
-**CODE REFERENCE:**  
-  
   
 ***  
   
 Class DB  
 --------  
   
-  
-**CODE REFERENCE:**  
   
   
 ***  
@@ -98,8 +92,6 @@ Class ESCORT
 ------------  
   
   
-**CODE REFERENCE:**  
-  
   
 ***  
   
@@ -107,16 +99,12 @@ Class HTML
 ----------  
   
   
-**CODE REFERENCE:**  
-  
   
 ***  
   
 Class LANGUAGE  
 --------------  
   
-  
-**CODE REFERENCE:**  
   
 **TODOS**  
   
@@ -128,16 +116,12 @@ Class MD
 --------  
   
   
-**CODE REFERENCE:**  
-  
   
 ***  
   
 Class NAVIGATOR  
 ---------------  
   
-  
-**CODE REFERENCE:**  
   
 **TODOS**  
   
@@ -149,8 +133,6 @@ Class NAVIGATOR
 Class WIDGETS  
 -------------  
   
-  
-**CODE REFERENCE:**  
   
   
 ***  
