@@ -15,7 +15,7 @@ General reference
 - **MAX_BLOCK_COMPLEXITY** &#10140; 84
 - **MAX_CYCLOMATIC_COMPLEXITY** &#10140; 12
 - **MAX_METHODS_COMPLEXITY** &#10140; 36
-- **MD_NEWLINE** &#10140; "  
+- **MD_NEWLINE_SEQUENCE** &#10140; "  
 "
 - **SET_DEVELOPMENT_MODE** &#10140; true
 - **SET_GITHUB_RAWPATH** &#10140; "https://raw.github.com/TheB3Rt0z/schrimp/master/"

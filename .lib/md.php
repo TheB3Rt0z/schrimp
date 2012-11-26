@@ -1,6 +1,6 @@
 <?php
 
-define('MD_NEWLINE', "  \n"); // markdown-style new line with br conversion
+define('MD_NEWLINE_SEQUENCE', "  \n"); // markdown-style new line with br conversion
 
 class md
 {
@@ -15,25 +15,26 @@ class md
 
 	private $_tags = array
 	        (
-	        	'h1' => "return MD_NEWLINE
+	        	'h1' => "return MD_NEWLINE_SEQUENCE
 			                  . str_repeat(\"=\",
 			                               strlen(\$this->_content))
-		                      . str_repeat(MD_NEWLINE, 4);",
+		                      . str_repeat(MD_NEWLINE_SEQUENCE, 4);",
 
-			    'h2' => "return MD_NEWLINE
+			    'h2' => "return MD_NEWLINE_SEQUENCE
 			                  . str_repeat(\"-\",
 			                               strlen(\$this->_content))
-			                  . str_repeat(MD_NEWLINE, 3);",
+			                  . str_repeat(MD_NEWLINE_SEQUENCE, 3);",
 
-			    'h3' => "return str_repeat(MD_NEWLINE, 2);",
+			    'h3' => "return str_repeat(MD_NEWLINE_SEQUENCE, 2);",
 
-	        	'hr' => "return MD_NEWLINE . '***' . str_repeat(MD_NEWLINE, 2);",
+	        	'hr' => "return MD_NEWLINE_SEQUENCE . '***'
+	        		          . str_repeat(MD_NEWLINE_SEQUENCE, 2);",
 
 	        	'img' => "return '![' . \$this->_attributes['alt'] . ']('
 	        		           . \$this->_attributes['src']
 	        		           . ' \"' . \$this->_attributes['title'] . '\")';",
 
-	        	'text' => "return MD_NEWLINE;",
+	        	'text' => "return MD_NEWLINE_SEQUENCE;",
 	       	);
 
 	function __construct($tag,
