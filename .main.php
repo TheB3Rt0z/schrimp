@@ -203,13 +203,11 @@ class main
     	     . md::title(2, "General reference")
     	       . md::title(3, "Global configuration constants")
     	         . $consts_list
-    	       . md::hr()
     	       . md::title(3, "Function aliases")
     	         . $funcs_list // add more information
-    	       . md::hr()
     	       . md::title(3, 'TODOs')
     	         . $todos_list
-    		   . md::hr()
+    		 . md::hr()
     		 . $classes_list
     	     . str_repeat("\n", 4) . md::text(STR_COPYRIGHT_SIGNATURE);
     }
