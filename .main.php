@@ -237,7 +237,7 @@ class main
 
     static function relocate_to($url = '')
     {
-        header("Location: " . main::resolve_uri($url));
+        header("Location: " . ru($url));
     }
 
     static function launch_error($msg)
@@ -269,6 +269,15 @@ function vd($what)
 function fe($path)
 {
 	return main::exists_file($path);
+}
+
+/**
+ * returns an absolute uri, based on current server configuration;
+ * @param string $uri
+ */
+function ru($uri = '')
+{
+	return resolve_uri($uri);
 }
 
 /**

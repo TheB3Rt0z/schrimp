@@ -26,12 +26,9 @@ General reference
 - **STR_COPYRIGHT_SIGNATURE** &#10140; "Copyright © 2011-2012 | Das S.C.H.R.I.M.P. Project"
 - **STR_KERNEL_SALT** &#10140; "Sstm Cntrl Hdng_t_ Rw Incrs_f Mntl Prdctvt"
 - **STR_PROJECT_NAME** &#10140; "Das S.C.H.R.I.M.P."
-  
-***  
-  
 **FUNCTION ALIASES**  
   
-- **fe($path)** &#10140; .main.php on line 271,
+- **fe($path)** &#10140; .main.php on line 269,
   returns boolean if realpath path exists on running server;
   @param string $path
 
@@ -39,26 +36,27 @@ General reference
   returns a beautiful formatted value, mixed variable-type-dependant;
   @param mixed $mixed
 
-- **le($msg)** &#10140; .main.php on line 289,
+- **le($msg)** &#10140; .main.php on line 296,
   launches a customizable error 500;
   @param string $msg
 
-- **rt($url = '')** &#10140; .main.php on line 280,
+- **rt($url = '')** &#10140; .main.php on line 287,
   relocates to given relative url or to base path on default;
   @param string $url
+
+- **ru($uri = '')** &#10140; .main.php on line 278,
+  returns an absolute uri, based on current server configuration;
+  @param string $uri
 
 - **tr($component, $marker)** &#10140; .lib/language.php on line 90,
   executes language translation of marker identifier, referring to given component;
   @param string $component
   @param string $marker
 
-- **vd($what)** &#10140; .main.php on line 262,
+- **vd($what)** &#10140; .main.php on line 260,
   returns pre-formatted mixed variables;
   @param mixed $what
 
-  
-***  
-  
 **TODOS**  
   
 - **? admin bar** &#10140; optional control to measure run time performance (gApis)

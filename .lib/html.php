@@ -125,7 +125,7 @@ class html
                               $content)
     {
     	if (!strpos($href, "://"))
-    		$href = main::resolve_uri($href);
+    		$href = ru($href);
 
     	$attributes = array('href' => $href);
 
@@ -169,7 +169,7 @@ class html
 			le($msg);
 		}
 
-    	$attributes = array('src' => main::resolve_uri($src),
+    	$attributes = array('src' => ru($src),
     		                'alt' => $alt,
     		                'title' => $title);
 
@@ -271,7 +271,7 @@ class html
 		elseif ($href
 			&& !in_array($href, html::$_linked_files))
 		{
-			$attributes = array('href' => main::resolve_uri($href),
+			$attributes = array('href' => ru($href),
     		                    'rel' => $rel,
     		                    'type' => $type);
 
