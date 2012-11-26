@@ -89,13 +89,6 @@ Class DB
 --------  
   
   
-**CLASS CONFIGURATION CONSTANTS:**  
-  
-- **DATABASE_TYPE** &#10140; mysql
-- **SERVER_HOST** &#10140; 127.0.0.1
-- **ACCOUNT_USER** &#10140; root
-- **ACCOUNT_PASSWORD** &#10140; 
-- **DATABASE_NAME** &#10140; schrimp
   
 ***  
   

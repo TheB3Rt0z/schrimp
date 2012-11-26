@@ -6,22 +6,22 @@ class db
 {
 	public static $todos = array();
 
-	const DATABASE_TYPE = "mysql";
-	const SERVER_HOST = "127.0.0.1";
-	const ACCOUNT_USER = "root";
-	const ACCOUNT_PASSWORD = '';
-	const DATABASE_NAME = "schrimp";
+	const _DATABASE_TYPE = "mysql";
+	const _SERVER_HOST = "127.0.0.1";
+	const _ACCOUNT_USER = "root";
+	const _ACCOUNT_PASSWORD = '';
+	const _DATABASE_NAME = "schrimp";
 
 	function __construct()
 	{
-		switch (DB_DATABASE_TYPE)
+		switch (_DB_DATABASE_TYPE)
 		{
 			case 'mysql' :
 			{
-				mysql_connect(SERVER_HOST,
-				              ACCOUNT_USER,
-				              ACCOUNT_PASSWORD);
-    			mysql_select_db(DATABASE_NAME);
+				mysql_connect(_SERVER_HOST,
+				              _ACCOUNT_USER,
+				              _ACCOUNT_PASSWORD);
+    			mysql_select_db(_DATABASE_NAME);
 				break;
 			}
 
@@ -29,7 +29,7 @@ class db
 			{
 				$msg = tr('error',
                           "unknown %s database type",
-				          DATABASE_TYPE);
+				          _DATABASE_TYPE);
 				le($msg);
 			}
 		}
