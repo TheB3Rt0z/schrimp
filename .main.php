@@ -155,8 +155,8 @@ class main
     				     . " on line " . $function->getStartLine()
      				     . ($doc_comment
      				       ? "," . trim(str_replace(array("*", "/"),
-     				     		                     '',
-     				     		                     $doc_comment), " ")
+     				     		                    '',
+     				     		                    $doc_comment), " ")
      				       : '') . "\n";
     	}
 
