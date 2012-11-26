@@ -131,17 +131,7 @@ class main
     	if (!empty($user_consts['TODOS']))
     		unset($user_consts['TODOS']); // no needed at this time
     	foreach ($user_consts as $key => $value)
-    	{
-    		if ($value === true)
-    			$value = "true";
-    		elseif ($value === false)
-    			$value = "false";
-    		elseif ($value === '')
-    			$value = "null";
-			elseif (!is_numeric($value))
-    			$value = "\"" . $value . "\"";
-			$consts_list .= "- **" . $key . "** &#10140; " . $value . "\n";
-    	}
+    		$consts_list .= "- **" . $key . "** &#10140; " . fv($value) . "\n";
 
     	$funcs_list = '';
     	$functions = get_defined_functions();
@@ -183,7 +173,8 @@ class main
 				$class_consts = '';
 				foreach ($class->getConstants() as $key => $value)
 					if (substr($key, 0, 1) != '_')
-						$class_consts .= "- **" . $key . "** &#10140; " . $value . "\n";
+						$class_consts .= "- **" . $key . "** &#10140; "
+								       . fv($value) . "\n";
 
 				$reference = '';
 

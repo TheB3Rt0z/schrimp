@@ -9,37 +9,40 @@ General reference
   
 **GLOBAL CONFIGURATION CONSTANTS**  
   
-- **DB_TABLE_PREFIX** &#10140; null
-- **HTML_BREADCRUMB_SEPARATOR** &#10140; " &raquo; "
-- **LANGUAGE_FALLBACK_LANG** &#10140; "en"
-- **MAX_BLOCK_COMPLEXITY** &#10140; 84
-- **MAX_CYCLOMATIC_COMPLEXITY** &#10140; 12
-- **MAX_METHODS_COMPLEXITY** &#10140; 36
-- **MD_NEWLINE_SEQUENCE** &#10140; "  
-"
-- **SET_DEVELOPMENT_MODE** &#10140; true
-- **SET_GITHUB_RAWPATH** &#10140; "https://raw.github.com/TheB3Rt0z/schrimp/master/"
-- **SET_HOME_COMPONENT** &#10140; "admin"
-- **SET_LOCAL_PATH** &#10140; "/schrimp"
-- **SET_OUTPUT_COMPRESSION** &#10140; false
-- **SET_TRANSPORT_PROTOCOL** &#10140; "http"
-- **STR_COPYRIGHT_SIGNATURE** &#10140; "Copyright © 2011-2012 | Das S.C.H.R.I.M.P. Project"
-- **STR_KERNEL_SALT** &#10140; "Sstm Cntrl Hdng_t_ Rw Incrs_f Mntl Prdctvt"
-- **STR_PROJECT_NAME** &#10140; "Das S.C.H.R.I.M.P."
+- **DB_TABLE_PREFIX** &#10140; 
+- **HTML_BREADCRUMB_SEPARATOR** &#10140; 
+- **LANGUAGE_FALLBACK_LANG** &#10140; 
+- **MAX_BLOCK_COMPLEXITY** &#10140; 
+- **MAX_CYCLOMATIC_COMPLEXITY** &#10140; 
+- **MAX_METHODS_COMPLEXITY** &#10140; 
+- **MD_NEWLINE_SEQUENCE** &#10140; 
+- **SET_DEVELOPMENT_MODE** &#10140; 
+- **SET_GITHUB_RAWPATH** &#10140; 
+- **SET_HOME_COMPONENT** &#10140; 
+- **SET_LOCAL_PATH** &#10140; 
+- **SET_OUTPUT_COMPRESSION** &#10140; 
+- **SET_TRANSPORT_PROTOCOL** &#10140; 
+- **STR_COPYRIGHT_SIGNATURE** &#10140; 
+- **STR_KERNEL_SALT** &#10140; 
+- **STR_PROJECT_NAME** &#10140; 
   
 ***  
   
 **FUNCTION ALIASES**  
   
-- **fe($path)** &#10140; .main.php on line 280,
+- **fe($path)** &#10140; .main.php on line 271,
   returns boolean if realpath path exists on running server;
   @param string $path
 
-- **le($msg)** &#10140; .main.php on line 298,
+- **fv($mixed)** &#10140; .lib/toolbox.php on line 24,
+  returns a beautiful formatted value, mixed variable-type-dependant;
+  @param mixed $mixed
+
+- **le($msg)** &#10140; .main.php on line 289,
   launches a customizable error 500;
   @param string $msg
 
-- **rt($url = '')** &#10140; .main.php on line 289,
+- **rt($url = '')** &#10140; .main.php on line 280,
   relocates to given relative url or to base path on default;
   @param string $url
 
@@ -48,7 +51,7 @@ General reference
   @param string $component
   @param string $marker
 
-- **vd($what)** &#10140; .main.php on line 271,
+- **vd($what)** &#10140; .main.php on line 262,
   returns pre-formatted mixed variables;
   @param mixed $what
 
@@ -80,8 +83,8 @@ Class CONTROLLER
   
 **CLASS CONFIGURATION CONSTANTS:**  
   
-- **VISIBLE_IN_NAVIGATION** &#10140; 1
-- **RENDER_BREADCRUMB** &#10140; 1
+- **VISIBLE_IN_NAVIGATION** &#10140; 
+- **RENDER_BREADCRUMB** &#10140; 
   
 ***  
   
@@ -131,6 +134,13 @@ Class NAVIGATOR
   
 - **render_list** &#10140; this should be CSS3 and appear on a mouse gesture..
 - **active breadcrumb** &#10140; dynamic same-level-select trunks, or maybe widget?
+  
+***  
+  
+Class TOOLBOX  
+-------------  
+  
+  
   
 ***  
   
