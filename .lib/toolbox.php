@@ -23,7 +23,7 @@ class toolbox
  */
 function fv($mixed)
 {
-	toolbox::format_value($mixed);
+	return toolbox::format_value($mixed);
 }
 
 ?>
