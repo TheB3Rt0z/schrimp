@@ -181,6 +181,11 @@ class main
 			if ($class->isUserDefined())
 			{
 				$class_consts = '';
+				foreach ($class->getConstants() as $key => $value)
+					if (substr($key, 0, 1) != '_')
+						$class_consts .= "- **" . $key . "** &#10140; " . $value . "\n";
+
+				$reference = '';
 
 				$class_todos = '';
 				foreach ($class->getStaticPropertyValue('todos') as $key => $value)

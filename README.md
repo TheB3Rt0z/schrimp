@@ -31,15 +31,15 @@ General reference
   
 **FUNCTION ALIASES**  
   
-- **fe($path)** &#10140; .main.php on line 275,
+- **fe($path)** &#10140; .main.php on line 280,
   returns boolean if realpath path exists on running server;
   @param string $path
 
-- **le($msg)** &#10140; .main.php on line 293,
+- **le($msg)** &#10140; .main.php on line 298,
   launches a customizable error 500;
   @param string $msg
 
-- **rt($url = '')** &#10140; .main.php on line 284,
+- **rt($url = '')** &#10140; .main.php on line 289,
   relocates to given relative url or to base path on default;
   @param string $url
 
@@ -48,7 +48,7 @@ General reference
   @param string $component
   @param string $marker
 
-- **vd($what)** &#10140; .main.php on line 266,
+- **vd($what)** &#10140; .main.php on line 271,
   returns pre-formatted mixed variables;
   @param mixed $what
 
@@ -78,6 +78,10 @@ Class CONTROLLER
 ----------------  
   
   
+**CLASS CONFIGURATION CONSTANTS:**  
+  
+- **VISIBLE_IN_NAVIGATION** &#10140; 1
+- **RENDER_BREADCRUMB** &#10140; 1
   
 ***  
   
@@ -85,6 +89,13 @@ Class DB
 --------  
   
   
+**CLASS CONFIGURATION CONSTANTS:**  
+  
+- **DATABASE_TYPE** &#10140; mysql
+- **SERVER_HOST** &#10140; 127.0.0.1
+- **ACCOUNT_USER** &#10140; root
+- **ACCOUNT_PASSWORD** &#10140; 
+- **DATABASE_NAME** &#10140; schrimp
   
 ***  
   
