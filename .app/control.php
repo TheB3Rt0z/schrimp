@@ -4,7 +4,7 @@ class control extends controller
 {
 	function initialize()
 	{
-		$fallback_method = '_handler' . (!empty( $this->_action)
+		$fallback_method = '_handler' . (!empty($this->_action)
 						                ? '_' . $this->_action
 						                : '');
 		$method = $fallback_method . (!empty($this->_args)
@@ -99,7 +99,7 @@ class control extends controller
 			                   \$output[\$option] = '_handler_plugins_' . \$option;
 		                   }
 				           return \$output;";
-var_dump($this->_args);
+
 		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
 		                . HTML_BREADCRUMB_SEPARATOR
  		                . $this->_translate(__FUNCTION__

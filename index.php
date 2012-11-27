@@ -28,10 +28,10 @@ ob_start();
 		html::add_js_file(".inc/js/jquery_gestures.js");
 		?>
 	</head>
-	<body>
+	<body onLoad="$(document).ready(function() { $('body').css('display', 'none'); $('body').fadeIn('slow'); });">
 		<header>
 			<?php echo $main->header; ?>
-			<?php navigator::render_breadcrumb(); // nothung shown on home page ?>
+			<?php navigator::render_breadcrumb(); // nothing shown on home page ?>
 		</header>
 		<nav>
 			<?php echo $main->nav; ?>
