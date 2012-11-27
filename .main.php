@@ -277,7 +277,7 @@ function fe($path)
  */
 function ru($uri = '')
 {
-	return resolve_uri($uri);
+	return main::resolve_uri($uri);
 }
 
 /**
