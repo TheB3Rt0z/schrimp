@@ -63,9 +63,10 @@ div
 
 div.box
 {
+	background-color: #666;
 	border: solid 1px;
-    border-top-color: #333;
-    border-left-color: #666;
+    border-top-color: #111;
+    border-left-color: #444;
     border-right-color: #999;
     border-bottom-color: #ccc;
 	border-radius: 5px;
@@ -82,11 +83,11 @@ div.box
 
 div.box:hover
 {
-    border: solid 1px;
+	background-color: #777;
     border-top-color: #ccc;
     border-left-color: #999;
-    border-right-color: #666;
-    border-bottom-color: #333;
+    border-right-color: #444;
+    border-bottom-color: #111;
 }
 
 div.high
