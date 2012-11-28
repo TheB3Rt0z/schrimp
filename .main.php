@@ -104,7 +104,7 @@ class main
         return $this->_call;
     }
 
-    function var_dump($what)
+    static function var_dump($what)
     {
     	echo html::preform($what);
     }
@@ -178,6 +178,8 @@ class main
 
 				$reference = '';
 
+				$dependences = '';
+
 				$class_todos = '';
 				foreach ($class->getStaticPropertyValue('todos') as $key => $value)
 					$class_todos .= "- **" . $key . "** &#10140; " . $value . "\n";
@@ -190,6 +192,10 @@ class main
 				                 . (!empty($reference)
 				                   ? md::title(3, "Code reference:")
 				                   . $reference
+				                   : '')
+				                 . (!empty($dependences)
+				                   ? md::title(3, "Dependences:")
+				                   . $dependences
 				                   : '')
 								 . (!empty($class_todos)
 								   ? md::title(3, "TODOs")

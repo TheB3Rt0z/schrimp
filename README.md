@@ -29,7 +29,7 @@ General reference
   
 **FUNCTION ALIASES**  
   
-- **fe($path)** &#10140; .main.php on line 269,
+- **fe($path)** &#10140; .main.php on line 275,
   returns boolean if realpath path exists on running server;
   @param string $path
 
@@ -37,15 +37,15 @@ General reference
   returns a beautiful formatted value, mixed variable-type-dependant;
   @param mixed $mixed
 
-- **le($msg)** &#10140; .main.php on line 296,
+- **le($msg)** &#10140; .main.php on line 302,
   launches a customizable error 500;
   @param string $msg
 
-- **rt($url = '')** &#10140; .main.php on line 287,
+- **rt($url = '')** &#10140; .main.php on line 293,
   relocates to given relative url or to base path on default;
   @param string $url
 
-- **ru($uri = '')** &#10140; .main.php on line 278,
+- **ru($uri = '')** &#10140; .main.php on line 284,
   returns an absolute uri, based on current server configuration;
   @param string $uri
 
@@ -54,7 +54,7 @@ General reference
   @param string $component
   @param string $marker
 
-- **vd($what)** &#10140; .main.php on line 260,
+- **vd($what)** &#10140; .main.php on line 266,
   returns pre-formatted mixed variables;
   @param mixed $what
 
