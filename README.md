@@ -26,6 +26,7 @@ General reference
 - **STR_COPYRIGHT_SIGNATURE** &#10140; "Copyright © 2011-2012 | Das S.C.H.R.I.M.P. Project"
 - **STR_KERNEL_SALT** &#10140; "Sstm Cntrl Hdng_t_ Rw Incrs_f Mntl Prdctvt"
 - **STR_PROJECT_NAME** &#10140; "Das S.C.H.R.I.M.P."
+  
 **FUNCTION ALIASES**  
   
 - **fe($path)** &#10140; .main.php on line 269,
@@ -57,9 +58,11 @@ General reference
   returns pre-formatted mixed variables;
   @param mixed $what
 
+  
 **TODOS**  
   
 - **? admin bar** &#10140; optional control to measure run time performance (gApis)
+  
   
 ***  
   

@@ -202,11 +202,11 @@ class main
     	return md::title(1, $title)
     	     . md::title(2, "General reference")
     	       . md::title(3, "Global configuration constants")
-    	         . $consts_list
+    	         . $consts_list . MD_NEWLINE_SEQUENCE
     	       . md::title(3, "Function aliases")
-    	         . $funcs_list // add more information
+    	         . $funcs_list . MD_NEWLINE_SEQUENCE // add more information
     	       . md::title(3, 'TODOs')
-    	         . $todos_list
+    	         . $todos_list . MD_NEWLINE_SEQUENCE
     		 . md::hr()
     		 . $classes_list
     	     . str_repeat("\n", 4) . md::text(STR_COPYRIGHT_SIGNATURE);
