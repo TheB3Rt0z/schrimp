@@ -153,7 +153,7 @@ class control extends controller
 							       \$option = str_replace(array(\"app/\", \".php\"),
 				                                          '',
 				                                          \$filename);
-							       \$output[\$option] = false;
+							       \$output[\$option] = null;
 							   }
 		                   }
 				           return \$output;";

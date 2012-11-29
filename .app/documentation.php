@@ -12,7 +12,7 @@ class documentation extends controller
 	{
 		switch ($this->_action)
 		{
-			case false :
+			case null :
 			{
 				$this->_handler();
 				break;

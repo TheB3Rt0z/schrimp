@@ -8,7 +8,7 @@ class navigator
 		'active breadcrumb' => "dynamic same-level-select trunks, or maybe widget?",
 	);
 
-	private static $_structure = false;
+	private static $_structure = null;
 
 	function __construct()
 	{
@@ -116,7 +116,7 @@ class navigator
 		$controller = main::$controller;
 
 		if (!$controller::RENDER_BREADCRUMB)
-			return;
+			return false;
 
 		$self = new self;
 

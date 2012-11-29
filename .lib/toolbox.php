@@ -10,8 +10,11 @@ class toolbox
     		return "true";
     	elseif ($mixed === false)
     		return "false";
-    	elseif ($mixed === '')
+    	elseif ($mixed === ''
+    		|| $mixed == null)
+    	{
     		return "null";
+    	}
 		elseif (!is_numeric($mixed))
     		return "\"" . $mixed . "\"";
 	}

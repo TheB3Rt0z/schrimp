@@ -4,6 +4,7 @@ class error extends controller
 {
 	public static $todos = array
 	(
+		'error 500 output' => "arricchire il tutto con una print backtrace..",
 		'error 500' => "si potrebbe usare il SOAP per passare header e contenuto..",
 	);
 

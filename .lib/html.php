@@ -6,7 +6,7 @@ class html
 {
 	public static $todos = array();
 
-	private $_tag = false;
+	private $_tag = null;
 	private $_attributes = array();
 	private $_content = '';
 
@@ -260,16 +260,18 @@ class html
                                  $rel,
                                  $type)
     {
+    	$placeholder = $rel . '_' . $href;
+
     	if (!fe($href))
     	{
 			$msg = tr('error',
                       'required file (%s) not exists',
 				      $href);
 			le($msg);
-			return; // stops link binding execution to avoid "problems"
+			return false; // stops link binding execution to avoid "problems"
 		}
 		elseif ($href
-			&& !in_array($href, html::$_linked_files))
+			&& !in_array($placeholder, html::$_linked_files))
 		{
 			$attributes = array('href' => ru($href),
     		                    'rel' => $rel,
@@ -278,10 +280,10 @@ class html
     	    $self = new self(__FUNCTION__,
     	                     $attributes);
 
-			html::$_linked_files[] = $rel . '_' . $href;
+			html::$_linked_files[] = $placeholder;
 		}
 		else
-			return false;
+			return false; // MAYBE was this link already loaded, to be continued..
 
     	return $self->_html;
     }
@@ -319,7 +321,7 @@ class html
     }
 
     private static function script($type,
-                                   $src = false,
+                                   $src = null,
                                    $content = '')
     {
     	$attributes = array
@@ -337,7 +339,7 @@ class html
 	                      'required file (%s) not exists',
 					      $src);
 				le($msg);
-				return;
+				return false;
 			}
 
     		$attributes['src'] = $src;
@@ -357,7 +359,7 @@ class html
     	    html::$_loaded_scripts[] = $content;
     	}
     	else
-    		return false;
+    		return false; // this script SEEMS to be already loaded
 
     	return $self->_html;
     }
@@ -403,7 +405,7 @@ class html
     static function add_js_script($content)
     {
     	echo self::script("text/javascript",
-    	                  false,
+    	                  null,
     	                  $content);
     }
 
@@ -437,7 +439,7 @@ class html
     }
 
     static function hyperlink($href,
-                              $content = false)
+                              $content = null)
     {
     	return self::a($href,
                        (!$content ? $href : $content));

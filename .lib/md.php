@@ -6,7 +6,7 @@ class md
 {
 	public static $todos = array();
 
-	private $_tag = false;
+	private $_tag = null;
 	private $_content = '';
 	private $_attributes = array();
 	private $_formatting = '';

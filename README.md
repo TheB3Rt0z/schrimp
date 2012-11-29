@@ -29,23 +29,24 @@ General reference
   
 **FUNCTION ALIASES**  
   
-- **fe($path)** &#10140; .main.php on line 317,
+- **fe($path)** &#10140; .main.php on line 319,
   returns boolean if realpath path exists on running server;
   @param string $path
 
-- **fv($mixed)** &#10140; .lib/toolbox.php on line 24,
+- **fv($mixed)** &#10140; .lib/toolbox.php on line 27,
   returns a beautiful formatted value, mixed variable-type-dependant;
   @param mixed $mixed
 
-- **le($msg)** &#10140; .main.php on line 344,
-  launches a customizable error 500;
+- **le($msg, $backtrace = '')** &#10140; .main.php on line 347,
+  launches a customizable error 500, mit optional backtrace for debug;
   @param string $msg
+  @param mixed $backtrace (maybe only a string)
 
-- **rt($url = '')** &#10140; .main.php on line 335,
+- **rt($url = '')** &#10140; .main.php on line 337,
   relocates to given relative url or to base path on default;
   @param string $url
 
-- **ru($uri = '')** &#10140; .main.php on line 326,
+- **ru($uri = '')** &#10140; .main.php on line 328,
   returns an absolute uri, based on current server configuration;
   @param string $uri
 
@@ -54,7 +55,7 @@ General reference
   @param string $component
   @param string $marker
 
-- **vd($what)** &#10140; .main.php on line 308,
+- **vd($what)** &#10140; .main.php on line 310,
   returns pre-formatted mixed variables;
   @param mixed $what
 
@@ -66,7 +67,7 @@ General reference
   
 ***  
   
-Class CONTROLLER (Fri, 23 Nov 2012 18:01:34 +0000)  
+Class CONTROLLER (Thu, 29 Nov 2012 16:14:21 +0000)  
 --------------------------------------------------  
   
   
@@ -91,7 +92,7 @@ Class ESCORT (Fri, 23 Nov 2012 17:54:52 +0000)
   
 ***  
   
-Class HTML (Tue, 27 Nov 2012 11:40:24 +0000)  
+Class HTML (Thu, 29 Nov 2012 16:31:08 +0000)  
 --------------------------------------------  
   
   
@@ -108,7 +109,7 @@ Class LANGUAGE (Fri, 23 Nov 2012 17:54:52 +0000)
   
 ***  
   
-Class MAIN (Thu, 29 Nov 2012 13:47:46 +0000)  
+Class MAIN (Thu, 29 Nov 2012 16:17:32 +0000)  
 --------------------------------------------  
   
   
@@ -118,17 +119,19 @@ Class MAIN (Thu, 29 Nov 2012 13:47:46 +0000)
 - **escort library** &#10140; session su PHP poi DB se webstore & memcache fail?
 - **memcache support** &#10140; verify in method, if at least one mem-server works
 - **load_libraries** &#10140; find someway to avoid conflicts between libs/plugins
+- **var_dump** &#10140; add backtracking output, based on debug_(print_)backtrace..
+- **launch_error** &#10140; transport backtracing to hander as string-output
   
 ***  
   
-Class MD (Tue, 27 Nov 2012 11:40:24 +0000)  
+Class MD (Thu, 29 Nov 2012 16:14:21 +0000)  
 ------------------------------------------  
   
   
   
 ***  
   
-Class NAVIGATOR (Fri, 23 Nov 2012 18:01:33 +0000)  
+Class NAVIGATOR (Thu, 29 Nov 2012 16:32:33 +0000)  
 -------------------------------------------------  
   
   
@@ -146,7 +149,7 @@ Class POWER (Thu, 29 Nov 2012 13:43:24 +0000)
   
 ***  
   
-Class TOOLBOX (Tue, 27 Nov 2012 11:40:24 +0000)  
+Class TOOLBOX (Thu, 29 Nov 2012 16:31:08 +0000)  
 -----------------------------------------------  
   
   

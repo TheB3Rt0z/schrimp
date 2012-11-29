@@ -8,7 +8,7 @@ abstract class controller
 
 	const RENDER_BREADCRUMB = true;
 
-	protected $_action = false;
+	protected $_action = null;
 	protected $_args = array();
 
 	private $_title = '';

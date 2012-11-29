@@ -8,6 +8,8 @@ class main
 		'escort library' => "session su PHP poi DB se webstore & memcache fail?",
 		'memcache support' => "verify in method, if at least one mem-server works",
 		'load_libraries' => "find someway to avoid conflicts between libs/plugins",
+		'var_dump' => "add backtracking output, based on debug_(print_)backtrace..",
+		'launch_error' => "transport backtracing to hander as string-output",
 	);
 
     private $_call = null;
@@ -15,7 +17,7 @@ class main
     private $_modules = array();
 
     static $controller = '';
-    static $action = false;
+    static $action = null;
     static $args = array();
 
     var $title = '';
@@ -27,7 +29,7 @@ class main
     var $aside = '';
     var $footer = '';
 
-    var $documentation = false; // this remain false on production servers..
+    var $documentation = null; // this remain false on production servers..
 
     function __construct($uri, $documentation = '')
     {
@@ -288,7 +290,7 @@ class main
         header("Location: " . ru($url));
     }
 
-    static function launch_error($msg)
+    static function launch_error($msg, $backtrace = null)
     {
         $msg = str_replace("/",
                            "\\",
@@ -338,12 +340,13 @@ function rt($url = '')
 }
 
 /**
- * launches a customizable error 500;
+ * launches a customizable error 500, mit optional backtrace for debug;
  * @param string $msg
+ * @param mixed $backtrace (maybe only a string)
  */
-function le($msg)
+function le($msg, $backtrace = null)
 {
-	main::launch_error($msg);
+	main::launch_error($msg, $backtrace);
 }
 
 ?>
