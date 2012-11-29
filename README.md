@@ -66,8 +66,8 @@ General reference
   
 ***  
   
-Class MAIN (/Applications/XAMPP/xamppfiles/htdocs/schrimp/.main.php)  
---------------------------------------------------------------------  
+Class MAIN (Thu, 29 Nov 2012 13:41:24 +0000)  
+--------------------------------------------  
   
   
 **TODOS**  
@@ -79,8 +79,8 @@ Class MAIN (/Applications/XAMPP/xamppfiles/htdocs/schrimp/.main.php)
   
 ***  
   
-Class CONTROLLER (/Applications/XAMPP/xamppfiles/htdocs/schrimp/.lib/controller.php)  
-------------------------------------------------------------------------------------  
+Class CONTROLLER (Fri, 23 Nov 2012 18:01:34 +0000)  
+--------------------------------------------------  
   
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -90,29 +90,29 @@ Class CONTROLLER (/Applications/XAMPP/xamppfiles/htdocs/schrimp/.lib/controller.
   
 ***  
   
-Class DB (/Applications/XAMPP/xamppfiles/htdocs/schrimp/.lib/db.php)  
---------------------------------------------------------------------  
+Class DB (Tue, 27 Nov 2012 11:40:24 +0000)  
+------------------------------------------  
   
   
   
 ***  
   
-Class ESCORT (/Applications/XAMPP/xamppfiles/htdocs/schrimp/.lib/escort.php)  
-----------------------------------------------------------------------------  
+Class ESCORT (Fri, 23 Nov 2012 17:54:52 +0000)  
+----------------------------------------------  
   
   
   
 ***  
   
-Class HTML (/Applications/XAMPP/xamppfiles/htdocs/schrimp/.lib/html.php)  
-------------------------------------------------------------------------  
+Class HTML (Tue, 27 Nov 2012 11:40:24 +0000)  
+--------------------------------------------  
   
   
   
 ***  
   
-Class LANGUAGE (/Applications/XAMPP/xamppfiles/htdocs/schrimp/.lib/language.php)  
---------------------------------------------------------------------------------  
+Class LANGUAGE (Fri, 23 Nov 2012 17:54:52 +0000)  
+------------------------------------------------  
   
   
 **TODOS**  
@@ -121,15 +121,15 @@ Class LANGUAGE (/Applications/XAMPP/xamppfiles/htdocs/schrimp/.lib/language.php)
   
 ***  
   
-Class MD (/Applications/XAMPP/xamppfiles/htdocs/schrimp/.lib/md.php)  
---------------------------------------------------------------------  
+Class MD (Tue, 27 Nov 2012 11:40:24 +0000)  
+------------------------------------------  
   
   
   
 ***  
   
-Class NAVIGATOR (/Applications/XAMPP/xamppfiles/htdocs/schrimp/.lib/navigator.php)  
-----------------------------------------------------------------------------------  
+Class NAVIGATOR (Fri, 23 Nov 2012 18:01:33 +0000)  
+-------------------------------------------------  
   
   
 **TODOS**  
@@ -139,15 +139,15 @@ Class NAVIGATOR (/Applications/XAMPP/xamppfiles/htdocs/schrimp/.lib/navigator.ph
   
 ***  
   
-Class TOOLBOX (/Applications/XAMPP/xamppfiles/htdocs/schrimp/.lib/toolbox.php)  
-------------------------------------------------------------------------------  
+Class TOOLBOX (Tue, 27 Nov 2012 11:40:24 +0000)  
+-----------------------------------------------  
   
   
   
 ***  
   
-Class WIDGETS (/Applications/XAMPP/xamppfiles/htdocs/schrimp/.lib/widgets.php)  
-------------------------------------------------------------------------------  
+Class WIDGETS (Fri, 23 Nov 2012 17:54:52 +0000)  
+-----------------------------------------------  
   
   
   

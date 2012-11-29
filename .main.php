@@ -224,7 +224,7 @@ class main
 					$class_todos .= "- **" . $key . "** &#10140; " . $value . "\n";
 
 				$classes_list .= md::title(2, "Class " . strtoupper($class->name)
-						       . " (" . $class->getFileName() . ")")
+						       . " (" . date('r', filemtime($class->getFileName())) . ")")
 								 . (!empty($class_consts)
 								   ? md::title(3, "Class configuration constants:")
 								   . $class_consts // unprotected (no '_XXX') constants here
