@@ -22,18 +22,16 @@ a
 		-o-text-shadow: 0 -1px 1px white;
 	}
 
-article
+article, #article
 {
-    min-width: 50%;
     float: left;
     padding: 0px;
     margin: 0;
     border: 0;
 }
 
-aside
+aside, #aside
 {
-    max-width: 50%;
     float: right;
     padding: 0px;
     margin: 0;

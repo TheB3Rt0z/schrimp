@@ -48,6 +48,11 @@ de||Anwendungsbibliothek
 en||Application libraries
 it||Librerie addizionali
 
+_handler_plugins_power
+de||Macht zu Mir
+en||Power to Me
+it||Potere a Me
+
 _handler_modules
 de||Hauptmodule
 en||Core modules

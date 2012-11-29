@@ -41,10 +41,10 @@ ob_start();
 		<section>
 			<?php echo $main->section; ?>
 			<article>
-				<?php echo $main->article; ?>
+				<?php echo html::divisor($main->article, null, 'article'); ?>
 			</article>
 			<aside>
-				<?php echo $main->aside; ?>
+				<?php echo html::divisor($main->aside, null, 'aside'); ?>
             </aside>
 		</section>
 		<footer>

@@ -144,11 +144,14 @@ class html
     }
 
     private static function div($content,
-    							$classes = '')
+    							$classes = array(),
+    							$id = null)
     {
     	$attributes = array();
-    	if ($classes)
+    	if (!empty($classes))
     		$attributes['class'] = trim($classes);
+    	if (!empty($id))
+    		$attributes['id'] = trim($id);
 
     	$self = new self(__FUNCTION__,
     	                 $attributes,
@@ -432,10 +435,19 @@ class html
 						 'box');
     }
 
+    static function divisor($content,
+    				        $classes = array(),
+    					    $id = null)
+    {
+		return self::div($content,
+    				    $classes,
+    					$id);
+    }
+
 	static function highbox($content)
     {
 		return self::div($content,
-						 'box high');
+						 array('box', 'high'));
     }
 
     static function hyperlink($href,
@@ -452,6 +464,16 @@ class html
     	return self::img($src,
     					 $alt,
                          $title);
+    }
+
+    static function newline()
+    {
+    	return self::br();
+    }
+
+	static function text($content)
+    {
+    	return self::p($content);
     }
 
     static function preform($content)

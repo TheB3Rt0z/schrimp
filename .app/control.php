@@ -7,6 +7,7 @@ class control extends controller
 		$fallback_method = '_handler' . (!empty($this->_action)
 						                ? '_' . $this->_action
 						                : '');
+
 		$method = $fallback_method . (!empty($this->_args)
 		                             ? '_' . $this->_args[0]
 		                             : '');

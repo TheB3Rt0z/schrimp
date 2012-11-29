@@ -1,11 +1,23 @@
 @CHARSET "UTF-8";
 
+aside, #aside
+{
+	width: 364px;
+    overflow: hidden;
+}
+
+article, #article
+{
+	width: auto;
+}
+
 h1
 {
 	color: #666;
 	animation: red_alert .75s ease-out infinite alternate;
 	-webkit-animation: red_alert .75s ease-out infinite alternate;
     -moz-animation: red_alert .75s ease-out infinite alternate;
+    -ms-animation: red_alert .75s ease-out infinite alternate;
     -o-animation: red_alert .75s ease-out infinite alternate;
 }
 
@@ -36,6 +48,15 @@ h1
 	        text-shadow: 0 0 10px red;
 	    }  
 	}
+	@-ms-keyframes red_alert
+    {
+        from {}
+        to
+        {
+            color: red;
+            text-shadow: 0 0 10px red;
+        }  
+    }
 	@-o-keyframes red_alert
 	{
 	    from {}

@@ -1,0 +1,10 @@
+s:951:"<br />0  main::show_backtrace() called at [/home/theb3rt0z/Ubuntu One/workspace/schrimp/.main.php:366]
+<br />1  sb() called at [/home/theb3rt0z/Ubuntu One/workspace/schrimp/.lib/navigator.php:79]
+<br />2  navigator->__construct() called at [/home/theb3rt0z/Ubuntu One/workspace/schrimp/.lib/navigator.php:109]
+<br />3  navigator::render_list() called at [/home/theb3rt0z/Ubuntu One/workspace/schrimp/.app/admin.php:13]
+<br />4  admin->_handler() called at [/home/theb3rt0z/Ubuntu One/workspace/schrimp/.app/admin.php:8]
+<br />5  admin->initialize() called at [/home/theb3rt0z/Ubuntu One/workspace/schrimp/.lib/controller.php:30]
+<br />6  controller->__construct(, Array ()) called at [/home/theb3rt0z/Ubuntu One/workspace/schrimp/.main.php:112]
+<br />7  main->_initialize() called at [/home/theb3rt0z/Ubuntu One/workspace/schrimp/.main.php:47]
+<br />8  main->__construct(/schrimp/) called at [/home/theb3rt0z/Ubuntu One/workspace/schrimp/index.php:5]
+";

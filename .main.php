@@ -8,8 +8,6 @@ class main
 		'escort library' => "session su PHP poi DB se webstore & memcache fail?",
 		'memcache support' => "verify in method, if at least one mem-server works",
 		'load_libraries' => "find someway to avoid conflicts between libs/plugins",
-		'var_dump' => "add backtracking output, based on debug_(print_)backtrace..",
-		'show_debug' => "transport backtracing to hander as string-output + alias",
 	);
 
     private $_call = null;
@@ -130,7 +128,7 @@ class main
 
     static function var_dump($what)
     {
-    	echo html::preform($what); DIE;
+    	echo html::preform($what);
     }
 
     static function get_version($precision = 2)
@@ -302,9 +300,16 @@ class main
             rt($url);
     }
 
-    static function show_backtrace() // not working due to string format/length
+    static function show_backtrace()
     {
-    	rt("error/" . urlencode(serialize(str_replace("/", "\\", debug_print_backtrace()))));
+		ob_start();
+			debug_print_backtrace();
+		$backtrace = str_replace("#", html::newline(), ob_get_clean());
+
+    	file_put_contents(".buffer", serialize($backtrace));
+
+    	if ($_SERVER['REQUEST_URI'] != (PATH . "/error"))
+    		rt("error");
     }
 }
 
