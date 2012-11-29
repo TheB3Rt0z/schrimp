@@ -12,6 +12,7 @@ class main
 
     private $_call = null;
     private $_path = ".app/";
+    private $_modules = array();
 
     static $controller = '';
     static $action = false;
@@ -30,9 +31,9 @@ class main
 
     function __construct($uri, $documentation = '')
     {
-    	$this->_set_configuration(".configuration.php");
-
+    	$this->_set_configuration(".configuration.php"); // easy file change
         $this->_load_libraries();
+        $this->_list_modules();
 
         if (SET_DEVELOPMENT_MODE) // only for developers, no further error 500 required
         {
@@ -48,15 +49,31 @@ class main
 
     private function _set_configuration($configuration_file)
     {
-    	require_once $configuration_file;
+    	require_once $configuration_file; // to be processed for constants
     }
 
     private function _load_libraries()
     {
         foreach (glob(".lib/*.php") as $filename)
             require_once $filename;
+
         foreach (glob("lib/*.php") as $filename)
             require_once $filename;
+    }
+
+    private function _list_modules()
+    {
+    	foreach (glob(".app/*.php") as $filename) // scans modules directory
+    		if (!substr_count($filename, "_"))
+    			$this->_modules[str_replace(array(".app/", ".php"), '', $filename)]
+    				= filemtime($filename);
+
+    	foreach (glob("app/*.php") as $filename) // scans application directory
+    		if (!substr_count($filename, "_"))
+    			$this->_modules[str_replace(array("app/", ".php"), '', $filename)]
+    				= filemtime($filename);
+
+    	ksort($this->_modules);
     }
 
     private function _initialize($route) // set "AllowOverride All" directive for .htaccess file
@@ -121,6 +138,23 @@ class main
         		                      date('n'), date('j'), date('Y'))
         	                 - mktime(17, 11, 33,
         	                       	  9, 21, 2012)) / 31557600), $precision);
+    }
+
+    static function get_libraries()
+    {
+    	$user_functions = array();
+
+    	foreach (glob(".lib/*.php") as $filename) // scans core directory
+    		$user_functions[str_replace(array(".lib/", ".php"), '', $filename)]
+    			= filemtime($filename);
+
+    	foreach (glob("lib/*.php") as $filename) // scans plugins directory
+    		$user_functions[str_replace(array("lib/", ".php"), '', $filename)]
+    			= filemtime($filename);
+
+    	ksort($user_functions);
+
+    	return $user_functions;
     }
 
     static function get_documentation()
@@ -189,7 +223,8 @@ class main
 				foreach ($class->getStaticPropertyValue('todos') as $key => $value)
 					$class_todos .= "- **" . $key . "** &#10140; " . $value . "\n";
 
-				$classes_list .= md::title(2, "Class " . strtoupper($class->name))
+				$classes_list .= md::title(2, "Class " . strtoupper($class->name)
+						       . " (" . $class->getFileName . ")")
 								 . (!empty($class_consts)
 								   ? md::title(3, "Class configuration constants:")
 								   . $class_consts // unprotected (no '_XXX') constants here

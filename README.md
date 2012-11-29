@@ -29,7 +29,7 @@ General reference
   
 **FUNCTION ALIASES**  
   
-- **fe($path)** &#10140; .main.php on line 275,
+- **fe($path)** &#10140; .main.php on line 315,
   returns boolean if realpath path exists on running server;
   @param string $path
 
@@ -37,15 +37,15 @@ General reference
   returns a beautiful formatted value, mixed variable-type-dependant;
   @param mixed $mixed
 
-- **le($msg)** &#10140; .main.php on line 302,
+- **le($msg)** &#10140; .main.php on line 342,
   launches a customizable error 500;
   @param string $msg
 
-- **rt($url = '')** &#10140; .main.php on line 293,
+- **rt($url = '')** &#10140; .main.php on line 333,
   relocates to given relative url or to base path on default;
   @param string $url
 
-- **ru($uri = '')** &#10140; .main.php on line 284,
+- **ru($uri = '')** &#10140; .main.php on line 324,
   returns an absolute uri, based on current server configuration;
   @param string $uri
 
@@ -54,7 +54,7 @@ General reference
   @param string $component
   @param string $marker
 
-- **vd($what)** &#10140; .main.php on line 266,
+- **vd($what)** &#10140; .main.php on line 306,
   returns pre-formatted mixed variables;
   @param mixed $what
 
@@ -66,8 +66,8 @@ General reference
   
 ***  
   
-Class MAIN  
-----------  
+Class MAIN ()  
+-------------  
   
   
 **TODOS**  
@@ -79,8 +79,8 @@ Class MAIN
   
 ***  
   
-Class CONTROLLER  
-----------------  
+Class CONTROLLER ()  
+-------------------  
   
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -90,29 +90,29 @@ Class CONTROLLER
   
 ***  
   
-Class DB  
---------  
+Class DB ()  
+-----------  
   
   
   
 ***  
   
-Class ESCORT  
-------------  
+Class ESCORT ()  
+---------------  
   
   
   
 ***  
   
-Class HTML  
-----------  
+Class HTML ()  
+-------------  
   
   
   
 ***  
   
-Class LANGUAGE  
---------------  
+Class LANGUAGE ()  
+-----------------  
   
   
 **TODOS**  
@@ -121,15 +121,15 @@ Class LANGUAGE
   
 ***  
   
-Class MD  
---------  
+Class MD ()  
+-----------  
   
   
   
 ***  
   
-Class NAVIGATOR  
----------------  
+Class NAVIGATOR ()  
+------------------  
   
   
 **TODOS**  
@@ -139,15 +139,15 @@ Class NAVIGATOR
   
 ***  
   
-Class TOOLBOX  
--------------  
+Class TOOLBOX ()  
+----------------  
   
   
   
 ***  
   
-Class WIDGETS  
--------------  
+Class WIDGETS ()  
+----------------  
   
   
   
