@@ -29,7 +29,7 @@ General reference
   
 **FUNCTION ALIASES**  
   
-- **fe($path)** &#10140; .main.php on line 315,
+- **fe($path)** &#10140; .main.php on line 317,
   returns boolean if realpath path exists on running server;
   @param string $path
 
@@ -37,15 +37,15 @@ General reference
   returns a beautiful formatted value, mixed variable-type-dependant;
   @param mixed $mixed
 
-- **le($msg)** &#10140; .main.php on line 342,
+- **le($msg)** &#10140; .main.php on line 344,
   launches a customizable error 500;
   @param string $msg
 
-- **rt($url = '')** &#10140; .main.php on line 333,
+- **rt($url = '')** &#10140; .main.php on line 335,
   relocates to given relative url or to base path on default;
   @param string $url
 
-- **ru($uri = '')** &#10140; .main.php on line 324,
+- **ru($uri = '')** &#10140; .main.php on line 326,
   returns an absolute uri, based on current server configuration;
   @param string $uri
 
@@ -54,7 +54,7 @@ General reference
   @param string $component
   @param string $marker
 
-- **vd($what)** &#10140; .main.php on line 306,
+- **vd($what)** &#10140; .main.php on line 308,
   returns pre-formatted mixed variables;
   @param mixed $what
 
@@ -63,19 +63,6 @@ General reference
   
 - **? admin bar** &#10140; optional control to measure run time performance (gApis)
   
-  
-***  
-  
-Class MAIN (Thu, 29 Nov 2012 13:41:24 +0000)  
---------------------------------------------  
-  
-  
-**TODOS**  
-  
-- **documentation** &#10140; PHP's highlight_string/file to rapresent code excerpts
-- **escort library** &#10140; session su PHP poi DB se webstore & memcache fail?
-- **memcache support** &#10140; verify in method, if at least one mem-server works
-- **load_libraries** &#10140; find someway to avoid conflicts between libs/plugins
   
 ***  
   
@@ -121,6 +108,19 @@ Class LANGUAGE (Fri, 23 Nov 2012 17:54:52 +0000)
   
 ***  
   
+Class MAIN (Thu, 29 Nov 2012 13:47:46 +0000)  
+--------------------------------------------  
+  
+  
+**TODOS**  
+  
+- **documentation** &#10140; PHP's highlight_string/file to rapresent code excerpts
+- **escort library** &#10140; session su PHP poi DB se webstore & memcache fail?
+- **memcache support** &#10140; verify in method, if at least one mem-server works
+- **load_libraries** &#10140; find someway to avoid conflicts between libs/plugins
+  
+***  
+  
 Class MD (Tue, 27 Nov 2012 11:40:24 +0000)  
 ------------------------------------------  
   
@@ -139,6 +139,13 @@ Class NAVIGATOR (Fri, 23 Nov 2012 18:01:33 +0000)
   
 ***  
   
+Class POWER (Thu, 29 Nov 2012 13:43:24 +0000)  
+---------------------------------------------  
+  
+  
+  
+***  
+  
 Class TOOLBOX (Tue, 27 Nov 2012 11:40:24 +0000)  
 -----------------------------------------------  
   
@@ -148,13 +155,6 @@ Class TOOLBOX (Tue, 27 Nov 2012 11:40:24 +0000)
   
 Class WIDGETS (Fri, 23 Nov 2012 17:54:52 +0000)  
 -----------------------------------------------  
-  
-  
-  
-***  
-  
-Class POWER (Thu, 29 Nov 2012 13:43:24 +0000)  
----------------------------------------------  
   
   
   

@@ -204,7 +204,9 @@ class main
     		$todos_list .= "- **" . $key . "** &#10140; " . $value . "\n";
 
     	$classes_list = '';
-    	foreach (get_declared_classes() as $class)
+    	$declared_classes = get_declared_classes();
+    	asort($declared_classes);
+    	foreach ($declared_classes as $class)
     	{
 			$class = new ReflectionClass($class);
 			if ($class->isUserDefined())
