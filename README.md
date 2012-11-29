@@ -66,8 +66,8 @@ General reference
   
 ***  
   
-Class MAIN ()  
--------------  
+Class MAIN (/Applications/XAMPP/xamppfiles/htdocs/schrimp/.main.php)  
+--------------------------------------------------------------------  
   
   
 **TODOS**  
@@ -79,8 +79,8 @@ Class MAIN ()
   
 ***  
   
-Class CONTROLLER ()  
--------------------  
+Class CONTROLLER (/Applications/XAMPP/xamppfiles/htdocs/schrimp/.lib/controller.php)  
+------------------------------------------------------------------------------------  
   
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -90,29 +90,29 @@ Class CONTROLLER ()
   
 ***  
   
-Class DB ()  
------------  
+Class DB (/Applications/XAMPP/xamppfiles/htdocs/schrimp/.lib/db.php)  
+--------------------------------------------------------------------  
   
   
   
 ***  
   
-Class ESCORT ()  
----------------  
+Class ESCORT (/Applications/XAMPP/xamppfiles/htdocs/schrimp/.lib/escort.php)  
+----------------------------------------------------------------------------  
   
   
   
 ***  
   
-Class HTML ()  
--------------  
+Class HTML (/Applications/XAMPP/xamppfiles/htdocs/schrimp/.lib/html.php)  
+------------------------------------------------------------------------  
   
   
   
 ***  
   
-Class LANGUAGE ()  
------------------  
+Class LANGUAGE (/Applications/XAMPP/xamppfiles/htdocs/schrimp/.lib/language.php)  
+--------------------------------------------------------------------------------  
   
   
 **TODOS**  
@@ -121,15 +121,15 @@ Class LANGUAGE ()
   
 ***  
   
-Class MD ()  
------------  
+Class MD (/Applications/XAMPP/xamppfiles/htdocs/schrimp/.lib/md.php)  
+--------------------------------------------------------------------  
   
   
   
 ***  
   
-Class NAVIGATOR ()  
-------------------  
+Class NAVIGATOR (/Applications/XAMPP/xamppfiles/htdocs/schrimp/.lib/navigator.php)  
+----------------------------------------------------------------------------------  
   
   
 **TODOS**  
@@ -139,15 +139,15 @@ Class NAVIGATOR ()
   
 ***  
   
-Class TOOLBOX ()  
-----------------  
+Class TOOLBOX (/Applications/XAMPP/xamppfiles/htdocs/schrimp/.lib/toolbox.php)  
+------------------------------------------------------------------------------  
   
   
   
 ***  
   
-Class WIDGETS ()  
-----------------  
+Class WIDGETS (/Applications/XAMPP/xamppfiles/htdocs/schrimp/.lib/widgets.php)  
+------------------------------------------------------------------------------  
   
   
   
