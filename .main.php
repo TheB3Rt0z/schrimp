@@ -9,7 +9,7 @@ class main
 		'memcache support' => "verify in method, if at least one mem-server works",
 		'load_libraries' => "find someway to avoid conflicts between libs/plugins",
 		'var_dump' => "add backtracking output, based on debug_(print_)backtrace..",
-		'launch_error' => "transport backtracing to hander as string-output",
+		'show_debug' => "transport backtracing to hander as string-output + alias",
 	);
 
     private $_call = null;
@@ -130,7 +130,7 @@ class main
 
     static function var_dump($what)
     {
-    	echo html::preform($what);
+    	echo html::preform($what); DIE;
     }
 
     static function get_version($precision = 2)
@@ -290,7 +290,7 @@ class main
         header("Location: " . ru($url));
     }
 
-    static function launch_error($msg, $backtrace = null)
+    static function launch_error($msg)
     {
         $msg = str_replace("/",
                            "\\",
@@ -300,6 +300,11 @@ class main
 
         if ($_SERVER['REQUEST_URI'] != (PATH . "/" . $url))
             rt($url);
+    }
+
+    static function show_backtrace() // not working due to string format/length
+    {
+    	rt("error/" . urlencode(serialize(str_replace("/", "\\", debug_print_backtrace()))));
     }
 }
 
@@ -342,11 +347,18 @@ function rt($url = '')
 /**
  * launches a customizable error 500, mit optional backtrace for debug;
  * @param string $msg
- * @param mixed $backtrace (maybe only a string)
  */
-function le($msg, $backtrace = null)
+function le($msg)
 {
-	main::launch_error($msg, $backtrace);
+	main::launch_error($msg);
+}
+
+/**
+ * show call's backtrace with help of error base handler
+ */
+function sb()
+{
+	main::show_backtrace();
 }
 
 ?>

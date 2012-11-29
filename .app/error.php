@@ -4,7 +4,6 @@ class error extends controller
 {
 	public static $todos = array
 	(
-		'error 500 output' => "arricchire il tutto con una print backtrace..",
 		'error 500' => "si potrebbe usare il SOAP per passare header e contenuto..",
 	);
 
@@ -38,6 +37,10 @@ class error extends controller
 
 		$this->_set_section(html::title(1,
                                         $this->_translate('a ugly problem')));
+
+		if (!empty($this->_action))
+			$this->_set_article(html::title(3,
+								            urldecode($this->_action)));
 	}
 
 	private function _handler_400()

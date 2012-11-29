@@ -107,7 +107,7 @@ class navigator
 	static function render_list()
 	{
 		$self = new self;
-
+		sb();
 		return html::array_to_list(self::$_structure[SET_HOME_COMPONENT]['sub']);
 	}
 

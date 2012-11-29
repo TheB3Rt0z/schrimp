@@ -29,7 +29,7 @@ General reference
   
 **FUNCTION ALIASES**  
   
-- **fe($path)** &#10140; .main.php on line 319,
+- **fe($path)** &#10140; .main.php on line 324,
   returns boolean if realpath path exists on running server;
   @param string $path
 
@@ -37,25 +37,27 @@ General reference
   returns a beautiful formatted value, mixed variable-type-dependant;
   @param mixed $mixed
 
-- **le($msg, $backtrace = '')** &#10140; .main.php on line 347,
+- **le($msg)** &#10140; .main.php on line 351,
   launches a customizable error 500, mit optional backtrace for debug;
   @param string $msg
-  @param mixed $backtrace (maybe only a string)
 
-- **rt($url = '')** &#10140; .main.php on line 337,
+- **rt($url = '')** &#10140; .main.php on line 342,
   relocates to given relative url or to base path on default;
   @param string $url
 
-- **ru($uri = '')** &#10140; .main.php on line 328,
+- **ru($uri = '')** &#10140; .main.php on line 333,
   returns an absolute uri, based on current server configuration;
   @param string $uri
+
+- **sb()** &#10140; .main.php on line 359,
+  show call's backtrace with help of error base handler
 
 - **tr($component, $marker)** &#10140; .lib/language.php on line 90,
   executes language translation of marker identifier, referring to given component;
   @param string $component
   @param string $marker
 
-- **vd($what)** &#10140; .main.php on line 310,
+- **vd($what)** &#10140; .main.php on line 315,
   returns pre-formatted mixed variables;
   @param mixed $what
 
@@ -109,7 +111,7 @@ Class LANGUAGE (Fri, 23 Nov 2012 17:54:52 +0000)
   
 ***  
   
-Class MAIN (Thu, 29 Nov 2012 16:17:32 +0000)  
+Class MAIN (Thu, 29 Nov 2012 17:31:12 +0000)  
 --------------------------------------------  
   
   
@@ -120,7 +122,7 @@ Class MAIN (Thu, 29 Nov 2012 16:17:32 +0000)
 - **memcache support** &#10140; verify in method, if at least one mem-server works
 - **load_libraries** &#10140; find someway to avoid conflicts between libs/plugins
 - **var_dump** &#10140; add backtracking output, based on debug_(print_)backtrace..
-- **launch_error** &#10140; transport backtracing to hander as string-output
+- **show_debug** &#10140; transport backtracing to hander as string-output + alias
   
 ***  
   
@@ -131,7 +133,7 @@ Class MD (Thu, 29 Nov 2012 16:14:21 +0000)
   
 ***  
   
-Class NAVIGATOR (Thu, 29 Nov 2012 16:32:33 +0000)  
+Class NAVIGATOR (Thu, 29 Nov 2012 17:18:51 +0000)  
 -------------------------------------------------  
   
   
