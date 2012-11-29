@@ -1,7 +1,5 @@
 <?php
 
-require_once ".configuration.php";
-
 class main
 {
 	public static $todos = array
@@ -32,6 +30,8 @@ class main
 
     function __construct($uri, $documentation = '')
     {
+    	$this->_set_configuration(".configuration.php");
+
         $this->_load_libraries();
 
         if (SET_DEVELOPMENT_MODE) // only for developers, no further error 500 required
@@ -44,6 +44,11 @@ class main
         $this->_initialize(str_replace(SET_LOCAL_PATH . "/",
                                        '',
                                        $uri));
+    }
+
+    private function _set_configuration($configuration_file)
+    {
+    	require_once $configuration_file;
     }
 
     private function _load_libraries()
