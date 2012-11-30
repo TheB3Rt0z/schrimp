@@ -99,7 +99,7 @@ class control extends controller
 				                                      \$filename);
 			                   \$output[\$option] = '_handler_plugins_' . \$option;
 		                   }
-				           return \$output;";
+				           return \$output;"; //translation should go in control.txt, if official
 
 		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
 		                . HTML_BREADCRUMB_SEPARATOR
