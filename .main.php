@@ -233,10 +233,10 @@ class main
 				foreach ($class->getStaticPropertyValue('todos') as $key => $value)
 					$class_todos .= "- **" . $key . "** &#10140; " . $value . "\n";
 
-				$title = "Class " . strtoupper($class->name)
-					   . " (" . date('r', filemtime($class->getFileName())) . ")";
+				$heading = "Class " . strtoupper($class->name)
+					     . " (" . date('r', filemtime($class->getFileName())) . ")";
 
-				$classes_list .= md::title(2, $title)
+				$classes_list .= md::title(2, $heading)
 								 . (!empty($class_consts)
 								   ? md::title(3, "Class configuration constants:")
 								   . $class_consts // unprotected (no '_XXX') constants here
