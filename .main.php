@@ -31,7 +31,7 @@ class main
 
     function __construct($uri, $documentation = '')
     {
-    	$this->_set_configuration(".configuration.php"); // easy file change
+    	$this->_set_configuration("configuration"); // easy filename change if needed
         $this->_load_libraries();
         $this->_list_modules();
 
@@ -50,6 +50,9 @@ class main
     private function _set_configuration($configuration_file)
     {
     	require_once $configuration_file; // to be processed for constants
+    	// evaluate file contents from .$configuration_file.tmp
+    	// and if available "merge" evaluated .$configuration_file.php!
+    	// N.B: if setting is a array -> serialize!
     }
 
     private function _load_libraries()

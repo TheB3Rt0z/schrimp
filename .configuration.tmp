@@ -1,4 +1,10 @@
-<?php // comments here TRUE
+array
+(
+    'TODOS' => array
+    (
+        '? admin bar' => "optional control to measure run time performance (gApis)",
+    ),
+);
 
 define('TODOS', serialize(array
 (
