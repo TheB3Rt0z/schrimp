@@ -17,6 +17,8 @@ class toolbox
     	}
 		elseif (!is_numeric($mixed))
     		return "\"" . $mixed . "\"";
+		else
+			return $mixed;
 	}
 }
 

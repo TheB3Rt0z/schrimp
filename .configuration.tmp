@@ -9,6 +9,6 @@
 'set_complexity_index' => 12,
 
 'str_kernel_salt' => "Sstm Cntrl Hdng_t_ Rw Incrs_f Mntl Prdctvt",
-'str_project_name' => "Das S.C.H.R.I.M.P",
+'str_project_name' => "Das S.C.H.R.I.M.P.",
 'str_copyright_signature' => "Copyright © 2011-" . date('Y')
-                           . " | Das S.C.H.R.I.M.P Project",
+                           . " | Das S.C.H.R.I.M.P. Project",
