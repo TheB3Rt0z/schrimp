@@ -47,12 +47,32 @@ class main
                                        $uri));
     }
 
-    private function _set_configuration($configuration_file)
+    private function _set_configuration($conf_name)
     {
-    	require_once $configuration_file; // to be processed for constants
-    	// evaluate file contents from .$configuration_file.tmp
-    	// and if available "merge" evaluated .$configuration_file.php!
-    	// N.B: if setting is a array -> serialize!
+    	$user_file = "." . $conf_name;
+    	$base_file = $user_file . ".tmp";
+
+    	eval("\$base_conf = array(" . file_get_contents($base_file) . ");");
+    	eval("\$user_conf = array(" . file_get_contents($user_file) . ");");
+
+    	$configuration = $user_conf + $base_conf;
+
+    	foreach ($configuration as $key => $value)
+    		define(strtoupper($key), (is_array($value)
+    				                 ? serialize($value)
+    				                 : $value));
+
+    	define('SET_TRANSPORT_PROTOCOL', "http" . (getenv('HTTPS') == 'on'
+    			                                  ? "s"
+    			                                  : '')); // auto-detecting
+
+    	define('SET_HOME_COMPONENT', SET_DEVELOPMENT_MODE
+    	                             ? "admin"
+    	                             : "homepage"); // convention
+
+    	define('MAX_CYCLOMATIC_COMPLEXITY', SET_COMPLEXITY_INDEX); // base complexity index
+		define('MAX_METHODS_COMPLEXITY', SET_COMPLEXITY_INDEX * 3); // ATM 36 max code lines
+		define('MAX_BLOCK_COMPLEXITY', SET_COMPLEXITY_INDEX * 7); // ATM 84 max code line length
     }
 
     private function _load_libraries()

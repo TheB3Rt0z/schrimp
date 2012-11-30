@@ -1,5 +1,5 @@
-![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.2  
-==============================================================================================================================  
+![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P's Documentation 0.2  
+=============================================================================================================================  
   
   
   
@@ -17,19 +17,19 @@ General reference
 - **MAX_METHODS_COMPLEXITY** &#10140; 
 - **MD_NEWLINE_SEQUENCE** &#10140; "  
 "
+- **SET_COMPLEXITY_INDEX** &#10140; 
 - **SET_DEVELOPMENT_MODE** &#10140; true
 - **SET_GITHUB_RAWPATH** &#10140; "https://raw.github.com/TheB3Rt0z/schrimp/master/"
 - **SET_HOME_COMPONENT** &#10140; "admin"
 - **SET_LOCAL_PATH** &#10140; "/schrimp"
-- **SET_OUTPUT_COMPRESSION** &#10140; false
 - **SET_TRANSPORT_PROTOCOL** &#10140; "http"
-- **STR_COPYRIGHT_SIGNATURE** &#10140; "Copyright © 2011-2012 | Das S.C.H.R.I.M.P. Project"
+- **STR_COPYRIGHT_SIGNATURE** &#10140; "Copyright © 2011-2012 | Das S.C.H.R.I.M.P Project"
 - **STR_KERNEL_SALT** &#10140; "Sstm Cntrl Hdng_t_ Rw Incrs_f Mntl Prdctvt"
-- **STR_PROJECT_NAME** &#10140; "Das S.C.H.R.I.M.P."
+- **STR_PROJECT_NAME** &#10140; "Das S.C.H.R.I.M.P"
   
 **FUNCTION ALIASES**  
   
-- **fe($path)** &#10140; .main.php on line 329,
+- **fe($path)** &#10140; .main.php on line 352,
   returns boolean if realpath path exists on running server;
   @param string $path
 
@@ -37,19 +37,19 @@ General reference
   returns a beautiful formatted value, mixed variable-type-dependant;
   @param mixed $mixed
 
-- **le($msg)** &#10140; .main.php on line 356,
+- **le($msg)** &#10140; .main.php on line 379,
   launches a customizable error 500, mit optional backtrace for debug;
   @param string $msg
 
-- **rt($url = '')** &#10140; .main.php on line 347,
+- **rt($url = '')** &#10140; .main.php on line 370,
   relocates to given relative url or to base path on default;
   @param string $url
 
-- **ru($uri = '')** &#10140; .main.php on line 338,
+- **ru($uri = '')** &#10140; .main.php on line 361,
   returns an absolute uri, based on current server configuration;
   @param string $uri
 
-- **sb()** &#10140; .main.php on line 364,
+- **sb()** &#10140; .main.php on line 387,
   show call's backtrace with help of error base handler
 
 - **tr($component, $marker)** &#10140; .lib/language.php on line 90,
@@ -57,7 +57,7 @@ General reference
   @param string $component
   @param string $marker
 
-- **vd($what)** &#10140; .main.php on line 320,
+- **vd($what)** &#10140; .main.php on line 343,
   returns pre-formatted mixed variables;
   @param mixed $what
 
@@ -111,7 +111,7 @@ Class LANGUAGE (Fri, 23 Nov 2012 21:07:16 +0100)
   
 ***  
   
-Class MAIN (Thu, 29 Nov 2012 22:52:51 +0100)  
+Class MAIN (Fri, 30 Nov 2012 23:40:47 +0100)  
 --------------------------------------------  
   
   
@@ -167,4 +167,4 @@ Class WIDGETS (Fri, 23 Nov 2012 21:07:16 +0100)
 
 
 
-Copyright © 2011-2012 | Das S.C.H.R.I.M.P. Project  
+Copyright © 2011-2012 | Das S.C.H.R.I.M.P Project  

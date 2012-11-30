@@ -30,16 +30,16 @@ ob_start();
 		html::add_js_file(".inc/js/jquery_gestures.js");
 		?>
 	</head>
-	<body onLoad="$(document).ready(function() { $('body').css('display', 'none'); $('body').fadeIn('slow'); });">
+	<body>
 		<header>
-			<?php echo $main->header; ?>
+			<?php echo html::divisor($main->header, null, 'header'); ?>
 			<?php navigator::render_breadcrumb(); // nothing shown on home page ?>
 		</header>
 		<nav>
-			<?php echo $main->nav; ?>
+			<?php echo html::divisor($main->nav, null, 'nav'); ?>
 		</nav>
 		<section>
-			<?php echo $main->section; ?>
+			<?php echo html::divisor($main->section, null, 'section'); ?>
 			<article>
 				<?php echo html::divisor($main->article, null, 'article'); ?>
 			</article>
@@ -48,12 +48,12 @@ ob_start();
             </aside>
 		</section>
 		<footer>
-			<?php echo $main->footer; ?>
+			<?php echo html::divisor($main->footer, null, 'footer'); ?>
 		</footer>
 	</body>
 </html><?php
 
-if (SET_OUTPUT_COMPRESSION)
+if (!SET_DEVELOPMENT_MODE)
 	echo str_replace(array("\t", "\n", "\r", "  "), '', ob_get_clean());
 else
 	echo ob_get_clean();

@@ -1,34 +1,14 @@
-array
+'TODOS' => array
 (
-    'TODOS' => array
-    (
-        '? admin bar' => "optional control to measure run time performance (gApis)",
-    ),
-    'set_development_mode' => false,
-    'set_github_rawpath' =>
-);
+    '? admin bar' => "optional control to measure run time performance (gApis)",
+),
 
-define('SET_DEVELOPMENT_MODE', true);
-define('SET_GITHUB_RAWPATH', "https://raw.github.com/TheB3Rt0z/schrimp/master/"); // prefix valid for static contents on github
-define('SET_HOME_COMPONENT', SET_DEVELOPMENT_MODE ? "admin" : "homepage"); // convention
-define('SET_LOCAL_PATH', "/schrimp"); // '' if server root is used (worth as base-path)
-define('SET_OUTPUT_COMPRESSION', !SET_DEVELOPMENT_MODE); // set output flatting on html final rendering
-define('SET_TRANSPORT_PROTOCOL', "http" . (getenv('HTTPS') == 'on' ? "s" : '')); // auto
+'set_development_mode' => false,
+'set_github_rawpath' => "https://raw.github.com/TheB3Rt0z/schrimp/master/", // prefix valid for static contents on github
+'set_local_path' => '', // server root will be used (worth as base-path)
+'set_complexity_index' => 12,
 
-define('MAX_CYCLOMATIC_COMPLEXITY', 12); // base complexity index
-define('MAX_METHODS_COMPLEXITY', MAX_CYCLOMATIC_COMPLEXITY * 3); // ATM 36 max code lines
-define('MAX_BLOCK_COMPLEXITY', MAX_CYCLOMATIC_COMPLEXITY * 7); // ATM 84 max code line length
-
-define('STR_KERNEL_SALT', "Sstm Cntrl Hdng_t_ Rw Incrs_f Mntl Prdctvt");
-
-define('STR_PROJECT_NAME', "Das "
-		                 . implode(array_map(function($value)
-                                             {
-                                                 return substr($value, 0, 1) . ".";
-                                             },
-                                             explode(" ", STR_KERNEL_SALT)))); // 8-3 Aurelian
-
-define('STR_COPYRIGHT_SIGNATURE', "Copyright © 2011-" . date('Y') . " | "
-		                        . STR_PROJECT_NAME . " Project");
-
-?>
+'str_kernel_salt' => "Sstm Cntrl Hdng_t_ Rw Incrs_f Mntl Prdctvt",
+'str_project_name' => "Das S.C.H.R.I.M.P",
+'str_copyright_signature' => "Copyright © 2011-" . date('Y')
+                           . " | Das S.C.H.R.I.M.P Project",
