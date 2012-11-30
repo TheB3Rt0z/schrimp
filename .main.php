@@ -11,8 +11,8 @@ class main
 	);
 
     private $_call = null;
-    private $_path = ".app/";
-    private $_modules = array();
+
+    private $_path = ".app/"; // starting component directory
 
     static $controller = '';
     static $action = null;
@@ -27,13 +27,13 @@ class main
     var $aside = '';
     var $footer = '';
 
-    var $documentation = null; // this remain false on production servers..
+    var $documentation = null; // this remain null on production servers..
 
     function __construct($uri, $documentation = '')
     {
     	$this->_set_configuration("configuration"); // easy filename change if needed
-        $this->_load_libraries();
-        $this->_list_modules();
+
+    	$this->_load_libraries();
 
         if (SET_DEVELOPMENT_MODE) // only for developers, no further error 500 required
         {
@@ -82,21 +82,6 @@ class main
 
         foreach (glob("lib/*.php") as $filename)
             require_once $filename;
-    }
-
-    private function _list_modules()
-    {
-    	foreach (glob(".app/*.php") as $filename) // scans modules directory
-    		if (!substr_count($filename, "_"))
-    			$this->_modules[str_replace(array(".app/", ".php"), '', $filename)]
-    				= filemtime($filename);
-
-    	foreach (glob("app/*.php") as $filename) // scans application directory
-    		if (!substr_count($filename, "_"))
-    			$this->_modules[str_replace(array("app/", ".php"), '', $filename)]
-    				= filemtime($filename);
-
-    	ksort($this->_modules);
     }
 
     private function _initialize($route) // set "AllowOverride All" directive for .htaccess file
@@ -163,21 +148,21 @@ class main
         	                       	  9, 21, 2012)) / 31557600), $precision);
     }
 
-    static function get_libraries()
+    static function get_components($components = array())
     {
-    	$user_functions = array();
+    	foreach (glob(".app/*.php") as $filename) // scans modules directory
+    		if (!substr_count($filename, "_"))
+    			$components[str_replace(array(".app/", ".php"), '', $filename)]
+    				= filemtime($filename);
 
-    	foreach (glob(".lib/*.php") as $filename) // scans core directory
-    		$user_functions[str_replace(array(".lib/", ".php"), '', $filename)]
-    			= filemtime($filename);
+    	foreach (glob("app/*.php") as $filename) // scans application directory
+    		if (!substr_count($filename, "_"))
+    			$components[str_replace(array("app/", ".php"), '', $filename)]
+    				= filemtime($filename);
 
-    	foreach (glob("lib/*.php") as $filename) // scans plugins directory
-    		$user_functions[str_replace(array("lib/", ".php"), '', $filename)]
-    			= filemtime($filename);
+    	ksort($components);
 
-    	ksort($user_functions);
-
-    	return $user_functions;
+    	return $components;
     }
 
     static function get_documentation()
@@ -248,8 +233,10 @@ class main
 				foreach ($class->getStaticPropertyValue('todos') as $key => $value)
 					$class_todos .= "- **" . $key . "** &#10140; " . $value . "\n";
 
-				$classes_list .= md::title(2, "Class " . strtoupper($class->name)
-						       . " (" . date('r', filemtime($class->getFileName())) . ")")
+				$title = "Class " . strtoupper($class->name)
+					   . " (" . date('r', filemtime($class->getFileName())) . ")";
+
+				$classes_list .= md::title(2, $title)
 								 . (!empty($class_consts)
 								   ? md::title(3, "Class configuration constants:")
 								   . $class_consts // unprotected (no '_XXX') constants here
@@ -270,6 +257,11 @@ class main
 			}
     	}
 
+    	$components = md::title(2, "Available components:");
+    	foreach (self::get_components() as $component => $uts)
+    		$components .= md::title(3, $component . " (" . date('r', $uts) . ")");
+    	$components .= md::hr();
+
     	return md::title(1, $title)
     	     . md::title(2, "General reference")
     	       . md::title(3, "Global configuration constants")
@@ -280,6 +272,7 @@ class main
     	         . $todos_list . MD_NEWLINE_SEQUENCE
     		 . md::hr()
     		 . $classes_list
+    		 . $components // adding more information?
     	     . str_repeat("\n", 4) . md::text(STR_COPYRIGHT_SIGNATURE);
     }
 
