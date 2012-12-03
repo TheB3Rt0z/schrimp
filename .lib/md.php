@@ -18,12 +18,12 @@ class md
 	        	'h1' => "return MD_NEWLINE_SEQUENCE
 			                  . str_repeat(\"=\",
 			                               strlen(\$this->_content))
-		                      . str_repeat(MD_NEWLINE_SEQUENCE, 4);",
+		                      . str_repeat(MD_NEWLINE_SEQUENCE, 3);",
 
 			    'h2' => "return MD_NEWLINE_SEQUENCE
 			                  . str_repeat(\"-\",
 			                               strlen(\$this->_content))
-			                  . str_repeat(MD_NEWLINE_SEQUENCE, 3);",
+			                  . str_repeat(MD_NEWLINE_SEQUENCE, 2);",
 
 			    'h3' => "return str_repeat(MD_NEWLINE_SEQUENCE, 2);",
 

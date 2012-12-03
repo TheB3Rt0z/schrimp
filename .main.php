@@ -182,7 +182,7 @@ class main
     {
     	$title = md::image(".inc/img/schrimp_favicon_md.ico")
     	       . " " . STR_PROJECT_NAME . "'s Documentation "
-    	       . main::get_version(1);
+    	       . main::get_version(1) . date('.Y.m.d');
 
     	$consts_list = '';
     	$constants = get_defined_constants(true);
