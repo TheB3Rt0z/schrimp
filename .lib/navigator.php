@@ -12,7 +12,7 @@ class navigator
 
 	function __construct()
 	{
-		if (!empty(self::$_structure))
+		if (!empty(self::$_structure)) // singleton
 			return true;
 
 		self::$_structure = array
