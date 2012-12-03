@@ -1,4 +1,4 @@
 COMPONENT VISIBLE NAME
-de||Startseite
-en||Home Page
-it||Homepage
+de||Startseite ADMIN
+en||Home Page ADMIN
+it||Homepage ADMIN

@@ -12,7 +12,7 @@ class main
 
     private $_call = null;
 
-    private $_path = ".app/"; // starting component directory
+    private $_path = ".app/";
 
     static $controller = '';
     static $action = null;
@@ -32,7 +32,6 @@ class main
     function __construct($uri, $documentation = '')
     {
     	$this->_set_configuration("configuration"); // easy filename change if needed
-
     	$this->_load_libraries();
 
         if (SET_DEVELOPMENT_MODE) // only for developers, no further error 500 required
@@ -110,7 +109,11 @@ class main
             }
         }
         else
+        {
             self::$controller = SET_HOME_COMPONENT;
+        	if (!SET_DEVELOPMENT_MODE)
+        		$this->_path = "app/";
+        }
 
         require_once $this->_path . self::$controller . ".php";
         foreach (glob($this->_path . self::$controller . "_*.php") as $filename)
@@ -132,6 +135,16 @@ class main
     function get_call()
     {
         return $this->_call;
+    }
+
+    function get_path()
+    {
+    	return $this->_path;
+    }
+
+    function get_fullpath()
+    {
+    	return $this->_path . self::$controller;
     }
 
     static function var_dump($what)
@@ -312,7 +325,7 @@ class main
 
         $url = "error/500/" . urlencode($msg);
 
-        if ($_SERVER['REQUEST_URI'] != (PATH . "/" . $url))
+        if ($_SERVER['REQUEST_URI'] != (SET_LOCAL_PATH . "/" . $url))
             rt($url);
     }
 
@@ -324,7 +337,7 @@ class main
 
     	file_put_contents(".buffer", serialize($backtrace));
 
-    	if ($_SERVER['REQUEST_URI'] != (PATH . "/error"))
+    	if ($_SERVER['REQUEST_URI'] != (SET_LOCAL_PATH . "/error"))
     		rt("error");
     }
 }

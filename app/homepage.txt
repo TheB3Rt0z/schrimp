@@ -1,0 +1,4 @@
+COMPONENT VISIBLE NAME
+de||Startseite
+en||Home Page
+it||Homepage
