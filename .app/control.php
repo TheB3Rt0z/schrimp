@@ -116,7 +116,7 @@ class control extends controller
 		                . $this->_translate(__FUNCTION__));
 	}
 
-	private function _handler_modules_homepage()
+	private function _handler_modules_admin()
 	{
 		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
 		                . HTML_BREADCRUMB_SEPARATOR

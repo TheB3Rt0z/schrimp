@@ -159,11 +159,11 @@ class navigator
 						                           array_slice(main::$args, 2)))
 						       . ")";
 					}
-					else
+					else{vd($branch['sub'][$link]);
 						echo tr((!empty($branch['sub'][$link]['controller'])
 							    ? $branch['sub'][$link]['controller']
 							    : $controller),
-					            $branch['sub'][$link]['handler']);
+					            $branch['sub'][$link]['handler']);}
 				}
 				else
 					echo $branch['sub'][$link]['name'];

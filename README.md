@@ -29,7 +29,7 @@ General reference
   
 **FUNCTION ALIASES**  
   
-- **fe($path)** &#10140; .main.php on line 345,
+- **fe($path)** &#10140; .main.php on line 358,
   returns boolean if realpath path exists on running server;
   @param string $path
 
@@ -37,19 +37,19 @@ General reference
   returns a beautiful formatted value, mixed variable-type-dependant;
   @param mixed $mixed
 
-- **le($msg)** &#10140; .main.php on line 372,
+- **le($msg)** &#10140; .main.php on line 385,
   launches a customizable error 500, mit optional backtrace for debug;
   @param string $msg
 
-- **rt($url = '')** &#10140; .main.php on line 363,
+- **rt($url = '')** &#10140; .main.php on line 376,
   relocates to given relative url or to base path on default;
   @param string $url
 
-- **ru($uri = '')** &#10140; .main.php on line 354,
+- **ru($uri = '')** &#10140; .main.php on line 367,
   returns an absolute uri, based on current server configuration;
   @param string $uri
 
-- **sb()** &#10140; .main.php on line 380,
+- **sb()** &#10140; .main.php on line 393,
   show call's backtrace with help of error base handler
 
 - **tr($component, $marker)** &#10140; .lib/language.php on line 90,
@@ -57,7 +57,7 @@ General reference
   @param string $component
   @param string $marker
 
-- **vd($what)** &#10140; .main.php on line 336,
+- **vd($what)** &#10140; .main.php on line 349,
   returns pre-formatted mixed variables;
   @param mixed $what
 
@@ -111,7 +111,7 @@ Class LANGUAGE (Fri, 23 Nov 2012 21:07:16 +0100)
   
 ***  
   
-Class MAIN (Sat, 01 Dec 2012 00:30:05 +0100)  
+Class MAIN (Mon, 03 Dec 2012 21:19:41 +0100)  
 --------------------------------------------  
   
   
@@ -131,7 +131,7 @@ Class MD (Thu, 29 Nov 2012 20:34:43 +0100)
   
 ***  
   
-Class NAVIGATOR (Thu, 29 Nov 2012 22:54:56 +0100)  
+Class NAVIGATOR (Mon, 03 Dec 2012 22:36:35 +0100)  
 -------------------------------------------------  
   
   
@@ -169,11 +169,13 @@ Available components:
   
 **ADMIN (THU, 22 NOV 2012 22:36:38 +0100)**  
   
-**CONTROL (FRI, 30 NOV 2012 21:06:00 +0100)**  
+**CONTROL (MON, 03 DEC 2012 22:14:38 +0100)**  
   
 **DOCUMENTATION (THU, 29 NOV 2012 20:34:43 +0100)**  
   
 **ERROR (THU, 29 NOV 2012 22:53:26 +0100)**  
+  
+**HOMEPAGE (MON, 03 DEC 2012 21:19:41 +0100)**  
   
 **POWER (FRI, 23 NOV 2012 21:07:16 +0100)**  
   

@@ -58,7 +58,7 @@ de||Hauptmodule
 en||Core modules
 it||Moduli principali
 
-_handler_modules_homepage
+_handler_modules_admin
 de||Hauptseite
 en||Main page
 it||Prima pagina
