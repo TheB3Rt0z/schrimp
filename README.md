@@ -1,4 +1,4 @@
-![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.2.2012.12.03  
+![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.2.2012.12.04  
 =========================================================================================================================================  
   
   
@@ -16,18 +16,12 @@ General reference
 - **MD_NEWLINE_SEQUENCE** &#10140; "  
 "
 - **SET_COMPLEXITY_INDEX** &#10140; 12
-- **SET_DEVELOPMENT_MODE** &#10140; true
 - **SET_GITHUB_RAWPATH** &#10140; "https://raw.github.com/TheB3Rt0z/schrimp/master/"
-- **SET_HOME_COMPONENT** &#10140; "admin"
-- **_SET_LOCAL_PATH** &#10140; "/schrimp"
-- **_SET_TRANSPORT_PROTOCOL** &#10140; "http"
-- **_STR_COPYRIGHT_SIGNATURE** &#10140; "Copyright © 2011-2012 | Das S.C.H.R.I.M.P. Project"
-- **_STR_KERNEL_SALT** &#10140; "Sstm Cntrl Hdng_t_ Rw Incrs_f Mntl Prdctvt"
-- **_STR_PROJECT_NAME** &#10140; "Das S.C.H.R.I.M.P."
+- **SET_LOCAL_PATH** &#10140; null
   
 **FUNCTION ALIASES**  
   
-- **fe($path)** &#10140; .main.php on line 358,
+- **fe($path)** &#10140; .main.php on line 357,
   returns boolean if realpath path exists on running server;
   @param string $path
 
@@ -35,19 +29,19 @@ General reference
   returns a beautiful formatted value, mixed variable-type-dependant;
   @param mixed $mixed
 
-- **le($msg)** &#10140; .main.php on line 385,
+- **le($msg)** &#10140; .main.php on line 384,
   launches a customizable error 500, mit optional backtrace for debug;
   @param string $msg
 
-- **rt($url = '')** &#10140; .main.php on line 376,
+- **rt($url = '')** &#10140; .main.php on line 375,
   relocates to given relative url or to base path on default;
   @param string $url
 
-- **ru($uri = '')** &#10140; .main.php on line 367,
+- **ru($uri = '')** &#10140; .main.php on line 366,
   returns an absolute uri, based on current server configuration;
   @param string $uri
 
-- **sb()** &#10140; .main.php on line 393,
+- **sb()** &#10140; .main.php on line 392,
   show call's backtrace with help of error base handler
 
 - **tr($component, $marker)** &#10140; .lib/language.php on line 90,
@@ -55,7 +49,7 @@ General reference
   @param string $component
   @param string $marker
 
-- **vd($what)** &#10140; .main.php on line 349,
+- **vd($what)** &#10140; .main.php on line 348,
   returns pre-formatted mixed variables;
   @param mixed $what
 
@@ -104,7 +98,7 @@ Class LANGUAGE (Fri, 23 Nov 2012 21:07:16 +0100)
   
 ***  
   
-Class MAIN (Mon, 03 Dec 2012 22:45:57 +0100)  
+Class MAIN (Tue, 04 Dec 2012 22:19:40 +0100)  
 --------------------------------------------  
   
 **TODOS**  
@@ -122,7 +116,7 @@ Class MD (Mon, 03 Dec 2012 22:49:42 +0100)
   
 ***  
   
-Class NAVIGATOR (Mon, 03 Dec 2012 22:36:35 +0100)  
+Class NAVIGATOR (Tue, 04 Dec 2012 22:18:08 +0100)  
 -------------------------------------------------  
   
 **TODOS**  
@@ -159,7 +153,7 @@ Available components:
   
 **DOCUMENTATION (THU, 29 NOV 2012 20:34:43 +0100)**  
   
-**ERROR (THU, 29 NOV 2012 22:53:26 +0100)**  
+**ERROR (TUE, 04 DEC 2012 22:18:08 +0100)**  
   
 **HOMEPAGE (MON, 03 DEC 2012 21:19:41 +0100)**  
   

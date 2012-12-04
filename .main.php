@@ -220,7 +220,7 @@ class main
     	}
 
     	$todos_list = '';
-    	foreach (unserialize(TODOS) as $key => $value)
+    	foreach (unserialize(_TODOS) as $key => $value)
     		$todos_list .= "- **" . $key . "** &#10140; " . $value . "\n";
 
     	$classes_list = '';
