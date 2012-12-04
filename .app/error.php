@@ -21,13 +21,13 @@ class error extends controller
 			rt("error/404");
 
 		$this->_set_aside(html::image(".inc/img/schrimp.png",
-		                              STR_PROJECT_NAME));
+		                              _STR_PROJECT_NAME));
 	}
 
 	protected function _handler()
 	{
 		$this->_set_title(ucfirst($this->_translate('unknown error'))
-		                . ": " . STR_PROJECT_NAME . " KO");
+		                . ": " . _STR_PROJECT_NAME . " KO");
 
 		$this->_set_header(html::title(1,
                                        "Ooops!!! " . $this->get_title() . "!"));

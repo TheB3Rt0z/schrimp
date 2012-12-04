@@ -17,9 +17,9 @@ class navigator
 
 		self::$_structure = array
 		(
-			SET_HOME_COMPONENT => array
+			_SET_HOME_COMPONENT => array
 			(
-				'name' => tr(SET_HOME_COMPONENT,
+				'name' => tr(_SET_HOME_COMPONENT,
                              'COMPONENT VISIBLE NAME'),
             ),
         );
@@ -27,7 +27,7 @@ class navigator
 		foreach (array_filter(glob(".app/*.php"),
 		                      function($value)
 		                      {
-		                          return !substr_count($value, SET_HOME_COMPONENT);
+		                          return !substr_count($value, _SET_HOME_COMPONENT);
 		                      }) as $filename)
 		{
 			require_once $filename;
@@ -37,13 +37,13 @@ class navigator
     		$rc = new ReflectionClass($branch);
     		if ($rc->getConstant('VISIBLE_IN_NAVIGATION'))
     		{
-    			self::$_structure[SET_HOME_COMPONENT]['sub'][$branch] = array
+    			self::$_structure[_SET_HOME_COMPONENT]['sub'][$branch] = array
     			(
     			    'name' => tr($branch,
                                  'COMPONENT VISIBLE NAME')
     		    );
 
-    			$subbranch =& self::$_structure[SET_HOME_COMPONENT]['sub'][$branch];
+    			$subbranch =& self::$_structure[_SET_HOME_COMPONENT]['sub'][$branch];
 
     			foreach ($rc->getMethods(ReflectionMethod::IS_PRIVATE
     				   | !ReflectionMethod::IS_PROTECTED) as $object)
@@ -98,7 +98,7 @@ class navigator
 						}
     				}
 
-    				$subbranch =& self::$_structure[SET_HOME_COMPONENT]['sub'][$branch];
+    				$subbranch =& self::$_structure[_SET_HOME_COMPONENT]['sub'][$branch];
     			}
     		}
 		}
@@ -108,7 +108,7 @@ class navigator
 	{
 		$self = new self;
 
-		return html::array_to_list(self::$_structure[SET_HOME_COMPONENT]['sub']);
+		return html::array_to_list(self::$_structure[_SET_HOME_COMPONENT]['sub']);
 	}
 
 	static function render_breadcrumb()
@@ -120,9 +120,9 @@ class navigator
 
 		$self = new self;
 
-		if ($controller != SET_HOME_COMPONENT)
+		if ($controller != _SET_HOME_COMPONENT)
 		{
-			$structure = self::$_structure[SET_HOME_COMPONENT];
+			$structure = self::$_structure[_SET_HOME_COMPONENT];
 
 			echo html::hyperlink('',
 				                 $structure['name']) . HTML_BREADCRUMB_SEPARATOR;
@@ -182,7 +182,7 @@ class navigator
 	{
 		$self = new self;
 
-		return html::array_to_list(self::$_structure[SET_HOME_COMPONENT]['sub'], 'ol');
+		return html::array_to_list(self::$_structure[_SET_HOME_COMPONENT]['sub'], 'ol');
 	}
 }
 

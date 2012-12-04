@@ -34,14 +34,14 @@ class main
     	$this->_set_configuration("configuration"); // easy filename change if needed
     	$this->_load_libraries();
 
-        if (SET_DEVELOPMENT_MODE) // only for developers, no further error 500 required
+        if (_SET_DEVELOPMENT_MODE) // only for developers, no further error 500 required
         {
          	$this->documentation = $this->get_documentation();
         	$doc_file = "README.md";
         	file_put_contents($doc_file, $this->documentation); // markdown format
         }
 
-        $this->_initialize(str_replace(SET_LOCAL_PATH . "/",
+        $this->_initialize(str_replace(_SET_LOCAL_PATH . "/",
                                        '',
                                        $uri));
     }
@@ -65,7 +65,7 @@ class main
     			                                  ? "s"
     			                                  : '')); // auto-detecting
 
-    	define('SET_HOME_COMPONENT', SET_DEVELOPMENT_MODE
+    	define('_SET_HOME_COMPONENT', _SET_DEVELOPMENT_MODE
     	                             ? "admin"
     	                             : "homepage"); // convention
 
@@ -110,8 +110,8 @@ class main
         }
         else
         {
-            self::$controller = SET_HOME_COMPONENT;
-        	if (!SET_DEVELOPMENT_MODE)
+            self::$controller = _SET_HOME_COMPONENT;
+        	if (!_SET_DEVELOPMENT_MODE)
         		$this->_path = "app/";
         }
 
@@ -181,7 +181,7 @@ class main
     static function get_documentation()
     {
     	$title = md::image(".inc/img/schrimp_favicon_md.ico")
-    	       . " " . STR_PROJECT_NAME . "'s Documentation "
+    	       . " " . _STR_PROJECT_NAME . "'s Documentation "
     	       . main::get_version(1) . date('.Y.m.d');
 
     	$consts_list = '';
@@ -286,7 +286,7 @@ class main
     		 . md::hr()
     		 . $classes_list
     		 . $components // adding more information?
-    	     . str_repeat("\n", 4) . md::text(STR_COPYRIGHT_SIGNATURE);
+    	     . str_repeat("\n", 4) . md::text(_STR_COPYRIGHT_SIGNATURE);
     }
 
     static function is_webstoraged()
@@ -308,7 +308,7 @@ class main
     {
         return SET_TRANSPORT_PROTOCOL . "://"
         	 . $_SERVER['HTTP_HOST']
-             . SET_LOCAL_PATH
+             . _SET_LOCAL_PATH
              . "/" . $uri;
     }
 
@@ -325,7 +325,7 @@ class main
 
         $url = "error/500/" . urlencode($msg);
 
-        if ($_SERVER['REQUEST_URI'] != (SET_LOCAL_PATH . "/" . $url))
+        if ($_SERVER['REQUEST_URI'] != (_SET_LOCAL_PATH . "/" . $url))
             rt($url);
     }
 
@@ -337,7 +337,7 @@ class main
 
     	file_put_contents(".buffer", serialize($backtrace));
 
-    	if ($_SERVER['REQUEST_URI'] != (SET_LOCAL_PATH . "/error"))
+    	if ($_SERVER['REQUEST_URI'] != (_SET_LOCAL_PATH . "/error"))
     		rt("error");
     }
 }

@@ -19,11 +19,11 @@ General reference
 - **SET_DEVELOPMENT_MODE** &#10140; true
 - **SET_GITHUB_RAWPATH** &#10140; "https://raw.github.com/TheB3Rt0z/schrimp/master/"
 - **SET_HOME_COMPONENT** &#10140; "admin"
-- **SET_LOCAL_PATH** &#10140; "/schrimp"
+- **_SET_LOCAL_PATH** &#10140; "/schrimp"
 - **SET_TRANSPORT_PROTOCOL** &#10140; "http"
-- **STR_COPYRIGHT_SIGNATURE** &#10140; "Copyright © 2011-2012 | Das S.C.H.R.I.M.P. Project"
-- **STR_KERNEL_SALT** &#10140; "Sstm Cntrl Hdng_t_ Rw Incrs_f Mntl Prdctvt"
-- **STR_PROJECT_NAME** &#10140; "Das S.C.H.R.I.M.P."
+- **_STR_COPYRIGHT_SIGNATURE** &#10140; "Copyright © 2011-2012 | Das S.C.H.R.I.M.P. Project"
+- **_STR_KERNEL_SALT** &#10140; "Sstm Cntrl Hdng_t_ Rw Incrs_f Mntl Prdctvt"
+- **_STR_PROJECT_NAME** &#10140; "Das S.C.H.R.I.M.P."
   
 **FUNCTION ALIASES**  
   

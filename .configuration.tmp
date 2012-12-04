@@ -1,14 +1,15 @@
-'TODOS' => array
+'_todos' => array
 (
     '? admin bar' => "optional control to measure run time performance (gApis)",
 ),
 
-'set_development_mode' => false,
+'_set_development_mode' => false,
+
 'set_github_rawpath' => "https://raw.github.com/TheB3Rt0z/schrimp/master/", // prefix valid for static contents on github
 'set_local_path' => '', // server root will be used (worth as base-path)
 'set_complexity_index' => 12,
 
-'str_kernel_salt' => "Sstm Cntrl Hdng_t_ Rw Incrs_f Mntl Prdctvt",
-'str_project_name' => "Das S.C.H.R.I.M.P.",
-'str_copyright_signature' => "Copyright © 2011-" . date('Y')
-                           . " | Das S.C.H.R.I.M.P. Project",
+'_str_kernel_salt' => "Sstm Cntrl Hdng_t_ Rw Incrs_f Mntl Prdctvt",
+'_str_project_name' => "Das S.C.H.R.I.M.P.",
+'_str_copyright_signature' => "Copyright © 2011-" . date('Y')
+                            . " | Das S.C.H.R.I.M.P. Project",
