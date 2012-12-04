@@ -61,7 +61,7 @@ class main
     				                 ? serialize($value)
     				                 : $value));
 
-    	define('SET_TRANSPORT_PROTOCOL', "http" . (getenv('HTTPS') == 'on'
+    	define('_SET_TRANSPORT_PROTOCOL', "http" . (getenv('HTTPS') == 'on'
     			                                  ? "s"
     			                                  : '')); // auto-detecting
 
@@ -188,10 +188,9 @@ class main
     	$constants = get_defined_constants(true);
     	$user_consts = $constants['user'];
     	ksort($user_consts);
-    	if (!empty($user_consts['TODOS']))
-    		unset($user_consts['TODOS']); // no needed at this time
     	foreach ($user_consts as $key => $value)
-    		$consts_list .= "- **" . $key . "** &#10140; " . fv($value) . "\n";
+    		if (substr($key, 0, 1) != '_')
+    			$consts_list .= "- **" . $key . "** &#10140; " . fv($value) . "\n";
 
     	$funcs_list = '';
     	$functions = get_defined_functions();
@@ -306,7 +305,7 @@ class main
 
     static function resolve_uri($uri = '')
     {
-        return SET_TRANSPORT_PROTOCOL . "://"
+        return _SET_TRANSPORT_PROTOCOL . "://"
         	 . $_SERVER['HTTP_HOST']
              . _SET_LOCAL_PATH
              . "/" . $uri;
