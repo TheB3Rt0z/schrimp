@@ -17,7 +17,6 @@ General reference
 "
 - **SET_COMPLEXITY_INDEX** &#10140; 12
 - **SET_GITHUB_RAWPATH** &#10140; "https://raw.github.com/TheB3Rt0z/schrimp/master/"
-- **SET_LOCAL_PATH** &#10140; null
   
 **FUNCTION ALIASES**  
   
