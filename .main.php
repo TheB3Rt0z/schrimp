@@ -313,7 +313,7 @@ class main
 
     static function relocate_to($url = '')
     {
-        header("Location: " . ru($url));
+        header("Location: " . ru($url)); // output check not required ATM
     }
 
     static function launch_error($msg)
