@@ -33,7 +33,12 @@ ob_start();
 	<body>
 		<header>
 			<?php echo html::divisor($main->header, null, 'header'); ?>
-			<?php navigator::render_breadcrumb(); // nothing shown on home page ?>
+			<?php
+			if (_SET_ADVANCED_INTERFACE)
+				navigator::render_active_breadcrumb();
+			else
+				navigator::render_breadcrumb(); // nothing shown on home page
+			?>
 		</header>
 		<nav>
 			<?php echo html::divisor($main->nav, null, 'nav'); ?>
