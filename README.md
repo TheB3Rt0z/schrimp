@@ -1,4 +1,4 @@
-![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.2.2012.12.04  
+![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.2.2012.12.12  
 =========================================================================================================================================  
   
   
@@ -97,7 +97,7 @@ Class LANGUAGE (Fri, 23 Nov 2012 21:07:16 +0100)
   
 ***  
   
-Class MAIN (Tue, 04 Dec 2012 22:19:40 +0100)  
+Class MAIN (Thu, 06 Dec 2012 20:48:39 +0100)  
 --------------------------------------------  
   
 **TODOS**  
@@ -115,7 +115,7 @@ Class MD (Mon, 03 Dec 2012 22:49:42 +0100)
   
 ***  
   
-Class NAVIGATOR (Tue, 04 Dec 2012 22:18:08 +0100)  
+Class NAVIGATOR (Wed, 12 Dec 2012 21:30:06 +0100)  
 -------------------------------------------------  
   
 **TODOS**  
