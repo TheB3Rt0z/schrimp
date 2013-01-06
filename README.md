@@ -1,4 +1,4 @@
-![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.3.2012.12.29  
+![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.3.2013.01.06  
 =========================================================================================================================================  
   
   
@@ -115,7 +115,7 @@ Class MD (Mon, 03 Dec 2012 22:49:42 +0100)
   
 ***  
   
-Class NAVIGATOR (Wed, 12 Dec 2012 21:30:06 +0100)  
+Class NAVIGATOR (Sun, 06 Jan 2013 15:59:12 +0100)  
 -------------------------------------------------  
   
 **TODOS**  
@@ -165,4 +165,4 @@ Available components:
 
 
 
-Copyright © 2011-2012 | Das S.C.H.R.I.M.P. Project  
+Copyright © 2011-2013 | Das S.C.H.R.I.M.P. Project  

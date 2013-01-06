@@ -81,7 +81,6 @@ class navigator
 							{
 								$option_component = $key;
 								$option_value = 'COMPONENT VISIBLE NAME';
-								$subbranch['controller'] = $key;
 							}
 							else
 							{
@@ -95,6 +94,9 @@ class navigator
    										     $option_value),
 								'handler' => $object->name . "_" . $key,
 							);
+
+							if (empty($value))
+								$subbranch['sub'][$link . "/" . $key]['controller'] = $key;
 						}
     				}
 
@@ -149,7 +151,7 @@ class navigator
 						$name = tr($controller,
     						       $branch['sub'][$link]['handler']);
 
-						echo html::hyperlink($link .= "/" . main::$args[0],
+						echo html::hyperlink($link . "/" . main::$args[0],
 				                         	 $name)
 				           . HTML_BREADCRUMB_SEPARATOR . main::$args[1];
 
@@ -159,11 +161,11 @@ class navigator
 						                           array_slice(main::$args, 2)))
 						       . ")";
 					}
-					else{vd($branch['sub'][$link]);
-						echo tr((!empty($branch['sub'][$link]['controller'])
-							    ? $branch['sub'][$link]['controller']
+					else
+						echo tr((!empty($branch['sub'][$link]['sub'][$link . "/" . main::$args[0]]['controller'])
+							    ? $branch['sub'][$link]['sub'][$link . "/" . main::$args[0]]['controller']
 							    : $controller),
-					            $branch['sub'][$link]['handler']);}
+					            $branch['sub'][$link]['handler']);
 				}
 				else
 					echo $branch['sub'][$link]['name'];

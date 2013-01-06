@@ -2,3 +2,8 @@ COMPONENT VISIBLE NAME
 de||Startseite
 en||Home Page
 it||Homepage
+
+_handler_application_homepage
+de||Startseite
+en||Home Page
+it||Homepage
