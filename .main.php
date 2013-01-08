@@ -8,6 +8,8 @@ class main
 		'escort library' => "session su PHP poi DB se webstore & memcache fail?",
 		'memcache support' => "verify in method, if at least one mem-server works",
 		'load_libraries' => "find someway to avoid conflicts between libs/plugins",
+		'buffer usage' => "implement main CRUD methods with auto delete-after-use",
+		'pdf documentation' => "check file creation/modification date -> reminder",
 	);
 
     private $_call = null;
