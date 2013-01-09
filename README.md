@@ -1,4 +1,4 @@
-![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.3.2013.01.06  
+![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.3.2013.01.09  
 =========================================================================================================================================  
   
   
@@ -20,7 +20,7 @@ General reference
   
 **FUNCTION ALIASES**  
   
-- **fe($path)** &#10140; .main.php on line 357,
+- **fe($path)** &#10140; .main.php on line 359,
   returns boolean if realpath path exists on running server;
   @param string $path
 
@@ -28,19 +28,19 @@ General reference
   returns a beautiful formatted value, mixed variable-type-dependant;
   @param mixed $mixed
 
-- **le($msg)** &#10140; .main.php on line 384,
+- **le($msg)** &#10140; .main.php on line 386,
   launches a customizable error 500, mit optional backtrace for debug;
   @param string $msg
 
-- **rt($url = '')** &#10140; .main.php on line 375,
+- **rt($url = '')** &#10140; .main.php on line 377,
   relocates to given relative url or to base path on default;
   @param string $url
 
-- **ru($uri = '')** &#10140; .main.php on line 366,
+- **ru($uri = '')** &#10140; .main.php on line 368,
   returns an absolute uri, based on current server configuration;
   @param string $uri
 
-- **sb()** &#10140; .main.php on line 392,
+- **sb()** &#10140; .main.php on line 394,
   show call's backtrace with help of error base handler
 
 - **tr($component, $marker)** &#10140; .lib/language.php on line 90,
@@ -48,7 +48,7 @@ General reference
   @param string $component
   @param string $marker
 
-- **vd($what)** &#10140; .main.php on line 348,
+- **vd($what)** &#10140; .main.php on line 350,
   returns pre-formatted mixed variables;
   @param mixed $what
 
@@ -97,7 +97,7 @@ Class LANGUAGE (Fri, 23 Nov 2012 21:07:16 +0100)
   
 ***  
   
-Class MAIN (Thu, 06 Dec 2012 20:48:39 +0100)  
+Class MAIN (Wed, 09 Jan 2013 21:15:16 +0100)  
 --------------------------------------------  
   
 **TODOS**  
@@ -106,6 +106,8 @@ Class MAIN (Thu, 06 Dec 2012 20:48:39 +0100)
 - **escort library** &#10140; session su PHP poi DB se webstore & memcache fail?
 - **memcache support** &#10140; verify in method, if at least one mem-server works
 - **load_libraries** &#10140; find someway to avoid conflicts between libs/plugins
+- **buffer usage** &#10140; implement main CRUD methods with auto delete-after-use
+- **pdf documentation** &#10140; check file creation/modification date -> reminder
   
 ***  
   
@@ -152,7 +154,7 @@ Available components:
   
 **DOCUMENTATION (THU, 29 NOV 2012 20:34:43 +0100)**  
   
-**ERROR (TUE, 04 DEC 2012 22:18:08 +0100)**  
+**ERROR (WED, 09 JAN 2013 21:15:16 +0100)**  
   
 **HOMEPAGE (MON, 03 DEC 2012 21:19:41 +0100)**  
   
