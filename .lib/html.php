@@ -4,7 +4,10 @@ define('HTML_BREADCRUMB_SEPARATOR', " &raquo; ");
 
 class html
 {
-	public static $todos = array();
+	public static $todos = array
+	              (
+			          'script online loading' => "if != local, should have a lfb..",
+	              );
 
 	private $_tag = null;
 	private $_attributes = array();
