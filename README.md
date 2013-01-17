@@ -1,4 +1,4 @@
-![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.3.2013.01.15  
+![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.3.2013.01.18  
 =========================================================================================================================================  
   
   
@@ -20,7 +20,7 @@ General reference
   
 **FUNCTION ALIASES**  
   
-- **fe($path)** &#10140; .main.php on line 359,
+- **fe($path)** &#10140; .main.php on line 371,
   returns boolean if realpath path exists on running server;
   @param string $path
 
@@ -28,19 +28,19 @@ General reference
   returns a beautiful formatted value, mixed variable-type-dependant;
   @param mixed $mixed
 
-- **le($msg)** &#10140; .main.php on line 386,
+- **le($msg)** &#10140; .main.php on line 398,
   launches a customizable error 500, mit optional backtrace for debug;
   @param string $msg
 
-- **rt($url = '')** &#10140; .main.php on line 377,
+- **rt($url = '')** &#10140; .main.php on line 389,
   relocates to given relative url or to base path on default;
   @param string $url
 
-- **ru($uri = '')** &#10140; .main.php on line 368,
+- **ru($uri = '')** &#10140; .main.php on line 380,
   returns an absolute uri, based on current server configuration;
   @param string $uri
 
-- **sb()** &#10140; .main.php on line 394,
+- **sb()** &#10140; .main.php on line 406,
   show call's backtrace with help of error base handler
 
 - **tr($component, $marker)** &#10140; .lib/language.php on line 90,
@@ -48,7 +48,7 @@ General reference
   @param string $component
   @param string $marker
 
-- **vd($what)** &#10140; .main.php on line 350,
+- **vd($what)** &#10140; .main.php on line 362,
   returns pre-formatted mixed variables;
   @param mixed $what
 
@@ -82,9 +82,12 @@ Class ESCORT (Fri, 23 Nov 2012 21:07:16 +0100)
   
 ***  
   
-Class HTML (Thu, 29 Nov 2012 22:10:43 +0100)  
+Class HTML (Wed, 16 Jan 2013 21:39:05 +0100)  
 --------------------------------------------  
   
+**TODOS**  
+  
+- **script online loading** &#10140; if != local, should have a lfb..
   
 ***  
   
@@ -97,7 +100,7 @@ Class LANGUAGE (Fri, 23 Nov 2012 21:07:16 +0100)
   
 ***  
   
-Class MAIN (Wed, 09 Jan 2013 21:15:16 +0100)  
+Class MAIN (Fri, 18 Jan 2013 00:36:28 +0100)  
 --------------------------------------------  
   
 **TODOS**  
@@ -106,7 +109,6 @@ Class MAIN (Wed, 09 Jan 2013 21:15:16 +0100)
 - **escort library** &#10140; session su PHP poi DB se webstore & memcache fail?
 - **memcache support** &#10140; verify in method, if at least one mem-server works
 - **load_libraries** &#10140; find someway to avoid conflicts between libs/plugins
-- **buffer usage** &#10140; implement main CRUD methods with auto delete-after-use
 - **pdf documentation** &#10140; check file creation/modification date -> reminder
   
 ***  
@@ -117,7 +119,7 @@ Class MD (Mon, 03 Dec 2012 22:49:42 +0100)
   
 ***  
   
-Class NAVIGATOR (Sun, 06 Jan 2013 15:59:12 +0100)  
+Class NAVIGATOR (Thu, 17 Jan 2013 23:38:48 +0100)  
 -------------------------------------------------  
   
 **TODOS**  
@@ -148,13 +150,13 @@ Class WIDGETS (Fri, 23 Nov 2012 21:07:16 +0100)
 Available components:  
 ---------------------  
   
-**ADMIN (THU, 22 NOV 2012 22:36:38 +0100)**  
+**ADMIN (FRI, 18 JAN 2013 00:38:07 +0100)**  
   
 **CONTROL (MON, 03 DEC 2012 22:14:38 +0100)**  
   
 **DOCUMENTATION (THU, 29 NOV 2012 20:34:43 +0100)**  
   
-**ERROR (WED, 09 JAN 2013 21:15:16 +0100)**  
+**ERROR (FRI, 18 JAN 2013 00:37:50 +0100)**  
   
 **HOMEPAGE (MON, 03 DEC 2012 21:19:41 +0100)**  
   

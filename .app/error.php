@@ -35,8 +35,7 @@ class error extends controller
 		$this->_set_section(html::title(1,
                                         $this->_translate('a ugly problem')));
 
-		$this->_set_article(html::text(unserialize(file_get_contents(".buffer"))));
-		unlink(",buffer"); // a main method with delete-after-use should be implemented
+		$this->_set_article(html::text(main::get_buffer(false))); // don't delete
 	}
 
 	private function _handler_400()

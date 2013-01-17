@@ -22,8 +22,6 @@ ob_start();
 		html::add_favicon(".inc/img/schrimp_favicon.ico");
 		//html::add_stylesheet("http://fonts.googleapis.com/css?family=Amaranth:700");
 	    html::add_stylesheet(".inc/style.css");
-	    html::add_stylesheet(".inc/style.css");
-	    html::add_stylesheet(".inc/style.css");
 		html::add_stylesheet($main->get_fullpath() . ".css");
 		html::add_js_file(".inc/js/jquery.js"); //html::add_js_file("//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js");
 		html::add_js_file(".inc/js/jquery_ui.js"); //html::add_js_file("//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js");

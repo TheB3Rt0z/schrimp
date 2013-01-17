@@ -8,7 +8,6 @@ class main
 		'escort library' => "session su PHP poi DB se webstore & memcache fail?",
 		'memcache support' => "verify in method, if at least one mem-server works",
 		'load_libraries' => "find someway to avoid conflicts between libs/plugins",
-		'buffer usage' => "implement main CRUD methods with auto delete-after-use",
 		'pdf documentation' => "check file creation/modification date -> reminder",
 	);
 
@@ -330,13 +329,26 @@ class main
             rt($url);
     }
 
+    static function set_buffer($buffer)
+    {
+		file_put_contents(".buffer", serialize($buffer));
+    }
+
+    static function get_buffer($delete = true)
+    {
+    	$buffer = unserialize(file_get_contents(".buffer"));
+
+    	if ($delete)
+    		unlink(".buffer");
+
+    	return $buffer;
+    }
+
     static function show_backtrace()
     {
 		ob_start();
 			debug_print_backtrace();
-		$backtrace = str_replace("#", html::newline(), ob_get_clean());
-
-    	file_put_contents(".buffer", serialize($backtrace));
+		main::set_buffer(str_replace("#", html::newline(), ob_get_clean()));
 
     	if ($_SERVER['REQUEST_URI'] != (_SET_LOCAL_PATH . "/error"))
     		rt("error");

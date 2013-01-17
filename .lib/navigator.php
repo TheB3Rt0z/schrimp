@@ -177,7 +177,7 @@ class navigator
 
 	static function render_active_breadcrumb()
 	{
-		echo 'ACTIVE_BREADRUMB';
+		// to be continued after breadcrumb code analisys
 	}
 
 	static function render_sitemap()
