@@ -23,7 +23,7 @@ abstract class controller
 	private $_helper = null;
 
 	function __construct($action,
-	                     $args)
+			             $args)
 	{
 		$this->_action = $action;
 		$this->_args = $args;

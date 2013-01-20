@@ -239,6 +239,23 @@ class main
 								       . fv($value) . "\n";
 
 				$reference = '';
+				foreach ($class->getMethods() as $method)
+				{
+					$parameters = $method->getParameters();
+					$num_params = ((count($parameters) > 1)
+							      ? count($parameters) - 1
+							      : 0);
+					$length = $method->getEndLine() - $method->getStartLine()
+					        - $num_params - 2;
+					$cyc = "?";
+					$reference .= "- **" . $method->getName() . "** ("
+							    . ($method->isConstructor() ? "C" : '')
+					            . ($method->isPrivate() ? "Pri" : '')
+					            . ($method->isProtected() ? "Pro" : '')
+					            . ($method->isPublic() ? "Pub" : '')
+					            . ($method->isStatic() ? "S" : '')
+							    . ", L: " . $length . ", CyC: " . $cyc . ")\n";
+				}
 
 				$dependences = '';
 
@@ -252,19 +269,19 @@ class main
 				$classes_list .= md::title(2, $heading)
 								 . (!empty($class_consts)
 								   ? md::title(3, "Class configuration constants:")
-								   . $class_consts // unprotected (no '_XXX') constants here
+								   . $class_consts . "\n" // unprotected (no '_XXX') constants here
 								   : '')
 				                 . (!empty($reference)
 				                   ? md::title(3, "Code reference:")
-				                   . $reference
+				                   . $reference . "\n"
 				                   : '')
 				                 . (!empty($dependences)
 				                   ? md::title(3, "Dependences:")
-				                   . $dependences
+				                   . $dependences . "\n"
 				                   : '')
 								 . (!empty($class_todos)
 								   ? md::title(3, "TODOs")
-								   . $class_todos
+								   . $class_todos . "\n"
 								   : '')
 				               . md::hr();
 			}
