@@ -255,11 +255,11 @@ class main
     	asort($declared_classes);
     	foreach ($declared_classes as $class)
     	{
-    	    $class_code = file_get_contents(".lib/" . $class . ".php");
-
 			$class = new ReflectionClass($class);
 			if ($class->isUserDefined())
 			{
+			    $class_code = file(".lib/" . $class->name . ".php");
+
 				$class_consts = '';
 				foreach ($class->getConstants() as $key => $value)
 					if (substr($key, 0, 1) != '_')
@@ -276,7 +276,7 @@ class main
 					$length = $method->getEndLine() - $method->getStartLine()
 					        - $num_params - ($method->isAbstract() ? 0 : 2);
 					$method_code = array_slice($class_code,
-					                           $method->getEndLine() - $length,
+					                           $method->getEndLine() - $length - 1,
 					                           $length);
 					$cyc = 0;
 					foreach ($method_code as $code_line)
