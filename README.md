@@ -1,4 +1,4 @@
-![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.3.2013.01.21  
+![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.4.2013.02.15  
 =========================================================================================================================================  
   
   
@@ -20,7 +20,7 @@ General reference
   
 **FUNCTION ALIASES**  
   
-- **fe($path)** &#10140; .main.php on line 388,
+- **fe($path)** &#10140; .main.php on line 394,
   returns boolean if realpath path exists on running server;
   @param string $path
 
@@ -28,19 +28,19 @@ General reference
   returns a beautiful formatted value, mixed variable-type-dependant;
   @param mixed $mixed
 
-- **le($msg)** &#10140; .main.php on line 415,
+- **le($msg)** &#10140; .main.php on line 421,
   launches a customizable error 500, mit optional backtrace for debug;
   @param string $msg
 
-- **rt($url = '')** &#10140; .main.php on line 406,
+- **rt($url = '')** &#10140; .main.php on line 412,
   relocates to given relative url or to base path on default;
   @param string $url
 
-- **ru($uri = '')** &#10140; .main.php on line 397,
+- **ru($uri = '')** &#10140; .main.php on line 403,
   returns an absolute uri, based on current server configuration;
   @param string $uri
 
-- **sb()** &#10140; .main.php on line 423,
+- **sb()** &#10140; .main.php on line 429,
   show call's backtrace with help of error base handler
 
 - **tr($component, $marker)** &#10140; .lib/language.php on line 90,
@@ -48,7 +48,7 @@ General reference
   @param string $component
   @param string $marker
 
-- **vd($what)** &#10140; .main.php on line 379,
+- **vd($what)** &#10140; .main.php on line 385,
   returns pre-formatted mixed variables;
   @param mixed $what
 
@@ -60,7 +60,7 @@ General reference
   
 ***  
   
-Class CONTROLLER (Sun, 20 Jan 2013 23:57:24 +0100)  
+Class CONTROLLER (Fri, 25 Jan 2013 10:27:19 +0000)  
 --------------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -70,86 +70,86 @@ Class CONTROLLER (Sun, 20 Jan 2013 23:57:24 +0100)
 
 **CODE REFERENCE:**  
   
-- **__construct** (CPub, L: 5, CyC: ?)
-- **initialize** (Pub, L: -2, CyC: ?)
-- **_set_title** (Pro, L: 1, CyC: ?)
-- **_set_header** (Pro, L: 1, CyC: ?)
-- **_set_nav** (Pro, L: 1, CyC: ?)
-- **_set_section** (Pro, L: 1, CyC: ?)
-- **_set_article** (Pro, L: 1, CyC: ?)
-- **_set_aside** (Pro, L: 1, CyC: ?)
-- **_set_footer** (Pro, L: 1, CyC: ?)
-- **_translate** (Pro, L: 2, CyC: ?)
-- **get_title** (Pub, L: 1, CyC: ?)
-- **get_header** (Pub, L: 1, CyC: ?)
-- **get_nav** (Pub, L: 1, CyC: ?)
-- **get_section** (Pub, L: 1, CyC: ?)
-- **get_article** (Pub, L: 1, CyC: ?)
-- **get_aside** (Pub, L: 1, CyC: ?)
-- **get_footer** (Pub, L: 1, CyC: ?)
+- **__construct** (CPub, L: 5![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **initialize** (Pub, L: -2![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **_set_title** (Pro, L: 1![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **_set_header** (Pro, L: 1![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **_set_nav** (Pro, L: 1![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **_set_section** (Pro, L: 1![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **_set_article** (Pro, L: 1![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **_set_aside** (Pro, L: 1![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **_set_footer** (Pro, L: 1![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **_translate** (Pro, L: 2![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **get_title** (Pub, L: 1![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **get_header** (Pub, L: 1![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **get_nav** (Pub, L: 1![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **get_section** (Pub, L: 1![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **get_article** (Pub, L: 1![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **get_aside** (Pub, L: 1![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **get_footer** (Pub, L: 1![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
 
   
 ***  
   
-Class DB (Mon, 26 Nov 2012 22:36:54 +0100)  
+Class DB (Tue, 27 Nov 2012 11:40:24 +0000)  
 ------------------------------------------  
   
 **CODE REFERENCE:**  
   
-- **__construct** (CPub, L: 19, CyC: ?)
+- **__construct** (CPub, L: 19![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
 
   
 ***  
   
-Class ESCORT (Fri, 23 Nov 2012 21:07:16 +0100)  
+Class ESCORT (Fri, 23 Nov 2012 17:54:52 +0000)  
 ----------------------------------------------  
   
   
 ***  
   
-Class HTML (Wed, 16 Jan 2013 21:39:05 +0100)  
+Class HTML (Wed, 16 Jan 2013 09:23:19 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
   
-- **__construct** (CPub, L: 21, CyC: ?)
-- **_is_single** (Pri, L: 2, CyC: ?)
-- **_is_container** (Pri, L: 2, CyC: ?)
-- **_validate_tag** (Pri, L: 1, CyC: ?)
-- **_set_attributes** (Pri, L: 20, CyC: ?)
-- **_set_content** (Pri, L: 5, CyC: ?)
-- **a** (PriS, L: 10, CyC: ?)
-- **br** (PriS, L: 3, CyC: ?)
-- **div** (PriS, L: 11, CyC: ?)
-- **img** (PriS, L: 16, CyC: ?)
-- **h1** (PriS, L: 5, CyC: ?)
-- **h2** (PriS, L: 5, CyC: ?)
-- **h3** (PriS, L: 5, CyC: ?)
-- **h4** (PriS, L: 5, CyC: ?)
-- **h5** (PriS, L: 5, CyC: ?)
-- **h6** (PriS, L: 5, CyC: ?)
-- **h7** (PriS, L: 5, CyC: ?)
-- **li** (PriS, L: 9, CyC: ?)
-- **link** (PriS, L: 26, CyC: ?)
-- **ol** (PriS, L: 9, CyC: ?)
-- **p** (PriS, L: 5, CyC: ?)
-- **pre** (PriS, L: 5, CyC: ?)
-- **script** (PriS, L: 38, CyC: ?)
-- **ul** (PriS, L: 9, CyC: ?)
-- **add_favicon** (PubS, L: 7, CyC: ?)
-- **add_stylesheet** (PubS, L: 3, CyC: ?)
-- **add_js_file** (PubS, L: 2, CyC: ?)
-- **add_js_script** (PubS, L: 3, CyC: ?)
-- **array_to_list** (PubS, L: 12, CyC: ?)
-- **box** (PubS, L: 2, CyC: ?)
-- **divisor** (PubS, L: 3, CyC: ?)
-- **highbox** (PubS, L: 2, CyC: ?)
-- **hyperlink** (PubS, L: 2, CyC: ?)
-- **image** (PubS, L: 3, CyC: ?)
-- **newline** (PubS, L: 1, CyC: ?)
-- **text** (PubS, L: 1, CyC: ?)
-- **preform** (PubS, L: 1, CyC: ?)
-- **title** (PubS, L: 7, CyC: ?)
+- **__construct** (CPub, L: 21![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **_is_single** (Pri, L: 2![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **_is_container** (Pri, L: 2![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **_validate_tag** (Pri, L: 1![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **_set_attributes** (Pri, L: 20![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **_set_content** (Pri, L: 5![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **a** (PriS, L: 10![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **br** (PriS, L: 3![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **div** (PriS, L: 11![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **img** (PriS, L: 16![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **h1** (PriS, L: 5![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **h2** (PriS, L: 5![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **h3** (PriS, L: 5![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **h4** (PriS, L: 5![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **h5** (PriS, L: 5![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **h6** (PriS, L: 5![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **h7** (PriS, L: 5![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **li** (PriS, L: 9![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **link** (PriS, L: 26![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **ol** (PriS, L: 9![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **p** (PriS, L: 5![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **pre** (PriS, L: 5![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **script** (PriS, L: 38![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **ul** (PriS, L: 9![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **add_favicon** (PubS, L: 7![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **add_stylesheet** (PubS, L: 3![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **add_js_file** (PubS, L: 2![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **add_js_script** (PubS, L: 3![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **array_to_list** (PubS, L: 12![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **box** (PubS, L: 2![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **divisor** (PubS, L: 3![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **highbox** (PubS, L: 2![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **hyperlink** (PubS, L: 2![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **image** (PubS, L: 3![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **newline** (PubS, L: 1![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **text** (PubS, L: 1![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **preform** (PubS, L: 1![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **title** (PubS, L: 7![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
 
 **TODOS**  
   
@@ -158,13 +158,13 @@ Class HTML (Wed, 16 Jan 2013 21:39:05 +0100)
   
 ***  
   
-Class LANGUAGE (Fri, 23 Nov 2012 21:07:16 +0100)  
+Class LANGUAGE (Fri, 23 Nov 2012 17:54:52 +0000)  
 ------------------------------------------------  
   
 **CODE REFERENCE:**  
   
-- **is_supported** (PubS, L: 1, CyC: ?)
-- **translate** (PubS, L: 39, CyC: ?)
+- **is_supported** (PubS, L: 1![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **translate** (PubS, L: 39![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
 
 **TODOS**  
   
@@ -173,31 +173,31 @@ Class LANGUAGE (Fri, 23 Nov 2012 21:07:16 +0100)
   
 ***  
   
-Class MAIN (Mon, 21 Jan 2013 00:32:08 +0100)  
+Class MAIN (Fri, 15 Feb 2013 16:31:16 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
   
-- **__construct** (CPub, L: 12, CyC: ?)
-- **_set_configuration** (Pri, L: 24, CyC: ?)
-- **_load_libraries** (Pri, L: 5, CyC: ?)
-- **_initialize** (Pri, L: 45, CyC: ?)
-- **get_call** (Pub, L: 1, CyC: ?)
-- **get_path** (Pub, L: 1, CyC: ?)
-- **get_fullpath** (Pub, L: 1, CyC: ?)
-- **var_dump** (PubS, L: 1, CyC: ?)
-- **get_version** (PubS, L: 5, CyC: ?)
-- **get_components** (PubS, L: 13, CyC: ?)
-- **get_documentation** (PubS, L: 123, CyC: ?)
-- **is_webstoraged** (PubS, L: 1, CyC: ?)
-- **is_memcached** (PubS, L: 1, CyC: ?)
-- **exists_file** (PubS, L: 1, CyC: ?)
-- **resolve_uri** (PubS, L: 4, CyC: ?)
-- **relocate_to** (PubS, L: 1, CyC: ?)
-- **launch_error** (PubS, L: 8, CyC: ?)
-- **set_buffer** (PubS, L: 1, CyC: ?)
-- **get_buffer** (PubS, L: 6, CyC: ?)
-- **show_backtrace** (PubS, L: 6, CyC: ?)
+- **__construct** (CPub, L: 12![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **_set_configuration** (Pri, L: 24![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **_load_libraries** (Pri, L: 5![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **_initialize** (Pri, L: 45![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **get_call** (Pub, L: 1![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **get_path** (Pub, L: 1![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **get_fullpath** (Pub, L: 1![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **var_dump** (PubS, L: 1![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **get_version** (PubS, L: 5![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **get_components** (PubS, L: 13![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **get_documentation** (PubS, L: 129![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **is_webstoraged** (PubS, L: 1![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **is_memcached** (PubS, L: 1![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **exists_file** (PubS, L: 1![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **resolve_uri** (PubS, L: 4![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **relocate_to** (PubS, L: 1![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **launch_error** (PubS, L: 8![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **set_buffer** (PubS, L: 1![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **get_buffer** (PubS, L: 6![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **show_backtrace** (PubS, L: 6![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
 
 **TODOS**  
   
@@ -210,37 +210,37 @@ Class MAIN (Mon, 21 Jan 2013 00:32:08 +0100)
   
 ***  
   
-Class MD (Mon, 03 Dec 2012 22:49:42 +0100)  
+Class MD (Tue, 04 Dec 2012 12:51:51 +0000)  
 ------------------------------------------  
   
 **CODE REFERENCE:**  
   
-- **__construct** (CPub, L: 8, CyC: ?)
-- **_validate_tag** (Pri, L: 2, CyC: ?)
-- **_set_content** (Pri, L: 5, CyC: ?)
-- **_set_formatting** (Pri, L: 7, CyC: ?)
-- **h1** (PriS, L: 4, CyC: ?)
-- **h2** (PriS, L: 4, CyC: ?)
-- **h3** (PriS, L: 4, CyC: ?)
-- **img** (PriS, L: 17, CyC: ?)
-- **image** (PubS, L: 2, CyC: ?)
-- **hr** (PubS, L: 3, CyC: ?)
-- **text** (PubS, L: 4, CyC: ?)
-- **title** (PubS, L: 7, CyC: ?)
+- **__construct** (CPub, L: 8![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **_validate_tag** (Pri, L: 2![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **_set_content** (Pri, L: 5![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **_set_formatting** (Pri, L: 7![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **h1** (PriS, L: 4![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **h2** (PriS, L: 4![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **h3** (PriS, L: 4![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **img** (PriS, L: 17![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **image** (PubS, L: 2![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **hr** (PubS, L: 3![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **text** (PubS, L: 4![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **title** (PubS, L: 7![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
 
   
 ***  
   
-Class NAVIGATOR (Thu, 17 Jan 2013 23:38:48 +0100)  
+Class NAVIGATOR (Fri, 25 Jan 2013 10:27:19 +0000)  
 -------------------------------------------------  
   
 **CODE REFERENCE:**  
   
-- **__construct** (CPub, L: 92, CyC: ?)
-- **render_list** (PubS, L: 3, CyC: ?)
-- **render_breadcrumb** (PubS, L: 58, CyC: ?)
-- **render_active_breadcrumb** (PubS, L: 1, CyC: ?)
-- **render_sitemap** (PubS, L: 3, CyC: ?)
+- **__construct** (CPub, L: 92![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **render_list** (PubS, L: 3![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **render_breadcrumb** (PubS, L: 58![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **render_active_breadcrumb** (PubS, L: 1![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
+- **render_sitemap** (PubS, L: 3![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
 
 **TODOS**  
   
@@ -250,23 +250,23 @@ Class NAVIGATOR (Thu, 17 Jan 2013 23:38:48 +0100)
   
 ***  
   
-Class POWER (Thu, 29 Nov 2012 20:34:43 +0100)  
+Class POWER (Thu, 29 Nov 2012 13:43:24 +0000)  
 ---------------------------------------------  
   
   
 ***  
   
-Class TOOLBOX (Fri, 30 Nov 2012 23:50:38 +0100)  
+Class TOOLBOX (Mon, 03 Dec 2012 10:25:29 +0000)  
 -----------------------------------------------  
   
 **CODE REFERENCE:**  
   
-- **format_value** (PubS, L: 13, CyC: ?)
+- **format_value** (PubS, L: 13![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""), CyC: ?)
 
   
 ***  
   
-Class WIDGETS (Fri, 23 Nov 2012 21:07:16 +0100)  
+Class WIDGETS (Fri, 23 Nov 2012 17:54:52 +0000)  
 -----------------------------------------------  
   
   
@@ -275,17 +275,17 @@ Class WIDGETS (Fri, 23 Nov 2012 21:07:16 +0100)
 Available components:  
 ---------------------  
   
-**ADMIN (FRI, 18 JAN 2013 00:38:07 +0100)**  
+**ADMIN (FRI, 23 NOV 2012 09:45:30 +0000)**  
   
-**CONTROL (MON, 03 DEC 2012 22:14:38 +0100)**  
+**CONTROL (TUE, 04 DEC 2012 12:51:51 +0000)**  
   
-**DOCUMENTATION (THU, 29 NOV 2012 20:34:43 +0100)**  
+**DOCUMENTATION (THU, 29 NOV 2012 16:22:52 +0000)**  
   
-**ERROR (FRI, 18 JAN 2013 00:37:50 +0100)**  
+**ERROR (FRI, 25 JAN 2013 10:27:19 +0000)**  
   
-**HOMEPAGE (MON, 03 DEC 2012 21:19:41 +0100)**  
+**HOMEPAGE (MON, 03 DEC 2012 14:02:33 +0000)**  
   
-**POWER (FRI, 23 NOV 2012 21:07:16 +0100)**  
+**POWER (FRI, 23 NOV 2012 16:39:58 +0000)**  
   
   
 ***  

@@ -254,7 +254,13 @@ class main
 					            . ($method->isProtected() ? "Pro" : '')
 					            . ($method->isPublic() ? "Pub" : '')
 					            . ($method->isStatic() ? "S" : '')
-							    . ", L: " . $length . ", CyC: " . $cyc . ")\n";
+							    . ", L: " . $length
+							    . ($lenght < (ceil(MAX_METHODS_COMPLEXITY / 10) * 10)
+							      ? md::image(".inc/img/icon_16x16_greenok.png")
+							      : ($lenght <= MAX_METHODS_COMPLEXITY)
+							        ? md::image(".inc/img/icon_16x16_yellowops.png")
+							        : md::image(".inc/img/icon_16x16_redics.png"))
+					            . ", CyC: " . $cyc . ")\n";
 				}
 
 				$dependences = '';
