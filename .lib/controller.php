@@ -32,7 +32,7 @@ abstract class controller
 		$this->_helper = new $helper; // loading helper dynamically
 	}
 
-	abstract function initialize();
+	protected abstract function initialize();
 
 	protected function _set_title($html)
 	{

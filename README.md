@@ -20,7 +20,7 @@ General reference
   
 **FUNCTION ALIASES**  
   
-- **fe($path)** &#10140; .main.php on line 394,
+- **fe($path)** &#10140; .main.php on line 395,
   returns boolean if realpath path exists on running server;
   @param string $path
 
@@ -28,19 +28,19 @@ General reference
   returns a beautiful formatted value, mixed variable-type-dependant;
   @param mixed $mixed
 
-- **le($msg)** &#10140; .main.php on line 421,
+- **le($msg)** &#10140; .main.php on line 422,
   launches a customizable error 500, mit optional backtrace for debug;
   @param string $msg
 
-- **rt($url = '')** &#10140; .main.php on line 412,
+- **rt($url = '')** &#10140; .main.php on line 413,
   relocates to given relative url or to base path on default;
   @param string $url
 
-- **ru($uri = '')** &#10140; .main.php on line 403,
+- **ru($uri = '')** &#10140; .main.php on line 404,
   returns an absolute uri, based on current server configuration;
   @param string $uri
 
-- **sb()** &#10140; .main.php on line 429,
+- **sb()** &#10140; .main.php on line 430,
   show call's backtrace with help of error base handler
 
 - **tr($component, $marker)** &#10140; .lib/language.php on line 90,
@@ -48,7 +48,7 @@ General reference
   @param string $component
   @param string $marker
 
-- **vd($what)** &#10140; .main.php on line 385,
+- **vd($what)** &#10140; .main.php on line 386,
   returns pre-formatted mixed variables;
   @param mixed $what
 
@@ -60,7 +60,7 @@ General reference
   
 ***  
   
-Class CONTROLLER (Fri, 25 Jan 2013 10:27:19 +0000)  
+Class CONTROLLER (Fri, 15 Feb 2013 16:53:58 +0000)  
 --------------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -71,7 +71,7 @@ Class CONTROLLER (Fri, 25 Jan 2013 10:27:19 +0000)
 **CODE REFERENCE:**  
   
 - **__construct** (CPub, L: 5 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: ?)
-- **initialize** (Pub, L: -2 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: ?)
+- **initialize** (ProA, L: 0 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: ?)
 - **_set_title** (Pro, L: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: ?)
 - **_set_header** (Pro, L: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: ?)
 - **_set_nav** (Pro, L: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: ?)
@@ -173,7 +173,7 @@ Class LANGUAGE (Fri, 23 Nov 2012 17:54:52 +0000)
   
 ***  
   
-Class MAIN (Fri, 15 Feb 2013 16:45:42 +0000)  
+Class MAIN (Fri, 15 Feb 2013 16:52:59 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -188,7 +188,7 @@ Class MAIN (Fri, 15 Feb 2013 16:45:42 +0000)
 - **var_dump** (PubS, L: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: ?)
 - **get_version** (PubS, L: 5 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: ?)
 - **get_components** (PubS, L: 13 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: ?)
-- **get_documentation** (PubS, L: 129 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_redics.png "") CyC: ?)
+- **get_documentation** (PubS, L: 130 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_redics.png "") CyC: ?)
 - **is_webstoraged** (PubS, L: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: ?)
 - **is_memcached** (PubS, L: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: ?)
 - **exists_file** (PubS, L: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: ?)

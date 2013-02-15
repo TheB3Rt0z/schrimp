@@ -246,7 +246,7 @@ class main
 							      ? count($parameters) - 1
 							      : 0);
 					$length = $method->getEndLine() - $method->getStartLine()
-					        - $num_params - 2;
+					        - $num_params - ($method->isAbstract() ? 0 : 2);
 					$cyc = "?";
 					$reference .= "- **" . $method->getName() . "** ("
 							    . ($method->isConstructor() ? "C" : '')
@@ -254,6 +254,7 @@ class main
 					            . ($method->isProtected() ? "Pro" : '')
 					            . ($method->isPublic() ? "Pub" : '')
 					            . ($method->isStatic() ? "S" : '')
+					            . ($method->isAbstract() ? "A" : '')
 							    . ", L: " . $length . " "
 							    . ($length <= (floor(MAX_METHODS_COMPLEXITY / 10) * 10)
 							      ? md::image(".inc/img/icon_16x16_greenok.png")
