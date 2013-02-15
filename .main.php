@@ -32,13 +32,37 @@ class main
                        "foreach(",
                        "foreach  (",
                        " && ",
-                       " || ",
+                   	   "\n&& ",
+                   	   "\r&& ",
+                   	   "\t&& ",
+                       "|| ",
+                   	   "\n|| ",
+                   	   "\r|| ",
+                   	   "\t|| ",
                        " and ",
+                   	   "\nand ",
+                   	   "\rand ",
+                   	   "\tand ",
                        " or ",
+                   	   "\nor ",
+                   	   "\ror ",
+                   	   "\tor ",
                        " xor ",
+                   	   "\nxor ",
+                   	   "\rxor ",
+                   	   "\txor ",
                        " & ",
+                   	   "\n& ",
+                   	   "\r& ",
+                   	   "\t& ",
                        " | ",
+                   	   "\n| ",
+                   	   "\r| ",
+                   	   "\t| ",
                        " ^ ",
+                   	   "\n^ ",
+                   	   "\r^ ",
+                   	   "\t^ ",
                    );
 
     static $controller = '';
@@ -258,7 +282,11 @@ class main
 			$class = new ReflectionClass($class);
 			if ($class->isUserDefined())
 			{
-			    $class_code = file(".lib/" . $class->name . ".php");
+			    $class_code = file(($class->name != 'main'
+			    		           ? (file_exists(".lib/" . $class->name . ".php")
+			    		             ? "."
+			    		           	 : '') . "lib/"
+			    		           : '.') . $class->name . ".php");
 
 				$class_consts = '';
 				foreach ($class->getConstants() as $key => $value)
