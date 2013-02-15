@@ -330,10 +330,7 @@ class html
                                    $src = null,
                                    $content = '')
     {
-    	$attributes = array
-    	(
-    		'type' => $type,
-    	);
+    	$attributes['type'] = $type;
 
     	if ($src
     		&& !in_array($src, html::$_loaded_scripts))
@@ -345,7 +342,7 @@ class html
 	                      'required file (%s) not exists',
 					      $src);
 				le($msg);
-				return false;
+				return false; // really needed?
 			}
 
     		$attributes['src'] = $src;
@@ -357,7 +354,7 @@ class html
     	elseif ($content
     		&& !in_array($content, html::$_loaded_scripts))
     	{
-    		$attributes['charset'] = "utf-8";
+    		$attributes['charset'] = "utf-8"; // should be constant?
     		$self = new self(__FUNCTION__,
     	                     $attributes,
     	                     $content);
