@@ -15,6 +15,32 @@ class main
 
     private $_path = ".app/";
 
+    private static $_cyc_counters = array // do we need failsafe falls?
+                   (
+                       "if (",
+                       "if(",
+                       "if  (",
+                       "case ",
+                       "catch (",
+                       "while (",
+                       "while(",
+                       "while  (",
+                       "for (",
+                       "for(",
+                       "for  (",
+                       "foreach (",
+                       "foreach(",
+                       "foreach  (",
+                       " && ",
+                       " || ",
+                       " and ",
+                       " or ",
+                       " xor ",
+                       " & ",
+                       " | ",
+                       " ^ ",
+                   );
+
     static $controller = '';
     static $action = null;
     static $args = array();
@@ -229,6 +255,8 @@ class main
     	asort($declared_classes);
     	foreach ($declared_classes as $class)
     	{
+    	    $class_code = file_get_contents(".lib/" . $class . ".php");
+
 			$class = new ReflectionClass($class);
 			if ($class->isUserDefined())
 			{
@@ -247,7 +275,13 @@ class main
 							      : 0);
 					$length = $method->getEndLine() - $method->getStartLine()
 					        - $num_params - ($method->isAbstract() ? 0 : 2);
-					$cyc = "?";
+					$method_code = array_slice($class_code,
+					                           $method->getEndLine() - $length,
+					                           $length);
+					$cyc = 0;
+					foreach ($method_code as $code_line)
+					    foreach (self::$_cyc_counters as $counter)
+					        $cyc += substr_count($code_line, $counter);
 					$reference .= "- **" . $method->getName() . "** ("
 							    . ($method->isConstructor() ? "C" : '')
 					            . ($method->isPrivate() ? "Pri" : '')
