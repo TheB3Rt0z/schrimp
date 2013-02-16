@@ -306,10 +306,16 @@ class main
 					$method_code = array_slice($class_code,
 					                           $method->getEndLine() - $length - 1,
 					                           $length);
+					$length_warning = false;
 					$cyc = 0;
 					foreach ($method_code as $code_line)
+					{
+					    if (strlen($code_line) > MAX_BLOCK_COMPLEXITY)
+					        $length_warning = true;
+
 					    foreach (self::$_cyc_counters as $counter)
 					        $cyc += substr_count($code_line, $counter);
+					}
 					$reference .= "- **" . $method->getName() . "** ("
 							    . ($method->isConstructor() ? "C" : '')
 					            . ($method->isPrivate() ? "Pri" : '')
@@ -317,7 +323,10 @@ class main
 					            . ($method->isPublic() ? "Pub" : '')
 					            . ($method->isStatic() ? "S" : '')
 					            . ($method->isAbstract() ? "A" : '')
-							    . ", L: " . $length . " "
+					            . ($length_warning
+					              ? " " . md::image(".inc/img/icon_16x16_blueboh.png") //rg hwrhfgh dfghdfgh dfg
+					              : ",")
+							    . " Len: " . $length . " "
 							    . ($length <= (floor(MAX_METHODS_COMPLEXITY / 10) * 10)
 							      ? md::image(".inc/img/icon_16x16_greenok.png")
 							      : ($length <= MAX_METHODS_COMPLEXITY
