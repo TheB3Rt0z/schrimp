@@ -324,7 +324,7 @@ class main
 					            . ($method->isStatic() ? "S" : '')
 					            . ($method->isAbstract() ? "A" : '')
 					            . ($length_warning
-					              ? " " . md::image(".inc/img/icon_16x16_blueboh.png") //rg hwrhfgh dfghdfgh dfg
+					              ? " " . md::image(".inc/img/icon_16x16_blueboh.png")
 					              : ",")
 							    . " Len: " . $length . " "
 							    . ($length <= (floor(MAX_METHODS_COMPLEXITY / 10) * 10)
