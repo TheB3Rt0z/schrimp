@@ -106,12 +106,9 @@ class md
 								$title = '')
 	{
 		if (!fe($src))
-		{
-			$msg = tr('error',
-					  'required file (%s) not exists',
-					  $src);
-			le($msg);
-		}
+			return le(tr('error',
+					     'required file (%s) not exists',
+					     $src));
 
 		$attributes = array('src' => SET_GITHUB_RAWPATH . $src,
 							'alt' => $alt,

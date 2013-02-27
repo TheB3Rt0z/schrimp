@@ -163,28 +163,6 @@ class html
     	return $self->_html;
     }
 
-    private static function img($src,
-    					        $alt,
-                                $title = '')
-    {
-    	if (!fe($src))
-		{
-			$msg = tr('error',
-                      'required file (%s) not exists',
-				      $src);
-			le($msg);
-		}
-
-    	$attributes = array('src' => ru($src),
-    		                'alt' => $alt,
-    		                'title' => $title);
-
-    	$self = new self(__FUNCTION__,
-    	                 $attributes);
-
-    	return $self->_html;
-    }
-
     private static function h1($content)
     {
     	$self = new self(__FUNCTION__,
@@ -248,6 +226,25 @@ class html
     	return $self->_html;
     }
 
+    private static function img($src,
+            $alt,
+            $title = '')
+    {
+        if (!fe($src))
+            return le(tr('error',
+                         'required file (%s) not exists',
+                         $src));
+
+        $attributes = array('src' => ru($src),
+                'alt' => $alt,
+                'title' => $title);
+
+        $self = new self(__FUNCTION__,
+                $attributes);
+
+        return $self->_html;
+    }
+
     private static function li($content,
                                $classes = '')
     {
@@ -269,13 +266,9 @@ class html
     	$placeholder = $rel . '_' . $href;
 
     	if (!fe($href))
-    	{
-			$msg = tr('error',
-                      'required file (%s) not exists',
-				      $href);
-			le($msg);
-			return false; // stops link binding execution to avoid "problems"
-		}
+			return le(tr('error',
+                         'required file (%s) not exists',
+				         $href));
 		elseif ($href
 			&& !in_array($placeholder, html::$_linked_files))
 		{
@@ -289,7 +282,7 @@ class html
 			html::$_linked_files[] = $placeholder;
 		}
 		else
-			return false; // MAYBE was this link already loaded, to be continued..
+			return false; // MAYBE this link was already loaded, to be continued..
 
     	return $self->_html;
     }
@@ -337,13 +330,11 @@ class html
     	{
     		if (!fe($src)
     			&& !parse_url($src))
-			{
-				$msg = tr('error',
-	                      'required file (%s) not exists',
-					      $src);
-				le($msg);
-				return false; // really needed?
-			}
+    		{
+				return le(tr('error',
+	                         'required file (%s) not exists',
+					         $src));
+    		}
 
     		$attributes['src'] = $src;
     		$self = new self(__FUNCTION__,

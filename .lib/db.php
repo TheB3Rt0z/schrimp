@@ -26,12 +26,9 @@ class db
 			}
 
 			default :
-			{
-				$msg = tr('error',
-                          "unknown %s database type",
-				          _DATABASE_TYPE);
-				le($msg);
-			}
+				return le(tr('error',
+                             "unknown %s database type",
+				             _DATABASE_TYPE));
 		}
 	}
 }

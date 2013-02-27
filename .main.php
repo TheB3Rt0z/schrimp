@@ -428,6 +428,8 @@ class main
 
         if ($_SERVER['REQUEST_URI'] != (_SET_LOCAL_PATH . "/" . $url))
             rt($url);
+
+        return false; // just in case
     }
 
     static function set_buffer($buffer)

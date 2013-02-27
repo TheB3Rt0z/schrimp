@@ -1,4 +1,4 @@
-![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.4.2013.02.18  
+![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.4.2013.02.27  
 =========================================================================================================================================  
   
   
@@ -20,7 +20,7 @@ General reference
   
 **FUNCTION ALIASES**  
   
-- **fe($path)** &#10140; .main.php on line 472,
+- **fe($path)** &#10140; .main.php on line 474,
   returns boolean if realpath path exists on running server;
   @param string $path
 
@@ -28,19 +28,19 @@ General reference
   returns a beautiful formatted value, mixed variable-type-dependant;
   @param mixed $mixed
 
-- **le($msg)** &#10140; .main.php on line 499,
+- **le($msg)** &#10140; .main.php on line 501,
   launches a customizable error 500, mit optional backtrace for debug;
   @param string $msg
 
-- **rt($url = '')** &#10140; .main.php on line 490,
+- **rt($url = '')** &#10140; .main.php on line 492,
   relocates to given relative url or to base path on default;
   @param string $url
 
-- **ru($uri = '')** &#10140; .main.php on line 481,
+- **ru($uri = '')** &#10140; .main.php on line 483,
   returns an absolute uri, based on current server configuration;
   @param string $uri
 
-- **sb()** &#10140; .main.php on line 507,
+- **sb()** &#10140; .main.php on line 509,
   show call's backtrace with help of error base handler
 
 - **tr($component, $marker)** &#10140; .lib/language.php on line 90,
@@ -48,7 +48,7 @@ General reference
   @param string $component
   @param string $marker
 
-- **vd($what)** &#10140; .main.php on line 463,
+- **vd($what)** &#10140; .main.php on line 465,
   returns pre-formatted mixed variables;
   @param mixed $what
 
@@ -91,12 +91,12 @@ Class CONTROLLER (Fri, 15 Feb 2013 23:57:48 +0100)
   
 ***  
   
-Class DB (Mon, 26 Nov 2012 22:36:54 +0100)  
+Class DB (Wed, 27 Feb 2013 23:38:19 +0100)  
 ------------------------------------------  
   
 **CODE REFERENCE:**  
   
-- **__construct** (CPub, Len: 19 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
+- **__construct** (CPub, Len: 16 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 
   
 ***  
@@ -107,7 +107,7 @@ Class ESCORT (Fri, 23 Nov 2012 21:07:16 +0100)
   
 ***  
   
-Class HTML (Sat, 16 Feb 2013 00:30:35 +0100)  
+Class HTML (Wed, 27 Feb 2013 23:38:19 +0100)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -121,7 +121,6 @@ Class HTML (Sat, 16 Feb 2013 00:30:35 +0100)
 - **a** (PriS, Len: 10 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **br** (PriS, Len: 3 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 0 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **div** (PriS, Len: 11 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 2 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
-- **img** (PriS, Len: 16 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **h1** (PriS, Len: 5 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 0 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **h2** (PriS, Len: 5 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 0 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **h3** (PriS, Len: 5 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 0 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
@@ -129,12 +128,13 @@ Class HTML (Sat, 16 Feb 2013 00:30:35 +0100)
 - **h5** (PriS, Len: 5 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 0 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **h6** (PriS, Len: 5 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 0 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **h7** (PriS, Len: 5 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 0 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
+- **img** (PriS, Len: 13 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **li** (PriS, Len: 9 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
-- **link** (PriS, Len: 26 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 3 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
+- **link** (PriS, Len: 22 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 3 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **ol** (PriS, Len: 9 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **p** (PriS, Len: 5 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 0 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **pre** (PriS, Len: 5 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 0 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
-- **script** (PriS, Len: 35 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png "") CyC: 6 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
+- **script** (PriS, Len: 33 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png "") CyC: 6 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **ul** (PriS, Len: 9 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **add_favicon** (PubS, Len: 7 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 0 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **add_stylesheet** (PubS, Len: 3 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 0 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
@@ -173,7 +173,7 @@ Class LANGUAGE (Fri, 23 Nov 2012 21:07:16 +0100)
   
 ***  
   
-Class MAIN (Sat, 16 Feb 2013 14:36:20 +0100)  
+Class MAIN (Wed, 27 Feb 2013 23:31:53 +0100)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -194,7 +194,7 @@ Class MAIN (Sat, 16 Feb 2013 14:36:20 +0100)
 - **exists_file** (PubS, Len: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 0 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **resolve_uri** (PubS, Len: 4 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 0 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **relocate_to** (PubS, Len: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 0 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
-- **launch_error** (PubS, Len: 8 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
+- **launch_error** (PubS, Len: 10 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **set_buffer** (PubS, Len: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 0 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **get_buffer** (PubS, Len: 6 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **show_backtrace** (PubS, Len: 6 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
@@ -210,7 +210,7 @@ Class MAIN (Sat, 16 Feb 2013 14:36:20 +0100)
   
 ***  
   
-Class MD (Mon, 03 Dec 2012 22:49:42 +0100)  
+Class MD (Wed, 27 Feb 2013 23:38:19 +0100)  
 ------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -222,7 +222,7 @@ Class MD (Mon, 03 Dec 2012 22:49:42 +0100)
 - **h1** (PriS, Len: 4 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 0 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **h2** (PriS, Len: 4 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 0 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **h3** (PriS, Len: 4 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 0 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
-- **img** (PriS, Len: 17 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
+- **img** (PriS, Len: 14 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **image** (PubS, Len: 2 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 0 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **hr** (PubS, Len: 3 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 0 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **text** (PubS, Len: 4 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 0 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
