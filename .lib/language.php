@@ -32,6 +32,11 @@ class language
 	   	)
 	);
 
+	static function get_browser_language()
+	{
+	    return substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+	}
+
 	static function is_supported($language)
 	{
 		return in_array($language, self::$_languages);
@@ -42,21 +47,17 @@ class language
 	{
 		$args = func_get_args();
 		$component = array_shift($args);
-		$texts = (array)@file(".app/" . $component . ".txt");
-		$application_texts = (array)@file("app/" . $component . ".txt");
 		$texts = array_map('trim',
-				           array_merge($texts,
-				           		       $application_texts));
-		$texts[] = '';
-		$language = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
-		$translation = "["
-				     . strtoupper(str_replace(" ", "_", array_shift($args)))
-		             . "]";
+				           array_merge((array)@file(".app/" . $component . ".txt"),
+				           		       (array)@file("app/" . $component . ".txt"),
+				                       array('')));
+		$language = self::get_browser_language();
+		$str = "[" . strtoupper(str_replace(" ", "_", array_shift($args))) . "]";
 
 		if (isset(self::$_translations[$marker][$language]))
-			$translation = self::$_translations[$marker][$language];
+			$str = self::$_translations[$marker][$language];
 		elseif (isset(self::$_translations[$marker][LANGUAGE_FALLBACK_LANG]))
-			$translation = self::$_translations[$marker][LANGUAGE_FALLBACK_LANG];
+			$str = self::$_translations[$marker][LANGUAGE_FALLBACK_LANG];
 
 		foreach ($texts as $key => $value)
 			if ($marker == $value)
@@ -67,18 +68,15 @@ class language
 						    || $text[0] == LANGUAGE_FALLBACK_LANG)
 						&& !empty($text[1]))
 					{
-						$translation = $text[1];
+						$str = $text[1];
 					}
 
-					if ($text[0] == $language
-						|| !$text[0])
-					{
+					if ($text[0] == $language || !$text[0])
 						break;
-					}
 				}
 			}
 
-		return vsprintf($translation, $args);
+		return vsprintf($str, $args);
 	}
 }
 
