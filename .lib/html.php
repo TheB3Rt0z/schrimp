@@ -328,8 +328,7 @@ class html
     	if ($src
     		&& !in_array($src, html::$_loaded_scripts))
     	{
-    		if (!fe($src)
-    			&& !parse_url($src))
+    		if (!fe($src) && !parse_url($src))
 				return le(tr('error',
 	                         'required file (%s) not exists',
 					         $src));
@@ -338,7 +337,7 @@ class html
     		$self = new self(__FUNCTION__,
     	                     $attributes);
 
-    		html::$_loaded_scripts[] = $type . '_' . $src;
+    		self::$_loaded_scripts[] = $type . '_' . $src;
     	}
     	elseif ($content
     		&& !in_array($content, html::$_loaded_scripts))
@@ -348,7 +347,7 @@ class html
     	                     $attributes,
     	                     $content);
 
-    	    html::$_loaded_scripts[] = $content;
+    	    self::$_loaded_scripts[] = $content;
     	}
     	else
     		return false; // this script SEEMS to be already loaded
