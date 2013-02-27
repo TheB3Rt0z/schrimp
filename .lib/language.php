@@ -61,7 +61,6 @@ class language
 
 		foreach ($texts as $key => $value)
 			if ($marker == $value)
-			{
 				while ($text = explode("||", $texts[++$key]))
 				{
 					if (($text[0] == $language
@@ -74,7 +73,6 @@ class language
 					if ($text[0] == $language || !$text[0])
 						break;
 				}
-			}
 
 		return vsprintf($str, $args);
 	}
