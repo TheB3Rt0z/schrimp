@@ -330,11 +330,9 @@ class html
     	{
     		if (!fe($src)
     			&& !parse_url($src))
-    		{
 				return le(tr('error',
 	                         'required file (%s) not exists',
 					         $src));
-    		}
 
     		$attributes['src'] = $src;
     		$self = new self(__FUNCTION__,
