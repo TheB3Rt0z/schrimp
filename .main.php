@@ -9,6 +9,7 @@ class main
 		'memcache support' => "verify in method, if at least one mem-server works",
 		'load_libraries' => "find someway to avoid conflicts between libs/plugins",
 		'pdf documentation' => "check file creation/modification date -> reminder",
+	    'cyc & documentation' => "render per line & move to another library class",
 	);
 
     private $_call = null;
@@ -35,7 +36,7 @@ class main
                    	   "\n&& ",
                    	   "\r&& ",
                    	   "\t&& ",
-                       "|| ",
+                       " || ",
                    	   "\n|| ",
                    	   "\r|| ",
                    	   "\t|| ",
@@ -310,11 +311,12 @@ class main
 					$cyc = 0;
 					foreach ($method_code as $code_line)
 					{
-					    if (strlen($code_line) > MAX_BLOCK_COMPLEXITY)
+					    $code_line = explode(" // ", $code_line);
+					    if (strlen($code_line[0]) > MAX_BLOCK_COMPLEXITY)
 					        $length_warning = true;
 
 					    foreach (self::$_cyc_counters as $counter)
-					        $cyc += substr_count($code_line, $counter);
+					        $cyc += substr_count($code_line[0], $counter);
 					}
 					$reference .= "- **" . $method->getName() . "** ("
 							    . ($method->isConstructor() ? "C" : '')
