@@ -135,6 +135,25 @@ class main
             require_once $filename;
     }
 
+    private function _set_htmls_from_controller()
+    {
+        $this->title = $this->_call->get_title() . "\n";
+
+        $this->header = $this->_call->get_header() . "\n";
+        $this->nav = $this->_call->get_nav() . "\n";
+        $this->section = $this->_call->get_section() . "\n";
+        $this->article = $this->_call->get_article() . "\n";
+        $this->aside = $this->_call->get_aside() . "\n";
+        $this->footer = $this->_call->get_footer() . "\n";
+    }
+
+    private function _set_home_component()
+    {
+        self::$controller = _SET_HOME_COMPONENT;
+        if (!_SET_DEVELOPMENT_MODE)
+            $this->_path = "app/";
+    }
+
     private function _initialize($route) // set "AllowOverride All" directive for .htaccess file
     {
         $components = explode("/",
@@ -161,11 +180,7 @@ class main
             }
         }
         else
-        {
-            self::$controller = _SET_HOME_COMPONENT;
-        	if (!_SET_DEVELOPMENT_MODE)
-        		$this->_path = "app/";
-        }
+            $this->_set_home_component();
 
         require_once $this->_path . self::$controller . ".php";
         foreach (glob($this->_path . self::$controller . "_*.php") as $filename)
@@ -174,14 +189,7 @@ class main
         $this->_call = new self::$controller(self::$action,
                                              self::$args);
 
-        $this->title = $this->_call->get_title() . "\n";
-
-        $this->header = $this->_call->get_header() . "\n";
-        $this->nav = $this->_call->get_nav() . "\n";
-        $this->section = $this->_call->get_section() . "\n";
-        $this->article = $this->_call->get_article() . "\n";
-        $this->aside = $this->_call->get_aside() . "\n";
-        $this->footer = $this->_call->get_footer() . "\n";
+        $this->_set_htmls_from_controller();
     }
 
     function get_call()
