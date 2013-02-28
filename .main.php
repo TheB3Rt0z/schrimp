@@ -135,6 +135,18 @@ class main
             require_once $filename;
     }
 
+    private function _set_htmls_from_controller()
+    {
+        $this->title = $this->_call->get_title() . "\n";
+
+        $this->header = $this->_call->get_header() . "\n";
+        $this->nav = $this->_call->get_nav() . "\n";
+        $this->section = $this->_call->get_section() . "\n";
+        $this->article = $this->_call->get_article() . "\n";
+        $this->aside = $this->_call->get_aside() . "\n";
+        $this->footer = $this->_call->get_footer() . "\n";
+    }
+
     private function _initialize($route) // set "AllowOverride All" directive for .htaccess file
     {
         $components = explode("/",
@@ -174,14 +186,7 @@ class main
         $this->_call = new self::$controller(self::$action,
                                              self::$args);
 
-        $this->title = $this->_call->get_title() . "\n";
-
-        $this->header = $this->_call->get_header() . "\n";
-        $this->nav = $this->_call->get_nav() . "\n";
-        $this->section = $this->_call->get_section() . "\n";
-        $this->article = $this->_call->get_article() . "\n";
-        $this->aside = $this->_call->get_aside() . "\n";
-        $this->footer = $this->_call->get_footer() . "\n";
+        $this->_set_htmls_from_controller();
     }
 
     function get_call()
