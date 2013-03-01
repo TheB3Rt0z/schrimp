@@ -52,12 +52,18 @@ class language
 	                       . $component
 	                       . SET_TRANSLATIONS_EXTENSION;
 
+	    $placeholder = array('');
+
 	    if (fe($translations_publicpath))
-	        return (array)file($translations_publicpath);
+	        return array_map('trim',
+	                         array_merge((array)file($translations_publicpath),
+	                                     $placeholder));
 	    elseif (fe($translations_path))
-	        return (array)file($translations_path);
+	        return array_map('trim',
+	                         array_merge((array)file($translations_path),
+	                                     $placeholder));
 	    else
-	        return array(); // no translations file found for this component!
+	        return $placeholder; // no translations file found for this component!
 	}
 
 	static function translate($component,
@@ -65,12 +71,7 @@ class language
 	{
 		$args = func_get_args();
 		$component = array_shift($args);
-		$texts = array('');
 		$translations = self::get_component_translations_array($component);
-		if (!empty($translations))
-		    $texts = array_map('trim',
-				               array_merge($translations,
-				                           $texts));
 		$language = self::get_browser_language();
 		$str = "[" . strtoupper(str_replace(" ", "_", array_shift($args))) . "]";
 
@@ -79,9 +80,9 @@ class language
 		elseif (isset(self::$_translations[$marker][LANGUAGE_FALLBACK_LANG]))
 			$str = self::$_translations[$marker][LANGUAGE_FALLBACK_LANG];
 
-		foreach ($texts as $key => $value)
+		foreach ($translations as $key => $value)
 			if ($marker == $value)
-				while ($text = explode("||", $texts[++$key]))
+				while ($text = explode("||", $translations[++$key]))
 				{
 					if (($text[0] == $language
 						    || $text[0] == LANGUAGE_FALLBACK_LANG)
