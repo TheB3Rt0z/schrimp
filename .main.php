@@ -510,7 +510,7 @@ function rt($url = '')
  */
 function le($msg)
 {
-	main::launch_error($msg);
+	return main::launch_error($msg);
 }
 
 /**
