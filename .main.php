@@ -247,10 +247,7 @@ class main
     			$components[$component] = filemtime($filename);
     		}
 
-    	$substitutions = array(
-            _SET_APPLICATION_PUBLICPATH,
-            ".php",
-        );
+    	$substitutions[0] = _SET_APPLICATION_PUBLICPATH;
 
     	foreach (glob(_SET_APPLICATION_PUBLICPATH . "*.php") as $filename) // scans application directory
     		if (!substr_count($filename, "_"))
