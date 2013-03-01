@@ -13,8 +13,7 @@ General reference
 - **MAX_BLOCK_COMPLEXITY** &#10140; 84
 - **MAX_CYCLOMATIC_COMPLEXITY** &#10140; 12
 - **MAX_METHODS_COMPLEXITY** &#10140; 36
-- **MD_NEWLINE_SEQUENCE** &#10140; "  
-"
+- **MD_NEWLINE_SEQUENCE** &#10140; "  \n"
 - **SET_COMPLEXITY_INDEX** &#10140; 12
 - **SET_DOCUMENTATION_MD** &#10140; "README"
 - **SET_GITHUB_RAWPATH** &#10140; "https://raw.github.com/TheB3Rt0z/schrimp/master/"
@@ -267,7 +266,7 @@ Class POWER (Thu, 29 Nov 2012 20:34:43 +0100)
   
 ***  
   
-Class TOOLBOX (Fri, 01 Mar 2013 23:22:05 +0100)  
+Class TOOLBOX (Fri, 01 Mar 2013 23:31:32 +0100)  
 -----------------------------------------------  
   
 **CODE REFERENCE:**  

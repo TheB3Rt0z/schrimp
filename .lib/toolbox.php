@@ -16,9 +16,9 @@ class toolbox
     		return "null";
     	}
 		elseif (!is_numeric($mixed))
-    		return "\"" . $mixed . "\"";
+    		return "\"" . str_replace("\n", '\\n', $mixed) . "\"";
 		else
-			return $mixed;
+			return $mixed; // fallback
 	}
 }
 
