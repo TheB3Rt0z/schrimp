@@ -48,7 +48,7 @@ General reference
 - **sb()** &#10140; .main.php on line 545,
   show call's backtrace with help of error base handler
 
-- **tr($component, $marker)** &#10140; .lib/language.php on line 89,
+- **tr($component, $marker)** &#10140; .lib/language.php on line 107,
   executes language translation of marker identifier, referring to given component;
   @param string $component
   @param string $marker
@@ -164,14 +164,15 @@ Class HTML (Wed, 27 Feb 2013 23:44:59 +0100)
   
 ***  
   
-Class LANGUAGE (Fri, 01 Mar 2013 23:22:05 +0100)  
+Class LANGUAGE (Fri, 01 Mar 2013 23:47:10 +0100)  
 ------------------------------------------------  
   
 **CODE REFERENCE:**  
   
 - **get_browser_language** (PubS, Len: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 0 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **is_supported** (PubS, Len: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 0 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
-- **translate** (PubS ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blueboh.png "") Len: 32 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png "") CyC: 10 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
+- **get_component_translations_array** (PubS, Len: 14 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 2 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
+- **translate** (PubS, Len: 32 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png "") CyC: 11 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""))
 
 **TODOS**  
   

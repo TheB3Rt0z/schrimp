@@ -42,17 +42,35 @@ class language
 		return in_array($language, self::$_languages);
 	}
 
+	static function get_component_translations_array($component)
+	{
+	    $translations_publicpath = _SET_APPLICATION_PUBLICPATH
+	                             . $component
+	                             . SET_TRANSLATIONS_EXTENSION;
+
+	    $translations_path = _SET_APPLICATION_PATH
+	                       . $component
+	                       . SET_TRANSLATIONS_EXTENSION;
+
+	    if (fe($translations_publicpath))
+	        return (array)file($translations_publicpath);
+	    elseif (fe($translations_path))
+	        return (array)file($translations_path);
+	    else
+	        return array(); // no translations file found for this component!
+	}
+
 	static function translate($component,
 	                          $marker)
 	{
 		$args = func_get_args();
 		$component = array_shift($args);
-		$core_trans = (array)@file(_SET_APPLICATION_PATH . $component . SET_TRANSLATIONS_EXTENSION);
-		$public_trans = (array)@file(_SET_APPLICATION_PUBLICPATH . $component . SET_TRANSLATIONS_EXTENSION);
-		$texts = array_map('trim',
-				           array_merge($core_trans,
-				           		       $public_trans,
-				                       array('')));
+		$texts = array('');
+		$translations = self::get_component_translations_array($component);
+		if (!empty($translations))
+		    $texts = array_map('trim',
+				               array_merge($translations,
+				                           $texts));
 		$language = self::get_browser_language();
 		$str = "[" . strtoupper(str_replace(" ", "_", array_shift($args))) . "]";
 
