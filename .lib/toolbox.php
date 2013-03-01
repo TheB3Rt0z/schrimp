@@ -25,6 +25,7 @@ class toolbox
 /**
  * returns a beautiful formatted value, mixed variable-type-dependant;
  * @param mixed $mixed
+ * @return mixed depending on internally defined rules
  */
 function fv($mixed)
 {

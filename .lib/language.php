@@ -84,6 +84,7 @@ class language
  * executes language translation of marker identifier, referring to given component;
  * @param string $component
  * @param string $marker
+ * @return mixed callback function returned value(s)
  */
 function tr($component,
 	        $marker)

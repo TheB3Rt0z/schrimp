@@ -89,8 +89,10 @@ class main
         if (_SET_DEVELOPMENT_MODE) // only for developers, no further error 500 required
         {
          	$this->documentation = $this->get_documentation();
-        	$doc_file = "README.md";
-        	file_put_contents($doc_file, $this->documentation); // markdown format
+         	$documentation_file = SET_DOCUMENTATION_MD . ".md";
+         	if (chmod($documentation_file, 0777))
+        	    file_put_contents($documentation_file, $this->documentation); // markdown format
+         	chmod($documentation_file, 0755);
         }
 
         $this->_initialize(str_replace(_SET_LOCAL_PATH . "/",
@@ -501,6 +503,7 @@ function vd($what)
 /**
  * returns boolean if realpath path exists on running server;
  * @param string $path
+ * @return boolean true if realpath exists, false otherwise
  */
 function fe($path)
 {
@@ -510,6 +513,7 @@ function fe($path)
 /**
  * returns an absolute uri, based on current server configuration;
  * @param string $uri
+ * @return string absolute http unified resource identifier
  */
 function ru($uri = '')
 {
@@ -528,6 +532,7 @@ function rt($url = '')
 /**
  * launches a customizable error 500, mit optional backtrace for debug;
  * @param string $msg
+ * @return boolean false after relocate
  */
 function le($msg)
 {
