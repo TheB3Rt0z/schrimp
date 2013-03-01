@@ -146,12 +146,19 @@ class control extends controller
 
 	private function _handler_application() // from app directory
 	{
-		static $options = "\$output = array();
-		                   foreach (glob(\"app/*.php\") as \$filename)
+		static $options = "\$substitutions = array(
+		                       _SET_APPLICATION_PUBLICPATH,
+		                       \".php\",
+		                   );
+
+		                   \$output = array();
+
+		                   foreach (glob(_SET_APPLICATION_PUBLICPATH . \"*.php\")
+		                            as \$filename)
 				           {
 							   if (!substr_count(\$filename, \"_\"))
 							   {
-							       \$option = str_replace(array(\"app/\", \".php\"),
+							       \$option = str_replace(\$substitutions,
 				                                          '',
 				                                          \$filename);
 							       \$output[\$option] = null;

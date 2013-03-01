@@ -20,7 +20,7 @@ General reference
   
 **FUNCTION ALIASES**  
   
-- **fe($path)** &#10140; .main.php on line 484,
+- **fe($path)** &#10140; .main.php on line 505,
   returns boolean if realpath path exists on running server;
   @param string $path
 
@@ -28,27 +28,27 @@ General reference
   returns a beautiful formatted value, mixed variable-type-dependant;
   @param mixed $mixed
 
-- **le($msg)** &#10140; .main.php on line 511,
+- **le($msg)** &#10140; .main.php on line 532,
   launches a customizable error 500, mit optional backtrace for debug;
   @param string $msg
 
-- **rt($url = '')** &#10140; .main.php on line 502,
+- **rt($url = '')** &#10140; .main.php on line 523,
   relocates to given relative url or to base path on default;
   @param string $url
 
-- **ru($uri = '')** &#10140; .main.php on line 493,
+- **ru($uri = '')** &#10140; .main.php on line 514,
   returns an absolute uri, based on current server configuration;
   @param string $uri
 
-- **sb()** &#10140; .main.php on line 519,
+- **sb()** &#10140; .main.php on line 540,
   show call's backtrace with help of error base handler
 
-- **tr($component, $marker)** &#10140; .lib/language.php on line 86,
+- **tr($component, $marker)** &#10140; .lib/language.php on line 88,
   executes language translation of marker identifier, referring to given component;
   @param string $component
   @param string $marker
 
-- **vd($what)** &#10140; .main.php on line 475,
+- **vd($what)** &#10140; .main.php on line 496,
   returns pre-formatted mixed variables;
   @param mixed $what
 
@@ -60,7 +60,7 @@ General reference
   
 ***  
   
-Class CONTROLLER (Fri, 15 Feb 2013 23:57:48 +0100)  
+Class CONTROLLER (Fri, 15 Feb 2013 16:53:58 +0000)  
 --------------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -91,7 +91,7 @@ Class CONTROLLER (Fri, 15 Feb 2013 23:57:48 +0100)
   
 ***  
   
-Class DB (Wed, 27 Feb 2013 23:38:19 +0100)  
+Class DB (Thu, 28 Feb 2013 12:14:20 +0000)  
 ------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -101,13 +101,13 @@ Class DB (Wed, 27 Feb 2013 23:38:19 +0100)
   
 ***  
   
-Class ESCORT (Fri, 23 Nov 2012 21:07:16 +0100)  
+Class ESCORT (Fri, 23 Nov 2012 17:54:52 +0000)  
 ----------------------------------------------  
   
   
 ***  
   
-Class HTML (Wed, 27 Feb 2013 23:44:59 +0100)  
+Class HTML (Thu, 28 Feb 2013 12:14:20 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -158,14 +158,14 @@ Class HTML (Wed, 27 Feb 2013 23:44:59 +0100)
   
 ***  
   
-Class LANGUAGE (Thu, 28 Feb 2013 00:56:54 +0100)  
+Class LANGUAGE (Fri, 01 Mar 2013 16:10:36 +0000)  
 ------------------------------------------------  
   
 **CODE REFERENCE:**  
   
 - **get_browser_language** (PubS, Len: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 0 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **is_supported** (PubS, Len: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 0 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
-- **translate** (PubS, Len: 30 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 10 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
+- **translate** (PubS, Len: 32 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png "") CyC: 10 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 
 **TODOS**  
   
@@ -174,7 +174,7 @@ Class LANGUAGE (Thu, 28 Feb 2013 00:56:54 +0100)
   
 ***  
   
-Class MAIN (Fri, 01 Mar 2013 00:06:34 +0100)  
+Class MAIN (Fri, 01 Mar 2013 16:27:48 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -183,15 +183,15 @@ Class MAIN (Fri, 01 Mar 2013 00:06:34 +0100)
 - **_set_configuration** (Pri, Len: 24 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **_load_libraries** (Pri, Len: 5 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 2 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **_set_htmls_from_controller** (Pri, Len: 8 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 0 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
-- **_set_home_component** (Pri, Len: 3 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
-- **_initialize** (Pri, Len: 34 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png "") CyC: 7 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
+- **_set_home_component** (Pri, Len: 4 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
+- **_initialize** (Pri, Len: 36 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png "") CyC: 7 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **get_call** (Pub, Len: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 0 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **get_path** (Pub, Len: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 0 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **get_fullpath** (Pub, Len: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 0 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **var_dump** (PubS, Len: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 0 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **get_version** (PubS, Len: 5 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 0 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
-- **get_components** (PubS, Len: 13 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 4 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
-- **get_documentation** (PubS, Len: 158 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_redics.png "") CyC: 15 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_redics.png ""))
+- **get_components** (PubS, Len: 31 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png "") CyC: 4 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
+- **get_documentation** (PubS ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blueboh.png "") Len: 158 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_redics.png "") CyC: 15 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_redics.png ""))
 - **is_webstoraged** (PubS, Len: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 0 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **is_memcached** (PubS, Len: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 0 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **exists_file** (PubS, Len: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 0 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
@@ -214,7 +214,7 @@ Class MAIN (Fri, 01 Mar 2013 00:06:34 +0100)
   
 ***  
   
-Class MD (Wed, 27 Feb 2013 23:38:19 +0100)  
+Class MD (Thu, 28 Feb 2013 12:14:20 +0000)  
 ------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -235,7 +235,7 @@ Class MD (Wed, 27 Feb 2013 23:38:19 +0100)
   
 ***  
   
-Class NAVIGATOR (Thu, 17 Jan 2013 23:38:48 +0100)  
+Class NAVIGATOR (Fri, 01 Mar 2013 16:14:19 +0000)  
 -------------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -254,13 +254,13 @@ Class NAVIGATOR (Thu, 17 Jan 2013 23:38:48 +0100)
   
 ***  
   
-Class POWER (Thu, 29 Nov 2012 20:34:43 +0100)  
+Class POWER (Thu, 29 Nov 2012 13:43:24 +0000)  
 ---------------------------------------------  
   
   
 ***  
   
-Class TOOLBOX (Fri, 30 Nov 2012 23:50:38 +0100)  
+Class TOOLBOX (Mon, 03 Dec 2012 10:25:29 +0000)  
 -----------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -270,7 +270,7 @@ Class TOOLBOX (Fri, 30 Nov 2012 23:50:38 +0100)
   
 ***  
   
-Class WIDGETS (Fri, 23 Nov 2012 21:07:16 +0100)  
+Class WIDGETS (Fri, 23 Nov 2012 17:54:52 +0000)  
 -----------------------------------------------  
   
   
@@ -279,17 +279,17 @@ Class WIDGETS (Fri, 23 Nov 2012 21:07:16 +0100)
 Available components:  
 ---------------------  
   
-**ADMIN (FRI, 18 JAN 2013 00:38:07 +0100)**  
+**ADMIN (FRI, 23 NOV 2012 09:45:30 +0000)**  
   
-**CONTROL (MON, 03 DEC 2012 22:14:38 +0100)**  
+**CONTROL (FRI, 01 MAR 2013 16:07:24 +0000)**  
   
-**DOCUMENTATION (THU, 29 NOV 2012 20:34:43 +0100)**  
+**DOCUMENTATION (THU, 29 NOV 2012 16:22:52 +0000)**  
   
-**ERROR (FRI, 18 JAN 2013 00:37:50 +0100)**  
+**ERROR (FRI, 01 MAR 2013 16:01:13 +0000)**  
   
-**HOMEPAGE (MON, 03 DEC 2012 21:19:41 +0100)**  
+**HOMEPAGE (MON, 03 DEC 2012 14:02:33 +0000)**  
   
-**POWER (FRI, 23 NOV 2012 21:07:16 +0100)**  
+**POWER (FRI, 23 NOV 2012 16:39:58 +0000)**  
   
   
 ***  

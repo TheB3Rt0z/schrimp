@@ -47,9 +47,11 @@ class language
 	{
 		$args = func_get_args();
 		$component = array_shift($args);
+		$core_trans = (array)@file(_SET_APPLICATION_PATH . $component . ".txt");
+		$public_trans = (array)@file(_SET_APPLICATION_PUBLICPATH . $component . ".txt");
 		$texts = array_map('trim',
-				           array_merge((array)@file(".app/" . $component . ".txt"),
-				           		       (array)@file("app/" . $component . ".txt"),
+				           array_merge($core_trans,
+				           		       $public_trans,
 				                       array('')));
 		$language = self::get_browser_language();
 		$str = "[" . strtoupper(str_replace(" ", "_", array_shift($args))) . "]";

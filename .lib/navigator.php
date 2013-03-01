@@ -24,7 +24,7 @@ class navigator
             ),
         );
 
-		foreach (array_filter(glob(".app/*.php"),
+		foreach (array_filter(glob(_SET_APPLICATION_PATH . "*.php"),
 		                      function($value)
 		                      {
 		                          return !substr_count($value, _SET_HOME_COMPONENT);
@@ -32,7 +32,7 @@ class navigator
 		{
 			require_once $filename;
 
-    		$branch = str_replace(array(".app/", ".php"), '', $filename);
+    		$branch = str_replace(array(_SET_APPLICATION_PATH, ".php"), '', $filename);
 
     		$rc = new ReflectionClass($branch);
     		if ($rc->getConstant('VISIBLE_IN_NAVIGATION'))

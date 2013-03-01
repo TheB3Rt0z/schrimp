@@ -20,7 +20,7 @@ class error extends controller
 		else
 			rt("error/404");
 
-		$this->_set_aside(html::image(".inc/img/schrimp.png",
+		$this->_set_aside(html::image(_SET_INCLUDES_PATH . "img/schrimp.png",
 		                              _STR_PROJECT_NAME));
 	}
 

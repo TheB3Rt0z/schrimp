@@ -7,6 +7,11 @@
 '_set_advanced_interface' => false,
 '_set_local_path' => '', // server root will be used (worth as base-path)
 
+'_set_application_path' => '.app/',
+'_set_application_publicpath' => 'app/',
+'_set_includes_path' => '.inc/',
+'_set_includes_publicpath' => 'inc/',
+
 'set_github_rawpath' => "https://raw.github.com/TheB3Rt0z/schrimp/master/", // prefix valid for static contents on github
 
 'set_complexity_index' => 12,

@@ -14,7 +14,7 @@ class main
 
     private $_call = null;
 
-    private $_path = ".app/";
+    private $_path = '';
 
     private static $_cyc_counters = array // do we need failsafe falls?
                    (
@@ -150,22 +150,25 @@ class main
     private function _set_home_component()
     {
         self::$controller = _SET_HOME_COMPONENT;
+
         if (!_SET_DEVELOPMENT_MODE)
-            $this->_path = "app/";
+            $this->_path = _SET_APPLICATION_PUBLICPATH;
     }
 
-    private function _initialize($route) // set "AllowOverride All" directive for .htaccess file
+    private function _initialize($route) // set "AllowOverride All" directive for .htaccess file required!
     {
         $components = explode("/",
                               $route);
+
+        $this->_path = _SET_APPLICATION_PATH; // using default modules
 
         if ($components[0])
         {
         	if (!substr_count($components[0], "_"))
         	{
-        		if (fe("app/" . $components[0] . ".php"))
-        			$this->_path = "app/"; // using external module
-        		elseif (!fe(".app/" . $components[0] . ".php"))
+        		if (fe(_SET_APPLICATION_PUBLICPATH . $components[0] . ".php"))
+        			$this->_path = _SET_APPLICATION_PUBLICPATH; // using external module
+        		elseif (!fe(_SET_APPLICATION_PATH . $components[0] . ".php"))
         			rt("error/404");
         	}
         	else
@@ -223,15 +226,33 @@ class main
 
     static function get_components($components = array())
     {
-    	foreach (glob(".app/*.php") as $filename) // scans modules directory
-    		if (!substr_count($filename, "_"))
-    			$components[str_replace(array(".app/", ".php"), '', $filename)]
-    				= filemtime($filename);
+        $substitutions = array(
+            _SET_APPLICATION_PATH,
+            ".php",
+        );
 
-    	foreach (glob("app/*.php") as $filename) // scans application directory
+    	foreach (glob(_SET_APPLICATION_PATH . "*.php") as $filename) // scans modules directory
     		if (!substr_count($filename, "_"))
-    			$components[str_replace(array("app/", ".php"), '', $filename)]
-    				= filemtime($filename);
+    		{
+    		    $component = str_replace($substitutions,
+    		                             '',
+    		                             $filename);
+    			$components[$component] = filemtime($filename);
+    		}
+
+    	$substitutions = array(
+            _SET_APPLICATION_PUBLICPATH,
+            ".php",
+        );
+
+    	foreach (glob(_SET_APPLICATION_PUBLICPATH . "*.php") as $filename) // scans application directory
+    		if (!substr_count($filename, "_"))
+    	    {
+    	        $component = str_replace($substitutions,
+    	                                 '',
+    	                                 $filename);
+    			$components[$component] = filemtime($filename);
+    	    }
 
     	ksort($components);
 
@@ -240,7 +261,7 @@ class main
 
     static function get_documentation()
     {
-    	$title = md::image(".inc/img/schrimp_favicon_md.ico")
+    	$title = md::image(_SET_INCLUDES_PATH . "img/schrimp_favicon_md.ico")
     	       . " " . _STR_PROJECT_NAME . "'s Documentation "
     	       . main::get_version(1) . date('.Y.m.d');
 
@@ -334,20 +355,20 @@ class main
 					            . ($method->isStatic() ? "S" : '')
 					            . ($method->isAbstract() ? "A" : '')
 					            . ($length_warning
-					              ? " " . md::image(".inc/img/icon_16x16_blueboh.png")
+					              ? " " . md::image(_SET_INCLUDES_PATH . "img/icon_16x16_blueboh.png")
 					              : ",")
 							    . " Len: " . $length . " "
 							    . ($length <= (floor(MAX_METHODS_COMPLEXITY / 10) * 10)
-							      ? md::image(".inc/img/icon_16x16_greenok.png")
+							      ? md::image(_SET_INCLUDES_PATH . "img/icon_16x16_greenok.png")
 							      : ($length <= MAX_METHODS_COMPLEXITY
-							        ? md::image(".inc/img/icon_16x16_yellowops.png")
-							        : md::image(".inc/img/icon_16x16_redics.png")))
+							        ? md::image(_SET_INCLUDES_PATH . "img/icon_16x16_yellowops.png")
+							        : md::image(_SET_INCLUDES_PATH . "img/icon_16x16_redics.png")))
 					            . " CyC: " . $cyc . " "
 					            . ($cyc <= (floor(MAX_CYCLOMATIC_COMPLEXITY / 10) * 10)
-					              ? md::image(".inc/img/icon_16x16_greenok.png")
+					              ? md::image(_SET_INCLUDES_PATH . "img/icon_16x16_greenok.png")
 							      : ($cyc <= MAX_CYCLOMATIC_COMPLEXITY
-							        ? md::image(".inc/img/icon_16x16_yellowops.png")
-							        : md::image(".inc/img/icon_16x16_redics.png")))
+							        ? md::image(_SET_INCLUDES_PATH . "img/icon_16x16_yellowops.png")
+							        : md::image(_SET_INCLUDES_PATH . "img/icon_16x16_redics.png")))
 					            . ")\n";
 				}
 
