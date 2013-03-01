@@ -137,6 +137,25 @@ class main
             require_once $filename;
     }
 
+    private function _set_static_route_traits($components)
+    {
+        self::$controller = array_shift($components);
+        if (!empty($components))
+        {
+            self::$action = array_shift($components);
+            if (!empty($components))
+                self::$args = array_filter($components);
+        }
+    }
+
+    private function _set_home_component()
+    {
+        self::$controller = _SET_HOME_COMPONENT;
+
+        if (!_SET_DEVELOPMENT_MODE)
+            $this->_path = _SET_APPLICATION_PUBLICPATH;
+    }
+
     private function _set_htmls_from_controller()
     {
         $this->title = $this->_call->get_title() . "\n";
@@ -147,14 +166,6 @@ class main
         $this->article = $this->_call->get_article() . "\n";
         $this->aside = $this->_call->get_aside() . "\n";
         $this->footer = $this->_call->get_footer() . "\n";
-    }
-
-    private function _set_home_component()
-    {
-        self::$controller = _SET_HOME_COMPONENT;
-
-        if (!_SET_DEVELOPMENT_MODE)
-            $this->_path = _SET_APPLICATION_PUBLICPATH;
     }
 
     private function _initialize($route) // set "AllowOverride All" directive for .htaccess file required!
@@ -176,13 +187,7 @@ class main
         	else
         		rt("error/404");
 
-            self::$controller = array_shift($components);
-            if (!empty($components))
-            {
-                self::$action = array_shift($components);
-                if ($components)
-                    self::$args = array_filter($components);
-            }
+        	$this->_set_static_route_traits($components);
         }
         else
             $this->_set_home_component();
