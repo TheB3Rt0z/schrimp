@@ -91,15 +91,23 @@ class control extends controller
 
 	private function _handler_plugins() // from lib directory
 	{
-		static $options = "\$output = array();
-		                   foreach (glob(\"lib/*.php\") as \$filename)
+		static $options = "\$substitutions = array(
+		                       _SET_LIBRARIES_PUBLICPATH,
+		                       \".php\",
+		                   );
+
+		                   \$output = array();
+
+		                   foreach (glob(_SET_LIBRARIES_PUBLICPATH . \"*.php\")
+		                            as \$filename)
 				           {
-							   \$option = str_replace(array(\"lib/\", \".php\"),
+							   \$option = str_replace(\$substitutions,
 				                                      '',
 				                                      \$filename);
 			                   \$output[\$option] = '_handler_plugins_' . \$option;
 		                   }
-				           return \$output;"; //translation should go in control.txt, if official
+
+				           return \$output;"; // translation should go in control.txt, if official
 
 		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
 		                . HTML_BREADCRUMB_SEPARATOR
@@ -164,6 +172,7 @@ class control extends controller
 							       \$output[\$option] = null;
 							   }
 		                   }
+
 				           return \$output;";
 
 		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')

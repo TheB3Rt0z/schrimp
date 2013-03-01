@@ -47,8 +47,8 @@ class language
 	{
 		$args = func_get_args();
 		$component = array_shift($args);
-		$core_trans = (array)@file(_SET_APPLICATION_PATH . $component . ".txt");
-		$public_trans = (array)@file(_SET_APPLICATION_PUBLICPATH . $component . ".txt");
+		$core_trans = (array)@file(_SET_APPLICATION_PATH . $component . SET_TRANSLATIONS_EXTENSION);
+		$public_trans = (array)@file(_SET_APPLICATION_PUBLICPATH . $component . SET_TRANSLATIONS_EXTENSION);
 		$texts = array_map('trim',
 				           array_merge($core_trans,
 				           		       $public_trans,

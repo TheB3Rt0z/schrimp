@@ -128,10 +128,10 @@ class main
 
     private function _load_libraries()
     {
-        foreach (glob(".lib/*.php") as $filename)
+        foreach (glob(_SET_LIBRARIES_PATH . "*.php") as $filename)
             require_once $filename;
 
-        foreach (glob("lib/*.php") as $filename)
+        foreach (glob(_SET_LIBRARIES_PUBLICPATH . "*.php") as $filename)
             require_once $filename;
     }
 
@@ -313,9 +313,9 @@ class main
 			if ($class->isUserDefined())
 			{
 			    $class_code = file(($class->name != 'main'
-			    		           ? (file_exists(".lib/" . $class->name . ".php")
+			    		           ? (file_exists(_SET_LIBRARIES_PATH . $class->name . ".php")
 			    		             ? "."
-			    		           	 : '') . "lib/"
+			    		           	 : '') . _SET_LIBRARIES_PUBLICPATH
 			    		           : '.') . $class->name . ".php");
 
 				$class_consts = '';

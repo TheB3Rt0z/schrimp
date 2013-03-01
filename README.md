@@ -17,6 +17,7 @@ General reference
 "
 - **SET_COMPLEXITY_INDEX** &#10140; 12
 - **SET_GITHUB_RAWPATH** &#10140; "https://raw.github.com/TheB3Rt0z/schrimp/master/"
+- **SET_TRANSLATIONS_EXTENSION** &#10140; ".txt"
   
 **FUNCTION ALIASES**  
   
@@ -158,14 +159,14 @@ Class HTML (Thu, 28 Feb 2013 12:14:20 +0000)
   
 ***  
   
-Class LANGUAGE (Fri, 01 Mar 2013 16:10:36 +0000)  
+Class LANGUAGE (Fri, 01 Mar 2013 16:40:44 +0000)  
 ------------------------------------------------  
   
 **CODE REFERENCE:**  
   
 - **get_browser_language** (PubS, Len: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 0 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **is_supported** (PubS, Len: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 0 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
-- **translate** (PubS, Len: 32 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png "") CyC: 10 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
+- **translate** (PubS ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blueboh.png "") Len: 32 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png "") CyC: 10 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 
 **TODOS**  
   
@@ -174,7 +175,7 @@ Class LANGUAGE (Fri, 01 Mar 2013 16:10:36 +0000)
   
 ***  
   
-Class MAIN (Fri, 01 Mar 2013 16:27:48 +0000)  
+Class MAIN (Fri, 01 Mar 2013 16:35:35 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -281,7 +282,7 @@ Available components:
   
 **ADMIN (FRI, 23 NOV 2012 09:45:30 +0000)**  
   
-**CONTROL (FRI, 01 MAR 2013 16:07:24 +0000)**  
+**CONTROL (FRI, 01 MAR 2013 16:39:25 +0000)**  
   
 **DOCUMENTATION (THU, 29 NOV 2012 16:22:52 +0000)**  
   

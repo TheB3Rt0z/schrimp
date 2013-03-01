@@ -7,10 +7,16 @@
 '_set_advanced_interface' => false,
 '_set_local_path' => '', // server root will be used (worth as base-path)
 
-'_set_application_path' => '.app/',
-'_set_application_publicpath' => 'app/',
-'_set_includes_path' => '.inc/',
-'_set_includes_publicpath' => 'inc/',
+'_set_application_path' => ".app/",
+'_set_application_publicpath' => "app/",
+'_set_includes_path' => ".inc/",
+'_set_includes_publicpath' => "inc/",
+'_set_libraries_path' => ".lib/",
+'_set_libraries_publicpath' => "lib/",
+
+'_set_logs_path' => ".log/",
+
+'set_translations_extension' => ".txt",
 
 'set_github_rawpath' => "https://raw.github.com/TheB3Rt0z/schrimp/master/", // prefix valid for static contents on github
 
