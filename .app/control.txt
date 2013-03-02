@@ -33,6 +33,11 @@ de||HTML Markup
 en||HTML Markup
 it||HTML Markup
 
+_handler_core_md
+de||MarkDown Markup
+en||MarkDown Markup
+it||MarkDown Markup
+
 _handler_core_widget
 de||Dingsbums
 en||Widgets
@@ -42,6 +47,11 @@ _handler_core_language
 de||Übersetzer
 en||Translator
 it||Traduttore
+
+_handler_core_toolbox
+de||Werkzeuge
+en||Toolbox
+it||Attrezzi
 
 _handler_plugins
 de||Anwendungsbibliothek
