@@ -21,7 +21,7 @@ General reference
   
 **FUNCTION ALIASES**  
   
-- **fe($path)** &#10140; .main.php on line 510,
+- **fe($path)** &#10140; .main.php on line 511,
   returns boolean if realpath path exists on running server;
   @param string $path
   @return boolean true if realpath exists, false otherwise
@@ -31,22 +31,24 @@ General reference
   @param mixed $mixed
   @return mixed depending on internally defined rules
 
-- **le($msg)** &#10140; .main.php on line 539,
+- **le($msg)** &#10140; .main.php on line 541,
   launches a customizable error 500, mit optional backtrace for debug;
   @param string $msg
   @return boolean false after relocate
 
-- **rt($url = '')** &#10140; .main.php on line 529,
+- **rt($url = '')** &#10140; .main.php on line 531,
   relocates to given relative url or to base path on default;
   @param string $url
+  @return void
 
-- **ru($uri = '')** &#10140; .main.php on line 520,
+- **ru($uri = '')** &#10140; .main.php on line 521,
   returns an absolute uri, based on current server configuration;
   @param string $uri
   @return string absolute http unified resource identifier
 
-- **sb()** &#10140; .main.php on line 547,
+- **sb()** &#10140; .main.php on line 550,
   show call's backtrace with help of error base handler
+  @return void
 
 - **tr($component, $marker)** &#10140; .lib/language.php on line 108,
   executes language translation of marker identifier, referring to given component;
@@ -54,9 +56,10 @@ General reference
   @param string $marker
   @return mixed callback function returned value(s)
 
-- **vd($what)** &#10140; .main.php on line 500,
+- **vd($what)** &#10140; .main.php on line 501,
   returns pre-formatted mixed variables;
   @param mixed $what
+  @return void
 
   
 **TODOS**  
@@ -181,7 +184,7 @@ Class LANGUAGE (Fri, 01 Mar 2013 23:53:23 +0100)
   
 ***  
   
-Class MAIN (Sat, 02 Mar 2013 00:03:12 +0100)  
+Class MAIN (Sat, 02 Mar 2013 22:20:53 +0100)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  

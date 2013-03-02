@@ -496,6 +496,7 @@ class main
 /**
  * returns pre-formatted mixed variables;
  * @param mixed $what
+ * @return void
  */
 function vd($what)
 {
@@ -525,6 +526,7 @@ function ru($uri = '')
 /**
  * relocates to given relative url or to base path on default;
  * @param string $url
+ * @return void
  */
 function rt($url = '')
 {
@@ -543,6 +545,7 @@ function le($msg)
 
 /**
  * show call's backtrace with help of error base handler
+ * @return void
  */
 function sb()
 {
