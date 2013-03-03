@@ -188,6 +188,7 @@ class navigator
 		$self = new self;
 
 		return html::array_to_list(self::$_structure[_SET_HOME_COMPONENT]['sub'], 'ol');
+
 	}
 }
 
