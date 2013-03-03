@@ -106,6 +106,17 @@ class navigator
 		}
 	}
 
+	private function _print_handler_name($branch, $link, $controller)
+	{
+	    $handler = $link . "/" . main::$args[0];
+	    $controller_check =@ $branch['sub'][$link]['sub'][$handler]['controller'];
+
+	    echo tr((!empty($controller_check)
+	            ? $controller_check
+	            : $controller),
+	            $branch['sub'][$link]['handler']);
+	}
+
 	static function render_list()
 	{
 		$self = new self;
@@ -125,17 +136,15 @@ class navigator
 		if ($controller != _SET_HOME_COMPONENT)
 		{
 			$structure = self::$_structure[_SET_HOME_COMPONENT];
-
 			echo html::hyperlink('',
-				                 $structure['name']) . HTML_BREADCRUMB_SEPARATOR;
+				                 $structure['name'])
+			   . HTML_BREADCRUMB_SEPARATOR;
 
 			if (!empty(main::$action))
 			{
 				$branch = $structure['sub'][$controller];
-
 				echo html::hyperlink($controller,
 				                     $branch['name']) . HTML_BREADCRUMB_SEPARATOR;
-
 				$link = $controller . "/" . main::$action;
 
 				if (!empty(main::$args))
@@ -143,18 +152,15 @@ class navigator
 					echo html::hyperlink($link,
 				                         $branch['sub'][$link]['name'])
 				       . HTML_BREADCRUMB_SEPARATOR;
-
 				    $branch['sub'][$link]['handler'] .= '_' . main::$args[0];
 
 				    if (count(main::$args) > 1)
 					{
 						$name = tr($controller,
     						       $branch['sub'][$link]['handler']);
-
 						echo html::hyperlink($link . "/" . main::$args[0],
 				                         	 $name)
 				           . HTML_BREADCRUMB_SEPARATOR . main::$args[1];
-
 						if (!empty(main::$args[2]))
 							echo " ("
 							   . urldecode(implode(", ",
@@ -162,10 +168,7 @@ class navigator
 						       . ")";
 					}
 					else
-						echo tr((!empty($branch['sub'][$link]['sub'][$link . "/" . main::$args[0]]['controller'])
-							    ? $branch['sub'][$link]['sub'][$link . "/" . main::$args[0]]['controller']
-							    : $controller),
-					            $branch['sub'][$link]['handler']);
+					    $self->_print_handler_name($branch, $link, $controller);
 				}
 				else
 					echo $branch['sub'][$link]['name'];
@@ -177,7 +180,7 @@ class navigator
 
 	static function render_active_breadcrumb()
 	{
-		// to be continued after breadcrumb code analisys
+		// to be continued after breadcrumb code analysis
 	}
 
 	static function render_sitemap()
