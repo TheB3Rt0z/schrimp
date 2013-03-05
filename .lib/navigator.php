@@ -137,6 +137,27 @@ class navigator
 	            $branch['sub'][$link]['handler']);
 	}
 
+	private function _print_handler_parameter($self,
+	                                          $branch,
+	                                          $link,
+	                                          $controller)
+	{
+	    echo html::hyperlink($link,
+	                         $branch['sub'][$link]['name'])
+	       . HTML_BREADCRUMB_SEPARATOR;
+
+	    $branch['sub'][$link]['handler'] .= '_' . main::$args[0];
+
+	    if (count(main::$args) > 1)
+			$self->_print_additional_parameters($branch,
+		                                        $link,
+		                                        $controller);
+		else
+		    $self->_print_handler_name($branch,
+		                               $link,
+		                               $controller);
+	}
+
 	static function render_list()
 	{
 		$self = new self;
@@ -168,21 +189,10 @@ class navigator
 				$link = $controller . "/" . main::$action;
 
 				if (!empty(main::$args))
-				{
-					echo html::hyperlink($link,
-				                         $branch['sub'][$link]['name'])
-				       . HTML_BREADCRUMB_SEPARATOR;
-				    $branch['sub'][$link]['handler'] .= '_' . main::$args[0];
-
-				    if (count(main::$args) > 1)
-						$self->_print_additional_parameters($branch,
-					                                        $link,
-					                                        $controller);
-					else
-					    $self->_print_handler_name($branch,
-					                               $link,
-					                               $controller);
-				}
+					$self->_print_handler_parameter($self,
+					                                $branch,
+					                                $link,
+					                                $controller);
 				else
 					echo $branch['sub'][$link]['name'];
 			}

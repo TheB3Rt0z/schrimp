@@ -184,7 +184,7 @@ Class LANGUAGE (Mon, 04 Mar 2013 10:41:00 +0000)
   
 ***  
   
-Class MAIN (Tue, 05 Mar 2013 17:04:39 +0000)  
+Class MAIN (Tue, 05 Mar 2013 17:05:33 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -246,7 +246,7 @@ Class MD (Thu, 28 Feb 2013 12:14:20 +0000)
   
 ***  
   
-Class NAVIGATOR (Tue, 05 Mar 2013 16:55:21 +0000)  
+Class NAVIGATOR (Tue, 05 Mar 2013 17:16:23 +0000)  
 -------------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -254,8 +254,9 @@ Class NAVIGATOR (Tue, 05 Mar 2013 16:55:21 +0000)
 - **__construct** (CPub, Len: 92 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_redics.png "") CyC: 12 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""))
 - **_print_additional_parameters** (Pri, Len: 12 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **_print_handler_name** (Pri, Len: 7 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 0 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
+- **_print_handler_parameter** (Pri, Len: 14 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **render_list** (PubS, Len: 3 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 0 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
-- **render_breadcrumb** (PubS, Len: 43 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_redics.png "") CyC: 5 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
+- **render_breadcrumb** (PubS, Len: 32 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png "") CyC: 4 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **render_active_breadcrumb** (PubS, Len: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 0 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **render_sitemap** (PubS, Len: 5 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 0 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 
