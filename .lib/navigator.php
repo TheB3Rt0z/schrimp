@@ -129,6 +129,7 @@ class navigator
 	                                     $controller)
 	{
 	    $handler = $link . "/" . main::$args[0];
+
 	    $controller_check =@ $branch['sub'][$link]['sub'][$handler]['controller'];
 
 	    echo tr((!empty($controller_check)
@@ -137,8 +138,7 @@ class navigator
 	            $branch['sub'][$link]['handler']);
 	}
 
-	private function _print_handler_parameter($self,
-	                                          $branch,
+	private function _print_handler_parameter($branch,
 	                                          $link,
 	                                          $controller)
 	{
@@ -149,13 +149,40 @@ class navigator
 	    $branch['sub'][$link]['handler'] .= '_' . main::$args[0];
 
 	    if (count(main::$args) > 1)
-			$self->_print_additional_parameters($branch,
+			$this->_print_additional_parameters($branch,
 		                                        $link,
 		                                        $controller);
 		else
-		    $self->_print_handler_name($branch,
+		    $this->_print_handler_name($branch,
 		                               $link,
 		                               $controller);
+	}
+
+	private function _render_breadcrumb($controller)
+	{
+	    $structure = self::$_structure[_SET_HOME_COMPONENT];
+
+		echo html::hyperlink('',
+			                 $structure['name'])
+		   . HTML_BREADCRUMB_SEPARATOR;
+
+		if (!empty(main::$action))
+		{
+			$branch = $structure['sub'][$controller];
+			echo html::hyperlink($controller,
+			                     $branch['name']) . HTML_BREADCRUMB_SEPARATOR;
+
+			$link = $controller . "/" . main::$action;
+
+			if (!empty(main::$args))
+				$this->_print_handler_parameter($branch,
+				                                $link,
+				                                $controller);
+			else
+				echo $branch['sub'][$link]['name'];
+		}
+		else
+			echo $structure['sub'][$controller]['name'];
 	}
 
 	static function render_list()
@@ -172,32 +199,10 @@ class navigator
 		if (!$controller::RENDER_BREADCRUMB)
 			return false;
 
-		$self = new self;
-
 		if ($controller != _SET_HOME_COMPONENT)
 		{
-			$structure = self::$_structure[_SET_HOME_COMPONENT];
-			echo html::hyperlink('',
-				                 $structure['name'])
-			   . HTML_BREADCRUMB_SEPARATOR;
-
-			if (!empty(main::$action))
-			{
-				$branch = $structure['sub'][$controller];
-				echo html::hyperlink($controller,
-				                     $branch['name']) . HTML_BREADCRUMB_SEPARATOR;
-				$link = $controller . "/" . main::$action;
-
-				if (!empty(main::$args))
-					$self->_print_handler_parameter($self,
-					                                $branch,
-					                                $link,
-					                                $controller);
-				else
-					echo $branch['sub'][$link]['name'];
-			}
-			else
-				echo $structure['sub'][$controller]['name'];
+			$self = new self;
+			$self->_render_breadcrumb($controller);
 		}
 	}
 
