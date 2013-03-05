@@ -106,7 +106,27 @@ class navigator
 		}
 	}
 
-	private function _print_handler_name($branch, $link, $controller)
+	private function _print_additional_parameters($branch,
+	                                              $link,
+	                                              $controller)
+	{
+	    $name = tr($controller,
+			       $branch['sub'][$link]['handler']);
+
+		echo html::hyperlink($link . "/" . main::$args[0],
+                         	 $name)
+           . HTML_BREADCRUMB_SEPARATOR . main::$args[1];
+
+		if (!empty(main::$args[2]))
+			echo " ("
+			   . urldecode(implode(", ",
+		                           array_slice(main::$args, 2)))
+		       . ")";
+	}
+
+	private function _print_handler_name($branch,
+	                                     $link,
+	                                     $controller)
 	{
 	    $handler = $link . "/" . main::$args[0];
 	    $controller_check =@ $branch['sub'][$link]['sub'][$handler]['controller'];
@@ -155,20 +175,13 @@ class navigator
 				    $branch['sub'][$link]['handler'] .= '_' . main::$args[0];
 
 				    if (count(main::$args) > 1)
-					{
-						$name = tr($controller,
-    						       $branch['sub'][$link]['handler']);
-						echo html::hyperlink($link . "/" . main::$args[0],
-				                         	 $name)
-				           . HTML_BREADCRUMB_SEPARATOR . main::$args[1];
-						if (!empty(main::$args[2]))
-							echo " ("
-							   . urldecode(implode(", ",
-						                           array_slice(main::$args, 2)))
-						       . ")";
-					}
+						$self->_print_additional_parameters($branch,
+					                                        $link,
+					                                        $controller);
 					else
-					    $self->_print_handler_name($branch, $link, $controller);
+					    $self->_print_handler_name($branch,
+					                               $link,
+					                               $controller);
 				}
 				else
 					echo $branch['sub'][$link]['name'];

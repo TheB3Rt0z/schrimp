@@ -81,7 +81,7 @@ class main
 
     var $documentation = null; // this remain null on production servers..
 
-    function __construct($uri, $documentation = '')
+    function __construct($uri)
     {
     	$this->_set_configuration("configuration"); // easy filename change if needed
     	$this->_load_libraries();
@@ -89,9 +89,12 @@ class main
         if (_SET_DEVELOPMENT_MODE) // only for developers, no further error 500 required
         {
          	$this->documentation = $this->get_documentation();
+
          	$documentation_file = SET_DOCUMENTATION_MD . ".md";
-         	if (chmod($documentation_file, 0777))
+
+         	if (chmod($documentation_file, 0777)) // comment and delete file to resolve permissions
         	    file_put_contents($documentation_file, $this->documentation); // markdown format
+
          	chmod($documentation_file, 0755);
         }
 
