@@ -213,7 +213,7 @@ class navigator
 
 	static function render_sitemap()
 	{
-		$self = new self;
+		$self = new self; // populating structure array if still null (singleton)
 
 		$sub_structure = self::$_structure[_SET_HOME_COMPONENT]['sub'];
 
