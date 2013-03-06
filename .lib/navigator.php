@@ -12,7 +12,7 @@ class navigator
 
 	function __construct()
 	{
-		if (!empty($this->$_structure))
+		if (!empty($this->_structure))
 			return false; // for singleton capability
         else
 		    $this->_initialize_structure();
@@ -46,11 +46,13 @@ class navigator
 	                                                $subbranch);
 
     				$static_variables = $object->getStaticVariables();
-    				$this->_add_handler_static_options($static_variables['options'],
-    					                               $returns['subbranch'],
-    					                               $branch,
-    					                               $returns['link'],
-    					                               $object);
+
+    				if (!empty($static_variables['options']))
+        				$this->_add_handler_static_options($static_variables,
+        					                               $returns['subbranch'],
+        					                               $branch,
+        					                               $returns['link'],
+        					                               $object);
 
                     $subbranch =& $this->_structure[_SET_HOME_COMPONENT]['sub'][$branch];
     			}
@@ -101,13 +103,15 @@ class navigator
 		);
 	}
 
-	private function _add_handler_static_options($options,
+	private function _add_handler_static_options($static_variables,
 	                                             &$subbranch,
 	                                             $branch,
 	                                             $link,
 	                                             $object)
 	{
-		if (!is_array($options))
+		$options = $static_variables['options'];
+
+	    if (!is_array($options))
 			$options = eval($options); // dynamic from static code!
 
 		foreach ($options as $key => $value)

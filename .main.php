@@ -344,7 +344,7 @@ class main
 					foreach ($method_code as $code_line)
 					{
 					    $code_line = explode(" // ", $code_line);
-					    if (strlen($code_line[0]) > MAX_BLOCK_COMPLEXITY)
+					    if (strlen(str_replace("\t", '    ', $code_line[0])) > MAX_BLOCK_COMPLEXITY)
 					        $length_warning = true;
 
 					    foreach (self::$_cyc_counters as $counter)
