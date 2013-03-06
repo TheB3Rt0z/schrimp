@@ -25,7 +25,9 @@ class navigator
 		{
 			require_once $filename;
 
-    		$branch = str_replace(array(_SET_APPLICATION_PATH, ".php"), '', $filename);
+    		$branch = str_replace(array(_SET_APPLICATION_PATH, ".php"),
+    		                      '',
+    		                      $filename);
 
     		$rc = new ReflectionClass($branch);
     		if ($rc->getConstant('VISIBLE_IN_NAVIGATION'))
@@ -36,25 +38,25 @@ class navigator
                                  'COMPONENT VISIBLE NAME')
     		    );
 
-                $subbranch =& $this->_structure[_SET_HOME_COMPONENT]['sub'][$branch];
+                $sub =& $this->_structure[_SET_HOME_COMPONENT]['sub'][$branch];
 
     			foreach ($rc->getMethods(ReflectionMethod::IS_PRIVATE
     				     | !ReflectionMethod::IS_PROTECTED) as $object)
     			{
     			    $returns = $this->_add_handlers($branch,
 	                                                $object,
-	                                                $subbranch);
+	                                                $sub);
 
     				$static_variables = $object->getStaticVariables();
 
     				if (!empty($static_variables['options']))
         				$this->_add_handler_static_options($static_variables,
-        					                               $returns['subbranch'],
+        					                               $returns['sub'],
         					                               $branch,
         					                               $returns['link'],
         					                               $object);
 
-                    $subbranch =& $this->_structure[_SET_HOME_COMPONENT]['sub'][$branch];
+                    $sub =& $this->_structure[_SET_HOME_COMPONENT]['sub'][$branch];
     			}
     		}
 		}
@@ -74,7 +76,7 @@ class navigator
 
 	private function _add_handlers($branch,
 	                               $object,
-	                               &$subbranch)
+	                               &$sub)
 	{
 	    $link = $branch;
 
@@ -86,25 +88,25 @@ class navigator
 		{
 			$link .= "/" . $name;
 
-			if (!isset($subbranch['sub'][$link]))
-				$subbranch['sub'][$link] = array
+			if (!isset($sub['sub'][$link]))
+				$sub['sub'][$link] = array
 				(
 				    'name' => tr($branch,
 				                 $object->name),
 				    'handler' => $object->name
 			    );
 
-			$subbranch =& $subbranch['sub'][$link];
+			$sub =& $sub['sub'][$link];
 		}
 
 		return array(
 		    'link' =>$link,
-		    'subbranch' => &$subbranch,
+		    'sub' => &$sub,
 		);
 	}
 
 	private function _add_handler_static_options($static_variables,
-	                                             &$subbranch,
+	                                             &$sub,
 	                                             $branch,
 	                                             $link,
 	                                             $object)
@@ -127,7 +129,7 @@ class navigator
 				$option_value = $value;
 			}
 
-			$subbranch['sub'][$link . "/" . $key] = array
+			$sub['sub'][$link . "/" . $key] = array
 			(
 				'name' => tr($option_component,
 						     $option_value),
@@ -135,7 +137,7 @@ class navigator
 			);
 
 			if (empty($value))
-				$subbranch['sub'][$link . "/" . $key]['controller'] = $key;
+				$sub['sub'][$link . "/" . $key]['controller'] = $key;
 		}
 	}
 
