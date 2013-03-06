@@ -367,12 +367,13 @@ class main
 							      : ($length <= MAX_METHODS_COMPLEXITY
 							        ? md::image(_SET_INCLUDES_PATH . "img/icon_16x16_yellowops.png")
 							        : md::image(_SET_INCLUDES_PATH . "img/icon_16x16_redics.png")))
-					            . " CyC: " . $cyc . " "
-					            . ($cyc <= (floor(MAX_CYCLOMATIC_COMPLEXITY / 10) * 10)
-					              ? md::image(_SET_INCLUDES_PATH . "img/icon_16x16_greenok.png")
-							      : ($cyc <= MAX_CYCLOMATIC_COMPLEXITY
-							        ? md::image(_SET_INCLUDES_PATH . "img/icon_16x16_yellowops.png")
-							        : md::image(_SET_INCLUDES_PATH . "img/icon_16x16_redics.png")))
+					            . ($cyc ? " CyC: " . $cyc . " "
+    					                . ($cyc <= (floor(MAX_CYCLOMATIC_COMPLEXITY / 10) * 10)
+    					                  ? md::image(_SET_INCLUDES_PATH . "img/icon_16x16_greenok.png")
+    							          : ($cyc <= MAX_CYCLOMATIC_COMPLEXITY
+    							            ? md::image(_SET_INCLUDES_PATH . "img/icon_16x16_yellowops.png")
+    							            : md::image(_SET_INCLUDES_PATH . "img/icon_16x16_redics.png")))
+					                    : '')
 					            . ")\n";
 				}
 
