@@ -8,14 +8,14 @@ class navigator
 		'active breadcrumb' => "dynamic same-level-select trunks, or maybe widget?",
 	);
 
-	private static $_structure = null;
+	private $_structure = null;
 
 	function __construct()
 	{
-		if (!empty(self::$_structure))
+		if (!empty($this->$_structure))
 			return false; // for singleton capability
         else
-		    self::_initialize_structure();
+		    $this->_initialize_structure();
 
 		foreach (array_filter(glob(_SET_APPLICATION_PATH . "*.php"),
 		                      function($value)
@@ -30,47 +30,108 @@ class navigator
     		$rc = new ReflectionClass($branch);
     		if ($rc->getConstant('VISIBLE_IN_NAVIGATION'))
     		{
-    			self::$_structure[_SET_HOME_COMPONENT]['sub'][$branch] = array
+    			$this->_structure[_SET_HOME_COMPONENT]['sub'][$branch] = array
     			(
     			    'name' => tr($branch,
                                  'COMPONENT VISIBLE NAME')
     		    );
 
-    			$subbranch =& self::$_structure[_SET_HOME_COMPONENT]['sub'][$branch];
+                $subbranch =& $this->_structure[_SET_HOME_COMPONENT]['sub'][$branch];
 
     			foreach ($rc->getMethods(ReflectionMethod::IS_PRIVATE
-    				   | !ReflectionMethod::IS_PROTECTED) as $object)
+    				     | !ReflectionMethod::IS_PROTECTED) as $object)
     			{
-    				$link = $branch;
-
-    				$item = explode("_", str_replace("_handler_",
-    						                         '',
-    						                         $object->name));
-    				foreach ($item as $name)
-    				{
-    					$link .= "/" . $name;
-
-    					if (!isset($subbranch['sub'][$link]))
-    						$subbranch['sub'][$link] = array
-    						(
-    						    'name' => tr($branch,
-    						                 $object->name),
-    						    'handler' => $object->name
-    					    );
-
-    					$subbranch =& $subbranch['sub'][$link];
-    				}
+    			    $returns = $this->_add_handlers($branch,
+	                                                $object,
+	                                                $subbranch);
 
     				$static_variables = $object->getStaticVariables();
-    				self::_add_handler_static_options($static_variables['options'],
-    					                              $subbranch,
-    					                              $branch,
-    					                              $link,
-    					                              $object->name);
+    				$this->_add_handler_static_options($static_variables['options'],
+    					                               $returns['subbranch'],
+    					                               $branch,
+    					                               $returns['link'],
+    					                               $object);
 
-    				$subbranch =& self::$_structure[_SET_HOME_COMPONENT]['sub'][$branch];
+                    $subbranch =& $this->_structure[_SET_HOME_COMPONENT]['sub'][$branch];
     			}
     		}
+		}
+	}
+
+	private function _initialize_structure()
+	{
+	    $this->_structure = array
+		(
+			_SET_HOME_COMPONENT => array
+			(
+				'name' => tr(_SET_HOME_COMPONENT,
+                             'COMPONENT VISIBLE NAME'),
+            ),
+        );
+	}
+
+	private function _add_handlers($branch,
+	                               $object,
+	                               &$subbranch)
+	{
+	    $link = $branch;
+
+		$item = explode("_",
+		                str_replace("_handler_",
+				                    '',
+				                    $object->name));
+		foreach ($item as $name)
+		{
+			$link .= "/" . $name;
+
+			if (!isset($subbranch['sub'][$link]))
+				$subbranch['sub'][$link] = array
+				(
+				    'name' => tr($branch,
+				                 $object->name),
+				    'handler' => $object->name
+			    );
+
+			$subbranch =& $subbranch['sub'][$link];
+		}
+
+		return array(
+		    'link' =>$link,
+		    'subbranch' => &$subbranch,
+		);
+	}
+
+	private function _add_handler_static_options($options,
+	                                             &$subbranch,
+	                                             $branch,
+	                                             $link,
+	                                             $object)
+	{
+		if (!is_array($options))
+			$options = eval($options); // dynamic from static code!
+
+		foreach ($options as $key => $value)
+		{
+			if (empty($value))
+			{
+				$option_component = $key;
+				$option_value = 'COMPONENT VISIBLE NAME';
+			}
+			else
+			{
+				$option_component = $branch;
+				$option_value = $value;
+			}
+
+			$subbranch['sub'][$link . "/" . $key] = array
+			(
+				'name' => tr($option_component,
+						     $option_value),
+				'handler' => $object->name . "_" . $key,
+			);
+
+			if (empty($value))
+				$subbranch['sub'][$link . "/" . $key]['controller'] = $key;
 		}
 	}
 
@@ -128,7 +189,7 @@ class navigator
 
 	private function _render_breadcrumb($controller)
 	{
-	    $structure = self::$_structure[_SET_HOME_COMPONENT];
+	    $structure = $this->_structure[_SET_HOME_COMPONENT];
 
 		echo html::hyperlink('',
 			                 $structure['name'])
@@ -153,57 +214,11 @@ class navigator
 			echo $structure['sub'][$controller]['name'];
 	}
 
-	private static function _initialize_structure()
-	{
-	    self::$_structure = array
-		(
-			_SET_HOME_COMPONENT => array
-			(
-				'name' => tr(_SET_HOME_COMPONENT,
-                             'COMPONENT VISIBLE NAME'),
-            ),
-        );
-	}
-
-	private static function _add_handler_static_options($options,
-	                                                    &$subbranch,
-	                                                    $branch,
-	                                                    $link,
-	                                                    $name)
-	{
-		if (!is_array($options))
-			$options = eval($options); // dynamic from static code!
-
-		foreach ($options as $key => $value)
-		{
-			if (empty($value))
-			{
-				$option_component = $key;
-				$option_value = 'COMPONENT VISIBLE NAME';
-			}
-			else
-			{
-				$option_component = $branch;
-				$option_value = $value;
-			}
-
-			$subbranch['sub'][$link . "/" . $key] = array
-			(
-				'name' => tr($option_component,
-						     $option_value),
-				'handler' => $name . "_" . $key,
-			);
-
-			if (empty($value))
-				$subbranch['sub'][$link . "/" . $key]['controller'] = $key;
-		}
-	}
-
 	static function render_list()
 	{
 		$self = new self;
 
-		return html::array_to_list(self::$_structure[_SET_HOME_COMPONENT]['sub']);
+		return html::array_to_list($self->_structure[_SET_HOME_COMPONENT]['sub']);
 	}
 
 	static function render_breadcrumb()
