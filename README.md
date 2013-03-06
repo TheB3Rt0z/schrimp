@@ -1,4 +1,4 @@
-![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.5.2013.03.05  
+![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.5.2013.03.06  
 =========================================================================================================================================  
   
   
@@ -21,7 +21,7 @@ General reference
   
 **FUNCTION ALIASES**  
   
-- **fe($path)** &#10140; .main.php on line 514,
+- **fe($path)** &#10140; .main.php on line 511,
   returns boolean if realpath path exists on running server;
   @param string $path
   @return boolean true if realpath exists, false otherwise
@@ -31,22 +31,22 @@ General reference
   @param mixed $mixed
   @return mixed depending on internally defined rules
 
-- **le($msg)** &#10140; .main.php on line 544,
+- **le($msg)** &#10140; .main.php on line 541,
   launches a customizable error 500, mit optional backtrace for debug;
   @param string $msg
   @return boolean false after relocate
 
-- **rt($url = '')** &#10140; .main.php on line 534,
+- **rt($url = '')** &#10140; .main.php on line 531,
   relocates to given relative url or to base path on default;
   @param string $url
   @return void
 
-- **ru($uri = '')** &#10140; .main.php on line 524,
+- **ru($uri = '')** &#10140; .main.php on line 521,
   returns an absolute uri, based on current server configuration;
   @param string $uri
   @return string absolute http unified resource identifier
 
-- **sb()** &#10140; .main.php on line 553,
+- **sb()** &#10140; .main.php on line 550,
   show call's backtrace with help of error base handler
   @return void
 
@@ -56,7 +56,7 @@ General reference
   @param string $marker
   @return mixed callback function returned value(s)
 
-- **vd($what)** &#10140; .main.php on line 504,
+- **vd($what)** &#10140; .main.php on line 501,
   returns pre-formatted mixed variables;
   @param mixed $what
   @return void
@@ -69,7 +69,7 @@ General reference
   
 ***  
   
-Class CONTROLLER (Fri, 15 Feb 2013 16:53:58 +0000)  
+Class CONTROLLER (Fri, 15 Feb 2013 23:57:48 +0100)  
 --------------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -100,7 +100,7 @@ Class CONTROLLER (Fri, 15 Feb 2013 16:53:58 +0000)
   
 ***  
   
-Class DB (Thu, 28 Feb 2013 12:14:20 +0000)  
+Class DB (Wed, 27 Feb 2013 23:38:19 +0100)  
 ------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -110,13 +110,13 @@ Class DB (Thu, 28 Feb 2013 12:14:20 +0000)
   
 ***  
   
-Class ESCORT (Fri, 23 Nov 2012 17:54:52 +0000)  
+Class ESCORT (Fri, 23 Nov 2012 21:07:16 +0100)  
 ----------------------------------------------  
   
   
 ***  
   
-Class HTML (Thu, 28 Feb 2013 12:14:20 +0000)  
+Class HTML (Wed, 27 Feb 2013 23:44:59 +0100)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -167,7 +167,7 @@ Class HTML (Thu, 28 Feb 2013 12:14:20 +0000)
   
 ***  
   
-Class LANGUAGE (Mon, 04 Mar 2013 10:41:00 +0000)  
+Class LANGUAGE (Fri, 01 Mar 2013 23:53:23 +0100)  
 ------------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -184,12 +184,12 @@ Class LANGUAGE (Mon, 04 Mar 2013 10:41:00 +0000)
   
 ***  
   
-Class MAIN (Tue, 05 Mar 2013 17:05:33 +0000)  
+Class MAIN (Wed, 06 Mar 2013 09:26:54 +0100)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
   
-- **__construct** (CPub, Len: 18 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 2 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
+- **__construct** (CPub, Len: 15 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **_set_configuration** (Pri, Len: 24 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **_load_libraries** (Pri, Len: 5 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 2 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **_set_static_route_traits** (Pri, Len: 7 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 2 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
@@ -225,7 +225,7 @@ Class MAIN (Tue, 05 Mar 2013 17:05:33 +0000)
   
 ***  
   
-Class MD (Thu, 28 Feb 2013 12:14:20 +0000)  
+Class MD (Wed, 27 Feb 2013 23:38:19 +0100)  
 ------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -246,7 +246,7 @@ Class MD (Thu, 28 Feb 2013 12:14:20 +0000)
   
 ***  
   
-Class NAVIGATOR (Tue, 05 Mar 2013 17:44:37 +0000)  
+Class NAVIGATOR (Wed, 06 Mar 2013 09:22:24 +0100)  
 -------------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -269,13 +269,13 @@ Class NAVIGATOR (Tue, 05 Mar 2013 17:44:37 +0000)
   
 ***  
   
-Class POWER (Thu, 29 Nov 2012 13:43:24 +0000)  
+Class POWER (Thu, 29 Nov 2012 20:34:43 +0100)  
 ---------------------------------------------  
   
   
 ***  
   
-Class TOOLBOX (Mon, 04 Mar 2013 10:41:00 +0000)  
+Class TOOLBOX (Fri, 01 Mar 2013 23:31:32 +0100)  
 -----------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -285,7 +285,7 @@ Class TOOLBOX (Mon, 04 Mar 2013 10:41:00 +0000)
   
 ***  
   
-Class WIDGETS (Fri, 23 Nov 2012 17:54:52 +0000)  
+Class WIDGETS (Fri, 23 Nov 2012 21:07:16 +0100)  
 -----------------------------------------------  
   
   
@@ -294,17 +294,17 @@ Class WIDGETS (Fri, 23 Nov 2012 17:54:52 +0000)
 Available components:  
 ---------------------  
   
-**ADMIN (FRI, 23 NOV 2012 09:45:30 +0000)**  
+**ADMIN (FRI, 18 JAN 2013 00:38:07 +0100)**  
   
-**CONTROL (MON, 04 MAR 2013 10:41:00 +0000)**  
+**CONTROL (SAT, 02 MAR 2013 22:58:17 +0100)**  
   
-**DOCUMENTATION (THU, 29 NOV 2012 16:22:52 +0000)**  
+**DOCUMENTATION (THU, 29 NOV 2012 20:34:43 +0100)**  
   
-**ERROR (FRI, 01 MAR 2013 16:01:13 +0000)**  
+**ERROR (FRI, 01 MAR 2013 22:47:10 +0100)**  
   
-**HOMEPAGE (MON, 03 DEC 2012 14:02:33 +0000)**  
+**HOMEPAGE (MON, 03 DEC 2012 21:19:41 +0100)**  
   
-**POWER (FRI, 23 NOV 2012 16:39:58 +0000)**  
+**POWER (FRI, 23 NOV 2012 21:07:16 +0100)**  
   
   
 ***  

@@ -91,11 +91,8 @@ class main
          	$this->documentation = $this->get_documentation();
 
          	$documentation_file = SET_DOCUMENTATION_MD . ".md";
-
-         	if (chmod($documentation_file, 0777)) // comment and delete file to resolve permissions
-        	    file_put_contents($documentation_file, $this->documentation); // markdown format
-
-         	chmod($documentation_file, 0755);
+        	file_put_contents($documentation_file, $this->documentation); // delete file to resolve permissions
+        	//chmod($documentation_file, 0777); // after new create
         }
 
         $this->_initialize(str_replace(_SET_LOCAL_PATH . "/",
