@@ -20,7 +20,8 @@ class navigator
 		foreach (array_filter(glob(_SET_APPLICATION_PATH . "*.php"),
 		                      function($value)
 		                      {
-		                          return !substr_count($value, _SET_HOME_COMPONENT);
+                                  return !substr_count($value,
+		                                               _SET_HOME_COMPONENT);
 		                      }) as $filename)
 		{
 			require_once $filename;
