@@ -21,7 +21,7 @@ General reference
   
 **FUNCTION ALIASES**  
   
-- **fe($path)** &#10140; .main.php on line 512,
+- **fe($path)** &#10140; .main.php on line 511,
   returns boolean if realpath path exists on running server;
   @param string $path
   @return boolean true if realpath exists, false otherwise
@@ -31,22 +31,22 @@ General reference
   @param mixed $mixed
   @return mixed depending on internally defined rules
 
-- **le($msg)** &#10140; .main.php on line 542,
+- **le($msg)** &#10140; .main.php on line 541,
   launches a customizable error 500, mit optional backtrace for debug;
   @param string $msg
   @return boolean false after relocate
 
-- **rt($url = '')** &#10140; .main.php on line 532,
+- **rt($url = '')** &#10140; .main.php on line 531,
   relocates to given relative url or to base path on default;
   @param string $url
   @return void
 
-- **ru($uri = '')** &#10140; .main.php on line 522,
+- **ru($uri = '')** &#10140; .main.php on line 521,
   returns an absolute uri, based on current server configuration;
   @param string $uri
   @return string absolute http unified resource identifier
 
-- **sb()** &#10140; .main.php on line 551,
+- **sb()** &#10140; .main.php on line 550,
   show call's backtrace with help of error base handler
   @return void
 
@@ -56,7 +56,7 @@ General reference
   @param string $marker
   @return mixed callback function returned value(s)
 
-- **vd($what)** &#10140; .main.php on line 502,
+- **vd($what)** &#10140; .main.php on line 501,
   returns pre-formatted mixed variables;
   @param mixed $what
   @return void
@@ -184,12 +184,12 @@ Class LANGUAGE (Mon, 04 Mar 2013 10:41:00 +0000)
   
 ***  
   
-Class MAIN (Wed, 06 Mar 2013 10:07:21 +0000)  
+Class MAIN (Wed, 06 Mar 2013 11:55:59 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
   
-- **__construct** (CPub, Len: 15 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
+- **__construct** (CPub, Len: 14 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **_set_configuration** (Pri, Len: 24 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **_load_libraries** (Pri, Len: 5 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 2 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **_set_static_route_traits** (Pri, Len: 7 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 2 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
@@ -246,17 +246,18 @@ Class MD (Thu, 28 Feb 2013 12:14:20 +0000)
   
 ***  
   
-Class NAVIGATOR (Wed, 06 Mar 2013 11:55:01 +0000)  
+Class NAVIGATOR (Wed, 06 Mar 2013 12:19:47 +0000)  
 -------------------------------------------------  
   
 **CODE REFERENCE:**  
   
-- **__construct** (CPub, Len: 85 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_redics.png "") CyC: 12 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellowops.png ""))
+- **__construct** (CPub, Len: 60 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_redics.png "") CyC: 7 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **_print_additional_parameters** (Pri, Len: 12 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **_print_handler_name** (Pri, Len: 8 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **_print_handler_parameter** (Pri, Len: 14 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **_render_breadcrumb** (Pri, Len: 23 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 2 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **_initialize_structure** (PriS, Len: 8 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
+- **_add_handler_static_options** (PriS, Len: 26 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 4 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **render_list** (PubS, Len: 3 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **render_breadcrumb** (PubS, Len: 10 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 2 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **render_active_breadcrumb** (PubS, Len: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))

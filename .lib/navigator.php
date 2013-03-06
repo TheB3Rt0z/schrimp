@@ -12,10 +12,10 @@ class navigator
 
 	function __construct()
 	{
-		if (!empty(self::$_structure)) // for singleton capability
-			return false;
-
-		self::_initialize_structure();
+		if (!empty(self::$_structure))
+			return false; // for singleton capability
+        else
+		    self::_initialize_structure();
 
 		foreach (array_filter(glob(_SET_APPLICATION_PATH . "*.php"),
 		                      function($value)
@@ -62,36 +62,11 @@ class navigator
     				}
 
     				$static_variables = $object->getStaticVariables();
-    				if (isset($static_variables['options']))
-    				{
-    					$options = $static_variables['options'];
-    					if (!is_array($options))
-    						$options = eval($options); // dynamic from static code!
-
-						foreach ($options as $key => $value)
-						{
-							if (empty($value))
-							{
-								$option_component = $key;
-								$option_value = 'COMPONENT VISIBLE NAME';
-							}
-							else
-							{
-								$option_component = $branch;
-								$option_value = $value;
-							}
-
-							$subbranch['sub'][$link . "/" . $key] = array
-							(
-								'name' => tr($option_component,
-   										     $option_value),
-								'handler' => $object->name . "_" . $key,
-							);
-
-							if (empty($value))
-								$subbranch['sub'][$link . "/" . $key]['controller'] = $key;
-						}
-    				}
+    				self::_add_handler_static_options($static_variables['options'],
+    					                              $subbranch,
+    					                              $branch,
+    					                              $link,
+    					                              $object->name);
 
     				$subbranch =& self::$_structure[_SET_HOME_COMPONENT]['sub'][$branch];
     			}
@@ -188,6 +163,40 @@ class navigator
                              'COMPONENT VISIBLE NAME'),
             ),
         );
+	}
+
+	private static function _add_handler_static_options($options,
+	                                                    &$subbranch,
+	                                                    $branch,
+	                                                    $link,
+	                                                    $name)
+	{
+		if (!is_array($options))
+			$options = eval($options); // dynamic from static code!
+
+		foreach ($options as $key => $value)
+		{
+			if (empty($value))
+			{
+				$option_component = $key;
+				$option_value = 'COMPONENT VISIBLE NAME';
+			}
+			else
+			{
+				$option_component = $branch;
+				$option_value = $value;
+			}
+
+			$subbranch['sub'][$link . "/" . $key] = array
+			(
+				'name' => tr($option_component,
+						     $option_value),
+				'handler' => $name . "_" . $key,
+			);
+
+			if (empty($value))
+				$subbranch['sub'][$link . "/" . $key]['controller'] = $key;
+		}
 	}
 
 	static function render_list()
