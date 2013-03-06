@@ -12,17 +12,10 @@ class navigator
 
 	function __construct()
 	{
-		if (!empty(self::$_structure)) // singleton
-			return true;
+		if (!empty(self::$_structure)) // for singleton capability
+			return false;
 
-		self::$_structure = array
-		(
-			_SET_HOME_COMPONENT => array
-			(
-				'name' => tr(_SET_HOME_COMPONENT,
-                             'COMPONENT VISIBLE NAME'),
-            ),
-        );
+		self::_initialize_structure();
 
 		foreach (array_filter(glob(_SET_APPLICATION_PATH . "*.php"),
 		                      function($value)
@@ -183,6 +176,18 @@ class navigator
 		}
 		else
 			echo $structure['sub'][$controller]['name'];
+	}
+
+	private static function _initialize_structure()
+	{
+	    self::$_structure = array
+		(
+			_SET_HOME_COMPONENT => array
+			(
+				'name' => tr(_SET_HOME_COMPONENT,
+                             'COMPONENT VISIBLE NAME'),
+            ),
+        );
 	}
 
 	static function render_list()
