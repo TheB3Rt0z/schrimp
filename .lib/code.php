@@ -4,7 +4,7 @@ class code
 {
 	public static $todos = array
     (
-        'code analysis' => "load, analyse, printing and more.. with toolbox&dokuhelper?",
+        'code analysis' => "load, analyse, printing and more.. with toolbox class?",
     );
 
 	private static $_cyc_counters = array // do we need failsafe falls?
@@ -102,6 +102,16 @@ class code
 	    return $functions . MD_NEWLINE_SEQUENCE;
 	}
 
+	private static function _get_todos_list()
+	{
+	    $todos = '';
+
+	    foreach (unserialize(_TODOS) as $key => $value)
+	        $todos .= "- **" . $key . "** &#10140; " . $value . "\n";
+
+	    return $todos . MD_NEWLINE_SEQUENCE;
+	}
+
 	private static function _get_components_information()
 	{
 	    $components = md::title(2, "Available components:");
@@ -170,37 +180,6 @@ class code
 	           . " " . _STR_PROJECT_NAME . "'s Documentation "
 	    	   . main::get_version(1) . date('.Y.m.d');
 
-	    $funcs_list = '';
-	    $functions = get_defined_functions();
-	    $user_funcs = $functions['user'];
-	    sort($user_funcs);
-	    foreach ($user_funcs as $function)
-	    {
-	        $function = new ReflectionFunction($function);
-	        $doc_comment = $function->getDocComment();
-	        $parameters = array();
-	        foreach ($function->getParameters() as $parameter)
-	            $parameters[] = "$" . $parameter->getName()
-	            . ($parameter->isOptional()
-	                    ? " = '" . $parameter->getDefaultValue() . "'" // to be formatted like costants
-	                    : '');
-	        $funcs_list .= "- **" . $function->getName() . "("
-	                . implode($parameters, ", ") . ")** &#10140; "
-	                        . str_replace(realpath('') . "/",
-	                                '',
-	                                $function->getFileName())
-	                                . " on line " . $function->getStartLine()
-	                                . ($doc_comment
-	                                        ? "," . trim(str_replace(array("*", "/"),
-	                                                '',
-	                                                $doc_comment), " ")
-	                                        : '') . "\n";
-	    }
-
-	    $todos_list = '';
-	    foreach (unserialize(_TODOS) as $key => $value)
-	        $todos_list .= "- **" . $key . "** &#10140; " . $value . "\n";
-
 	    $classes_list = '';
 	    $declared_classes = get_declared_classes();
 	    asort($declared_classes);
@@ -254,7 +233,7 @@ class code
 	                        . ($length_warning
 	                                ? " " . md::image(_SET_INCLUDES_PATH . "img/icon_16x16_blueboh.png")
 	                                : ",")
-	                                . " Len: " . $length . " "
+	                                . " Len: " . ($length ? $length : '-') . " "
 	                                        . ($length <= (floor(MAX_METHODS_COMPLEXITY / 10) * 10)
 	                                                ? md::image(_SET_INCLUDES_PATH . "img/icon_16x16_greenok.png")
 	                                                : ($length <= MAX_METHODS_COMPLEXITY
@@ -307,7 +286,7 @@ class code
     	         . md::title(3, "Function aliases")
     	           . self::_get_functions_information() // add more information
     	         . md::title(3, 'TODOs')
-    	           . $todos_list . MD_NEWLINE_SEQUENCE
+    	           . self::_get_todos_list()
     	         . md::hr()
     	       . $classes_list
     	       . self::_get_components_information() // adding more information?
