@@ -61,10 +61,7 @@ class code
 	{
 	    $constants = '';
 
-	    $constants_list = get_defined_constants(true);
-	    $user_constants = $constants_list['user'];
-	    ksort($user_constants);
-
+	    $user_constants = self::get_constants_list();
 	    foreach ($user_constants as $key => $value)
 	        if (substr($key, 0, 1) != '_')
 	            $constants .= "- **" . $key . "** &#10140; " . fv($value) . "\n";
@@ -76,15 +73,10 @@ class code
 	{
 	    $functions = '';
 
-	    $functions_list = get_defined_functions();
-	    $user_functions = $functions_list['user'];
-	    sort($user_functions);
-
+	    $user_functions = self::get_functions_list();
 	    foreach ($user_functions as $function)
 	    {
 	        $function = new ReflectionFunction($function);
-
-	        $doc_comment = $function->getDocComment();
 
 	        $parameters = array();
 	        foreach ($function->getParameters() as $parameter)
@@ -92,16 +84,18 @@ class code
 	                          . ($parameter->isOptional()
 	                            ? " = '" . $parameter->getDefaultValue() . "'" // to be formatted like costants
 	                            : '');
+
 	        $functions .= "- **" . $function->getName() . "("
 	                    . implode($parameters, ", ") . ")** &#10140; "
 	                    . str_replace(realpath('') . "/",
 	                                  '',
 	                                  $function->getFileName())
 	                    . " on line " . $function->getStartLine()
-	                    . ($doc_comment
+	                    . ($function->getDocComment()
 	                      ? "," . trim(str_replace(array("*", "/"),
 	                                               '',
-	                                               $doc_comment), " ")
+	                                               $function->getDocComment()),
+	                                   " ")
 	                      : '') . "\n";
 	    }
 
@@ -118,8 +112,28 @@ class code
 	    return $components . MD_NEWLINE_SEQUENCE;
 	}
 
-	static function get_components_list($components = array())
+	static function get_constants_list()
 	{
+	    $constants_list = get_defined_constants(true);
+	    $user_constants = $constants_list['user'];
+	    ksort($user_constants);
+
+	    return $user_constants;
+	}
+
+	static function get_functions_list()
+	{
+	    $functions_list = get_defined_functions();
+	    $user_functions = $functions_list['user'];
+	    sort($user_functions);
+
+	    return $user_functions;
+	}
+
+	static function get_components_list()
+	{
+	    $components = array();
+
 	    $substitutions = array(
 	        _SET_APPLICATION_PATH,
 	        ".php",
