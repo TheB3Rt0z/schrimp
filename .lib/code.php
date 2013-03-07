@@ -102,7 +102,7 @@ class code
 	    return $functions . MD_NEWLINE_SEQUENCE;
 	}
 
-	private static function _get_todos_list()
+	private static function _get_todos_information()
 	{
 	    $todos = '';
 
@@ -288,7 +288,7 @@ class code
     	         . md::title(3, "Function aliases")
     	           . self::_get_functions_information() // add more information
     	         . md::title(3, 'TODOs')
-    	           . self::_get_todos_list()
+    	           . self::_get_todos_information()
     	         . md::hr()
     	       . $classes_list
     	       . self::_get_components_information() // adding more information?
