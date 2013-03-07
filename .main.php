@@ -69,6 +69,9 @@ class main
     	define('MAX_CYCLOMATIC_COMPLEXITY', SET_COMPLEXITY_INDEX); // base complexity index
 		define('MAX_METHODS_COMPLEXITY', SET_COMPLEXITY_INDEX * 3); // ATM 36 max code lines
 		define('MAX_BLOCK_COMPLEXITY', SET_COMPLEXITY_INDEX * 7); // ATM 84 max code line length
+
+		define('MAX_CLASS_COMPLEXITY',
+		       MAX_BLOCK_COMPLEXITY * SET_COMPLEXITY_INDEX); // ATM not used (optional..)
     }
 
     private function _load_libraries()
@@ -172,38 +175,6 @@ class main
         		                      date('n'), date('j'), date('Y'))
         	                 - mktime(17, 11, 33,
         	                       	  9, 21, 2012)) / 31557600), $precision);
-    }
-
-    static function get_components($components = array())
-    {
-        $substitutions = array(
-            _SET_APPLICATION_PATH,
-            ".php",
-        );
-
-    	foreach (glob(_SET_APPLICATION_PATH . "*.php") as $filename) // scans modules directory
-    		if (!substr_count($filename, "_"))
-    		{
-    		    $component = str_replace($substitutions,
-    		                             '',
-    		                             $filename);
-    			$components[$component] = filemtime($filename);
-    		}
-
-    	$substitutions[0] = _SET_APPLICATION_PUBLICPATH;
-
-    	foreach (glob(_SET_APPLICATION_PUBLICPATH . "*.php") as $filename) // scans application directory
-    		if (!substr_count($filename, "_"))
-    	    {
-    	        $component = str_replace($substitutions,
-    	                                 '',
-    	                                 $filename);
-    			$components[$component] = filemtime($filename);
-    	    }
-
-    	ksort($components);
-
-    	return $components;
     }
 
     static function is_webstoraged()
