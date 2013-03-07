@@ -11,7 +11,6 @@ General reference
 - **HTML_BREADCRUMB_SEPARATOR** &#10140; " &raquo; "
 - **LANGUAGE_FALLBACK_LANG** &#10140; "en"
 - **MAX_BLOCK_COMPLEXITY** &#10140; 84
-- **MAX_CLASS_COMPLEXITY** &#10140; 1008
 - **MAX_CYCLOMATIC_COMPLEXITY** &#10140; 12
 - **MAX_METHODS_COMPLEXITY** &#10140; 36
 - **MD_NEWLINE_SEQUENCE** &#10140; "  \n"
@@ -206,7 +205,7 @@ Class LANGUAGE (Fri, 01 Mar 2013 23:53:23 +0100)
   
 ***  
   
-Class MAIN (Fri, 08 Mar 2013 00:43:56 +0100)  
+Class MAIN (Fri, 08 Mar 2013 00:46:34 +0100)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  

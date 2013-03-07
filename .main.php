@@ -70,8 +70,8 @@ class main
 		define('MAX_METHODS_COMPLEXITY', SET_COMPLEXITY_INDEX * 3); // ATM 36 max code lines
 		define('MAX_BLOCK_COMPLEXITY', SET_COMPLEXITY_INDEX * 7); // ATM 84 max code line length
 
-		define('MAX_CLASS_COMPLEXITY',
-		       MAX_BLOCK_COMPLEXITY * SET_COMPLEXITY_INDEX); // ATM not used (optional..)
+		define('_MAX_CLASS_COMPLEXITY',
+		       MAX_BLOCK_COMPLEXITY * SET_COMPLEXITY_INDEX); // ATM not used (private optional)
     }
 
     private function _load_libraries()
