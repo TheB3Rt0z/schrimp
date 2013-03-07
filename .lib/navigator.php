@@ -21,6 +21,8 @@ class navigator
 		                      function($value)
 		                      {
                                   return !substr_count($value,
+		                                               "_")
+		                              && !substr_count($value,
 		                                               _SET_HOME_COMPONENT);
 		                      }) as $filename)
 		{
@@ -30,36 +32,7 @@ class navigator
     		                      '',
     		                      $filename);
 
-    		$rc = new ReflectionClass($branch);
-    		if ($rc->getConstant('VISIBLE_IN_NAVIGATION'))
-    		{
-    			$this->_structure[_SET_HOME_COMPONENT]['sub'][$branch] = array
-    			(
-    			    'name' => tr($branch,
-                                 'COMPONENT VISIBLE NAME')
-    		    );
-
-                $sub =& $this->_structure[_SET_HOME_COMPONENT]['sub'][$branch];
-
-    			foreach ($rc->getMethods(ReflectionMethod::IS_PRIVATE
-    				     | !ReflectionMethod::IS_PROTECTED) as $object)
-    			{
-    			    $returns = $this->_add_handlers($branch,
-	                                                $object,
-	                                                $sub);
-
-    				$static_variables = $object->getStaticVariables();
-
-    				if (!empty($static_variables['options']))
-        				$this->_add_handler_static_options($static_variables,
-        					                               $returns['sub'],
-        					                               $branch,
-        					                               $returns['link'],
-        					                               $object);
-
-                    $sub =& $this->_structure[_SET_HOME_COMPONENT]['sub'][$branch];
-    			}
-    		}
+    		$this->_add_branch($branch); // addition performed only if visible
 		}
 	}
 
@@ -73,6 +46,40 @@ class navigator
                              'COMPONENT VISIBLE NAME'),
             ),
         );
+	}
+
+    private function _add_branch($branch)
+	{
+        if ($branch::VISIBLE_IN_NAVIGATION)
+        {
+    	    $this->_structure[_SET_HOME_COMPONENT]['sub'][$branch] = array
+    		(
+    		    'name' => tr($branch,
+                             'COMPONENT VISIBLE NAME')
+    	    );
+
+            $sub =& $this->_structure[_SET_HOME_COMPONENT]['sub'][$branch];
+
+    		$rc = new ReflectionClass($branch);
+    		foreach ($rc->getMethods(ReflectionMethod::IS_PRIVATE
+    			     | !ReflectionMethod::IS_PROTECTED) as $object)
+    		{
+    		    $returns = $this->_add_handlers($branch,
+                                                $object,
+                                                $sub);
+
+    			$static_variables = $object->getStaticVariables();
+
+    			if (!empty($static_variables['options']))
+    				$this->_add_handler_static_options($static_variables,
+    					                               $returns['sub'],
+    					                               $branch,
+    					                               $returns['link'],
+    					                               $object);
+
+                $sub =& $this->_structure[_SET_HOME_COMPONENT]['sub'][$branch];
+    		}
+        }
 	}
 
 	private function _add_handlers($branch,
@@ -142,24 +149,6 @@ class navigator
 		}
 	}
 
-	private function _print_additional_parameters($branch,
-	                                              $link,
-	                                              $controller)
-	{
-	    $name = tr($controller,
-			       $branch['sub'][$link]['handler']);
-
-		echo html::hyperlink($link . "/" . main::$args[0],
-                         	 $name)
-           . HTML_BREADCRUMB_SEPARATOR . main::$args[1];
-
-		if (!empty(main::$args[2]))
-			echo " ("
-			   . urldecode(implode(", ",
-		                           array_slice(main::$args, 2)))
-		       . ")";
-	}
-
 	private function _print_handler_name($branch,
 	                                     $link,
 	                                     $controller)
@@ -192,6 +181,24 @@ class navigator
 		    $this->_print_handler_name($branch,
 		                               $link,
 		                               $controller);
+	}
+
+    private function _print_additional_parameters($branch,
+	                                              $link,
+	                                              $controller)
+	{
+	    $name = tr($controller,
+			       $branch['sub'][$link]['handler']);
+
+		echo html::hyperlink($link . "/" . main::$args[0],
+                         	 $name)
+           . HTML_BREADCRUMB_SEPARATOR . main::$args[1];
+
+		if (!empty(main::$args[2]))
+			echo " ("
+			   . urldecode(implode(", ",
+		                           array_slice(main::$args, 2)))
+		       . ")";
 	}
 
 	private function _render_breadcrumb($controller)

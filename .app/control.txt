@@ -48,6 +48,11 @@ de||Übersetzer
 en||Translator
 it||Traduttore
 
+_handler_core_code
+de||Kode
+en||Code
+it||Codice
+
 _handler_core_toolbox
 de||Werkzeuge
 en||Toolbox

@@ -136,7 +136,7 @@ class main
             require_once $filename;
     }
 
-    private function _set_static_route_traits($components)
+    private function _set_route_static_traits($components)
     {
         self::$controller = array_shift($components);
         if (!empty($components))
@@ -186,7 +186,7 @@ class main
         	else
         		rt("error/404");
 
-        	$this->_set_static_route_traits($components);
+        	$this->_set_route_static_traits($components);
         }
         else
             $this->_set_home_component();
