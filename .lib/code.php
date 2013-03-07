@@ -57,51 +57,68 @@ class code
         "\t^ ",
 	);
 
-	static function get_components($components = array())
+	private static function _get_constants_information()
+	{
+	    $constants = '';
+
+	    $constants_list = get_defined_constants(true);
+	    $user_constants = $constants_list['user'];
+	    ksort($user_constants);
+
+	    foreach ($user_constants as $key => $value)
+	        if (substr($key, 0, 1) != '_')
+	            $constants .= "- **" . $key . "** &#10140; " . fv($value) . "\n";
+
+	    return $constants;
+	}
+
+	private static function _get_components_information()
+	{
+	    $components = md::title(2, "Available components:");
+
+	    foreach (self::get_components_list() as $component => $uts)
+	        $components .= md::title(3, $component . " (" . date('r', $uts) . ")");
+
+	    return $components . md::hr();
+	}
+
+	static function get_components_list($components = array())
 	{
 	    $substitutions = array(
-	            _SET_APPLICATION_PATH,
-	            ".php",
+	        _SET_APPLICATION_PATH,
+	        ".php",
 	    );
 
 	    foreach (glob(_SET_APPLICATION_PATH . "*.php") as $filename) // scans modules directory
 	        if (!substr_count($filename, "_"))
 	        {
 	            $component = str_replace($substitutions,
-	                    '',
-	                    $filename);
+	                                     '',
+	                                     $filename);
 	            $components[$component] = filemtime($filename);
 	        }
 
-	        $substitutions[0] = _SET_APPLICATION_PUBLICPATH;
+	    $substitutions[0] = _SET_APPLICATION_PUBLICPATH;
 
-	        foreach (glob(_SET_APPLICATION_PUBLICPATH . "*.php") as $filename) // scans application directory
-	            if (!substr_count($filename, "_"))
-	            {
-	                $component = str_replace($substitutions,
-	                        '',
-	                        $filename);
-	                $components[$component] = filemtime($filename);
-	            }
+        foreach (glob(_SET_APPLICATION_PUBLICPATH . "*.php") as $filename) // scans application directory
+            if (!substr_count($filename, "_"))
+            {
+                $component = str_replace($substitutions,
+                                         '',
+                                         $filename);
+                $components[$component] = filemtime($filename);
+            }
 
-	            ksort($components);
+        ksort($components);
 
-	            return $components;
+        return $components;
 	}
 
 	static function get_documentation()
 	{
 	    $title = md::image(_SET_INCLUDES_PATH . "img/schrimp_favicon_md.ico")
-	    . " " . _STR_PROJECT_NAME . "'s Documentation "
-	    	       . main::get_version(1) . date('.Y.m.d');
-
-	    $consts_list = '';
-	    $constants = get_defined_constants(true);
-	    $user_consts = $constants['user'];
-	    ksort($user_consts);
-	    foreach ($user_consts as $key => $value)
-	        if (substr($key, 0, 1) != '_')
-	        $consts_list .= "- **" . $key . "** &#10140; " . fv($value) . "\n";
+	           . " " . _STR_PROJECT_NAME . "'s Documentation "
+	    	   . main::get_version(1) . date('.Y.m.d');
 
 	    $funcs_list = '';
 	    $functions = get_defined_functions();
@@ -233,23 +250,18 @@ class code
 	        }
 	    }
 
-	    $components = md::title(2, "Available components:");
-	    foreach (self::get_components() as $component => $uts)
-	        $components .= md::title(3, $component . " (" . date('r', $uts) . ")");
-	    $components .= md::hr();
-
 	    return md::title(1, $title)
-	    . md::title(2, "General reference")
-	    . md::title(3, "Global configuration constants")
-	    . $consts_list . MD_NEWLINE_SEQUENCE
-	    . md::title(3, "Function aliases")
-	    . $funcs_list . MD_NEWLINE_SEQUENCE // add more information
-	    . md::title(3, 'TODOs')
-	    . $todos_list . MD_NEWLINE_SEQUENCE
-	    . md::hr()
-	    . $classes_list
-	    . $components // adding more information?
-	    . str_repeat("\n", 4) . md::text(_STR_COPYRIGHT_SIGNATURE);
+    	     . md::title(2, "General reference")
+    	     . md::title(3, "Global configuration constants")
+    	     . self::_get_constants_information() . MD_NEWLINE_SEQUENCE
+    	     . md::title(3, "Function aliases")
+    	     . $funcs_list . MD_NEWLINE_SEQUENCE // add more information
+    	     . md::title(3, 'TODOs')
+    	     . $todos_list . MD_NEWLINE_SEQUENCE
+    	     . md::hr()
+    	     . $classes_list
+    	     . self::_get_components_information() // adding more information?
+    	     . str_repeat("\n", 4) . md::text(_STR_COPYRIGHT_SIGNATURE);
 	}
 }
 
