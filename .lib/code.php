@@ -69,7 +69,43 @@ class code
 	        if (substr($key, 0, 1) != '_')
 	            $constants .= "- **" . $key . "** &#10140; " . fv($value) . "\n";
 
-	    return $constants;
+	    return $constants . MD_NEWLINE_SEQUENCE;
+	}
+
+	private static function _get_functions_information()
+	{
+	    $functions = '';
+
+	    $functions_list = get_defined_functions();
+	    $user_functions = $functions_list['user'];
+	    sort($user_functions);
+
+	    foreach ($user_functions as $function)
+	    {
+	        $function = new ReflectionFunction($function);
+
+	        $doc_comment = $function->getDocComment();
+
+	        $parameters = array();
+	        foreach ($function->getParameters() as $parameter)
+	            $parameters[] = "$" . $parameter->getName()
+	                          . ($parameter->isOptional()
+	                            ? " = '" . $parameter->getDefaultValue() . "'" // to be formatted like costants
+	                            : '');
+	        $functions .= "- **" . $function->getName() . "("
+	                    . implode($parameters, ", ") . ")** &#10140; "
+	                    . str_replace(realpath('') . "/",
+	                                  '',
+	                                  $function->getFileName())
+	                    . " on line " . $function->getStartLine()
+	                    . ($doc_comment
+	                      ? "," . trim(str_replace(array("*", "/"),
+	                                               '',
+	                                               $doc_comment), " ")
+	                      : '') . "\n";
+	    }
+
+	    return $functions . MD_NEWLINE_SEQUENCE;
 	}
 
 	private static function _get_components_information()
@@ -79,7 +115,7 @@ class code
 	    foreach (self::get_components_list() as $component => $uts)
 	        $components .= md::title(3, $component . " (" . date('r', $uts) . ")");
 
-	    return $components . md::hr();
+	    return $components . MD_NEWLINE_SEQUENCE;
 	}
 
 	static function get_components_list($components = array())
@@ -251,16 +287,17 @@ class code
 	    }
 
 	    return md::title(1, $title)
-    	     . md::title(2, "General reference")
-    	     . md::title(3, "Global configuration constants")
-    	     . self::_get_constants_information() . MD_NEWLINE_SEQUENCE
-    	     . md::title(3, "Function aliases")
-    	     . $funcs_list . MD_NEWLINE_SEQUENCE // add more information
-    	     . md::title(3, 'TODOs')
-    	     . $todos_list . MD_NEWLINE_SEQUENCE
-    	     . md::hr()
-    	     . $classes_list
-    	     . self::_get_components_information() // adding more information?
+    	       . md::title(2, "General reference")
+    	         . md::title(3, "Global configuration constants")
+    	           . self::_get_constants_information()
+    	         . md::title(3, "Function aliases")
+    	           . self::_get_functions_information() // add more information
+    	         . md::title(3, 'TODOs')
+    	           . $todos_list . MD_NEWLINE_SEQUENCE
+    	         . md::hr()
+    	       . $classes_list
+    	       . self::_get_components_information() // adding more information?
+    	       . md::hr()
     	     . str_repeat("\n", 4) . md::text(_STR_COPYRIGHT_SIGNATURE);
 	}
 }
