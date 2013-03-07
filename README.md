@@ -1,4 +1,4 @@
-![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.5.2013.03.06  
+![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.5.2013.03.07  
 =========================================================================================================================================  
   
   
@@ -69,7 +69,7 @@ General reference
   
 ***  
   
-Class CONTROLLER (Fri, 15 Feb 2013 23:57:48 +0100)  
+Class CONTROLLER (Fri, 15 Feb 2013 16:53:58 +0000)  
 --------------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -100,7 +100,7 @@ Class CONTROLLER (Fri, 15 Feb 2013 23:57:48 +0100)
   
 ***  
   
-Class DB (Wed, 27 Feb 2013 23:38:19 +0100)  
+Class DB (Thu, 28 Feb 2013 12:14:20 +0000)  
 ------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -110,13 +110,13 @@ Class DB (Wed, 27 Feb 2013 23:38:19 +0100)
   
 ***  
   
-Class ESCORT (Fri, 23 Nov 2012 21:07:16 +0100)  
+Class ESCORT (Fri, 23 Nov 2012 17:54:52 +0000)  
 ----------------------------------------------  
   
   
 ***  
   
-Class HTML (Wed, 27 Feb 2013 23:44:59 +0100)  
+Class HTML (Thu, 28 Feb 2013 12:14:20 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -167,7 +167,7 @@ Class HTML (Wed, 27 Feb 2013 23:44:59 +0100)
   
 ***  
   
-Class LANGUAGE (Fri, 01 Mar 2013 23:53:23 +0100)  
+Class LANGUAGE (Mon, 04 Mar 2013 10:41:00 +0000)  
 ------------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -184,7 +184,7 @@ Class LANGUAGE (Fri, 01 Mar 2013 23:53:23 +0100)
   
 ***  
   
-Class MAIN (Wed, 06 Mar 2013 22:51:08 +0100)  
+Class MAIN (Thu, 07 Mar 2013 10:13:07 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -225,7 +225,7 @@ Class MAIN (Wed, 06 Mar 2013 22:51:08 +0100)
   
 ***  
   
-Class MD (Wed, 27 Feb 2013 23:38:19 +0100)  
+Class MD (Thu, 28 Feb 2013 12:14:20 +0000)  
 ------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -246,18 +246,19 @@ Class MD (Wed, 27 Feb 2013 23:38:19 +0100)
   
 ***  
   
-Class NAVIGATOR (Wed, 06 Mar 2013 23:14:17 +0100)  
+Class NAVIGATOR (Thu, 07 Mar 2013 12:28:05 +0000)  
 -------------------------------------------------  
   
 **CODE REFERENCE:**  
   
-- **__construct** (CPub, Len: 49 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_redics.png "") CyC: 6 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
+- **__construct** (CPub, Len: 22 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 3 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **_initialize_structure** (Pri, Len: 8 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
+- **_add_branch** (Pri, Len: 30 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 4 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **_add_handlers** (Pri, Len: 25 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 2 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **_add_handler_static_options** (Pri, Len: 28 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 4 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
-- **_print_additional_parameters** (Pri, Len: 12 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **_print_handler_name** (Pri, Len: 8 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **_print_handler_parameter** (Pri, Len: 14 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
+- **_print_additional_parameters** (Pri, Len: 12 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **_render_breadcrumb** (Pri, Len: 23 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 2 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **render_list** (PubS, Len: 3 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **render_breadcrumb** (PubS, Len: 10 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 2 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
@@ -272,13 +273,13 @@ Class NAVIGATOR (Wed, 06 Mar 2013 23:14:17 +0100)
   
 ***  
   
-Class POWER (Thu, 29 Nov 2012 20:34:43 +0100)  
+Class POWER (Thu, 29 Nov 2012 13:43:24 +0000)  
 ---------------------------------------------  
   
   
 ***  
   
-Class TOOLBOX (Fri, 01 Mar 2013 23:31:32 +0100)  
+Class TOOLBOX (Mon, 04 Mar 2013 10:41:00 +0000)  
 -----------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -288,7 +289,7 @@ Class TOOLBOX (Fri, 01 Mar 2013 23:31:32 +0100)
   
 ***  
   
-Class WIDGETS (Fri, 23 Nov 2012 21:07:16 +0100)  
+Class WIDGETS (Fri, 23 Nov 2012 17:54:52 +0000)  
 -----------------------------------------------  
   
   
@@ -297,17 +298,17 @@ Class WIDGETS (Fri, 23 Nov 2012 21:07:16 +0100)
 Available components:  
 ---------------------  
   
-**ADMIN (FRI, 18 JAN 2013 00:38:07 +0100)**  
+**ADMIN (FRI, 23 NOV 2012 09:45:30 +0000)**  
   
-**CONTROL (SAT, 02 MAR 2013 22:58:17 +0100)**  
+**CONTROL (MON, 04 MAR 2013 10:41:00 +0000)**  
   
-**DOCUMENTATION (THU, 29 NOV 2012 20:34:43 +0100)**  
+**DOCUMENTATION (THU, 29 NOV 2012 16:22:52 +0000)**  
   
-**ERROR (FRI, 01 MAR 2013 22:47:10 +0100)**  
+**ERROR (FRI, 01 MAR 2013 16:01:13 +0000)**  
   
-**HOMEPAGE (MON, 03 DEC 2012 21:19:41 +0100)**  
+**HOMEPAGE (MON, 03 DEC 2012 14:02:33 +0000)**  
   
-**POWER (FRI, 23 NOV 2012 21:07:16 +0100)**  
+**POWER (FRI, 23 NOV 2012 16:39:58 +0000)**  
   
   
 ***  
