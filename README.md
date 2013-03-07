@@ -21,7 +21,7 @@ General reference
   
 **FUNCTION ALIASES**  
   
-- **fe($path)** &#10140; .main.php on line 511,
+- **fe($path)** &#10140; .main.php on line 292,
   returns boolean if realpath path exists on running server;
   @param string $path
   @return boolean true if realpath exists, false otherwise
@@ -31,22 +31,22 @@ General reference
   @param mixed $mixed
   @return mixed depending on internally defined rules
 
-- **le($msg)** &#10140; .main.php on line 541,
+- **le($msg)** &#10140; .main.php on line 322,
   launches a customizable error 500, mit optional backtrace for debug;
   @param string $msg
   @return boolean false after relocate
 
-- **rt($url = '')** &#10140; .main.php on line 531,
+- **rt($url = '')** &#10140; .main.php on line 312,
   relocates to given relative url or to base path on default;
   @param string $url
   @return void
 
-- **ru($uri = '')** &#10140; .main.php on line 521,
+- **ru($uri = '')** &#10140; .main.php on line 302,
   returns an absolute uri, based on current server configuration;
   @param string $uri
   @return string absolute http unified resource identifier
 
-- **sb()** &#10140; .main.php on line 550,
+- **sb()** &#10140; .main.php on line 331,
   show call's backtrace with help of error base handler
   @return void
 
@@ -56,7 +56,7 @@ General reference
   @param string $marker
   @return mixed callback function returned value(s)
 
-- **vd($what)** &#10140; .main.php on line 501,
+- **vd($what)** &#10140; .main.php on line 282,
   returns pre-formatted mixed variables;
   @param mixed $what
   @return void
@@ -69,9 +69,14 @@ General reference
   
 ***  
   
-Class CODE (Thu, 07 Mar 2013 22:27:54 +0100)  
+Class CODE (Thu, 07 Mar 2013 23:15:02 +0100)  
 --------------------------------------------  
   
+**CODE REFERENCE:**  
+  
+- **get_components** (PubS, Len: 28 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 4 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
+- **get_documentation** (PubS ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blueboh.png "") Len: 159 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_redics.png "") CyC: 15 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_redics.png ""))
+
 **TODOS**  
   
 - **code analysis** &#10140; load, analyse, printing and more.. with toolbox&dokuhelper?
@@ -194,12 +199,12 @@ Class LANGUAGE (Fri, 01 Mar 2013 23:53:23 +0100)
   
 ***  
   
-Class MAIN (Thu, 07 Mar 2013 22:27:54 +0100)  
+Class MAIN (Thu, 07 Mar 2013 23:14:15 +0100)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
   
-- **__construct** (CPub, Len: 14 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
+- **__construct** (CPub, Len: 10 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **_set_configuration** (Pri, Len: 24 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **_load_libraries** (Pri, Len: 5 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 2 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **_set_route_static_traits** (Pri, Len: 7 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 2 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
@@ -212,7 +217,6 @@ Class MAIN (Thu, 07 Mar 2013 22:27:54 +0100)
 - **var_dump** (PubS, Len: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **get_version** (PubS, Len: 5 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **get_components** (PubS, Len: 28 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 4 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
-- **get_documentation** (PubS ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blueboh.png "") Len: 159 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_redics.png "") CyC: 15 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_redics.png ""))
 - **is_webstoraged** (PubS, Len: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **is_memcached** (PubS, Len: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **exists_file** (PubS, Len: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
