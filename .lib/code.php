@@ -235,7 +235,9 @@ class code
 	                                : ",")
 	                                . " Len: " . ($length ? $length : '-') . " "
 	                                        . ($length <= (floor(MAX_METHODS_COMPLEXITY / 10) * 10)
-	                                                ? md::image(_SET_INCLUDES_PATH . "img/icon_16x16_greenok.png")
+	                                                ? ($length
+	                                                  ? md::image(_SET_INCLUDES_PATH . "img/icon_16x16_greenok.png")
+	                                                  : '')
 	                                                : ($length <= MAX_METHODS_COMPLEXITY
 	                                                        ? md::image(_SET_INCLUDES_PATH . "img/icon_16x16_yellowops.png")
 	                                                        : md::image(_SET_INCLUDES_PATH . "img/icon_16x16_redics.png")))
