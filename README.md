@@ -69,6 +69,16 @@ General reference
   
 ***  
   
+Class CODE (Thu, 07 Mar 2013 12:35:41 +0000)  
+--------------------------------------------  
+  
+**TODOS**  
+  
+- **code analysis** &#10140; load, analyse, printing and more.. with toolbox&dokuhelper?
+
+  
+***  
+  
 Class CONTROLLER (Fri, 15 Feb 2013 16:53:58 +0000)  
 --------------------------------------------------  
   
@@ -300,7 +310,7 @@ Available components:
   
 **ADMIN (FRI, 23 NOV 2012 09:45:30 +0000)**  
   
-**CONTROL (MON, 04 MAR 2013 10:41:00 +0000)**  
+**CONTROL (THU, 07 MAR 2013 12:37:45 +0000)**  
   
 **DOCUMENTATION (THU, 29 NOV 2012 16:22:52 +0000)**  
   
