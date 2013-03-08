@@ -148,13 +148,13 @@ class code
 	                $method_code = array_slice($class_code,
 	                        $method->getEndLine() - $length - 1,
 	                        $length);
-	                $length_warning = false;
+	                $length_warning = 0;
 	                $cyc = 0;
 	                foreach ($method_code as $code_line)
 	                {
 	                    $code_line = explode(" // ", $code_line);
 	                    if (strlen(str_replace("\t", '    ', $code_line[0])) > MAX_BLOCK_COMPLEXITY)
-	                        $length_warning = true;
+	                        $length_warning++;
 
 	                    foreach (self::$_cyc_counters as $counter)
 	                        $cyc += substr_count($code_line[0], $counter);
@@ -167,7 +167,8 @@ class code
 	                        . ($method->isStatic() ? "S" : '')
 	                        . ($method->isAbstract() ? "A" : '')
 	                        . ($length_warning
-	                                ? " " . md::image(_SET_INCLUDES_PATH . "img/icon_16x16_blueboh.png")
+	                                ? " " . md::image(_SET_INCLUDES_PATH . "img/icon_16x16_blueboh.png",
+	                                                  $length_warning . " too long line(s) found!")
 	                                : ",")
 	                                . " Len: " . ($length ? $length : '-') . " "
 	                                        . ($length <= (floor(MAX_METHODS_COMPLEXITY / 10) * 10)
@@ -175,14 +176,18 @@ class code
 	                                                  ? md::image(_SET_INCLUDES_PATH . "img/icon_16x16_greenok.png")
 	                                                  : '')
 	                                                : ($length <= MAX_METHODS_COMPLEXITY
-	                                                        ? md::image(_SET_INCLUDES_PATH . "img/icon_16x16_yellowops.png")
-	                                                        : md::image(_SET_INCLUDES_PATH . "img/icon_16x16_redics.png")))
+	                                                        ? md::image(_SET_INCLUDES_PATH . "img/icon_16x16_yellowops.png",
+	                                                                    "Method's length could be reduced..")
+	                                                        : md::image(_SET_INCLUDES_PATH . "img/icon_16x16_redics.png",
+	                                                                    "Method's length should be reduced!")))
 	                                                        . ($cyc ? " CyC: " . $cyc . " "
 	                                                                . ($cyc <= (floor(MAX_CYCLOMATIC_COMPLEXITY / 10) * 10)
 	                                                                        ? md::image(_SET_INCLUDES_PATH . "img/icon_16x16_greenok.png")
 	                                                                        : ($cyc <= MAX_CYCLOMATIC_COMPLEXITY
-	                                                                                ? md::image(_SET_INCLUDES_PATH . "img/icon_16x16_yellowops.png")
-	                                                                                : md::image(_SET_INCLUDES_PATH . "img/icon_16x16_redics.png")))
+	                                                                                ? md::image(_SET_INCLUDES_PATH . "img/icon_16x16_yellowops.png",
+	                                                                                            "Method's cyclomatic complexity could be reduced..")
+	                                                                                : md::image(_SET_INCLUDES_PATH . "img/icon_16x16_redics.png",
+	                                                                                            "Method's cyclomatic complexity should be reduced!")))
 	                                                                : '')
 	                                                                . ")\n";
 	            }
