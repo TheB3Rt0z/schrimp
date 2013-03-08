@@ -119,13 +119,9 @@ class code
 	    $declared_classes = get_declared_classes();
 	    asort($declared_classes);
 	    foreach ($declared_classes as $class)
-	    {
-	        $class = new ReflectionClass($class); // name converted to reflection class
-
-	        if ($class->isUserDefined())
+	        if (($class = new ReflectionClass($class)) // name converted to reflection class
+	            && $class->isUserDefined())
 	        {
-	            $class_code = self::get_class_code($class);
-
 	            $class_constants = '';
 	            foreach ($class->getConstants() as $key => $value)
 	                if (substr($key, 0, 1) != '_')
@@ -141,7 +137,7 @@ class code
 	                        : 0);
 	                $length = $method->getEndLine() - $method->getStartLine()
 	                - $num_params - ($method->isAbstract() ? 0 : 2);
-	                $method_code = array_slice($class_code,
+	                $method_code = array_slice(self::get_class_code($class),
 	                        $method->getEndLine() - $length - 1,
 	                        $length);
 	                $length_warning = 0;
@@ -156,12 +152,7 @@ class code
 	                        $cyc += substr_count($code_line[0], $counter);
 	                }
 	                $reference .= "- **" . $method->getName() . "** ("
-	                        . ($method->isConstructor() ? "C" : '')
-	                        . ($method->isPrivate() ? "Pri" : '')
-	                        . ($method->isProtected() ? "Pro" : '')
-	                        . ($method->isPublic() ? "Pub" : '')
-	                        . ($method->isStatic() ? "S" : '')
-	                        . ($method->isAbstract() ? "A" : '')
+	                        . self::get_method_status($method)
 	                        . ($length_warning
 	                                ? " " . md::image(_SET_INCLUDES_PATH . "img/icon_16x16_blueboh.png",
 	                                                  "(?)",
@@ -223,7 +214,6 @@ class code
 	                                            : '')
 	                                            . md::hr();
 	        }
-	    }
 
 	    return $classes . MD_NEWLINE_SEQUENCE;
 	}
@@ -299,6 +289,16 @@ class code
 	                  : '.') . $class->name . ".php";
 
 	    return file($class_path); // in array format
+	}
+
+	static function get_method_status(reflectionMethod $method)
+	{
+	    return ($method->isConstructor() ? "C" : '')
+             . ($method->isPrivate() ? "Pri" : '')
+             . ($method->isProtected() ? "Pro" : '')
+             . ($method->isPublic() ? "Pub" : '')
+             . ($method->isStatic() ? "S" : '')
+             . ($method->isAbstract() ? "A" : '');
 	}
 
 	static function get_documentation()
