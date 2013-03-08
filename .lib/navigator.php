@@ -108,7 +108,7 @@ class navigator
 		}
 
 		return array(
-		    'link' =>$link,
+		    'link' => $link,
 		    'sub' => &$sub,
 		);
 	}
