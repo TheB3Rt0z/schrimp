@@ -168,25 +168,32 @@ class code
 	                        . ($method->isAbstract() ? "A" : '')
 	                        . ($length_warning
 	                                ? " " . md::image(_SET_INCLUDES_PATH . "img/icon_16x16_blueboh.png",
+	                                                  "(?)",
 	                                                  $length_warning . " too long line(s) found!")
 	                                : ",")
 	                                . " Len: " . ($length ? $length : '-') . " "
 	                                        . ($length <= (floor(MAX_METHODS_COMPLEXITY / 10) * 10)
 	                                                ? ($length
-	                                                  ? md::image(_SET_INCLUDES_PATH . "img/icon_16x16_greenok.png")
+	                                                  ? md::image(_SET_INCLUDES_PATH . "img/icon_16x16_greenok.png",
+	                                                              "(&radic;)")
 	                                                  : '')
 	                                                : ($length <= MAX_METHODS_COMPLEXITY
 	                                                        ? md::image(_SET_INCLUDES_PATH . "img/icon_16x16_yellowops.png",
+	                                                                    "(!)",
 	                                                                    "Method's length could be reduced..")
 	                                                        : md::image(_SET_INCLUDES_PATH . "img/icon_16x16_redics.png",
+	                                                                    "(X)",
 	                                                                    "Method's length should be reduced!")))
 	                                                        . ($cyc ? " CyC: " . $cyc . " "
 	                                                                . ($cyc <= (floor(MAX_CYCLOMATIC_COMPLEXITY / 10) * 10)
-	                                                                        ? md::image(_SET_INCLUDES_PATH . "img/icon_16x16_greenok.png")
+	                                                                        ? md::image(_SET_INCLUDES_PATH . "img/icon_16x16_greenok.png",
+	                                                                                    "(&radic;)")
 	                                                                        : ($cyc <= MAX_CYCLOMATIC_COMPLEXITY
 	                                                                                ? md::image(_SET_INCLUDES_PATH . "img/icon_16x16_yellowops.png",
+	                                                                                            "(!)",
 	                                                                                            "Method's cyclomatic complexity could be reduced..")
 	                                                                                : md::image(_SET_INCLUDES_PATH . "img/icon_16x16_redics.png",
+	                                                                                            "(X)",
 	                                                                                            "Method's cyclomatic complexity should be reduced!")))
 	                                                                : '')
 	                                                                . ")\n";

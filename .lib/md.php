@@ -122,10 +122,12 @@ class md
 	}
 
 	static function image($src,
-						  $alt = '')
+						  $alt = '',
+	                      $title = '')
 	{
 		return self::img($src,
-				         $alt);
+				         $alt,
+		                 $title);
 	}
 
 	static function hr() // direct constructing without any content
