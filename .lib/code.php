@@ -131,26 +131,8 @@ class code
 	            $reference = '';
 	            foreach ($class->getMethods() as $method)
 	            {
-	                $parameters = $method->getParameters();
-	                $num_params = ((count($parameters) > 1)
-	                        ? count($parameters) - 1
-	                        : 0);
-	                $length = $method->getEndLine() - $method->getStartLine()
-	                - $num_params - ($method->isAbstract() ? 0 : 2);
-	                $method_code = array_slice(self::get_class_code($class),
-	                        $method->getEndLine() - $length - 1,
-	                        $length);
-	                $length_warning = 0;
-	                $cyc = 0;
-	                foreach ($method_code as $code_line)
-	                {
-	                    $code_line = explode(" // ", $code_line);
-	                    if (strlen(str_replace("\t", '    ', $code_line[0])) > MAX_BLOCK_COMPLEXITY)
-	                        $length_warning++;
+	                extract(self::analyse_method($method)); // generates required variables
 
-	                    foreach (self::$_cyc_counters as $counter)
-	                        $cyc += substr_count($code_line[0], $counter);
-	                }
 	                $reference .= "- **" . $method->getName() . "** ("
 	                        . self::get_method_status($method)
 	                        . ($length_warning
@@ -299,6 +281,42 @@ class code
              . ($method->isPublic() ? "Pub" : '')
              . ($method->isStatic() ? "S" : '')
              . ($method->isAbstract() ? "A" : '');
+	}
+
+	static function analyse_method(reflectionMethod $method)
+	{
+	    $parameters = (count($method->getParameters()) > 1
+	                  ? count($method->getParameters()) - 1
+	                  : 0); // should be an array with infos?
+
+	    $length = $method->getEndLine() - $method->getStartLine()
+	            - $parameters - ($method->isAbstract() ? 0 : 2);
+
+	    $code = array_slice(self::get_class_code($method->getDeclaringClass()),
+	                        $method->getEndLine() - $length - 1,
+	                        $length);
+
+	    $length_warning = 0;
+	    $cyc = 0;
+        foreach ($method_code as $code_line)
+        {
+            $code_line = explode(" // ", $code_line); // avoid calculating comments
+            if (strlen(str_replace("\t",
+                                   '    ',
+                                   $code_line[0])) > MAX_BLOCK_COMPLEXITY) // avoid undesired tabs
+                $length_warning++;
+
+            foreach (self::$_cyc_counters as $counter)
+                $cyc += substr_count($code_line[0], $counter);
+        }
+
+        return array(
+		    'parameters' => $parameters,
+		    'length' => $length,
+            'length_warning' => $length_warning,
+            'method_code' => $method_code,
+            'cyc' => $cyc,
+		);
 	}
 
 	static function get_documentation()
