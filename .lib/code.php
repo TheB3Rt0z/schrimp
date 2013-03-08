@@ -124,11 +124,7 @@ class code
 
 	        if ($class->isUserDefined())
 	        {
-	            $class_code = file(($class->name != 'main'
-	                    ? (file_exists(_SET_LIBRARIES_PATH . $class->name . ".php")
-	                       ? "."
-	                       : '') . _SET_LIBRARIES_PUBLICPATH
-	                    : '.') . $class->name . ".php");
+	            $class_code = self::get_class_code($class);
 
 	            $class_constants = '';
 	            foreach ($class->getConstants() as $key => $value)
@@ -292,6 +288,17 @@ class code
         ksort($components);
 
         return $components;
+	}
+
+	static function get_class_code(reflectionClass $class)
+	{
+	    $class_path = ($class->name != 'main'
+	                  ? (file_exists(_SET_LIBRARIES_PATH . $class->name . ".php")
+	                    ? _SET_LIBRARIES_PATH
+	                    : _SET_LIBRARIES_PUBLICPATH)
+	                  : '.') . $class->name . ".php";
+
+	    return file($class_path); // in array format
 	}
 
 	static function get_documentation()
