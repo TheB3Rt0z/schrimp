@@ -117,7 +117,7 @@ Class CONTROLLER (Fri, 15 Feb 2013 16:53:58 +0000)
   
 ***  
   
-Class DB (Fri, 08 Mar 2013 11:14:16 +0000)  
+Class DB (Fri, 08 Mar 2013 11:27:19 +0000)  
 ------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -126,7 +126,7 @@ Class DB (Fri, 08 Mar 2013 11:14:16 +0000)
 
 **TODOS**  
   
-- **configurations constants** &#10140; maybe they should be in main configuration
+- **connection constants** &#10140; they should be in main configuration file as array (to be unserialized before use)
 
   
 ***  
