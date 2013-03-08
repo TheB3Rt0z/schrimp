@@ -4,7 +4,10 @@ define('DB_TABLE_PREFIX', '');
 
 class db
 {
-	public static $todos = array();
+	public static $todos = array
+	(
+	    'configurations constants' => "maybe they should be in main configuration",
+	);
 
 	const _DATABASE_TYPE = "mysql";
 	const _SERVER_HOST = "127.0.0.1";

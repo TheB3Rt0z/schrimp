@@ -5,9 +5,9 @@ define('HTML_BREADCRUMB_SEPARATOR', " &raquo; ");
 class html
 {
 	public static $todos = array
-	              (
-			          'script online loading' => "if != local, should have a lfb..",
-	              );
+    (
+        'script online loading' => "if != local, should have a lfb..",
+    );
 
 	private $_tag = null;
 	private $_attributes = array();
@@ -16,32 +16,32 @@ class html
     private $_html = '';
 
 	private $_tags = array
-	        (
-	            'single' => array
-	        	(
-	        		'br',
-        	        'img',
-        	        'link',
-	        	),
-				'container' => array
-	        	(
-	        		'a',
-					'div',
-					'h1',
-                    'h2',
-                    'h3',
-                    'h4',
-                    'h5',
-                    'h6',
-					'h7', // experimental
-                    'li',
-                    'ol',
-                    'p',
-	        		'pre',
-                    'script',
-                    'ul',
-	        	)
-	        );
+    (
+        'single' => array
+    	(
+    		'br',
+	        'img',
+	        'link',
+    	),
+		'container' => array
+    	(
+    		'a',
+			'div',
+			'h1',
+            'h2',
+            'h3',
+            'h4',
+            'h5',
+            'h6',
+			'h7', // experimental
+            'li',
+            'ol',
+            'p',
+    		'pre',
+            'script',
+            'ul',
+    	)
+    );
 
 	static private $_linked_files = array();
 

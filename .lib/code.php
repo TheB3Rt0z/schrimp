@@ -120,20 +120,21 @@ class code
 	    asort($declared_classes);
 	    foreach ($declared_classes as $class)
 	    {
-	        $class = new ReflectionClass($class);
+	        $class = new ReflectionClass($class); // name converted to reflection class
+
 	        if ($class->isUserDefined())
 	        {
 	            $class_code = file(($class->name != 'main'
 	                    ? (file_exists(_SET_LIBRARIES_PATH . $class->name . ".php")
-	                            ? "."
-	                            : '') . _SET_LIBRARIES_PUBLICPATH
+	                       ? "."
+	                       : '') . _SET_LIBRARIES_PUBLICPATH
 	                    : '.') . $class->name . ".php");
 
-	            $class_consts = '';
+	            $class_constants = '';
 	            foreach ($class->getConstants() as $key => $value)
 	                if (substr($key, 0, 1) != '_')
-	                $class_consts .= "- **" . $key . "** &#10140; "
-	                        . fv($value) . "\n";
+	                    $class_constants .= "- **" . $key . "** &#10140; "
+	                                      . fv($value) . "\n";
 
 	            $reference = '';
 	            foreach ($class->getMethods() as $method)

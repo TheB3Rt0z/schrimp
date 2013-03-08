@@ -14,28 +14,28 @@ class md
 	private $_md = '';
 
 	private $_tags = array
-	        (
-	        	'h1' => "return MD_NEWLINE_SEQUENCE
-			                  . str_repeat(\"=\",
-			                               strlen(\$this->_content))
-		                      . str_repeat(MD_NEWLINE_SEQUENCE, 3);",
+    (
+    	'h1' => "return MD_NEWLINE_SEQUENCE
+	                  . str_repeat(\"=\",
+	                               strlen(\$this->_content))
+                      . str_repeat(MD_NEWLINE_SEQUENCE, 3);",
 
-			    'h2' => "return MD_NEWLINE_SEQUENCE
-			                  . str_repeat(\"-\",
-			                               strlen(\$this->_content))
-			                  . str_repeat(MD_NEWLINE_SEQUENCE, 2);",
+	    'h2' => "return MD_NEWLINE_SEQUENCE
+	                  . str_repeat(\"-\",
+	                               strlen(\$this->_content))
+	                  . str_repeat(MD_NEWLINE_SEQUENCE, 2);",
 
-			    'h3' => "return str_repeat(MD_NEWLINE_SEQUENCE, 2);",
+	    'h3' => "return str_repeat(MD_NEWLINE_SEQUENCE, 2);",
 
-	        	'hr' => "return MD_NEWLINE_SEQUENCE . '***'
-	        		          . str_repeat(MD_NEWLINE_SEQUENCE, 2);",
+    	'hr' => "return MD_NEWLINE_SEQUENCE . '***'
+    		          . str_repeat(MD_NEWLINE_SEQUENCE, 2);",
 
-	        	'img' => "return '![' . \$this->_attributes['alt'] . ']('
-	        		           . \$this->_attributes['src']
-	        		           . ' \"' . \$this->_attributes['title'] . '\")';",
+    	'img' => "return '![' . \$this->_attributes['alt'] . ']('
+    		           . \$this->_attributes['src']
+    		           . ' \"' . \$this->_attributes['title'] . '\")';",
 
-	        	'text' => "return MD_NEWLINE_SEQUENCE;",
-	       	);
+    	'text' => "return MD_NEWLINE_SEQUENCE;",
+   	);
 
 	function __construct($tag,
 						 $content = '',

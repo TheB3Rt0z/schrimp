@@ -4,8 +4,8 @@ class documentation extends controller
 {
 	private static $_todo = array
 	(
-			'method toString' => "implementare per analisi del codice e calcolini",
-			'[...]:: != self' => "filtro per calcolare le dipendenze implicite..",
+	    'method toString' => "implementare per analisi del codice e calcolini",
+		'[...]:: != self' => "filtro per calcolare le dipendenze implicite..",
 	);
 
 	function initialize()

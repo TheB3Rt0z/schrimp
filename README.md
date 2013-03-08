@@ -69,7 +69,7 @@ General reference
   
 ***  
   
-Class CODE (Fri, 08 Mar 2013 11:05:26 +0000)  
+Class CODE (Fri, 08 Mar 2013 11:10:01 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -77,7 +77,7 @@ Class CODE (Fri, 08 Mar 2013 11:05:26 +0000)
 - **_get_constants_information** (PriS, Len: 8 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 2 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **_get_functions_information** (PriS, Len: 29 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 2 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **_get_todos_information** (PriS, Len: 6 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
-- **_get_classes_information** (PriS ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blueboh.png "") Len: 103 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_redics.png "") CyC: 9 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
+- **_get_classes_information** (PriS ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blueboh.png "") Len: 104 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_redics.png "") CyC: 9 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **_get_components_information** (PriS, Len: 6 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **get_constants_list** (PubS, Len: 5 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
 - **get_functions_list** (PubS, Len: 5 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
@@ -94,11 +94,6 @@ Class CODE (Fri, 08 Mar 2013 11:05:26 +0000)
 Class CONTROLLER (Fri, 15 Feb 2013 16:53:58 +0000)  
 --------------------------------------------------  
   
-**CLASS CONFIGURATION CONSTANTS:**  
-  
-- **VISIBLE_IN_NAVIGATION** &#10140; true
-- **RENDER_BREADCRUMB** &#10140; true
-
 **CODE REFERENCE:**  
   
 - **__construct** (CPub, Len: 5 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
@@ -122,12 +117,16 @@ Class CONTROLLER (Fri, 15 Feb 2013 16:53:58 +0000)
   
 ***  
   
-Class DB (Thu, 28 Feb 2013 12:14:20 +0000)  
+Class DB (Fri, 08 Mar 2013 11:14:16 +0000)  
 ------------------------------------------  
   
 **CODE REFERENCE:**  
   
 - **__construct** (CPub, Len: 16 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png "") CyC: 1 ![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_greenok.png ""))
+
+**TODOS**  
+  
+- **configurations constants** &#10140; maybe they should be in main configuration
 
   
 ***  
@@ -138,7 +137,7 @@ Class ESCORT (Fri, 23 Nov 2012 17:54:52 +0000)
   
 ***  
   
-Class HTML (Thu, 28 Feb 2013 12:14:20 +0000)  
+Class HTML (Fri, 08 Mar 2013 11:14:55 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -245,7 +244,7 @@ Class MAIN (Fri, 08 Mar 2013 09:50:14 +0000)
   
 ***  
   
-Class MD (Thu, 28 Feb 2013 12:14:20 +0000)  
+Class MD (Fri, 08 Mar 2013 11:10:24 +0000)  
 ------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -323,7 +322,7 @@ Available components:
   
 **CONTROL (THU, 07 MAR 2013 12:37:45 +0000)**  
   
-**DOCUMENTATION (THU, 29 NOV 2012 16:22:52 +0000)**  
+**DOCUMENTATION (FRI, 08 MAR 2013 11:11:01 +0000)**  
   
 **ERROR (FRI, 01 MAR 2013 16:01:13 +0000)**  
   
