@@ -112,75 +112,10 @@ class code
 	    return $todos . MD_NEWLINE_SEQUENCE;
 	}
 
-	private static function _get_components_information()
+	private static function _get_classes_information()
 	{
-	    $components = md::title(2, "Available components:");
-
-	    foreach (self::get_components_list() as $component => $uts)
-	        $components .= md::title(3, $component . " (" . date('r', $uts) . ")");
-
-	    return $components . MD_NEWLINE_SEQUENCE;
-	}
-
-	static function get_constants_list()
-	{
-	    $constants_list = get_defined_constants(true);
-	    $user_constants = $constants_list['user'];
-	    ksort($user_constants);
-
-	    return $user_constants;
-	}
-
-	static function get_functions_list()
-	{
-	    $functions_list = get_defined_functions();
-	    $user_functions = $functions_list['user'];
-	    sort($user_functions);
-
-	    return $user_functions;
-	}
-
-	static function get_components_list()
-	{
-	    $components = array();
-
-	    $substitutions = array(
-	        _SET_APPLICATION_PATH,
-	        ".php",
-	    );
-
-	    foreach (glob(_SET_APPLICATION_PATH . "*.php") as $filename) // scans modules directory
-	        if (!substr_count($filename, "_"))
-	        {
-	            $component = str_replace($substitutions,
-	                                     '',
-	                                     $filename);
-	            $components[$component] = filemtime($filename);
-	        }
-
-	    $substitutions[0] = _SET_APPLICATION_PUBLICPATH;
-
-        foreach (glob(_SET_APPLICATION_PUBLICPATH . "*.php") as $filename) // scans application directory
-            if (!substr_count($filename, "_"))
-            {
-                $component = str_replace($substitutions,
-                                         '',
-                                         $filename);
-                $components[$component] = filemtime($filename);
-            }
-
-        ksort($components);
-
-        return $components;
-	}
-
-	static function get_documentation()
-	{
-	    $title = md::image(_SET_INCLUDES_PATH . "img/schrimp_favicon_md.ico")
-	           . " " . _STR_PROJECT_NAME . "'s Documentation "
-	    	   . main::get_version(1) . date('.Y.m.d');
-
 	    $classes_list = '';
+
 	    $declared_classes = get_declared_classes();
 	    asort($declared_classes);
 	    foreach ($declared_classes as $class)
@@ -280,6 +215,75 @@ class code
 	                                            . md::hr();
 	        }
 	    }
+	}
+
+	private static function _get_components_information()
+	{
+	    $components = md::title(2, "Available components:");
+
+	    foreach (self::get_components_list() as $component => $uts)
+	        $components .= md::title(3, $component . " (" . date('r', $uts) . ")");
+
+	    return $components . MD_NEWLINE_SEQUENCE;
+	}
+
+	static function get_constants_list()
+	{
+	    $constants_list = get_defined_constants(true);
+	    $user_constants = $constants_list['user'];
+	    ksort($user_constants);
+
+	    return $user_constants;
+	}
+
+	static function get_functions_list()
+	{
+	    $functions_list = get_defined_functions();
+	    $user_functions = $functions_list['user'];
+	    sort($user_functions);
+
+	    return $user_functions;
+	}
+
+	static function get_components_list()
+	{
+	    $components = array();
+
+	    $substitutions = array(
+	        _SET_APPLICATION_PATH,
+	        ".php",
+	    );
+
+	    foreach (glob(_SET_APPLICATION_PATH . "*.php") as $filename) // scans modules directory
+	        if (!substr_count($filename, "_"))
+	        {
+	            $component = str_replace($substitutions,
+	                                     '',
+	                                     $filename);
+	            $components[$component] = filemtime($filename);
+	        }
+
+	    $substitutions[0] = _SET_APPLICATION_PUBLICPATH;
+
+        foreach (glob(_SET_APPLICATION_PUBLICPATH . "*.php") as $filename) // scans application directory
+            if (!substr_count($filename, "_"))
+            {
+                $component = str_replace($substitutions,
+                                         '',
+                                         $filename);
+                $components[$component] = filemtime($filename);
+            }
+
+        ksort($components);
+
+        return $components;
+	}
+
+	static function get_documentation()
+	{
+	    $title = md::image(_SET_INCLUDES_PATH . "img/schrimp_favicon_md.ico")
+	           . " " . _STR_PROJECT_NAME . "'s Documentation "
+	    	   . main::get_version(1) . date('.Y.m.d');
 
 	    return md::title(1, $title)
     	       . md::title(2, "General reference")
@@ -290,7 +294,7 @@ class code
     	         . md::title(3, 'TODOs')
     	           . self::_get_todos_information()
     	         . md::hr()
-    	       . $classes_list
+    	       . self::_get_classes_information()
     	       . self::_get_components_information() // adding more information?
     	       . md::hr()
     	     . str_repeat("\n", 4) . md::text(_STR_COPYRIGHT_SIGNATURE);
