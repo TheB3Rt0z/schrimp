@@ -114,7 +114,7 @@ class code
 
 	private static function _get_classes_information()
 	{
-	    $classes_list = '';
+	    $classes = '';
 
 	    $declared_classes = get_declared_classes();
 	    asort($declared_classes);
@@ -195,7 +195,7 @@ class code
 	            $heading = "Class " . strtoupper($class->name)
 	            . " (" . date('r', filemtime($class->getFileName())) . ")";
 
-	            $classes_list .= md::title(2, $heading)
+	            $classes .= md::title(2, $heading)
 	            . (!empty($class_consts)
 	                    ? md::title(3, "Class configuration constants:")
 	                    . $class_consts . "\n" // unprotected (no '_XXX') constants here
@@ -215,6 +215,8 @@ class code
 	                                            . md::hr();
 	        }
 	    }
+
+	    return $classes . MD_NEWLINE_SEQUENCE;
 	}
 
 	private static function _get_components_information()
