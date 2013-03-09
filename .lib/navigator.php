@@ -107,7 +107,8 @@ class navigator
 			$sub =& $sub['sub'][$link];
 		}
 
-		return array(
+		return array
+		(
 		    'link' => $link,
 		    'sub' => &$sub,
 		);

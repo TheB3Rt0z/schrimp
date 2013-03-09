@@ -168,25 +168,7 @@ class code
 	        if (($class = new ReflectionClass($class)) // name converted to reflection class
 	            && $class->isUserDefined())
 	        {
-	            $header = "Class " . strtoupper($class->name)
-	                    . " (" . date('r', filemtime($class->getFileName())) . ")";
-
-	            $class_constants = '';
-	            foreach ($class->getConstants() as $key => $value)
-	                if (substr($key, 0, 1) != '_')
-	                    $class_constants .= "- **" . $key . "** &#10140; "
-	                                      . fv($value) . MD_NEWLINE_SEQUENCE;
-
-	            $reference = '';
-	            foreach ($class->getMethods() as $method)
-	                $reference .= self::_get_methods_information($method);
-
-	            $dependences = '';
-
-	            $class_todos = '';
-	            foreach ($class->getStaticPropertyValue('todos') as $key => $value)
-	                $class_todos .= "- **" . $key . "** &#10140; " . $value
-	                              . MD_NEWLINE_SEQUENCE;
+	            extract(self::get_class_data($class));
 
 	            $classes .= md::title(2, $header);
 	            if (!empty($class_consts))
@@ -280,6 +262,38 @@ class code
 	    return file($class_path); // in array format
 	}
 
+	static function get_class_data(reflectionClass $class)
+	{
+	    $header = "Class " . strtoupper($class->name)
+	            . " (" . date('r', filemtime($class->getFileName())) . ")";
+
+	    $class_constants = '';
+	    foreach ($class->getConstants() as $key => $value)
+	        if (substr($key, 0, 1) != '_')
+	            $class_constants .= "- **" . $key . "** &#10140; "
+	                              . fv($value) . MD_NEWLINE_SEQUENCE;
+
+	    $reference = '';
+	    foreach ($class->getMethods() as $method)
+	        $reference .= self::_get_methods_information($method);
+
+	    $dependences = '';
+
+	    $class_todos = '';
+	    foreach ($class->getStaticPropertyValue('todos') as $key => $value)
+	        $class_todos .= "- **" . $key . "** &#10140; " . $value
+	                      . MD_NEWLINE_SEQUENCE;
+
+	    return array
+	    (
+	        'header' => $header,
+	        'class_constants' => $class_constants,
+	        'reference' => $reference,
+	        'dependences' => $dependences,
+	        'class_todos' => $class_todos,
+	    );
+	}
+
 	static function get_method_status(reflectionMethod $method)
 	{
 	    return ($method->isConstructor() ? "C" : '')
@@ -314,7 +328,8 @@ class code
                 $cyc += substr_count($code_line[0], $counter);
         }
 
-        return array(
+        return array
+        (
 		    'parameters' => $parameters,
 		    'length' => $length,
             'code' => $code,
