@@ -292,7 +292,7 @@ class code
 	    $length = $method->getEndLine() - $method->getStartLine()
 	            - $parameters - ($method->isAbstract() ? 0 : 2);
 
-	    $code = array_slice(self::get_class_code($method->getDeclaringClass()),
+	    $method_code = array_slice(self::get_class_code($method->getDeclaringClass()),
 	                        $method->getEndLine() - $length - 1,
 	                        $length);
 
