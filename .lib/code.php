@@ -73,7 +73,8 @@ class code
 	    $user_constants = self::get_constants_list();
 	    foreach ($user_constants as $key => $value)
 	        if (substr($key, 0, 1) != '_')
-	            $constants .= "- **" . $key . "** &#10140; " . fv($value) . "\n";
+	            $constants .= "- **" . $key . "** &#10140; " . fv($value)
+	                        . MD_NEWLINE_SEQUENCE;
 
 	    return $constants . MD_NEWLINE_SEQUENCE;
 	}
@@ -105,7 +106,7 @@ class code
 	                                               '',
 	                                               $function->getDocComment()),
 	                                   " ")
-	                      : '') . "\n";
+	                      : '') . MD_NEWLINE_SEQUENCE;
 	    }
 
 	    return $functions . MD_NEWLINE_SEQUENCE;
@@ -116,9 +117,52 @@ class code
 	    $todos = '';
 
 	    foreach (unserialize(_TODOS) as $key => $value)
-	        $todos .= "- **" . $key . "** &#10140; " . $value . "\n";
+	        $todos .= "- **" . $key . "** &#10140; " . $value
+	                . MD_NEWLINE_SEQUENCE;
 
 	    return $todos . MD_NEWLINE_SEQUENCE;
+	}
+
+	private static function _get_methods_information(reflectionMethod $method)
+	{
+	    extract(self::analyse_method($method)); // generates required variables
+
+	    return "- **" . $method->getName() . "** ("
+	         . self::get_method_status($method)
+	         . ($length_warning
+	           ? " " . md::image(_SET_INCLUDES_PATH . "img/icon_16x16_blueboh.png",
+	                             "(?)",
+	                             $length_warning . " too long line(s) found!")
+	           : ",")
+	         . " Len: " . ($length > 0
+	                      ? $length
+	                      : '-') . " "
+	         . ($length <= (floor(MAX_METHODS_COMPLEXITY / 10) * 10)
+	           ? ($length > 0
+	             ? md::image(_SET_INCLUDES_PATH . "img/icon_16x16_greenok.png",
+	                         "(&radic;)")
+	             : '')
+	           : ($length <= MAX_METHODS_COMPLEXITY
+	             ? md::image(_SET_INCLUDES_PATH . "img/icon_16x16_yellowops.png",
+	                         "(!)",
+	                         "Method's length could be reduced..")
+	             : md::image(_SET_INCLUDES_PATH . "img/icon_16x16_redics.png",
+	                         "(X)",
+	                         "Method's length should be reduced!")))
+	         . ($cyc > 0
+	           ? " CyC: " . $cyc . " "
+	           . ($cyc <= (floor(MAX_CYCLOMATIC_COMPLEXITY / 10) * 10)
+	             ? md::image(_SET_INCLUDES_PATH . "img/icon_16x16_greenok.png",
+	                         "(&radic;)")
+	             : ($cyc <= MAX_CYCLOMATIC_COMPLEXITY
+	               ? md::image(_SET_INCLUDES_PATH . "img/icon_16x16_yellowops.png",
+	                           "(!)",
+	                           "Method's cyclomatic complexity could be reduced..")
+	               : md::image(_SET_INCLUDES_PATH . "img/icon_16x16_redics.png",
+	                           "(X)",
+	                           "Method's cyclomatic complexity should be reduced!")))
+               : '')
+	         . ")" . MD_NEWLINE_SEQUENCE;
 	}
 
 	private static function _get_classes_information()
@@ -135,53 +179,18 @@ class code
 	            foreach ($class->getConstants() as $key => $value)
 	                if (substr($key, 0, 1) != '_')
 	                    $class_constants .= "- **" . $key . "** &#10140; "
-	                                      . fv($value) . "\n";
+	                                      . fv($value) . MD_NEWLINE_SEQUENCE;
 
 	            $reference = '';
 	            foreach ($class->getMethods() as $method)
-	            {
-	                extract(self::analyse_method($method)); // generates required variables
-
-	                $reference .= "- **" . $method->getName() . "** ("
-	                        . self::get_method_status($method)
-	                        . ($length_warning
-	                                ? " " . md::image(_SET_INCLUDES_PATH . "img/icon_16x16_blueboh.png",
-	                                                  "(?)",
-	                                                  $length_warning . " too long line(s) found!")
-	                                : ",")
-	                                . " Len: " . ($length ? $length : '-') . " "
-	                                        . ($length <= (floor(MAX_METHODS_COMPLEXITY / 10) * 10)
-	                                                ? ($length
-	                                                  ? md::image(_SET_INCLUDES_PATH . "img/icon_16x16_greenok.png",
-	                                                              "(&radic;)")
-	                                                  : '')
-	                                                : ($length <= MAX_METHODS_COMPLEXITY
-	                                                        ? md::image(_SET_INCLUDES_PATH . "img/icon_16x16_yellowops.png",
-	                                                                    "(!)",
-	                                                                    "Method's length could be reduced..")
-	                                                        : md::image(_SET_INCLUDES_PATH . "img/icon_16x16_redics.png",
-	                                                                    "(X)",
-	                                                                    "Method's length should be reduced!")))
-	                                                        . ($cyc ? " CyC: " . $cyc . " "
-	                                                                . ($cyc <= (floor(MAX_CYCLOMATIC_COMPLEXITY / 10) * 10)
-	                                                                        ? md::image(_SET_INCLUDES_PATH . "img/icon_16x16_greenok.png",
-	                                                                                    "(&radic;)")
-	                                                                        : ($cyc <= MAX_CYCLOMATIC_COMPLEXITY
-	                                                                                ? md::image(_SET_INCLUDES_PATH . "img/icon_16x16_yellowops.png",
-	                                                                                            "(!)",
-	                                                                                            "Method's cyclomatic complexity could be reduced..")
-	                                                                                : md::image(_SET_INCLUDES_PATH . "img/icon_16x16_redics.png",
-	                                                                                            "(X)",
-	                                                                                            "Method's cyclomatic complexity should be reduced!")))
-	                                                                : '')
-	                                                                . ")\n";
-	            }
+	                $reference .= self::_get_methods_information($method);
 
 	            $dependences = '';
 
 	            $class_todos = '';
 	            foreach ($class->getStaticPropertyValue('todos') as $key => $value)
-	                $class_todos .= "- **" . $key . "** &#10140; " . $value . "\n";
+	                $class_todos .= "- **" . $key . "** &#10140; " . $value
+	                              . MD_NEWLINE_SEQUENCE;
 
 	            $heading = "Class " . strtoupper($class->name)
 	            . " (" . date('r', filemtime($class->getFileName())) . ")";
@@ -189,19 +198,19 @@ class code
 	            $classes .= md::title(2, $heading)
 	            . (!empty($class_consts)
 	                    ? md::title(3, "Class configuration constants:")
-	                    . $class_consts . "\n" // unprotected (no '_XXX') constants here
+	                    . $class_consts . MD_NEWLINE_SEQUENCE // unprotected (no '_XXX') constants here
 	                    : '')
 	                    . (!empty($reference)
 	                            ? md::title(3, "Code reference:")
-	                            . $reference . "\n"
+	                            . $reference . MD_NEWLINE_SEQUENCE
 	                            : '')
 	                            . (!empty($dependences)
 	                                    ? md::title(3, "Dependences:")
-	                                    . $dependences . "\n"
+	                                    . $dependences . MD_NEWLINE_SEQUENCE
 	                                    : '')
 	                                    . (!empty($class_todos)
 	                                            ? md::title(3, "TODOs")
-	                                            . $class_todos . "\n"
+	                                            . $class_todos . MD_NEWLINE_SEQUENCE
 	                                            : '')
 	                                            . md::hr();
 	        }
@@ -343,7 +352,7 @@ class code
     	       . self::_get_classes_information()
     	       . self::_get_components_information() // adding more information?
     	       . md::hr()
-    	     . str_repeat("\n", 4) . md::text(_STR_COPYRIGHT_SIGNATURE);
+    	     . str_repeat(MD_NEWLINE_SEQUENCE, 4) . md::text(_STR_COPYRIGHT_SIGNATURE);
 	}
 }
 
