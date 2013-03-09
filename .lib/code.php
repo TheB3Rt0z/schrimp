@@ -57,6 +57,15 @@ class code
         "\t^ ",
 	);
 
+	private static function _is_too_long($code_line)
+	{
+	    $code_line = explode(" // ", $code_line); // avoid calculating comments
+
+	    return strlen(str_replace("\t", // avoid undesired tabs
+	                              '    ', // 1 tab = 4 spaces
+	                              $code_line[0])) > MAX_BLOCK_COMPLEXITY;
+	}
+
 	private static function _get_constants_information()
 	{
 	    $constants = '';
@@ -285,12 +294,12 @@ class code
 
 	static function analyse_method(reflectionMethod $method)
 	{
-	    $parameters = (count($method->getParameters()) > 1
-	                  ? count($method->getParameters()) - 1
+	    $parameters = (($count = count($method->getParameters())) > 1
+	                  ? $count - 1
 	                  : 0); // should be an array with infos?
 
 	    $length = $method->getEndLine() - $method->getStartLine()
-	            - $parameters - ($method->isAbstract() ? 0 : 2);
+	            - $parameters - ($method->isAbstract() ? 0 : 2); // modifier
 
 	    $code = array_slice(self::get_class_code($method->getDeclaringClass()),
 	                        $method->getEndLine() - $length - 1,
@@ -300,10 +309,7 @@ class code
 	    $cyc = 0;
         foreach ($code as $code_line)
         {
-            $code_line = explode(" // ", $code_line); // avoid calculating comments
-            if (strlen(str_replace("\t",
-                                   '    ',
-                                   $code_line[0])) > MAX_BLOCK_COMPLEXITY) // avoid undesired tabs
+            if (self::_is_too_long($code_line))
                 $length_warning++;
 
             foreach (self::$_cyc_counters as $counter)
