@@ -168,6 +168,9 @@ class code
 	        if (($class = new ReflectionClass($class)) // name converted to reflection class
 	            && $class->isUserDefined())
 	        {
+	            $header = "Class " . strtoupper($class->name)
+	                    . " (" . date('r', filemtime($class->getFileName())) . ")";
+
 	            $class_constants = '';
 	            foreach ($class->getConstants() as $key => $value)
 	                if (substr($key, 0, 1) != '_')
@@ -185,27 +188,20 @@ class code
 	                $class_todos .= "- **" . $key . "** &#10140; " . $value
 	                              . MD_NEWLINE_SEQUENCE;
 
-	            $heading = "Class " . strtoupper($class->name)
-	            . " (" . date('r', filemtime($class->getFileName())) . ")";
-
-	            $classes .= md::title(2, $heading)
-	            . (!empty($class_consts)
-	                    ? md::title(3, "Class configuration constants:")
-	                    . $class_consts . MD_NEWLINE_SEQUENCE // unprotected (no '_XXX') constants here
-	                    : '')
-	                    . (!empty($reference)
-	                            ? md::title(3, "Code reference:")
-	                            . $reference . MD_NEWLINE_SEQUENCE
-	                            : '')
-	                            . (!empty($dependences)
-	                                    ? md::title(3, "Dependences:")
-	                                    . $dependences . MD_NEWLINE_SEQUENCE
-	                                    : '')
-	                                    . (!empty($class_todos)
-	                                            ? md::title(3, "TODOs")
-	                                            . $class_todos . MD_NEWLINE_SEQUENCE
-	                                            : '')
-	                                            . md::hr();
+	            $classes .= md::title(2, $header);
+	            if (!empty($class_consts))
+	                $classes .= md::title(3, "Class configuration constants:")
+	                          . $class_consts . MD_NEWLINE_SEQUENCE; // unprotected (no '_XXX') constants here
+	            if (!empty($reference))
+	                $classes .= md::title(3, "Code reference:")
+	                          . $reference . MD_NEWLINE_SEQUENCE;
+	            if (!empty($dependences))
+	                $classes .= md::title(3, "Dependences:")
+	                          . $dependences . MD_NEWLINE_SEQUENCE;
+	            if (!empty($class_todos))
+	                $classes .= md::title(3, "TODOs")
+	                          . $class_todos . MD_NEWLINE_SEQUENCE;
+	            $classes .= md::hr();
 	        }
 
 	    return $classes . MD_NEWLINE_SEQUENCE;

@@ -69,7 +69,7 @@ General reference
   
 ***  
   
-Class CODE (Sat, 09 Mar 2013 20:20:51 +0100)  
+Class CODE (Sat, 09 Mar 2013 21:01:09 +0100)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -79,7 +79,7 @@ Class CODE (Sat, 09 Mar 2013 20:20:51 +0100)
 - **_get_functions_information** (PriS, Len: 29 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_get_todos_information** (PriS, Len: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_get_methods_information** (PriS, Len: 26 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_get_classes_information** (PriS ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "1 too long line(s) found!") Len: 49 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Method's length should be reduced!"))  
+- **_get_classes_information** (PriS, Len: 45 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Method's length should be reduced!"))  
 - **_get_components_information** (PriS, Len: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_constants_list** (PubS, Len: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_functions_list** (PubS, Len: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
