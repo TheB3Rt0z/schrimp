@@ -121,20 +121,47 @@ class md
 		return $self->_md;
 	}
 
-	static function image($src,
-						  $alt = '',
-	                      $title = '')
-	{
-		return self::img($src,
-				         $alt,
-		                 $title);
-	}
-
 	static function hr() // direct constructing without any content
 	{
 		$self = new self(__FUNCTION__);
 
 		return $self->_md;
+	}
+
+	static function image($src,
+	                      $alt = '',
+	                      $title = '')
+	{
+	    return self::img($src,
+	                     $alt,
+	                     $title);
+	}
+
+	static function green_ok()
+	{
+	    return self::img(_SET_INCLUDES_PATH . "img/icon_16x16_green_ok.png",
+	                     "(&radic;)");
+	}
+
+	static function blue_boh($title)
+	{
+	    return self::img(_SET_INCLUDES_PATH . "img/icon_16x16_blue_boh.png",
+	                     "(?)",
+	                     $title);
+	}
+
+	static function yellow_ops($title)
+	{
+	    return self::img(_SET_INCLUDES_PATH . "img/icon_16x16_yellow_ops.png",
+	                     "(!)",
+	                     $title);
+	}
+
+	static function red_ics($title)
+	{
+	    return self::img(_SET_INCLUDES_PATH . "img/icon_16x16_red_ics.png",
+	                     "(X)",
+	                     $title);
 	}
 
 	static function text($content) // direct construct generator

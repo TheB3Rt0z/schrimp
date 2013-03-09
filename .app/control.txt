@@ -64,9 +64,9 @@ en||Application libraries
 it||Librerie addizionali
 
 _handler_plugins_power
-de||Macht zu Mir
-en||Power to Me
-it||Potere a Me
+de||Stärkung
+en||Strengthening
+it||Potenziamento
 
 _handler_modules
 de||Hauptmodule

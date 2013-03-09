@@ -7,6 +7,11 @@ class code
         'code analysis' => "load, analyse, printing and more.. with toolbox class?",
     );
 
+	const _STR_LENGTH_WARNING = "Method's length could be reduced..";
+	const _STR_LENGTH_ERROR = "Method's length should be reduced!";
+	const _STR_CYC_WARNING = "Method's cyclomatic complexity could be reduced..";
+	const _STR_CYC_ERROR = "Method's cyclomatic complexity should be reduced!";
+
 	private static $_cyc_counters = array // do we need failsafe falls?
 	(
         "if (",
@@ -130,37 +135,25 @@ class code
 	    return "- **" . $method->getName() . "** ("
 	         . self::get_method_status($method)
 	         . ($length_warning
-	           ? " " . md::image(_SET_INCLUDES_PATH . "img/icon_16x16_blueboh.png",
-	                             "(?)",
-	                             $length_warning . " too long line(s) found!")
+	           ? " " . md::blue_boh($length_warning . " too long line(s) found!")
 	           : ",")
 	         . " Len: " . ($length > 0
 	                      ? $length
 	                      : '-') . " "
 	         . ($length <= (floor(MAX_METHODS_COMPLEXITY / 10) * 10)
 	           ? ($length > 0
-	             ? md::image(_SET_INCLUDES_PATH . "img/icon_16x16_greenok.png",
-	                         "(&radic;)")
+	             ? md::green_ok()
 	             : '')
 	           : ($length <= MAX_METHODS_COMPLEXITY
-	             ? md::image(_SET_INCLUDES_PATH . "img/icon_16x16_yellowops.png",
-	                         "(!)",
-	                         "Method's length could be reduced..")
-	             : md::image(_SET_INCLUDES_PATH . "img/icon_16x16_redics.png",
-	                         "(X)",
-	                         "Method's length should be reduced!")))
+	             ? md::yellow_ops(self::_STR_LENGTH_WARNING)
+	             : md::red_ics(self::_STR_LENGTH_ERROR)))
 	         . ($cyc > 0
 	           ? " CyC: " . $cyc . " "
 	           . ($cyc <= (floor(MAX_CYCLOMATIC_COMPLEXITY / 10) * 10)
-	             ? md::image(_SET_INCLUDES_PATH . "img/icon_16x16_greenok.png",
-	                         "(&radic;)")
+	             ? md::green_ok()
 	             : ($cyc <= MAX_CYCLOMATIC_COMPLEXITY
-	               ? md::image(_SET_INCLUDES_PATH . "img/icon_16x16_yellowops.png",
-	                           "(!)",
-	                           "Method's cyclomatic complexity could be reduced..")
-	               : md::image(_SET_INCLUDES_PATH . "img/icon_16x16_redics.png",
-	                           "(X)",
-	                           "Method's cyclomatic complexity should be reduced!")))
+	               ? md::yellow_ops(self::_STR_CYC_WARNING)
+	               : md::red_ics(self::_STR_CYC_ERROR)))
                : '')
 	         . ")" . MD_NEWLINE_SEQUENCE;
 	}
@@ -352,7 +345,8 @@ class code
     	       . self::_get_classes_information()
     	       . self::_get_components_information() // adding more information?
     	       . md::hr()
-    	     . str_repeat(MD_NEWLINE_SEQUENCE, 4) . md::text(_STR_COPYRIGHT_SIGNATURE);
+    	     . str_repeat(MD_NEWLINE_SEQUENCE, 4)
+	         . md::text(_STR_COPYRIGHT_SIGNATURE);
 	}
 }
 

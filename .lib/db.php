@@ -17,21 +17,21 @@ class db
 
 	function __construct()
 	{
-		switch (_DB_DATABASE_TYPE)
+		switch (self::_DB_DATABASE_TYPE)
 		{
 			case 'mysql' :
 			{
-				mysql_connect(_SERVER_HOST,
-				              _ACCOUNT_USER,
-				              _ACCOUNT_PASSWORD);
-    			mysql_select_db(_DATABASE_NAME);
+				mysql_connect(self::_SERVER_HOST,
+				              self::_ACCOUNT_USER,
+				              self::_ACCOUNT_PASSWORD);
+    			mysql_select_db(self::_DATABASE_NAME);
 				break;
 			}
 
 			default :
 				return le(tr('error',
                              "unknown %s database type",
-				             _DATABASE_TYPE));
+				             self::_DATABASE_TYPE));
 		}
 	}
 }
