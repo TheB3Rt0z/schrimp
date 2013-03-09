@@ -292,13 +292,13 @@ class code
 	    $length = $method->getEndLine() - $method->getStartLine()
 	            - $parameters - ($method->isAbstract() ? 0 : 2);
 
-	    $method_code = array_slice(self::get_class_code($method->getDeclaringClass()),
+	    $code = array_slice(self::get_class_code($method->getDeclaringClass()),
 	                        $method->getEndLine() - $length - 1,
 	                        $length);
 
 	    $length_warning = 0;
 	    $cyc = 0;
-        foreach ($method_code as $code_line)
+        foreach ($code as $code_line)
         {
             $code_line = explode(" // ", $code_line); // avoid calculating comments
             if (strlen(str_replace("\t",
@@ -313,8 +313,8 @@ class code
         return array(
 		    'parameters' => $parameters,
 		    'length' => $length,
+            'code' => $code,
             'length_warning' => $length_warning,
-            'method_code' => $method_code,
             'cyc' => $cyc,
 		);
 	}
