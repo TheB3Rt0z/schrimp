@@ -194,7 +194,27 @@ class code
 	    $components = md::title(2, "Available components:");
 
 	    foreach (self::get_components_list() as $component => $uts)
+	    {
+	        if (fe(_SET_APPLICATION_PATH . $component . ".php"))
+	            require_once _SET_APPLICATION_PATH . $component . ".php";
+	        else
+	            require_once _SET_APPLICATION_PUBLICPATH . $component . ".php";
+
+	        $class = new ReflectionClass($component);
+
+	        extract(self::get_class_data($class));
+
 	        $components .= md::title(3, $component . " (" . date('r', $uts) . ")");
+	        if (!empty($class_consts))
+	            $components .= $class_consts . MD_NEWLINE_SEQUENCE; // unprotected (no '_XXX') constants here
+	        if (!empty($reference))
+	            $components .= $reference . MD_NEWLINE_SEQUENCE;
+	        if (!empty($dependencies))
+	            $components .= $dependencies . MD_NEWLINE_SEQUENCE;
+	        if (!empty($class_todos))
+	            $components .= $class_todos . MD_NEWLINE_SEQUENCE;
+	        $components .= md::hr();
+	    }
 
 	    return $components . MD_NEWLINE_SEQUENCE;
 	}
@@ -278,10 +298,22 @@ class code
 
 	static function get_class_code(reflectionClass $class)
 	{
+	    if ($class->getParentClass()
+	        && ($class->getParentClass()->name == 'controller'))
+	    {
+	        $path = _SET_APPLICATION_PATH;
+	        $public_path = _SET_APPLICATION_PUBLICPATH;
+	    }
+	    else
+	    {
+	        $path = _SET_LIBRARIES_PATH;
+	        $public_path = _SET_LIBRARIES_PUBLICPATH;
+	    }
+
 	    $class_path = ($class->name != 'main'
-	                  ? (file_exists(_SET_LIBRARIES_PATH . $class->name . ".php")
-	                    ? _SET_LIBRARIES_PATH
-	                    : _SET_LIBRARIES_PUBLICPATH)
+	                  ? (file_exists($path . $class->name . ".php")
+	                    ? $path
+	                    : $public_path)
 	                  : '.') . $class->name . ".php";
 
 	    return file($class_path); // in array format
@@ -289,14 +321,15 @@ class code
 
 	static function get_class_dependencies(reflectionClass $class)
 	{
-	    $dependencies = array();
+	    $dependencies = array(); // calculation is imprecise..
 
 	    foreach (self::get_libraries_list($class->name) as $key => $value)
 	        $dependencies[$key] = 0;
 
 	    foreach (self::get_class_code($class) as $code_line)
 	        foreach ($dependencies as $key => $value)
-	            if (substr_count($code_line, $key . '::'))
+	            if (substr_count($code_line, $key . '::')
+	                || substr_count($code_line, ' new ' . $key))
 	                $dependencies[$key]++;
 
 	    $dependencies = array_filter($dependencies);

@@ -1,6 +1,6 @@
 <?php
 
-class power
+class powering
 {
 	public static $todos = array();
 }

@@ -63,7 +63,7 @@ de||Anwendungsbibliothek
 en||Application libraries
 it||Librerie addizionali
 
-_handler_plugins_power
+_handler_plugins_powering
 de||Stärkung
 en||Strengthening
 it||Potenziamento
