@@ -171,9 +171,9 @@ class code
 	            extract(self::get_class_data($class));
 
 	            $classes .= md::title(2, $header);
-	            if (!empty($class_consts))
+	            if (!empty($class_constants))
 	                $classes .= md::title(3, "Class configuration constants:")
-	                          . $class_consts . MD_NEWLINE_SEQUENCE; // unprotected (no '_XXX') constants here
+	                          . $class_constants . MD_NEWLINE_SEQUENCE; // unprotected (no '_XXX') constants here
 	            if (!empty($reference))
 	                $classes .= md::title(3, "Code reference:")
 	                          . $reference . MD_NEWLINE_SEQUENCE;
@@ -205,8 +205,8 @@ class code
 	        extract(self::get_class_data($class));
 
 	        $components .= md::title(3, $component . " (" . date('r', $uts) . ")");
-	        if (!empty($class_consts))
-	            $components .= $class_consts . MD_NEWLINE_SEQUENCE; // unprotected (no '_XXX') constants here
+	        if (!empty($class_constants))
+	            $components .= $class_constants . MD_NEWLINE_SEQUENCE; // unprotected (no '_XXX') constants here
 	        if (!empty($reference))
 	            $components .= $reference . MD_NEWLINE_SEQUENCE;
 	        if (!empty($dependencies))
@@ -330,7 +330,9 @@ class code
 	        foreach ($dependencies as $key => $value)
 	            if (substr_count($code_line, $key . '::')
 	                || substr_count($code_line, ' new ' . $key))
+	            {
 	                $dependencies[$key]++;
+	            }
 
 	    $dependencies = array_filter($dependencies);
 
@@ -355,7 +357,7 @@ class code
 
 	    $class_constants = '';
 	    foreach ($class->getConstants() as $key => $value)
-	        //if (substr($key, 0, 1) != '_')
+	        if (substr($key, 0, 1) != '_')
 	            $class_constants .= "- **" . $key . "** &#10140; "
 	                              . fv($value) . MD_NEWLINE_SEQUENCE;
 

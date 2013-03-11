@@ -69,7 +69,7 @@ General reference
   
 ***  
   
-Class CODE (Mon, 11 Mar 2013 22:48:14 +0100)  
+Class CODE (Mon, 11 Mar 2013 22:52:50 +0100)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -86,7 +86,7 @@ Class CODE (Mon, 11 Mar 2013 22:48:14 +0100)
 - **get_libraries_list** (PubS, Len: 27 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_components_list** (PubS, Len: 24 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_class_code** (PubS, Len: 19 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_class_dependencies** (PubS, Len: 25 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **get_class_dependencies** (PubS, Len: 27 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_class_data** (PubS, Len: 26 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_method_status** (PubS, Len: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **analyse_method** (PubS, Len: 30 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
@@ -105,6 +105,11 @@ Uses: **main**, **md**
   
 Class CONTROLLER (Mon, 11 Mar 2013 22:17:32 +0100)  
 --------------------------------------------------  
+  
+**CLASS CONFIGURATION CONSTANTS:**  
+  
+- **VISIBLE_IN_NAVIGATION** &#10140; true  
+- **RENDER_BREADCRUMB** &#10140; true  
   
 **CODE REFERENCE:**  
   
@@ -344,6 +349,9 @@ Available components:
   
 **ADMIN (MON, 11 MAR 2013 22:45:03 +0100)**  
   
+- **VISIBLE_IN_NAVIGATION** &#10140; true  
+- **RENDER_BREADCRUMB** &#10140; true  
+  
 - **initialize** (Pub, Len: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_handler** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **__construct** (CPub, Len: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
@@ -368,9 +376,12 @@ Uses: **html**, **navigator**
   
 ***  
   
-**CONTROL (MON, 11 MAR 2013 22:45:03 +0100)**  
+**CONTROL (MON, 11 MAR 2013 22:57:49 +0100)**  
   
-- **initialize** (Pub ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "1 too long line(s) found!") Len: 15 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **VISIBLE_IN_NAVIGATION** &#10140; true  
+- **RENDER_BREADCRUMB** &#10140; true  
+  
+- **initialize** (Pub, Len: 16 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_handler** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_handler_core** (Pri, Len: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_handler_core_db** (Pri, Len: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
@@ -390,7 +401,7 @@ Uses: **html**, **navigator**
 - **_handler_modules_documentation** (Pri, Len: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_handler_modules_error** (Pri, Len: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_handler_application** (Pri, Len: 30 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_handler_phpinfo** (Pri ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "2 too long line(s) found!") Len: 17 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **_handler_phpinfo** (Pri ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "1 too long line(s) found!") Len: 17 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **__construct** (CPub, Len: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_set_title** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_set_header** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
@@ -413,7 +424,10 @@ Uses: **language**, **main**
   
 ***  
   
-**DOCUMENTATION (MON, 11 MAR 2013 22:45:03 +0100)**  
+**DOCUMENTATION (MON, 11 MAR 2013 23:00:06 +0100)**  
+  
+- **VISIBLE_IN_NAVIGATION** &#10140; true  
+- **RENDER_BREADCRUMB** &#10140; true  
   
 - **initialize** (Pub, Len: 30 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_handler** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
@@ -436,10 +450,16 @@ Uses: **language**, **main**
 - **get_aside** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_footer** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
+- **method toString** &#10140; implementare per analisi del codice e calcolini  
+- **[...]:: != self** &#10140; filtro per calcolare le dipendenze implicite..  
+  
   
 ***  
   
 **ERROR (FRI, 01 MAR 2013 22:47:10 +0100)**  
+  
+- **VISIBLE_IN_NAVIGATION** &#10140; false  
+- **RENDER_BREADCRUMB** &#10140; false  
   
 - **initialize** (Pub, Len: 12 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_handler** (Pro, Len: 10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
@@ -472,6 +492,9 @@ Uses: **html**, **main**, **navigator**
   
 **HOMEPAGE (MON, 11 MAR 2013 22:45:03 +0100)**  
   
+- **VISIBLE_IN_NAVIGATION** &#10140; true  
+- **RENDER_BREADCRUMB** &#10140; true  
+  
 - **initialize** (Pub, Len: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_handler** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **__construct** (CPub, Len: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
@@ -497,6 +520,9 @@ Uses: **html**, **navigator**
 ***  
   
 **POWER (MON, 11 MAR 2013 22:45:03 +0100)**  
+  
+- **VISIBLE_IN_NAVIGATION** &#10140; true  
+- **RENDER_BREADCRUMB** &#10140; true  
   
 - **initialize** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **__construct** (CPub, Len: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  

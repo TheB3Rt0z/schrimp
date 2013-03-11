@@ -2,7 +2,7 @@
 
 class documentation extends controller
 {
-	private static $_todos = array
+	public static $todos = array
 	(
 	    'method toString' => "implementare per analisi del codice e calcolini",
 		'[...]:: != self' => "filtro per calcolare le dipendenze implicite..",

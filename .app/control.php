@@ -17,7 +17,8 @@ class control extends controller
 		if (method_exists(__CLASS__, $method = $method)
 			|| method_exists(__CLASS__, $method = $fallback_method))
 		{
-			call_user_func_array(array($this, $method), array_slice(main::$args, 1));
+			call_user_func_array(array($this, $method),
+			                     array_slice(main::$args, 1));
 		}
 		else
 			rt("error/404");
@@ -211,10 +212,10 @@ class control extends controller
 
 	private function _handler_phpinfo()
 	{
-		static $options = array // from PHP documentation
+		static $options = array // description comes from PHP documentation
 		(
 			'general' => '_handler_phpinfo_general', //	The configuration line, php.ini location, build date, Web Server, System and more.
-			//'credits' => '_handler_phpinfo_credits', //	PHP Credits. See also phpcredits().
+			//'credits' => '_handler_phpinfo_credits', // PHP Credits. See also phpcredits().
 			'configuration' => '_handler_phpinfo_configuration', // Current Local and Master values for PHP directives. See also ini_get().
 			//'modules' => '_handler_phpinfo_modules', // Loaded modules and their respective settings. See also get_loaded_extensions().
 			'environment' => '_handler_phpinfo_environment', // Environment Variable information that's also available in $_ENV.
