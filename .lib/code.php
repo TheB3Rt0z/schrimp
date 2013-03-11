@@ -217,11 +217,47 @@ class code
 	    return $user_functions;
 	}
 
+	static function get_libraries_list()
+	{
+	    $libraries = array('main' => filemtime(".main.php")); // hardcoded? mmm..
+
+	    $substitutions = array
+	    (
+	        _SET_LIBRARIES_PATH,
+	        ".php",
+	    );
+
+	    foreach (glob(_SET_LIBRARIES_PATH . "*.php") as $filename) // scans core directory
+	        if (!substr_count($filename, "_"))
+	        {
+	            $library = str_replace($substitutions,
+	                                   '',
+	                                   $filename);
+	            $libraries[$library] = filemtime($filename);
+	        }
+
+	    $substitutions[0] = _SET_LIBRARIES_PUBLICPATH;
+
+        foreach (glob(_SET_LIBRARIES_PUBLICPATH . "*.php") as $filename) // scans plugins directory
+            if (!substr_count($filename, "_"))
+            {
+                $library = str_replace($substitutions,
+                                       '',
+                                       $filename);
+                $libraries[$library] = filemtime($filename);
+            }
+
+        ksort($libraries);
+
+        return $libraries;
+	}
+
 	static function get_components_list()
 	{
 	    $components = array();
 
-	    $substitutions = array(
+	    $substitutions = array
+	    (
 	        _SET_APPLICATION_PATH,
 	        ".php",
 	    );
@@ -277,7 +313,17 @@ class code
 	    foreach ($class->getMethods() as $method)
 	        $reference .= self::_get_methods_information($method);
 
-	    $dependences = '';
+	    $dependences = array(); // this block, to be moved..
+	    foreach (self::get_libraries_list() as $key => $value)
+	         $dependences[$key] = 0;
+	    $class_code = self::get_class_code($class);
+	    foreach ($class_code as $code_line)
+	        foreach ($dependences as $key => $value)
+	            if (substr_count($key . '::'))
+	                $dependences[$key]++;
+        $dependences = array_filter($dependences);
+        ksort($dependences);
+        $dependences = implode($dependeces, ", ");
 
 	    $class_todos = '';
 	    foreach ($class->getStaticPropertyValue('todos') as $key => $value)

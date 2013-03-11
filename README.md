@@ -1,4 +1,4 @@
-![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.5.2013.03.09  
+![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.5.2013.03.11  
 =========================================================================================================================================  
   
   
@@ -69,7 +69,7 @@ General reference
   
 ***  
   
-Class CODE (Sat, 09 Mar 2013 21:09:03 +0100)  
+Class CODE (Mon, 11 Mar 2013 12:43:51 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -83,9 +83,10 @@ Class CODE (Sat, 09 Mar 2013 21:09:03 +0100)
 - **_get_components_information** (PriS, Len: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_constants_list** (PubS, Len: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_functions_list** (PubS, Len: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_components_list** (PubS, Len: 30 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **get_libraries_list** (PubS, Len: 31 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Method's length could be reduced.."))  
+- **get_components_list** (PubS, Len: 31 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Method's length could be reduced.."))  
 - **get_class_code** (PubS, Len: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_class_data** (PubS, Len: 28 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **get_class_data** (PubS, Len: 38 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Method's length should be reduced!"))  
 - **get_method_status** (PubS, Len: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **analyse_method** (PubS, Len: 30 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_documentation** (PubS, Len: 18 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
@@ -97,7 +98,7 @@ Class CODE (Sat, 09 Mar 2013 21:09:03 +0100)
   
 ***  
   
-Class CONTROLLER (Fri, 15 Feb 2013 23:57:48 +0100)  
+Class CONTROLLER (Fri, 15 Feb 2013 16:53:58 +0000)  
 --------------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -123,7 +124,7 @@ Class CONTROLLER (Fri, 15 Feb 2013 23:57:48 +0100)
   
 ***  
   
-Class DB (Sat, 09 Mar 2013 20:20:51 +0100)  
+Class DB (Mon, 11 Mar 2013 09:13:54 +0000)  
 ------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -137,13 +138,13 @@ Class DB (Sat, 09 Mar 2013 20:20:51 +0100)
   
 ***  
   
-Class ESCORT (Fri, 23 Nov 2012 21:07:16 +0100)  
+Class ESCORT (Fri, 23 Nov 2012 17:54:52 +0000)  
 ----------------------------------------------  
   
   
 ***  
   
-Class HTML (Fri, 08 Mar 2013 21:03:21 +0100)  
+Class HTML (Fri, 08 Mar 2013 11:14:55 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -194,7 +195,7 @@ Class HTML (Fri, 08 Mar 2013 21:03:21 +0100)
   
 ***  
   
-Class LANGUAGE (Fri, 01 Mar 2013 23:53:23 +0100)  
+Class LANGUAGE (Mon, 04 Mar 2013 10:41:00 +0000)  
 ------------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -211,7 +212,7 @@ Class LANGUAGE (Fri, 01 Mar 2013 23:53:23 +0100)
   
 ***  
   
-Class MAIN (Fri, 08 Mar 2013 00:46:34 +0100)  
+Class MAIN (Fri, 08 Mar 2013 09:50:14 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -250,7 +251,7 @@ Class MAIN (Fri, 08 Mar 2013 00:46:34 +0100)
   
 ***  
   
-Class MD (Sat, 09 Mar 2013 19:37:41 +0100)  
+Class MD (Mon, 11 Mar 2013 09:13:54 +0000)  
 ------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -275,7 +276,7 @@ Class MD (Sat, 09 Mar 2013 19:37:41 +0100)
   
 ***  
   
-Class NAVIGATOR (Sat, 09 Mar 2013 21:08:16 +0100)  
+Class NAVIGATOR (Mon, 11 Mar 2013 09:13:54 +0000)  
 -------------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -302,13 +303,13 @@ Class NAVIGATOR (Sat, 09 Mar 2013 21:08:16 +0100)
   
 ***  
   
-Class POWER (Thu, 29 Nov 2012 20:34:43 +0100)  
+Class POWER (Thu, 29 Nov 2012 13:43:24 +0000)  
 ---------------------------------------------  
   
   
 ***  
   
-Class TOOLBOX (Fri, 01 Mar 2013 23:31:32 +0100)  
+Class TOOLBOX (Mon, 04 Mar 2013 10:41:00 +0000)  
 -----------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -318,7 +319,7 @@ Class TOOLBOX (Fri, 01 Mar 2013 23:31:32 +0100)
   
 ***  
   
-Class WIDGETS (Fri, 23 Nov 2012 21:07:16 +0100)  
+Class WIDGETS (Fri, 23 Nov 2012 17:54:52 +0000)  
 -----------------------------------------------  
   
   
@@ -328,17 +329,17 @@ Class WIDGETS (Fri, 23 Nov 2012 21:07:16 +0100)
 Available components:  
 ---------------------  
   
-**ADMIN (FRI, 18 JAN 2013 00:38:07 +0100)**  
+**ADMIN (FRI, 23 NOV 2012 09:45:30 +0000)**  
   
-**CONTROL (THU, 07 MAR 2013 22:27:54 +0100)**  
+**CONTROL (THU, 07 MAR 2013 12:37:45 +0000)**  
   
-**DOCUMENTATION (FRI, 08 MAR 2013 21:03:21 +0100)**  
+**DOCUMENTATION (FRI, 08 MAR 2013 11:11:01 +0000)**  
   
-**ERROR (FRI, 01 MAR 2013 22:47:10 +0100)**  
+**ERROR (FRI, 01 MAR 2013 16:01:13 +0000)**  
   
-**HOMEPAGE (MON, 03 DEC 2012 21:19:41 +0100)**  
+**HOMEPAGE (MON, 03 DEC 2012 14:02:33 +0000)**  
   
-**POWER (FRI, 23 NOV 2012 21:07:16 +0100)**  
+**POWER (FRI, 23 NOV 2012 16:39:58 +0000)**  
   
   
   
