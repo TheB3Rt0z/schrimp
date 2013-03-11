@@ -60,6 +60,10 @@ class code
         "\n^ ",
         "\r^ ",
         "\t^ ",
+	    " ? ",
+	    "\n? ",
+	    "\r? ",
+	    "\t? ",
 	);
 
 	private static function _is_too_long($code_line)
@@ -206,13 +210,17 @@ class code
 
 	        $components .= md::title(3, $component . " (" . date('r', $uts) . ")");
 	        if (!empty($class_constants))
-	            $components .= $class_constants . MD_NEWLINE_SEQUENCE; // unprotected (no '_XXX') constants here
+	            $components .= $class_constants
+	                         . MD_NEWLINE_SEQUENCE . MD_NEWLINE_SEQUENCE; // unprotected (no '_XXX') constants here
 	        if (!empty($reference))
-	            $components .= $reference . MD_NEWLINE_SEQUENCE;
+	            $components .= $reference
+	                         . MD_NEWLINE_SEQUENCE . MD_NEWLINE_SEQUENCE;
 	        if (!empty($dependencies))
-	            $components .= "Uses: " . $dependencies . MD_NEWLINE_SEQUENCE;
+	            $components .= "Uses: " . $dependencies
+	                         . MD_NEWLINE_SEQUENCE . MD_NEWLINE_SEQUENCE;
 	        if (!empty($class_todos))
-	            $components .= $class_todos . MD_NEWLINE_SEQUENCE;
+	            $components .= $class_todos
+	                         . MD_NEWLINE_SEQUENCE . MD_NEWLINE_SEQUENCE;
 	        $components .= md::hr();
 	    }
 
