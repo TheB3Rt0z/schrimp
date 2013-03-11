@@ -69,7 +69,7 @@ General reference
   
 ***  
   
-Class CODE (Mon, 11 Mar 2013 23:32:31 +0100)  
+Class CODE (Mon, 11 Mar 2013 23:36:16 +0100)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -345,10 +345,11 @@ Class WIDGETS (Fri, 23 Nov 2012 21:07:16 +0100)
   
   
 Available components:  
----------------------  
+=====================  
   
-admin (Mon, 11 Mar 2013 22:45:03 +0100)  
----------------------------------------  
+  
+Class ADMIN (Mon, 11 Mar 2013 22:45:03 +0100)  
+---------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
   
@@ -383,8 +384,8 @@ Uses: **html**, **navigator**
   
 ***  
   
-control (Mon, 11 Mar 2013 23:09:32 +0100)  
------------------------------------------  
+Class CONTROL (Mon, 11 Mar 2013 23:09:32 +0100)  
+-----------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
   
@@ -438,8 +439,8 @@ Uses: **language**, **main**
   
 ***  
   
-documentation (Mon, 11 Mar 2013 23:00:06 +0100)  
------------------------------------------------  
+Class DOCUMENTATION (Mon, 11 Mar 2013 23:00:06 +0100)  
+-----------------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
   
@@ -477,8 +478,8 @@ documentation (Mon, 11 Mar 2013 23:00:06 +0100)
   
 ***  
   
-error (Fri, 01 Mar 2013 22:47:10 +0100)  
----------------------------------------  
+Class ERROR (Fri, 01 Mar 2013 22:47:10 +0100)  
+---------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
   
@@ -518,8 +519,8 @@ Uses: **html**, **main**, **navigator**
   
 ***  
   
-homepage (Mon, 11 Mar 2013 22:45:03 +0100)  
-------------------------------------------  
+Class HOMEPAGE (Mon, 11 Mar 2013 22:45:03 +0100)  
+------------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
   
@@ -554,8 +555,8 @@ Uses: **html**, **navigator**
   
 ***  
   
-power (Mon, 11 Mar 2013 22:45:03 +0100)  
----------------------------------------  
+Class POWER (Mon, 11 Mar 2013 22:45:03 +0100)  
+---------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
   

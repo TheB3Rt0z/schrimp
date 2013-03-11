@@ -195,7 +195,7 @@ class code
 
 	private static function _get_components_information()
 	{
-	    $components = md::title(2, "Available components:");
+	    $components = md::title(1, "Available components:");
 
 	    foreach (self::get_components_list() as $component => $uts)
 	    {
@@ -208,7 +208,7 @@ class code
 
 	        extract(self::get_class_data($class));
 
-	        $components .= md::title(2, $component . " (" . date('r', $uts) . ")");
+	        $components .= md::title(2, $header);
 	        if (!empty($class_constants))
 	            $components .= md::title(3, "Class configuration constants:")
 	                         . $class_constants . MD_NEWLINE_SEQUENCE; // unprotected (no '_XXX') constants here
