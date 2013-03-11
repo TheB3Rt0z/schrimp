@@ -214,7 +214,7 @@ class control extends controller
 	{
 		static $options = array // description comes from PHP documentation
 		(
-			'general' => '_handler_phpinfo_general', //	The configuration line, php.ini location, build date, Web Server, System and more.
+			'general' => '_handler_phpinfo_general', // The configuration line, php.ini location, build date, Web Server, System and more.
 			//'credits' => '_handler_phpinfo_credits', // PHP Credits. See also phpcredits().
 			'configuration' => '_handler_phpinfo_configuration', // Current Local and Master values for PHP directives. See also ini_get().
 			//'modules' => '_handler_phpinfo_modules', // Loaded modules and their respective settings. See also get_loaded_extensions().

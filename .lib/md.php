@@ -173,7 +173,7 @@ class md
 	}
 
 	static function title($level,
-			              $content)
+			              $content = '') // for empty list-breakes
 	{
 		if (is_int($level)
 				&& $level > 0

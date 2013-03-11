@@ -210,17 +210,13 @@ class code
 
 	        $components .= md::title(3, $component . " (" . date('r', $uts) . ")");
 	        if (!empty($class_constants))
-	            $components .= $class_constants
-	                         . MD_NEWLINE_SEQUENCE . MD_NEWLINE_SEQUENCE; // unprotected (no '_XXX') constants here
+	            $components .= $class_constants . md::title(3); // unprotected (no '_XXX') constants here
 	        if (!empty($reference))
-	            $components .= $reference
-	                         . MD_NEWLINE_SEQUENCE . MD_NEWLINE_SEQUENCE;
+	            $components .= $reference . md::title(3);
 	        if (!empty($dependencies))
-	            $components .= "Uses: " . $dependencies
-	                         . MD_NEWLINE_SEQUENCE . MD_NEWLINE_SEQUENCE;
+	            $components .= "Uses: " . $dependencies . md::title(3);
 	        if (!empty($class_todos))
-	            $components .= $class_todos
-	                         . MD_NEWLINE_SEQUENCE . MD_NEWLINE_SEQUENCE;
+	            $components .= $class_todos . md::title(3);
 	        $components .= md::hr();
 	    }
 
@@ -449,7 +445,6 @@ class code
     	         . md::hr()
     	       . self::_get_classes_information()
     	       . self::_get_components_information() // adding more information?
-    	       . md::hr()
     	     . str_repeat(MD_NEWLINE_SEQUENCE, 4)
 	         . md::text(_STR_COPYRIGHT_SIGNATURE);
 	}
