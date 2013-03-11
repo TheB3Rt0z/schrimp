@@ -69,7 +69,7 @@ General reference
   
 ***  
   
-Class CODE (Mon, 11 Mar 2013 13:07:28 +0000)  
+Class CODE (Mon, 11 Mar 2013 13:22:22 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -86,14 +86,14 @@ Class CODE (Mon, 11 Mar 2013 13:07:28 +0000)
 - **get_libraries_list** (PubS, Len: 31 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Method's length could be reduced.."))  
 - **get_components_list** (PubS, Len: 31 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Method's length could be reduced.."))  
 - **get_class_code** (PubS, Len: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_class_data** (PubS, Len: 42 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Method's length should be reduced!"))  
+- **get_class_data** (PubS ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "1 too long line(s) found!") Len: 43 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Method's length should be reduced!"))  
 - **get_method_status** (PubS, Len: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **analyse_method** (PubS, Len: 30 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_documentation** (PubS, Len: 18 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
 **DEPENDENCIES:**  
   
-Uses: main, md  
+Uses: **main**, **md**  
   
 **TODOS**  
   
@@ -194,7 +194,7 @@ Class HTML (Fri, 08 Mar 2013 11:14:55 +0000)
   
 **DEPENDENCIES:**  
   
-Uses: html  
+Uses: **html**  
   
 **TODOS**  
   
@@ -215,7 +215,7 @@ Class LANGUAGE (Mon, 04 Mar 2013 10:41:00 +0000)
   
 **DEPENDENCIES:**  
   
-Uses: language  
+Uses: **language**  
   
 **TODOS**  
   
@@ -253,7 +253,7 @@ Class MAIN (Fri, 08 Mar 2013 09:50:14 +0000)
   
 **DEPENDENCIES:**  
   
-Uses: code, html, main  
+Uses: **code**, **html**, **main**  
   
 **TODOS**  
   
@@ -313,7 +313,7 @@ Class NAVIGATOR (Mon, 11 Mar 2013 09:13:54 +0000)
   
 **DEPENDENCIES:**  
   
-Uses: controller, html, main  
+Uses: **controller**, **html**, **main**  
   
 **TODOS**  
   
@@ -338,7 +338,7 @@ Class TOOLBOX (Mon, 04 Mar 2013 10:41:00 +0000)
   
 **DEPENDENCIES:**  
   
-Uses: toolbox  
+Uses: **toolbox**  
   
   
 ***  
