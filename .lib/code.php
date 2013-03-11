@@ -415,7 +415,7 @@ class code
                 $length_warning++;
 
             foreach (self::$_cyc_counters as $counter)
-                $cyc += substr_count($code_line[0], $counter);
+                $cyc += substr_count($code_line, $counter);
         }
 
         return array
