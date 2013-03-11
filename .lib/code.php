@@ -323,7 +323,7 @@ class code
 	                $dependencies[$key]++;
         $dependencies = array_filter($dependencies);
         ksort($dependencies);
-        $dependencies = implode($dependecies, ", ");
+        $dependencies = implode(", ", $dependecies);
 
 	    $class_todos = '';
 	    foreach ($class->getStaticPropertyValue('todos') as $key => $value)
