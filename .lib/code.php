@@ -217,7 +217,7 @@ class code
 	    return $user_functions;
 	}
 
-	static function get_libraries_list()
+	static function get_libraries_list($exclude = null)
 	{
 	    $libraries = array('main' => filemtime(".main.php")); // hardcoded? mmm..
 
@@ -248,6 +248,10 @@ class code
             }
 
         ksort($libraries);
+
+        if (!empty($exclude) // this 'could' be converted in one single line..
+            && isset($libraries[$exclude]))
+            unset($libraries[$exclude]);
 
         return $libraries;
 	}
@@ -314,7 +318,7 @@ class code
 	        $reference .= self::_get_methods_information($method);
 
 	    $dependencies = array(); // this block, to be moved..
-	    foreach (self::get_libraries_list() as $key => $value)
+	    foreach (self::get_libraries_list($class->name) as $key => $value)
 	         $dependencies[$key] = 0;
 	    $class_code = self::get_class_code($class);
 	    foreach ($class_code as $code_line)

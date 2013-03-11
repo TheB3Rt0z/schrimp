@@ -69,7 +69,7 @@ General reference
   
 ***  
   
-Class CODE (Mon, 11 Mar 2013 13:22:22 +0000)  
+Class CODE (Mon, 11 Mar 2013 13:27:54 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -83,7 +83,7 @@ Class CODE (Mon, 11 Mar 2013 13:22:22 +0000)
 - **_get_components_information** (PriS, Len: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_constants_list** (PubS, Len: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_functions_list** (PubS, Len: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_libraries_list** (PubS, Len: 31 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Method's length could be reduced.."))  
+- **get_libraries_list** (PubS, Len: 35 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Method's length could be reduced.."))  
 - **get_components_list** (PubS, Len: 31 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Method's length could be reduced.."))  
 - **get_class_code** (PubS, Len: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_class_data** (PubS ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "1 too long line(s) found!") Len: 43 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Method's length should be reduced!"))  
@@ -192,10 +192,6 @@ Class HTML (Fri, 08 Mar 2013 11:14:55 +0000)
 - **preform** (PubS, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **title** (PubS, Len: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
-**DEPENDENCIES:**  
-  
-Uses: **html**  
-  
 **TODOS**  
   
 - **script online loading** &#10140; if != local, should have a lfb..  
@@ -212,10 +208,6 @@ Class LANGUAGE (Mon, 04 Mar 2013 10:41:00 +0000)
 - **is_supported** (PubS, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_component_translations_array** (PubS, Len: 20 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **translate** (PubS, Len: 27 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-  
-**DEPENDENCIES:**  
-  
-Uses: **language**  
   
 **TODOS**  
   
@@ -253,7 +245,7 @@ Class MAIN (Fri, 08 Mar 2013 09:50:14 +0000)
   
 **DEPENDENCIES:**  
   
-Uses: **code**, **html**, **main**  
+Uses: **code**, **html**  
   
 **TODOS**  
   
@@ -335,10 +327,6 @@ Class TOOLBOX (Mon, 04 Mar 2013 10:41:00 +0000)
 **CODE REFERENCE:**  
   
 - **format_value** (PubS, Len: 13 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-  
-**DEPENDENCIES:**  
-  
-Uses: **toolbox**  
   
   
 ***  
