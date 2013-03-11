@@ -69,7 +69,7 @@ General reference
   
 ***  
   
-Class CODE (Mon, 11 Mar 2013 12:54:18 +0000)  
+Class CODE (Mon, 11 Mar 2013 13:02:11 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -91,6 +91,9 @@ Class CODE (Mon, 11 Mar 2013 12:54:18 +0000)
 - **analyse_method** (PubS, Len: 30 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_documentation** (PubS, Len: 18 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
+**DEPENDENCIES:**  
+  
+Uses: 1, 24  
 **TODOS**  
   
 - **code analysis** &#10140; load, analyse, printing and more.. with toolbox class?  
@@ -188,6 +191,9 @@ Class HTML (Fri, 08 Mar 2013 11:14:55 +0000)
 - **preform** (PubS, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **title** (PubS, Len: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
+**DEPENDENCIES:**  
+  
+Uses: 6  
 **TODOS**  
   
 - **script online loading** &#10140; if != local, should have a lfb..  
@@ -205,6 +211,9 @@ Class LANGUAGE (Mon, 04 Mar 2013 10:41:00 +0000)
 - **get_component_translations_array** (PubS, Len: 20 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **translate** (PubS, Len: 27 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
+**DEPENDENCIES:**  
+  
+Uses: 1  
 **TODOS**  
   
 - **automatic translation** &#10140; it could be interessant to use pspell&gettext  
@@ -239,6 +248,9 @@ Class MAIN (Fri, 08 Mar 2013 09:50:14 +0000)
 - **get_buffer** (PubS, Len: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **show_backtrace** (PubS, Len: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
+**DEPENDENCIES:**  
+  
+Uses: 1, 2, 7  
 **TODOS**  
   
 - **documentation** &#10140; PHP's highlight_string/file to rapresent code excerpts  
@@ -295,6 +307,9 @@ Class NAVIGATOR (Mon, 11 Mar 2013 09:13:54 +0000)
 - **render_active_breadcrumb** (PubS, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **render_sitemap** (PubS, Len: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
+**DEPENDENCIES:**  
+  
+Uses: 1, 6, 11  
 **TODOS**  
   
 - **render_list** &#10140; this should be CSS3 and appear on a mouse gesture..  
@@ -316,6 +331,9 @@ Class TOOLBOX (Mon, 04 Mar 2013 10:41:00 +0000)
   
 - **format_value** (PubS, Len: 13 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
+**DEPENDENCIES:**  
+  
+Uses: 1  
   
 ***  
   

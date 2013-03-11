@@ -178,7 +178,7 @@ class code
 	                $classes .= md::title(3, "Code reference:")
 	                          . $reference . MD_NEWLINE_SEQUENCE;
 	            if (!empty($dependencies))
-	                $classes .= md::title(3, "Dependences:")
+	                $classes .= md::title(3, "Dependencies:")
 	                          . "Uses: " . $dependencies . MD_NEWLINE_SEQUENCE;
 	            if (!empty($class_todos))
 	                $classes .= md::title(3, "TODOs")
@@ -323,7 +323,7 @@ class code
 	                $dependencies[$key]++;
         $dependencies = array_filter($dependencies);
         ksort($dependencies);
-        $dependencies = implode(", ", $dependecies);
+        $dependencies = implode(", ", $dependencies);
 
 	    $class_todos = '';
 	    foreach ($class->getStaticPropertyValue('todos') as $key => $value)
