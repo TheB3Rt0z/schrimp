@@ -48,23 +48,23 @@ class navigator
         );
 	}
 
-    private function _add_branch($branch)
+    private function _add_branch($controller)
 	{
-        if ($branch::VISIBLE_IN_NAVIGATION)
+        if ($controller::VISIBLE_IN_NAVIGATION)
         {
-    	    $this->_structure[_SET_HOME_COMPONENT]['sub'][$branch] = array
+    	    $this->_structure[_SET_HOME_COMPONENT]['sub'][$controller] = array
     		(
-    		    'name' => tr($branch,
+    		    'name' => tr($controller,
                              'COMPONENT VISIBLE NAME')
     	    );
 
-            $sub =& $this->_structure[_SET_HOME_COMPONENT]['sub'][$branch];
+            $sub =& $this->_structure[_SET_HOME_COMPONENT]['sub'][$controller];
 
-    		$rc = new ReflectionClass($branch);
+    		$rc = new ReflectionClass($controller);
     		foreach ($rc->getMethods(ReflectionMethod::IS_PRIVATE
     			     | !ReflectionMethod::IS_PROTECTED) as $object)
     		{
-    		    $returns = $this->_add_handlers($branch,
+    		    $returns = $this->_add_handlers($controller,
                                                 $object,
                                                 $sub);
 
@@ -73,20 +73,20 @@ class navigator
     			if (!empty($static_variables['options']))
     				$this->_add_handler_static_options($static_variables,
     					                               $returns['sub'],
-    					                               $branch,
+    					                               $controller,
     					                               $returns['link'],
     					                               $object);
 
-                $sub =& $this->_structure[_SET_HOME_COMPONENT]['sub'][$branch];
+                $sub =& $this->_structure[_SET_HOME_COMPONENT]['sub'][$controller];
     		}
         }
 	}
 
-	private function _add_handlers($branch,
+	private function _add_handlers($controller,
 	                               $object,
 	                               &$sub)
 	{
-	    $link = $branch;
+	    $link = $controller;
 
 		$item = explode("_",
 		                str_replace("_handler_",
@@ -99,7 +99,7 @@ class navigator
 			if (!isset($sub['sub'][$link]))
 				$sub['sub'][$link] = array
 				(
-				    'name' => tr($branch,
+				    'name' => tr($controller,
 				                 $object->name),
 				    'handler' => $object->name
 			    );
@@ -116,7 +116,7 @@ class navigator
 
 	private function _add_handler_static_options($static_variables,
 	                                             &$sub,
-	                                             $branch,
+	                                             $controller,
 	                                             $link,
 	                                             $object)
 	{
@@ -134,7 +134,7 @@ class navigator
 			}
 			else
 			{
-				$option_component = $branch;
+				$option_component = $controller;
 				$option_value = $value;
 			}
 
