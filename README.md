@@ -69,7 +69,7 @@ General reference
   
 ***  
   
-Class CODE (Mon, 11 Mar 2013 13:02:11 +0000)  
+Class CODE (Mon, 11 Mar 2013 13:05:11 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -86,14 +86,15 @@ Class CODE (Mon, 11 Mar 2013 13:02:11 +0000)
 - **get_libraries_list** (PubS, Len: 31 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Method's length could be reduced.."))  
 - **get_components_list** (PubS, Len: 31 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Method's length could be reduced.."))  
 - **get_class_code** (PubS, Len: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_class_data** (PubS, Len: 38 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Method's length should be reduced!"))  
+- **get_class_data** (PubS, Len: 39 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Method's length should be reduced!"))  
 - **get_method_status** (PubS, Len: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **analyse_method** (PubS, Len: 30 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_documentation** (PubS, Len: 18 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
 **DEPENDENCIES:**  
   
-Uses: 1, 24  
+Uses: main, md  
+  
 **TODOS**  
   
 - **code analysis** &#10140; load, analyse, printing and more.. with toolbox class?  
@@ -124,6 +125,10 @@ Class CONTROLLER (Fri, 15 Feb 2013 16:53:58 +0000)
 - **get_aside** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_footer** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
+**DEPENDENCIES:**  
+  
+Uses:   
+  
   
 ***  
   
@@ -134,6 +139,10 @@ Class DB (Mon, 11 Mar 2013 09:13:54 +0000)
   
 - **__construct** (CPub, Len: 16 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
+**DEPENDENCIES:**  
+  
+Uses:   
+  
 **TODOS**  
   
 - **connection constants** &#10140; they should be in main configuration file as array (to be unserialized before use)  
@@ -143,6 +152,10 @@ Class DB (Mon, 11 Mar 2013 09:13:54 +0000)
   
 Class ESCORT (Fri, 23 Nov 2012 17:54:52 +0000)  
 ----------------------------------------------  
+  
+**DEPENDENCIES:**  
+  
+Uses:   
   
   
 ***  
@@ -193,7 +206,8 @@ Class HTML (Fri, 08 Mar 2013 11:14:55 +0000)
   
 **DEPENDENCIES:**  
   
-Uses: 6  
+Uses: html  
+  
 **TODOS**  
   
 - **script online loading** &#10140; if != local, should have a lfb..  
@@ -213,7 +227,8 @@ Class LANGUAGE (Mon, 04 Mar 2013 10:41:00 +0000)
   
 **DEPENDENCIES:**  
   
-Uses: 1  
+Uses: language  
+  
 **TODOS**  
   
 - **automatic translation** &#10140; it could be interessant to use pspell&gettext  
@@ -250,7 +265,8 @@ Class MAIN (Fri, 08 Mar 2013 09:50:14 +0000)
   
 **DEPENDENCIES:**  
   
-Uses: 1, 2, 7  
+Uses: code, html, main  
+  
 **TODOS**  
   
 - **documentation** &#10140; PHP's highlight_string/file to rapresent code excerpts  
@@ -285,6 +301,10 @@ Class MD (Mon, 11 Mar 2013 09:13:54 +0000)
 - **text** (PubS, Len: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **title** (PubS, Len: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
+**DEPENDENCIES:**  
+  
+Uses:   
+  
   
 ***  
   
@@ -309,7 +329,8 @@ Class NAVIGATOR (Mon, 11 Mar 2013 09:13:54 +0000)
   
 **DEPENDENCIES:**  
   
-Uses: 1, 6, 11  
+Uses: controller, html, main  
+  
 **TODOS**  
   
 - **render_list** &#10140; this should be CSS3 and appear on a mouse gesture..  
@@ -320,6 +341,10 @@ Uses: 1, 6, 11
   
 Class POWER (Thu, 29 Nov 2012 13:43:24 +0000)  
 ---------------------------------------------  
+  
+**DEPENDENCIES:**  
+  
+Uses:   
   
   
 ***  
@@ -333,12 +358,17 @@ Class TOOLBOX (Mon, 04 Mar 2013 10:41:00 +0000)
   
 **DEPENDENCIES:**  
   
-Uses: 1  
+Uses: toolbox  
+  
   
 ***  
   
 Class WIDGETS (Fri, 23 Nov 2012 17:54:52 +0000)  
 -----------------------------------------------  
+  
+**DEPENDENCIES:**  
+  
+Uses:   
   
   
 ***  
