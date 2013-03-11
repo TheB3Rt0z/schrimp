@@ -69,7 +69,7 @@ General reference
   
 ***  
   
-Class CODE (Mon, 11 Mar 2013 23:27:15 +0100)  
+Class CODE (Mon, 11 Mar 2013 23:32:31 +0100)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -80,7 +80,7 @@ Class CODE (Mon, 11 Mar 2013 23:27:15 +0100)
 - **_get_todos_information** (PriS, Len: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_get_methods_information** (PriS, Len: 26 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_get_classes_information** (PriS, Len: 27 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_get_components_information** (PriS, Len: 26 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **_get_components_information** (PriS, Len: 30 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_constants_list** (PubS, Len: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_functions_list** (PubS, Len: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_libraries_list** (PubS, Len: 27 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
@@ -265,7 +265,7 @@ Uses: **code**, **html**
   
 ***  
   
-Class MD (Mon, 11 Mar 2013 23:20:07 +0100)  
+Class MD (Mon, 11 Mar 2013 23:29:49 +0100)  
 ------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -347,11 +347,15 @@ Class WIDGETS (Fri, 23 Nov 2012 21:07:16 +0100)
 Available components:  
 ---------------------  
   
-**ADMIN (MON, 11 MAR 2013 22:45:03 +0100)**  
+admin (Mon, 11 Mar 2013 22:45:03 +0100)  
+---------------------------------------  
+  
+**CLASS CONFIGURATION CONSTANTS:**  
   
 - **VISIBLE_IN_NAVIGATION** &#10140; true  
 - **RENDER_BREADCRUMB** &#10140; true  
-** **  
+  
+**CODE REFERENCE:**  
   
 - **initialize** (Pub, Len: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_handler** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
@@ -371,19 +375,23 @@ Available components:
 - **get_article** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_aside** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_footer** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-** **  
+  
+**DEPENDENCIES:**  
   
 Uses: **html**, **navigator**  
-** **  
   
   
 ***  
   
-**CONTROL (MON, 11 MAR 2013 23:09:32 +0100)**  
+control (Mon, 11 Mar 2013 23:09:32 +0100)  
+-----------------------------------------  
+  
+**CLASS CONFIGURATION CONSTANTS:**  
   
 - **VISIBLE_IN_NAVIGATION** &#10140; true  
 - **RENDER_BREADCRUMB** &#10140; true  
-** **  
+  
+**CODE REFERENCE:**  
   
 - **initialize** (Pub, Len: 16 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_handler** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
@@ -422,19 +430,23 @@ Uses: **html**, **navigator**
 - **get_article** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_aside** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_footer** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-** **  
+  
+**DEPENDENCIES:**  
   
 Uses: **language**, **main**  
-** **  
   
   
 ***  
   
-**DOCUMENTATION (MON, 11 MAR 2013 23:00:06 +0100)**  
+documentation (Mon, 11 Mar 2013 23:00:06 +0100)  
+-----------------------------------------------  
+  
+**CLASS CONFIGURATION CONSTANTS:**  
   
 - **VISIBLE_IN_NAVIGATION** &#10140; true  
 - **RENDER_BREADCRUMB** &#10140; true  
-** **  
+  
+**CODE REFERENCE:**  
   
 - **initialize** (Pub, Len: 30 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_handler** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
@@ -456,20 +468,24 @@ Uses: **language**, **main**
 - **get_article** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_aside** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_footer** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-** **  
+  
+**TODOS**  
   
 - **method toString** &#10140; implementare per analisi del codice e calcolini  
 - **[...]:: != self** &#10140; filtro per calcolare le dipendenze implicite..  
-** **  
   
   
 ***  
   
-**ERROR (FRI, 01 MAR 2013 22:47:10 +0100)**  
+error (Fri, 01 Mar 2013 22:47:10 +0100)  
+---------------------------------------  
+  
+**CLASS CONFIGURATION CONSTANTS:**  
   
 - **VISIBLE_IN_NAVIGATION** &#10140; false  
 - **RENDER_BREADCRUMB** &#10140; false  
-** **  
+  
+**CODE REFERENCE:**  
   
 - **initialize** (Pub, Len: 12 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_handler** (Pro, Len: 10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
@@ -494,19 +510,23 @@ Uses: **language**, **main**
 - **get_article** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_aside** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_footer** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-** **  
+  
+**DEPENDENCIES:**  
   
 Uses: **html**, **main**, **navigator**  
-** **  
   
   
 ***  
   
-**HOMEPAGE (MON, 11 MAR 2013 22:45:03 +0100)**  
+homepage (Mon, 11 Mar 2013 22:45:03 +0100)  
+------------------------------------------  
+  
+**CLASS CONFIGURATION CONSTANTS:**  
   
 - **VISIBLE_IN_NAVIGATION** &#10140; true  
 - **RENDER_BREADCRUMB** &#10140; true  
-** **  
+  
+**CODE REFERENCE:**  
   
 - **initialize** (Pub, Len: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_handler** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
@@ -526,19 +546,23 @@ Uses: **html**, **main**, **navigator**
 - **get_article** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_aside** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_footer** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-** **  
+  
+**DEPENDENCIES:**  
   
 Uses: **html**, **navigator**  
-** **  
   
   
 ***  
   
-**POWER (MON, 11 MAR 2013 22:45:03 +0100)**  
+power (Mon, 11 Mar 2013 22:45:03 +0100)  
+---------------------------------------  
+  
+**CLASS CONFIGURATION CONSTANTS:**  
   
 - **VISIBLE_IN_NAVIGATION** &#10140; true  
 - **RENDER_BREADCRUMB** &#10140; true  
-** **  
+  
+**CODE REFERENCE:**  
   
 - **initialize** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **__construct** (CPub, Len: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
@@ -557,7 +581,6 @@ Uses: **html**, **navigator**
 - **get_article** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_aside** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_footer** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-** **  
   
   
 ***  

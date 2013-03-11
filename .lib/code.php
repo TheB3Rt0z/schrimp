@@ -208,15 +208,19 @@ class code
 
 	        extract(self::get_class_data($class));
 
-	        $components .= md::title(3, $component . " (" . date('r', $uts) . ")");
+	        $components .= md::title(2, $component . " (" . date('r', $uts) . ")");
 	        if (!empty($class_constants))
-	            $components .= $class_constants . md::title(3); // unprotected (no '_XXX') constants here
+	            $components .= md::title(3, "Class configuration constants:")
+	                         . $class_constants . MD_NEWLINE_SEQUENCE; // unprotected (no '_XXX') constants here
 	        if (!empty($reference))
-	            $components .= $reference . md::title(3);
+	            $components .= md::title(3, "Code reference:")
+	                         . $reference .MD_NEWLINE_SEQUENCE;
 	        if (!empty($dependencies))
-	            $components .= "Uses: " . $dependencies . md::title(3);
+	            $components .= md::title(3, "Dependencies:")
+	                         . "Uses: " . $dependencies . MD_NEWLINE_SEQUENCE;
 	        if (!empty($class_todos))
-	            $components .= $class_todos . md::title(3);
+	            $components .= md::title(3, "TODOs")
+	                         . $class_todos . MD_NEWLINE_SEQUENCE;
 	        $components .= md::hr();
 	    }
 
