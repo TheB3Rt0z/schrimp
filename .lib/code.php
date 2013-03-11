@@ -313,17 +313,17 @@ class code
 	    foreach ($class->getMethods() as $method)
 	        $reference .= self::_get_methods_information($method);
 
-	    $dependences = array(); // this block, to be moved..
+	    $dependencies = array(); // this block, to be moved..
 	    foreach (self::get_libraries_list() as $key => $value)
-	         $dependences[$key] = 0;
+	         $dependencies[$key] = 0;
 	    $class_code = self::get_class_code($class);
 	    foreach ($class_code as $code_line)
-	        foreach ($dependences as $key => $value)
-	            if (substr_count($key . '::'))
-	                $dependences[$key]++;
-        $dependences = array_filter($dependences);
-        ksort($dependences);
-        $dependences = implode($dependeces, ", ");
+	        foreach ($dependencies as $key => $value)
+	            if (substr_count($key . '::', $code_line))
+	                $dependencies[$key]++;
+        $dependencies = array_filter($dependencies);
+        ksort($dependencies);
+        $dependencies = implode($dependecies, ", ");
 
 	    $class_todos = '';
 	    foreach ($class->getStaticPropertyValue('todos') as $key => $value)
@@ -335,7 +335,7 @@ class code
 	        'header' => $header,
 	        'class_constants' => $class_constants,
 	        'reference' => $reference,
-	        'dependences' => $dependences,
+	        'dependencies' => $dependencies,
 	        'class_todos' => $class_todos,
 	    );
 	}
