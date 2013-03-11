@@ -319,7 +319,7 @@ class code
 	    $class_code = self::get_class_code($class);
 	    foreach ($class_code as $code_line)
 	        foreach ($dependencies as $key => $value)
-	            if (substr_count($key . '::', $code_line))
+	            if (substr_count($code_line, $key . '::'))
 	                $dependencies[$key]++;
         $dependencies = array_filter($dependencies);
         ksort($dependencies);
