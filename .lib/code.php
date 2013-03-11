@@ -210,7 +210,7 @@ class code
 	        if (!empty($reference))
 	            $components .= $reference . MD_NEWLINE_SEQUENCE;
 	        if (!empty($dependencies))
-	            $components .= $dependencies . MD_NEWLINE_SEQUENCE;
+	            $components .= "Uses: " . $dependencies . MD_NEWLINE_SEQUENCE;
 	        if (!empty($class_todos))
 	            $components .= $class_todos . MD_NEWLINE_SEQUENCE;
 	        $components .= md::hr();
@@ -355,7 +355,7 @@ class code
 
 	    $class_constants = '';
 	    foreach ($class->getConstants() as $key => $value)
-	        if (substr($key, 0, 1) != '_')
+	        //if (substr($key, 0, 1) != '_')
 	            $class_constants .= "- **" . $key . "** &#10140; "
 	                              . fv($value) . MD_NEWLINE_SEQUENCE;
 

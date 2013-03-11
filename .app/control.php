@@ -2,6 +2,8 @@
 
 class control extends controller
 {
+    public static $todos = array();
+
 	function initialize()
 	{
 		$fallback_method = '_handler' . (!empty($this->_action)

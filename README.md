@@ -69,7 +69,7 @@ General reference
   
 ***  
   
-Class CODE (Mon, 11 Mar 2013 22:34:15 +0100)  
+Class CODE (Mon, 11 Mar 2013 22:48:14 +0100)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -342,7 +342,7 @@ Class WIDGETS (Fri, 23 Nov 2012 21:07:16 +0100)
 Available components:  
 ---------------------  
   
-**ADMIN (FRI, 18 JAN 2013 00:38:07 +0100)**  
+**ADMIN (MON, 11 MAR 2013 22:45:03 +0100)**  
   
 - **initialize** (Pub, Len: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_handler** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
@@ -363,12 +363,12 @@ Available components:
 - **get_aside** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_footer** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
-**html**, **navigator**  
+Uses: **html**, **navigator**  
   
   
 ***  
   
-**CONTROL (THU, 07 MAR 2013 22:27:54 +0100)**  
+**CONTROL (MON, 11 MAR 2013 22:45:03 +0100)**  
   
 - **initialize** (Pub ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "1 too long line(s) found!") Len: 15 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_handler** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
@@ -408,12 +408,12 @@ Available components:
 - **get_aside** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_footer** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
-**language**, **main**  
+Uses: **language**, **main**  
   
   
 ***  
   
-**DOCUMENTATION (FRI, 08 MAR 2013 21:03:21 +0100)**  
+**DOCUMENTATION (MON, 11 MAR 2013 22:45:03 +0100)**  
   
 - **initialize** (Pub, Len: 30 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_handler** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
@@ -465,12 +465,12 @@ Available components:
 - **get_aside** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_footer** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
-**html**, **main**, **navigator**  
+Uses: **html**, **main**, **navigator**  
   
   
 ***  
   
-**HOMEPAGE (MON, 03 DEC 2012 21:19:41 +0100)**  
+**HOMEPAGE (MON, 11 MAR 2013 22:45:03 +0100)**  
   
 - **initialize** (Pub, Len: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_handler** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
@@ -491,12 +491,12 @@ Available components:
 - **get_aside** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_footer** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
-**html**, **navigator**  
+Uses: **html**, **navigator**  
   
   
 ***  
   
-**POWER (FRI, 23 NOV 2012 21:07:16 +0100)**  
+**POWER (MON, 11 MAR 2013 22:45:03 +0100)**  
   
 - **initialize** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **__construct** (CPub, Len: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  

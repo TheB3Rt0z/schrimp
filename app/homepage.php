@@ -2,6 +2,8 @@
 
 class homepage extends controller
 {
+    public static $todos = array();
+
 	function initialize()
 	{
 		$this->_set_title($this->_translate("COMPONENT VISIBLE NAME"));
