@@ -69,7 +69,7 @@ General reference
   
 ***  
   
-Class CODE (Mon, 11 Mar 2013 13:05:11 +0000)  
+Class CODE (Mon, 11 Mar 2013 13:07:28 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -86,7 +86,7 @@ Class CODE (Mon, 11 Mar 2013 13:05:11 +0000)
 - **get_libraries_list** (PubS, Len: 31 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Method's length could be reduced.."))  
 - **get_components_list** (PubS, Len: 31 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Method's length could be reduced.."))  
 - **get_class_code** (PubS, Len: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_class_data** (PubS, Len: 39 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Method's length should be reduced!"))  
+- **get_class_data** (PubS, Len: 42 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Method's length should be reduced!"))  
 - **get_method_status** (PubS, Len: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **analyse_method** (PubS, Len: 30 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_documentation** (PubS, Len: 18 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
@@ -125,10 +125,6 @@ Class CONTROLLER (Fri, 15 Feb 2013 16:53:58 +0000)
 - **get_aside** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_footer** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
-**DEPENDENCIES:**  
-  
-Uses:   
-  
   
 ***  
   
@@ -139,10 +135,6 @@ Class DB (Mon, 11 Mar 2013 09:13:54 +0000)
   
 - **__construct** (CPub, Len: 16 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
-**DEPENDENCIES:**  
-  
-Uses:   
-  
 **TODOS**  
   
 - **connection constants** &#10140; they should be in main configuration file as array (to be unserialized before use)  
@@ -152,10 +144,6 @@ Uses:
   
 Class ESCORT (Fri, 23 Nov 2012 17:54:52 +0000)  
 ----------------------------------------------  
-  
-**DEPENDENCIES:**  
-  
-Uses:   
   
   
 ***  
@@ -301,10 +289,6 @@ Class MD (Mon, 11 Mar 2013 09:13:54 +0000)
 - **text** (PubS, Len: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **title** (PubS, Len: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
-**DEPENDENCIES:**  
-  
-Uses:   
-  
   
 ***  
   
@@ -342,10 +326,6 @@ Uses: controller, html, main
 Class POWER (Thu, 29 Nov 2012 13:43:24 +0000)  
 ---------------------------------------------  
   
-**DEPENDENCIES:**  
-  
-Uses:   
-  
   
 ***  
   
@@ -365,10 +345,6 @@ Uses: toolbox
   
 Class WIDGETS (Fri, 23 Nov 2012 17:54:52 +0000)  
 -----------------------------------------------  
-  
-**DEPENDENCIES:**  
-  
-Uses:   
   
   
 ***  
