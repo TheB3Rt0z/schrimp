@@ -224,33 +224,25 @@ class code
 	    $substitutions = array
 	    (
 	        _SET_LIBRARIES_PATH,
+	        _SET_LIBRARIES_PUBLICPATH,
 	        ".php",
 	    );
 
 	    foreach (glob(_SET_LIBRARIES_PATH . "*.php") as $filename) // scans core directory
 	        if (!substr_count($filename, "_"))
-	        {
-	            $library = str_replace($substitutions,
+	            $libraries[str_replace($substitutions,
 	                                   '',
-	                                   $filename);
-	            $libraries[$library] = filemtime($filename);
-	        }
+	                                   $filename)] = filemtime($filename);
 
-	    $substitutions[0] = _SET_LIBRARIES_PUBLICPATH;
-
-        foreach (glob(_SET_LIBRARIES_PUBLICPATH . "*.php") as $filename) // scans plugins directory
+	    foreach (glob(_SET_LIBRARIES_PUBLICPATH . "*.php") as $filename) // scans plugins directory
             if (!substr_count($filename, "_"))
-            {
-                $library = str_replace($substitutions,
+                $libraries[str_replace($substitutions,
                                        '',
-                                       $filename);
-                $libraries[$library] = filemtime($filename);
-            }
+                                       $filename)] = filemtime($filename);
 
         ksort($libraries);
 
-        if (!empty($exclude) // this 'could' be converted in one single line..
-            && isset($libraries[$exclude]))
+        if (!empty($libraries[$exclude]))
             unset($libraries[$exclude]);
 
         return $libraries;
@@ -263,28 +255,21 @@ class code
 	    $substitutions = array
 	    (
 	        _SET_APPLICATION_PATH,
+	        _SET_APPLICATION_PUBLICPATH,
 	        ".php",
 	    );
 
 	    foreach (glob(_SET_APPLICATION_PATH . "*.php") as $filename) // scans modules directory
 	        if (!substr_count($filename, "_"))
-	        {
-	            $component = str_replace($substitutions,
-	                                     '',
-	                                     $filename);
-	            $components[$component] = filemtime($filename);
-	        }
-
-	    $substitutions[0] = _SET_APPLICATION_PUBLICPATH;
+	            $components[str_replace($substitutions,
+	                                    '',
+	                                    $filename)] = filemtime($filename);
 
         foreach (glob(_SET_APPLICATION_PUBLICPATH . "*.php") as $filename) // scans application directory
             if (!substr_count($filename, "_"))
-            {
-                $component = str_replace($substitutions,
-                                         '',
-                                         $filename);
-                $components[$component] = filemtime($filename);
-            }
+                $components[str_replace($substitutions,
+                                        '',
+                                        $filename)] = filemtime($filename);
 
         ksort($components);
 
@@ -302,6 +287,34 @@ class code
 	    return file($class_path); // in array format
 	}
 
+	static function get_class_dependencies(reflectionClass $class)
+	{
+	    $dependencies = array();
+
+	    foreach (self::get_libraries_list($class->name) as $key => $value)
+	        $dependencies[$key] = 0;
+
+	    foreach (self::get_class_code($class) as $code_line)
+	        foreach ($dependencies as $key => $value)
+	            if (substr_count($code_line, $key . '::'))
+	                $dependencies[$key]++;
+
+	    $dependencies = array_filter($dependencies);
+
+	    ksort($dependencies);
+
+	    if (!empty($dependencies))
+	        return implode(", ",
+	                       array_map(function($value)
+	                                 {
+	                                     return "**" . $value . "**";
+	                                 },
+	                                 array_keys($dependencies)))
+	             . MD_NEWLINE_SEQUENCE;
+	    else
+	        return null;
+	}
+
 	static function get_class_data(reflectionClass $class)
 	{
 	    $header = "Class " . strtoupper($class->name)
@@ -317,23 +330,6 @@ class code
 	    foreach ($class->getMethods() as $method)
 	        $reference .= self::_get_methods_information($method);
 
-	    $dependencies = array(); // this block, to be moved..
-	    foreach (self::get_libraries_list($class->name) as $key => $value)
-	         $dependencies[$key] = 0;
-	    $class_code = self::get_class_code($class);
-	    foreach ($class_code as $code_line)
-	        foreach ($dependencies as $key => $value)
-	            if (substr_count($code_line, $key . '::'))
-	                $dependencies[$key]++;
-        $dependencies = array_filter($dependencies);
-        ksort($dependencies);
-        if (!empty($dependencies)) {
-            $dependencies = implode(", ", array_map(function($value) { return "**" . $value . "**"; }, array_keys($dependencies)))
-                          . MD_NEWLINE_SEQUENCE;
-        }
-        else
-            $dependencies = '';
-
 	    $class_todos = '';
 	    foreach ($class->getStaticPropertyValue('todos') as $key => $value)
 	        $class_todos .= "- **" . $key . "** &#10140; " . $value
@@ -344,7 +340,7 @@ class code
 	        'header' => $header,
 	        'class_constants' => $class_constants,
 	        'reference' => $reference,
-	        'dependencies' => $dependencies,
+	        'dependencies' => self::get_class_dependencies($class),
 	        'class_todos' => $class_todos,
 	    );
 	}
