@@ -177,9 +177,9 @@ class code
 	            if (!empty($reference))
 	                $classes .= md::title(3, "Code reference:")
 	                          . $reference . MD_NEWLINE_SEQUENCE;
-	            if (!empty($dependences))
+	            if (!empty($dependencies))
 	                $classes .= md::title(3, "Dependences:")
-	                          . $dependences . MD_NEWLINE_SEQUENCE;
+	                          . "Uses: " . $dependencies . MD_NEWLINE_SEQUENCE;
 	            if (!empty($class_todos))
 	                $classes .= md::title(3, "TODOs")
 	                          . $class_todos . MD_NEWLINE_SEQUENCE;
