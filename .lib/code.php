@@ -5,7 +5,7 @@ class code
 	public static $todos = array
     (
         'code analysis' => "load, analyse, printing and more.. use toolbox class?",
-        'methods lists' => "add parameter information, with type (see aliases documentation)",
+        'methods lists' => "add parameter class type information, also for aliases",
     );
 
 	const _STR_LENGTH_WARNING = "Method's length could be reduced..";
@@ -102,7 +102,7 @@ class code
 	        foreach ($function->getParameters() as $parameter)
 	            $parameters[] = "$" . $parameter->getName()
 	                          . ($parameter->isOptional()
-	                            ? " = '" . fv($parameter->getDefaultValue()) . "'"
+	                            ? " = " . fv($parameter->getDefaultValue())
 	                            : '');
 
 	        $functions .= "- **" . $function->getName() . "("
@@ -406,7 +406,7 @@ class code
 	    foreach ($method->getParameters() as $parameter)
 	        $parameters[] = "$" . $parameter->getName()
 	                      . ($parameter->isOptional()
-	                        ? " = '" . fv($parameter->getDefaultValue()) . "'"
+	                        ? " = " . fv($parameter->getDefaultValue())
 	                        : '');
 
 	    $parameters_modifier = (($count = count($parameters) > 1)
