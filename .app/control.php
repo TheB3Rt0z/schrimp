@@ -2,7 +2,10 @@
 
 class control extends controller
 {
-    public static $todos = array();
+    public static $todos = array
+    (
+        'server configuration' => "better rappresentation of access details, see php-documentation",
+    );
 
 	function initialize()
 	{
@@ -219,7 +222,7 @@ class control extends controller
 			'configuration' => '_handler_phpinfo_configuration', // Current Local and Master values for PHP directives. See also ini_get().
 			//'modules' => '_handler_phpinfo_modules', // Loaded modules and their respective settings. See also get_loaded_extensions().
 			'environment' => '_handler_phpinfo_environment', // Environment Variable information that's also available in $_ENV.
-			'variables' => '_handler_phpinfo_variables', // Shows all predefined variables from EGPCS (Environment, GET, POST, Cookie, Server).
+			//'variables' => '_handler_phpinfo_variables', // Shows all predefined variables from EGPCS (Environment, GET, POST, Cookie, Server).
 			//'license' => '_handler_phpinfo_license', // PHP License information. See also the » license FAQ.
 		);
 
@@ -233,9 +236,53 @@ class control extends controller
         if (!empty($this->_args[0])
             && array_key_exists($this->_args[0], $options))
         {
-            ob_start();
-                phpinfo(constant('INFO_' . strtoupper($this->_args[0])));
-            $this->_set_article(ob_get_clean());
+            $output = '';
+
+            switch ($this->_args[0])
+            {
+                case 'general' :
+                {
+                    ksort($_SERVER);
+                    foreach ($_SERVER as $key => $value)
+                        $output .= $key . " &#10140; "
+                                 . $value . html::newline();
+
+                    break;
+                }
+
+                case 'configuration' :
+                {
+                    foreach (ini_get_all() as $key => $values)
+                        $output .= strtoupper($key) . " &#10140; "
+                                 . fv(str_replace(",",
+                                                  ", ",
+                                                  $values['local_value'])) . " / "
+                                 . fv(str_replace(",",
+                                                  ", ",
+                                                  $values['global_value']))
+                                 . " (" . $values['access'] . ")"
+                                 . html::newline();
+
+                    break;
+                }
+
+                case 'environment' :
+                {
+                    ksort($_ENV);
+                    foreach ($_ENV as $key => $value)
+                        $output .= $key . " &#10140; "
+                                . $value . html::newline();
+
+                    if (empty($output))
+                        $output = html::hyperlink('http://www.php.net/manual/en/ini.core.php#ini.variables-order', "(?)");
+
+                    break;
+                }
+
+                default : {}
+            }
+
+            $this->_set_article(html::highbox($output));
         }
 	}
 }

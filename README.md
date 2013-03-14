@@ -1,4 +1,4 @@
-![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.5.2013.03.14  
+![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.5.2013.03.15  
 =========================================================================================================================================  
   
   
@@ -26,7 +26,7 @@ General reference
   @param string $path
   @return boolean true if realpath exists, false otherwise
   
-- **fv($mixed)** &#10140; .lib/toolbox.php on line 30,
+- **fv($mixed)** &#10140; .lib/toolbox.php on line 36,
   returns a beautiful formatted value, mixed variable-type-dependant;
   @param mixed $mixed
   @return mixed depending on internally defined rules
@@ -69,7 +69,7 @@ General reference
   
 ***  
   
-Class CODE (Mon, 11 Mar 2013 23:36:16 +0100)  
+Class CODE (Thu, 14 Mar 2013 22:57:11 +0100)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -98,7 +98,8 @@ Uses: **main**, **md**
   
 **TODOS**  
   
-- **code analysis** &#10140; load, analyse, printing and more.. with toolbox class?  
+- **code analysis** &#10140; load, analyse, printing and more.. use toolbox class?  
+- **methods lists** &#10140; add parameter information, with type (see aliases documentation)  
   
   
 ***  
@@ -158,7 +159,7 @@ Class ESCORT (Fri, 23 Nov 2012 21:07:16 +0100)
   
 ***  
   
-Class HTML (Thu, 14 Mar 2013 00:18:12 +0100)  
+Class HTML (Thu, 14 Mar 2013 21:44:39 +0100)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -333,12 +334,12 @@ Class POWERING (Mon, 11 Mar 2013 22:37:03 +0100)
   
 ***  
   
-Class TOOLBOX (Fri, 01 Mar 2013 23:31:32 +0100)  
+Class TOOLBOX (Thu, 14 Mar 2013 23:15:32 +0100)  
 -----------------------------------------------  
   
 **CODE REFERENCE:**  
   
-- **format_value** (PubS, Len: 13 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **format_value** (PubS, Len: 19 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
   
 ***  
@@ -390,7 +391,7 @@ Uses: **html**, **navigator**
   
 ***  
   
-Class CONTROL (Thu, 14 Mar 2013 01:03:58 +0100)  
+Class CONTROL (Fri, 15 Mar 2013 00:15:47 +0100)  
 -----------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -420,7 +421,7 @@ Class CONTROL (Thu, 14 Mar 2013 01:03:58 +0100)
 - **_handler_modules_documentation** (Pri, Len: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_handler_modules_error** (Pri, Len: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_handler_application** (Pri, Len: 30 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_handler_phpinfo** (Pri, Len: 25 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **_handler_phpinfo** (Pri ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "1 too long line(s) found!") Len: 69 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Method's length should be reduced!") CyC: 13 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Method's cyclomatic complexity should be reduced!"))  
 - **__construct** (CPub, Len: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_set_title** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_set_header** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
@@ -440,7 +441,11 @@ Class CONTROL (Thu, 14 Mar 2013 01:03:58 +0100)
   
 **DEPENDENCIES:**  
   
-Uses: **language**, **main**  
+Uses: **html**, **language**, **main**  
+  
+**TODOS**  
+  
+- **server configuration** &#10140; better rappresentation of access details, see php-documentation  
   
   
 ***  

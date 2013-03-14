@@ -158,7 +158,7 @@ class html
     {
     	$attributes = array();
     	if (!empty($classes))
-    		$attributes['class'] = trim($classes);
+    		$attributes['class'] = implode($classes, ' ');
     	if (!empty($id))
     		$attributes['id'] = trim($id);
 
@@ -426,7 +426,7 @@ class html
     static function box($content)
     {
 		return self::div($content,
-						 'box');
+						 array('box'));
     }
 
     static function divisor($content,

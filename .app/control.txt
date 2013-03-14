@@ -117,8 +117,3 @@ _handler_phpinfo_environment
 de||Umgebungsvariablen
 en||Environment variables
 it||Variabili d'ambiente
-
-_handler_phpinfo_variables
-de||PHP-Variablen
-en||PHP variables
-it||Variabili PHP

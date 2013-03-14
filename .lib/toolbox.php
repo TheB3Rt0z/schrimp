@@ -6,10 +6,16 @@ class toolbox
 
 	static function format_value($mixed)
 	{
-		if ($mixed === true)
+		if ($mixed === true
+		    || $mixed == "1")
+		{
     		return "true";
-    	elseif ($mixed === false)
+		}
+    	elseif ($mixed === false
+		    || $mixed == "0")
+		{
     		return "false";
+		}
     	elseif ($mixed === ''
     		|| $mixed == null)
     	{

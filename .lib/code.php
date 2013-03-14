@@ -4,7 +4,8 @@ class code
 {
 	public static $todos = array
     (
-        'code analysis' => "load, analyse, printing and more.. with toolbox class?",
+        'code analysis' => "load, analyse, printing and more.. use toolbox class?",
+        'methods lists' => "add parameter information, with type (see aliases documentation)",
     );
 
 	const _STR_LENGTH_WARNING = "Method's length could be reduced..";
