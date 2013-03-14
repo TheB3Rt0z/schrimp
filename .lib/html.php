@@ -139,9 +139,15 @@ class html
     	return $self->_html;
     }
 
-    private static function br($lines = 1)
+    private static function br($lines = 1,
+                               $classes = array())
     {
-    	$self = new self(__FUNCTION__);
+        $attributes = array();
+        if (!empty($classes))
+            $attributes['class'] = trim($classes);
+
+        $self = new self(__FUNCTION__,
+    	                 $attributes);
 
     	return str_repeat($self->_html, $lines);
     }
@@ -457,6 +463,12 @@ class html
     static function newline()
     {
     	return self::br();
+    }
+
+    static function clearfix()
+    {
+        return self::br(1,
+                        'clearfix');
     }
 
 	static function text($content)

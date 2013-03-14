@@ -41,7 +41,7 @@ abstract class controller
 
 	protected function _set_header($html)
 	{
-		$this->_header = $html;
+	    $this->_header = $html;
 	}
 
 	protected function _set_nav($html)
@@ -82,7 +82,14 @@ abstract class controller
 
     function get_header()
 	{
-		return $this->_header;
+	    ob_start();
+    	    if (_SET_ADVANCED_INTERFACE)
+    	        navigator::render_active_breadcrumb();
+    	    else
+    	        navigator::render_breadcrumb(); // nothing shown on home page
+	    $breadcrumb = ob_get_clean();
+
+		return $this->_header . ($breadcrumb ? html::box($breadcrumb) : '');
 	}
 
 	function get_nav()

@@ -1,0 +1,36 @@
+@CHARSET "UTF-8";
+
+article, #article
+{
+    border: dashed 3px rgba(0, 0, 255, .5);
+}
+
+aside, #aside
+{
+    border: dashed 3px rgba(0, 255, 255, .5);
+}
+
+body
+{
+    border: dashed 3px rgba(255, 255, 0, .5);
+}
+
+footer, #footer
+{
+    border: dashed 3px rgba(0, 255, 0, .5);
+}
+
+header, #header
+{
+    border: dashed 3px rgba(255, 127, 0, .5);
+}
+
+nav, #nav
+{
+    border: dashed 3px rgba(255, 0, 0, .5);
+}
+
+section, #section
+{
+    border: dashed 3px rgba(255, 0, 255, .5);
+}

@@ -4,6 +4,7 @@
 ),
 
 '_set_development_mode' => false,
+'_set_design_mode' => false,
 '_set_advanced_interface' => false,
 '_set_local_path' => '', // server root will be used (worth as base-path)
 

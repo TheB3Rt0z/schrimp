@@ -229,6 +229,14 @@ class control extends controller
  		                		          . (!empty($this->_args[0])
  		                		            ? '_' . $this->_args[0]
  		                		            : '')));
+
+        if (!empty($this->_args[0])
+            && array_key_exists($this->_args[0], $options))
+        {
+            ob_start();
+                phpinfo(constant('INFO_' . strtoupper($this->_args[0])));
+            $this->_set_article(ob_get_clean());
+        }
 	}
 }
 
