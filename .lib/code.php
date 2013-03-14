@@ -102,7 +102,7 @@ class code
 	        foreach ($function->getParameters() as $parameter)
 	            $parameters[] = "$" . $parameter->getName()
 	                          . ($parameter->isOptional()
-	                            ? " = '" . $parameter->getDefaultValue() . "'" // to be formatted like costants
+	                            ? " = '" . fv($parameter->getDefaultValue()) . "'"
 	                            : '');
 
 	        $functions .= "- **" . $function->getName() . "("
@@ -137,7 +137,8 @@ class code
 	{
 	    extract(self::analyse_method($method)); // generates required variables
 
-	    return "- **" . $method->getName() . "** ("
+	    return "- **" . $method->getName()
+	         . "(" . implode($parameters, ", ") . ")** ("
 	         . self::get_method_status($method)
 	         . ($length_warning
 	           ? " " . md::blue_boh($length_warning . " too long line(s) found!")
@@ -401,12 +402,19 @@ class code
 
 	static function analyse_method(reflectionMethod $method)
 	{
-	    $parameters = (($count = count($method->getParameters())) > 1
-	                  ? $count - 1
-	                  : 0); // should be an array with infos?
+	    $parameters = array();
+	    foreach ($method->getParameters() as $parameter)
+	        $parameters[] = "$" . $parameter->getName()
+	                      . ($parameter->isOptional()
+	                        ? " = '" . fv($parameter->getDefaultValue()) . "'"
+	                        : '');
+
+	    $parameters_modifier = (($count = count($parameters) > 1)
+	                           ? $count - 1
+	                           : 0);
 
 	    $length = $method->getEndLine() - $method->getStartLine()
-	            - $parameters - ($method->isAbstract() ? 0 : 2); // modifier
+	            - $parameters_modifier - ($method->isAbstract() ? 0 : 2); // modifier
 
 	    $code = array_slice(self::get_class_code($method->getDeclaringClass()),
 	                        $method->getEndLine() - $length - 1,
