@@ -1,4 +1,4 @@
-![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.5.2013.03.15  
+![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.5.2013.03.19  
 =========================================================================================================================================  
   
   
@@ -21,7 +21,7 @@ General reference
   
 **FUNCTION ALIASES**  
   
-- **fe($path)** &#10140; .main.php on line 263,
+- **fe($path)** &#10140; .main.php on line 265,
   returns boolean if realpath path exists on running server;
   @param string $path
   @return boolean true if realpath exists, false otherwise
@@ -31,22 +31,22 @@ General reference
   @param mixed $mixed
   @return mixed depending on internally defined rules
   
-- **le($msg)** &#10140; .main.php on line 293,
+- **le($msg)** &#10140; .main.php on line 295,
   launches a customizable error 500, mit optional backtrace for debug;
   @param string $msg
   @return boolean false after relocate
   
-- **rt($url = null)** &#10140; .main.php on line 283,
+- **rt($url = null)** &#10140; .main.php on line 285,
   relocates to given relative url or to base path on default;
   @param string $url
   @return void
   
-- **ru($uri = null)** &#10140; .main.php on line 273,
+- **ru($uri = null)** &#10140; .main.php on line 275,
   returns an absolute uri, based on current server configuration;
   @param string $uri
   @return string absolute http unified resource identifier
   
-- **sb()** &#10140; .main.php on line 302,
+- **sb()** &#10140; .main.php on line 304,
   show call's backtrace with help of error base handler
   @return void
   
@@ -56,7 +56,7 @@ General reference
   @param string $marker
   @return mixed callback function returned value(s)
   
-- **vd($what)** &#10140; .main.php on line 253,
+- **vd($what)** &#10140; .main.php on line 255,
   returns pre-formatted mixed variables;
   @param mixed $what
   @return void
@@ -153,8 +153,12 @@ Class DB (Sat, 09 Mar 2013 20:20:51 +0100)
   
 ***  
   
-Class ESCORT (Fri, 23 Nov 2012 21:07:16 +0100)  
+Class ESCORT (Tue, 19 Mar 2013 08:54:38 +0100)  
 ----------------------------------------------  
+  
+**TODOS**  
+  
+- **runtime registry** &#10140; save created objects structure as reference hierarchy  
   
   
 ***  
@@ -228,7 +232,7 @@ Class LANGUAGE (Fri, 01 Mar 2013 23:53:23 +0100)
   
 ***  
   
-Class MAIN (Fri, 08 Mar 2013 00:46:34 +0100)  
+Class MAIN (Tue, 19 Mar 2013 08:54:37 +0100)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -267,6 +271,8 @@ Uses: **code**, **html**
 - **load_libraries** &#10140; find someway to avoid conflicts between libs/plugins  
 - **pdf documentation** &#10140; check file creation/modification date -> reminder  
 - **cyc & documentation** &#10140; render per line & move to another library class  
+- **css selectors** &#10140; uniform to html-class render-methods (only default style)  
+- **css stylesheets autoload** &#10140; automatically load any file in .inc/inc / css?  
   
   
 ***  

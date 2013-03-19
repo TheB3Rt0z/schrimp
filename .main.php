@@ -10,6 +10,8 @@ class main
 		'load_libraries' => "find someway to avoid conflicts between libs/plugins",
 		'pdf documentation' => "check file creation/modification date -> reminder",
 	    'cyc & documentation' => "render per line & move to another library class",
+	    'css selectors' => "uniform to html-class render-methods (only default style)",
+	    'css stylesheets autoload' => "automatically load any file in .inc/inc / css?",
 	);
 
     private $_call = null;
