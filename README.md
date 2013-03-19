@@ -69,7 +69,7 @@ General reference
   
 ***  
   
-Class CODE (Fri, 15 Mar 2013 00:31:41 +0100)  
+Class CODE (Tue, 19 Mar 2013 10:38:36 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -98,13 +98,17 @@ Uses: **main**, **md**
   
 **TODOS**  
   
+- **summary with links** &#10140; generate automatic index with doc + meta links..  
 - **code analysis** &#10140; load, analyse, printing and more.. use toolbox class?  
 - **methods lists** &#10140; add parameter class type information, also for aliases  
+- **github wiki documentation** &#10140; generate wiki pages with md syntax and update  
+- **add code-testing methods** &#10140; using phpunit to autobuild and execute tests  
+- **semantic documentation** &#10140; generate human-friendly doc from methods code..  
   
   
 ***  
   
-Class CONTROLLER (Thu, 14 Mar 2013 00:50:21 +0100)  
+Class CONTROLLER (Thu, 14 Mar 2013 10:30:43 +0000)  
 --------------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -139,7 +143,7 @@ Uses: **html**, **navigator**
   
 ***  
   
-Class DB (Sat, 09 Mar 2013 20:20:51 +0100)  
+Class DB (Mon, 11 Mar 2013 09:13:54 +0000)  
 ------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -153,7 +157,7 @@ Class DB (Sat, 09 Mar 2013 20:20:51 +0100)
   
 ***  
   
-Class ESCORT (Tue, 19 Mar 2013 08:54:38 +0100)  
+Class ESCORT (Tue, 19 Mar 2013 10:31:40 +0000)  
 ----------------------------------------------  
   
 **TODOS**  
@@ -163,7 +167,7 @@ Class ESCORT (Tue, 19 Mar 2013 08:54:38 +0100)
   
 ***  
   
-Class HTML (Thu, 14 Mar 2013 21:44:39 +0100)  
+Class HTML (Mon, 18 Mar 2013 09:32:01 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -215,7 +219,7 @@ Class HTML (Thu, 14 Mar 2013 21:44:39 +0100)
   
 ***  
   
-Class LANGUAGE (Fri, 01 Mar 2013 23:53:23 +0100)  
+Class LANGUAGE (Mon, 04 Mar 2013 10:41:00 +0000)  
 ------------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -232,7 +236,7 @@ Class LANGUAGE (Fri, 01 Mar 2013 23:53:23 +0100)
   
 ***  
   
-Class MAIN (Tue, 19 Mar 2013 08:54:37 +0100)  
+Class MAIN (Tue, 19 Mar 2013 10:31:40 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -277,7 +281,7 @@ Uses: **code**, **html**
   
 ***  
   
-Class MD (Mon, 11 Mar 2013 23:29:49 +0100)  
+Class MD (Tue, 12 Mar 2013 12:19:30 +0000)  
 ------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -302,7 +306,7 @@ Class MD (Mon, 11 Mar 2013 23:29:49 +0100)
   
 ***  
   
-Class NAVIGATOR (Thu, 14 Mar 2013 00:32:25 +0100)  
+Class NAVIGATOR (Thu, 14 Mar 2013 10:30:43 +0000)  
 -------------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -334,13 +338,13 @@ Uses: **controller**, **html**, **main**
   
 ***  
   
-Class POWERING (Mon, 11 Mar 2013 22:37:03 +0100)  
+Class POWERING (Tue, 12 Mar 2013 12:19:30 +0000)  
 ------------------------------------------------  
   
   
 ***  
   
-Class TOOLBOX (Thu, 14 Mar 2013 23:15:32 +0100)  
+Class TOOLBOX (Mon, 18 Mar 2013 09:32:01 +0000)  
 -----------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -350,7 +354,7 @@ Class TOOLBOX (Thu, 14 Mar 2013 23:15:32 +0100)
   
 ***  
   
-Class WIDGETS (Fri, 23 Nov 2012 21:07:16 +0100)  
+Class WIDGETS (Fri, 23 Nov 2012 17:54:52 +0000)  
 -----------------------------------------------  
   
   
@@ -361,7 +365,7 @@ Available components:
 =====================  
   
   
-Class ADMIN (Mon, 11 Mar 2013 22:45:03 +0100)  
+Class ADMIN (Tue, 12 Mar 2013 12:19:30 +0000)  
 ---------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -397,7 +401,7 @@ Uses: **html**, **navigator**
   
 ***  
   
-Class CONTROL (Fri, 15 Mar 2013 00:15:47 +0100)  
+Class CONTROL (Mon, 18 Mar 2013 09:32:01 +0000)  
 -----------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -456,7 +460,7 @@ Uses: **html**, **language**, **main**
   
 ***  
   
-Class DOCUMENTATION (Mon, 11 Mar 2013 23:00:06 +0100)  
+Class DOCUMENTATION (Tue, 12 Mar 2013 12:19:30 +0000)  
 -----------------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -495,7 +499,7 @@ Class DOCUMENTATION (Mon, 11 Mar 2013 23:00:06 +0100)
   
 ***  
   
-Class ERROR (Fri, 01 Mar 2013 22:47:10 +0100)  
+Class ERROR (Fri, 01 Mar 2013 16:01:13 +0000)  
 ---------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -536,7 +540,7 @@ Uses: **html**, **main**, **navigator**
   
 ***  
   
-Class HOMEPAGE (Mon, 11 Mar 2013 22:45:03 +0100)  
+Class HOMEPAGE (Tue, 12 Mar 2013 12:19:30 +0000)  
 ------------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -572,7 +576,7 @@ Uses: **html**, **navigator**
   
 ***  
   
-Class POWER (Mon, 11 Mar 2013 22:45:03 +0100)  
+Class POWER (Tue, 12 Mar 2013 12:19:30 +0000)  
 ---------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  

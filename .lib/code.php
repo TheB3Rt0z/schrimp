@@ -4,8 +4,12 @@ class code
 {
 	public static $todos = array
     (
+        'summary with links' => "generate automatic index with doc + meta links..",
         'code analysis' => "load, analyse, printing and more.. use toolbox class?",
         'methods lists' => "add parameter class type information, also for aliases",
+        'github wiki documentation' => "generate wiki pages with md syntax and update",
+        'add code-testing methods' => "using phpunit to autobuild and execute tests",
+        'semantic documentation' => "generate human-friendly doc from methods code..",
     );
 
 	const _STR_LENGTH_WARNING = "Method's length could be reduced..";
