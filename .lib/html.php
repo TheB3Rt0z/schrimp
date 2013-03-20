@@ -226,8 +226,8 @@ class html
     private static function h7($content)
     {
     	$self = new self(__FUNCTION__,
-    			array(),
-    			$content);
+    			         array(),
+    			         $content);
 
     	return $self->_html;
     }
@@ -242,11 +242,11 @@ class html
                          $src));
 
         $attributes = array('src' => ru($src),
-                'alt' => $alt,
-                'title' => $title);
+                            'alt' => $alt,
+                            'title' => $title);
 
         $self = new self(__FUNCTION__,
-                $attributes);
+                         $attributes);
 
         return $self->_html;
     }
@@ -255,7 +255,7 @@ class html
                                $classes = '')
     {
     	$attributes = array();
-    	if ($classes)
+    	if (!empty($classes))
     		$attributes['class'] = trim($classes);
 
     	$self = new self(__FUNCTION__,
@@ -275,7 +275,7 @@ class html
 			return le(tr('error',
                          'required file (%s) not exists',
 				         $href));
-		elseif ($href
+		elseif (!empty($href)
 			&& !in_array($placeholder, html::$_linked_files))
 		{
 			$attributes = array('href' => ru($href),
@@ -297,7 +297,7 @@ class html
                                $classes = '')
     {
     	$attributes = array();
-    	if ($classes)
+    	if (!empty($classes))
     		$attributes['class'] = trim($classes);
 
     	$self = new self(__FUNCTION__,
@@ -331,7 +331,7 @@ class html
     {
     	$attributes['type'] = $type;
 
-    	if ($src
+    	if (!empty($src)
     		&& !in_array($src, html::$_loaded_scripts))
     	{
     		if (!fe($src) && !parse_url($src))
@@ -345,7 +345,7 @@ class html
 
     		self::$_loaded_scripts[] = $type . '_' . $src;
     	}
-    	elseif ($content
+    	elseif (!empty($content)
     		&& !in_array($content, html::$_loaded_scripts))
     	{
     		$attributes['charset'] = "utf-8"; // should be constant?
@@ -365,7 +365,7 @@ class html
                                $classes = '')
     {
     	$attributes = array();
-    	if ($classes)
+    	if (!empty($classes))
     		$attributes['class'] = trim($classes);
 
     	$self = new self(__FUNCTION__,
@@ -434,8 +434,8 @@ class html
     					    $id = null)
     {
 		return self::div($content,
-    				    $classes,
-    					$id);
+    				     $classes,
+    					 $id);
     }
 
 	static function highbox($content)
@@ -448,7 +448,9 @@ class html
                               $content = null)
     {
     	return self::a($href,
-                       (!$content ? $href : $content));
+                       (!$content
+                       ? $href
+                       : $content));
     }
 
     static function image($src,
@@ -478,7 +480,8 @@ class html
 
     static function preform($content)
     {
-    	return self::pre(var_export($content, true));
+    	return self::pre(var_export($content,
+    	                            true));
     }
 
     static function title($level,
