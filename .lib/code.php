@@ -80,6 +80,19 @@ class code
 	                              $code_line[0])) > MAX_BLOCK_COMPLEXITY;
 	}
 
+	private static function _list_method_parameters(reflectionMethod $method)
+	{
+	    $parameters = array();
+
+	    foreach ($method->getParameters() as $parameter)
+	        $parameters[] = "$" . $parameter->getName()
+	                      . ($parameter->isOptional()
+	                        ? " = " . fv($parameter->getDefaultValue())
+	                        : '');
+
+	    return $parameters;
+	}
+
 	private static function _get_constants_information()
 	{
 	    $constants = '';
@@ -406,19 +419,12 @@ class code
 
 	static function analyse_method(reflectionMethod $method)
 	{
-	    $parameters = array();
-	    foreach ($method->getParameters() as $parameter)
-	        $parameters[] = "$" . $parameter->getName()
-	                      . ($parameter->isOptional()
-	                        ? " = " . fv($parameter->getDefaultValue())
-	                        : '');
-
-	    $parameters_modifier = (($count = count($parameters) > 1)
-	                           ? $count - 1
-	                           : 0);
+	    $parameters = self::_list_method_parameters($method);
 
 	    $length = $method->getEndLine() - $method->getStartLine()
-	            - $parameters_modifier - ($method->isAbstract() ? 0 : 2); // modifier
+	            - (($count = count($parameters) > 1)
+	              ? $count - 1
+	              : 0) - ($method->isAbstract() ? 0 : 2); // modifier
 
 	    $code = array_slice(self::get_class_code($method->getDeclaringClass()),
 	                        $method->getEndLine() - $length - 1,
