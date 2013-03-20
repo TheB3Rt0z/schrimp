@@ -1,4 +1,4 @@
-![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.5.2013.03.20  
+![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.5.2013.03.21  
 =========================================================================================================================================  
   
   
@@ -69,7 +69,7 @@ General reference
   
 ***  
   
-Class CODE (Wed, 20 Mar 2013 23:57:55 +0100)  
+Class CODE (Thu, 21 Mar 2013 00:02:58 +0100)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -104,6 +104,7 @@ Uses: **main**, **md**
 - **github wiki documentation** &#10140; generate wiki pages with md syntax and update  
 - **add code-testing methods** &#10140; using phpunit to autobuild and execute tests  
 - **semantic documentation** &#10140; generate human-friendly doc from methods code..  
+- **get_class_dependencies** &#10140; too unaccurate, navigator-controller, only explicit new, etc.  
   
   
 ***  
@@ -402,7 +403,7 @@ Uses: **html**, **navigator**
   
 ***  
   
-Class CONTROL (Wed, 20 Mar 2013 23:13:02 +0100)  
+Class CONTROL (Thu, 21 Mar 2013 00:08:40 +0100)  
 -----------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -432,7 +433,7 @@ Class CONTROL (Wed, 20 Mar 2013 23:13:02 +0100)
 - **_handler_modules_documentation()** (Pri, Len: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_handler_modules_error()** (Pri, Len: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_handler_application()** (Pri, Len: 30 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_handler_phpinfo()** (Pri, Len: 47 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Method's length should be reduced!") CyC: 9 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **_handler_phpinfo()** (Pri, Len: 21 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **__construct($action, $args)** (CPub, Len: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_set_title($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_set_header($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
@@ -459,13 +460,14 @@ Uses: **html**, **language**, **main**
 - **phpinfo server configuration** &#10140; better rappresentation of access details, see php-documentation  
 - **plugins libraries** &#10140; find a way to incapsulate needed translations (static array of translations? default if only one level..) and controls (?) in backend   
   
-**CLASS CONTROL_HELPER (WED, 20 MAR 2013 23:13:02 +0100)**  
+**CLASS CONTROL_HELPER (THU, 21 MAR 2013 00:12:43 +0100)**  
   
 **CODE REFERENCE:**  
   
 - **get_general_phpinfos($output = null)** (Pub, Len: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_configuration_phpinfos($output = null)** (Pub, Len: 12 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_environment_phpinfos($output = null)** (Pub, Len: 12 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **get_phpinfos($arg)** (Pub, Len: 14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
 **DEPENDENCIES:**  
   

@@ -46,6 +46,24 @@ class control_helper
 
         return $output;
     }
+
+    function get_phpinfos($arg)
+    {
+        switch ($arg)
+        {
+            case 'general' :
+                return $this->get_general_phpinfos();
+
+            case 'configuration' :
+                return $this->get_configuration_phpinfos();
+
+            case 'environment' :
+                return $this->get_environment_phpinfos();
+
+            default :
+                return null;
+        }
+    }
 }
 
 ?>

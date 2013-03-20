@@ -10,6 +10,7 @@ class code
         'github wiki documentation' => "generate wiki pages with md syntax and update",
         'add code-testing methods' => "using phpunit to autobuild and execute tests",
         'semantic documentation' => "generate human-friendly doc from methods code..",
+        'get_class_dependencies' => "too unaccurate, navigator-controller, only explicit new, etc.",
     );
 
 	const _STR_LENGTH_WARNING = "Method's length could be reduced..";

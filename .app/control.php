@@ -234,35 +234,9 @@ class control extends controller
  		                		            ? '_' . $this->_args[0]
  		                		            : '')));
 
-        if (!empty($this->_args[0])
-            && array_key_exists($this->_args[0], $options))
-        {
-            switch ($this->_args[0])
-            {
-                case 'general' :
-                {
-                    $output = $this->helper->get_general_phpinfos();
-                    break;
-                }
+		$output = $this->helper->get_phpinfos($this->_args[0]);
 
-                case 'configuration' :
-                {
-                    $output = $this->helper->get_configuration_phpinfos();
-                    break;
-                }
-
-                case 'environment' :
-                {
-                    $output = $this->helper->get_environment_phpinfos();
-                    break;
-                }
-
-                default :
-                    $output = '';
-            }
-
-            $this->_set_article(html::highbox($output));
-        }
+        $this->_set_article(html::highbox($output));
 	}
 }
 
