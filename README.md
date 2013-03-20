@@ -69,7 +69,7 @@ General reference
   
 ***  
   
-Class CODE (Wed, 20 Mar 2013 18:12:30 +0000)  
+Class CODE (Wed, 20 Mar 2013 19:46:29 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -81,7 +81,7 @@ Class CODE (Wed, 20 Mar 2013 18:12:30 +0000)
 - **_get_todos_information()** (PriS, Len: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_get_methods_information($method)** (PriS, Len: 27 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_get_classes_information()** (PriS, Len: 27 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_get_components_information()** (PriS, Len: 30 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **_get_components_information()** (PriS ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "1 too long line(s) found!") Len: 77 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Method's length should be reduced!") CyC: 16 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Method's cyclomatic complexity should be reduced!"))  
 - **get_constants_list()** (PubS, Len: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_functions_list()** (PubS, Len: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_libraries_list($exclude = null)** (PubS, Len: 27 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
@@ -398,6 +398,8 @@ Class ADMIN (Tue, 12 Mar 2013 12:19:30 +0000)
   
 Uses: **html**, **navigator**  
   
+**CLASS ADMIN_HELPER (WED, 20 MAR 2013 19:47:11 +0000)**  
+  
   
 ***  
   
@@ -458,6 +460,14 @@ Uses: **html**, **language**, **main**
 - **phpinfo server configuration** &#10140; better rappresentation of access details, see php-documentation  
 - **plugins libraries** &#10140; find a way to incapsulate needed translations (static array of translations? default if only one level..) and controls (?) in backend   
   
+**CLASS CONTROL_HELPER (WED, 20 MAR 2013 19:47:11 +0000)**  
+  
+**CODE REFERENCE:**  
+  
+- **get_general_phpinfos($output = null)** (Pub, Len: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **get_configuration_phpinfos($output = null)** (Pub, Len: 12 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **get_environment_phpinfos($output = null)** (Pub, Len: 12 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+  
   
 ***  
   
@@ -495,6 +505,8 @@ Class DOCUMENTATION (Wed, 20 Mar 2013 13:33:34 +0000)
 **TODOS**  
   
 - **method toString** &#10140; to get a rappresentative highlighted code as reference  
+  
+**CLASS DOCUMENTATION_HELPER (WED, 20 MAR 2013 19:47:11 +0000)**  
   
   
 ***  
@@ -537,6 +549,8 @@ Class ERROR (Fri, 01 Mar 2013 16:01:13 +0000)
   
 Uses: **html**, **main**, **navigator**  
   
+**CLASS ERROR_HELPER (WED, 20 MAR 2013 19:47:11 +0000)**  
+  
   
 ***  
   
@@ -573,6 +587,8 @@ Class HOMEPAGE (Tue, 12 Mar 2013 12:19:30 +0000)
   
 Uses: **html**, **navigator**  
   
+**CLASS HOMEPAGE_HELPER (WED, 20 MAR 2013 19:47:33 +0000)**  
+  
   
 ***  
   
@@ -603,6 +619,8 @@ Class POWER (Tue, 12 Mar 2013 12:19:30 +0000)
 - **get_article()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_aside()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_footer()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+  
+**CLASS POWER_HELPER (WED, 20 MAR 2013 19:47:33 +0000)**  
   
   
 ***  

@@ -2,6 +2,8 @@
 
 class control_helper
 {
+    public static $todos = array();
+
     function get_general_phpinfos($output = '')
     {
         ksort($_SERVER);
