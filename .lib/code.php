@@ -213,6 +213,27 @@ class code
 	    return $classes . MD_NEWLINE_SEQUENCE;
 	}
 
+	private static function _get_component_information($name)
+	{
+	    extract(self::get_class_data(new ReflectionClass($name)));
+
+	    $component = md::title(2, $header);
+	    if (!empty($class_constants))
+	        $component .= md::title(3, "Class configuration constants:")
+	                    . $class_constants . MD_NEWLINE_SEQUENCE; // unprotected (no '_XXX') constants here
+	    if (!empty($reference))
+	        $component .= md::title(3, "Code reference:")
+	                    . $reference .MD_NEWLINE_SEQUENCE;
+	    if (!empty($dependencies))
+	        $component .= md::title(3, "Dependencies:")
+	                    . "Uses: " . $dependencies . MD_NEWLINE_SEQUENCE;
+	    if (!empty($class_todos))
+	        $component .= md::title(3, "TODOs")
+	                    . $class_todos . MD_NEWLINE_SEQUENCE;
+
+	    return $component;
+	}
+
 	private static function _get_components_information()
 	{
 	    $components = md::title(1, "Available components:");
@@ -224,68 +245,18 @@ class code
 	        else
 	            require_once _SET_APPLICATION_PUBLICPATH . $component . ".php";
 
-	        $class = new ReflectionClass($component);
-
-	        extract(self::get_class_data($class));
-
-	        $components .= md::title(2, $header);
-	        if (!empty($class_constants))
-	            $components .= md::title(3, "Class configuration constants:")
-	                         . $class_constants . MD_NEWLINE_SEQUENCE; // unprotected (no '_XXX') constants here
-	        if (!empty($reference))
-	            $components .= md::title(3, "Code reference:")
-	                         . $reference .MD_NEWLINE_SEQUENCE;
-	        if (!empty($dependencies))
-	            $components .= md::title(3, "Dependencies:")
-	                         . "Uses: " . $dependencies . MD_NEWLINE_SEQUENCE;
-	        if (!empty($class_todos))
-	            $components .= md::title(3, "TODOs")
-	                         . $class_todos . MD_NEWLINE_SEQUENCE;
+	        $components .= self::_get_component_information($component);
 
 	        $component_helper = $component . "_helper";
 	        if (fe(_SET_APPLICATION_PATH . $component_helper . ".php"))
 	        {
 	            require_once _SET_APPLICATION_PATH . $component_helper . ".php";
-
-	            $helper_class = new ReflectionClass($component_helper);
-
-	            extract(self::get_class_data($helper_class));
-
-	            $components .= md::title(3, $header);
-    	        if (!empty($class_constants))
-    	            $components .= md::title(3, "Class configuration constants:")
-    	                         . $class_constants . MD_NEWLINE_SEQUENCE; // unprotected (no '_XXX') constants here
-    	        if (!empty($reference))
-    	            $components .= md::title(3, "Code reference:")
-    	                         . $reference .MD_NEWLINE_SEQUENCE;
-    	        if (!empty($dependencies))
-    	            $components .= md::title(3, "Dependencies:")
-    	                         . "Uses: " . $dependencies . MD_NEWLINE_SEQUENCE;
-    	        if (!empty($class_todos))
-    	            $components .= md::title(3, "TODOs")
-    	                         . $class_todos . MD_NEWLINE_SEQUENCE;
+	            $components .= self::_get_component_information($component_helper);
 	        }
 	        elseif (fe(_SET_APPLICATION_PUBLICPATH . $component_helper . ".php"))
 	        {
 	            require_once _SET_APPLICATION_PUBLICPATH . $component_helper . ".php";
-
-	            $helper_class = new ReflectionClass($component_helper);
-
-	            extract(self::get_class_data($helper_class));
-
-	            $components .= md::title(3, $header);
-    	        if (!empty($class_constants))
-    	            $components .= md::title(3, "Class configuration constants:")
-    	                         . $class_constants . MD_NEWLINE_SEQUENCE; // unprotected (no '_XXX') constants here
-    	        if (!empty($reference))
-    	            $components .= md::title(3, "Code reference:")
-    	                         . $reference .MD_NEWLINE_SEQUENCE;
-    	        if (!empty($dependencies))
-    	            $components .= md::title(3, "Dependencies:")
-    	                         . "Uses: " . $dependencies . MD_NEWLINE_SEQUENCE;
-    	        if (!empty($class_todos))
-    	            $components .= md::title(3, "TODOs")
-    	                         . $class_todos . MD_NEWLINE_SEQUENCE;
+	            $components .= self::_get_component_information($component);
 	        }
 
 	        $components .= md::hr();

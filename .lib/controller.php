@@ -11,6 +11,8 @@ abstract class controller
 	protected $_action = null;
 	protected $_args = array();
 
+	protected $helper = null;
+
 	private $_title = '';
 
 	private $_header = '';
@@ -19,8 +21,6 @@ abstract class controller
 	private $_article = '';
 	private $_aside = '';
 	private $_footer = '';
-
-	public $helper = null;
 
 	function __construct($action,
 			             $args)
