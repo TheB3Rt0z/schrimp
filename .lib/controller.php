@@ -20,16 +20,18 @@ abstract class controller
 	private $_aside = '';
 	private $_footer = '';
 
-	private $_helper = null;
+	public $helper = null;
 
 	function __construct($action,
 			             $args)
 	{
 		$this->_action = $action;
 		$this->_args = $args;
-		$this->initialize();
+
 		$helper = get_class($this) . '_helper';
-		$this->_helper = new $helper; // loading helper dynamically
+		$this->helper = new $helper; // loading helper dynamically
+
+		$this->initialize();
 	}
 
 	protected abstract function initialize();

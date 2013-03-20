@@ -237,50 +237,28 @@ class control extends controller
         if (!empty($this->_args[0])
             && array_key_exists($this->_args[0], $options))
         {
-            $output = '';
-
             switch ($this->_args[0])
             {
                 case 'general' :
                 {
-                    ksort($_SERVER);
-                    foreach ($_SERVER as $key => $value)
-                        $output .= $key . " &#10140; "
-                                 . $value . html::newline();
-
+                    $output = $this->helper->get_general_phpinfos();
                     break;
                 }
 
                 case 'configuration' :
                 {
-                    foreach (ini_get_all() as $key => $values)
-                        $output .= strtoupper($key) . " &#10140; "
-                                 . fv(str_replace(",",
-                                                  ", ",
-                                                  $values['local_value'])) . " / "
-                                 . fv(str_replace(",",
-                                                  ", ",
-                                                  $values['global_value']))
-                                 . " (" . $values['access'] . ")"
-                                 . html::newline();
-
+                    $output = $this->helper->get_configuration_phpinfos();
                     break;
                 }
 
                 case 'environment' :
                 {
-                    ksort($_ENV);
-                    foreach ($_ENV as $key => $value)
-                        $output .= $key . " &#10140; "
-                                . $value . html::newline();
-
-                    if (empty($output))
-                        $output = html::hyperlink('http://www.php.net/manual/en/ini.core.php#ini.variables-order', "(?)");
-
+                    $output = $this->helper->get_environment_phpinfos();
                     break;
                 }
 
-                default : {}
+                default :
+                    $output = '';
             }
 
             $this->_set_article(html::highbox($output));
