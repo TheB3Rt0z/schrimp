@@ -4,7 +4,7 @@ class code
 {
 	public static $todos = array
     (
-        'summary with links' => "generate automatic index with doc + meta links..",
+        'summary with links' => "generate automatic index with doc + meta links and warnings..",
         'code analysis' => "load, analyse, printing and more.. use toolbox class?",
         'methods lists' => "add parameter class type information, also for aliases",
         'github wiki documentation' => "generate wiki pages with md syntax and update",
@@ -247,16 +247,16 @@ class code
 
 	        $components .= self::_get_component_information($component);
 
-	        $component_helper = $component . "_helper";
-	        if (fe(_SET_APPLICATION_PATH . $component_helper . ".php"))
+	        $helper = $component . "_helper";
+	        if (fe(_SET_APPLICATION_PATH . $helper . ".php"))
 	        {
-	            require_once _SET_APPLICATION_PATH . $component_helper . ".php";
-	            $components .= self::_get_component_information($component_helper);
+	            require_once _SET_APPLICATION_PATH . $helper . ".php";
+	            $components .= self::_get_component_information($helper);
 	        }
-	        elseif (fe(_SET_APPLICATION_PUBLICPATH . $component_helper . ".php"))
+	        elseif (fe(_SET_APPLICATION_PUBLICPATH . $helper . ".php"))
 	        {
-	            require_once _SET_APPLICATION_PUBLICPATH . $component_helper . ".php";
-	            $components .= self::_get_component_information($component);
+	            require_once _SET_APPLICATION_PUBLICPATH . $helper . ".php";
+	            $components .= self::_get_component_information($helper);
 	        }
 
 	        $components .= md::hr();
