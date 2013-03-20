@@ -126,18 +126,14 @@ class navigator
 	    if (!is_array($options))
 			$options = eval($options); // dynamic from static code!
 
+	    $option_component = $controller;
+	    $option_value = 'COMPONENT VISIBLE NAME';
 		foreach ($options as $key => $value)
 		{
 			if (empty($value))
-			{
-				$option_component = $key;
-				$option_value = 'COMPONENT VISIBLE NAME';
-			}
+			    $option_component = $key;
 			else
-			{
-				$option_component = $controller;
-				$option_value = $value;
-			}
+			    $option_value = $value;
 
 			$sub['sub'][$link . "/" . $key] = array
 			(
