@@ -370,29 +370,6 @@ class code
         return $components;
 	}
 
-	static function get_class_code(reflectionClass $class)
-	{
-	    if ($class->getParentClass()
-	        && ($class->getParentClass()->name == 'controller'))
-	    {
-	        $path = _SET_APPLICATION_PATH;
-	        $public_path = _SET_APPLICATION_PUBLICPATH;
-	    }
-	    else
-	    {
-	        $path = _SET_LIBRARIES_PATH;
-	        $public_path = _SET_LIBRARIES_PUBLICPATH;
-	    }
-
-	    $class_path = ($class->name != 'main'
-	                  ? (file_exists($path . $class->name . ".php")
-	                    ? $path
-	                    : $public_path)
-	                  : '.') . $class->name . ".php";
-
-	    return file($class_path); // in array format
-	}
-
 	static function get_class_dependencies(reflectionClass $class)
 	{
 	    $dependencies = array(); // calculation is imprecise..
@@ -400,7 +377,7 @@ class code
 	    foreach (self::get_libraries_list($class->name) as $key => $value)
 	        $dependencies[$key] = 0;
 
-	    foreach (self::get_class_code($class) as $code_line)
+	    foreach (file($class->getFileName()) as $code_line)
 	        foreach ($dependencies as $key => $value)
 	            if (substr_count($code_line, $key . '::')
 	                || substr_count($code_line, ' new ' . $key))
@@ -473,7 +450,7 @@ class code
 	              ? $count - 1
 	              : 0) - ($method->isAbstract() ? 0 : 2); // modifier
 
-	    $code = array_slice(self::get_class_code($method->getDeclaringClass()),
+	    $code = array_slice(file($method->getDeclaringClass()->getFileName()),
 	                        $method->getEndLine() - $length - 1,
 	                        $length);
 

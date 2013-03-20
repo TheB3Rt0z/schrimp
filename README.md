@@ -69,7 +69,7 @@ General reference
   
 ***  
   
-Class CODE (Wed, 20 Mar 2013 19:46:29 +0000)  
+Class CODE (Wed, 20 Mar 2013 23:57:55 +0100)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -86,7 +86,6 @@ Class CODE (Wed, 20 Mar 2013 19:46:29 +0000)
 - **get_functions_list()** (PubS, Len: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_libraries_list($exclude = null)** (PubS, Len: 27 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_components_list()** (PubS, Len: 24 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_class_code($class)** (PubS, Len: 19 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_class_dependencies($class)** (PubS, Len: 27 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_class_data($class)** (PubS, Len: 26 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_method_status($method)** (PubS, Len: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
@@ -109,7 +108,7 @@ Uses: **main**, **md**
   
 ***  
   
-Class CONTROLLER (Wed, 20 Mar 2013 19:07:47 +0000)  
+Class CONTROLLER (Wed, 20 Mar 2013 23:13:02 +0100)  
 --------------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -144,7 +143,7 @@ Uses: **html**, **navigator**
   
 ***  
   
-Class DB (Mon, 11 Mar 2013 09:13:54 +0000)  
+Class DB (Sat, 09 Mar 2013 20:20:51 +0100)  
 ------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -158,7 +157,7 @@ Class DB (Mon, 11 Mar 2013 09:13:54 +0000)
   
 ***  
   
-Class ESCORT (Tue, 19 Mar 2013 10:31:40 +0000)  
+Class ESCORT (Tue, 19 Mar 2013 08:54:38 +0100)  
 ----------------------------------------------  
   
 **TODOS**  
@@ -168,7 +167,7 @@ Class ESCORT (Tue, 19 Mar 2013 10:31:40 +0000)
   
 ***  
   
-Class HTML (Wed, 20 Mar 2013 18:32:06 +0000)  
+Class HTML (Wed, 20 Mar 2013 23:13:02 +0100)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -220,7 +219,7 @@ Class HTML (Wed, 20 Mar 2013 18:32:06 +0000)
   
 ***  
   
-Class LANGUAGE (Mon, 04 Mar 2013 10:41:00 +0000)  
+Class LANGUAGE (Fri, 01 Mar 2013 23:53:23 +0100)  
 ------------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -237,7 +236,7 @@ Class LANGUAGE (Mon, 04 Mar 2013 10:41:00 +0000)
   
 ***  
   
-Class MAIN (Wed, 20 Mar 2013 18:34:13 +0000)  
+Class MAIN (Wed, 20 Mar 2013 23:13:02 +0100)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -281,7 +280,7 @@ Uses: **code**, **html**
   
 ***  
   
-Class MD (Tue, 12 Mar 2013 12:19:30 +0000)  
+Class MD (Mon, 11 Mar 2013 23:29:49 +0100)  
 ------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -306,7 +305,7 @@ Class MD (Tue, 12 Mar 2013 12:19:30 +0000)
   
 ***  
   
-Class NAVIGATOR (Wed, 20 Mar 2013 18:37:49 +0000)  
+Class NAVIGATOR (Wed, 20 Mar 2013 23:13:02 +0100)  
 -------------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -338,13 +337,13 @@ Uses: **controller**, **html**, **main**
   
 ***  
   
-Class POWERING (Tue, 12 Mar 2013 12:19:30 +0000)  
+Class POWERING (Mon, 11 Mar 2013 22:37:03 +0100)  
 ------------------------------------------------  
   
   
 ***  
   
-Class TOOLBOX (Mon, 18 Mar 2013 09:32:01 +0000)  
+Class TOOLBOX (Thu, 14 Mar 2013 23:15:32 +0100)  
 -----------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -354,7 +353,7 @@ Class TOOLBOX (Mon, 18 Mar 2013 09:32:01 +0000)
   
 ***  
   
-Class WIDGETS (Fri, 23 Nov 2012 17:54:52 +0000)  
+Class WIDGETS (Fri, 23 Nov 2012 21:07:16 +0100)  
 -----------------------------------------------  
   
   
@@ -365,7 +364,7 @@ Available components:
 =====================  
   
   
-Class ADMIN (Tue, 12 Mar 2013 12:19:30 +0000)  
+Class ADMIN (Mon, 11 Mar 2013 22:45:03 +0100)  
 ---------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -398,12 +397,12 @@ Class ADMIN (Tue, 12 Mar 2013 12:19:30 +0000)
   
 Uses: **html**, **navigator**  
   
-**CLASS ADMIN_HELPER (WED, 20 MAR 2013 19:47:11 +0000)**  
+**CLASS ADMIN_HELPER (WED, 20 MAR 2013 23:13:02 +0100)**  
   
   
 ***  
   
-Class CONTROL (Wed, 20 Mar 2013 19:13:28 +0000)  
+Class CONTROL (Wed, 20 Mar 2013 23:13:02 +0100)  
 -----------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -460,18 +459,22 @@ Uses: **html**, **language**, **main**
 - **phpinfo server configuration** &#10140; better rappresentation of access details, see php-documentation  
 - **plugins libraries** &#10140; find a way to incapsulate needed translations (static array of translations? default if only one level..) and controls (?) in backend   
   
-**CLASS CONTROL_HELPER (WED, 20 MAR 2013 19:47:11 +0000)**  
+**CLASS CONTROL_HELPER (WED, 20 MAR 2013 23:13:02 +0100)**  
   
 **CODE REFERENCE:**  
   
-- **get_general_phpinfos($output = null)** (Pub, Len: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_configuration_phpinfos($output = null)** (Pub, Len: 12 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_environment_phpinfos($output = null)** (Pub, Len: 12 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **get_general_phpinfos($output = null)** (Pub, Len: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **get_configuration_phpinfos($output = null)** (Pub, Len: 12 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **get_environment_phpinfos($output = null)** (Pub, Len: 12 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+  
+**DEPENDENCIES:**  
+  
+Uses: **html**  
   
   
 ***  
   
-Class DOCUMENTATION (Wed, 20 Mar 2013 13:33:34 +0000)  
+Class DOCUMENTATION (Wed, 20 Mar 2013 23:13:02 +0100)  
 -----------------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -506,12 +509,12 @@ Class DOCUMENTATION (Wed, 20 Mar 2013 13:33:34 +0000)
   
 - **method toString** &#10140; to get a rappresentative highlighted code as reference  
   
-**CLASS DOCUMENTATION_HELPER (WED, 20 MAR 2013 19:47:11 +0000)**  
+**CLASS DOCUMENTATION_HELPER (WED, 20 MAR 2013 23:13:02 +0100)**  
   
   
 ***  
   
-Class ERROR (Fri, 01 Mar 2013 16:01:13 +0000)  
+Class ERROR (Fri, 01 Mar 2013 22:47:10 +0100)  
 ---------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -549,12 +552,12 @@ Class ERROR (Fri, 01 Mar 2013 16:01:13 +0000)
   
 Uses: **html**, **main**, **navigator**  
   
-**CLASS ERROR_HELPER (WED, 20 MAR 2013 19:47:11 +0000)**  
+**CLASS ERROR_HELPER (WED, 20 MAR 2013 23:13:02 +0100)**  
   
   
 ***  
   
-Class HOMEPAGE (Tue, 12 Mar 2013 12:19:30 +0000)  
+Class HOMEPAGE (Mon, 11 Mar 2013 22:45:03 +0100)  
 ------------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -587,12 +590,12 @@ Class HOMEPAGE (Tue, 12 Mar 2013 12:19:30 +0000)
   
 Uses: **html**, **navigator**  
   
-**CLASS HOMEPAGE_HELPER (WED, 20 MAR 2013 19:47:33 +0000)**  
+**CLASS HOMEPAGE_HELPER (WED, 20 MAR 2013 23:13:02 +0100)**  
   
   
 ***  
   
-Class POWER (Tue, 12 Mar 2013 12:19:30 +0000)  
+Class POWER (Mon, 11 Mar 2013 22:45:03 +0100)  
 ---------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -620,7 +623,7 @@ Class POWER (Tue, 12 Mar 2013 12:19:30 +0000)
 - **get_aside()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_footer()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
-**CLASS POWER_HELPER (WED, 20 MAR 2013 19:47:33 +0000)**  
+**CLASS POWER_HELPER (WED, 20 MAR 2013 23:13:02 +0100)**  
   
   
 ***  
