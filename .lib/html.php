@@ -237,9 +237,7 @@ class html
             $title = '')
     {
         if (!fe($src))
-            return le(tr('error',
-                         'required file (%s) not exists',
-                         $src));
+            return $main->launch_error_file_not_found($src);
 
         $attributes = array('src' => ru($src),
                             'alt' => $alt,
@@ -272,9 +270,7 @@ class html
     	$placeholder = $rel . '_' . $href;
 
     	if (!fe($href))
-			return le(tr('error',
-                         'required file (%s) not exists',
-				         $href));
+			return $main->launch_error_file_not_found($href);
 		elseif (!empty($href)
 			&& !in_array($placeholder, html::$_linked_files))
 		{
@@ -335,9 +331,7 @@ class html
     		&& !in_array($src, html::$_loaded_scripts))
     	{
     		if (!fe($src) && !parse_url($src))
-				return le(tr('error',
-	                         'required file (%s) not exists',
-					         $src));
+				return $main->launch_error_file_not_found($src);
 
     		$attributes['src'] = $src;
     		$self = new self(__FUNCTION__,

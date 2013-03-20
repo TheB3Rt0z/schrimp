@@ -219,6 +219,13 @@ class main
         return false; // just in case
     }
 
+    static function launch_error_file_not_found($file)
+    {
+        return le(tr('error',
+	                 'required file (%s) not exists',
+					 $file));
+    }
+
     static function set_buffer($buffer)
     {
 		file_put_contents(".buffer", serialize($buffer));
