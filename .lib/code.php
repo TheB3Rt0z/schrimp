@@ -94,6 +94,15 @@ class code
 	    return $parameters;
 	}
 
+	private static function _get_summary_information()
+	{
+	    $summary = '';
+
+	    // generating md from internal registry
+
+	    return $summary;
+	}
+
 	private static function _get_constants_information()
 	{
 	    $constants = '';
@@ -453,19 +462,22 @@ class code
 	           . " " . _STR_PROJECT_NAME . "'s Documentation "
 	    	   . main::get_version(1) . date('.Y.m.d');
 
+	    $documentation = md::title(2, "General reference")
+            	         . md::title(3, "Global configuration constants")
+            	           . self::_get_constants_information()
+            	         . md::title(3, "Function aliases")
+            	           . self::_get_functions_information() // add more information
+            	         . md::title(3, 'TODOs')
+            	           . self::_get_todos_information()
+            	         . md::hr()
+            	       . self::_get_classes_information()
+            	       . self::_get_components_information() // adding more information?
+            	     . str_repeat(MD_NEWLINE_SEQUENCE, 4)
+        	         . md::text(_STR_COPYRIGHT_SIGNATURE);
+
 	    return md::title(1, $title)
-    	       . md::title(2, "General reference")
-    	         . md::title(3, "Global configuration constants")
-    	           . self::_get_constants_information()
-    	         . md::title(3, "Function aliases")
-    	           . self::_get_functions_information() // add more information
-    	         . md::title(3, 'TODOs')
-    	           . self::_get_todos_information()
-    	         . md::hr()
-    	       . self::_get_classes_information()
-    	       . self::_get_components_information() // adding more information?
-    	     . str_repeat(MD_NEWLINE_SEQUENCE, 4)
-	         . md::text(_STR_COPYRIGHT_SIGNATURE);
+	         . self::_get_summary_information()
+	         . $documentation;
 	}
 }
 
