@@ -4,7 +4,8 @@ class control extends controller
 {
     public static $todos = array
     (
-        'server configuration' => "better rappresentation of access details, see php-documentation",
+        'phpinfo server configuration' => "better rappresentation of access details, see php-documentation",
+        'plugins libraries' => "find a way to incapsulate needed translations (static array of translations? default if only one level..) and controls (?) in backend ",
     );
 
 	function initialize()
@@ -134,7 +135,7 @@ class control extends controller
 			                   \$output[\$option] = '_handler_plugins_' . \$option;
 		                   }
 
-				           return \$output;"; // translation should go in control.txt, if official
+				           return \$output;"; // ATM translation should go in control.txt, if official
 
 		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
 		                . HTML_BREADCRUMB_SEPARATOR

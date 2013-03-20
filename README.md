@@ -1,4 +1,4 @@
-![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.5.2013.03.19  
+![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.5.2013.03.20  
 =========================================================================================================================================  
   
   
@@ -21,7 +21,7 @@ General reference
   
 **FUNCTION ALIASES**  
   
-- **fe($path)** &#10140; .main.php on line 265,
+- **fe($path)** &#10140; .main.php on line 263,
   returns boolean if realpath path exists on running server;
   @param string $path
   @return boolean true if realpath exists, false otherwise
@@ -31,22 +31,22 @@ General reference
   @param mixed $mixed
   @return mixed depending on internally defined rules
   
-- **le($msg)** &#10140; .main.php on line 295,
+- **le($msg)** &#10140; .main.php on line 293,
   launches a customizable error 500, mit optional backtrace for debug;
   @param string $msg
   @return boolean false after relocate
   
-- **rt($url = null)** &#10140; .main.php on line 285,
+- **rt($url = null)** &#10140; .main.php on line 283,
   relocates to given relative url or to base path on default;
   @param string $url
   @return void
   
-- **ru($uri = null)** &#10140; .main.php on line 275,
+- **ru($uri = null)** &#10140; .main.php on line 273,
   returns an absolute uri, based on current server configuration;
   @param string $uri
   @return string absolute http unified resource identifier
   
-- **sb()** &#10140; .main.php on line 304,
+- **sb()** &#10140; .main.php on line 302,
   show call's backtrace with help of error base handler
   @return void
   
@@ -56,7 +56,7 @@ General reference
   @param string $marker
   @return mixed callback function returned value(s)
   
-- **vd($what)** &#10140; .main.php on line 255,
+- **vd($what)** &#10140; .main.php on line 253,
   returns pre-formatted mixed variables;
   @param mixed $what
   @return void
@@ -236,7 +236,7 @@ Class LANGUAGE (Mon, 04 Mar 2013 10:41:00 +0000)
   
 ***  
   
-Class MAIN (Tue, 19 Mar 2013 10:31:40 +0000)  
+Class MAIN (Wed, 20 Mar 2013 13:19:11 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -272,11 +272,9 @@ Uses: **code**, **html**
 - **documentation** &#10140; PHP's highlight_string/file to rapresent code excerpts  
 - **escort library** &#10140; session su PHP poi DB se webstore & memcache fail?  
 - **memcache support** &#10140; verify in method, if at least one mem-server works  
-- **load_libraries** &#10140; find someway to avoid conflicts between libs/plugins  
-- **pdf documentation** &#10140; check file creation/modification date -> reminder  
-- **cyc & documentation** &#10140; render per line & move to another library class  
+- **pdf documentation** &#10140; check file creation/modification date -> reminder on old first decimal  
 - **css selectors** &#10140; uniform to html-class render-methods (only default style)  
-- **css stylesheets autoload** &#10140; automatically load any file in .inc/inc / css?  
+- **css stylesheets autoload** &#10140; automatically load ANY file in .inc/inc / css?  
   
   
 ***  
@@ -401,7 +399,7 @@ Uses: **html**, **navigator**
   
 ***  
   
-Class CONTROL (Mon, 18 Mar 2013 09:32:01 +0000)  
+Class CONTROL (Wed, 20 Mar 2013 13:31:43 +0000)  
 -----------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -455,12 +453,13 @@ Uses: **html**, **language**, **main**
   
 **TODOS**  
   
-- **server configuration** &#10140; better rappresentation of access details, see php-documentation  
+- **phpinfo server configuration** &#10140; better rappresentation of access details, see php-documentation  
+- **plugins libraries** &#10140; find a way to incapsulate needed translations (static array of translations? default if only one level..) and controls (?) in backend   
   
   
 ***  
   
-Class DOCUMENTATION (Tue, 12 Mar 2013 12:19:30 +0000)  
+Class DOCUMENTATION (Wed, 20 Mar 2013 13:33:34 +0000)  
 -----------------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -493,8 +492,7 @@ Class DOCUMENTATION (Tue, 12 Mar 2013 12:19:30 +0000)
   
 **TODOS**  
   
-- **method toString** &#10140; implementare per analisi del codice e calcolini  
-- **[...]:: != self** &#10140; filtro per calcolare le dipendenze implicite..  
+- **method toString** &#10140; to get a rappresentative highlighted code as reference  
   
   
 ***  

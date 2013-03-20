@@ -4,8 +4,7 @@ class documentation extends controller
 {
 	public static $todos = array
 	(
-	    'method toString' => "implementare per analisi del codice e calcolini",
-		'[...]:: != self' => "filtro per calcolare le dipendenze implicite..",
+	    'method toString' => "to get a rappresentative highlighted code as reference",
 	);
 
 	function initialize()

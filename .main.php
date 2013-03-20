@@ -7,11 +7,9 @@ class main
 		'documentation' => "PHP's highlight_string/file to rapresent code excerpts",
 		'escort library' => "session su PHP poi DB se webstore & memcache fail?",
 		'memcache support' => "verify in method, if at least one mem-server works",
-		'load_libraries' => "find someway to avoid conflicts between libs/plugins",
-		'pdf documentation' => "check file creation/modification date -> reminder",
-	    'cyc & documentation' => "render per line & move to another library class",
+		'pdf documentation' => "check file creation/modification date -> reminder on old first decimal",
 	    'css selectors' => "uniform to html-class render-methods (only default style)",
-	    'css stylesheets autoload' => "automatically load any file in .inc/inc / css?",
+	    'css stylesheets autoload' => "automatically load ANY file in .inc/inc / css?",
 	);
 
     private $_call = null;
@@ -78,10 +76,10 @@ class main
 
     private function _load_libraries()
     {
-        foreach (glob(_SET_LIBRARIES_PATH . "*.php") as $filename)
+        foreach (glob(_SET_LIBRARIES_PATH . "*.php") as $filename) // core libraries first
             require_once $filename;
 
-        foreach (glob(_SET_LIBRARIES_PUBLICPATH . "*.php") as $filename)
+        foreach (glob(_SET_LIBRARIES_PUBLICPATH . "*.php") as $filename) // if file/class name was already used an error will be generated
             require_once $filename;
     }
 
@@ -191,7 +189,7 @@ class main
 
     static function exists_file($path)
     {
-        return file_exists(realpath($path));
+        return file_exists(realpath($path)); // works only if read permissions on subdirs are available!
     }
 
     static function resolve_uri($uri = '')
