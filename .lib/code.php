@@ -165,8 +165,9 @@ class code
 	    extract(self::analyse_method($method)); // generates required variables
 
 	    return "- **" . $method->getName() . "("
-	         . (!empty($parameters_warning)
-	           ? md::blue_boh($length_warning . " too many parameters used!") . " "
+	         . ($parameters_warning >= 0
+	           ? md::blue_boh("too many parameters used! (+"
+	                        . ($parameters_warning + 1) . ")") . " "
 	           : '')
 	         . implode($parameters, ", ") . ")** ("
 	         . self::get_method_status($method)
@@ -431,8 +432,6 @@ class code
 	{
 	    $parameters = self::_list_method_parameters($method);
 
-	    if (count($parameters) > MAX_PARAMETERS_COMPLEXITY)
-
 	    $real_length = $length = $method->getEndLine() - $method->getStartLine()
 	                         - (($count = count($parameters) > 1)
 	                           ? $count - 1
@@ -460,6 +459,7 @@ class code
         return array
         (
 		    'parameters' => $parameters,
+            'parameters_warning' => count($parameters) - MAX_PARAMETERS_COMPLEXITY,
 		    'length' => $length,
             'code' => $code,
             'real_length' => $real_length,
