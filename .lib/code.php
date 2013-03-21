@@ -164,10 +164,13 @@ class code
 	{
 	    extract(self::analyse_method($method)); // generates required variables
 
-	    return "- **" . $method->getName()
-	         . "(" . implode($parameters, ", ") . ")** ("
+	    return "- **" . $method->getName() . "("
+	         . (!empty($parameters_warning)
+	           ? md::blue_boh($length_warning . " too many parameters used!") . " "
+	           : '')
+	         . implode($parameters, ", ") . ")** ("
 	         . self::get_method_status($method)
-	         . ($length_warning
+	         . (!empty($length_warning)
 	           ? " " . md::blue_boh($length_warning . " too long line(s) found!")
 	           : ",")
 	         . " Len: " . ($length > 0
@@ -427,6 +430,8 @@ class code
 	static function analyse_method(reflectionMethod $method)
 	{
 	    $parameters = self::_list_method_parameters($method);
+
+	    if (count($parameters) > MAX_PARAMETERS_COMPLEXITY)
 
 	    $real_length = $length = $method->getEndLine() - $method->getStartLine()
 	                         - (($count = count($parameters) > 1)

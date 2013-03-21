@@ -69,9 +69,9 @@ class main
     	define('MAX_CYCLOMATIC_COMPLEXITY', SET_COMPLEXITY_INDEX); // base complexity index
 		define('MAX_METHODS_COMPLEXITY', SET_COMPLEXITY_INDEX * 3); // ATM 36 max code lines
 		define('MAX_BLOCK_COMPLEXITY', SET_COMPLEXITY_INDEX * 7); // ATM 84 max code line length
+        define('MAX_PARAMETERS_COMPLEXITY', SET_COMPLEXITY_INDEX / 3); // if more than 4 ATM..
 
-		define('_MAX_CLASS_COMPLEXITY',
-		       MAX_BLOCK_COMPLEXITY * SET_COMPLEXITY_INDEX); // ATM not used (private optional)
+		define('_MAX_CLASS_COMPLEXITY', pow(MAX_BLOCK_COMPLEXITY, 2)); // ATM not used (private optional)
     }
 
     private function _load_libraries()
