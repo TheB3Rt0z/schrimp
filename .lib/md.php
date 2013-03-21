@@ -37,7 +37,7 @@ class md
     		           . \$this->_attributes['src']
     		           . ' \"' . \$this->_attributes['title'] . '\")';",
 
-        'link' => "return '[' . \$this->_content . ']('
+        'link' => "return '[' . \$this->_attributes['label'] . ']('
                         . \$this->_attributes['href']
                         . ' \"' . \$this->_attributes['title'] . '\")';",
 
@@ -131,18 +131,19 @@ class md
 		return $self->_md;
 	}
 
-	private static function link($content,
+	private static function link($label,
 	                             $href,
 	                             $title)
 	{
 	    $attributes = array
 	    (
+	        'label' => $label,
             'href' => $href,
 	        'title' => $title,
 	    );
 
 	    $self = new self(__FUNCTION__,
-	                     $content,
+	                     '',
 	                     $attributes);
 
 	    return $self->_md;
@@ -155,11 +156,11 @@ class md
 		return $self->_md;
 	}
 
-	static function hyperlink($content,
+	static function hyperlink($label,
 	                          $href,
 	                          $title = '')
 	{
-	    return self::link($content,
+	    return self::link($label,
 	                      $href,
 	                      $title);
 	}
