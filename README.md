@@ -5,9 +5,7 @@
 Table of contents  
 -----------------  
   
-**GENERAL REFERENCE**  
-  
-General reference  
+General reference[General reference](#general-reference-- "")General reference  
 -----------------  
   
 **GLOBAL CONFIGURATION CONSTANTS**  
@@ -75,14 +73,14 @@ General reference
   
 ***  
   
-Class CODE (Thu, 21 Mar 2013 18:47:42 +0000)  
+Class CODE (Thu, 21 Mar 2013 23:44:06 +0100)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
   
 - **_is_too_long($code_line)** (PriS, Len: 4/5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_list_method_parameters($method)** (PriS, Len: 7/9 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_get_summary_information()** (PriS ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "16 too long line(s) found!") Len: 76/127 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Method's length should be reduced!") CyC: 13 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Method's cyclomatic complexity should be reduced!"))  
+- **_get_summary_information()** (PriS ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "15 too long line(s) found!") Len: 69/115 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Method's length should be reduced!") CyC: 13 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Method's cyclomatic complexity should be reduced!"))  
 - **_get_constants_information()** (PriS, Len: 7/9 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_get_functions_information()** (PriS, Len: 25/29 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_get_todos_information()** (PriS, Len: 5/7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
@@ -117,7 +115,7 @@ Uses: **main**, **md**
   
 ***  
   
-Class CONTROLLER (Thu, 21 Mar 2013 11:22:55 +0000)  
+Class CONTROLLER (Thu, 21 Mar 2013 00:20:13 +0100)  
 --------------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -152,7 +150,7 @@ Uses: **html**, **navigator**
   
 ***  
   
-Class DB (Mon, 11 Mar 2013 09:13:54 +0000)  
+Class DB (Sat, 09 Mar 2013 20:20:51 +0100)  
 ------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -166,7 +164,7 @@ Class DB (Mon, 11 Mar 2013 09:13:54 +0000)
   
 ***  
   
-Class ESCORT (Tue, 19 Mar 2013 10:31:40 +0000)  
+Class ESCORT (Tue, 19 Mar 2013 08:54:38 +0100)  
 ----------------------------------------------  
   
 **TODOS**  
@@ -176,7 +174,7 @@ Class ESCORT (Tue, 19 Mar 2013 10:31:40 +0000)
   
 ***  
   
-Class HTML (Wed, 20 Mar 2013 18:32:06 +0000)  
+Class HTML (Thu, 21 Mar 2013 23:40:50 +0100)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -224,11 +222,12 @@ Class HTML (Wed, 20 Mar 2013 18:32:06 +0000)
 **TODOS**  
   
 - **script online loading** &#10140; if != local, should have a lfb..  
+- **private static builder** &#10140; these should have a _ at the beginning, or not?  
   
   
 ***  
   
-Class LANGUAGE (Mon, 04 Mar 2013 10:41:00 +0000)  
+Class LANGUAGE (Fri, 01 Mar 2013 23:53:23 +0100)  
 ------------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -245,7 +244,7 @@ Class LANGUAGE (Mon, 04 Mar 2013 10:41:00 +0000)
   
 ***  
   
-Class MAIN (Thu, 21 Mar 2013 18:01:08 +0000)  
+Class MAIN (Thu, 21 Mar 2013 21:55:49 +0100)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -289,7 +288,7 @@ Uses: **code**, **html**
   
 ***  
   
-Class MD (Tue, 12 Mar 2013 12:19:30 +0000)  
+Class MD (Thu, 21 Mar 2013 23:47:08 +0100)  
 ------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -301,8 +300,10 @@ Class MD (Tue, 12 Mar 2013 12:19:30 +0000)
 - **h1($content)** (PriS, Len: 3/4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **h2($content)** (PriS, Len: 3/4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **h3($content)** (PriS, Len: 3/4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **img($src, $alt, $title = null)** (PriS, Len: 13/16 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **img($src, $alt, $title = null)** (PriS, Len: 16/19 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **link($content, $href, $title)** (PriS, Len: 11/13 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **hr()** (PubS, Len: 2/3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **hyperlink($content, $href, $title = null)** (PubS, Len: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **image($src, $alt = null, $title = null)** (PubS, Len: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **green_ok()** (PubS, Len: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **blue_boh($title)** (PubS, Len: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
@@ -311,10 +312,14 @@ Class MD (Tue, 12 Mar 2013 12:19:30 +0000)
 - **text($content)** (PubS, Len: 3/4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **title($level, $content)** (PubS, Len: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
+**TODOS**  
+  
+- **private static builder** &#10140; these should have a _ at the beginning, or not?  
+  
   
 ***  
   
-Class NAVIGATOR (Wed, 20 Mar 2013 18:37:49 +0000)  
+Class NAVIGATOR (Wed, 20 Mar 2013 23:13:02 +0100)  
 -------------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -346,13 +351,13 @@ Uses: **controller**, **html**, **main**
   
 ***  
   
-Class POWERING (Tue, 12 Mar 2013 12:19:30 +0000)  
+Class POWERING (Mon, 11 Mar 2013 22:37:03 +0100)  
 ------------------------------------------------  
   
   
 ***  
   
-Class TOOLBOX (Mon, 18 Mar 2013 09:32:01 +0000)  
+Class TOOLBOX (Thu, 14 Mar 2013 23:15:32 +0100)  
 -----------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -362,7 +367,7 @@ Class TOOLBOX (Mon, 18 Mar 2013 09:32:01 +0000)
   
 ***  
   
-Class WIDGETS (Fri, 23 Nov 2012 17:54:52 +0000)  
+Class WIDGETS (Fri, 23 Nov 2012 21:07:16 +0100)  
 -----------------------------------------------  
   
   
@@ -373,7 +378,7 @@ Available components:
 =====================  
   
   
-Class ADMIN (Tue, 12 Mar 2013 12:19:30 +0000)  
+Class ADMIN (Mon, 11 Mar 2013 22:45:03 +0100)  
 ---------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -406,13 +411,13 @@ Class ADMIN (Tue, 12 Mar 2013 12:19:30 +0000)
   
 Uses: **html**, **navigator**  
   
-Class ADMIN_HELPER (Wed, 20 Mar 2013 19:47:11 +0000)  
+Class ADMIN_HELPER (Wed, 20 Mar 2013 23:13:02 +0100)  
 ----------------------------------------------------  
   
   
 ***  
   
-Class CONTROL (Thu, 21 Mar 2013 11:22:55 +0000)  
+Class CONTROL (Thu, 21 Mar 2013 00:08:40 +0100)  
 -----------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -469,7 +474,7 @@ Uses: **html**, **language**, **main**
 - **phpinfo server configuration** &#10140; better rappresentation of access details, see php-documentation  
 - **plugins libraries** &#10140; find a way to incapsulate needed translations (static array of translations? default if only one level..) and controls (?) in backend   
   
-Class CONTROL_HELPER (Thu, 21 Mar 2013 11:22:55 +0000)  
+Class CONTROL_HELPER (Thu, 21 Mar 2013 00:12:43 +0100)  
 ------------------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -486,7 +491,7 @@ Uses: **html**
   
 ***  
   
-Class DOCUMENTATION (Wed, 20 Mar 2013 13:33:34 +0000)  
+Class DOCUMENTATION (Wed, 20 Mar 2013 23:13:02 +0100)  
 -----------------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -521,13 +526,13 @@ Class DOCUMENTATION (Wed, 20 Mar 2013 13:33:34 +0000)
   
 - **method toString** &#10140; to get a rappresentative highlighted code as reference  
   
-Class DOCUMENTATION_HELPER (Wed, 20 Mar 2013 19:47:11 +0000)  
+Class DOCUMENTATION_HELPER (Wed, 20 Mar 2013 23:13:02 +0100)  
 ------------------------------------------------------------  
   
   
 ***  
   
-Class ERROR (Fri, 01 Mar 2013 16:01:13 +0000)  
+Class ERROR (Fri, 01 Mar 2013 22:47:10 +0100)  
 ---------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -565,13 +570,13 @@ Class ERROR (Fri, 01 Mar 2013 16:01:13 +0000)
   
 Uses: **html**, **main**, **navigator**  
   
-Class ERROR_HELPER (Wed, 20 Mar 2013 19:47:11 +0000)  
+Class ERROR_HELPER (Wed, 20 Mar 2013 23:13:02 +0100)  
 ----------------------------------------------------  
   
   
 ***  
   
-Class HOMEPAGE (Tue, 12 Mar 2013 12:19:30 +0000)  
+Class HOMEPAGE (Mon, 11 Mar 2013 22:45:03 +0100)  
 ------------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -604,13 +609,13 @@ Class HOMEPAGE (Tue, 12 Mar 2013 12:19:30 +0000)
   
 Uses: **html**, **navigator**  
   
-Class HOMEPAGE_HELPER (Wed, 20 Mar 2013 19:47:33 +0000)  
+Class HOMEPAGE_HELPER (Wed, 20 Mar 2013 23:13:02 +0100)  
 -------------------------------------------------------  
   
   
 ***  
   
-Class POWER (Tue, 12 Mar 2013 12:19:30 +0000)  
+Class POWER (Mon, 11 Mar 2013 22:45:03 +0100)  
 ---------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -638,7 +643,7 @@ Class POWER (Tue, 12 Mar 2013 12:19:30 +0000)
 - **get_aside()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_footer()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
-Class POWER_HELPER (Wed, 20 Mar 2013 19:47:33 +0000)  
+Class POWER_HELPER (Wed, 20 Mar 2013 23:13:02 +0100)  
 ----------------------------------------------------  
   
   

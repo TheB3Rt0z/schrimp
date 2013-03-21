@@ -99,23 +99,11 @@ class code
 	private static function _get_summary_information()
 	{
 	    $summary = md::title(2, "Table of contents")
-	               . md::title(3, "General reference");
-	    /* general-reference--
+	               . md::hyperlink("General reference",
+	                               '#general-reference--');
+	    /* Markdown supports two style of links: inline and reference.
 
-	    Markdown supports two style of links: inline and reference.
 
-In both styles, the link text is delimited by [square brackets].
-
-To create an inline link, use a set of regular parentheses immediately after the link text’s closing square bracket. Inside the parentheses, put the URL where you want the link to point, along with an optional title for the link, surrounded in quotes. For example:
-
-This is [an example](http://example.com/ "Title") inline link.
-
-[This link](http://example.net/) has no title attribute.
-
-Will produce:
-
-<p>This is <a href="http://example.com/" title="Title">
-an example</a> inline link.</p>
 
 <p><a href="http://example.net/">This link</a> has no
 title attribute.</p>

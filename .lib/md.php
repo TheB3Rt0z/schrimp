@@ -4,7 +4,10 @@ define('MD_NEWLINE_SEQUENCE', "  \n"); // markdown-style new line with br conver
 
 class md
 {
-	public static $todos = array();
+	public static $todos = array
+	(
+        'private static builder' => "these should have a _ at the beginning, or not?",
+	);
 
 	private $_tag = null;
 	private $_content = '';
@@ -33,6 +36,10 @@ class md
     	'img' => "return '![' . \$this->_attributes['alt'] . ']('
     		           . \$this->_attributes['src']
     		           . ' \"' . \$this->_attributes['title'] . '\")';",
+
+        'link' => "return '[' . \$this->_content . ']('
+                        . \$this->_attributes['href']
+                        . ' \"' . \$this->_attributes['title'] . '\")';",
 
     	'text' => "return MD_NEWLINE_SEQUENCE;",
    	);
@@ -110,9 +117,12 @@ class md
 					     'required file (%s) not exists',
 					     $src));
 
-		$attributes = array('src' => SET_GITHUB_RAWPATH . $src,
-							'alt' => $alt,
-							'title' => $title);
+		$attributes = array
+		(
+		    'src' => SET_GITHUB_RAWPATH . $src,
+		    'alt' => $alt,
+			'title' => $title,
+		);
 
 		$self = new self(__FUNCTION__,
 				         '',
@@ -121,11 +131,37 @@ class md
 		return $self->_md;
 	}
 
+	private static function link($content,
+	                             $href,
+	                             $title)
+	{
+	    $attributes = array
+	    (
+            'href' => $href,
+	        'title' => $title,
+	    );
+
+	    $self = new self(__FUNCTION__,
+	                     $content,
+	                     $attributes);
+
+	    return $self->_md;
+	}
+
 	static function hr() // direct constructing without any content
 	{
 		$self = new self(__FUNCTION__);
 
 		return $self->_md;
+	}
+
+	static function hyperlink($content,
+	                          $href,
+	                          $title = '')
+	{
+	    return self::link($content,
+	                      $href,
+	                      $title);
 	}
 
 	static function image($src,
