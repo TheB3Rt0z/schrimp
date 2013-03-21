@@ -428,16 +428,15 @@ class code
 	{
 	    $parameters = self::_list_method_parameters($method);
 
-	    $length = $method->getEndLine() - $method->getStartLine()
-	            - (($count = count($parameters) > 1)
-	              ? $count - 1
-	              : 0) - ($method->isAbstract() ? 0 : 2); // modifier
+	    $real_length = $length = $method->getEndLine() - $method->getStartLine()
+	                         - (($count = count($parameters) > 1)
+	                           ? $count - 1
+	                           : 0) - ($method->isAbstract() ? 0 : 2); // modifier
 
 	    $code = array_slice(file($method->getDeclaringClass()->getFileName()),
 	                        $method->getEndLine() - $length - 1,
 	                        $length);
 
-	    $real_length = $length;
 	    $length_warning = 0;
 	    $cyc = 0;
         foreach ($code as $code_line)
@@ -446,7 +445,7 @@ class code
                 $length_warning++;
 
             $code_line = trim($code_line);
-            if (empty($coe_line))
+            if (empty($code_line))
                 $real_length--;
 
             foreach (self::$_cyc_counters as $counter)
