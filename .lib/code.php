@@ -171,7 +171,9 @@ class code
 	           ? " " . md::blue_boh($length_warning . " too long line(s) found!")
 	           : ",")
 	         . " Len: " . ($length > 0
-	                      ? $real_length . "/" . $length
+	                      ? (($real_length != $length)
+	                        ? $real_length . "/"
+	                        : '') . $length
 	                      : '-') . " "
 	         . ($length <= (floor(MAX_METHODS_COMPLEXITY / 10) * 10)
 	           ? ($length > 0
@@ -443,7 +445,8 @@ class code
             if (self::_is_too_long($code_line))
                 $length_warning++;
 
-            if (empty($code_line))
+            $code_line = trim($code_line);
+            if (empty($coe_line))
                 $real_length--;
 
             foreach (self::$_cyc_counters as $counter)
