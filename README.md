@@ -6,14 +6,14 @@ Table of contents
 -----------------  
   
 [General reference](#general-reference-- "")  
-[Library code](#class-code-fri-22-mar-2013-125940-0000-- "")  
+[Library code](#class-code-fri-22-mar-2013-130440-0000-- "")  
 [Library controller](#class-controller-thu-21-mar-2013-112255-0000-- "")  
 [Library db](#class-db-mon-11-mar-2013-091354-0000-- "")  
 [Library escort](#class-escort-tue-19-mar-2013-103140-0000-- "")  
 [Library html](#class-html-fri-22-mar-2013-100038-0000-- "")  
 [Library language](#class-language-mon-04-mar-2013-104100-0000-- "")  
 [Library main](#class-main-thu-21-mar-2013-180108-0000-- "")  
-[Library md](#class-md-fri-22-mar-2013-125844-0000-- "")  
+[Library md](#class-md-fri-22-mar-2013-130440-0000-- "")  
 [Library navigator](#class-navigator-wed-20-mar-2013-183749-0000-- "")  
 [Library powering](#class-powering-tue-12-mar-2013-121930-0000-- "")  
 [Library toolbox](#class-toolbox-mon-18-mar-2013-093201-0000-- "")  
@@ -99,7 +99,7 @@ General reference
   
 ***  
   
-[⇧](# "")Class CODE (Fri, 22 Mar 2013 12:59:40 +0000)  
+[⇧](# "") Class CODE (Fri, 22 Mar 2013 13:04:40 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -144,7 +144,7 @@ Uses: **main**, **md**
   
 ***  
   
-[⇧](# "")Class CONTROLLER (Thu, 21 Mar 2013 11:22:55 +0000)  
+[⇧](# "") Class CONTROLLER (Thu, 21 Mar 2013 11:22:55 +0000)  
 --------------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -179,7 +179,7 @@ Uses: **html**, **navigator**
   
 ***  
   
-[⇧](# "")Class DB (Mon, 11 Mar 2013 09:13:54 +0000)  
+[⇧](# "") Class DB (Mon, 11 Mar 2013 09:13:54 +0000)  
 ------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -193,7 +193,7 @@ Uses: **html**, **navigator**
   
 ***  
   
-[⇧](# "")Class ESCORT (Tue, 19 Mar 2013 10:31:40 +0000)  
+[⇧](# "") Class ESCORT (Tue, 19 Mar 2013 10:31:40 +0000)  
 ----------------------------------------------  
   
 **TODOS**  
@@ -203,7 +203,7 @@ Uses: **html**, **navigator**
   
 ***  
   
-[⇧](# "")Class HTML (Fri, 22 Mar 2013 10:00:38 +0000)  
+[⇧](# "") Class HTML (Fri, 22 Mar 2013 10:00:38 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -256,7 +256,7 @@ Uses: **html**, **navigator**
   
 ***  
   
-[⇧](# "")Class LANGUAGE (Mon, 04 Mar 2013 10:41:00 +0000)  
+[⇧](# "") Class LANGUAGE (Mon, 04 Mar 2013 10:41:00 +0000)  
 ------------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -273,7 +273,7 @@ Uses: **html**, **navigator**
   
 ***  
   
-[⇧](# "")Class MAIN (Thu, 21 Mar 2013 18:01:08 +0000)  
+[⇧](# "") Class MAIN (Thu, 21 Mar 2013 18:01:08 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -317,7 +317,7 @@ Uses: **code**, **html**
   
 ***  
   
-[⇧](# "")Class MD (Fri, 22 Mar 2013 12:58:44 +0000)  
+[⇧](# "") Class MD (Fri, 22 Mar 2013 13:04:40 +0000)  
 ------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -349,7 +349,7 @@ Uses: **code**, **html**
   
 ***  
   
-[⇧](# "")Class NAVIGATOR (Wed, 20 Mar 2013 18:37:49 +0000)  
+[⇧](# "") Class NAVIGATOR (Wed, 20 Mar 2013 18:37:49 +0000)  
 -------------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -381,13 +381,13 @@ Uses: **controller**, **html**, **main**
   
 ***  
   
-[⇧](# "")Class POWERING (Tue, 12 Mar 2013 12:19:30 +0000)  
+[⇧](# "") Class POWERING (Tue, 12 Mar 2013 12:19:30 +0000)  
 ------------------------------------------------  
   
   
 ***  
   
-[⇧](# "")Class TOOLBOX (Mon, 18 Mar 2013 09:32:01 +0000)  
+[⇧](# "") Class TOOLBOX (Mon, 18 Mar 2013 09:32:01 +0000)  
 -----------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -397,7 +397,7 @@ Uses: **controller**, **html**, **main**
   
 ***  
   
-[⇧](# "")Class WIDGETS (Fri, 23 Nov 2012 17:54:52 +0000)  
+[⇧](# "") Class WIDGETS (Fri, 23 Nov 2012 17:54:52 +0000)  
 -----------------------------------------------  
   
   
@@ -408,7 +408,7 @@ Available components:
 =====================  
   
   
-[⇧](# "")Class ADMIN (Tue, 12 Mar 2013 12:19:30 +0000)  
+[⇧](# "") Class ADMIN (Tue, 12 Mar 2013 12:19:30 +0000)  
 ---------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -441,13 +441,13 @@ Available components:
   
 Uses: **html**, **navigator**  
   
-[⇧](# "")Class ADMIN_HELPER (Wed, 20 Mar 2013 19:47:11 +0000)  
+[⇧](# "") Class ADMIN_HELPER (Wed, 20 Mar 2013 19:47:11 +0000)  
 ----------------------------------------------------  
   
   
 ***  
   
-[⇧](# "")Class CONTROL (Thu, 21 Mar 2013 11:22:55 +0000)  
+[⇧](# "") Class CONTROL (Thu, 21 Mar 2013 11:22:55 +0000)  
 -----------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -504,7 +504,7 @@ Uses: **html**, **language**, **main**
 - **phpinfo server configuration** &#10140; better rappresentation of access details, see php-documentation  
 - **plugins libraries** &#10140; find a way to incapsulate needed translations (static array of translations? default if only one level..) and controls (?) in backend   
   
-[⇧](# "")Class CONTROL_HELPER (Thu, 21 Mar 2013 11:22:55 +0000)  
+[⇧](# "") Class CONTROL_HELPER (Thu, 21 Mar 2013 11:22:55 +0000)  
 ------------------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -521,7 +521,7 @@ Uses: **html**
   
 ***  
   
-[⇧](# "")Class DOCUMENTATION (Wed, 20 Mar 2013 13:33:34 +0000)  
+[⇧](# "") Class DOCUMENTATION (Wed, 20 Mar 2013 13:33:34 +0000)  
 -----------------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -556,13 +556,13 @@ Uses: **html**
   
 - **method toString** &#10140; to get a rappresentative highlighted code as reference  
   
-[⇧](# "")Class DOCUMENTATION_HELPER (Wed, 20 Mar 2013 19:47:11 +0000)  
+[⇧](# "") Class DOCUMENTATION_HELPER (Wed, 20 Mar 2013 19:47:11 +0000)  
 ------------------------------------------------------------  
   
   
 ***  
   
-[⇧](# "")Class ERROR (Fri, 01 Mar 2013 16:01:13 +0000)  
+[⇧](# "") Class ERROR (Fri, 01 Mar 2013 16:01:13 +0000)  
 ---------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -600,13 +600,13 @@ Uses: **html**
   
 Uses: **html**, **main**, **navigator**  
   
-[⇧](# "")Class ERROR_HELPER (Wed, 20 Mar 2013 19:47:11 +0000)  
+[⇧](# "") Class ERROR_HELPER (Wed, 20 Mar 2013 19:47:11 +0000)  
 ----------------------------------------------------  
   
   
 ***  
   
-[⇧](# "")Class HOMEPAGE (Tue, 12 Mar 2013 12:19:30 +0000)  
+[⇧](# "") Class HOMEPAGE (Tue, 12 Mar 2013 12:19:30 +0000)  
 ------------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -639,13 +639,13 @@ Uses: **html**, **main**, **navigator**
   
 Uses: **html**, **navigator**  
   
-[⇧](# "")Class HOMEPAGE_HELPER (Wed, 20 Mar 2013 19:47:33 +0000)  
+[⇧](# "") Class HOMEPAGE_HELPER (Wed, 20 Mar 2013 19:47:33 +0000)  
 -------------------------------------------------------  
   
   
 ***  
   
-[⇧](# "")Class POWER (Tue, 12 Mar 2013 12:19:30 +0000)  
+[⇧](# "") Class POWER (Tue, 12 Mar 2013 12:19:30 +0000)  
 ---------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -673,7 +673,7 @@ Uses: **html**, **navigator**
 - **get_aside()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_footer()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
-[⇧](# "")Class POWER_HELPER (Wed, 20 Mar 2013 19:47:33 +0000)  
+[⇧](# "") Class POWER_HELPER (Wed, 20 Mar 2013 19:47:33 +0000)  
 ----------------------------------------------------  
   
   
