@@ -272,7 +272,7 @@ class code
 	                    . $class_todos . MD_NEWLINE_SEQUENCE;
 
 	    self::_add_summary_entry($header,
-	                             (substr_count("_", $name)
+	                             (substr_count($name, "_")
 	                             ? "-"
 	                             : "Component") . " " . $name);
 
