@@ -6,19 +6,30 @@ Table of contents
 -----------------  
   
 [General reference](#general-reference-- "")  
-[Library code](class-code-fri-22-mar-2013-123142-0000 "")  
-[Library controller](class-controller-thu-21-mar-2013-112255-0000 "")  
-[Library db](class-db-mon-11-mar-2013-091354-0000 "")  
-[Library escort](class-escort-tue-19-mar-2013-103140-0000 "")  
-[Library html](class-html-fri-22-mar-2013-100038-0000 "")  
-[Library language](class-language-mon-04-mar-2013-104100-0000 "")  
-[Library main](class-main-thu-21-mar-2013-180108-0000 "")  
-[Library md](class-md-fri-22-mar-2013-100038-0000 "")  
-[Library navigator](class-navigator-wed-20-mar-2013-183749-0000 "")  
-[Library powering](class-powering-tue-12-mar-2013-121930-0000 "")  
-[Library toolbox](class-toolbox-mon-18-mar-2013-093201-0000 "")  
-[Library widgets](class-widgets-fri-23-nov-2012-175452-0000 "")  
-[Component power]( "")  
+[Library code](#class-code-fri-22-mar-2013-124825-0000-- "")  
+[Library controller](#class-controller-thu-21-mar-2013-112255-0000-- "")  
+[Library db](#class-db-mon-11-mar-2013-091354-0000-- "")  
+[Library escort](#class-escort-tue-19-mar-2013-103140-0000-- "")  
+[Library html](#class-html-fri-22-mar-2013-100038-0000-- "")  
+[Library language](#class-language-mon-04-mar-2013-104100-0000-- "")  
+[Library main](#class-main-thu-21-mar-2013-180108-0000-- "")  
+[Library md](#class-md-fri-22-mar-2013-100038-0000-- "")  
+[Library navigator](#class-navigator-wed-20-mar-2013-183749-0000-- "")  
+[Library powering](#class-powering-tue-12-mar-2013-121930-0000-- "")  
+[Library toolbox](#class-toolbox-mon-18-mar-2013-093201-0000-- "")  
+[Library widgets](#class-widgets-fri-23-nov-2012-175452-0000-- "")  
+[Component admin](#class-admin-tue-12-mar-2013-121930-0000-- "")  
+[Component admin_helper](#class-admin_helper-wed-20-mar-2013-194711-0000-- "")  
+[Component control](#class-control-thu-21-mar-2013-112255-0000-- "")  
+[Component control_helper](#class-control_helper-thu-21-mar-2013-112255-0000-- "")  
+[Component documentation](#class-documentation-wed-20-mar-2013-133334-0000-- "")  
+[Component documentation_helper](#class-documentation_helper-wed-20-mar-2013-194711-0000-- "")  
+[Component error](#class-error-fri-01-mar-2013-160113-0000-- "")  
+[Component error_helper](#class-error_helper-wed-20-mar-2013-194711-0000-- "")  
+[Component homepage](#class-homepage-tue-12-mar-2013-121930-0000-- "")  
+[Component homepage_helper](#class-homepage_helper-wed-20-mar-2013-194733-0000-- "")  
+[Component power](#class-power-tue-12-mar-2013-121930-0000-- "")  
+[Component power_helper](#class-power_helper-wed-20-mar-2013-194733-0000-- "")  
   
 General reference  
 -----------------  
@@ -88,7 +99,7 @@ General reference
   
 ***  
   
-Class CODE (Fri, 22 Mar 2013 12:31:42 +0000)  
+Class CODE (Fri, 22 Mar 2013 12:48:25 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -102,8 +113,8 @@ Class CODE (Fri, 22 Mar 2013 12:31:42 +0000)
 - **_get_todos_information()** (PriS, Len: 5/7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_get_methods_information($method)** (PriS, Len: 32/33 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Method's length could be reduced.."))  
 - **_get_classes_information()** (PriS, Len: 26/30 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_get_component_information($name)** (PriS, Len: 15/17 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_get_components_information()** (PriS, Len: 24/30 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **_get_component_information($name)** (PriS, Len: 19/22 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **_get_components_information()** (PriS, Len: 22/27 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_constants_list()** (PubS, Len: 4/5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_functions_list()** (PubS, Len: 4/5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_libraries_list($exclude = null)** (PubS, Len: 21/27 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  

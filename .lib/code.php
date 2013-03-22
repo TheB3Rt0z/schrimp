@@ -85,7 +85,7 @@ class code
 	                                               '',
 	                                               $header)));
 
-	    self::$_summary[$href] = $label;
+	    self::$_summary["#" . $href . "--"] = $label;
 	}
 
 	private static function _is_too_long($code_line)
@@ -271,6 +271,11 @@ class code
 	        $component .= md::title(3, "TODOs")
 	                    . $class_todos . MD_NEWLINE_SEQUENCE;
 
+	    self::_add_summary_entry($header,
+	                             (substr_count("_", $name)
+	                             ? "-"
+	                             : "Component") . " " . $name);
+
 	    return $component;
 	}
 
@@ -300,9 +305,6 @@ class code
 	        }
 
 	        $components .= md::hr();
-
-	        self::_add_summary_entry($header,
-	                                 "Component " . $component);
 	    }
 
 	    return $components . MD_NEWLINE_SEQUENCE;
