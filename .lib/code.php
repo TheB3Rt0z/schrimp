@@ -124,7 +124,7 @@ class code
 
 	    foreach (self::$_summary as $key => $values)
 	        $summary .= md::hyperlink($values['label'],
-	                                  $key) . " (" . $values['path'] . ")"
+	                                  $key) . " (" . $values['path'] . ",)"
 	                  . MD_NEWLINE_SEQUENCE;
 
 	    return $summary . MD_NEWLINE_SEQUENCE;

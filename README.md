@@ -6,30 +6,30 @@ Table of contents
 -----------------  
   
 [General reference](#general-reference-- "")  
-[Library code](#-class-code-fri-22-mar-2013-161324-0000-- "") (/schrimp/.lib/code.php)  
-[Library controller](#-class-controller-thu-21-mar-2013-112255-0000-- "") (/schrimp/.lib/controller.php)  
-[Library db](#-class-db-mon-11-mar-2013-091354-0000-- "") (/schrimp/.lib/db.php)  
-[Library escort](#-class-escort-tue-19-mar-2013-103140-0000-- "") (/schrimp/.lib/escort.php)  
-[Library html](#-class-html-fri-22-mar-2013-100038-0000-- "") (/schrimp/.lib/html.php)  
-[Library language](#-class-language-mon-04-mar-2013-104100-0000-- "") (/schrimp/.lib/language.php)  
-[Library main](#-class-main-thu-21-mar-2013-180108-0000-- "") (/schrimp/.main.php)  
-[Library md](#-class-md-fri-22-mar-2013-130440-0000-- "") (/schrimp/.lib/md.php)  
-[Library navigator](#-class-navigator-wed-20-mar-2013-183749-0000-- "") (/schrimp/.lib/navigator.php)  
-[Library powering](#-class-powering-tue-12-mar-2013-121930-0000-- "") (/schrimp/lib/powering.php)  
-[Library toolbox](#-class-toolbox-mon-18-mar-2013-093201-0000-- "") (/schrimp/.lib/toolbox.php)  
-[Library widgets](#-class-widgets-fri-23-nov-2012-175452-0000-- "") (/schrimp/.lib/widgets.php)  
-[Component admin](#-class-admin-tue-12-mar-2013-121930-0000-- "") (/schrimp/.app/admin.php)  
-[- admin_helper](#-class-admin_helper-wed-20-mar-2013-194711-0000-- "") (/schrimp/.app/admin_helper.php)  
-[Component control](#-class-control-thu-21-mar-2013-112255-0000-- "") (/schrimp/.app/control.php)  
-[- control_helper](#-class-control_helper-thu-21-mar-2013-112255-0000-- "") (/schrimp/.app/control_helper.php)  
-[Component documentation](#-class-documentation-wed-20-mar-2013-133334-0000-- "") (/schrimp/.app/documentation.php)  
-[- documentation_helper](#-class-documentation_helper-wed-20-mar-2013-194711-0000-- "") (/schrimp/.app/documentation_helper.php)  
-[Component error](#-class-error-fri-01-mar-2013-160113-0000-- "") (/schrimp/.app/error.php)  
-[- error_helper](#-class-error_helper-wed-20-mar-2013-194711-0000-- "") (/schrimp/.app/error_helper.php)  
-[Component homepage](#-class-homepage-tue-12-mar-2013-121930-0000-- "") (/schrimp/app/homepage.php)  
-[- homepage_helper](#-class-homepage_helper-wed-20-mar-2013-194733-0000-- "") (/schrimp/app/homepage_helper.php)  
-[Component power](#-class-power-tue-12-mar-2013-121930-0000-- "") (/schrimp/app/power.php)  
-[- power_helper](#-class-power_helper-wed-20-mar-2013-194733-0000-- "") (/schrimp/app/power_helper.php)  
+[Library code](#-class-code-fri-22-mar-2013-162333-0000-- "") (/schrimp/.lib/code.php,)  
+[Library controller](#-class-controller-thu-21-mar-2013-112255-0000-- "") (/schrimp/.lib/controller.php,)  
+[Library db](#-class-db-mon-11-mar-2013-091354-0000-- "") (/schrimp/.lib/db.php,)  
+[Library escort](#-class-escort-tue-19-mar-2013-103140-0000-- "") (/schrimp/.lib/escort.php,)  
+[Library html](#-class-html-fri-22-mar-2013-100038-0000-- "") (/schrimp/.lib/html.php,)  
+[Library language](#-class-language-mon-04-mar-2013-104100-0000-- "") (/schrimp/.lib/language.php,)  
+[Library main](#-class-main-fri-22-mar-2013-162506-0000-- "") (/schrimp/.main.php,)  
+[Library md](#-class-md-fri-22-mar-2013-130440-0000-- "") (/schrimp/.lib/md.php,)  
+[Library navigator](#-class-navigator-wed-20-mar-2013-183749-0000-- "") (/schrimp/.lib/navigator.php,)  
+[Library powering](#-class-powering-tue-12-mar-2013-121930-0000-- "") (/schrimp/lib/powering.php,)  
+[Library toolbox](#-class-toolbox-mon-18-mar-2013-093201-0000-- "") (/schrimp/.lib/toolbox.php,)  
+[Library widgets](#-class-widgets-fri-23-nov-2012-175452-0000-- "") (/schrimp/.lib/widgets.php,)  
+[Component admin](#-class-admin-tue-12-mar-2013-121930-0000-- "") (/schrimp/.app/admin.php,)  
+[- admin_helper](#-class-admin_helper-wed-20-mar-2013-194711-0000-- "") (/schrimp/.app/admin_helper.php,)  
+[Component control](#-class-control-thu-21-mar-2013-112255-0000-- "") (/schrimp/.app/control.php,)  
+[- control_helper](#-class-control_helper-thu-21-mar-2013-112255-0000-- "") (/schrimp/.app/control_helper.php,)  
+[Component documentation](#-class-documentation-wed-20-mar-2013-133334-0000-- "") (/schrimp/.app/documentation.php,)  
+[- documentation_helper](#-class-documentation_helper-wed-20-mar-2013-194711-0000-- "") (/schrimp/.app/documentation_helper.php,)  
+[Component error](#-class-error-fri-01-mar-2013-160113-0000-- "") (/schrimp/.app/error.php,)  
+[- error_helper](#-class-error_helper-wed-20-mar-2013-194711-0000-- "") (/schrimp/.app/error_helper.php,)  
+[Component homepage](#-class-homepage-tue-12-mar-2013-121930-0000-- "") (/schrimp/app/homepage.php,)  
+[- homepage_helper](#-class-homepage_helper-wed-20-mar-2013-194733-0000-- "") (/schrimp/app/homepage_helper.php,)  
+[Component power](#-class-power-tue-12-mar-2013-121930-0000-- "") (/schrimp/app/power.php,)  
+[- power_helper](#-class-power_helper-wed-20-mar-2013-194733-0000-- "") (/schrimp/app/power_helper.php,)  
   
 General reference  
 -----------------  
@@ -99,7 +99,7 @@ General reference
   
 ***  
   
-[⇧](# "") Class CODE (Fri, 22 Mar 2013 16:13:24 +0000)  
+[⇧](# "") Class CODE (Fri, 22 Mar 2013 16:23:33 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -273,7 +273,7 @@ Uses: **html**, **navigator**
   
 ***  
   
-[⇧](# "") Class MAIN (Thu, 21 Mar 2013 18:01:08 +0000)  
+[⇧](# "") Class MAIN (Fri, 22 Mar 2013 16:25:06 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
