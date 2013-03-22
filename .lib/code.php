@@ -77,7 +77,8 @@ class code
 	private static $_summary = array();
 
 	private static function _add_summary_entry($header,
-	                                           $label)
+	                                           $label,
+	                                           $path)
 	{
 	    $href = strtolower(str_replace(" ",
 	                                   "-",
@@ -85,7 +86,11 @@ class code
 	                                               '',
 	                                               $header)));
 
-	    self::$_summary["#-" . $href . "--"] = $label;
+	    self::$_summary["#-" . $href . "--"] = array
+	    (
+	        'label' => $label,
+	        'path' => $path,
+	    );
 	}
 
 	private static function _is_too_long($code_line)
@@ -117,9 +122,9 @@ class code
 	                               '#general-reference--')
 	               . MD_NEWLINE_SEQUENCE;
 
-	    foreach (self::$_summary as $key => $value)
-	        $summary .= md::hyperlink($value,
-	                                  $key)
+	    foreach (self::$_summary as $key => $values)
+	        $summary .= md::hyperlink($values['title'],
+	                                  $key) . " (" . $values['path'] . ")"
 	                  . MD_NEWLINE_SEQUENCE;
 
 	    return $summary . MD_NEWLINE_SEQUENCE;
@@ -247,7 +252,8 @@ class code
 	            $classes .= md::hr();
 
 	            self::_add_summary_entry($header,
-	                                     "Library " . $class->getName());
+	                                     "Library " . $class->getName(),
+	                                     $class_path);
 	        }
 
 	    return $classes . MD_NEWLINE_SEQUENCE;
@@ -274,7 +280,8 @@ class code
 	    self::_add_summary_entry($header,
 	                             (substr_count($name, "_")
 	                             ? "-"
-	                             : "Component") . " " . $name);
+	                             : "Component") . " " . $name,
+	                             $class_path);
 
 	    return $component;
 	}
@@ -438,6 +445,14 @@ class code
 	        $class_todos .= "- **" . $key . "** &#10140; " . $value
 	                      . MD_NEWLINE_SEQUENCE;
 
+	    $class_path = str_replace(str_replace(str_replace($_SERVER['REQUEST_URI'],
+	                                                      '',
+	                                                      $_SERVER['SCRIPT_NAME']),
+	                                          '',
+	                                          $_SERVER['SCRIPT_FILENAME']),
+	                              '',
+	                              $class->getFileName());
+
 	    return array
 	    (
 	        'header' => $header,
@@ -445,6 +460,7 @@ class code
 	        'reference' => $reference,
 	        'dependencies' => self::get_class_dependencies($class),
 	        'class_todos' => $class_todos,
+	        'class_path' => $class_path,
 	    );
 	}
 
