@@ -123,8 +123,8 @@ class code
 	               . MD_NEWLINE_SEQUENCE;
 
 	    foreach (self::$_summary as $key => $values)
-	        $summary .= md::hyperlink($values['title'],
-	                                  $key)
+	        $summary .= md::hyperlink($values['label'],
+	                                  $key) . " (" . $values['path'] . ")"
 	                  . MD_NEWLINE_SEQUENCE;
 
 	    return $summary . MD_NEWLINE_SEQUENCE;
