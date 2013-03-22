@@ -11,6 +11,7 @@ class code
         'add code-testing methods' => "using phpunit to autobuild and execute tests",
         'semantic documentation' => "generate human-friendly doc from methods code..",
         'get_class_dependencies' => "too unaccurate, navigator-controller, only explicit new, etc.",
+        'available libraries title' => "at the beginning of classes list, same labeling in summary",
     );
 
 	const _STR_LENGTH_WARNING = "Method's length could be reduced..";

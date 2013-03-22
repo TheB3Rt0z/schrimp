@@ -1,4 +1,4 @@
-![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.5.2013.03.21  
+![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.5.2013.03.22  
 =========================================================================================================================================  
   
   
@@ -75,7 +75,7 @@ General reference
   
 ***  
   
-Class CODE (Thu, 21 Mar 2013 23:58:04 +0100)  
+Class CODE (Fri, 22 Mar 2013 10:05:37 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -113,11 +113,12 @@ Uses: **main**, **md**
 - **add code-testing methods** &#10140; using phpunit to autobuild and execute tests  
 - **semantic documentation** &#10140; generate human-friendly doc from methods code..  
 - **get_class_dependencies** &#10140; too unaccurate, navigator-controller, only explicit new, etc.  
+- **available libraries title** &#10140; at the beginning of classes list, same labeling in summary  
   
   
 ***  
   
-Class CONTROLLER (Thu, 21 Mar 2013 00:20:13 +0100)  
+Class CONTROLLER (Thu, 21 Mar 2013 11:22:55 +0000)  
 --------------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -152,7 +153,7 @@ Uses: **html**, **navigator**
   
 ***  
   
-Class DB (Sat, 09 Mar 2013 20:20:51 +0100)  
+Class DB (Mon, 11 Mar 2013 09:13:54 +0000)  
 ------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -166,7 +167,7 @@ Class DB (Sat, 09 Mar 2013 20:20:51 +0100)
   
 ***  
   
-Class ESCORT (Tue, 19 Mar 2013 08:54:38 +0100)  
+Class ESCORT (Tue, 19 Mar 2013 10:31:40 +0000)  
 ----------------------------------------------  
   
 **TODOS**  
@@ -176,7 +177,7 @@ Class ESCORT (Tue, 19 Mar 2013 08:54:38 +0100)
   
 ***  
   
-Class HTML (Thu, 21 Mar 2013 23:40:50 +0100)  
+Class HTML (Fri, 22 Mar 2013 10:00:38 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -229,7 +230,7 @@ Class HTML (Thu, 21 Mar 2013 23:40:50 +0100)
   
 ***  
   
-Class LANGUAGE (Fri, 01 Mar 2013 23:53:23 +0100)  
+Class LANGUAGE (Mon, 04 Mar 2013 10:41:00 +0000)  
 ------------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -246,7 +247,7 @@ Class LANGUAGE (Fri, 01 Mar 2013 23:53:23 +0100)
   
 ***  
   
-Class MAIN (Thu, 21 Mar 2013 21:55:49 +0100)  
+Class MAIN (Thu, 21 Mar 2013 18:01:08 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -290,7 +291,7 @@ Uses: **code**, **html**
   
 ***  
   
-Class MD (Thu, 21 Mar 2013 23:55:40 +0100)  
+Class MD (Fri, 22 Mar 2013 10:00:38 +0000)  
 ------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -321,7 +322,7 @@ Class MD (Thu, 21 Mar 2013 23:55:40 +0100)
   
 ***  
   
-Class NAVIGATOR (Wed, 20 Mar 2013 23:13:02 +0100)  
+Class NAVIGATOR (Wed, 20 Mar 2013 18:37:49 +0000)  
 -------------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -353,13 +354,13 @@ Uses: **controller**, **html**, **main**
   
 ***  
   
-Class POWERING (Mon, 11 Mar 2013 22:37:03 +0100)  
+Class POWERING (Tue, 12 Mar 2013 12:19:30 +0000)  
 ------------------------------------------------  
   
   
 ***  
   
-Class TOOLBOX (Thu, 14 Mar 2013 23:15:32 +0100)  
+Class TOOLBOX (Mon, 18 Mar 2013 09:32:01 +0000)  
 -----------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -369,7 +370,7 @@ Class TOOLBOX (Thu, 14 Mar 2013 23:15:32 +0100)
   
 ***  
   
-Class WIDGETS (Fri, 23 Nov 2012 21:07:16 +0100)  
+Class WIDGETS (Fri, 23 Nov 2012 17:54:52 +0000)  
 -----------------------------------------------  
   
   
@@ -380,7 +381,7 @@ Available components:
 =====================  
   
   
-Class ADMIN (Mon, 11 Mar 2013 22:45:03 +0100)  
+Class ADMIN (Tue, 12 Mar 2013 12:19:30 +0000)  
 ---------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -413,13 +414,13 @@ Class ADMIN (Mon, 11 Mar 2013 22:45:03 +0100)
   
 Uses: **html**, **navigator**  
   
-Class ADMIN_HELPER (Wed, 20 Mar 2013 23:13:02 +0100)  
+Class ADMIN_HELPER (Wed, 20 Mar 2013 19:47:11 +0000)  
 ----------------------------------------------------  
   
   
 ***  
   
-Class CONTROL (Thu, 21 Mar 2013 00:08:40 +0100)  
+Class CONTROL (Thu, 21 Mar 2013 11:22:55 +0000)  
 -----------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -476,7 +477,7 @@ Uses: **html**, **language**, **main**
 - **phpinfo server configuration** &#10140; better rappresentation of access details, see php-documentation  
 - **plugins libraries** &#10140; find a way to incapsulate needed translations (static array of translations? default if only one level..) and controls (?) in backend   
   
-Class CONTROL_HELPER (Thu, 21 Mar 2013 00:12:43 +0100)  
+Class CONTROL_HELPER (Thu, 21 Mar 2013 11:22:55 +0000)  
 ------------------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -493,7 +494,7 @@ Uses: **html**
   
 ***  
   
-Class DOCUMENTATION (Wed, 20 Mar 2013 23:13:02 +0100)  
+Class DOCUMENTATION (Wed, 20 Mar 2013 13:33:34 +0000)  
 -----------------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -528,13 +529,13 @@ Class DOCUMENTATION (Wed, 20 Mar 2013 23:13:02 +0100)
   
 - **method toString** &#10140; to get a rappresentative highlighted code as reference  
   
-Class DOCUMENTATION_HELPER (Wed, 20 Mar 2013 23:13:02 +0100)  
+Class DOCUMENTATION_HELPER (Wed, 20 Mar 2013 19:47:11 +0000)  
 ------------------------------------------------------------  
   
   
 ***  
   
-Class ERROR (Fri, 01 Mar 2013 22:47:10 +0100)  
+Class ERROR (Fri, 01 Mar 2013 16:01:13 +0000)  
 ---------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -572,13 +573,13 @@ Class ERROR (Fri, 01 Mar 2013 22:47:10 +0100)
   
 Uses: **html**, **main**, **navigator**  
   
-Class ERROR_HELPER (Wed, 20 Mar 2013 23:13:02 +0100)  
+Class ERROR_HELPER (Wed, 20 Mar 2013 19:47:11 +0000)  
 ----------------------------------------------------  
   
   
 ***  
   
-Class HOMEPAGE (Mon, 11 Mar 2013 22:45:03 +0100)  
+Class HOMEPAGE (Tue, 12 Mar 2013 12:19:30 +0000)  
 ------------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -611,13 +612,13 @@ Class HOMEPAGE (Mon, 11 Mar 2013 22:45:03 +0100)
   
 Uses: **html**, **navigator**  
   
-Class HOMEPAGE_HELPER (Wed, 20 Mar 2013 23:13:02 +0100)  
+Class HOMEPAGE_HELPER (Wed, 20 Mar 2013 19:47:33 +0000)  
 -------------------------------------------------------  
   
   
 ***  
   
-Class POWER (Mon, 11 Mar 2013 22:45:03 +0100)  
+Class POWER (Tue, 12 Mar 2013 12:19:30 +0000)  
 ---------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -645,7 +646,7 @@ Class POWER (Mon, 11 Mar 2013 22:45:03 +0100)
 - **get_aside()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_footer()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
-Class POWER_HELPER (Wed, 20 Mar 2013 23:13:02 +0100)  
+Class POWER_HELPER (Wed, 20 Mar 2013 19:47:33 +0000)  
 ----------------------------------------------------  
   
   
