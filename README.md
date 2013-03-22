@@ -6,6 +6,19 @@ Table of contents
 -----------------  
   
 [General reference](#general-reference-- "")  
+[Library code](class-code-fri-22-mar-2013-123142-0000 "")  
+[Library controller](class-controller-thu-21-mar-2013-112255-0000 "")  
+[Library db](class-db-mon-11-mar-2013-091354-0000 "")  
+[Library escort](class-escort-tue-19-mar-2013-103140-0000 "")  
+[Library html](class-html-fri-22-mar-2013-100038-0000 "")  
+[Library language](class-language-mon-04-mar-2013-104100-0000 "")  
+[Library main](class-main-thu-21-mar-2013-180108-0000 "")  
+[Library md](class-md-fri-22-mar-2013-100038-0000 "")  
+[Library navigator](class-navigator-wed-20-mar-2013-183749-0000 "")  
+[Library powering](class-powering-tue-12-mar-2013-121930-0000 "")  
+[Library toolbox](class-toolbox-mon-18-mar-2013-093201-0000 "")  
+[Library widgets](class-widgets-fri-23-nov-2012-175452-0000 "")  
+[Component power]( "")  
   
 General reference  
 -----------------  
@@ -75,21 +88,22 @@ General reference
   
 ***  
   
-Class CODE (Fri, 22 Mar 2013 10:05:37 +0000)  
+Class CODE (Fri, 22 Mar 2013 12:31:42 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
   
+- **_add_summary_entry($header, $label)** (PriS, Len: 7/8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_is_too_long($code_line)** (PriS, Len: 4/5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_list_method_parameters($method)** (PriS, Len: 7/9 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_get_summary_information()** (PriS, Len: 6/7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **_get_summary_information()** (PriS, Len: 9/11 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_get_constants_information()** (PriS, Len: 7/9 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_get_functions_information()** (PriS, Len: 25/29 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_get_todos_information()** (PriS, Len: 5/7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_get_methods_information($method)** (PriS, Len: 32/33 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Method's length could be reduced.."))  
-- **_get_classes_information()** (PriS, Len: 24/27 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **_get_classes_information()** (PriS, Len: 26/30 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_get_component_information($name)** (PriS, Len: 15/17 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_get_components_information()** (PriS, Len: 22/27 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **_get_components_information()** (PriS, Len: 24/30 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_constants_list()** (PubS, Len: 4/5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_functions_list()** (PubS, Len: 4/5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_libraries_list($exclude = null)** (PubS, Len: 21/27 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
@@ -112,8 +126,9 @@ Uses: **main**, **md**
 - **github wiki documentation** &#10140; generate wiki pages with md syntax and update  
 - **add code-testing methods** &#10140; using phpunit to autobuild and execute tests  
 - **semantic documentation** &#10140; generate human-friendly doc from methods code..  
-- **get_class_dependencies** &#10140; too unaccurate, navigator-controller, only explicit new, etc.  
+- **get_class_dependencies** &#10140; too unaccurate, navigator-controller, only explicit new, etc., and it should count und order dependencies, in order to detect excessive coupling..  
 - **available libraries title** &#10140; at the beginning of classes list, same labeling in summary  
+- **maximum number of (public?) methods** &#10140; class too complex, should be refactored with helpers and similar structures  
   
   
 ***  

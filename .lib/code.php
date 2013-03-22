@@ -10,8 +10,9 @@ class code
         'github wiki documentation' => "generate wiki pages with md syntax and update",
         'add code-testing methods' => "using phpunit to autobuild and execute tests",
         'semantic documentation' => "generate human-friendly doc from methods code..",
-        'get_class_dependencies' => "too unaccurate, navigator-controller, only explicit new, etc.",
+        'get_class_dependencies' => "too unaccurate, navigator-controller, only explicit new, etc., and it should count und order dependencies, in order to detect excessive coupling..",
         'available libraries title' => "at the beginning of classes list, same labeling in summary",
+        'maximum number of (public?) methods' => "class too complex, should be refactored with helpers and similar structures",
     );
 
 	const _STR_LENGTH_WARNING = "Method's length could be reduced..";
@@ -75,6 +76,18 @@ class code
 
 	private static $_summary = array();
 
+	private static function _add_summary_entry($header,
+	                                           $label)
+	{
+	    $href = strtolower(str_replace(" ",
+	                                   "-",
+	                                   str_replace(array("(", ",", ":", "+", ")"),
+	                                               '',
+	                                               $header)));
+
+	    self::$_summary[$href] = $label;
+	}
+
 	private static function _is_too_long($code_line)
 	{
 	    $code_line = explode(" // ", $code_line); // avoid calculating comments
@@ -102,10 +115,14 @@ class code
 	    $summary = md::title(2, "Table of contents")
 	               . md::hyperlink("General reference",
 	                               '#general-reference--')
-	               . MD_NEWLINE_SEQUENCE
-	             . MD_NEWLINE_SEQUENCE;
+	               . MD_NEWLINE_SEQUENCE;
 
-	    return $summary;
+	    foreach (self::$_summary as $key => $value)
+	        $summary .= md::hyperlink($value,
+	                                  $key)
+	                  . MD_NEWLINE_SEQUENCE;
+
+	    return $summary . MD_NEWLINE_SEQUENCE;
 	}
 
 	private static function _get_constants_information()
@@ -228,6 +245,9 @@ class code
 	                $classes .= md::title(3, "TODOs")
 	                          . $class_todos . MD_NEWLINE_SEQUENCE;
 	            $classes .= md::hr();
+
+	            self::_add_summary_entry($header,
+	                                     "Library " . $class->getName());
 	        }
 
 	    return $classes . MD_NEWLINE_SEQUENCE;
@@ -280,6 +300,9 @@ class code
 	        }
 
 	        $components .= md::hr();
+
+	        self::_add_summary_entry($header,
+	                                 "Component " . $component);
 	    }
 
 	    return $components . MD_NEWLINE_SEQUENCE;
