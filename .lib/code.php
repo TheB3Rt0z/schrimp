@@ -231,7 +231,7 @@ class code
 	        {
 	            extract(self::get_class_data($class));
 
-	            $classes .= md::title(2, $header);
+	            $classes .= md::to_the_top() . md::title(2, $header);
 	            if (!empty($class_constants))
 	                $classes .= md::title(3, "Class configuration constants:")
 	                          . $class_constants . MD_NEWLINE_SEQUENCE; // unprotected (no '_XXX') constants here
@@ -257,7 +257,7 @@ class code
 	{
 	    extract(self::get_class_data(new ReflectionClass($name)));
 
-	    $component = md::title(2, $header);
+	    $component = md::to_the_top() . md::title(2, $header);
 	    if (!empty($class_constants))
 	        $component .= md::title(3, "Class configuration constants:")
 	                    . $class_constants . MD_NEWLINE_SEQUENCE; // unprotected (no '_XXX') constants here

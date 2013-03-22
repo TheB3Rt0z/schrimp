@@ -165,6 +165,11 @@ class md
 	                      $title);
 	}
 
+	static function to_the_top()
+	{
+	    return self::link("⇧", "#");
+	}
+
 	static function image($src,
 	                      $alt = '',
 	                      $title = '')
