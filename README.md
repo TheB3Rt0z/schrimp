@@ -6,30 +6,30 @@ Table of contents
 -----------------  
   
 [General reference](#general-reference-- "")  
-[Library code](#class-code-fri-22-mar-2013-130440-0000-- "")  
-[Library controller](#class-controller-thu-21-mar-2013-112255-0000-- "")  
-[Library db](#class-db-mon-11-mar-2013-091354-0000-- "")  
-[Library escort](#class-escort-tue-19-mar-2013-103140-0000-- "")  
-[Library html](#class-html-fri-22-mar-2013-100038-0000-- "")  
-[Library language](#class-language-mon-04-mar-2013-104100-0000-- "")  
-[Library main](#class-main-thu-21-mar-2013-180108-0000-- "")  
-[Library md](#class-md-fri-22-mar-2013-130440-0000-- "")  
-[Library navigator](#class-navigator-wed-20-mar-2013-183749-0000-- "")  
-[Library powering](#class-powering-tue-12-mar-2013-121930-0000-- "")  
-[Library toolbox](#class-toolbox-mon-18-mar-2013-093201-0000-- "")  
-[Library widgets](#class-widgets-fri-23-nov-2012-175452-0000-- "")  
-[Component admin](#class-admin-tue-12-mar-2013-121930-0000-- "")  
-[- admin_helper](#class-admin_helper-wed-20-mar-2013-194711-0000-- "")  
-[Component control](#class-control-thu-21-mar-2013-112255-0000-- "")  
-[- control_helper](#class-control_helper-thu-21-mar-2013-112255-0000-- "")  
-[Component documentation](#class-documentation-wed-20-mar-2013-133334-0000-- "")  
-[- documentation_helper](#class-documentation_helper-wed-20-mar-2013-194711-0000-- "")  
-[Component error](#class-error-fri-01-mar-2013-160113-0000-- "")  
-[- error_helper](#class-error_helper-wed-20-mar-2013-194711-0000-- "")  
-[Component homepage](#class-homepage-tue-12-mar-2013-121930-0000-- "")  
-[- homepage_helper](#class-homepage_helper-wed-20-mar-2013-194733-0000-- "")  
-[Component power](#class-power-tue-12-mar-2013-121930-0000-- "")  
-[- power_helper](#class-power_helper-wed-20-mar-2013-194733-0000-- "")  
+[Library code](#-class-code-fri-22-mar-2013-130743-0000-- "")  
+[Library controller](#-class-controller-thu-21-mar-2013-112255-0000-- "")  
+[Library db](#-class-db-mon-11-mar-2013-091354-0000-- "")  
+[Library escort](#-class-escort-tue-19-mar-2013-103140-0000-- "")  
+[Library html](#-class-html-fri-22-mar-2013-100038-0000-- "")  
+[Library language](#-class-language-mon-04-mar-2013-104100-0000-- "")  
+[Library main](#-class-main-thu-21-mar-2013-180108-0000-- "")  
+[Library md](#-class-md-fri-22-mar-2013-130440-0000-- "")  
+[Library navigator](#-class-navigator-wed-20-mar-2013-183749-0000-- "")  
+[Library powering](#-class-powering-tue-12-mar-2013-121930-0000-- "")  
+[Library toolbox](#-class-toolbox-mon-18-mar-2013-093201-0000-- "")  
+[Library widgets](#-class-widgets-fri-23-nov-2012-175452-0000-- "")  
+[Component admin](#-class-admin-tue-12-mar-2013-121930-0000-- "")  
+[- admin_helper](#-class-admin_helper-wed-20-mar-2013-194711-0000-- "")  
+[Component control](#-class-control-thu-21-mar-2013-112255-0000-- "")  
+[- control_helper](#-class-control_helper-thu-21-mar-2013-112255-0000-- "")  
+[Component documentation](#-class-documentation-wed-20-mar-2013-133334-0000-- "")  
+[- documentation_helper](#-class-documentation_helper-wed-20-mar-2013-194711-0000-- "")  
+[Component error](#-class-error-fri-01-mar-2013-160113-0000-- "")  
+[- error_helper](#-class-error_helper-wed-20-mar-2013-194711-0000-- "")  
+[Component homepage](#-class-homepage-tue-12-mar-2013-121930-0000-- "")  
+[- homepage_helper](#-class-homepage_helper-wed-20-mar-2013-194733-0000-- "")  
+[Component power](#-class-power-tue-12-mar-2013-121930-0000-- "")  
+[- power_helper](#-class-power_helper-wed-20-mar-2013-194733-0000-- "")  
   
 General reference  
 -----------------  
@@ -99,7 +99,7 @@ General reference
   
 ***  
   
-[⇧](# "") Class CODE (Fri, 22 Mar 2013 13:04:40 +0000)  
+[⇧](# "") Class CODE (Fri, 22 Mar 2013 13:07:43 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  

@@ -85,7 +85,7 @@ class code
 	                                               '',
 	                                               $header)));
 
-	    self::$_summary["#" . $href . "--"] = $label;
+	    self::$_summary["#-" . $href . "--"] = $label;
 	}
 
 	private static function _is_too_long($code_line)
