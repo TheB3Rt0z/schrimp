@@ -10,6 +10,7 @@ class main
 		'pdf documentation' => "check file creation/modification date -> reminder on old first decimal",
 	    'css selectors' => "uniform to html-class render-methods (only default style)",
 	    'css stylesheets autoload' => "automatically load ANY file in .inc/inc / css?",
+	    'our custom var_dump' => 'it should return alla parameters with get_args, not only first',
 	);
 
     private $_call = null;

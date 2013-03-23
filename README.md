@@ -6,30 +6,30 @@ Table of contents
 -----------------  
   
 [General reference](#general-reference-- "")  
-[Library code](#-class-code-sat-23-mar-2013-090500-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/.lib/code.php,)  
-[Library controller](#-class-controller-thu-21-mar-2013-002013-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/.lib/controller.php,)  
-[Library db](#-class-db-sat-09-mar-2013-202051-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/.lib/db.php,)  
-[Library escort](#-class-escort-tue-19-mar-2013-085438-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/.lib/escort.php,)  
-[Library html](#-class-html-thu-21-mar-2013-234050-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/.lib/html.php,)  
-[Library language](#-class-language-fri-01-mar-2013-235323-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/.lib/language.php,)  
-[Library main](#-class-main-thu-21-mar-2013-215549-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/.main.php,)  
-[Library md](#-class-md-sat-23-mar-2013-093516-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/.lib/md.php,)  
-[Library navigator](#-class-navigator-wed-20-mar-2013-231302-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/.lib/navigator.php,)  
-[Library powering](#-class-powering-mon-11-mar-2013-223703-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/lib/powering.php,)  
-[Library toolbox](#-class-toolbox-thu-14-mar-2013-231532-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/.lib/toolbox.php,)  
-[Library widgets](#-class-widgets-fri-23-nov-2012-210716-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/.lib/widgets.php,)  
-[Component admin](#-class-admin-mon-11-mar-2013-224503-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/.app/admin.php,)  
-[- admin_helper](#-class-admin_helper-wed-20-mar-2013-231302-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/.app/admin_helper.php,)  
-[Component control](#-class-control-thu-21-mar-2013-000840-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/.app/control.php,)  
-[- control_helper](#-class-control_helper-thu-21-mar-2013-001243-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/.app/control_helper.php,)  
-[Component documentation](#-class-documentation-wed-20-mar-2013-231302-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/.app/documentation.php,)  
-[- documentation_helper](#-class-documentation_helper-wed-20-mar-2013-231302-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/.app/documentation_helper.php,)  
-[Component error](#-class-error-fri-01-mar-2013-224710-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/.app/error.php,)  
-[- error_helper](#-class-error_helper-wed-20-mar-2013-231302-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/.app/error_helper.php,)  
-[Component homepage](#-class-homepage-mon-11-mar-2013-224503-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/app/homepage.php,)  
-[- homepage_helper](#-class-homepage_helper-wed-20-mar-2013-231302-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/app/homepage_helper.php,)  
-[Component power](#-class-power-mon-11-mar-2013-224503-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/app/power.php,)  
-[- power_helper](#-class-power_helper-wed-20-mar-2013-231302-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/app/power_helper.php,)  
+[Library code](#-class-code-sat-23-mar-2013-095834-0100-- "") (root/.lib/code.php,)  
+[Library controller](#-class-controller-thu-21-mar-2013-002013-0100-- "") (root/.lib/controller.php,)  
+[Library db](#-class-db-sat-09-mar-2013-202051-0100-- "") (root/.lib/db.php,)  
+[Library escort](#-class-escort-tue-19-mar-2013-085438-0100-- "") (root/.lib/escort.php,)  
+[Library html](#-class-html-thu-21-mar-2013-234050-0100-- "") (root/.lib/html.php,)  
+[Library language](#-class-language-fri-01-mar-2013-235323-0100-- "") (root/.lib/language.php,)  
+[Library main](#-class-main-sat-23-mar-2013-094505-0100-- "") (root/.main.php,)  
+[Library md](#-class-md-sat-23-mar-2013-093516-0100-- "") (root/.lib/md.php,)  
+[Library navigator](#-class-navigator-wed-20-mar-2013-231302-0100-- "") (root/.lib/navigator.php,)  
+[Library powering](#-class-powering-mon-11-mar-2013-223703-0100-- "") (root/lib/powering.php,)  
+[Library toolbox](#-class-toolbox-thu-14-mar-2013-231532-0100-- "") (root/.lib/toolbox.php,)  
+[Library widgets](#-class-widgets-fri-23-nov-2012-210716-0100-- "") (root/.lib/widgets.php,)  
+[Component admin](#-class-admin-mon-11-mar-2013-224503-0100-- "") (root/.app/admin.php,)  
+[- admin_helper](#-class-admin_helper-wed-20-mar-2013-231302-0100-- "") (root/.app/admin_helper.php,)  
+[Component control](#-class-control-thu-21-mar-2013-000840-0100-- "") (root/.app/control.php,)  
+[- control_helper](#-class-control_helper-thu-21-mar-2013-001243-0100-- "") (root/.app/control_helper.php,)  
+[Component documentation](#-class-documentation-wed-20-mar-2013-231302-0100-- "") (root/.app/documentation.php,)  
+[- documentation_helper](#-class-documentation_helper-wed-20-mar-2013-231302-0100-- "") (root/.app/documentation_helper.php,)  
+[Component error](#-class-error-fri-01-mar-2013-224710-0100-- "") (root/.app/error.php,)  
+[- error_helper](#-class-error_helper-wed-20-mar-2013-231302-0100-- "") (root/.app/error_helper.php,)  
+[Component homepage](#-class-homepage-mon-11-mar-2013-224503-0100-- "") (root/app/homepage.php,)  
+[- homepage_helper](#-class-homepage_helper-wed-20-mar-2013-231302-0100-- "") (root/app/homepage_helper.php,)  
+[Component power](#-class-power-mon-11-mar-2013-224503-0100-- "") (root/app/power.php,)  
+[- power_helper](#-class-power_helper-wed-20-mar-2013-231302-0100-- "") (root/app/power_helper.php,)  
   
 General reference  
 -----------------  
@@ -51,7 +51,7 @@ General reference
   
 **FUNCTION ALIASES**  
   
-- **fe($path)** &#10140; .main.php on line 270,
+- **fe($path)** &#10140; .main.php on line 271,
   returns boolean if realpath path exists on running server;
   @param string $path
   @return boolean true if realpath exists, false otherwise
@@ -61,22 +61,22 @@ General reference
   @param mixed $mixed
   @return mixed depending on internally defined rules
   
-- **le($msg)** &#10140; .main.php on line 300,
+- **le($msg)** &#10140; .main.php on line 301,
   launches a customizable error 500, mit optional backtrace for debug;
   @param string $msg
   @return boolean false after relocate
   
-- **rt($url = null)** &#10140; .main.php on line 290,
+- **rt($url = null)** &#10140; .main.php on line 291,
   relocates to given relative url or to base path on default;
   @param string $url
   @return void
   
-- **ru($uri = null)** &#10140; .main.php on line 280,
+- **ru($uri = null)** &#10140; .main.php on line 281,
   returns an absolute uri, based on current server configuration;
   @param string $uri
   @return string absolute http unified resource identifier
   
-- **sb()** &#10140; .main.php on line 309,
+- **sb()** &#10140; .main.php on line 310,
   show call's backtrace with help of error base handler
   @return void
   
@@ -86,7 +86,7 @@ General reference
   @param string $marker
   @return mixed callback function returned value(s)
   
-- **vd($what)** &#10140; .main.php on line 260,
+- **vd($what)** &#10140; .main.php on line 261,
   returns pre-formatted mixed variables;
   @param mixed $what
   @return void
@@ -99,7 +99,7 @@ General reference
   
 ***  
   
-[⇧](# "to the top") Class CODE (Sat, 23 Mar 2013 09:05:00 +0100)  
+[⇧](# "to the top") Class CODE (Sat, 23 Mar 2013 09:58:34 +0100)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -120,7 +120,7 @@ General reference
 - **get_libraries_list($exclude = null)** (PubS, Len: 21/27 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_components_list()** (PubS, Len: 19/24 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_class_dependencies($class)** (PubS, Len: 22/27 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_class_data($class)** (PubS, Len: 30/35 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Method's length could be reduced..") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **get_class_data($class)** (PubS, Len: 26/31 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Method's length could be reduced..") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_method_status($method)** (PubS, Len: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **analyse_method($method)** (PubS, Len: 30/36 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Method's length could be reduced..") CyC: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_documentation()** (PubS, Len: 18/20 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
@@ -273,7 +273,7 @@ Uses: **html**, **navigator**
   
 ***  
   
-[⇧](# "to the top") Class MAIN (Thu, 21 Mar 2013 21:55:49 +0100)  
+[⇧](# "to the top") Class MAIN (Sat, 23 Mar 2013 09:45:05 +0100)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -313,6 +313,7 @@ Uses: **code**, **html**
 - **pdf documentation** &#10140; check file creation/modification date -> reminder on old first decimal  
 - **css selectors** &#10140; uniform to html-class render-methods (only default style)  
 - **css stylesheets autoload** &#10140; automatically load ANY file in .inc/inc / css?  
+- **our custom var_dump** &#10140; it should return alla parameters with get_args, not only first  
   
   
 ***  

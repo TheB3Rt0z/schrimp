@@ -445,13 +445,9 @@ class code
 	        $class_todos .= "- **" . $key . "** &#10140; " . $value
 	                      . MD_NEWLINE_SEQUENCE;
 
-	    $class_path = str_replace(str_replace(str_replace($_SERVER['REQUEST_URI'],
-	                                                      '',
-	                                                      $_SERVER['SCRIPT_NAME']),
-	                                          '',
-	                                          $_SERVER['SCRIPT_FILENAME']),
-	                              '',
-	                              $class->getFileName());
+	    $class_path = "root" . str_replace(realpath(null),
+	                                       '',
+	                                       $class->getFileName());
 
 	    return array
 	    (
