@@ -471,13 +471,13 @@ class code
 	    $real_length = $length = $class->getEndLine() - $class->getStartLine() - 2;
 
 	    $code = array_slice(file($class->getFileName()),
-	                        $class->getEndLine() - 1, // indentation + parentheses
-	                        $length - 2);
+	                        $class->getStartLine() + 1, // indentation + parentheses
+	                        $length);
 
 	    $length_warning = 0;
 	    foreach ($code as $code_line)
 	    {
-	        if (self::_is_codeline_too_long($code_line))
+	         if (self::_is_codeline_too_long($code_line))
 	            $length_warning++;
 
 	        $code_line = trim($code_line);

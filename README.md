@@ -6,30 +6,30 @@ Table of contents
 -----------------  
   
 [General reference](#general-reference-- "")  
-[Library code](#-class-code-sat-23-mar-2013-160507-0100-- "") (root/.lib/code.php, Len: 569/570)  
-[Library controller](#-class-controller-thu-21-mar-2013-002013-0100-- "") (root/.lib/controller.php, Len: 115/116)  
-[Library db](#-class-db-sat-09-mar-2013-202051-0100-- "") (root/.lib/db.php, Len: 29/30)  
+[Library code](#-class-code-sat-23-mar-2013-161612-0100-- "") (root/.lib/code.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "8 too long line(s) found!") Len: 485/570)  
+[Library controller](#-class-controller-thu-21-mar-2013-002013-0100-- "") (root/.lib/controller.php, Len: 90/116)  
+[Library db](#-class-db-sat-09-mar-2013-202051-0100-- "") (root/.lib/db.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "1 too long line(s) found!") Len: 27/30)  
 [Library escort](#-class-escort-sat-23-mar-2013-125845-0100-- "") (root/.lib/escort.php, Len: 3/3)  
-[Library html](#-class-html-thu-21-mar-2013-234050-0100-- "") (root/.lib/html.php, Len: 485/486)  
-[Library language](#-class-language-fri-01-mar-2013-235323-0100-- "") (root/.lib/language.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "1 too long line(s) found!") Len: 91/93)  
-[Library main](#-class-main-sat-23-mar-2013-094505-0100-- "") (root/.main.php, Len: 242/249)  
-[Library md](#-class-md-sat-23-mar-2013-093516-0100-- "") (root/.lib/md.php, Len: 220/221)  
-[Library navigator](#-class-navigator-wed-20-mar-2013-231302-0100-- "") (root/.lib/navigator.php, Len: 257/258)  
-[Library powering](#-class-powering-mon-11-mar-2013-223703-0100-- "") (root/lib/powering.php, Len: 0/1)  
-[Library toolbox](#-class-toolbox-thu-14-mar-2013-231532-0100-- "") (root/.lib/toolbox.php, Len: 22/24)  
-[Library widgets](#-class-widgets-fri-23-nov-2012-210716-0100-- "") (root/.lib/widgets.php, Len: 0/1)  
-[Component admin](#-class-admin-mon-11-mar-2013-224503-0100-- "") (root/.app/admin.php, Len: 11/12)  
-[- admin_helper](#-class-admin_helper-wed-20-mar-2013-231302-0100-- "") (root/.app/admin_helper.php, Len: 0/1)  
-[Component control](#-class-control-thu-21-mar-2013-000840-0100-- "") (root/.app/control.php, Len: 235/236)  
-[- control_helper](#-class-control_helper-thu-21-mar-2013-001243-0100-- "") (root/.app/control_helper.php, Len: 61/62)  
-[Component documentation](#-class-documentation-wed-20-mar-2013-231302-0100-- "") (root/.app/documentation.php, Len: 56/57)  
-[- documentation_helper](#-class-documentation_helper-wed-20-mar-2013-231302-0100-- "") (root/.app/documentation_helper.php, Len: 0/1)  
-[Component error](#-class-error-fri-01-mar-2013-224710-0100-- "") (root/.app/error.php, Len: 105/106)  
-[- error_helper](#-class-error_helper-wed-20-mar-2013-231302-0100-- "") (root/.app/error_helper.php, Len: 0/1)  
-[Component homepage](#-class-homepage-mon-11-mar-2013-224503-0100-- "") (root/app/homepage.php, Len: 11/12)  
-[- homepage_helper](#-class-homepage_helper-wed-20-mar-2013-231302-0100-- "") (root/app/homepage_helper.php, Len: 0/1)  
-[Component power](#-class-power-mon-11-mar-2013-224503-0100-- "") (root/app/power.php, Len: 5/6)  
-[- power_helper](#-class-power_helper-wed-20-mar-2013-231302-0100-- "") (root/app/power_helper.php, Len: 0/1)  
+[Library html](#-class-html-thu-21-mar-2013-234050-0100-- "") (root/.lib/html.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "1 too long line(s) found!") Len: 396/486)  
+[Library language](#-class-language-fri-01-mar-2013-235323-0100-- "") (root/.lib/language.php, Len: 80/93)  
+[Library main](#-class-main-sat-23-mar-2013-094505-0100-- "") (root/.main.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "5 too long line(s) found!") Len: 198/249)  
+[Library md](#-class-md-sat-23-mar-2013-093516-0100-- "") (root/.lib/md.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "1 too long line(s) found!") Len: 179/221)  
+[Library navigator](#-class-navigator-wed-20-mar-2013-231302-0100-- "") (root/.lib/navigator.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "2 too long line(s) found!") Len: 213/258)  
+[Library powering](#-class-powering-mon-11-mar-2013-223703-0100-- "") (root/lib/powering.php, Len: 1/1)  
+[Library toolbox](#-class-toolbox-thu-14-mar-2013-231532-0100-- "") (root/.lib/toolbox.php, Len: 23/24)  
+[Library widgets](#-class-widgets-fri-23-nov-2012-210716-0100-- "") (root/.lib/widgets.php, Len: 1/1)  
+[Component admin](#-class-admin-mon-11-mar-2013-224503-0100-- "") (root/.app/admin.php, Len: 10/12)  
+[- admin_helper](#-class-admin_helper-wed-20-mar-2013-231302-0100-- "") (root/.app/admin_helper.php, Len: 1/1)  
+[Component control](#-class-control-thu-21-mar-2013-000840-0100-- "") (root/.app/control.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "2 too long line(s) found!") Len: 201/236)  
+[- control_helper](#-class-control_helper-thu-21-mar-2013-001243-0100-- "") (root/.app/control_helper.php, Len: 49/62)  
+[Component documentation](#-class-documentation-wed-20-mar-2013-231302-0100-- "") (root/.app/documentation.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "1 too long line(s) found!") Len: 50/57)  
+[- documentation_helper](#-class-documentation_helper-wed-20-mar-2013-231302-0100-- "") (root/.app/documentation_helper.php, Len: 1/1)  
+[Component error](#-class-error-fri-01-mar-2013-224710-0100-- "") (root/.app/error.php, Len: 80/106)  
+[- error_helper](#-class-error_helper-wed-20-mar-2013-231302-0100-- "") (root/.app/error_helper.php, Len: 1/1)  
+[Component homepage](#-class-homepage-mon-11-mar-2013-224503-0100-- "") (root/app/homepage.php, Len: 10/12)  
+[- homepage_helper](#-class-homepage_helper-wed-20-mar-2013-231302-0100-- "") (root/app/homepage_helper.php, Len: 1/1)  
+[Component power](#-class-power-mon-11-mar-2013-224503-0100-- "") (root/app/power.php, Len: 4/6)  
+[- power_helper](#-class-power_helper-wed-20-mar-2013-231302-0100-- "") (root/app/power_helper.php, Len: 1/1)  
   
 General reference  
 -----------------  
@@ -99,7 +99,7 @@ General reference
   
 ***  
   
-[⇧](# "to the top") Class CODE (Sat, 23 Mar 2013 16:05:07 +0100)  
+[⇧](# "to the top") Class CODE (Sat, 23 Mar 2013 16:16:12 +0100)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
