@@ -78,7 +78,10 @@ class code
 
 	private static function _add_summary_entry($header,
 	                                           $label,
-	                                           $path)
+	                                           $path,
+	                                           $length_warning,
+	                                           $real_length,
+	                                           $length)
 	{
 	    $href = strtolower(str_replace(" ",
 	                                   "-",
@@ -90,10 +93,13 @@ class code
 	    (
 	        'label' => $label,
 	        'path' => $path,
+	        'length_warning' => $length_warning,
+	        'real_length' => $real_length,
+	        'length' => $length,
 	    );
 	}
 
-	private static function _is_too_long($code_line)
+	private static function _is_codeline_too_long($code_line)
 	{
 	    $code_line = explode(" // ", $code_line); // avoid calculating comments
 
@@ -124,7 +130,14 @@ class code
 
 	    foreach (self::$_summary as $key => $values)
 	        $summary .= md::hyperlink($values['label'],
-	                                  $key) . " (" . $values['path'] . ",)"
+	                                  $key)
+	                  . " (" . $values['path']
+	                  . (!empty($values['length_warning'])
+	                    ? " " . md::blue_boh($values['length_warning']
+	                    . " too long line(s) found!")
+	                    : ",")
+	                  . " Len: "
+	                  . $values['real_length'] . "/" . $values['length'] . ")"
 	                  . MD_NEWLINE_SEQUENCE;
 
 	    return $summary . MD_NEWLINE_SEQUENCE;
@@ -253,7 +266,10 @@ class code
 
 	            self::_add_summary_entry($header,
 	                                     "Library " . $class->getName(),
-	                                     $class_path);
+	                                     $class_path,
+	                                     $length_warning,
+	                                     $real_length,
+	                                     $length);
 	        }
 
 	    return $classes . MD_NEWLINE_SEQUENCE;
@@ -281,7 +297,10 @@ class code
 	                             (substr_count($name, "_")
 	                             ? "-"
 	                             : "Component") . " " . $name,
-	                             $class_path);
+	                             $class_path,
+	                             $length_warning,
+	                             $real_length,
+	                             $length);
 
 	    return $component;
 	}
@@ -449,6 +468,23 @@ class code
 	                                       '',
 	                                       $class->getFileName());
 
+	    $real_length = $length = $class->getEndLine() - $class->getStartLine();
+
+	    $code = array_slice(file($class->getFileName()),
+	                        $class->getEndLine() - 3, // indentation + parentheses
+	                        $length);
+
+	    $length_warning = 0;
+	    foreach ($code as $code_line)
+	    {
+	        if (self::_is_codeline_too_long($code_line))
+	            $length_warning++;
+
+	        $code_line = trim($code_line);
+	        if (empty($code_line))
+	            $real_length--;
+	    }
+
 	    return array
 	    (
 	        'header' => $header,
@@ -457,6 +493,9 @@ class code
 	        'dependencies' => self::get_class_dependencies($class),
 	        'class_todos' => $class_todos,
 	        'class_path' => $class_path,
+	        'length' => $length,
+	        'real_length' => $real_length,
+	        'length_warning' => $length_warning,
 	    );
 	}
 
@@ -487,7 +526,7 @@ class code
 	    $cyc = 0;
         foreach ($code as $code_line)
         {
-            if (self::_is_too_long($code_line))
+            if (self::_is_codeline_too_long($code_line))
                 $length_warning++;
 
             $code_line = trim($code_line);
