@@ -6,30 +6,30 @@ Table of contents
 -----------------  
   
 [General reference](#general-reference-- "")  
-[Library code](#-class-code-sat-23-mar-2013-124812-0100-- "") (root/.lib/code.php, Len: 571/572)  
-[Library controller](#-class-controller-thu-21-mar-2013-002013-0100-- "") (root/.lib/controller.php, Len: 117/118)  
-[Library db](#-class-db-sat-09-mar-2013-202051-0100-- "") (root/.lib/db.php, Len: 31/32)  
-[Library escort](#-class-escort-tue-19-mar-2013-085438-0100-- "") (root/.lib/escort.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "1 too long line(s) found!") Len: 4/5)  
-[Library html](#-class-html-thu-21-mar-2013-234050-0100-- "") (root/.lib/html.php, Len: 487/488)  
-[Library language](#-class-language-fri-01-mar-2013-235323-0100-- "") (root/.lib/language.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "1 too long line(s) found!") Len: 93/95)  
-[Library main](#-class-main-sat-23-mar-2013-094505-0100-- "") (root/.main.php, Len: 244/251)  
-[Library md](#-class-md-sat-23-mar-2013-093516-0100-- "") (root/.lib/md.php, Len: 222/223)  
-[Library navigator](#-class-navigator-wed-20-mar-2013-231302-0100-- "") (root/.lib/navigator.php, Len: 259/260)  
-[Library powering](#-class-powering-mon-11-mar-2013-223703-0100-- "") (root/lib/powering.php, Len: 3/3)  
-[Library toolbox](#-class-toolbox-thu-14-mar-2013-231532-0100-- "") (root/.lib/toolbox.php, Len: 24/26)  
-[Library widgets](#-class-widgets-fri-23-nov-2012-210716-0100-- "") (root/.lib/widgets.php, Len: 3/3)  
-[Component admin](#-class-admin-mon-11-mar-2013-224503-0100-- "") (root/.app/admin.php, Len: 13/14)  
-[- admin_helper](#-class-admin_helper-wed-20-mar-2013-231302-0100-- "") (root/.app/admin_helper.php, Len: 3/3)  
-[Component control](#-class-control-thu-21-mar-2013-000840-0100-- "") (root/.app/control.php, Len: 237/238)  
-[- control_helper](#-class-control_helper-thu-21-mar-2013-001243-0100-- "") (root/.app/control_helper.php, Len: 63/64)  
-[Component documentation](#-class-documentation-wed-20-mar-2013-231302-0100-- "") (root/.app/documentation.php, Len: 58/59)  
-[- documentation_helper](#-class-documentation_helper-wed-20-mar-2013-231302-0100-- "") (root/.app/documentation_helper.php, Len: 3/3)  
-[Component error](#-class-error-fri-01-mar-2013-224710-0100-- "") (root/.app/error.php, Len: 107/108)  
-[- error_helper](#-class-error_helper-wed-20-mar-2013-231302-0100-- "") (root/.app/error_helper.php, Len: 3/3)  
-[Component homepage](#-class-homepage-mon-11-mar-2013-224503-0100-- "") (root/app/homepage.php, Len: 13/14)  
-[- homepage_helper](#-class-homepage_helper-wed-20-mar-2013-231302-0100-- "") (root/app/homepage_helper.php, Len: 3/3)  
-[Component power](#-class-power-mon-11-mar-2013-224503-0100-- "") (root/app/power.php, Len: 6/8)  
-[- power_helper](#-class-power_helper-wed-20-mar-2013-231302-0100-- "") (root/app/power_helper.php, Len: 3/3)  
+[Library code](#-class-code-sat-23-mar-2013-160507-0100-- "") (root/.lib/code.php, Len: 569/570)  
+[Library controller](#-class-controller-thu-21-mar-2013-002013-0100-- "") (root/.lib/controller.php, Len: 115/116)  
+[Library db](#-class-db-sat-09-mar-2013-202051-0100-- "") (root/.lib/db.php, Len: 29/30)  
+[Library escort](#-class-escort-sat-23-mar-2013-125845-0100-- "") (root/.lib/escort.php, Len: 3/3)  
+[Library html](#-class-html-thu-21-mar-2013-234050-0100-- "") (root/.lib/html.php, Len: 485/486)  
+[Library language](#-class-language-fri-01-mar-2013-235323-0100-- "") (root/.lib/language.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "1 too long line(s) found!") Len: 91/93)  
+[Library main](#-class-main-sat-23-mar-2013-094505-0100-- "") (root/.main.php, Len: 242/249)  
+[Library md](#-class-md-sat-23-mar-2013-093516-0100-- "") (root/.lib/md.php, Len: 220/221)  
+[Library navigator](#-class-navigator-wed-20-mar-2013-231302-0100-- "") (root/.lib/navigator.php, Len: 257/258)  
+[Library powering](#-class-powering-mon-11-mar-2013-223703-0100-- "") (root/lib/powering.php, Len: 0/1)  
+[Library toolbox](#-class-toolbox-thu-14-mar-2013-231532-0100-- "") (root/.lib/toolbox.php, Len: 22/24)  
+[Library widgets](#-class-widgets-fri-23-nov-2012-210716-0100-- "") (root/.lib/widgets.php, Len: 0/1)  
+[Component admin](#-class-admin-mon-11-mar-2013-224503-0100-- "") (root/.app/admin.php, Len: 11/12)  
+[- admin_helper](#-class-admin_helper-wed-20-mar-2013-231302-0100-- "") (root/.app/admin_helper.php, Len: 0/1)  
+[Component control](#-class-control-thu-21-mar-2013-000840-0100-- "") (root/.app/control.php, Len: 235/236)  
+[- control_helper](#-class-control_helper-thu-21-mar-2013-001243-0100-- "") (root/.app/control_helper.php, Len: 61/62)  
+[Component documentation](#-class-documentation-wed-20-mar-2013-231302-0100-- "") (root/.app/documentation.php, Len: 56/57)  
+[- documentation_helper](#-class-documentation_helper-wed-20-mar-2013-231302-0100-- "") (root/.app/documentation_helper.php, Len: 0/1)  
+[Component error](#-class-error-fri-01-mar-2013-224710-0100-- "") (root/.app/error.php, Len: 105/106)  
+[- error_helper](#-class-error_helper-wed-20-mar-2013-231302-0100-- "") (root/.app/error_helper.php, Len: 0/1)  
+[Component homepage](#-class-homepage-mon-11-mar-2013-224503-0100-- "") (root/app/homepage.php, Len: 11/12)  
+[- homepage_helper](#-class-homepage_helper-wed-20-mar-2013-231302-0100-- "") (root/app/homepage_helper.php, Len: 0/1)  
+[Component power](#-class-power-mon-11-mar-2013-224503-0100-- "") (root/app/power.php, Len: 5/6)  
+[- power_helper](#-class-power_helper-wed-20-mar-2013-231302-0100-- "") (root/app/power_helper.php, Len: 0/1)  
   
 General reference  
 -----------------  
@@ -99,7 +99,7 @@ General reference
   
 ***  
   
-[⇧](# "to the top") Class CODE (Sat, 23 Mar 2013 12:48:12 +0100)  
+[⇧](# "to the top") Class CODE (Sat, 23 Mar 2013 16:05:07 +0100)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -193,12 +193,12 @@ Uses: **html**, **navigator**
   
 ***  
   
-[⇧](# "to the top") Class ESCORT (Tue, 19 Mar 2013 08:54:38 +0100)  
+[⇧](# "to the top") Class ESCORT (Sat, 23 Mar 2013 12:58:45 +0100)  
 ----------------------------------------------  
   
 **TODOS**  
   
-- **runtime registry** &#10140; save created objects structure as reference hierarchy  
+- **runtime reg** &#10140; save created objects structure as reference hierarchy  
   
   
 ***  

@@ -468,11 +468,11 @@ class code
 	                                       '',
 	                                       $class->getFileName());
 
-	    $real_length = $length = $class->getEndLine() - $class->getStartLine();
+	    $real_length = $length = $class->getEndLine() - $class->getStartLine() - 2;
 
 	    $code = array_slice(file($class->getFileName()),
-	                        $class->getEndLine() - 3, // indentation + parentheses
-	                        $length);
+	                        $class->getEndLine() - 1, // indentation + parentheses
+	                        $length - 2);
 
 	    $length_warning = 0;
 	    foreach ($code as $code_line)

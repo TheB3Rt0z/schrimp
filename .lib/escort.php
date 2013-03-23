@@ -3,7 +3,7 @@
 class escort
 {
 	public static $todos = array(
-	    'runtime registry' => "save created objects structure as reference hierarchy",
+	    'runtime reg' => "save created objects structure as reference hierarchy",
 	);
 }
 
