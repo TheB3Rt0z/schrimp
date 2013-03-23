@@ -1,4 +1,4 @@
-![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.5.2013.03.22  
+![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.5.2013.03.23  
 =========================================================================================================================================  
   
   
@@ -6,30 +6,30 @@ Table of contents
 -----------------  
   
 [General reference](#general-reference-- "")  
-[Library code](#-class-code-fri-22-mar-2013-162333-0000-- "") (/schrimp/.lib/code.php,)  
-[Library controller](#-class-controller-thu-21-mar-2013-112255-0000-- "") (/schrimp/.lib/controller.php,)  
-[Library db](#-class-db-mon-11-mar-2013-091354-0000-- "") (/schrimp/.lib/db.php,)  
-[Library escort](#-class-escort-tue-19-mar-2013-103140-0000-- "") (/schrimp/.lib/escort.php,)  
-[Library html](#-class-html-fri-22-mar-2013-100038-0000-- "") (/schrimp/.lib/html.php,)  
-[Library language](#-class-language-mon-04-mar-2013-104100-0000-- "") (/schrimp/.lib/language.php,)  
-[Library main](#-class-main-fri-22-mar-2013-162506-0000-- "") (/schrimp/.main.php,)  
-[Library md](#-class-md-fri-22-mar-2013-130440-0000-- "") (/schrimp/.lib/md.php,)  
-[Library navigator](#-class-navigator-wed-20-mar-2013-183749-0000-- "") (/schrimp/.lib/navigator.php,)  
-[Library powering](#-class-powering-tue-12-mar-2013-121930-0000-- "") (/schrimp/lib/powering.php,)  
-[Library toolbox](#-class-toolbox-mon-18-mar-2013-093201-0000-- "") (/schrimp/.lib/toolbox.php,)  
-[Library widgets](#-class-widgets-fri-23-nov-2012-175452-0000-- "") (/schrimp/.lib/widgets.php,)  
-[Component admin](#-class-admin-tue-12-mar-2013-121930-0000-- "") (/schrimp/.app/admin.php,)  
-[- admin_helper](#-class-admin_helper-wed-20-mar-2013-194711-0000-- "") (/schrimp/.app/admin_helper.php,)  
-[Component control](#-class-control-thu-21-mar-2013-112255-0000-- "") (/schrimp/.app/control.php,)  
-[- control_helper](#-class-control_helper-thu-21-mar-2013-112255-0000-- "") (/schrimp/.app/control_helper.php,)  
-[Component documentation](#-class-documentation-wed-20-mar-2013-133334-0000-- "") (/schrimp/.app/documentation.php,)  
-[- documentation_helper](#-class-documentation_helper-wed-20-mar-2013-194711-0000-- "") (/schrimp/.app/documentation_helper.php,)  
-[Component error](#-class-error-fri-01-mar-2013-160113-0000-- "") (/schrimp/.app/error.php,)  
-[- error_helper](#-class-error_helper-wed-20-mar-2013-194711-0000-- "") (/schrimp/.app/error_helper.php,)  
-[Component homepage](#-class-homepage-tue-12-mar-2013-121930-0000-- "") (/schrimp/app/homepage.php,)  
-[- homepage_helper](#-class-homepage_helper-wed-20-mar-2013-194733-0000-- "") (/schrimp/app/homepage_helper.php,)  
-[Component power](#-class-power-tue-12-mar-2013-121930-0000-- "") (/schrimp/app/power.php,)  
-[- power_helper](#-class-power_helper-wed-20-mar-2013-194733-0000-- "") (/schrimp/app/power_helper.php,)  
+[Library code](#-class-code-sat-23-mar-2013-090500-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/.lib/code.php,)  
+[Library controller](#-class-controller-thu-21-mar-2013-002013-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/.lib/controller.php,)  
+[Library db](#-class-db-sat-09-mar-2013-202051-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/.lib/db.php,)  
+[Library escort](#-class-escort-tue-19-mar-2013-085438-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/.lib/escort.php,)  
+[Library html](#-class-html-thu-21-mar-2013-234050-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/.lib/html.php,)  
+[Library language](#-class-language-fri-01-mar-2013-235323-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/.lib/language.php,)  
+[Library main](#-class-main-thu-21-mar-2013-215549-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/.main.php,)  
+[Library md](#-class-md-sat-23-mar-2013-093516-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/.lib/md.php,)  
+[Library navigator](#-class-navigator-wed-20-mar-2013-231302-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/.lib/navigator.php,)  
+[Library powering](#-class-powering-mon-11-mar-2013-223703-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/lib/powering.php,)  
+[Library toolbox](#-class-toolbox-thu-14-mar-2013-231532-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/.lib/toolbox.php,)  
+[Library widgets](#-class-widgets-fri-23-nov-2012-210716-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/.lib/widgets.php,)  
+[Component admin](#-class-admin-mon-11-mar-2013-224503-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/.app/admin.php,)  
+[- admin_helper](#-class-admin_helper-wed-20-mar-2013-231302-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/.app/admin_helper.php,)  
+[Component control](#-class-control-thu-21-mar-2013-000840-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/.app/control.php,)  
+[- control_helper](#-class-control_helper-thu-21-mar-2013-001243-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/.app/control_helper.php,)  
+[Component documentation](#-class-documentation-wed-20-mar-2013-231302-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/.app/documentation.php,)  
+[- documentation_helper](#-class-documentation_helper-wed-20-mar-2013-231302-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/.app/documentation_helper.php,)  
+[Component error](#-class-error-fri-01-mar-2013-224710-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/.app/error.php,)  
+[- error_helper](#-class-error_helper-wed-20-mar-2013-231302-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/.app/error_helper.php,)  
+[Component homepage](#-class-homepage-mon-11-mar-2013-224503-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/app/homepage.php,)  
+[- homepage_helper](#-class-homepage_helper-wed-20-mar-2013-231302-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/app/homepage_helper.php,)  
+[Component power](#-class-power-mon-11-mar-2013-224503-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/app/power.php,)  
+[- power_helper](#-class-power_helper-wed-20-mar-2013-231302-0100-- "") (/home/theb3rt0z/Ubuntu One/workspace/schrimp/app/power_helper.php,)  
   
 General reference  
 -----------------  
@@ -99,7 +99,7 @@ General reference
   
 ***  
   
-[⇧](# "") Class CODE (Fri, 22 Mar 2013 16:23:33 +0000)  
+[⇧](# "to the top") Class CODE (Sat, 23 Mar 2013 09:05:00 +0100)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -144,7 +144,7 @@ Uses: **main**, **md**
   
 ***  
   
-[⇧](# "") Class CONTROLLER (Thu, 21 Mar 2013 11:22:55 +0000)  
+[⇧](# "to the top") Class CONTROLLER (Thu, 21 Mar 2013 00:20:13 +0100)  
 --------------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -179,7 +179,7 @@ Uses: **html**, **navigator**
   
 ***  
   
-[⇧](# "") Class DB (Mon, 11 Mar 2013 09:13:54 +0000)  
+[⇧](# "to the top") Class DB (Sat, 09 Mar 2013 20:20:51 +0100)  
 ------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -193,7 +193,7 @@ Uses: **html**, **navigator**
   
 ***  
   
-[⇧](# "") Class ESCORT (Tue, 19 Mar 2013 10:31:40 +0000)  
+[⇧](# "to the top") Class ESCORT (Tue, 19 Mar 2013 08:54:38 +0100)  
 ----------------------------------------------  
   
 **TODOS**  
@@ -203,7 +203,7 @@ Uses: **html**, **navigator**
   
 ***  
   
-[⇧](# "") Class HTML (Fri, 22 Mar 2013 10:00:38 +0000)  
+[⇧](# "to the top") Class HTML (Thu, 21 Mar 2013 23:40:50 +0100)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -256,7 +256,7 @@ Uses: **html**, **navigator**
   
 ***  
   
-[⇧](# "") Class LANGUAGE (Mon, 04 Mar 2013 10:41:00 +0000)  
+[⇧](# "to the top") Class LANGUAGE (Fri, 01 Mar 2013 23:53:23 +0100)  
 ------------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -273,7 +273,7 @@ Uses: **html**, **navigator**
   
 ***  
   
-[⇧](# "") Class MAIN (Fri, 22 Mar 2013 16:25:06 +0000)  
+[⇧](# "to the top") Class MAIN (Thu, 21 Mar 2013 21:55:49 +0100)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -317,7 +317,7 @@ Uses: **code**, **html**
   
 ***  
   
-[⇧](# "") Class MD (Fri, 22 Mar 2013 13:04:40 +0000)  
+[⇧](# "to the top") Class MD (Sat, 23 Mar 2013 09:35:16 +0100)  
 ------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -349,7 +349,7 @@ Uses: **code**, **html**
   
 ***  
   
-[⇧](# "") Class NAVIGATOR (Wed, 20 Mar 2013 18:37:49 +0000)  
+[⇧](# "to the top") Class NAVIGATOR (Wed, 20 Mar 2013 23:13:02 +0100)  
 -------------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -381,13 +381,13 @@ Uses: **controller**, **html**, **main**
   
 ***  
   
-[⇧](# "") Class POWERING (Tue, 12 Mar 2013 12:19:30 +0000)  
+[⇧](# "to the top") Class POWERING (Mon, 11 Mar 2013 22:37:03 +0100)  
 ------------------------------------------------  
   
   
 ***  
   
-[⇧](# "") Class TOOLBOX (Mon, 18 Mar 2013 09:32:01 +0000)  
+[⇧](# "to the top") Class TOOLBOX (Thu, 14 Mar 2013 23:15:32 +0100)  
 -----------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -397,7 +397,7 @@ Uses: **controller**, **html**, **main**
   
 ***  
   
-[⇧](# "") Class WIDGETS (Fri, 23 Nov 2012 17:54:52 +0000)  
+[⇧](# "to the top") Class WIDGETS (Fri, 23 Nov 2012 21:07:16 +0100)  
 -----------------------------------------------  
   
   
@@ -408,7 +408,7 @@ Available components:
 =====================  
   
   
-[⇧](# "") Class ADMIN (Tue, 12 Mar 2013 12:19:30 +0000)  
+[⇧](# "to the top") Class ADMIN (Mon, 11 Mar 2013 22:45:03 +0100)  
 ---------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -441,13 +441,13 @@ Available components:
   
 Uses: **html**, **navigator**  
   
-[⇧](# "") Class ADMIN_HELPER (Wed, 20 Mar 2013 19:47:11 +0000)  
+[⇧](# "to the top") Class ADMIN_HELPER (Wed, 20 Mar 2013 23:13:02 +0100)  
 ----------------------------------------------------  
   
   
 ***  
   
-[⇧](# "") Class CONTROL (Thu, 21 Mar 2013 11:22:55 +0000)  
+[⇧](# "to the top") Class CONTROL (Thu, 21 Mar 2013 00:08:40 +0100)  
 -----------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -504,7 +504,7 @@ Uses: **html**, **language**, **main**
 - **phpinfo server configuration** &#10140; better rappresentation of access details, see php-documentation  
 - **plugins libraries** &#10140; find a way to incapsulate needed translations (static array of translations? default if only one level..) and controls (?) in backend   
   
-[⇧](# "") Class CONTROL_HELPER (Thu, 21 Mar 2013 11:22:55 +0000)  
+[⇧](# "to the top") Class CONTROL_HELPER (Thu, 21 Mar 2013 00:12:43 +0100)  
 ------------------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -521,7 +521,7 @@ Uses: **html**
   
 ***  
   
-[⇧](# "") Class DOCUMENTATION (Wed, 20 Mar 2013 13:33:34 +0000)  
+[⇧](# "to the top") Class DOCUMENTATION (Wed, 20 Mar 2013 23:13:02 +0100)  
 -----------------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -556,13 +556,13 @@ Uses: **html**
   
 - **method toString** &#10140; to get a rappresentative highlighted code as reference  
   
-[⇧](# "") Class DOCUMENTATION_HELPER (Wed, 20 Mar 2013 19:47:11 +0000)  
+[⇧](# "to the top") Class DOCUMENTATION_HELPER (Wed, 20 Mar 2013 23:13:02 +0100)  
 ------------------------------------------------------------  
   
   
 ***  
   
-[⇧](# "") Class ERROR (Fri, 01 Mar 2013 16:01:13 +0000)  
+[⇧](# "to the top") Class ERROR (Fri, 01 Mar 2013 22:47:10 +0100)  
 ---------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -600,13 +600,13 @@ Uses: **html**
   
 Uses: **html**, **main**, **navigator**  
   
-[⇧](# "") Class ERROR_HELPER (Wed, 20 Mar 2013 19:47:11 +0000)  
+[⇧](# "to the top") Class ERROR_HELPER (Wed, 20 Mar 2013 23:13:02 +0100)  
 ----------------------------------------------------  
   
   
 ***  
   
-[⇧](# "") Class HOMEPAGE (Tue, 12 Mar 2013 12:19:30 +0000)  
+[⇧](# "to the top") Class HOMEPAGE (Mon, 11 Mar 2013 22:45:03 +0100)  
 ------------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -639,13 +639,13 @@ Uses: **html**, **main**, **navigator**
   
 Uses: **html**, **navigator**  
   
-[⇧](# "") Class HOMEPAGE_HELPER (Wed, 20 Mar 2013 19:47:33 +0000)  
+[⇧](# "to the top") Class HOMEPAGE_HELPER (Wed, 20 Mar 2013 23:13:02 +0100)  
 -------------------------------------------------------  
   
   
 ***  
   
-[⇧](# "") Class POWER (Tue, 12 Mar 2013 12:19:30 +0000)  
+[⇧](# "to the top") Class POWER (Mon, 11 Mar 2013 22:45:03 +0100)  
 ---------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -673,7 +673,7 @@ Uses: **html**, **navigator**
 - **get_aside()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_footer()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
-[⇧](# "") Class POWER_HELPER (Wed, 20 Mar 2013 19:47:33 +0000)  
+[⇧](# "to the top") Class POWER_HELPER (Wed, 20 Mar 2013 23:13:02 +0100)  
 ----------------------------------------------------  
   
   
