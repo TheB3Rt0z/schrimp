@@ -146,14 +146,19 @@ class code
 	                    : ",")
 	                  . " Len: "
 	                  . $values['real_length'] . "/" . $values['length']
-	                  . ", CIS: " . $values['cis']
+	                  . ", CIS: " . $values['cis'] . " "
 	                  . ($values['cis'] <= (floor(MAX_METHODS_COMPLEXITY / 10) * 10)
 	                    ? ($values['cis'] > 0
 	                      ? md::green_ok()
 	                      : '')
 	                    : ($values['cis'] <= MAX_METHODS_COMPLEXITY
 	                      ? md::yellow_ops(self::_STR_CIS_WARNING)
-	                      : md::red_ics(self::_STR_CIS_ERROR))) . ")"
+	                      : md::red_ics(self::_STR_CIS_ERROR))) . ") "
+	                  . ((!isset(self::$_class_warnings[$values['class_name']]['blue'])
+	                        && !isset(self::$_class_warnings[$values['class_name']]['yellow'])
+	                        && !isset(self::$_class_warnings[$values['class_name']]['red']))
+	                    ? md::green_ok()
+	                    : "&#10140;")
 	                  . (isset(self::$_class_warnings[$values['class_name']]['blue'])
 	                    ? " " . self::$_class_warnings[$values['class_name']]['blue']
 	                    . " " . md::blue_boh("Methods with too many parameters?")
@@ -165,11 +170,6 @@ class code
 	                  . (isset(self::$_class_warnings[$values['class_name']]['red'])
 	                    ? " " . self::$_class_warnings[$values['class_name']]['red']
 	                    . " " . md::red_ics("Warning! Warning! Some red alert(s)!")
-	                    : '')
-	                  . ((!isset(self::$_class_warnings[$values['class_name']]['blue'])
-	                        && !isset(self::$_class_warnings[$values['class_name']]['yellow'])
-	                        && !isset(self::$_class_warnings[$values['class_name']]['red']))
-	                    ? " " . md::green_ok()
 	                    : '')
 	                  . MD_NEWLINE_SEQUENCE;
 
