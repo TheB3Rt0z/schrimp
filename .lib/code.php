@@ -142,16 +142,16 @@ class code
 	                    : ",")
 	                  . " Len: "
 	                  . $values['real_length'] . "/" . $values['length'] . ")"
-	                  . (isset(self::$_class_warnings['blue'])
-	                    ? " " . self::$_class_warnings['blue']
-	                    . " " . md::blueboh("too many parameters?")
+	                  . (isset(self::$_class_warnings[$values['class_name']]['blue'])
+	                    ? " " . self::$_class_warnings[$values['class_name']]['blue']
+	                    . " " . md::blue_boh("too many parameters?")
 	                    : '')
-	                  . (isset(self::$_class_warnings['yellow'])
-	                    ? " " . self::$_class_warnings['yellow']
+	                  . (isset(self::$_class_warnings[$values['class_name']]['yellow'])
+	                    ? " " . self::$_class_warnings[$values['class_name']]['yellow']
 	                    . " " . md::yellow_ops("some yellow alert(s)")
 	                    : '')
-	                  . (isset(self::$_class_warnings['red'])
-	                    ? " " . self::$_class_warnings['red']
+	                  . (isset(self::$_class_warnings[$values['class_name']]['red'])
+	                    ? " " . self::$_class_warnings[$values['class_name']]['red']
 	                    . " " . md::red_ics("some red alert(s)")
 	                    : '')
 	                  . MD_NEWLINE_SEQUENCE;
