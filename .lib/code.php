@@ -144,15 +144,20 @@ class code
 	                  . $values['real_length'] . "/" . $values['length'] . ")"
 	                  . (isset(self::$_class_warnings[$values['class_name']]['blue'])
 	                    ? " " . self::$_class_warnings[$values['class_name']]['blue']
-	                    . " " . md::blue_boh("too many parameters?")
+	                    . " " . md::blue_boh("Methods with too many parameters?")
 	                    : '')
 	                  . (isset(self::$_class_warnings[$values['class_name']]['yellow'])
 	                    ? " " . self::$_class_warnings[$values['class_name']]['yellow']
-	                    . " " . md::yellow_ops("some yellow alert(s)")
+	                    . " " . md::yellow_ops("Attention please! Some yellow alert(s)!")
 	                    : '')
 	                  . (isset(self::$_class_warnings[$values['class_name']]['red'])
 	                    ? " " . self::$_class_warnings[$values['class_name']]['red']
-	                    . " " . md::red_ics("some red alert(s)")
+	                    . " " . md::red_ics("Warning! Warning! Some red alert(s)!")
+	                    : '')
+	                  . ((!isset(self::$_class_warnings[$values['class_name']]['blue'])
+	                        && !isset(self::$_class_warnings[$values['class_name']]['yellow'])
+	                        && !isset(self::$_class_warnings[$values['class_name']]['red']))
+	                    ? " " . md::green_ok()
 	                    : '')
 	                  . MD_NEWLINE_SEQUENCE;
 
@@ -582,7 +587,7 @@ class code
 
         self::_update_class_warnings($method->getDeclaringClass()->getName(),
                                      $parameters,
-                                     $length_warning,
+                                     $length,
                                      $cyc);
 
         return array
