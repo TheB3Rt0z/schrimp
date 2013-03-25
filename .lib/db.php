@@ -6,7 +6,7 @@ class db
 {
 	public static $todos = array
 	(
-	    'connection constants' => "they should be in main configuration file as array (to be unserialized before use)",
+	    'connection constants' => "they should be an array in main configuration" // to be unserialized before use?
 	);
 
 	const _DATABASE_TYPE = "mysql";

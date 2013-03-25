@@ -6,7 +6,7 @@ class md
 {
 	public static $todos = array
 	(
-        'private static builder' => "these should have a _ at the beginning, or not?",
+        'private static builder' => "these should have a _ at beginning, or not?",
 	);
 
 	private $_tag = null;

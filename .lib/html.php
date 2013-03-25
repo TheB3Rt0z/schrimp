@@ -7,7 +7,7 @@ class html
 	public static $todos = array
     (
         'script online loading' => "if != local, should have a lfb..",
-        'private static builder' => "these should have a _ at the beginning, or not?",
+        'private static builder' => "these should have a _ at beginning, or not?",
     );
 
 	private $_tag = null;

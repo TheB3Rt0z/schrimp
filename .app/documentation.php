@@ -4,7 +4,7 @@ class documentation extends controller
 {
 	public static $todos = array
 	(
-	    'method toString' => "to get a rappresentative highlighted code as reference",
+	    'method toString' => "to get a informative highlighted code as reference",
 	);
 
 	function initialize()

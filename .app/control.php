@@ -4,8 +4,8 @@ class control extends controller
 {
     public static $todos = array
     (
-        'phpinfo server configuration' => "better rappresentation of access details, see php-documentation",
-        'plugins libraries' => "find a way to incapsulate needed translations (static array of translations? default if only one level..) and controls (?) in backend ",
+        'phpinfo server conf' => "better rappresentation of access details",
+        'plugins libraries' => "find a way to incapsulate needed translations", // maybe static array of translations? default if only one level..) and controls (?) in backend!
     );
 
 	function initialize()
