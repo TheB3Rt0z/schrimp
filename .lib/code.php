@@ -102,6 +102,7 @@ class code
 	        'length_warning' => $length_warning,
 	        'real_length' => $real_length,
 	        'length' => $length,
+	        'cis' => $cis,
 	        'class_name' => $class_name,
 	    );
 	}
