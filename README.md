@@ -6,15 +6,15 @@ Table of contents
 -----------------  
   
 [General reference](#general-reference-- "")  
-[Library code](#-class-code-mon-25-mar-2013-154128-0000-- "") (root/.lib/code.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "19 too long line(s) found!") Len: 550/641, CIS: 10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140; 2 ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "Methods with too many parameters?") 2 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention please! Some yellow alert(s)!") 3 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!")  
+[Library code](#-class-code-mon-25-mar-2013-154128-0000-- "") (root/.lib/code.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "19 too long line(s) found!") Len: 550/641, CIS: 10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140; 1 ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "Methods with too many parameters?") 2 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention please! Some yellow alert(s)!") 3 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!")  
 [Library controller](#-class-controller-thu-21-mar-2013-112255-0000-- "") (root/.lib/controller.php, Len: 90/116, CIS: 9 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")  
 [Library db](#-class-db-mon-25-mar-2013-154730-0000-- "") (root/.lib/db.php, Len: 27/30, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")  
 [Library escort](#-class-escort-mon-25-mar-2013-100351-0000-- "") (root/.lib/escort.php, Len: 3/3, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")  
 [Library html](#-class-html-mon-25-mar-2013-154633-0000-- "") (root/.lib/html.php, Len: 396/486, CIS: 17 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")  
 [Library language](#-class-language-mon-04-mar-2013-104100-0000-- "") (root/.lib/language.php, Len: 80/93, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")  
-[Library main](#-class-main-mon-25-mar-2013-100351-0000-- "") (root/.main.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "5 too long line(s) found!") Len: 198/249, CIS: 27 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")  
+[Library main](#-class-main-mon-25-mar-2013-180829-0000-- "") (root/.main.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "5 too long line(s) found!") Len: 198/249, CIS: 27 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")  
 [Library md](#-class-md-mon-25-mar-2013-154624-0000-- "") (root/.lib/md.php, Len: 179/221, CIS: 12 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")  
-[Library navigator](#-class-navigator-wed-20-mar-2013-183749-0000-- "") (root/.lib/navigator.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "2 too long line(s) found!") Len: 213/258, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140; 1 ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "Methods with too many parameters?")  
+[Library navigator](#-class-navigator-mon-25-mar-2013-180744-0000-- "") (root/.lib/navigator.php, Len: 213/258, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")  
 [Library powering](#-class-powering-tue-12-mar-2013-121930-0000-- "") (root/lib/powering.php, Len: 1/1, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")  
 [Library toolbox](#-class-toolbox-mon-18-mar-2013-093201-0000-- "") (root/.lib/toolbox.php, Len: 23/24, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")  
 [Library widgets](#-class-widgets-fri-23-nov-2012-175452-0000-- "") (root/.lib/widgets.php, Len: 1/1, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")  
@@ -42,7 +42,7 @@ General reference
 - **MAX_BLOCK_COMPLEXITY** &#10140; 84  
 - **MAX_CYCLOMATIC_COMPLEXITY** &#10140; 12  
 - **MAX_METHODS_COMPLEXITY** &#10140; 36  
-- **MAX_PARAMETERS_COMPLEXITY** &#10140; 4  
+- **MAX_PARAMETERS_COMPLEXITY** &#10140; 6  
 - **MD_NEWLINE_SEQUENCE** &#10140; "  \n"  
 - **SET_COMPLEXITY_INDEX** &#10140; 12  
 - **SET_DOCUMENTATION_MD** &#10140; "README"  
@@ -104,7 +104,7 @@ General reference
   
 **CODE REFERENCE:**  
   
-- **_add_summary_entry(![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "too many parameters used! (+5)") $header, $label, $path, $length_warning, $real_length, $length, $cis, $class_name)** (PriS, Len: 22/23 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **_add_summary_entry(![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "too many parameters used! (+3)") $header, $label, $path, $length_warning, $real_length, $length, $cis, $class_name)** (PriS, Len: 22/23 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_is_codeline_too_long($code_line)** (PriS, Len: 4/5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_list_method_parameters($method)** (PriS, Len: 7/9 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_get_summary_information()** (PriS ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "11 too long line(s) found!") Len: 41/43 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Method's length should be reduced!") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
@@ -115,7 +115,7 @@ General reference
 - **_get_classes_information()** (PriS, Len: 32/36 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Method's length could be reduced..") CyC: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_get_component_information($name)** (PriS, Len: 25/28 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_get_components_information()** (PriS, Len: 22/27 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_update_class_warnings(![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "too many parameters used! (+1)") $class_name, $parameters, $length, $cyc)** (PriS, Len: 19/21 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **_update_class_warnings($class_name, $parameters, $length, $cyc)** (PriS, Len: 19/21 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_constants_list()** (PubS, Len: 4/5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_functions_list()** (PubS, Len: 4/5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_libraries_list($exclude = null)** (PubS, Len: 21/27 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
@@ -274,7 +274,7 @@ Uses: **html**, **navigator**
   
 ***  
   
-[⇧](# "to the top") Class MAIN (Mon, 25 Mar 2013 10:03:51 +0000)  
+[⇧](# "to the top") Class MAIN (Mon, 25 Mar 2013 18:08:29 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -351,7 +351,7 @@ Uses: **code**, **html**
   
 ***  
   
-[⇧](# "to the top") Class NAVIGATOR (Wed, 20 Mar 2013 18:37:49 +0000)  
+[⇧](# "to the top") Class NAVIGATOR (Mon, 25 Mar 2013 18:07:44 +0000)  
 -------------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -360,7 +360,7 @@ Uses: **code**, **html**
 - **_initialize_structure()** (Pri, Len: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_add_branch($controller)** (Pri, Len: 25/30 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_add_handlers($controller, $object, $sub)** (Pri, Len: 24/28 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_add_handler_static_options(![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "too many parameters used! (+2)") $static_variables, $sub, $controller, $link, $object)** (Pri, Len: 24/28 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **_add_handler_static_options($static_variables, $sub, $controller, $link, $object)** (Pri, Len: 24/28 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_print_handler_name($branch, $link, $controller)** (Pri, Len: 8/10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_print_handler_parameter($branch, $link, $controller)** (Pri, Len: 14/16 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_print_additional_parameters($branch, $link, $controller)** (Pri, Len: 12/14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
@@ -376,9 +376,9 @@ Uses: **controller**, **html**, **main**
   
 **TODOS**  
   
-- **render_breadcrumb** &#10140; should return the html code, not printing it directly  
+- **render_breadcrumb** &#10140; should return html code, not printing it directly  
 - **render_list** &#10140; this should be CSS3 and appear on a mouse gesture..  
-- **active breadcrumb** &#10140; dynamic same-level-select trunks, or maybe widget?  
+- **active breadcrumb** &#10140; dynamic samelevel-select trunks, or maybe widget?  
   
   
 ***  

@@ -4,9 +4,9 @@ class navigator
 {
 	public static $todos = array
 	(
-		'render_breadcrumb' => 'should return the html code, not printing it directly',
+		'render_breadcrumb' => 'should return html code, not printing it directly',
 	    'render_list' => "this should be CSS3 and appear on a mouse gesture..",
-		'active breadcrumb' => "dynamic same-level-select trunks, or maybe widget?",
+		'active breadcrumb' => "dynamic samelevel-select trunks, or maybe widget?",
 	);
 
 	private $_structure = null;
