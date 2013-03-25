@@ -19,6 +19,8 @@ class code
 	const _STR_LENGTH_ERROR = "Method's length should be reduced!";
 	const _STR_CYC_WARNING = "Method's cyclomatic complexity could be reduced..";
 	const _STR_CYC_ERROR = "Method's cyclomatic complexity should be reduced!";
+	const _STR_CIS_WARNING = "Class interface size could lead to a refactoring";
+	const _STR_CIS_ERROR = "Class interface size should lead to a refactoring!";
 
 	private static $_cyc_counters = array // do we need failsafe falls?
 	(
@@ -84,6 +86,7 @@ class code
 	                                           $length_warning,
 	                                           $real_length,
 	                                           $length,
+	                                           $cis,
 	                                           $class_name)
 	{
 	    $href = strtolower(str_replace(" ",
@@ -141,7 +144,15 @@ class code
 	                    . " too long line(s) found!")
 	                    : ",")
 	                  . " Len: "
-	                  . $values['real_length'] . "/" . $values['length'] . ")"
+	                  . $values['real_length'] . "/" . $values['length']
+	                  . ", CIS: " . $values['cis']
+	                  . ($values['cis'] <= (floor(MAX_METHODS_COMPLEXITY / 10) * 10)
+	                    ? ($values['cis'] > 0
+	                      ? md::green_ok()
+	                      : '')
+	                    : ($values['cis'] <= MAX_METHODS_COMPLEXITY
+	                      ? md::yellow_ops(self::_STR_CIS_WARNING)
+	                      : md::red_ics(self::_STR_CIS_ERROR))) . ")"
 	                  . (isset(self::$_class_warnings[$values['class_name']]['blue'])
 	                    ? " " . self::$_class_warnings[$values['class_name']]['blue']
 	                    . " " . md::blue_boh("Methods with too many parameters?")
@@ -291,6 +302,7 @@ class code
 	                                     $length_warning,
 	                                     $real_length,
 	                                     $length,
+	                                     $cis,
 	                                     $class->getName());
 	        }
 
@@ -323,6 +335,7 @@ class code
 	                             $length_warning,
 	                             $real_length,
 	                             $length,
+	                             $cis,
 	                             $name);
 
 	    return $component;
@@ -533,6 +546,9 @@ class code
 	            $real_length--;
 	    }
 
+	    $cis = count($class->getProperties(ReflectionProperty::IS_PUBLIC))
+	         + count($class->getMethods(ReflectionMethod::IS_PUBLIC));
+
 	    return array
 	    (
 	        'header' => $header,
@@ -544,6 +560,7 @@ class code
 	        'length' => $length,
 	        'real_length' => $real_length,
 	        'length_warning' => $length_warning,
+	        'cis' => $cis,
 	    );
 	}
 
