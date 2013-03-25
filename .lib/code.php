@@ -76,12 +76,15 @@ class code
 
 	private static $_summary = array();
 
+	private static $_class_warnings = array();
+
 	private static function _add_summary_entry($header,
 	                                           $label,
 	                                           $path,
 	                                           $length_warning,
 	                                           $real_length,
-	                                           $length)
+	                                           $length,
+	                                           $class_name)
 	{
 	    $href = strtolower(str_replace(" ",
 	                                   "-",
@@ -96,6 +99,7 @@ class code
 	        'length_warning' => $length_warning,
 	        'real_length' => $real_length,
 	        'length' => $length,
+	        'class_name' => $class_name,
 	    );
 	}
 
@@ -138,6 +142,18 @@ class code
 	                    : ",")
 	                  . " Len: "
 	                  . $values['real_length'] . "/" . $values['length'] . ")"
+	                  . (isset(self::$_class_warnings['blue'])
+	                    ? " " . self::$_class_warnings['blue']
+	                    . " " . md::blueboh("too many parameters?")
+	                    : '')
+	                  . (isset(self::$_class_warnings['yellow'])
+	                    ? " " . self::$_class_warnings['yellow']
+	                    . " " . md::yellow_ops("some yellow alert(s)")
+	                    : '')
+	                  . (isset(self::$_class_warnings['red'])
+	                    ? " " . self::$_class_warnings['red']
+	                    . " " . md::red_ics("some red alert(s)")
+	                    : '')
 	                  . MD_NEWLINE_SEQUENCE;
 
 	    return $summary . MD_NEWLINE_SEQUENCE;
@@ -269,7 +285,8 @@ class code
 	                                     $class_path,
 	                                     $length_warning,
 	                                     $real_length,
-	                                     $length);
+	                                     $length,
+	                                     $class->getName());
 	        }
 
 	    return $classes . MD_NEWLINE_SEQUENCE;
@@ -300,7 +317,8 @@ class code
 	                             $class_path,
 	                             $length_warning,
 	                             $real_length,
-	                             $length);
+	                             $length,
+	                             $name);
 
 	    return $component;
 	}
@@ -334,6 +352,27 @@ class code
 	    }
 
 	    return $components . MD_NEWLINE_SEQUENCE;
+	}
+
+	private static function _update_class_warnings($class_name,
+	                                               $parameters,
+	                                               $length,
+                                                   $cyc)
+	{
+        if ((count($parameters) - MAX_PARAMETERS_COMPLEXITY) >= 0)
+            self::$_class_warnings[$class_name]['blue']++;
+
+        if ($length > (floor(MAX_METHODS_COMPLEXITY / 10) * 10))
+	        if ($length <= MAX_METHODS_COMPLEXITY)
+	            self::$_class_warnings[$class_name]['yellow']++;
+            else
+	            self::$_class_warnings[$class_name]['red']++;
+
+        if ($cyc > (floor(MAX_CYCLOMATIC_COMPLEXITY / 10) * 10))
+    	    if ($cyc <= MAX_CYCLOMATIC_COMPLEXITY)
+	            self::$_class_warnings[$class_name]['yellow']++;
+            else
+	            self::$_class_warnings[$class_name]['red']++;
 	}
 
 	static function get_constants_list()
@@ -536,6 +575,11 @@ class code
             foreach (self::$_cyc_counters as $counter)
                 $cyc += substr_count($code_line, $counter);
         }
+
+        self::_update_class_warnings($method->getDeclaringClass()->getName(),
+                                     $parameters,
+                                     $length_warning,
+                                     $cyc);
 
         return array
         (
