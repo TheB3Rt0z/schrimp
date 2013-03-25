@@ -363,17 +363,21 @@ class code
             self::$_class_warnings[$class_name]['blue']++;
 
         if ($length > (floor(MAX_METHODS_COMPLEXITY / 10) * 10))
+        {
 	        if ($length <= MAX_METHODS_COMPLEXITY)
 	            self::$_class_warnings[$class_name]['yellow']++;
             else
 	            self::$_class_warnings[$class_name]['red']++;
+        }
 
         if ($cyc > (floor(MAX_CYCLOMATIC_COMPLEXITY / 10) * 10))
-    	    if ($cyc <= MAX_CYCLOMATIC_COMPLEXITY)
+        {
+            if ($cyc <= MAX_CYCLOMATIC_COMPLEXITY)
 	            self::$_class_warnings[$class_name]['yellow']++;
             else
 	            self::$_class_warnings[$class_name]['red']++;
-	}
+        }
+    }
 
 	static function get_constants_list()
 	{

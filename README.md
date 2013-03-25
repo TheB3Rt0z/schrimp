@@ -6,7 +6,7 @@ Table of contents
 -----------------  
   
 [General reference](#general-reference-- "")  
-[Library code](#-class-code-mon-25-mar-2013-131228-0000-- "") (root/.lib/code.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "14 too long line(s) found!") Len: 524/614) 2 ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "too many parameters?")  
+[Library code](#-class-code-mon-25-mar-2013-131439-0000-- "") (root/.lib/code.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "14 too long line(s) found!") Len: 528/618) 2 ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "too many parameters?")  
 [Library controller](#-class-controller-thu-21-mar-2013-112255-0000-- "") (root/.lib/controller.php, Len: 90/116)  
 [Library db](#-class-db-mon-11-mar-2013-091354-0000-- "") (root/.lib/db.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "1 too long line(s) found!") Len: 27/30)  
 [Library escort](#-class-escort-mon-25-mar-2013-100351-0000-- "") (root/.lib/escort.php, Len: 3/3)  
@@ -99,7 +99,7 @@ General reference
   
 ***  
   
-[⇧](# "to the top") Class CODE (Mon, 25 Mar 2013 13:12:28 +0000)  
+[⇧](# "to the top") Class CODE (Mon, 25 Mar 2013 13:14:39 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -115,7 +115,7 @@ General reference
 - **_get_classes_information()** (PriS, Len: 31/35 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Method's length could be reduced..") CyC: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_get_component_information($name)** (PriS, Len: 24/27 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **_get_components_information()** (PriS, Len: 22/27 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_update_class_warnings(![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "too many parameters used! (+1)") $class_name, $parameters, $length, $cyc)** (PriS, Len: 15/17 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **_update_class_warnings(![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "too many parameters used! (+1)") $class_name, $parameters, $length, $cyc)** (PriS, Len: 19/21 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_constants_list()** (PubS, Len: 4/5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_functions_list()** (PubS, Len: 4/5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_libraries_list($exclude = null)** (PubS, Len: 21/27 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
