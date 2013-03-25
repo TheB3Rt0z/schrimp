@@ -4,13 +4,13 @@ class main
 {
 	public static $todos = array
 	(
-		'documentation' => "PHP's highlight_string/file to rapresent code excerpts",
+		'documentation' => "PHP highlight_string/file to rapresent code excerpts",
 		'escort library' => "session su PHP poi DB se webstore & memcache fail?",
 		'memcache support' => "verify in method, if at least one mem-server works",
-		'pdf documentation' => "check file creation/modification date -> reminder on old first decimal",
-	    'css selectors' => "uniform to html-class render-methods (only default style)",
-	    'css stylesheets autoload' => "automatically load ANY file in .inc/inc / css?",
-	    'our custom var_dump' => 'it should return alla parameters with get_args, not only first',
+		'pdf documentation' => "check file mod-date -> reminder on first decimal?",
+	    'css selectors' => "uniform to html-class render-methods (default style)",
+	    'css autoload' => "automatically load ANY file in .inc/inc / css?",
+	    'custom var_dump' => 'it should return ALL parameters, with get_args use',
 	);
 
     private $_call = null;

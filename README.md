@@ -12,7 +12,7 @@ Table of contents
 [Library escort](#-class-escort-mon-25-mar-2013-100351-0000-- "") (root/.lib/escort.php, Len: 3/3, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")  
 [Library html](#-class-html-mon-25-mar-2013-154633-0000-- "") (root/.lib/html.php, Len: 396/486, CIS: 17 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")  
 [Library language](#-class-language-mon-04-mar-2013-104100-0000-- "") (root/.lib/language.php, Len: 80/93, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")  
-[Library main](#-class-main-mon-25-mar-2013-180829-0000-- "") (root/.main.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "5 too long line(s) found!") Len: 198/249, CIS: 27 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")  
+[Library main](#-class-main-mon-25-mar-2013-181344-0000-- "") (root/.main.php, Len: 198/249, CIS: 27 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")  
 [Library md](#-class-md-mon-25-mar-2013-154624-0000-- "") (root/.lib/md.php, Len: 179/221, CIS: 12 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")  
 [Library navigator](#-class-navigator-mon-25-mar-2013-180744-0000-- "") (root/.lib/navigator.php, Len: 213/258, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")  
 [Library powering](#-class-powering-tue-12-mar-2013-121930-0000-- "") (root/lib/powering.php, Len: 1/1, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")  
@@ -274,7 +274,7 @@ Uses: **html**, **navigator**
   
 ***  
   
-[⇧](# "to the top") Class MAIN (Mon, 25 Mar 2013 18:08:29 +0000)  
+[⇧](# "to the top") Class MAIN (Mon, 25 Mar 2013 18:13:44 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -308,13 +308,13 @@ Uses: **code**, **html**
   
 **TODOS**  
   
-- **documentation** &#10140; PHP's highlight_string/file to rapresent code excerpts  
+- **documentation** &#10140; PHP highlight_string/file to rapresent code excerpts  
 - **escort library** &#10140; session su PHP poi DB se webstore & memcache fail?  
 - **memcache support** &#10140; verify in method, if at least one mem-server works  
-- **pdf documentation** &#10140; check file creation/modification date -> reminder on old first decimal  
-- **css selectors** &#10140; uniform to html-class render-methods (only default style)  
-- **css stylesheets autoload** &#10140; automatically load ANY file in .inc/inc / css?  
-- **our custom var_dump** &#10140; it should return alla parameters with get_args, not only first  
+- **pdf documentation** &#10140; check file mod-date -> reminder on first decimal?  
+- **css selectors** &#10140; uniform to html-class render-methods (default style)  
+- **css autoload** &#10140; automatically load ANY file in .inc/inc / css?  
+- **custom var_dump** &#10140; it should return ALL parameters, with get_args use  
   
   
 ***  
