@@ -154,9 +154,9 @@ class code
 	                    : ($values['cis'] <= MAX_METHODS_COMPLEXITY
 	                      ? md::yellow_ops(self::_STR_CIS_WARNING)
 	                      : md::red_ics(self::_STR_CIS_ERROR))) . ") "
-	                  . ((!isset(self::$_class_warnings[$values['class_name']]['blue'])
-	                        && !isset(self::$_class_warnings[$values['class_name']]['yellow'])
-	                        && !isset(self::$_class_warnings[$values['class_name']]['red']))
+	                  . ((empty(self::$_class_warnings[$values['class_name']]['blue'])
+	                        && empty(self::$_class_warnings[$values['class_name']]['yellow'])
+	                        && empty(self::$_class_warnings[$values['class_name']]['red']))
 	                    ? md::green_ok()
 	                    : "&#10140;")
 	                  . (!empty(self::$_class_warnings[$values['class_name']]['blue'])
