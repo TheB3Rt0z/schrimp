@@ -378,6 +378,14 @@ class code
 	                                               $length,
                                                    $cyc)
 	{
+	    if (empty(self::$_class_warnings[$class_name]))
+	        self::$_class_warnings[$class_name] = array
+	        (
+	            'blue' => 0,
+	            'yellow' => 0,
+	            'red' => 0,
+	        );
+
         if ((count($parameters) - MAX_PARAMETERS_COMPLEXITY) >= 0)
             self::$_class_warnings[$class_name]['blue']++;
 
