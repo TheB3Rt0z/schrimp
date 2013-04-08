@@ -159,15 +159,15 @@ class code
 	                        && !isset(self::$_class_warnings[$values['class_name']]['red']))
 	                    ? md::green_ok()
 	                    : "&#10140;")
-	                  . (isset(self::$_class_warnings[$values['class_name']]['blue'])
+	                  . (!empty(self::$_class_warnings[$values['class_name']]['blue'])
 	                    ? " " . self::$_class_warnings[$values['class_name']]['blue']
 	                    . " " . md::blue_boh("Methods with too many parameters?")
 	                    : '')
-	                  . (isset(self::$_class_warnings[$values['class_name']]['yellow'])
+	                  . (!empty(self::$_class_warnings[$values['class_name']]['yellow'])
 	                    ? " " . self::$_class_warnings[$values['class_name']]['yellow']
 	                    . " " . md::yellow_ops("Attention please! Some yellow alert(s)!")
 	                    : '')
-	                  . (isset(self::$_class_warnings[$values['class_name']]['red'])
+	                  . (!empty(self::$_class_warnings[$values['class_name']]['red'])
 	                    ? " " . self::$_class_warnings[$values['class_name']]['red']
 	                    . " " . md::red_ics("Warning! Warning! Some red alert(s)!")
 	                    : '')
