@@ -107,6 +107,16 @@ class code
 	    );
 	}
 
+	private static function _get_cyc_marker($cyc)
+	{
+	    if ($cyc <= (floor(MAX_CYCLOMATIC_COMPLEXITY / 10) * 10))
+	        return md::green_ok();
+	    elseif ($cyc <= MAX_CYCLOMATIC_COMPLEXITY)
+	        return md::yellow_ops(self::_STR_CYC_WARNING);
+	    else
+	        return md::red_ics(self::_STR_CYC_ERROR);
+	}
+
 	private static function _is_codeline_too_long($code_line)
 	{
 	    $code_line = explode(" // ", $code_line); // avoid calculating comments
@@ -260,12 +270,7 @@ class code
 	             ? md::yellow_ops(self::_STR_LENGTH_WARNING)
 	             : md::red_ics(self::_STR_LENGTH_ERROR)))
 	         . ($cyc > 0
-	           ? " CyC: " . $cyc . " "
-	           . ($cyc <= (floor(MAX_CYCLOMATIC_COMPLEXITY / 10) * 10)
-	             ? md::green_ok()
-	             : ($cyc <= MAX_CYCLOMATIC_COMPLEXITY
-	               ? md::yellow_ops(self::_STR_CYC_WARNING)
-	               : md::red_ics(self::_STR_CYC_ERROR)))
+	           ? " CyC: " . $cyc . " " . self::_get_cyc_marker($cyc)
                : '')
 	         . ")" . MD_NEWLINE_SEQUENCE;
 	}
