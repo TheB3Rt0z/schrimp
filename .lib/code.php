@@ -107,6 +107,32 @@ class code
 	    );
 	}
 
+	private static function _get_class_markers($class_name)
+	{
+	    $output = '';
+
+	    if (!empty(self::$_class_warnings[$class_name]['blue'])
+	        || !empty(self::$_class_warnings[$class_name]['yellow'])
+	        || !empty(self::$_class_warnings[$class_name]['red']))
+	    {
+	        $output .= "&#10140; ";
+	    }
+
+	    if (!empty(self::$_class_warnings[$class_name]['blue']))
+	        $output .= self::$_class_warnings[$class_name]['blue'] . " "
+	                 . md::blue_boh("Methods with too many parameters?");
+
+	    if (!empty(self::$_class_warnings[$class_name]['yellow']))
+	        $output .= self::$_class_warnings[$class_name]['yellow'] . " "
+	                 . md::yellow_ops("Attention! Some yellow alert(s)!");
+
+	    if (!empty(self::$_class_warnings[$class_name]['red']))
+	        $output .= self::$_class_warnings[$class_name]['red'] . " "
+	                 . md::red_ics("Warning! Warning! Some red alert(s)!");
+
+	    return $output;
+	}
+
 	private static function _get_cyc_marker($cyc)
 	{
 	    if ($cyc <= (floor(MAX_CYCLOMATIC_COMPLEXITY / 10) * 10))
@@ -164,23 +190,7 @@ class code
 	                    : ($values['cis'] <= MAX_METHODS_COMPLEXITY
 	                      ? md::yellow_ops(self::_STR_CIS_WARNING)
 	                      : md::red_ics(self::_STR_CIS_ERROR))) . ") "
-	                  . ((empty(self::$_class_warnings[$values['class_name']]['blue'])
-	                        && empty(self::$_class_warnings[$values['class_name']]['yellow'])
-	                        && empty(self::$_class_warnings[$values['class_name']]['red']))
-	                    ? ''//md::green_ok()
-	                    : "&#10140;")
-	                  . (!empty(self::$_class_warnings[$values['class_name']]['blue'])
-	                    ? " " . self::$_class_warnings[$values['class_name']]['blue']
-	                    . " " . md::blue_boh("Methods with too many parameters?")
-	                    : '')
-	                  . (!empty(self::$_class_warnings[$values['class_name']]['yellow'])
-	                    ? " " . self::$_class_warnings[$values['class_name']]['yellow']
-	                    . " " . md::yellow_ops("Attention please! Some yellow alert(s)!")
-	                    : '')
-	                  . (!empty(self::$_class_warnings[$values['class_name']]['red'])
-	                    ? " " . self::$_class_warnings[$values['class_name']]['red']
-	                    . " " . md::red_ics("Warning! Warning! Some red alert(s)!")
-	                    : '')
+	                  . self::_get_class_markers($values['class_name'])
 	                  . MD_NEWLINE_SEQUENCE;
 
 	    return $summary . MD_NEWLINE_SEQUENCE;
