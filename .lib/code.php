@@ -80,30 +80,23 @@ class code
 
 	private static $_class_warnings = array();
 
-	private static function _add_summary_entry($header,
-	                                           $label,
-	                                           $path,
-	                                           $length_warning,
-	                                           $real_length,
-	                                           $length,
-	                                           $cis,
-	                                           $class_name)
+	private static function _add_summary_entry($data)
 	{
 	    $href = strtolower(str_replace(" ",
 	                                   "-",
 	                                   str_replace(array("(", ",", ":", "+", ")"),
 	                                               '',
-	                                               $header)));
+	                                               $data['header'])));
 
 	    self::$_summary["#-" . $href . "--"] = array
 	    (
-	        'label' => $label,
-	        'path' => $path,
-	        'length_warning' => $length_warning,
-	        'real_length' => $real_length,
-	        'length' => $length,
-	        'cis' => $cis,
-	        'class_name' => $class_name,
+	        'label' => $data['label'],
+	        'path' => $data['path'],
+	        'length_warning' => $data['length_warning'],
+	        'real_length' => $data['real_length'],
+	        'length' => $data['length'],
+	        'cis' => $data['cis'],
+	        'class_name' => $data['class_name'],
 	    );
 	}
 
@@ -119,15 +112,15 @@ class code
 	    }
 
 	    if (!empty(self::$_class_warnings[$class_name]['blue']))
-	        $output .= self::$_class_warnings[$class_name]['blue'] . " "
+	        $output .= " " . self::$_class_warnings[$class_name]['blue'] . " "
 	                 . md::blue_boh("Methods with too many parameters?");
 
 	    if (!empty(self::$_class_warnings[$class_name]['yellow']))
-	        $output .= self::$_class_warnings[$class_name]['yellow'] . " "
+	        $output .= " " . self::$_class_warnings[$class_name]['yellow'] . " "
 	                 . md::yellow_ops("Attention! Some yellow alert(s)!");
 
 	    if (!empty(self::$_class_warnings[$class_name]['red']))
-	        $output .= self::$_class_warnings[$class_name]['red'] . " "
+	        $output .= " " . self::$_class_warnings[$class_name]['red'] . " "
 	                 . md::red_ics("Warning! Warning! Some red alert(s)!");
 
 	    return $output;
@@ -310,14 +303,16 @@ class code
 	                          . $class_todos . MD_NEWLINE_SEQUENCE;
 	            $classes .= md::hr();
 
-	            self::_add_summary_entry($header,
-	                                     "Library " . $class->getName(),
-	                                     $class_path,
-	                                     $length_warning,
-	                                     $real_length,
-	                                     $length,
-	                                     $cis,
-	                                     $class->getName());
+	            self::_add_summary_entry(array(
+	                'header' => $header,
+	                'label' => "Library " . $class->getName(),
+	                'path' => $class_path,
+	                'length_warning' => $length_warning,
+	                'real_length' => $real_length,
+	                'length' => $length,
+	                'cis' => $cis,
+	                'class_name' => $class->getName(),
+	            ));
 	        }
 
 	    return $classes . MD_NEWLINE_SEQUENCE;
@@ -341,16 +336,18 @@ class code
 	        $component .= md::title(3, "TODOs")
 	                    . $class_todos . MD_NEWLINE_SEQUENCE;
 
-	    self::_add_summary_entry($header,
-	                             (substr_count($name, "_")
-	                             ? "-"
-	                             : "Component") . " " . $name,
-	                             $class_path,
-	                             $length_warning,
-	                             $real_length,
-	                             $length,
-	                             $cis,
-	                             $name);
+	    self::_add_summary_entry(array(
+	        'header' => $header,
+	        'label' => (substr_count($name, "_")
+	                   ? "-"
+	                   : "Component") . " " . $name,
+	        'path' => $class_path,
+	        'length_warning' => $length_warning,
+	        'real_length' => $real_length,
+	        'length' => $length,
+	        'cis' => $cis,
+	        'class_name' => $name,
+	    ));
 
 	    return $component;
 	}
