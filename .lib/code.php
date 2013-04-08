@@ -183,7 +183,7 @@ class code
 	                  . " Len: "
 	                  . $values['real_length'] . "/" . $values['length']
 	                  . ", CIS: " . $values['cis'] . " "
-	                  . ($values['cis'] <= (floor(MAX_METHODS_COMPLEXITY / 10) * 10)
+	                  . ($values['cis'] <= floor(MAX_METHODS_COMPLEXITY / 10) * 10
 	                    ? ($values['cis'] > 0
 	                      ? md::green_ok()
 	                      : '')
@@ -285,10 +285,8 @@ class code
 	         . ")" . MD_NEWLINE_SEQUENCE;
 	}
 
-	private static function _get_classes_information()
+	private static function _get_classes_information($classes = '')
 	{
-	    $classes = '';
-
 	    $declared_classes = get_declared_classes();
 	    asort($declared_classes);
 	    foreach ($declared_classes as $class)
