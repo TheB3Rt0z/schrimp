@@ -123,6 +123,14 @@ class code
 	    return $output;
 	}
 
+	private static function _add_paragraph($data,
+	                                       $title)
+    {
+        if (!empty($data))
+	        return md::title(3,
+	                         $title . $data . MD_NEWLINE_SEQUENCE);
+    }
+
 	private static function _get_cyc_marker($cyc)
 	{
 	    if ($cyc <= (floor(MAX_CYCLOMATIC_COMPLEXITY / 10) * 10))
@@ -285,20 +293,16 @@ class code
 	        {
 	            extract(self::get_class_data($class));
 
-	            $classes .= md::to_the_top() . " " . md::title(2, $header);
-	            if (!empty($class_constants))
-	                $classes .= md::title(3, "Class configuration constants:")
-	                          . $class_constants . MD_NEWLINE_SEQUENCE; // unprotected (no '_XXX') constants here
-	            if (!empty($reference))
-	                $classes .= md::title(3, "Code reference:")
-	                          . $reference . MD_NEWLINE_SEQUENCE;
-	            if (!empty($dependencies))
-	                $classes .= md::title(3, "Dependencies:")
-	                          . "Uses: " . $dependencies . MD_NEWLINE_SEQUENCE;
-	            if (!empty($class_todos))
-	                $classes .= md::title(3, "TODOs")
-	                          . $class_todos . MD_NEWLINE_SEQUENCE;
-	            $classes .= md::hr();
+	            $classes .= md::to_the_top() . " " . md::title(2, $header)
+	                      . self::_add_paragraph($class_constants,
+	                                             "Class configuration constants:")
+	                      . self::_add_paragraph($reference,
+	                                             "Code reference:")
+	                      . self::_add_paragraph("Uses: " . $dependencies,
+	                                             "Dependencies:")
+	                      . self::_add_paragraph($class_todos,
+	                                             "TODOs")
+	                      . md::hr();
 
 	            self::_add_summary_entry(array(
 	                'header' => $header,
@@ -319,19 +323,15 @@ class code
 	{
 	    extract(self::get_class_data(new ReflectionClass($name)));
 
-	    $component = md::to_the_top() . " " . md::title(2, $header);
-	    if (!empty($class_constants))
-	        $component .= md::title(3, "Class configuration constants:")
-	                    . $class_constants . MD_NEWLINE_SEQUENCE; // unprotected (no '_XXX') constants here
-	    if (!empty($reference))
-	        $component .= md::title(3, "Code reference:")
-	                    . $reference .MD_NEWLINE_SEQUENCE;
-	    if (!empty($dependencies))
-	        $component .= md::title(3, "Dependencies:")
-	                    . "Uses: " . $dependencies . MD_NEWLINE_SEQUENCE;
-	    if (!empty($class_todos))
-	        $component .= md::title(3, "TODOs")
-	                    . $class_todos . MD_NEWLINE_SEQUENCE;
+	    $component = md::to_the_top() . " " . md::title(2, $header)
+	               . self::_add_paragraph($class_constants,
+	                                      "Class configuration constants:")
+	               . self::_add_paragraph($reference,
+	                                      "Code reference:")
+	               . self::_add_paragraph("Uses: " . $dependencies,
+	                                      "Dependencies:")
+	               . self::_add_paragraph($class_todos,
+	                                      "TODOs");
 
 	    self::_add_summary_entry(array(
 	        'header' => $header,
@@ -642,13 +642,14 @@ class code
 	    	   . main::get_version(1) . date('.Y.m.d');
 
 	    $documentation = md::title(2, "General reference")
-            	         . md::title(3, "Global configuration constants")
-            	           . self::_get_constants_information()
-            	         . md::title(3, "Function aliases")
-            	           . self::_get_functions_information() // add more information
-            	         . md::title(3, 'TODOs')
-            	           . self::_get_todos_information()
-            	         . md::hr()
+	                   . self::_add_paragraph(self::_get_constants_information(),
+	                                          "Global configuration constants")
+	                   . self::_add_paragraph(self::_get_functions_information(),
+	                                          "Function aliases")
+	                   . self::_add_paragraph(self::_get_todos_information(),
+	                                          "TODOs")
+            	       . self::_get_todos_information()
+            	       . md::hr()
             	       . self::_get_classes_information()
             	       . self::_get_components_information() // adding more information?
             	     . str_repeat(MD_NEWLINE_SEQUENCE, 4)

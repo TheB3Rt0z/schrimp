@@ -6,7 +6,7 @@ Table of contents
 -----------------  
   
 [General reference](#general-reference-- "")  
-[Library code](#-class-code-mon-08-apr-2013-175206-0000-- "") (root/.lib/code.php, Len: 558/656, CIS: 10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!") 2 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!")  
+[Library code](#-class-code-mon-08-apr-2013-180848-0000-- "") (root/.lib/code.php, Len: 558/657, CIS: 10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!") 2 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!")  
 [Library controller](#-class-controller-thu-21-mar-2013-112255-0000-- "") (root/.lib/controller.php, Len: 90/116, CIS: 9 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library db](#-class-db-mon-25-mar-2013-154730-0000-- "") (root/.lib/db.php, Len: 27/30, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library escort](#-class-escort-mon-25-mar-2013-100351-0000-- "") (root/.lib/escort.php, Len: 3/3, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -34,112 +34,118 @@ Table of contents
 General reference  
 -----------------  
   
-**GLOBAL CONFIGURATION CONSTANTS**  
-  
-- **DB_TABLE_PREFIX** &#10140; null  
-- **HTML_BREADCRUMB_SEPARATOR** &#10140; " &raquo; "  
-- **LANGUAGE_FALLBACK_LANG** &#10140; "en"  
+**GLOBAL CONFIGURATION CONSTANTS- **DB_TABLE_PREFIX** &#10140; NULL  
+- **HTML_BREADCRUMB_SEPARATOR** &#10140; " &RAQUO; "  
+- **LANGUAGE_FALLBACK_LANG** &#10140; "EN"  
 - **MAX_BLOCK_COMPLEXITY** &#10140; 84  
 - **MAX_CYCLOMATIC_COMPLEXITY** &#10140; 12  
 - **MAX_METHODS_COMPLEXITY** &#10140; 36  
 - **MAX_PARAMETERS_COMPLEXITY** &#10140; 6  
-- **MD_NEWLINE_SEQUENCE** &#10140; "  \n"  
+- **MD_NEWLINE_SEQUENCE** &#10140; "  \N"  
 - **SET_COMPLEXITY_INDEX** &#10140; 12  
 - **SET_DOCUMENTATION_MD** &#10140; "README"  
-- **SET_GITHUB_RAWPATH** &#10140; "https://raw.github.com/TheB3Rt0z/schrimp/master/"  
-- **SET_TRANSLATIONS_EXTENSION** &#10140; ".txt"  
-  
-**FUNCTION ALIASES**  
-  
-- **fe($path)** &#10140; .main.php on line 271,
-  returns boolean if realpath path exists on running server;
-  @param string $path
-  @return boolean true if realpath exists, false otherwise
-  
-- **fv($mixed)** &#10140; .lib/toolbox.php on line 36,
-  returns a beautiful formatted value, mixed variable-type-dependant;
-  @param mixed $mixed
-  @return mixed depending on internally defined rules
-  
-- **le($msg)** &#10140; .main.php on line 301,
-  launches a customizable error 500, mit optional backtrace for debug;
-  @param string $msg
-  @return boolean false after relocate
-  
-- **rt($url = null)** &#10140; .main.php on line 291,
-  relocates to given relative url or to base path on default;
-  @param string $url
-  @return void
-  
-- **ru($uri = null)** &#10140; .main.php on line 281,
-  returns an absolute uri, based on current server configuration;
-  @param string $uri
-  @return string absolute http unified resource identifier
-  
-- **sb()** &#10140; .main.php on line 310,
-  show call's backtrace with help of error base handler
-  @return void
-  
-- **tr($component, $marker)** &#10140; .lib/language.php on line 108,
-  executes language translation of marker identifier, referring to given component;
-  @param string $component
-  @param string $marker
-  @return mixed callback function returned value(s)
-  
-- **vd($what)** &#10140; .main.php on line 261,
-  returns pre-formatted mixed variables;
-  @param mixed $what
-  @return void
+- **SET_GITHUB_RAWPATH** &#10140; "HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/"  
+- **SET_TRANSLATIONS_EXTENSION** &#10140; ".TXT"  
   
   
-**TODOS**  
+**  
+  
+**FUNCTION ALIASES- **FE($PATH)** &#10140; .MAIN.PHP ON LINE 271,
+  RETURNS BOOLEAN IF REALPATH PATH EXISTS ON RUNNING SERVER;
+  @PARAM STRING $PATH
+  @RETURN BOOLEAN TRUE IF REALPATH EXISTS, FALSE OTHERWISE
+  
+- **FV($MIXED)** &#10140; .LIB/TOOLBOX.PHP ON LINE 36,
+  RETURNS A BEAUTIFUL FORMATTED VALUE, MIXED VARIABLE-TYPE-DEPENDANT;
+  @PARAM MIXED $MIXED
+  @RETURN MIXED DEPENDING ON INTERNALLY DEFINED RULES
+  
+- **LE($MSG)** &#10140; .MAIN.PHP ON LINE 301,
+  LAUNCHES A CUSTOMIZABLE ERROR 500, MIT OPTIONAL BACKTRACE FOR DEBUG;
+  @PARAM STRING $MSG
+  @RETURN BOOLEAN FALSE AFTER RELOCATE
+  
+- **RT($URL = NULL)** &#10140; .MAIN.PHP ON LINE 291,
+  RELOCATES TO GIVEN RELATIVE URL OR TO BASE PATH ON DEFAULT;
+  @PARAM STRING $URL
+  @RETURN VOID
+  
+- **RU($URI = NULL)** &#10140; .MAIN.PHP ON LINE 281,
+  RETURNS AN ABSOLUTE URI, BASED ON CURRENT SERVER CONFIGURATION;
+  @PARAM STRING $URI
+  @RETURN STRING ABSOLUTE HTTP UNIFIED RESOURCE IDENTIFIER
+  
+- **SB()** &#10140; .MAIN.PHP ON LINE 310,
+  SHOW CALL'S BACKTRACE WITH HELP OF ERROR BASE HANDLER
+  @RETURN VOID
+  
+- **TR($COMPONENT, $MARKER)** &#10140; .LIB/LANGUAGE.PHP ON LINE 108,
+  EXECUTES LANGUAGE TRANSLATION OF MARKER IDENTIFIER, REFERRING TO GIVEN COMPONENT;
+  @PARAM STRING $COMPONENT
+  @PARAM STRING $MARKER
+  @RETURN MIXED CALLBACK FUNCTION RETURNED VALUE(S)
+  
+- **VD($WHAT)** &#10140; .MAIN.PHP ON LINE 261,
+  RETURNS PRE-FORMATTED MIXED VARIABLES;
+  @PARAM MIXED $WHAT
+  @RETURN VOID
+  
+  
+  
+**  
+  
+**TODOS- **? ADMIN BAR** &#10140; OPTIONAL CONTROL TO MEASURE RUN TIME PERFORMANCE (GAPIS)  
+  
+  
+**  
   
 - **? admin bar** &#10140; optional control to measure run time performance (gApis)  
   
   
 ***  
   
-[⇧](# "to the top") Class CODE (Mon, 08 Apr 2013 17:52:06 +0000)  
+[⇧](# "to the top") Class CODE (Mon, 08 Apr 2013 18:08:48 +0000)  
 --------------------------------------------  
   
-**CODE REFERENCE:**  
+**CODE REFERENCE:- **_ADD_SUMMARY_ENTRY($DATA)** (PRIS, LEN: 15/16 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_GET_CLASS_MARKERS($CLASS_NAME)** (PRIS, LEN: 17/22 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 4 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_ADD_PARAGRAPH($DATA, $TITLE)** (PRIS, LEN: 4 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_GET_CYC_MARKER($CYC)** (PRIS, LEN: 6 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_IS_CODELINE_TOO_LONG($CODE_LINE)** (PRIS, LEN: 4/5 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_LIST_METHOD_PARAMETERS($METHOD)** (PRIS, LEN: 7/9 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_GET_SUMMARY_INFORMATION()** (PRIS, LEN: 25/27 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_GET_CONSTANTS_INFORMATION()** (PRIS, LEN: 7/9 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_GET_FUNCTIONS_INFORMATION()** (PRIS, LEN: 25/29 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_GET_TODOS_INFORMATION()** (PRIS, LEN: 5/7 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_GET_METHODS_INFORMATION($METHOD)** (PRIS, LEN: 27/28 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_GET_CLASSES_INFORMATION($CLASSES = NULL)** (PRIS, LEN: 29/32 ![(!)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_YELLOW_OPS.PNG "METHOD'S LENGTH COULD BE REDUCED..") CYC: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_GET_COMPONENT_INFORMATION($NAME)** (PRIS, LEN: 23/26 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_GET_COMPONENTS_INFORMATION()** (PRIS, LEN: 22/27 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 4 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_UPDATE_CLASS_WARNINGS($CLASS_NAME, $PARAMETERS, $LENGTH, $CYC)** (PRIS, LEN: 26/29 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 6 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_CONSTANTS_LIST()** (PUBS, LEN: 4/5 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_FUNCTIONS_LIST()** (PUBS, LEN: 4/5 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_LIBRARIES_LIST($EXCLUDE = NULL)** (PUBS, LEN: 21/27 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 5 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_COMPONENTS_LIST()** (PUBS, LEN: 19/24 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 4 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_CLASS_DEPENDENCIES($CLASS)** (PUBS, LEN: 22/27 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 5 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_CLASS_DATA($CLASS)** (PUBS, LEN: 45/55 ![(X)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_RED_ICS.PNG "METHOD'S LENGTH SHOULD BE REDUCED!") CYC: 7 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_METHOD_STATUS($METHOD)** (PUBS, LEN: 6 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 6 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **ANALYSE_METHOD($METHOD)** (PUBS, LEN: 34/41 ![(X)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_RED_ICS.PNG "METHOD'S LENGTH SHOULD BE REDUCED!") CYC: 5 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_DOCUMENTATION()** (PUBS, LEN: 19/21 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
   
-- **_add_summary_entry($data)** (PriS, Len: 15/16 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_get_class_markers($class_name)** (PriS, Len: 17/22 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_get_cyc_marker($cyc)** (PriS, Len: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_is_codeline_too_long($code_line)** (PriS, Len: 4/5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_list_method_parameters($method)** (PriS, Len: 7/9 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_get_summary_information()** (PriS, Len: 25/27 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_get_constants_information()** (PriS, Len: 7/9 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_get_functions_information()** (PriS, Len: 25/29 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_get_todos_information()** (PriS, Len: 5/7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_get_methods_information($method)** (PriS, Len: 27/28 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_get_classes_information($classes = null)** (PriS, Len: 33/36 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Method's length could be reduced..") CyC: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_get_component_information($name)** (PriS, Len: 27/30 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_get_components_information()** (PriS, Len: 22/27 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_update_class_warnings($class_name, $parameters, $length, $cyc)** (PriS, Len: 26/29 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_constants_list()** (PubS, Len: 4/5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_functions_list()** (PubS, Len: 4/5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_libraries_list($exclude = null)** (PubS, Len: 21/27 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_components_list()** (PubS, Len: 19/24 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_class_dependencies($class)** (PubS, Len: 22/27 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_class_data($class)** (PubS, Len: 45/55 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Method's length should be reduced!") CyC: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_method_status($method)** (PubS, Len: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **analyse_method($method)** (PubS, Len: 34/41 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Method's length should be reduced!") CyC: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_documentation()** (PubS, Len: 18/20 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+**  
   
-**DEPENDENCIES:**  
+**DEPENDENCIES:USES: **MAIN**, **MD**  
   
-Uses: **main**, **md**  
+**  
   
-**TODOS**  
+**TODOS- **CODE ANALYSIS** &#10140; LOAD, ANALYSE, PRINTING AND MORE.. USE TOOLBOX CLASS?  
+- **METHODS LISTS** &#10140; ADD PARAMETER CLASS INFORMATION, ALSO FOR ALIASES  
+- **GITHUB WIKI DOCS** &#10140; GENERATE WIKI PAGES WITH MD SYNTAX AND UPDATE  
+- **ADD CODE-TESTING METHODS** &#10140; USEPHPUNIT TO AUTOBUILD AND EXECUTE TESTS  
+- **GET_CLASS_DEPENDENCIES** &#10140; TOO UNACCURATE, SEE NAVIGATOR-CONTROLLER  
+- **GET_CLASS_DEPENDENCIES 2** &#10140; IT SHOULD COUNT, THEN ORDER DEPENDENCIES  
   
-- **code analysis** &#10140; load, analyse, printing and more.. use toolbox class?  
-- **methods lists** &#10140; add parameter class information, also for aliases  
-- **github wiki docs** &#10140; generate wiki pages with md syntax and update  
-- **add code-testing methods** &#10140; usephpunit to autobuild and execute tests  
-- **get_class_dependencies** &#10140; too unaccurate, see navigator-controller  
-- **get_class_dependencies 2** &#10140; it should count, then order dependencies  
+**  
   
   
 ***  
@@ -147,34 +153,34 @@ Uses: **main**, **md**
 [⇧](# "to the top") Class CONTROLLER (Thu, 21 Mar 2013 11:22:55 +0000)  
 --------------------------------------------------  
   
-**CLASS CONFIGURATION CONSTANTS:**  
+**CLASS CONFIGURATION CONSTANTS:- **VISIBLE_IN_NAVIGATION** &#10140; TRUE  
+- **RENDER_BREADCRUMB** &#10140; TRUE  
   
-- **VISIBLE_IN_NAVIGATION** &#10140; true  
-- **RENDER_BREADCRUMB** &#10140; true  
+**  
   
-**CODE REFERENCE:**  
+**CODE REFERENCE:- **__CONSTRUCT($ACTION, $ARGS)** (CPUB, LEN: 6/8 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **INITIALIZE()** (PROA, LEN: - )  
+- **_SET_TITLE($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_HEADER($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_NAV($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_SECTION($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_ARTICLE($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_ASIDE($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_FOOTER($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_TRANSLATE($PLACEHOLDER)** (PRO, LEN: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_TITLE()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_HEADER()** (PUB, LEN: 7/8 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_NAV()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_SECTION()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_ARTICLE()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_ASIDE()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_FOOTER()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
   
-- **__construct($action, $args)** (CPub, Len: 6/8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **initialize()** (ProA, Len: - )  
-- **_set_title($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_header($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_nav($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_section($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_article($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_aside($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_footer($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_translate($placeholder)** (Pro, Len: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_title()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_header()** (Pub, Len: 7/8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_nav()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_section()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_article()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_aside()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_footer()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+**  
   
-**DEPENDENCIES:**  
+**DEPENDENCIES:USES: **HTML**, **NAVIGATOR**  
   
-Uses: **html**, **navigator**  
+**  
   
   
 ***  
@@ -182,13 +188,16 @@ Uses: **html**, **navigator**
 [⇧](# "to the top") Class DB (Mon, 25 Mar 2013 15:47:30 +0000)  
 ------------------------------------------  
   
-**CODE REFERENCE:**  
+**CODE REFERENCE:- **__CONSTRUCT()** (CPUB, LEN: 15/16 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
   
-- **__construct()** (CPub, Len: 15/16 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+**  
   
-**TODOS**  
+**DEPENDENCIES:USES:   
+**  
   
-- **connection constants** &#10140; they should be an array in main configuration  
+**TODOS- **CONNECTION CONSTANTS** &#10140; THEY SHOULD BE AN ARRAY IN MAIN CONFIGURATION  
+  
+**  
   
   
 ***  
@@ -196,9 +205,12 @@ Uses: **html**, **navigator**
 [⇧](# "to the top") Class ESCORT (Mon, 25 Mar 2013 10:03:51 +0000)  
 ----------------------------------------------  
   
-**TODOS**  
+**DEPENDENCIES:USES:   
+**  
   
-- **runtime reg** &#10140; save created objects structure as reference hierarchy  
+**TODOS- **RUNTIME REG** &#10140; SAVE CREATED OBJECTS STRUCTURE AS REFERENCE HIERARCHY  
+  
+**  
   
   
 ***  
@@ -206,52 +218,55 @@ Uses: **html**, **navigator**
 [⇧](# "to the top") Class HTML (Mon, 25 Mar 2013 15:46:33 +0000)  
 --------------------------------------------  
   
-**CODE REFERENCE:**  
+**CODE REFERENCE:- **__CONSTRUCT($TAG, $ATTRIBUTES = NULL, $CONTENT = NULL)** (CPUB, LEN: 20/23 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 4 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_IS_SINGLE()** (PRI, LEN: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_IS_CONTAINER()** (PRI, LEN: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_VALIDATE_TAG()** (PRI, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_ATTRIBUTES($ATTRIBUTES)** (PRI, LEN: 15/20 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_CONTENT($CONTENT = NULL)** (PRI, LEN: 4/5 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **A($HREF, $CONTENT)** (PRIS, LEN: 8/11 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **BR($LINES = TRUE, $CLASSES = NULL)** (PRIS, LEN: 7/9 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **DIV($CONTENT, $CLASSES = NULL, $ID = NULL)** (PRIS, LEN: 11/13 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **H1($CONTENT)** (PRIS, LEN: 4/5 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **H2($CONTENT)** (PRIS, LEN: 4/5 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **H3($CONTENT)** (PRIS, LEN: 4/5 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **H4($CONTENT)** (PRIS, LEN: 4/5 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **H5($CONTENT)** (PRIS, LEN: 4/5 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **H6($CONTENT)** (PRIS, LEN: 4/5 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **H7($CONTENT)** (PRIS, LEN: 4/5 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **IMG($SRC, $ALT, $TITLE = NULL)** (PRIS, LEN: 10/13 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **LI($CONTENT, $CLASSES = NULL)** (PRIS, LEN: 8/10 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **LINK($HREF, $REL, $TYPE)** (PRIS, LEN: 18/22 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **OL($CONTENT, $CLASSES = NULL)** (PRIS, LEN: 8/10 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **P($CONTENT)** (PRIS, LEN: 4/5 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **PRE($CONTENT)** (PRIS, LEN: 4/5 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **SCRIPT($TYPE, $SRC = NULL, $CONTENT = NULL)** (PRIS, LEN: 25/30 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 4 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **UL($CONTENT, $CLASSES = NULL)** (PRIS, LEN: 8/10 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **ADD_FAVICON($HREF)** (PUBS, LEN: 6/7 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **ADD_STYLESHEET($HREF)** (PUBS, LEN: 3 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **ADD_JS_FILE($SRC)** (PUBS, LEN: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **ADD_JS_SCRIPT($CONTENT)** (PUBS, LEN: 3 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **ARRAY_TO_LIST($TREE, $TYPE = "UL")** (PUBS, LEN: 11/13 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **BOX($CONTENT)** (PUBS, LEN: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **DIVISOR($CONTENT, $CLASSES = NULL, $ID = NULL)** (PUBS, LEN: 5 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **HIGHBOX($CONTENT)** (PUBS, LEN: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **HYPERLINK($HREF, $CONTENT = NULL)** (PUBS, LEN: 5 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **IMAGE($SRC, $ALT, $TITLE = NULL)** (PUBS, LEN: 5 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **NEWLINE()** (PUBS, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **CLEARFIX()** (PUBS, LEN: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **TEXT($CONTENT)** (PUBS, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **PREFORM($CONTENT)** (PUBS, LEN: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **TITLE($LEVEL, $CONTENT)** (PUBS, LEN: 8 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
   
-- **__construct($tag, $attributes = null, $content = null)** (CPub, Len: 20/23 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_is_single()** (Pri, Len: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_is_container()** (Pri, Len: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_validate_tag()** (Pri, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_attributes($attributes)** (Pri, Len: 15/20 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_content($content = null)** (Pri, Len: 4/5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **a($href, $content)** (PriS, Len: 8/11 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **br($lines = true, $classes = null)** (PriS, Len: 7/9 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **div($content, $classes = null, $id = null)** (PriS, Len: 11/13 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **h1($content)** (PriS, Len: 4/5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **h2($content)** (PriS, Len: 4/5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **h3($content)** (PriS, Len: 4/5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **h4($content)** (PriS, Len: 4/5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **h5($content)** (PriS, Len: 4/5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **h6($content)** (PriS, Len: 4/5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **h7($content)** (PriS, Len: 4/5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **img($src, $alt, $title = null)** (PriS, Len: 10/13 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **li($content, $classes = null)** (PriS, Len: 8/10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **link($href, $rel, $type)** (PriS, Len: 18/22 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **ol($content, $classes = null)** (PriS, Len: 8/10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **p($content)** (PriS, Len: 4/5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **pre($content)** (PriS, Len: 4/5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **script($type, $src = null, $content = null)** (PriS, Len: 25/30 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **ul($content, $classes = null)** (PriS, Len: 8/10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **add_favicon($href)** (PubS, Len: 6/7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **add_stylesheet($href)** (PubS, Len: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **add_js_file($src)** (PubS, Len: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **add_js_script($content)** (PubS, Len: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **array_to_list($tree, $type = "ul")** (PubS, Len: 11/13 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **box($content)** (PubS, Len: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **divisor($content, $classes = null, $id = null)** (PubS, Len: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **highbox($content)** (PubS, Len: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **hyperlink($href, $content = null)** (PubS, Len: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **image($src, $alt, $title = null)** (PubS, Len: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **newline()** (PubS, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **clearfix()** (PubS, Len: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **text($content)** (PubS, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **preform($content)** (PubS, Len: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **title($level, $content)** (PubS, Len: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+**  
   
-**TODOS**  
+**DEPENDENCIES:USES:   
+**  
   
-- **script online loading** &#10140; if != local, should have a lfb..  
-- **private static builder** &#10140; these should have a _ at beginning, or not?  
+**TODOS- **SCRIPT ONLINE LOADING** &#10140; IF != LOCAL, SHOULD HAVE A LFB..  
+- **PRIVATE STATIC BUILDER** &#10140; THESE SHOULD HAVE A _ AT BEGINNING, OR NOT?  
+  
+**  
   
   
 ***  
@@ -259,16 +274,19 @@ Uses: **html**, **navigator**
 [⇧](# "to the top") Class LANGUAGE (Mon, 04 Mar 2013 10:41:00 +0000)  
 ------------------------------------------------  
   
-**CODE REFERENCE:**  
+**CODE REFERENCE:- **GET_BROWSER_LANGUAGE()** (PUBS, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **IS_SUPPORTED($LANGUAGE)** (PUBS, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_COMPONENT_TRANSLATIONS_ARRAY($COMPONENT)** (PUBS, LEN: 17/20 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **TRANSLATE($COMPONENT, $MARKER)** (PUBS, LEN: 24/28 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 8 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
   
-- **get_browser_language()** (PubS, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **is_supported($language)** (PubS, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_component_translations_array($component)** (PubS, Len: 17/20 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **translate($component, $marker)** (PubS, Len: 24/28 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+**  
   
-**TODOS**  
+**DEPENDENCIES:USES:   
+**  
   
-- **automatic translation** &#10140; it could be interessant to use pspell&gettext  
+**TODOS- **AUTOMATIC TRANSLATION** &#10140; IT COULD BE INTERESSANT TO USE PSPELL&GETTEXT  
+  
+**  
   
   
 ***  
@@ -276,44 +294,44 @@ Uses: **html**, **navigator**
 [⇧](# "to the top") Class MAIN (Mon, 25 Mar 2013 18:13:44 +0000)  
 --------------------------------------------  
   
-**CODE REFERENCE:**  
+**CODE REFERENCE:- **__CONSTRUCT($URI)** (CPUB, LEN: 8/10 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_CONFIGURATION($CONF_NAME)** (PRI, LEN: 20/27 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_LOAD_LIBRARIES()** (PRI, LEN: 4/5 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_ROUTE_STATIC_TRAITS($COMPONENTS)** (PRI, LEN: 7 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_HOME_COMPONENT()** (PRI, LEN: 3/4 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_HTMLS_FROM_CONTROLLER()** (PRI, LEN: 7/8 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_INITIALIZE($ROUTE)** (PRI, LEN: 24/30 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 5 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_CALL()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_PATH()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_FULLPATH()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **VAR_DUMP($WHAT)** (PUBS, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_VERSION($PRECISION = 2)** (PUBS, LEN: 5 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **IS_WEBSTORAGED()** (PUBS, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **IS_MEMCACHED()** (PUBS, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **EXISTS_FILE($PATH)** (PUBS, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **RESOLVE_URI($URI = NULL)** (PUBS, LEN: 4 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **RELOCATE_TO($URL = NULL)** (PUBS, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **LAUNCH_ERROR($MSG)** (PUBS, LEN: 7/10 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **LAUNCH_ERROR_FILE_NOT_FOUND($FILE)** (PUBS, LEN: 3 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **SET_BUFFER($BUFFER)** (PUBS, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_BUFFER($DELETE = TRUE)** (PUBS, LEN: 4/6 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **SHOW_BACKTRACE()** (PUBS, LEN: 5/6 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
   
-- **__construct($uri)** (CPub, Len: 8/10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_configuration($conf_name)** (Pri, Len: 20/27 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_load_libraries()** (Pri, Len: 4/5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_route_static_traits($components)** (Pri, Len: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_home_component()** (Pri, Len: 3/4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_htmls_from_controller()** (Pri, Len: 7/8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_initialize($route)** (Pri, Len: 24/30 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_call()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_path()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_fullpath()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **var_dump($what)** (PubS, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_version($precision = 2)** (PubS, Len: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **is_webstoraged()** (PubS, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **is_memcached()** (PubS, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **exists_file($path)** (PubS, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **resolve_uri($uri = null)** (PubS, Len: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **relocate_to($url = null)** (PubS, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **launch_error($msg)** (PubS, Len: 7/10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **launch_error_file_not_found($file)** (PubS, Len: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **set_buffer($buffer)** (PubS, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_buffer($delete = true)** (PubS, Len: 4/6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **show_backtrace()** (PubS, Len: 5/6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+**  
   
-**DEPENDENCIES:**  
+**DEPENDENCIES:USES: **CODE**, **HTML**  
   
-Uses: **code**, **html**  
+**  
   
-**TODOS**  
+**TODOS- **DOCUMENTATION** &#10140; PHP HIGHLIGHT_STRING/FILE TO RAPRESENT CODE EXCERPTS  
+- **ESCORT LIBRARY** &#10140; SESSION SU PHP POI DB SE WEBSTORE & MEMCACHE FAIL?  
+- **MEMCACHE SUPPORT** &#10140; VERIFY IN METHOD, IF AT LEAST ONE MEM-SERVER WORKS  
+- **PDF DOCUMENTATION** &#10140; CHECK FILE MOD-DATE -> REMINDER ON FIRST DECIMAL?  
+- **CSS SELECTORS** &#10140; UNIFORM TO HTML-CLASS RENDER-METHODS (DEFAULT STYLE)  
+- **CSS AUTOLOAD** &#10140; AUTOMATICALLY LOAD ANY FILE IN .INC/INC / CSS?  
+- **CUSTOM VAR_DUMP** &#10140; IT SHOULD RETURN ALL PARAMETERS, WITH GET_ARGS USE  
   
-- **documentation** &#10140; PHP highlight_string/file to rapresent code excerpts  
-- **escort library** &#10140; session su PHP poi DB se webstore & memcache fail?  
-- **memcache support** &#10140; verify in method, if at least one mem-server works  
-- **pdf documentation** &#10140; check file mod-date -> reminder on first decimal?  
-- **css selectors** &#10140; uniform to html-class render-methods (default style)  
-- **css autoload** &#10140; automatically load ANY file in .inc/inc / css?  
-- **custom var_dump** &#10140; it should return ALL parameters, with get_args use  
+**  
   
   
 ***  
@@ -321,31 +339,34 @@ Uses: **code**, **html**
 [⇧](# "to the top") Class MD (Mon, 25 Mar 2013 15:46:24 +0000)  
 ------------------------------------------  
   
-**CODE REFERENCE:**  
+**CODE REFERENCE:- **__CONSTRUCT($TAG, $CONTENT = NULL, $ATTRIBUTES = NULL)** (CPUB, LEN: 9/10 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_VALIDATE_TAG()** (PRI, LEN: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_CONTENT($CONTENT = NULL)** (PRI, LEN: 4/5 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_FORMATTING($ATTRIBUTES)** (PRI, LEN: 5/7 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **H1($CONTENT)** (PRIS, LEN: 3/4 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **H2($CONTENT)** (PRIS, LEN: 3/4 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **H3($CONTENT)** (PRIS, LEN: 3/4 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **IMG($SRC, $ALT, $TITLE = NULL)** (PRIS, LEN: 16/19 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **LINK($LABEL, $HREF, $TITLE)** (PRIS, LEN: 12/14 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **HR()** (PUBS, LEN: 2/3 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **HYPERLINK($LABEL, $HREF, $TITLE = NULL)** (PUBS, LEN: 5 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **TO_THE_TOP()** (PUBS, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **IMAGE($SRC, $ALT = NULL, $TITLE = NULL)** (PUBS, LEN: 5 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GREEN_OK()** (PUBS, LEN: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **BLUE_BOH($TITLE)** (PUBS, LEN: 3 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **YELLOW_OPS($TITLE)** (PUBS, LEN: 3 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **RED_ICS($TITLE)** (PUBS, LEN: 3 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **TEXT($CONTENT)** (PUBS, LEN: 3/4 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **TITLE($LEVEL, $CONTENT)** (PUBS, LEN: 8 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
   
-- **__construct($tag, $content = null, $attributes = null)** (CPub, Len: 9/10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_validate_tag()** (Pri, Len: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_content($content = null)** (Pri, Len: 4/5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_formatting($attributes)** (Pri, Len: 5/7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **h1($content)** (PriS, Len: 3/4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **h2($content)** (PriS, Len: 3/4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **h3($content)** (PriS, Len: 3/4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **img($src, $alt, $title = null)** (PriS, Len: 16/19 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **link($label, $href, $title)** (PriS, Len: 12/14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **hr()** (PubS, Len: 2/3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **hyperlink($label, $href, $title = null)** (PubS, Len: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **to_the_top()** (PubS, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **image($src, $alt = null, $title = null)** (PubS, Len: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **green_ok()** (PubS, Len: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **blue_boh($title)** (PubS, Len: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **yellow_ops($title)** (PubS, Len: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **red_ics($title)** (PubS, Len: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **text($content)** (PubS, Len: 3/4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **title($level, $content)** (PubS, Len: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+**  
   
-**TODOS**  
+**DEPENDENCIES:USES:   
+**  
   
-- **private static builder** &#10140; these should have a _ at beginning, or not?  
+**TODOS- **PRIVATE STATIC BUILDER** &#10140; THESE SHOULD HAVE A _ AT BEGINNING, OR NOT?  
+  
+**  
   
   
 ***  
@@ -353,31 +374,31 @@ Uses: **code**, **html**
 [⇧](# "to the top") Class NAVIGATOR (Mon, 25 Mar 2013 18:07:44 +0000)  
 -------------------------------------------------  
   
-**CODE REFERENCE:**  
+**CODE REFERENCE:- **__CONSTRUCT()** (CPUB, LEN: 19/22 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_INITIALIZE_STRUCTURE()** (PRI, LEN: 8 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_ADD_BRANCH($CONTROLLER)** (PRI, LEN: 25/30 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 3 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_ADD_HANDLERS($CONTROLLER, $OBJECT, $SUB)** (PRI, LEN: 24/28 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_ADD_HANDLER_STATIC_OPTIONS($STATIC_VARIABLES, $SUB, $CONTROLLER, $LINK, $OBJECT)** (PRI, LEN: 24/28 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 4 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_PRINT_HANDLER_NAME($BRANCH, $LINK, $CONTROLLER)** (PRI, LEN: 8/10 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_PRINT_HANDLER_PARAMETER($BRANCH, $LINK, $CONTROLLER)** (PRI, LEN: 14/16 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_PRINT_ADDITIONAL_PARAMETERS($BRANCH, $LINK, $CONTROLLER)** (PRI, LEN: 12/14 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_RENDER_BREADCRUMB($CONTROLLER)** (PRI, LEN: 19/23 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **RENDER_LIST()** (PUBS, LEN: 2/3 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **RENDER_BREADCRUMB()** (PUBS, LEN: 8/10 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **RENDER_ACTIVE_BREADCRUMB()** (PUBS, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **RENDER_SITEMAP()** (PUBS, LEN: 3/5 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
   
-- **__construct()** (CPub, Len: 19/22 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_initialize_structure()** (Pri, Len: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_add_branch($controller)** (Pri, Len: 25/30 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_add_handlers($controller, $object, $sub)** (Pri, Len: 24/28 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_add_handler_static_options($static_variables, $sub, $controller, $link, $object)** (Pri, Len: 24/28 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_print_handler_name($branch, $link, $controller)** (Pri, Len: 8/10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_print_handler_parameter($branch, $link, $controller)** (Pri, Len: 14/16 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_print_additional_parameters($branch, $link, $controller)** (Pri, Len: 12/14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_render_breadcrumb($controller)** (Pri, Len: 19/23 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **render_list()** (PubS, Len: 2/3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **render_breadcrumb()** (PubS, Len: 8/10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **render_active_breadcrumb()** (PubS, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **render_sitemap()** (PubS, Len: 3/5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+**  
   
-**DEPENDENCIES:**  
+**DEPENDENCIES:USES: **CONTROLLER**, **HTML**, **MAIN**  
   
-Uses: **controller**, **html**, **main**  
+**  
   
-**TODOS**  
+**TODOS- **RENDER_BREADCRUMB** &#10140; SHOULD RETURN HTML CODE, NOT PRINTING IT DIRECTLY  
+- **RENDER_LIST** &#10140; THIS SHOULD BE CSS3 AND APPEAR ON A MOUSE GESTURE..  
+- **ACTIVE BREADCRUMB** &#10140; DYNAMIC SAMELEVEL-SELECT TRUNKS, OR MAYBE WIDGET?  
   
-- **render_breadcrumb** &#10140; should return html code, not printing it directly  
-- **render_list** &#10140; this should be CSS3 and appear on a mouse gesture..  
-- **active breadcrumb** &#10140; dynamic samelevel-select trunks, or maybe widget?  
+**  
   
   
 ***  
@@ -385,21 +406,30 @@ Uses: **controller**, **html**, **main**
 [⇧](# "to the top") Class POWERING (Tue, 12 Mar 2013 12:19:30 +0000)  
 ------------------------------------------------  
   
+**DEPENDENCIES:USES:   
+**  
+  
   
 ***  
   
 [⇧](# "to the top") Class TOOLBOX (Mon, 18 Mar 2013 09:32:01 +0000)  
 -----------------------------------------------  
   
-**CODE REFERENCE:**  
+**CODE REFERENCE:- **FORMAT_VALUE($MIXED)** (PUBS, LEN: 19 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 4 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
   
-- **format_value($mixed)** (PubS, Len: 19 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+**  
+  
+**DEPENDENCIES:USES:   
+**  
   
   
 ***  
   
 [⇧](# "to the top") Class WIDGETS (Fri, 23 Nov 2012 17:54:52 +0000)  
 -----------------------------------------------  
+  
+**DEPENDENCIES:USES:   
+**  
   
   
 ***  
@@ -412,38 +442,41 @@ Available components:
 [⇧](# "to the top") Class ADMIN (Tue, 12 Mar 2013 12:19:30 +0000)  
 ---------------------------------------------  
   
-**CLASS CONFIGURATION CONSTANTS:**  
+**CLASS CONFIGURATION CONSTANTS:- **VISIBLE_IN_NAVIGATION** &#10140; TRUE  
+- **RENDER_BREADCRUMB** &#10140; TRUE  
   
-- **VISIBLE_IN_NAVIGATION** &#10140; true  
-- **RENDER_BREADCRUMB** &#10140; true  
+**  
   
-**CODE REFERENCE:**  
+**CODE REFERENCE:- **INITIALIZE()** (PUB, LEN: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_HANDLER()** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **__CONSTRUCT($ACTION, $ARGS)** (CPUB, LEN: 6/8 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_TITLE($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_HEADER($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_NAV($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_SECTION($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_ARTICLE($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_ASIDE($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_FOOTER($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_TRANSLATE($PLACEHOLDER)** (PRO, LEN: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_TITLE()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_HEADER()** (PUB, LEN: 7/8 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_NAV()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_SECTION()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_ARTICLE()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_ASIDE()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_FOOTER()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
   
-- **initialize()** (Pub, Len: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_handler()** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **__construct($action, $args)** (CPub, Len: 6/8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_title($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_header($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_nav($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_section($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_article($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_aside($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_footer($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_translate($placeholder)** (Pro, Len: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_title()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_header()** (Pub, Len: 7/8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_nav()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_section()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_article()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_aside()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_footer()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+**  
   
-**DEPENDENCIES:**  
+**DEPENDENCIES:USES: **HTML**, **NAVIGATOR**  
   
-Uses: **html**, **navigator**  
+**  
   
 [⇧](# "to the top") Class ADMIN_HELPER (Wed, 20 Mar 2013 19:47:11 +0000)  
 ----------------------------------------------------  
+  
+**DEPENDENCIES:USES:   
+**  
   
   
 ***  
@@ -451,73 +484,73 @@ Uses: **html**, **navigator**
 [⇧](# "to the top") Class CONTROL (Mon, 25 Mar 2013 15:45:53 +0000)  
 -----------------------------------------------  
   
-**CLASS CONFIGURATION CONSTANTS:**  
+**CLASS CONFIGURATION CONSTANTS:- **VISIBLE_IN_NAVIGATION** &#10140; TRUE  
+- **RENDER_BREADCRUMB** &#10140; TRUE  
   
-- **VISIBLE_IN_NAVIGATION** &#10140; true  
-- **RENDER_BREADCRUMB** &#10140; true  
+**  
   
-**CODE REFERENCE:**  
+**CODE REFERENCE:- **INITIALIZE()** (PUB, LEN: 14/16 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_HANDLER()** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_HANDLER_CORE()** (PRI, LEN: 3 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_HANDLER_CORE_DB()** (PRI, LEN: 3 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_HANDLER_CORE_CONTROLLER()** (PRI, LEN: 3 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_HANDLER_CORE_ESCORT()** (PRI, LEN: 3 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_HANDLER_CORE_NAVIGATOR()** (PRI, LEN: 3 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_HANDLER_CORE_HTML()** (PRI, LEN: 3 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_HANDLER_CORE_MD()** (PRI, LEN: 3 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_HANDLER_CORE_WIDGET()** (PRI, LEN: 3 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_HANDLER_CORE_LANGUAGE()** (PRI, LEN: 9/10 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_HANDLER_CORE_CODE()** (PRI, LEN: 3 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_HANDLER_CORE_TOOLBOX()** (PRI, LEN: 3 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_HANDLER_PLUGINS()** (PRI, LEN: 20/24 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_HANDLER_MODULES()** (PRI, LEN: 3 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_HANDLER_MODULES_ADMIN()** (PRI, LEN: 3 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_HANDLER_MODULES_CONTROL()** (PRI, LEN: 3 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_HANDLER_MODULES_DOCUMENTATION()** (PRI, LEN: 3 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_HANDLER_MODULES_ERROR()** (PRI, LEN: 3 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_HANDLER_APPLICATION()** (PRI, LEN: 26/30 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_HANDLER_PHPINFO()** (PRI, LEN: 18/21 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 3 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **__CONSTRUCT($ACTION, $ARGS)** (CPUB, LEN: 6/8 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_TITLE($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_HEADER($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_NAV($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_SECTION($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_ARTICLE($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_ASIDE($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_FOOTER($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_TRANSLATE($PLACEHOLDER)** (PRO, LEN: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_TITLE()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_HEADER()** (PUB, LEN: 7/8 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_NAV()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_SECTION()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_ARTICLE()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_ASIDE()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_FOOTER()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
   
-- **initialize()** (Pub, Len: 14/16 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_handler()** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_handler_core()** (Pri, Len: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_handler_core_db()** (Pri, Len: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_handler_core_controller()** (Pri, Len: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_handler_core_escort()** (Pri, Len: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_handler_core_navigator()** (Pri, Len: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_handler_core_html()** (Pri, Len: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_handler_core_md()** (Pri, Len: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_handler_core_widget()** (Pri, Len: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_handler_core_language()** (Pri, Len: 9/10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_handler_core_code()** (Pri, Len: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_handler_core_toolbox()** (Pri, Len: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_handler_plugins()** (Pri, Len: 20/24 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_handler_modules()** (Pri, Len: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_handler_modules_admin()** (Pri, Len: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_handler_modules_control()** (Pri, Len: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_handler_modules_documentation()** (Pri, Len: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_handler_modules_error()** (Pri, Len: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_handler_application()** (Pri, Len: 26/30 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_handler_phpinfo()** (Pri, Len: 18/21 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **__construct($action, $args)** (CPub, Len: 6/8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_title($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_header($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_nav($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_section($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_article($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_aside($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_footer($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_translate($placeholder)** (Pro, Len: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_title()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_header()** (Pub, Len: 7/8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_nav()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_section()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_article()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_aside()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_footer()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+**  
   
-**DEPENDENCIES:**  
+**DEPENDENCIES:USES: **HTML**, **LANGUAGE**, **MAIN**  
   
-Uses: **html**, **language**, **main**  
+**  
   
-**TODOS**  
+**TODOS- **PHPINFO SERVER CONF** &#10140; BETTER RAPPRESENTATION OF ACCESS DETAILS  
+- **PLUGINS LIBRARIES** &#10140; FIND A WAY TO INCAPSULATE NEEDED TRANSLATIONS  
   
-- **phpinfo server conf** &#10140; better rappresentation of access details  
-- **plugins libraries** &#10140; find a way to incapsulate needed translations  
+**  
   
 [⇧](# "to the top") Class CONTROL_HELPER (Thu, 21 Mar 2013 11:22:55 +0000)  
 ------------------------------------------------------  
   
-**CODE REFERENCE:**  
+**CODE REFERENCE:- **GET_GENERAL_PHPINFOS($OUTPUT = NULL)** (PUB, LEN: 5/7 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_CONFIGURATION_PHPINFOS($OUTPUT = NULL)** (PUB, LEN: 11/12 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_ENVIRONMENT_PHPINFOS($OUTPUT = NULL)** (PUB, LEN: 9/12 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_PHPINFOS($ARG)** (PUB, LEN: 11/14 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 3 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
   
-- **get_general_phpinfos($output = null)** (Pub, Len: 5/7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_configuration_phpinfos($output = null)** (Pub, Len: 11/12 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_environment_phpinfos($output = null)** (Pub, Len: 9/12 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_phpinfos($arg)** (Pub, Len: 11/14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+**  
   
-**DEPENDENCIES:**  
+**DEPENDENCIES:USES: **HTML**  
   
-Uses: **html**  
+**  
   
   
 ***  
@@ -525,40 +558,46 @@ Uses: **html**
 [⇧](# "to the top") Class DOCUMENTATION (Mon, 25 Mar 2013 15:43:33 +0000)  
 -----------------------------------------------------  
   
-**CLASS CONFIGURATION CONSTANTS:**  
+**CLASS CONFIGURATION CONSTANTS:- **VISIBLE_IN_NAVIGATION** &#10140; TRUE  
+- **RENDER_BREADCRUMB** &#10140; TRUE  
   
-- **VISIBLE_IN_NAVIGATION** &#10140; true  
-- **RENDER_BREADCRUMB** &#10140; true  
+**  
   
-**CODE REFERENCE:**  
+**CODE REFERENCE:- **INITIALIZE()** (PUB, LEN: 27/30 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 4 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_HANDLER()** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_HANDLER_LIST()** (PRI, LEN: 3 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_HANDLER_LIST_FILES()** (PRI, LEN: 3 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **__CONSTRUCT($ACTION, $ARGS)** (CPUB, LEN: 6/8 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_TITLE($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_HEADER($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_NAV($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_SECTION($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_ARTICLE($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_ASIDE($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_FOOTER($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_TRANSLATE($PLACEHOLDER)** (PRO, LEN: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_TITLE()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_HEADER()** (PUB, LEN: 7/8 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_NAV()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_SECTION()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_ARTICLE()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_ASIDE()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_FOOTER()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
   
-- **initialize()** (Pub, Len: 27/30 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_handler()** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_handler_list()** (Pri, Len: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_handler_list_files()** (Pri, Len: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **__construct($action, $args)** (CPub, Len: 6/8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_title($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_header($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_nav($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_section($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_article($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_aside($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_footer($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_translate($placeholder)** (Pro, Len: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_title()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_header()** (Pub, Len: 7/8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_nav()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_section()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_article()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_aside()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_footer()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+**  
   
-**TODOS**  
+**DEPENDENCIES:USES:   
+**  
   
-- **method toString** &#10140; to get a informative highlighted code as reference  
+**TODOS- **METHOD TOSTRING** &#10140; TO GET A INFORMATIVE HIGHLIGHTED CODE AS REFERENCE  
+  
+**  
   
 [⇧](# "to the top") Class DOCUMENTATION_HELPER (Wed, 20 Mar 2013 19:47:11 +0000)  
 ------------------------------------------------------------  
+  
+**DEPENDENCIES:USES:   
+**  
   
   
 ***  
@@ -566,43 +605,46 @@ Uses: **html**
 [⇧](# "to the top") Class ERROR (Fri, 01 Mar 2013 16:01:13 +0000)  
 ---------------------------------------------  
   
-**CLASS CONFIGURATION CONSTANTS:**  
+**CLASS CONFIGURATION CONSTANTS:- **VISIBLE_IN_NAVIGATION** &#10140; FALSE  
+- **RENDER_BREADCRUMB** &#10140; FALSE  
   
-- **VISIBLE_IN_NAVIGATION** &#10140; false  
-- **RENDER_BREADCRUMB** &#10140; false  
+**  
   
-**CODE REFERENCE:**  
+**CODE REFERENCE:- **INITIALIZE()** (PUB, LEN: 11/12 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_HANDLER()** (PRO, LEN: 7/10 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_HANDLER_400()** (PRI, LEN: 6/8 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_HANDLER_401()** (PRI, LEN: 6/8 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_HANDLER_403()** (PRI, LEN: 6/8 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_HANDLER_404()** (PRI, LEN: 7/10 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_HANDLER_500()** (PRI, LEN: 13/17 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **__CONSTRUCT($ACTION, $ARGS)** (CPUB, LEN: 6/8 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_TITLE($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_HEADER($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_NAV($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_SECTION($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_ARTICLE($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_ASIDE($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_FOOTER($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_TRANSLATE($PLACEHOLDER)** (PRO, LEN: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_TITLE()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_HEADER()** (PUB, LEN: 7/8 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_NAV()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_SECTION()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_ARTICLE()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_ASIDE()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_FOOTER()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
   
-- **initialize()** (Pub, Len: 11/12 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_handler()** (Pro, Len: 7/10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_handler_400()** (Pri, Len: 6/8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_handler_401()** (Pri, Len: 6/8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_handler_403()** (Pri, Len: 6/8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_handler_404()** (Pri, Len: 7/10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_handler_500()** (Pri, Len: 13/17 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **__construct($action, $args)** (CPub, Len: 6/8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_title($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_header($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_nav($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_section($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_article($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_aside($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_footer($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_translate($placeholder)** (Pro, Len: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_title()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_header()** (Pub, Len: 7/8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_nav()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_section()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_article()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_aside()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_footer()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+**  
   
-**DEPENDENCIES:**  
+**DEPENDENCIES:USES: **HTML**, **MAIN**, **NAVIGATOR**  
   
-Uses: **html**, **main**, **navigator**  
+**  
   
 [⇧](# "to the top") Class ERROR_HELPER (Wed, 20 Mar 2013 19:47:11 +0000)  
 ----------------------------------------------------  
+  
+**DEPENDENCIES:USES:   
+**  
   
   
 ***  
@@ -610,38 +652,41 @@ Uses: **html**, **main**, **navigator**
 [⇧](# "to the top") Class HOMEPAGE (Tue, 12 Mar 2013 12:19:30 +0000)  
 ------------------------------------------------  
   
-**CLASS CONFIGURATION CONSTANTS:**  
+**CLASS CONFIGURATION CONSTANTS:- **VISIBLE_IN_NAVIGATION** &#10140; TRUE  
+- **RENDER_BREADCRUMB** &#10140; TRUE  
   
-- **VISIBLE_IN_NAVIGATION** &#10140; true  
-- **RENDER_BREADCRUMB** &#10140; true  
+**  
   
-**CODE REFERENCE:**  
+**CODE REFERENCE:- **INITIALIZE()** (PUB, LEN: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_HANDLER()** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **__CONSTRUCT($ACTION, $ARGS)** (CPUB, LEN: 6/8 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_TITLE($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_HEADER($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_NAV($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_SECTION($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_ARTICLE($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_ASIDE($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_FOOTER($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_TRANSLATE($PLACEHOLDER)** (PRO, LEN: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_TITLE()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_HEADER()** (PUB, LEN: 7/8 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_NAV()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_SECTION()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_ARTICLE()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_ASIDE()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_FOOTER()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
   
-- **initialize()** (Pub, Len: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_handler()** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **__construct($action, $args)** (CPub, Len: 6/8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_title($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_header($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_nav($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_section($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_article($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_aside($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_footer($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_translate($placeholder)** (Pro, Len: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_title()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_header()** (Pub, Len: 7/8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_nav()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_section()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_article()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_aside()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_footer()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+**  
   
-**DEPENDENCIES:**  
+**DEPENDENCIES:USES: **HTML**, **NAVIGATOR**  
   
-Uses: **html**, **navigator**  
+**  
   
 [⇧](# "to the top") Class HOMEPAGE_HELPER (Wed, 20 Mar 2013 19:47:33 +0000)  
 -------------------------------------------------------  
+  
+**DEPENDENCIES:USES:   
+**  
   
   
 ***  
@@ -649,33 +694,39 @@ Uses: **html**, **navigator**
 [⇧](# "to the top") Class POWER (Tue, 12 Mar 2013 12:19:30 +0000)  
 ---------------------------------------------  
   
-**CLASS CONFIGURATION CONSTANTS:**  
+**CLASS CONFIGURATION CONSTANTS:- **VISIBLE_IN_NAVIGATION** &#10140; TRUE  
+- **RENDER_BREADCRUMB** &#10140; TRUE  
   
-- **VISIBLE_IN_NAVIGATION** &#10140; true  
-- **RENDER_BREADCRUMB** &#10140; true  
+**  
   
-**CODE REFERENCE:**  
+**CODE REFERENCE:- **INITIALIZE()** (PUB, LEN: 0/1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **__CONSTRUCT($ACTION, $ARGS)** (CPUB, LEN: 6/8 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_TITLE($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_HEADER($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_NAV($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_SECTION($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_ARTICLE($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_ASIDE($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_SET_FOOTER($HTML)** (PRO, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **_TRANSLATE($PLACEHOLDER)** (PRO, LEN: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_TITLE()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_HEADER()** (PUB, LEN: 7/8 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG "") CYC: 2 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_NAV()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_SECTION()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_ARTICLE()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_ASIDE()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
+- **GET_FOOTER()** (PUB, LEN: 1 ![(&RADIC;)](HTTPS://RAW.GITHUB.COM/THEB3RT0Z/SCHRIMP/MASTER/.INC/IMG/ICON_16X16_GREEN_OK.PNG ""))  
   
-- **initialize()** (Pub, Len: 0/1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **__construct($action, $args)** (CPub, Len: 6/8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_title($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_header($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_nav($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_section($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_article($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_aside($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_set_footer($html)** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **_translate($placeholder)** (Pro, Len: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_title()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_header()** (Pub, Len: 7/8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_nav()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_section()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_article()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_aside()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_footer()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+**  
+  
+**DEPENDENCIES:USES:   
+**  
   
 [⇧](# "to the top") Class POWER_HELPER (Wed, 20 Mar 2013 19:47:33 +0000)  
 ----------------------------------------------------  
+  
+**DEPENDENCIES:USES:   
+**  
   
   
 ***  
