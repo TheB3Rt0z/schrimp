@@ -157,7 +157,7 @@ class code
 	                  . ((empty(self::$_class_warnings[$values['class_name']]['blue'])
 	                        && empty(self::$_class_warnings[$values['class_name']]['yellow'])
 	                        && empty(self::$_class_warnings[$values['class_name']]['red']))
-	                    ? md::green_ok()
+	                    ? //md::green_ok()
 	                    : "&#10140;")
 	                  . (!empty(self::$_class_warnings[$values['class_name']]['blue'])
 	                    ? " " . self::$_class_warnings[$values['class_name']]['blue']
