@@ -128,7 +128,7 @@ class code
     {
         if (!empty($data))
 	        return md::title(3,
-	                         $title . $data . MD_NEWLINE_SEQUENCE);
+	                         $title . $data) . MD_NEWLINE_SEQUENCE;
     }
 
 	private static function _get_cyc_marker($cyc)
