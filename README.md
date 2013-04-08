@@ -6,7 +6,7 @@ Table of contents
 -----------------  
   
 [General reference](#general-reference-- "")  
-[Library code](#-class-code-mon-08-apr-2013-181436-0000-- "") (root/.lib/code.php, Len: 560/659, CIS: 10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!") 2 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!")  
+[Library code](#-class-code-mon-08-apr-2013-181900-0000-- "") (root/.lib/code.php, Len: 561/660, CIS: 10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!") 2 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!")  
 [Library controller](#-class-controller-thu-21-mar-2013-112255-0000-- "") (root/.lib/controller.php, Len: 90/116, CIS: 9 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library db](#-class-db-mon-25-mar-2013-154730-0000-- "") (root/.lib/db.php, Len: 27/30, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library escort](#-class-escort-mon-25-mar-2013-100351-0000-- "") (root/.lib/escort.php, Len: 3/3, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -104,7 +104,7 @@ General reference
   
 ***  
   
-[⇧](# "to the top") Class CODE (Mon, 08 Apr 2013 18:14:36 +0000)  
+[⇧](# "to the top") Class CODE (Mon, 08 Apr 2013 18:19:00 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -128,7 +128,7 @@ General reference
 - **get_functions_list()** (PubS, Len: 4/5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_libraries_list($exclude = null)** (PubS, Len: 21/27 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_components_list()** (PubS, Len: 19/24 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **get_class_dependencies($class)** (PubS, Len: 22/27 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **get_class_dependencies($class)** (PubS, Len: 23/28 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_class_data($class)** (PubS, Len: 45/55 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Method's length should be reduced!") CyC: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_method_status($method)** (PubS, Len: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **analyse_method($method)** (PubS, Len: 34/41 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Method's length should be reduced!") CyC: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
@@ -192,9 +192,6 @@ Uses: **html**, **navigator**
   
 - **__construct()** (CPub, Len: 15/16 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
-**DEPENDENCIES:**  
-  
-Uses:   
 **TODOS**  
   
 - **connection constants** &#10140; they should be an array in main configuration  
@@ -205,9 +202,6 @@ Uses:
 [⇧](# "to the top") Class ESCORT (Mon, 25 Mar 2013 10:03:51 +0000)  
 ----------------------------------------------  
   
-**DEPENDENCIES:**  
-  
-Uses:   
 **TODOS**  
   
 - **runtime reg** &#10140; save created objects structure as reference hierarchy  
@@ -260,9 +254,6 @@ Uses:
 - **preform($content)** (PubS, Len: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **title($level, $content)** (PubS, Len: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
-**DEPENDENCIES:**  
-  
-Uses:   
 **TODOS**  
   
 - **script online loading** &#10140; if != local, should have a lfb..  
@@ -281,9 +272,6 @@ Uses:
 - **get_component_translations_array($component)** (PubS, Len: 17/20 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **translate($component, $marker)** (PubS, Len: 24/28 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
-**DEPENDENCIES:**  
-  
-Uses:   
 **TODOS**  
   
 - **automatic translation** &#10140; it could be interessant to use pspell&gettext  
@@ -361,9 +349,6 @@ Uses: **code**, **html**
 - **text($content)** (PubS, Len: 3/4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **title($level, $content)** (PubS, Len: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
-**DEPENDENCIES:**  
-  
-Uses:   
 **TODOS**  
   
 - **private static builder** &#10140; these should have a _ at beginning, or not?  
@@ -406,9 +391,6 @@ Uses: **controller**, **html**, **main**
 [⇧](# "to the top") Class POWERING (Tue, 12 Mar 2013 12:19:30 +0000)  
 ------------------------------------------------  
   
-**DEPENDENCIES:**  
-  
-Uses:   
   
 ***  
   
@@ -419,18 +401,12 @@ Uses:
   
 - **format_value($mixed)** (PubS, Len: 19 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
-**DEPENDENCIES:**  
-  
-Uses:   
   
 ***  
   
 [⇧](# "to the top") Class WIDGETS (Fri, 23 Nov 2012 17:54:52 +0000)  
 -----------------------------------------------  
   
-**DEPENDENCIES:**  
-  
-Uses:   
   
 ***  
   
@@ -475,9 +451,6 @@ Uses: **html**, **navigator**
 [⇧](# "to the top") Class ADMIN_HELPER (Wed, 20 Mar 2013 19:47:11 +0000)  
 ----------------------------------------------------  
   
-**DEPENDENCIES:**  
-  
-Uses:   
   
 ***  
   
@@ -586,9 +559,6 @@ Uses: **html**
 - **get_aside()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_footer()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
-**DEPENDENCIES:**  
-  
-Uses:   
 **TODOS**  
   
 - **method toString** &#10140; to get a informative highlighted code as reference  
@@ -596,9 +566,6 @@ Uses:
 [⇧](# "to the top") Class DOCUMENTATION_HELPER (Wed, 20 Mar 2013 19:47:11 +0000)  
 ------------------------------------------------------------  
   
-**DEPENDENCIES:**  
-  
-Uses:   
   
 ***  
   
@@ -643,9 +610,6 @@ Uses: **html**, **main**, **navigator**
 [⇧](# "to the top") Class ERROR_HELPER (Wed, 20 Mar 2013 19:47:11 +0000)  
 ----------------------------------------------------  
   
-**DEPENDENCIES:**  
-  
-Uses:   
   
 ***  
   
@@ -685,9 +649,6 @@ Uses: **html**, **navigator**
 [⇧](# "to the top") Class HOMEPAGE_HELPER (Wed, 20 Mar 2013 19:47:33 +0000)  
 -------------------------------------------------------  
   
-**DEPENDENCIES:**  
-  
-Uses:   
   
 ***  
   
@@ -719,15 +680,9 @@ Uses:
 - **get_aside()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_footer()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
-**DEPENDENCIES:**  
-  
-Uses:   
 [⇧](# "to the top") Class POWER_HELPER (Wed, 20 Mar 2013 19:47:33 +0000)  
 ----------------------------------------------------  
   
-**DEPENDENCIES:**  
-  
-Uses:   
   
 ***  
   

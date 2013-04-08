@@ -300,7 +300,7 @@ class code
 	                                             "Class configuration constants:")
 	                      . self::_add_paragraph($reference,
 	                                             "Code reference:")
-	                      . self::_add_paragraph("Uses: " . $dependencies,
+	                      . self::_add_paragraph($dependencies,
 	                                             "Dependencies:")
 	                      . self::_add_paragraph($class_todos,
 	                                             "TODOs")
@@ -330,7 +330,7 @@ class code
 	                                      "Class configuration constants:")
 	               . self::_add_paragraph($reference,
 	                                      "Code reference:")
-	               . self::_add_paragraph("Uses: " . $dependencies,
+	               . self::_add_paragraph($dependencies,
 	                                      "Dependencies:")
 	               . self::_add_paragraph($class_todos,
 	                                      "TODOs");
@@ -512,7 +512,8 @@ class code
 	    ksort($dependencies);
 
 	    if (!empty($dependencies))
-	        return implode(", ",
+	        return "Uses: "
+	             . implode(", ",
 	                       array_map(function($value)
 	                                 {
 	                                     return "**" . $value . "**";
