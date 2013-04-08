@@ -4,15 +4,12 @@ class code
 {
 	public static $todos = array
     (
-        'summary with links' => "generate automatic index with doc + meta links and warnings..",
         'code analysis' => "load, analyse, printing and more.. use toolbox class?",
-        'methods lists' => "add parameter class type information, also for aliases",
-        'github wiki documentation' => "generate wiki pages with md syntax and update",
-        'add code-testing methods' => "using phpunit to autobuild and execute tests",
-        'semantic documentation' => "generate human-friendly doc from methods code..",
-        'get_class_dependencies' => "too unaccurate, navigator-controller, only explicit new, etc., and it should count und order dependencies, in order to detect excessive coupling..",
-        'available libraries title' => "at the beginning of classes list, same labeling in summary",
-        'maximum number of (public?) methods' => "class too complex, should be refactored with helpers and similar structures",
+        'methods lists' => "add parameter class information, also for aliases",
+        'github wiki docs' => "generate wiki pages with md syntax and update",
+        'add code-testing methods' => "usephpunit to autobuild and execute tests",
+        'get_class_dependencies' => "too unaccurate, see navigator-controller",
+        'get_class_dependencies 2' => "it should count, then order dependencies",
     );
 
 	const _STR_LENGTH_WARNING = "Method's length could be reduced..";

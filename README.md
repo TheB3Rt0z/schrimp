@@ -6,7 +6,7 @@ Table of contents
 -----------------  
   
 [General reference](#general-reference-- "")  
-[Library code](#-class-code-mon-08-apr-2013-174205-0000-- "") (root/.lib/code.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "8 too long line(s) found!") Len: 561/659, CIS: 10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!") 2 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!")  
+[Library code](#-class-code-mon-08-apr-2013-175206-0000-- "") (root/.lib/code.php, Len: 558/656, CIS: 10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!") 2 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!")  
 [Library controller](#-class-controller-thu-21-mar-2013-112255-0000-- "") (root/.lib/controller.php, Len: 90/116, CIS: 9 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library db](#-class-db-mon-25-mar-2013-154730-0000-- "") (root/.lib/db.php, Len: 27/30, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library escort](#-class-escort-mon-25-mar-2013-100351-0000-- "") (root/.lib/escort.php, Len: 3/3, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -99,7 +99,7 @@ General reference
   
 ***  
   
-[⇧](# "to the top") Class CODE (Mon, 08 Apr 2013 17:42:05 +0000)  
+[⇧](# "to the top") Class CODE (Mon, 08 Apr 2013 17:52:06 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -134,15 +134,12 @@ Uses: **main**, **md**
   
 **TODOS**  
   
-- **summary with links** &#10140; generate automatic index with doc + meta links and warnings..  
 - **code analysis** &#10140; load, analyse, printing and more.. use toolbox class?  
-- **methods lists** &#10140; add parameter class type information, also for aliases  
-- **github wiki documentation** &#10140; generate wiki pages with md syntax and update  
-- **add code-testing methods** &#10140; using phpunit to autobuild and execute tests  
-- **semantic documentation** &#10140; generate human-friendly doc from methods code..  
-- **get_class_dependencies** &#10140; too unaccurate, navigator-controller, only explicit new, etc., and it should count und order dependencies, in order to detect excessive coupling..  
-- **available libraries title** &#10140; at the beginning of classes list, same labeling in summary  
-- **maximum number of (public?) methods** &#10140; class too complex, should be refactored with helpers and similar structures  
+- **methods lists** &#10140; add parameter class information, also for aliases  
+- **github wiki docs** &#10140; generate wiki pages with md syntax and update  
+- **add code-testing methods** &#10140; usephpunit to autobuild and execute tests  
+- **get_class_dependencies** &#10140; too unaccurate, see navigator-controller  
+- **get_class_dependencies 2** &#10140; it should count, then order dependencies  
   
   
 ***  
