@@ -536,6 +536,11 @@ class code
                                   . fv($value) . MD_NEWLINE_SEQUENCE;
 
         $reference = '';
+        $class_methods = $class->getMethods();
+        usort($class_methods, function($a, $b)
+                              {
+                                  return $a->name < $b->name;
+                              });
         foreach ($class->getMethods() as $method)
             $reference .= self::_get_methods_information($method);
 
