@@ -4,10 +4,7 @@ define('MD_NEWLINE_SEQUENCE', "  \n"); // markdown-style new line with br conver
 
 class md
 {
-    public static $todos = array
-    (
-        'private static builder' => "these should have a _ at beginning, or not?",
-    );
+    public static $todos = array();
 
     private $_tag = null;
     private $_content = '';
