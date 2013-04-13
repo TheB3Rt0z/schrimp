@@ -14,7 +14,7 @@ class code
 
 	const _STR_LENGTH_WARNING = "Method's length could be reduced..";
 	const _STR_LENGTH_ERROR = "Method's length should be reduced!";
-	const _STR_CYC_WARNING = "Method's cyclomatic complexity could be reduced..";
+    const _STR_CYC_WARNING = "Method's cyclomatic complexity could be reduced..";
 	const _STR_CYC_ERROR = "Method's cyclomatic complexity should be reduced!";
 	const _STR_CIS_WARNING = "Class interface size could lead to a refactoring";
 	const _STR_CIS_ERROR = "Class interface size should lead to a refactoring!";
