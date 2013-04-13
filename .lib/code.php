@@ -539,9 +539,9 @@ class code
         $class_methods = $class->getMethods();
         usort($class_methods, function($a, $b)
                               {
-                                  return $a->name < $b->name;
+                                  return $a->name > $b->name;
                               });
-        foreach ($class->getMethods() as $method)
+        foreach ($class_methods as $method)
             $reference .= self::_get_methods_information($method);
 
         $class_todos = '';
