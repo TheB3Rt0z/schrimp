@@ -4,75 +4,74 @@ define('HTML_BREADCRUMB_SEPARATOR', " &raquo; ");
 
 class html
 {
-	public static $todos = array
+    public static $todos = array
     (
         'script online loading' => "if != local, should have a lfb..",
-        'private static builder' => "these should have a _ at beginning, or not?",
     );
 
-	private $_tag = null;
-	private $_attributes = array();
-	private $_content = '';
+    private $_tag = null;
+    private $_attributes = array();
+    private $_content = '';
 
     private $_html = '';
 
-	private $_tags = array
+    private $_tags = array
     (
         'single' => array
-    	(
-    		'br',
-	        'img',
-	        'link',
-    	),
-		'container' => array
-    	(
-    		'a',
-			'div',
-			'h1',
+        (
+            'br',
+            'img',
+            'link',
+        ),
+        'container' => array
+        (
+            'a',
+            'div',
+            'h1',
             'h2',
             'h3',
             'h4',
             'h5',
             'h6',
-			'h7', // experimental
+            'h7', // experimental
             'li',
             'ol',
             'p',
-    		'pre',
+            'pre',
             'script',
             'ul',
-    	)
+        )
     );
 
-	static private $_linked_files = array();
+    private static $_linked_files = array();
 
-	static private $_loaded_scripts = array();
+    private static $_loaded_scripts = array();
 
     function __construct($tag,
                          $attributes = array(),
                          $content = '')
     {
-    	$this->_tag = $tag;
+        $this->_tag = $tag;
 
-    	if ($this->_validate_tag())
-    	{
-    		$this->_html .= "<" . $this->_tag . "__ATTRIBUTES__";
-    		if ($this->_is_single())
-	            $this->_html .= " /";
-	        else
-	        {
-	            $this->_html .= ">";
-	            if ($this->_is_container())
-	                $this->_html .= "__CONTENT__";
-	            $this->_html .= "</" . $this->_tag;
-	        }
-	        $this->_html .= ">";
+        if ($this->_validate_tag())
+        {
+            $this->_html .= "<" . $this->_tag . "__ATTRIBUTES__";
+            if ($this->_is_single())
+                $this->_html .= " /";
+            else
+            {
+                $this->_html .= ">";
+                if ($this->_is_container())
+                    $this->_html .= "__CONTENT__";
+                $this->_html .= "</" . $this->_tag;
+            }
+            $this->_html .= ">";
 
-	        $this->_set_attributes($attributes);
+            $this->_set_attributes($attributes);
 
-	        if ($this->_is_container($this->_tag))
-	            $this->_set_content($content);
-    	}
+            if ($this->_is_container($this->_tag))
+                $this->_set_content($content);
+        }
     }
 
     private function _is_single()
@@ -94,148 +93,149 @@ class html
 
     private function _set_attributes($attributes)
     {
-    	$this->_attributes = $attributes;
+        $this->_attributes = $attributes;
 
-    	$attributes = '';
+        $attributes = '';
 
-    	foreach ($this->_attributes as $key => $value)
-    	{
-    		$attributes .= " " . trim(strtolower($key)) . "=\"";
+        foreach ($this->_attributes as $key => $value)
+        {
+            $attributes .= " " . trim(strtolower($key)) . "=\"";
 
-    		if (is_array($value))
-    			$attributes .= implode(" ",
-    			                       $value);
-    		else
-    			$attributes .= $value;
+            if (is_array($value))
+                $attributes .= implode(" ",
+                                       $value);
+            else
+                $attributes .= $value;
 
-    		$attributes .= "\"";
-    	}
+            $attributes .= "\"";
+        }
 
-    	$this->_html = str_replace("__ATTRIBUTES__",
-    	                           $attributes,
-    	                           $this->_html);
+        $this->_html = str_replace("__ATTRIBUTES__",
+                                   $attributes,
+                                   $this->_html);
     }
 
     private function _set_content($content = '')
     {
-    	$this->_content = $content;
+        $this->_content = $content;
 
-    	$this->_html = str_replace("__CONTENT__",
-    	                           $this->_content,
-    	                           $this->_html);
+        $this->_html = str_replace("__CONTENT__",
+                                   $this->_content,
+                                   $this->_html);
     }
 
-    private static function a($href,
-                              $content)
+    private static function _a($href,
+                               $content)
     {
-    	if (!strpos($href, "://"))
-    		$href = ru($href);
+        if (!strpos($href, "://"))
+            $href = ru($href);
 
-    	$attributes = array('href' => $href);
+        $attributes = array('href' => $href);
 
-    	$self = new self(__FUNCTION__,
-    	                 $attributes,
-    	                 $content);
+        $self = new self('a',
+                         $attributes,
+                         $content);
 
-    	return $self->_html;
+        return $self->_html;
     }
 
-    private static function br($lines = 1,
-                               $classes = array())
+    private static function _br($lines = 1,
+                                $classes = array())
     {
         $attributes = array();
         if (!empty($classes))
             $attributes['class'] = trim($classes);
 
-        $self = new self(__FUNCTION__,
-    	                 $attributes);
+        $self = new self('br',
+                         $attributes);
 
-    	return str_repeat($self->_html, $lines);
+        return str_repeat($self->_html,
+                          $lines);
     }
 
-    private static function div($content,
-    							$classes = array(),
-    							$id = null)
+    private static function _div($content,
+                                 $classes = array(),
+                                 $id = null)
     {
-    	$attributes = array();
-    	if (!empty($classes))
-    		$attributes['class'] = implode($classes, ' ');
-    	if (!empty($id))
-    		$attributes['id'] = trim($id);
+        $attributes = array();
+        if (!empty($classes))
+            $attributes['class'] = implode($classes, ' ');
+        if (!empty($id))
+            $attributes['id'] = trim($id);
 
-    	$self = new self(__FUNCTION__,
-    	                 $attributes,
-    	                 $content);
+        $self = new self('div',
+                         $attributes,
+                         $content);
 
-    	return $self->_html;
+        return $self->_html;
     }
 
-    private static function h1($content)
+    private static function _h1($content)
     {
-    	$self = new self(__FUNCTION__,
-    	                 array(),
-    	                 $content);
+        $self = new self('h1',
+                         array(),
+                         $content);
 
-    	return $self->_html;
+        return $self->_html;
     }
 
-    private static function h2($content)
+    private static function _h2($content)
     {
-    	$self = new self(__FUNCTION__,
-    	                 array(),
-    	                 $content);
+        $self = new self('h2',
+                         array(),
+                         $content);
 
-    	return $self->_html;
+        return $self->_html;
     }
 
-    private static function h3($content)
+    private static function _h3($content)
     {
-    	$self = new self(__FUNCTION__,
-    	                 array(),
-    	                 $content);
+        $self = new self('h3',
+                         array(),
+                         $content);
 
-    	return $self->_html;
+        return $self->_html;
     }
 
-    private static function h4($content)
+    private static function _h4($content)
     {
-    	$self = new self(__FUNCTION__,
-    	                 array(),
-    	                 $content);
+        $self = new self('h4',
+                         array(),
+                         $content);
 
-    	return $self->_html;
+        return $self->_html;
     }
 
-    private static function h5($content)
+    private static function _h5($content)
     {
-    	$self = new self(__FUNCTION__,
-    	                 array(),
-    	                 $content);
+        $self = new self('h5',
+                         array(),
+                         $content);
 
-    	return $self->_html;
+        return $self->_html;
     }
 
-    private static function h6($content)
+    private static function _h6($content)
     {
-    	$self = new self(__FUNCTION__,
-    	                 array(),
-    	                 $content);
+        $self = new self('h6',
+                         array(),
+                         $content);
 
-    	return $self->_html;
+        return $self->_html;
     }
 
-    private static function h7($content)
+    private static function _h7($content)
     {
-    	$self = new self(__FUNCTION__,
-    			         array(),
-    			         $content);
+        $self = new self('h7',
+                         array(),
+                         $content);
 
-    	return $self->_html;
+        return $self->_html;
     }
 
-    private static function img($src,
-            $alt,
-            $title = '')
+    private static function _img($src,
+                                 $alt,
+                                 $title = '')
     {
         if (!fe($src))
             return $main->launch_error_file_not_found($src);
@@ -244,251 +244,253 @@ class html
                             'alt' => $alt,
                             'title' => $title);
 
-        $self = new self(__FUNCTION__,
+        $self = new self('img',
                          $attributes);
 
         return $self->_html;
     }
 
-    private static function li($content,
-                               $classes = '')
+    private static function _li($content,
+                                $classes = '')
     {
-    	$attributes = array();
-    	if (!empty($classes))
-    		$attributes['class'] = trim($classes);
+        $attributes = array();
+        if (!empty($classes))
+            $attributes['class'] = trim($classes);
 
-    	$self = new self(__FUNCTION__,
-    	                 $attributes,
-    	                 $content);
+        $self = new self('li',
+                         $attributes,
+                         $content);
 
-    	return $self->_html;
+        return $self->_html;
     }
 
-    private static function link($href,
-                                 $rel,
-                                 $type)
+    private static function _link($href,
+                                  $rel,
+                                  $type)
     {
-    	$placeholder = $rel . '_' . $href;
+        $placeholder = $rel . '_' . $href;
 
-    	if (!fe($href))
-			return $main->launch_error_file_not_found($href);
-		elseif (!empty($href)
-			&& !in_array($placeholder, html::$_linked_files))
-		{
-			$attributes = array('href' => ru($href),
-    		                    'rel' => $rel,
-    		                    'type' => $type);
+        if (!fe($href))
+            return $main->launch_error_file_not_found($href);
+        elseif (!empty($href)
+            && !in_array($placeholder, self::$_linked_files))
+        {
+            $attributes = array('href' => ru($href),
+                                'rel' => $rel,
+                                'type' => $type);
 
-    	    $self = new self(__FUNCTION__,
-    	                     $attributes);
+            $self = new self('link',
+                             $attributes);
 
-			html::$_linked_files[] = $placeholder;
-		}
-		else
-			return false; // MAYBE this link was already loaded, to be continued..
+            self::$_linked_files[] = $placeholder;
+        }
+        else
+            return false; // MAYBE this link was already loaded, to be continued..
 
-    	return $self->_html;
+        return $self->_html;
     }
 
-    static private function ol($content,
-                               $classes = '')
+    private static function _ol($content,
+                                $classes = '')
     {
-    	$attributes = array();
-    	if (!empty($classes))
-    		$attributes['class'] = trim($classes);
+        $attributes = array();
+        if (!empty($classes))
+            $attributes['class'] = trim($classes);
 
-    	$self = new self(__FUNCTION__,
-    	                 $attributes,
-    	                 $content);
+        $self = new self('ol',
+                         $attributes,
+                         $content);
 
-    	return $self->_html;
+        return $self->_html;
     }
 
-    private static function p($content)
+    private static function _p($content)
     {
-    	$self = new self(__FUNCTION__,
-    	                 array(),
-    	                 $content);
+        $self = new self('p',
+                         array(),
+                         $content);
 
-    	return $self->_html;
+        return $self->_html;
     }
 
-    private static function pre($content)
+    private static function _pre($content)
     {
-    	$self = new self(__FUNCTION__,
-    					 array(),
-    					 $content);
+        $self = new self('pre',
+                         array(),
+                         $content);
 
-    	return $self->_html;
+        return $self->_html;
     }
 
-    private static function script($type,
-                                   $src = null,
-                                   $content = '')
+    private static function _script($type,
+                                    $src = null,
+                                    $content = '')
     {
-    	$attributes['type'] = $type;
+        $attributes['type'] = $type;
 
-    	if (!empty($src)
-    		&& !in_array($src, html::$_loaded_scripts))
-    	{
-    		if (!fe($src) && !parse_url($src))
-				return $main->launch_error_file_not_found($src);
+        if (!empty($src)
+            && !in_array($src, self::$_loaded_scripts))
+        {
+            if (!fe($src) && !parse_url($src))
+                return $main->launch_error_file_not_found($src);
 
-    		$attributes['src'] = $src;
-    		$self = new self(__FUNCTION__,
-    	                     $attributes);
+            $attributes['src'] = $src;
+            $self = new self('script',
+                             $attributes);
 
-    		self::$_loaded_scripts[] = $type . '_' . $src;
-    	}
-    	elseif (!empty($content)
-    		&& !in_array($content, html::$_loaded_scripts))
-    	{
-    		$attributes['charset'] = "utf-8"; // should be constant?
-    		$self = new self(__FUNCTION__,
-    	                     $attributes,
-    	                     $content);
+            self::$_loaded_scripts[] = $type . '_' . $src;
+        }
+        elseif (!empty($content)
+            && !in_array($content, self::$_loaded_scripts))
+        {
+            $attributes['charset'] = "utf-8"; // should be constant?
+            $self = new self('script',
+                             $attributes,
+                             $content);
 
-    	    self::$_loaded_scripts[] = $content;
-    	}
-    	else
-    		return false; // this script SEEMS to be already loaded
+            self::$_loaded_scripts[] = $content;
+        }
+        else
+            return false; // this script SEEMS to be already loaded
 
-    	return $self->_html;
+        return $self->_html;
     }
 
-    static private function ul($content,
-                               $classes = '')
+    private static function _ul($content,
+                                $classes = '')
     {
-    	$attributes = array();
-    	if (!empty($classes))
-    		$attributes['class'] = trim($classes);
+        $attributes = array();
+        if (!empty($classes))
+            $attributes['class'] = trim($classes);
 
-    	$self = new self(__FUNCTION__,
-    	                 $attributes,
-    	                 $content);
+        $self = new self('ul',
+                         $attributes,
+                         $content);
 
-    	return $self->_html;
+        return $self->_html;
     }
 
     static function add_favicon($href)
     {
-    	echo self::link($href,
-    	                "icon",
-						"image/x-icon");
+        echo self::_link($href,
+                         "icon",
+                         "image/x-icon");
 
-    	echo self::link($href,
-    			        "shortcut icon",
-    			        "image/x-icon");
+        echo self::_link($href,
+                         "shortcut icon",
+                         "image/x-icon");
     }
 
     static function add_stylesheet($href)
     {
-    	echo self::link($href,
-                        "stylesheet",
-                        "text/css");
+        echo self::_link($href,
+                         "stylesheet",
+                         "text/css");
     }
 
     static function add_js_file($src)
     {
-    	echo self::script("text/javascript",
-    	                  $src);
+        echo self::_script("text/javascript",
+                           $src);
     }
 
     static function add_js_script($content)
     {
-    	echo self::script("text/javascript",
-    	                  null,
-    	                  $content);
+        echo self::_script("text/javascript",
+                           null,
+                           $content);
     }
 
     static function array_to_list($tree,
                                   $type = 'ul')
     {
-    	$content = '';
+        $content = '';
 
-		foreach ($tree as $key => $value)
-		{
-			$content .= html::li(html::a($key,
-			                             $value['name']));
-			if (!empty($value['sub']))
-				$content .= html::li(self::array_to_list($value['sub'],
-				                                         $type));
-		}
+        foreach ($tree as $key => $value)
+        {
+            $content .= self::_li(self::_a($key,
+                                           $value['name']));
+            if (!empty($value['sub']))
+                $content .= self::_li(self::array_to_list($value['sub'],
+                                                          $type));
+        }
 
-		return self::$type($content);
+        $type = '_' . $type;
+
+        return self::$type($content);
     }
 
     static function box($content)
     {
-		return self::div($content,
-						 array('box'));
+        return self::_div($content,
+                          array('box'));
     }
 
     static function divisor($content,
-    				        $classes = array(),
-    					    $id = null)
+                            $classes = array(),
+                            $id = null)
     {
-		return self::div($content,
-    				     $classes,
-    					 $id);
+        return self::_div($content,
+                          $classes,
+                          $id);
     }
 
-	static function highbox($content)
+    static function highbox($content)
     {
-		return self::div($content,
-						 array('box', 'high'));
+        return self::_div($content,
+                          array('box', 'high'));
     }
 
     static function hyperlink($href,
                               $content = null)
     {
-    	return self::a($href,
-                       (!$content
-                       ? $href
-                       : $content));
+        return self::_a($href,
+                        (!$content
+                        ? $href
+                        : $content));
     }
 
     static function image($src,
-    					  $alt,
+                          $alt,
                           $title = '')
     {
-    	return self::img($src,
-    					 $alt,
-                         $title);
+        return self::_img($src,
+                          $alt,
+                          $title);
     }
 
     static function newline()
     {
-    	return self::br();
+        return self::_br();
     }
 
     static function clearfix()
     {
-        return self::br(1,
-                        'clearfix');
+        return self::_br(1,
+                         'clearfix');
     }
 
-	static function text($content)
+    static function text($content)
     {
-    	return self::p($content);
+        return self::_p($content);
     }
 
     static function preform($content)
     {
-    	return self::pre(var_export($content,
-    	                            true));
+        return self::_pre(var_export($content,
+                                     true));
     }
 
     static function title($level,
                           $content)
     {
-    	if (is_int($level)
-    		&& $level > 0
-    		&& $level <= 7)
-    	{
-    		$level = "h" . $level;
-        	return self::$level($content);
-    	}
+        if (is_int($level)
+            && $level > 0
+            && $level <= 7)
+        {
+            $level = "_h" . $level;
+            return self::$level($content);
+        }
     }
 }
 

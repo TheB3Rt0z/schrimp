@@ -2,16 +2,16 @@
 
 class main
 {
-	public static $todos = array
-	(
-		'documentation' => "PHP highlight_string/file to rapresent code excerpts",
-		'escort library' => "session su PHP poi DB se webstore & memcache fail?",
-		'memcache support' => "verify in method, if at least one mem-server works",
-		'pdf documentation' => "check file mod-date -> reminder on first decimal?",
-	    'css selectors' => "uniform to html-class render-methods (default style)",
-	    'css autoload' => "automatically load ANY file in .inc/inc / css?",
-	    'custom var_dump' => 'it should return ALL parameters, with get_args use',
-	);
+    public static $todos = array
+    (
+        'documentation' => "PHP highlight_string/file to rapresent code excerpts",
+        'escort library' => "session su PHP poi DB se webstore & memcache fail?",
+        'memcache support' => "verify in method, if at least one mem-server works",
+        'pdf documentation' => "check file mod-date -> reminder on first decimal?",
+        'css selectors' => "uniform to html-class render-methods (default style)",
+        'css autoload' => "automatically load ANY file in .inc/inc / css?",
+        'custom var_dump' => 'it should return ALL parameters, with get_args use',
+    );
 
     private $_call = null;
 
@@ -32,12 +32,12 @@ class main
 
     function __construct($uri)
     {
-    	$this->_set_configuration("configuration"); // easy filename change if needed
-    	$this->_load_libraries();
+        $this->_set_configuration("configuration"); // easy filename change if needed
+        $this->_load_libraries();
 
         if (_SET_DEVELOPMENT_MODE) // only for developers, no further error 500 required
             file_put_contents(SET_DOCUMENTATION_MD . ".md",
-        	                  code::get_documentation()); // delete file to resolve permissions
+                              code::get_documentation()); // delete file to resolve permissions
 
         $this->_initialize(str_replace(_SET_LOCAL_PATH . "/",
                                        '',
@@ -46,33 +46,33 @@ class main
 
     private function _set_configuration($conf_name)
     {
-    	$user_file = "." . $conf_name;
-    	$base_file = $user_file . ".tmp";
+        $user_file = "." . $conf_name;
+        $base_file = $user_file . ".tmp";
 
-    	eval("\$base_conf = array(" . file_get_contents($base_file) . ");");
-    	eval("\$user_conf = array(" . file_get_contents($user_file) . ");");
+        eval("\$base_conf = array(" . file_get_contents($base_file) . ");");
+        eval("\$user_conf = array(" . file_get_contents($user_file) . ");");
 
-    	$configuration = $user_conf + $base_conf;
+        $configuration = $user_conf + $base_conf;
 
-    	foreach ($configuration as $key => $value)
-    		define(strtoupper($key), (is_array($value)
-    				                 ? serialize($value)
-    				                 : $value));
+        foreach ($configuration as $key => $value)
+            define(strtoupper($key), (is_array($value)
+                                     ? serialize($value)
+                                     : $value));
 
-    	define('_SET_TRANSPORT_PROTOCOL', "http" . (getenv('HTTPS') == 'on'
-    			                                  ? "s"
-    			                                  : '')); // auto-detecting
+        define('_SET_TRANSPORT_PROTOCOL', "http" . (getenv('HTTPS') == 'on'
+                                                  ? "s"
+                                                  : '')); // auto-detecting
 
-    	define('_SET_HOME_COMPONENT', _SET_DEVELOPMENT_MODE
-    	                             ? "admin"
-    	                             : "homepage"); // convention
+        define('_SET_HOME_COMPONENT', _SET_DEVELOPMENT_MODE
+                                     ? "admin"
+                                     : "homepage"); // convention
 
-    	define('MAX_CYCLOMATIC_COMPLEXITY', SET_COMPLEXITY_INDEX); // base complexity index
-		define('MAX_METHODS_COMPLEXITY', SET_COMPLEXITY_INDEX * 3); // ATM 36 max code lines
-		define('MAX_BLOCK_COMPLEXITY', SET_COMPLEXITY_INDEX * 7); // ATM 84 max code line length
+        define('MAX_CYCLOMATIC_COMPLEXITY', SET_COMPLEXITY_INDEX); // base complexity index
+        define('MAX_METHODS_COMPLEXITY', SET_COMPLEXITY_INDEX * 3); // ATM 36 max code lines
+        define('MAX_BLOCK_COMPLEXITY', SET_COMPLEXITY_INDEX * 7); // ATM 84 max code line length
         define('MAX_PARAMETERS_COMPLEXITY', SET_COMPLEXITY_INDEX / 2); // if more than 6 ATM..
 
-		define('_MAX_CLASS_COMPLEXITY', pow(MAX_BLOCK_COMPLEXITY, 2)); // ATM not used (private optional)
+        define('_MAX_CLASS_COMPLEXITY', pow(MAX_BLOCK_COMPLEXITY, 2)); // ATM not used (private optional)
     }
 
     private function _load_libraries()
@@ -124,17 +124,17 @@ class main
 
         if ($components[0])
         {
-        	if (!substr_count($components[0], "_"))
-        	{
-        		if (fe(_SET_APPLICATION_PUBLICPATH . $components[0] . ".php"))
-        			$this->_path = _SET_APPLICATION_PUBLICPATH; // using external module
-        		elseif (!fe(_SET_APPLICATION_PATH . $components[0] . ".php"))
-        			rt("error/404");
-        	}
-        	else
-        		rt("error/404");
+            if (!substr_count($components[0], "_"))
+            {
+                if (fe(_SET_APPLICATION_PUBLICPATH . $components[0] . ".php"))
+                    $this->_path = _SET_APPLICATION_PUBLICPATH; // using external module
+                elseif (!fe(_SET_APPLICATION_PATH . $components[0] . ".php"))
+                    rt("error/404");
+            }
+            else
+                rt("error/404");
 
-        	$this->_set_route_static_traits($components);
+            $this->_set_route_static_traits($components);
         }
         else
             $this->_set_home_component();
@@ -156,31 +156,31 @@ class main
 
     function get_path()
     {
-    	return $this->_path;
+        return $this->_path;
     }
 
     function get_fullpath()
     {
-    	return $this->_path . self::$controller;
+        return $this->_path . self::$controller;
     }
 
     static function var_dump($what)
     {
-    	echo html::preform($what);
+        echo html::preform($what);
     }
 
     static function get_version($precision = 2)
     {
         return (is_int($precision/2) ? "v": '')
              . number_format(((mktime(date('H'), date('i'), date('s'),
-        		                      date('n'), date('j'), date('Y'))
-        	                 - mktime(17, 11, 33,
-        	                       	  9, 21, 2012)) / 31557600), $precision);
+                                      date('n'), date('j'), date('Y'))
+                             - mktime(17, 11, 33,
+                                      9, 21, 2012)) / 31557600), $precision);
     }
 
     static function is_webstoraged()
     {
-		// local and/or session storage are available? only with js..
+        // local and/or session storage are available? only with js..
     }
 
     static function is_memcached()
@@ -196,7 +196,7 @@ class main
     static function resolve_uri($uri = '')
     {
         return _SET_TRANSPORT_PROTOCOL . "://"
-        	 . $_SERVER['HTTP_HOST']
+             . $_SERVER['HTTP_HOST']
              . _SET_LOCAL_PATH
              . "/" . $uri;
     }
@@ -223,33 +223,33 @@ class main
     static function launch_error_file_not_found($file)
     {
         return le(tr('error',
-	                 'required file (%s) not exists',
-					 $file));
+                     'required file (%s) not exists',
+                     $file));
     }
 
     static function set_buffer($buffer)
     {
-		file_put_contents(".buffer", serialize($buffer));
+        file_put_contents(".buffer", serialize($buffer));
     }
 
     static function get_buffer($delete = true)
     {
-    	$buffer = unserialize(file_get_contents(".buffer"));
+        $buffer = unserialize(file_get_contents(".buffer"));
 
-    	if ($delete)
-    		unlink(".buffer");
+        if ($delete)
+            unlink(".buffer");
 
-    	return $buffer;
+        return $buffer;
     }
 
     static function show_backtrace()
     {
-		ob_start();
-			debug_print_backtrace();
-		main::set_buffer(str_replace("#", html::newline(), ob_get_clean()));
+        ob_start();
+            debug_print_backtrace();
+        main::set_buffer(str_replace("#", html::newline(), ob_get_clean()));
 
-    	if ($_SERVER['REQUEST_URI'] != (_SET_LOCAL_PATH . "/error"))
-    		rt("error");
+        if ($_SERVER['REQUEST_URI'] != (_SET_LOCAL_PATH . "/error"))
+            rt("error");
     }
 }
 
@@ -260,7 +260,7 @@ class main
  */
 function vd($what)
 {
-	main::var_dump($what);
+    main::var_dump($what);
 }
 
 /**
@@ -270,7 +270,7 @@ function vd($what)
  */
 function fe($path)
 {
-	return main::exists_file($path);
+    return main::exists_file($path);
 }
 
 /**
@@ -280,7 +280,7 @@ function fe($path)
  */
 function ru($uri = '')
 {
-	return main::resolve_uri($uri);
+    return main::resolve_uri($uri);
 }
 
 /**
@@ -290,7 +290,7 @@ function ru($uri = '')
  */
 function rt($url = '')
 {
-	main::relocate_to($url);
+    main::relocate_to($url);
 }
 
 /**
@@ -300,7 +300,7 @@ function rt($url = '')
  */
 function le($msg)
 {
-	return main::launch_error($msg);
+    return main::launch_error($msg);
 }
 
 /**
@@ -309,7 +309,7 @@ function le($msg)
  */
 function sb()
 {
-	main::show_backtrace();
+    main::show_backtrace();
 }
 
 ?>
