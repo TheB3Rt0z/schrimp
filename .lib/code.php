@@ -600,47 +600,41 @@ class code
 
     static function analyse_method(reflectionMethod $method)
     {
-        $parameters = self::_list_method_parameters($method);
+        $data['parameters'] = self::_list_method_parameters($method);
+        $data['parameters_warning'] = count($data['parameters'])
+                                    - MAX_PARAMETERS_COMPLEXITY;
 
-        $real_length = $length = $method->getEndLine() - $method->getStartLine()
-                             - (($count = count($parameters) > 1)
+        $data['real_length'] =
+             $data['length'] = $method->getEndLine() - $method->getStartLine()
+                             - (($count = count($data['parameters']) > 1)
                                ? $count - 1
                                : 0) - ($method->isAbstract() ? 0 : 2); // modifier
 
-        $code = array_slice(file($method->getDeclaringClass()->getFileName()),
-                            $method->getEndLine() - $length - 1,
-                            $length);
+        $data['code'] = array_slice(file($method->getFileName()),
+                                    $method->getEndLine() - $data['length'] - 1,
+                                    $data['length']);
 
-        $length_warning = 0;
-        $cyc = 0;
-        foreach ($code as $code_line)
+        $data['length_warning'] = 0;
+        $data['cyc'] = 0;
+        foreach ($data['code'] as $code_line)
         {
             if (self::_is_codeline_too_long($code_line))
-                $length_warning++;
+                $data['length_warning']++;
 
             $code_line = trim($code_line);
             if (empty($code_line))
-                $real_length--;
+                $data['real_length']--;
 
             foreach (self::$_cyc_counters as $counter)
-                $cyc += substr_count($code_line, $counter);
+                $data['cyc'] += substr_count($code_line, $counter);
         }
 
         self::_update_class_warnings($method->getDeclaringClass()->getName(),
-                                     $parameters,
-                                     $length,
-                                     $cyc);
+                                     $data['parameters'],
+                                     $data['length'],
+                                     $data['cyc']);
 
-        return array
-        (
-            'parameters' => $parameters,
-            'parameters_warning' => count($parameters) - MAX_PARAMETERS_COMPLEXITY,
-            'length' => $length,
-            'code' => $code,
-            'real_length' => $real_length,
-            'length_warning' => $length_warning,
-            'cyc' => $cyc,
-        );
+        return $data;
     }
 
     static function get_documentation()
