@@ -123,6 +123,46 @@ class code
         return $output;
     }
 
+    private static function _get_class_constants(reflectionClass $class)
+    {
+        $class_constants = '';
+
+        foreach ($class->getConstants() as $key => $value)
+            if (substr($key, 0, 1) != '_')
+                $class_constants .= "- **" . $key . "** &#10140; "
+                                  . fv($value) . MD_NEWLINE_SEQUENCE;
+
+        return $class_constants;
+    }
+
+    private static function _get_class_reference(reflectionClass $class)
+    {
+        $reference = '';
+
+        $class_methods = $class->getMethods();
+
+        usort($class_methods, function($a, $b)
+                              {
+                                  return $a->name > $b->name;
+                              });
+
+        foreach ($class_methods as $method)
+            $reference .= self::_get_methods_information($method);
+
+        return $reference;
+    }
+
+    private static function _get_class_todos(reflectionClass $class)
+    {
+        $class_todos = '';
+
+        foreach ($class->getStaticPropertyValue('todos') as $key => $value)
+            $class_todos .= "- **" . $key . "** &#10140; " . $value
+                          . MD_NEWLINE_SEQUENCE;
+
+        return $class_todos;
+    }
+
     private static function _add_paragraph($data,
                                            $title)
     {
@@ -526,66 +566,40 @@ class code
 
     static function get_class_data(reflectionClass $class)
     {
-        $header = "Class " . strtoupper($class->name)
-                . " (" . date('r', filemtime($class->getFileName())) . ")";
+        $data['header'] = "Class " . strtoupper($class->name)
+                        . " (" . date('r', filemtime($class->getFileName())) . ")";
 
-        $class_constants = '';
-        foreach ($class->getConstants() as $key => $value)
-            if (substr($key, 0, 1) != '_')
-                $class_constants .= "- **" . $key . "** &#10140; "
-                                  . fv($value) . MD_NEWLINE_SEQUENCE;
+        $data['class_constants'] = self::_get_class_constants($class);
+        $data['reference'] = self::_get_class_reference($class);
+        $data['dependencies'] = self::get_class_dependencies($class);
+        $data['class_todos'] = self::_get_class_todos($class);
 
-        $reference = '';
-        $class_methods = $class->getMethods();
-        usort($class_methods, function($a, $b)
-                              {
-                                  return $a->name > $b->name;
-                              });
-        foreach ($class_methods as $method)
-            $reference .= self::_get_methods_information($method);
+        $data['class_path'] = "root" . str_replace(realpath(null),
+                                                   '',
+                                                   $class->getFileName());
 
-        $class_todos = '';
-        foreach ($class->getStaticPropertyValue('todos') as $key => $value)
-            $class_todos .= "- **" . $key . "** &#10140; " . $value
-                          . MD_NEWLINE_SEQUENCE;
+        $data['real_length'] =
+             $data['length'] = $class->getEndLine() - $class->getStartLine() - 2;
 
-        $class_path = "root" . str_replace(realpath(null),
-                                           '',
-                                           $class->getFileName());
+        $data['code'] = array_slice(file($class->getFileName()),
+                                    $class->getStartLine() + 1, // indentation + parentheses
+                                    $data['length']);
 
-        $real_length = $length = $class->getEndLine() - $class->getStartLine() - 2;
-
-        $code = array_slice(file($class->getFileName()),
-                            $class->getStartLine() + 1, // indentation + parentheses
-                            $length);
-
-        $length_warning = 0;
-        foreach ($code as $code_line)
+        $data['length_warning'] = 0;
+        foreach ($data['code'] as $code_line)
         {
              if (self::_is_codeline_too_long($code_line))
-                $length_warning++;
+                $data['length_warning']++;
 
             $code_line = trim($code_line);
             if (empty($code_line))
-                $real_length--;
+                $data['real_length']--;
         }
 
-        $cis = count($class->getProperties(ReflectionProperty::IS_PUBLIC))
-             + count($class->getMethods(ReflectionMethod::IS_PUBLIC));
+        $data['cis'] = count($class->getProperties(ReflectionProperty::IS_PUBLIC))
+                     + count($class->getMethods(ReflectionMethod::IS_PUBLIC));
 
-        return array
-        (
-            'header' => $header,
-            'class_constants' => $class_constants,
-            'reference' => $reference,
-            'dependencies' => self::get_class_dependencies($class),
-            'class_todos' => $class_todos,
-            'class_path' => $class_path,
-            'length' => $length,
-            'real_length' => $real_length,
-            'length_warning' => $length_warning,
-            'cis' => $cis,
-        );
+        return $data;
     }
 
     static function get_method_status(reflectionMethod $method)
