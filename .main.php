@@ -118,7 +118,7 @@ class main
     private function _initialize($route) // set "AllowOverride All" directive for .htaccess file required!
     {
         $components = explode("/",
-                              $route);
+                              strtolower($route)); // lowering string avoids conflicts with class names
 
         $this->_path = _SET_APPLICATION_PATH; // using default modules
 

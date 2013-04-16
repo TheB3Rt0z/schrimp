@@ -15,7 +15,7 @@ class html
 
     private $_html = '';
 
-    private $_tags = array
+    private $_tags = array // this could carry extra information about tag..
     (
         'single' => array
         (
@@ -36,9 +36,11 @@ class html
             'h7', // experimental
             'li',
             'ol',
+            'option',
             'p',
             'pre',
             'script',
+            'select',
             'ul',
         )
     );
@@ -304,6 +306,25 @@ class html
         return $self->_html;
     }
 
+    private static function _option($value,
+                                    $name,
+                                    $selected = false)
+    {
+        $attributes = array
+        (
+            'value' => trim($value),
+        );
+
+        if ($selected)
+            $attributes['selected'] = 'selected';
+
+        $self = new self('option',
+                         $attributes,
+                         $name);
+
+        return $self->_html;
+    }
+
     private static function _p($content)
     {
         $self = new self('p',
@@ -352,6 +373,20 @@ class html
         }
         else
             return false; // this script SEEMS to be already loaded
+
+        return $self->_html;
+    }
+
+    private static function _select($content,
+                                    $attributes = array(),
+                                    $classes = '')
+    {
+        if (!empty($classes))
+            $attributes['class'] = trim($classes);
+
+        $self = new self('select',
+                         $attributes,
+                         $content);
 
         return $self->_html;
     }
@@ -491,6 +526,29 @@ class html
             $level = "_h" . $level;
             return self::$level($content);
         }
+    }
+
+    static function dropdown($options,
+                             $selected = null,
+                             $onchange = false)
+    {
+        $content = '';
+
+        foreach ($options as $key => $values)
+        {
+            $selected_check = (!empty($selected) && ($selected == $key));
+
+            $content .= self::_option($key,
+                                      $values['name'],
+                                      $selected_check);
+        }
+
+        $attributes = array();
+        if (!empty($onchange))
+            $attributes['onchange'] = trim($onchange);
+
+        return self::_select($content,
+                             $attributes);
     }
 }
 

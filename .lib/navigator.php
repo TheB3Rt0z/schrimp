@@ -226,6 +226,34 @@ class navigator
 			echo $structure['sub'][$controller]['name'];
 	}
 
+	private function _render_active_breadcrumb($controller)
+	{
+	    $structure = $this->_structure[_SET_HOME_COMPONENT];
+
+	    echo html::hyperlink('',
+			                 $structure['name'])
+		   . HTML_BREADCRUMB_SEPARATOR;
+
+	    $options = array();
+        foreach ($structure['sub'] as $key => $values)
+            $options[$key] = array
+            (
+                'name' => $values['name'],
+            );
+
+        if (count($options) > 1)
+            echo html::dropdown($options,
+                                $controller,
+                                "document.location.href='" . ru() . "' + this.value;");
+        else
+            echo $structure['sub'][$controller]['name'];
+
+	    if (!empty(main::$action))
+	    {
+
+	    }
+	}
+
 	static function render_list()
 	{
 		$self = new self;
@@ -249,14 +277,23 @@ class navigator
 
 	static function render_active_breadcrumb()
 	{
-		// to be continued after breadcrumb code analysis
+		$controller = main::$controller;
+
+		if (!$controller::RENDER_BREADCRUMB)
+			return false;
+
+	    if ($controller != _SET_HOME_COMPONENT)
+		{
+			$self = new self;
+			$self->_render_active_breadcrumb($controller);
+		}
 	}
 
 	static function render_sitemap()
 	{
 		$self = new self; // populating structure array if still null (singleton)
 
-		$sub_structure = self::$_structure[_SET_HOME_COMPONENT]['sub'];
+		$sub_structure = $self->_structure[_SET_HOME_COMPONENT]['sub'];
 
         return html::array_to_list($sub_structure, 'ol');
 	}

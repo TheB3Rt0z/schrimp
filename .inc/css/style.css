@@ -167,6 +167,10 @@ section, #section
     border: 0;
 }
 
+select {
+	cursor: pointer;
+}
+
 ul
 {
     padding: 0 5px 5px 0;

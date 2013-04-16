@@ -2,7 +2,10 @@
 
 class error extends controller
 {
-	public static $todos = array();
+	public static $todos = array
+	(
+	    'error 404 page' => "style is disrupted, try to correct with error.css?",
+	);
 
 	const VISIBLE_IN_NAVIGATION = false;
 
