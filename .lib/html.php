@@ -316,7 +316,10 @@ class html
         );
 
         if ($selected)
+        {
             $attributes['selected'] = 'selected';
+            $attributes['disabled'] = 'disabled'; // to be continued..
+        }
 
         $self = new self('option',
                          $attributes,
