@@ -234,9 +234,11 @@ class control extends controller
  		                		            ? '_' . $this->_args[0]
  		                		            : '')));
 
-		$output = $this->helper->get_phpinfos($this->_args[0]);
+		if (!empty($this->_args[0]))
+		    $output = $this->helper->get_phpinfos($this->_args[0]);
 
-        $this->_set_article(html::highbox($output));
+        if (!empty($output))
+            $this->_set_article(html::highbox($output));
 	}
 }
 
