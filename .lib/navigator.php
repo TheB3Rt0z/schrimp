@@ -272,7 +272,37 @@ class navigator
 
             if (!empty(main::$args))
             {
-                // render last part of breadcrumb
+                $branch = $branch['sub'][$link];
+
+                $link = $link .= '/' . main::$args[0];
+
+                $options = array();
+                    foreach ($branch['sub'] as $key => $values)
+                        $options[$key] = array
+                        (
+                            'name' => $values['name'],
+                        );
+
+                echo HTML_BREADCRUMB_SEPARATOR;
+
+                if (count($options) > 1)
+                    echo html::dropdown($options,
+                                        $link,
+                                        "document.location.href='" . ru() . "' + this.value;");
+                else
+                    echo $branch['sub'][$link]['name'];
+
+                // adding extra parameters??
+/*$branch['sub'][$link]['handler'] .= '_' . main::$args[0];
+
+if (count(main::$args) > 1)
+    $this->_print_additional_parameters($branch,
+                                        $link,
+                                        $controller);
+else
+    $this->_print_handler_name($branch,
+                               $link,
+                               $controller);*/
             }
         }
     }
