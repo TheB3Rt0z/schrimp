@@ -274,7 +274,7 @@ class navigator
             {
                 $branch = $branch['sub'][$link];
 
-                $link = $link .= '/' . main::$args[0];
+                $handler = $link .= '/' . main::$args[0];
 
                 $options = array();
                     foreach ($branch['sub'] as $key => $values)
@@ -287,10 +287,10 @@ class navigator
 
                 if (count($options) > 1)
                     echo html::dropdown($options,
-                                        $link,
+                                        $handler,
                                         "document.location.href='" . ru() . "' + this.value;");
                 else
-                    echo $branch['sub'][$link]['name'];
+                    echo $branch['sub'][$handler]['name'];
 
                 // adding extra parameters??
 /*$branch['sub'][$link]['handler'] .= '_' . main::$args[0];
