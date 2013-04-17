@@ -12,6 +12,9 @@ class code
         'get_class_dependencies 2' => "it should count, then order dependencies",
     );
 
+    const _STR_SUMMARY_BLUE = "Method(s) with too many parameters?";
+    const _STR_SUMMARY_YELLOW = "Attention! Some yellow alert(s)!";
+    const _STR_SUMMARY_RED = "Warning! Warning! Some red alert(s)!";
     const _STR_LENGTH_WARNING = "Method's length could be reduced..";
     const _STR_LENGTH_ERROR = "Method's length should be reduced!";
     const _STR_CYC_WARNING = "Method's cyclomatic complexity could be reduced..";
@@ -110,15 +113,15 @@ class code
 
         if (!empty(self::$_class_warnings[$class_name]['blue']))
             $output .= " " . self::$_class_warnings[$class_name]['blue'] . " "
-                     . md::blue_boh("Methods with too many parameters?");
+                     . md::blue_boh(self::_STR_SUMMARY_BLUE);
 
         if (!empty(self::$_class_warnings[$class_name]['yellow']))
             $output .= " " . self::$_class_warnings[$class_name]['yellow'] . " "
-                     . md::yellow_ops("Attention! Some yellow alert(s)!");
+                     . md::yellow_ops(self::_STR_SUMMARY_YELLOW);
 
         if (!empty(self::$_class_warnings[$class_name]['red']))
             $output .= " " . self::$_class_warnings[$class_name]['red'] . " "
-                     . md::red_ics("Warning! Warning! Some red alert(s)!");
+                     . md::red_ics(self::_STR_SUMMARY_RED);
 
         return $output;
     }
