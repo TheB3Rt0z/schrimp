@@ -6,6 +6,7 @@ class control extends controller
     (
         'phpinfo server conf' => "better rappresentation of access details",
         'plugins libraries' => "find a way to incapsulate needed translations", // maybe static array of translations? default if only one level..) and controls (?) in backend!
+        'handler_core_language' => "this should be te next to be written..",
     );
 
 	function initialize()
@@ -96,7 +97,7 @@ class control extends controller
 		//elseif (language::is_supported(func_get_arg(0)))
 			// operation for supported language
 		//else
-			rt("error/404");
+			//rt("error/404");
 
 		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
 		                . HTML_BREADCRUMB_SEPARATOR

@@ -292,17 +292,16 @@ class navigator
                 else
                     echo $branch['sub'][$handler]['name'];
 
-                // adding extra parameters??
-/*$branch['sub'][$link]['handler'] .= '_' . main::$args[0];
+                if (count(main::$args) > 1)
+                {
+                    echo HTML_BREADCRUMB_SEPARATOR . main::$args[1];
 
-if (count(main::$args) > 1)
-    $this->_print_additional_parameters($branch,
-                                        $link,
-                                        $controller);
-else
-    $this->_print_handler_name($branch,
-                               $link,
-                               $controller);*/
+                    if (!empty(main::$args[2]))
+                        echo " ("
+                           . urldecode(implode(", ",
+                                               array_slice(main::$args, 2)))
+                           . ")";
+                }
             }
         }
     }
