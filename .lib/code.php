@@ -667,7 +667,6 @@ class code
                                               "Function aliases")
                        . self::_add_paragraph(self::_get_todos_information(),
                                               "TODOs")
-                       . self::_get_todos_information()
                        . md::hr()
                        . self::_get_classes_information()
                        . self::_get_components_information() // adding more information?

@@ -166,7 +166,7 @@ class main
 
     function get_head_links() // SVG inline editing (php driven) if css + js != enough
     {
-        html::add_favicon(_SET_INCLUDES_PATH . "img/schrimp_favicon.ico"); //html::add_stylesheet("http://fonts.googleapis.com/css?family=Amaranth:700");
+        html::add_favicon(_SET_INCLUDES_PATH . "img/schrimp_favicon.ico"); // html::add_stylesheet("http://fonts.googleapis.com/css?family=Amaranth:700");
 
         html::add_stylesheet(_SET_INCLUDES_PATH . "css/style.css");
         if (_SET_ADVANCED_INTERFACE)
@@ -180,8 +180,8 @@ class main
         if (_SET_DESIGN_MODE)
             html::add_stylesheet(_SET_INCLUDES_PATH . "css/debug.css");
 
-        html::add_js_file(_SET_INCLUDES_PATH . "js/jquery.js"); //html::add_js_file("//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js");
-        html::add_js_file(_SET_INCLUDES_PATH . "js/jquery_ui.js"); //html::add_js_file("//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js");
+        html::add_js_file(_SET_INCLUDES_PATH . "js/jquery.js"); // html::add_js_file("//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js");
+        html::add_js_file(_SET_INCLUDES_PATH . "js/jquery_ui.js"); // html::add_js_file("//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js");
         html::add_js_file(_SET_INCLUDES_PATH . "js/jquery_gestures.js");
         html::add_js_file(_SET_INCLUDES_PATH . "js/jquery_jcarousel.js");
 
