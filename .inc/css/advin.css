@@ -1,1 +1,33 @@
 @CHARSET "UTF-8";
+
+div#header > div.box
+{
+    white-space: nowrap;
+    width: 27px;
+    overflow-x: hidden;
+    transition: .5s;
+        -webkit-transition: .5s;
+        -khtml-transition: .5s;
+        -moz-transition: .5s;
+        -ms-transition: .5s;
+        -o-transition: .5s;
+}
+
+div#header > div.box:hover
+{
+    width: auto;
+}
+
+div#header > div.box > span.marker
+{
+    font-size: 35px;
+    padding: 0 10px 0 5px;
+    color: white;
+    display: inline-block;
+    line-height: 15px;
+}
+
+div#header > div.box:hover > span.marker
+{
+    display: none;
+}

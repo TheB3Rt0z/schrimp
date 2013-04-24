@@ -1,12 +1,15 @@
 <?php
 
-define('HTML_BREADCRUMB_SEPARATOR', " &raquo; ");
+define('HTML_BREADCRUMB_SEPARATOR', " &rsaquo; ");
+define('HTML_ARROW_LEFT', "&laquo;");
+define('HTML_ARROW_RIGHT', "&raquo;");
 
 class html
 {
     public static $todos = array
     (
         'script online loading' => "if != local, should have a lfb..",
+        'classes as string' => "check class for \$classes = '', should be array",
     );
 
     private $_tag = null;
@@ -41,6 +44,7 @@ class html
             'pre',
             'script',
             'select',
+            'span',
             'ul',
         )
     );
@@ -394,6 +398,20 @@ class html
         return $self->_html;
     }
 
+    private static function _span($content,
+                                  $attributes = array(),
+                                  $classes = array())
+    {
+        if (!empty($classes))
+            $attributes['class'] = implode($classes, " ");
+
+        $self = new self('span',
+                         $attributes,
+                         $content);
+
+        return $self->_html;
+    }
+
     private static function _ul($content,
                                 $classes = '')
     {
@@ -511,6 +529,14 @@ class html
     static function text($content)
     {
         return self::_p($content);
+    }
+
+    static function spanner($content,
+                            $classes = '')
+    {
+        return self::_span($content,
+                           array(),
+                           explode(" ", $classes));
     }
 
     static function preform($content)

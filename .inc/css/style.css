@@ -2,38 +2,38 @@
 
 a
 {
-	color: #CCC;
-	text-shadow: 0 1px 1px #000;
+    color: #CCC;
+    text-shadow: 0 1px 1px #000;
         -webkit-text-shadow: 0 1px 1px #000;
         -khtml-text-shadow: 0 1px 1px #000;
         -moz-text-shadow: 0 1px 1px #000;
         -ms-text-shadow: 0 1px 1px #000;
         -o-text-shadow: 0 1px 1px #000;
-	transition: .125s;
-    	-webkit-transition: .125s;
-    	-khtml-transition: .125s;
-    	-moz-transition: .125s;
-    	-ms-transition: .125s;
-    	-o-transition: .125s;
+    transition: .125s;
+        -webkit-transition: .125s;
+        -khtml-transition: .125s;
+        -moz-transition: .125s;
+        -ms-transition: .125s;
+        -o-transition: .125s;
 }
 
-	a:hover
-	{
-		color: #fff;
-		text-shadow: 0 -1px 1px #fff;
-    		-webkit-text-shadow: 0 -1px 1px #fff;
-    		-khtml-text-shadow: 0 -1px 1px #fff;
-    		-moz-text-shadow: 0 -1px 1px #fff;
-    		-ms-text-shadow: 0 -1px 1px #fff;
-    		-o-text-shadow: 0 -1px 1px #fff;
-	}
+    a:hover
+    {
+        color: #fff;
+        text-shadow: 0 -1px 1px #fff;
+            -webkit-text-shadow: 0 -1px 1px #fff;
+            -khtml-text-shadow: 0 -1px 1px #fff;
+            -moz-text-shadow: 0 -1px 1px #fff;
+            -ms-text-shadow: 0 -1px 1px #fff;
+            -o-text-shadow: 0 -1px 1px #fff;
+    }
 
 address
 {
     display: inline;
 }
 
-article, #article
+article, div#article
 {
     float: left;
     padding: 0;
@@ -41,7 +41,7 @@ article, #article
     border: 0;
 }
 
-aside, #aside
+aside, div#aside
 {
     float: right;
     padding: 0;
@@ -70,24 +70,24 @@ br.clearfix
 
 div
 {
-	padding: 0;
-	margin: 0;
-	border: 0;
-	float: left;
-	word-wrap: break-word;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    float: left;
+    word-wrap: break-word;
 }
 
 div.box
 {
-	margin: 5px;
-	padding: 5px;
-	background-color: rgba(0, 0, 0, .125);
-	border: solid 1px transparent;
+    margin: 5px;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, .125);
+    border: solid 1px transparent;
     border-top-color: #111;
     border-left-color: #444;
     border-right-color: #999;
     border-bottom-color: #ccc;
-	border-radius: 5px;
+    border-radius: 5px;
         -webkit-border-radius: 5px;
         -khtml-border-radius: 5px;
         -moz-border-radius: 5px;
@@ -103,7 +103,7 @@ div.box
 
     div.box:hover
     {
-    	background-color: rgba(255, 255, 255, .125);
+        background-color: rgba(255, 255, 255, .125);
         border-top-color: #ccc;
         border-left-color: #999;
         border-right-color: #444;
@@ -113,7 +113,7 @@ div.box
 div.high
 {
     background-color: #999;
-	box-shadow: 0 1px 1px #000;
+    box-shadow: 0 1px 1px #000;
         -webkit-box-shadow: 0 1px 1px #000;
         -khtml-box-shadow: 0 1px 1px #000;
         -moz-box-shadow: 0 1px 1px #000;
@@ -132,7 +132,7 @@ div.high
             -o-box-shadow: 0 2px 2px #000;
     }
 
-footer, #footer
+footer, div#footer
 {
     padding: 0;
     margin: 0;
@@ -146,21 +146,21 @@ h1, h2, h3, h4, h5, h6, h7
     border: 0;
 }
 
-header, #header
+header, div#header
 {
     padding: 0;
     margin: 0;
     border: 0;
 }
 
-nav, #nav
+nav, div#nav
 {
     padding: 0;
     margin: 0;
     border: 0;
 }
 
-section, #section
+section, div#section
 {
     padding: 0;
     margin: 0;
@@ -168,7 +168,7 @@ section, #section
 }
 
 select {
-	cursor: pointer;
+    cursor: pointer;
 }
 
 ul

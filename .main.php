@@ -170,7 +170,7 @@ class main
 
         html::add_stylesheet(_SET_INCLUDES_PATH . "css/style.css");
         if (_SET_ADVANCED_INTERFACE)
-            html::add_js_file(_SET_INCLUDES_PATH . "css/advin.css");
+            html::add_stylesheet(_SET_INCLUDES_PATH . "css/advin.css");
 
         if (fe(_SET_INCLUDES_PUBLICPATH . "css/style.css"))
             html::add_stylesheet(_SET_INCLUDES_PUBLICPATH . "css/style.css");

@@ -230,7 +230,9 @@ class navigator
     {
         $structure = $this->_structure[_SET_HOME_COMPONENT];
 
-        echo html::hyperlink('',
+        echo html::spanner(HTML_ARROW_RIGHT,
+                           'marker')
+           . html::hyperlink('',
                              $structure['name'])
            . HTML_BREADCRUMB_SEPARATOR;
 
