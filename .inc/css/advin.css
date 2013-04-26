@@ -1,24 +1,19 @@
 @CHARSET "UTF-8";
 
-div#header > div.box
+
+div#header > div.box > div
 {
-    white-space: nowrap;
-    width: 27px;
-    overflow-x: hidden;
-    transition: .5s;
-        -webkit-transition: .5s;
-        -khtml-transition: .5s;
-        -moz-transition: .5s;
-        -ms-transition: .5s;
-        -o-transition: .5s;
+    width: 25px;
+    height: 21px;
+    overflow: hidden;
 }
 
-div#header > div.box:hover
+div#header > div.box > div:hover
 {
     width: auto;
 }
 
-div#header > div.box > span.marker
+div#header > div.box > div > span.marker
 {
     font-size: 35px;
     padding: 0 10px 0 5px;
@@ -27,7 +22,7 @@ div#header > div.box > span.marker
     line-height: 15px;
 }
 
-div#header > div.box:hover > span.marker
+div#header > div.box > div:hover > span.marker
 {
     display: none;
 }

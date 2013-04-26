@@ -476,12 +476,6 @@ class html
         return self::$type($content);
     }
 
-    static function box($content)
-    {
-        return self::_div($content,
-                          array('box'));
-    }
-
     static function divisor($content,
                             $classes = array(),
                             $id = null)
@@ -489,6 +483,12 @@ class html
         return self::_div($content,
                           $classes,
                           $id);
+    }
+
+    static function box($content)
+    {
+        return self::_div($content,
+                          array('box'));
     }
 
     static function highbox($content)

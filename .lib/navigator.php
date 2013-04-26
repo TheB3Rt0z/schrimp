@@ -230,11 +230,11 @@ class navigator
     {
         $structure = $this->_structure[_SET_HOME_COMPONENT];
 
-        echo html::spanner(HTML_ARROW_RIGHT,
-                           'marker')
-           . html::hyperlink('',
-                             $structure['name'])
-           . HTML_BREADCRUMB_SEPARATOR;
+        $code = html::spanner(HTML_ARROW_RIGHT,
+                             'marker')
+              . html::hyperlink('',
+                                $structure['name'])
+              . HTML_BREADCRUMB_SEPARATOR;
 
         $options = array();
         foreach ($structure['sub'] as $key => $values)
@@ -244,11 +244,11 @@ class navigator
             );
 
         if (count($options) > 1)
-            echo html::dropdown($options,
-                                $controller,
-                                "document.location.href='" . ru() . "' + this.value;");
+            $code .= html::dropdown($options,
+                                    $controller,
+                                    "document.location.href='" . ru() . "' + this.value;");
         else
-            echo $structure['sub'][$controller]['name'];
+            $code .= $structure['sub'][$controller]['name'];
 
         if (!empty(main::$action))
         {
@@ -263,14 +263,14 @@ class navigator
                     'name' => $values['name'],
                 );
 
-            echo HTML_BREADCRUMB_SEPARATOR;
+            $code .= HTML_BREADCRUMB_SEPARATOR;
 
             if (count($options) > 1)
-                echo html::dropdown($options,
-                                    $link,
-                                    "document.location.href='" . ru() . "' + this.value;");
+                $code .= html::dropdown($options,
+                                        $link,
+                                        "document.location.href='" . ru() . "' + this.value;");
             else
-                echo $branch['sub'][$link]['name'];
+                $code .= $branch['sub'][$link]['name'];
 
             if (!empty(main::$args))
             {
@@ -285,27 +285,29 @@ class navigator
                             'name' => $values['name'],
                         );
 
-                echo HTML_BREADCRUMB_SEPARATOR;
+                $code .= HTML_BREADCRUMB_SEPARATOR;
 
                 if (count($options) > 1)
-                    echo html::dropdown($options,
-                                        $handler,
-                                        "document.location.href='" . ru() . "' + this.value;");
+                    $code .= html::dropdown($options,
+                                            $handler,
+                                            "document.location.href='" . ru() . "' + this.value;");
                 else
-                    echo $branch['sub'][$handler]['name'];
+                    $code .= $branch['sub'][$handler]['name'];
 
                 if (count(main::$args) > 1)
                 {
-                    echo HTML_BREADCRUMB_SEPARATOR . main::$args[1];
+                    $code .= HTML_BREADCRUMB_SEPARATOR . main::$args[1];
 
                     if (!empty(main::$args[2]))
-                        echo " ("
-                           . urldecode(implode(", ",
-                                               array_slice(main::$args, 2)))
-                           . ")";
+                        $code .= " ("
+                               . urldecode(implode(", ",
+                                                   array_slice(main::$args, 2)))
+                               . ")";
                 }
             }
         }
+
+        echo html::divisor($code);
     }
 
     static function render_list()
