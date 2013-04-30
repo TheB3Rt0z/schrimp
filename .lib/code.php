@@ -220,7 +220,7 @@ class code
             $summary .= md::hyperlink($values['label'],
                                       $key)
                       . (!empty($values['todos'])
-                        ? " " . str_repeat("&#9794;",
+                        ? " " . str_repeat("&#9733;",
                                            $values['todos']) . " "
                         : '')
                       . " (" . $values['path']
