@@ -239,6 +239,57 @@ class navigator
             echo $structure['sub'][$controller]['name'];
     }
 
+    private function _get_action_select($structure,
+                                        $controller,
+                                        $link)
+    {
+        $branch = $structure['sub'][$controller];
+
+        $code = HTML_BREADCRUMB_SEPARATOR;
+
+        if (count($options = $this->_initialize_options($branch['sub'])) > 1)
+            $code .= html::dropdown($options,
+                                    $link,
+                                    "document.location.href='"
+                                  . ru() . "' + this.value;");
+        else
+            $code .= $branch['sub'][$link]['name'];
+
+        return $code;
+    }
+
+    private function _get_args_select($structure,
+                                      $controller,
+                                      $link)
+    {
+        $branch = $structure['sub'][$controller]['sub'][$link];
+
+        $handler = $link .= '/' . main::$args[0];
+
+        $code = HTML_BREADCRUMB_SEPARATOR;
+
+        if (count($options = $this->_initialize_options($branch['sub'])) > 1)
+            $code .= html::dropdown($options,
+                                    $handler,
+                                    "document.location.href='"
+                                  . ru() . "' + this.value;");
+        else
+            $code .= $branch['sub'][$handler]['name'];
+
+        if (count(main::$args) > 1)
+        {
+            $code .= HTML_BREADCRUMB_SEPARATOR . main::$args[1];
+
+            if (!empty(main::$args[2]))
+                $code .= " ("
+                       . urldecode(implode(", ",
+                                           array_slice(main::$args, 2)))
+                       . ")";
+        }
+
+        return $code;
+    }
+
     private function _render_active_breadcrumb($controller)
     {
         $structure = $this->_structure[_SET_HOME_COMPONENT];
@@ -259,47 +310,15 @@ class navigator
 
         if (!empty(main::$action))
         {
-            $branch = $structure['sub'][$controller];
-
-            $link = $controller . "/" . main::$action;
-
-            $code .= HTML_BREADCRUMB_SEPARATOR;
-
-            if (count($options = $this->_initialize_options($branch['sub'])) > 1)
-                $code .= html::dropdown($options,
-                                        $link,
-                                        "document.location.href='"
-                                      . ru() . "' + this.value;");
-            else
-                $code .= $branch['sub'][$link]['name'];
+            $code .= $this->_get_action_select($structure,
+                                               $controller,
+                                               $link = $controller
+                                                   . "/" . main::$action);
 
             if (!empty(main::$args))
-            {
-                $branch = $branch['sub'][$link];
-
-                $handler = $link .= '/' . main::$args[0];
-
-                $code .= HTML_BREADCRUMB_SEPARATOR;
-
-                if (count($options = $this->_initialize_options($branch['sub'])) > 1)
-                    $code .= html::dropdown($options,
-                                            $handler,
-                                            "document.location.href='"
-                                          . ru() . "' + this.value;");
-                else
-                    $code .= $branch['sub'][$handler]['name'];
-
-                if (count(main::$args) > 1)
-                {
-                    $code .= HTML_BREADCRUMB_SEPARATOR . main::$args[1];
-
-                    if (!empty(main::$args[2]))
-                        $code .= " ("
-                               . urldecode(implode(", ",
-                                                   array_slice(main::$args, 2)))
-                               . ")";
-                }
-            }
+                $code .= $this->_get_args_select($structure,
+                                                 $controller,
+                                                 $link);
         }
 
         echo html::divisor($code);
