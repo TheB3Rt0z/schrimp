@@ -3,6 +3,7 @@
 define('HTML_BREADCRUMB_SEPARATOR', " &rsaquo; ");
 define('HTML_ARROW_LEFT', "&laquo;");
 define('HTML_ARROW_RIGHT', "&raquo;");
+define('HTML_ICON_NAVIGATION', "&#9875;");
 
 class html
 {

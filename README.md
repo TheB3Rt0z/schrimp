@@ -1,4 +1,4 @@
-![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.6.2013.04.26  
+![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.6.2013.04.30  
 =========================================================================================================================================  
   
   
@@ -10,11 +10,11 @@ Table of contents
 [Library controller](#-class-controller-thu-21-mar-2013-112255-0000-- "") (root/.lib/controller.php, Len: 90/116, CIS: 9 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library db](#-class-db-mon-25-mar-2013-154730-0000-- "") (root/.lib/db.php, Len: 27/30, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library escort](#-class-escort-mon-25-mar-2013-100351-0000-- "") (root/.lib/escort.php, Len: 3/3, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library html](#-class-html-fri-26-apr-2013-093816-0000-- "") (root/.lib/html.php, Len: 466/573, CIS: 19 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library html](#-class-html-tue-30-apr-2013-131752-0000-- "") (root/.lib/html.php, Len: 466/573, CIS: 19 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library language](#-class-language-mon-04-mar-2013-104100-0000-- "") (root/.lib/language.php, Len: 80/93, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library main](#-class-main-wed-24-apr-2013-105720-0000-- "") (root/.main.php, Len: 216/274, CIS: 28 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library md](#-class-md-mon-15-apr-2013-082708-0000-- "") (root/.lib/md.php, Len: 176/218, CIS: 12 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library navigator](#-class-navigator-fri-26-apr-2013-093816-0000-- "") (root/.lib/navigator.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "3 too long line(s) found!") Len: 287/351, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!")  
+[Library navigator](#-class-navigator-tue-30-apr-2013-131820-0000-- "") (root/.lib/navigator.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "3 too long line(s) found!") Len: 287/351, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!")  
 [Library powering](#-class-powering-tue-23-apr-2013-154248-0000-- "") (root/lib/powering.php, Len: 4/4, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library toolbox](#-class-toolbox-mon-18-mar-2013-093201-0000-- "") (root/.lib/toolbox.php, Len: 23/24, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library widgets](#-class-widgets-tue-23-apr-2013-154136-0000-- "") (root/.lib/widgets.php, Len: 4/4, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -40,6 +40,7 @@ General reference
 - **HTML_ARROW_LEFT** &#10140; "&laquo;"  
 - **HTML_ARROW_RIGHT** &#10140; "&raquo;"  
 - **HTML_BREADCRUMB_SEPARATOR** &#10140; " &rsaquo; "  
+- **HTML_ICON_NAVIGATION** &#10140; "&#9875;"  
 - **LANGUAGE_FALLBACK_LANG** &#10140; "en"  
 - **MAX_BLOCK_COMPLEXITY** &#10140; 84  
 - **MAX_CYCLOMATIC_COMPLEXITY** &#10140; 12  
@@ -212,7 +213,7 @@ Uses: **html**, **navigator**
   
 ***  
   
-[⇧](# "to the top") Class HTML (Fri, 26 Apr 2013 09:38:16 +0000)  
+[⇧](# "to the top") Class HTML (Tue, 30 Apr 2013 13:17:52 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -361,7 +362,7 @@ Uses: **code**, **html**
   
 ***  
   
-[⇧](# "to the top") Class NAVIGATOR (Fri, 26 Apr 2013 09:38:16 +0000)  
+[⇧](# "to the top") Class NAVIGATOR (Tue, 30 Apr 2013 13:18:20 +0000)  
 -------------------------------------------------  
   
 **CODE REFERENCE:**  

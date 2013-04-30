@@ -230,7 +230,7 @@ class navigator
     {
         $structure = $this->_structure[_SET_HOME_COMPONENT];
 
-        $code = html::spanner(HTML_ARROW_RIGHT,
+        $code = html::spanner(HTML_ICON_NAVIGATION,
                              'marker')
               . html::hyperlink('',
                                 $structure['name'])
