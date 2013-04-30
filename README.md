@@ -10,7 +10,7 @@ Table of contents
 [Library controller](#-class-controller-tue-30-apr-2013-151059-0000-- "") (root/.lib/controller.php, Len: 92/119, CIS: 9 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library db](#-class-db-mon-25-mar-2013-154730-0000-- "") (root/.lib/db.php, Len: 27/30, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library escort](#-class-escort-mon-25-mar-2013-100351-0000-- "") (root/.lib/escort.php, Len: 3/3, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library html](#-class-html-tue-30-apr-2013-151059-0000-- "") (root/.lib/html.php, Len: 466/573, CIS: 19 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library html](#-class-html-tue-30-apr-2013-153031-0000-- "") (root/.lib/html.php, Len: 466/573, CIS: 19 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library language](#-class-language-mon-04-mar-2013-104100-0000-- "") (root/.lib/language.php, Len: 80/93, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library main](#-class-main-wed-24-apr-2013-105720-0000-- "") (root/.main.php, Len: 216/274, CIS: 28 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library md](#-class-md-mon-15-apr-2013-082708-0000-- "") (root/.lib/md.php, Len: 176/218, CIS: 12 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -40,8 +40,8 @@ General reference
 - **HTML_ARROW_LEFT** &#10140; "&laquo;"  
 - **HTML_ARROW_RIGHT** &#10140; "&raquo;"  
 - **HTML_BREADCRUMB_SEPARATOR** &#10140; " &rsaquo; "  
-- **HTML_ICON_LIST** &#10140; "&#9784;"  
-- **HTML_ICON_NAVIGATION** &#10140; "&#9875;"  
+- **HTML_ICON_LIST** &#10140; "&#9992;"  
+- **HTML_ICON_NAVIGATION** &#10140; "&#9784;"  
 - **LANGUAGE_FALLBACK_LANG** &#10140; "en"  
 - **MAX_BLOCK_COMPLEXITY** &#10140; 84  
 - **MAX_CYCLOMATIC_COMPLEXITY** &#10140; 12  
@@ -214,7 +214,7 @@ Uses: **html**, **navigator**
   
 ***  
   
-[⇧](# "to the top") Class HTML (Tue, 30 Apr 2013 15:10:59 +0000)  
+[⇧](# "to the top") Class HTML (Tue, 30 Apr 2013 15:30:31 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  

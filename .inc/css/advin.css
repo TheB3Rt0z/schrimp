@@ -1,18 +1,12 @@
 @CHARSET "UTF-8";
 
 
-div#header > div.box,
-div#nav > div.box
+div#header > div.box
 {
 	position: fixed;
 	top: 5px;
 	right: 5px;
 }
-
-	div#nav > div.box
-	{
-	    top: 50px;
-	}
 
 div#header > div.box > div,
 div#nav > div.box > div
@@ -33,14 +27,22 @@ div#header > div.box > div > span.marker,
 div#nav > div.box > div > span.marker
 {
     font-size: 28px;
-    padding: 4px 8px 0 4px;
+    padding: 5px;
     color: white;
     display: inline-block;
     line-height: 15px;
+    text-align: center;
 }
 
 div#header > div.box:hover > div > span.marker,
 div#nav > div.box:hover > div > span.marker
 {
     display: none;
+}
+
+div#nav > div.box
+{
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
 }
