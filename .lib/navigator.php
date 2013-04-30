@@ -49,6 +49,19 @@ class navigator
         );
     }
 
+    private function  _initialize_options($data)
+    {
+        $options = array();
+
+        foreach ($data as $key => $values)
+            $options[$key] = array
+            (
+                'name' => $values['name'],
+            );
+
+        return $options;
+    }
+
     private function _add_branch($controller)
     {
         if ($controller::VISIBLE_IN_NAVIGATION)
@@ -236,17 +249,11 @@ class navigator
                                 $structure['name'])
               . HTML_BREADCRUMB_SEPARATOR;
 
-        $options = array();
-        foreach ($structure['sub'] as $key => $values)
-            $options[$key] = array
-            (
-                'name' => $values['name'],
-            );
-
-        if (count($options) > 1)
+        if (count($options = $this->_initialize_options($structure['sub'])) > 1)
             $code .= html::dropdown($options,
                                     $controller,
-                                    "document.location.href='" . ru() . "' + this.value;");
+                                    "document.location.href='"
+                                  . ru() . "' + this.value;");
         else
             $code .= $structure['sub'][$controller]['name'];
 
@@ -256,19 +263,13 @@ class navigator
 
             $link = $controller . "/" . main::$action;
 
-            $options = array();
-            foreach ($branch['sub'] as $key => $values)
-                $options[$key] = array
-                (
-                    'name' => $values['name'],
-                );
-
             $code .= HTML_BREADCRUMB_SEPARATOR;
 
-            if (count($options) > 1)
+            if (count($options = $this->_initialize_options($branch['sub'])) > 1)
                 $code .= html::dropdown($options,
                                         $link,
-                                        "document.location.href='" . ru() . "' + this.value;");
+                                        "document.location.href='"
+                                      . ru() . "' + this.value;");
             else
                 $code .= $branch['sub'][$link]['name'];
 
@@ -278,19 +279,13 @@ class navigator
 
                 $handler = $link .= '/' . main::$args[0];
 
-                $options = array();
-                    foreach ($branch['sub'] as $key => $values)
-                        $options[$key] = array
-                        (
-                            'name' => $values['name'],
-                        );
-
                 $code .= HTML_BREADCRUMB_SEPARATOR;
 
-                if (count($options) > 1)
+                if (count($options = $this->_initialize_options($branch['sub'])) > 1)
                     $code .= html::dropdown($options,
                                             $handler,
-                                            "document.location.href='" . ru() . "' + this.value;");
+                                            "document.location.href='"
+                                          . ru() . "' + this.value;");
                 else
                     $code .= $branch['sub'][$handler]['name'];
 
