@@ -97,6 +97,7 @@ class code
             'length' => $data['length'],
             'cis' => $data['cis'],
             'class_name' => $data['class_name'],
+            'todos' => $data['todos'],
         );
     }
 
@@ -218,6 +219,8 @@ class code
         foreach (self::$_summary as $key => $values)
             $summary .= md::hyperlink($values['label'],
                                       $key)
+                      . str_repeat("&#9793; ",
+                                   $values['todos'])
                       . " (" . $values['path']
                       . (!empty($values['length_warning'])
                         ? " " . md::blue_boh($values['length_warning']
@@ -358,6 +361,7 @@ class code
                     'length' => $length,
                     'cis' => $cis,
                     'class_name' => $class->getName(),
+                    'todos' => count($class->getStaticPropertyValue('todos')),
                 ));
             }
 
@@ -366,7 +370,9 @@ class code
 
     private static function _get_component_information($name)
     {
-        extract(self::get_class_data(new ReflectionClass($name)));
+        $class = new ReflectionClass($name);
+
+        extract(self::get_class_data($class));
 
         $component = md::to_the_top() . " " . md::title(2, $header)
                    . self::_add_paragraph($class_constants,
@@ -389,6 +395,7 @@ class code
             'length' => $length,
             'cis' => $cis,
             'class_name' => $name,
+            'todos' => count($class->getStaticPropertyValue('todos')),
         ));
 
         return $component;
