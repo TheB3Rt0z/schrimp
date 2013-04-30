@@ -219,8 +219,10 @@ class code
         foreach (self::$_summary as $key => $values)
             $summary .= md::hyperlink($values['label'],
                                       $key)
-                      . str_repeat("&#9793; ",
-                                   $values['todos'])
+                      . (!empty($values['todos'])
+                        ? " " . str_repeat("&#9794;",
+                                           $values['todos']) . " "
+                        : '')
                       . " (" . $values['path']
                       . (!empty($values['length_warning'])
                         ? " " . md::blue_boh($values['length_warning']
