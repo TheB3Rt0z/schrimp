@@ -317,6 +317,17 @@ class navigator
         return html::array_to_list($self->_structure[_SET_HOME_COMPONENT]['sub']);
     }
 
+    static function render_advanced_list()
+    {
+        $self = new self;
+
+        $code = html::spanner(HTML_ICON_LIST,
+                              'marker')
+              . html::array_to_list($self->_structure[_SET_HOME_COMPONENT]['sub']);
+
+        return html::divisor($code);
+    }
+
     static function render_breadcrumb()
     {
         $controller = main::$controller;

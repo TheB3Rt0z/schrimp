@@ -32,6 +32,9 @@ abstract class controller
 		$this->helper = new $helper; // loading helper dynamically
 
 		$this->initialize();
+
+		if (_SET_ADVANCED_INTERFACE)
+		    $this->_set_nav(html::box(navigator::render_advanced_list()));
 	}
 
 	protected abstract function initialize();

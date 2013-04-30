@@ -1,26 +1,36 @@
 @CHARSET "UTF-8";
 
 
-div#header > div.box
+div#header > div.box,
+div#nav > div.box
 {
-	position: absolute;
+	position: fixed;
 	top: 5px;
 	right: 5px;
 }
 
-div#header > div.box > div
+	div#nav > div.box
+	{
+	    top: 50px;
+	}
+
+div#header > div.box > div,
+div#nav > div.box > div
 {
     width: 25px;
     height: 21px;
     overflow: hidden;
 }
 
-div#header > div.box:hover > div
+div#header > div.box:hover > div,
+div#nav > div.box:hover > div
 {
     width: auto;
+    height: auto;
 }
 
-div#header > div.box > div > span.marker
+div#header > div.box > div > span.marker,
+div#nav > div.box > div > span.marker
 {
     font-size: 28px;
     padding: 4px 8px 0 4px;
@@ -29,7 +39,8 @@ div#header > div.box > div > span.marker
     line-height: 15px;
 }
 
-div#header > div.box:hover > div > span.marker
+div#header > div.box:hover > div > span.marker,
+div#nav > div.box:hover > div > span.marker
 {
     display: none;
 }
