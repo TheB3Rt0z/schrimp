@@ -613,8 +613,12 @@ class code
             if ($property->class != $class->name)
                 unset($class_properties[$key]);
 
-        $data['cis'] = count($class_properties)
-                     + count($class->getMethods(ReflectionMethod::IS_PUBLIC));
+        $class_methods = $class->getMethods(ReflectionMethod::IS_PUBLIC);
+        foreach ($class_methods as $key => $method)
+            if ($method->class != $class->name)
+                unset($class_methods[$key]);
+
+        $data['cis'] = count($class_properties) + count($class_methods);
 
         return $data;
     }
