@@ -6,7 +6,7 @@ Table of contents
 -----------------  
   
 [General reference](#general-reference-- "")  
-[Library code](#-class-code-fri-03-may-2013-162819-0000-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (root/.lib/code.php, Len: 582/693, CIS: 10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  3 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!") 1 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!")  
+[Library code](#-class-code-fri-03-may-2013-163535-0000-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (root/.lib/code.php, Len: 583/694, CIS: 10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  3 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!") 1 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!")  
 [Library controller](#-class-controller-tue-30-apr-2013-151059-0000-- "") (root/.lib/controller.php, Len: 92/119, CIS: 9 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library db](#-class-db-mon-25-mar-2013-154730-0000-- "") &#10029;  (root/.lib/db.php, Len: 27/30, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library escort](#-class-escort-mon-25-mar-2013-100351-0000-- "") &#10029;  (root/.lib/escort.php, Len: 3/3, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -107,7 +107,7 @@ General reference
   
 ***  
   
-[⇧](# "to the top") Class CODE (Fri, 03 May 2013 16:28:19 +0000)  
+[⇧](# "to the top") Class CODE (Fri, 03 May 2013 16:35:35 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -152,6 +152,7 @@ Uses: **main**, **md**
 - **add code-testing methods** &#10140; usephpunit to autobuild and execute tests  
 - **get_class_dependencies** &#10140; too unaccurate, see navigator-controller  
 - **get_class_dependencies 2** &#10140; it should count, then order dependencies  
+- **inherited methods** &#10140; create another list, just after first one  
   
   
 ***  

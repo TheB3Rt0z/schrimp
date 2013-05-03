@@ -27,7 +27,8 @@ div#header > div.box > div > span.marker,
 div#nav > div.box > div > span.marker
 {
     font-size: 28px;
-    padding: 5px;
+    width: 25px;
+    vertical-align: bottom;
     color: white;
     display: inline-block;
     line-height: 15px;

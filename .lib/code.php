@@ -10,6 +10,7 @@ class code
         'add code-testing methods' => "usephpunit to autobuild and execute tests",
         'get_class_dependencies' => "too unaccurate, see navigator-controller",
         'get_class_dependencies 2' => "it should count, then order dependencies",
+        'inherited methods' => "create another list, just after first one",
     );
 
     const _STR_SUMMARY_BLUE = "Method(s) with too many parameters?";
