@@ -312,9 +312,9 @@ class html
         return $self->_html;
     }
 
-    private static function _option($value,
-                                    $name,
-                                    $selected = false)
+    protected static function _option($value,
+                                      $name,
+                                      $selected = false)
     {
         $attributes = array
         (
@@ -386,9 +386,9 @@ class html
         return $self->_html;
     }
 
-    private static function _select($content,
-                                    $attributes = array(),
-                                    $classes = '')
+    protected static function _select($content,
+                                      $attributes = array(),
+                                      $classes = '')
     {
         if (!empty($classes))
             $attributes['class'] = trim($classes);
@@ -557,29 +557,6 @@ class html
             $level = "_h" . $level;
             return self::$level($content);
         }
-    }
-
-    static function dropdown($options,
-                             $selected = null,
-                             $onchange = false)
-    {
-        $content = '';
-
-        foreach ($options as $key => $values)
-        {
-            $selected_check = (!empty($selected) && ($selected == $key));
-
-            $content .= self::_option($key,
-                                      $values['name'],
-                                      $selected_check);
-        }
-
-        $attributes = array();
-        if (!empty($onchange))
-            $attributes['onchange'] = trim($onchange);
-
-        return self::_select($content,
-                             $attributes);
     }
 }
 

@@ -248,10 +248,10 @@ class navigator
         $code = HTML_BREADCRUMB_SEPARATOR;
 
         if (count($options = $this->_initialize_options($branch['sub'])) > 1)
-            $code .= html::dropdown($options,
-                                    $link,
-                                    "document.location.href='"
-                                  . ru() . "' + this.value;");
+            $code .= html_form::dropdown($options,
+                                         $link,
+                                         "document.location.href='"
+                                       . ru() . "' + this.value;");
         else
             $code .= $branch['sub'][$link]['name'];
 
@@ -269,10 +269,10 @@ class navigator
         $code = HTML_BREADCRUMB_SEPARATOR;
 
         if (count($options = $this->_initialize_options($branch['sub'])) > 1)
-            $code .= html::dropdown($options,
-                                    $handler,
-                                    "document.location.href='"
-                                  . ru() . "' + this.value;");
+            $code .= html_form::dropdown($options,
+                                         $handler,
+                                         "document.location.href='"
+                                       . ru() . "' + this.value;");
         else
             $code .= $branch['sub'][$handler]['name'];
 
@@ -301,10 +301,10 @@ class navigator
               . HTML_BREADCRUMB_SEPARATOR;
 
         if (count($options = $this->_initialize_options($structure['sub'])) > 1)
-            $code .= html::dropdown($options,
-                                    $controller,
-                                    "document.location.href='"
-                                  . ru() . "' + this.value;");
+            $code .= html_form::dropdown($options,
+                                         $controller,
+                                         "document.location.href='"
+                                       . ru() . "' + this.value;");
         else
             $code .= $structure['sub'][$controller]['name'];
 
