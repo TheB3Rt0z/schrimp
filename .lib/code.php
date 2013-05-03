@@ -608,7 +608,12 @@ class code
                 $data['real_length']--;
         }
 
-        $data['cis'] = count($class->getProperties(ReflectionProperty::IS_PUBLIC))
+        $class_properties = $class->getProperties(ReflectionProperty::IS_PUBLIC);
+        foreach ($class_properties as $key => $property)
+            if ($property->class != $class->name)
+                unset($class_properties[$key]);
+
+        $data['cis'] = count($class_properties)
                      + count($class->getMethods(ReflectionMethod::IS_PUBLIC));
 
         return $data;
