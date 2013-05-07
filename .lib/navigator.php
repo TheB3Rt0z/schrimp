@@ -326,6 +326,9 @@ class navigator
 
     static function render_list()
     {
+        if (_SET_ADVANCED_INTERFACE)
+		    return self::render_advanced_list();
+
         $self = new self;
 
         return html::array_to_list($self->_structure[_SET_HOME_COMPONENT]['sub']);

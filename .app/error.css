@@ -71,3 +71,9 @@ h2
 {
 	color: lavender;
 }
+
+section, #section
+{
+	float: left;
+	width: 100%;
+}
