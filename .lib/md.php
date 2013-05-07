@@ -149,7 +149,7 @@ class md
     static function code($content) // direct construct generator
     {
         $self = new self('text', // no formatting required..
-                         "``` php\n" . $content); //  . "```"
+                         "```php\n" . $content . "\n```");
 
         return $self->_md;
     }

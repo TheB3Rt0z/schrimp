@@ -14,7 +14,7 @@ Table of contents
 [Library html_form](#-class-html_form-fri-03-may-2013-160132-0000-- "") (root/.lib/html_form.php, Len: 19/24, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library language](#-class-language-mon-04-mar-2013-104100-0000-- "") &#10029;  (root/.lib/language.php, Len: 80/93, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library main](#-class-main-tue-07-may-2013-171642-0000-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (root/.main.php, Len: 221/283, CIS: 28 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library md](#-class-md-tue-07-may-2013-173932-0000-- "") (root/.lib/md.php, Len: 182/226, CIS: 13 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library md](#-class-md-tue-07-may-2013-174623-0000-- "") (root/.lib/md.php, Len: 182/226, CIS: 13 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library navigator](#-class-navigator-tue-07-may-2013-132255-0000-- "") &#10029;&#10029;&#10029;  (root/.lib/navigator.php, Len: 308/379, CIS: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library powering](#-class-powering-tue-23-apr-2013-154248-0000-- "") &#10029;  (root/lib/powering.php, Len: 4/4, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library toolbox](#-class-toolbox-fri-03-may-2013-162514-0000-- "") (root/.lib/toolbox.php, Len: 23/24, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -395,7 +395,7 @@ Uses: **code**, **html**
   
 ***  
   
-[⇧](# "to the top") Class MD (Tue, 07 May 2013 17:39:32 +0000)  
+[⇧](# "to the top") Class MD (Tue, 07 May 2013 17:46:23 +0000)  
 ------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -769,8 +769,60 @@ Uses: **html**, **navigator**
 ***  
   
   
-  
-  
+```php
+<?php
+
+require_once ".main.php"; // loading main application
+
+$main = new main($_SERVER['REQUEST_URI']);
+
+ob_start();
+
+?><!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="user-scalable=no,width=device-width" />
+        <title>
+            <?php
+            echo _STR_PROJECT_NAME . " "
+               . $main->get_version()
+               . " | "
+               . $main->title;
+            ?>
+        </title>
+        <?php echo $main->get_head_links(); ?>
+    </head>
+    <body>
+        <header>
+            <?php echo html::divisor($main->header, null, 'header'); ?>
+        </header>
+        <nav>
+            <?php echo html::divisor($main->nav, null, 'nav'); ?>
+        </nav>
+        <section>
+            <?php echo html::divisor($main->section, null, 'section'); ?>
+            <article>
+                <?php echo html::divisor($main->article, null, 'article'); ?>
+            </article>
+            <aside>
+                <?php echo html::divisor($main->aside, null, 'aside'); ?>
+            </aside>
+        </section>
+        <footer>
+            <?php echo html::divisor($main->footer, null, 'footer'); ?>
+        </footer>
+        <?php echo html::clearfix(); ?>
+    </body>
+</html><?php
+
+if (!_SET_DEVELOPMENT_MODE)
+    echo str_replace(array("\t", "\n", "\r", "  "), '', ob_get_clean());
+else
+    echo ob_get_clean();
+
+?>
+```  
+
   
   
 Copyright © 2011-2013 | Das S.C.H.R.I.M.P. Project  
