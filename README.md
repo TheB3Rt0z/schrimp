@@ -6,7 +6,7 @@ Table of contents
 -----------------  
   
 [General reference](#general-reference-- "")  
-[Library code](#-class-code-tue-07-may-2013-170826-0000-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (root/.lib/code.php, Len: 588/700, CIS: 11 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  3 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!") 1 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!")  
+[Library code](#-class-code-tue-07-may-2013-172353-0000-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (root/.lib/code.php, Len: 588/700, CIS: 11 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  3 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!") 1 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!")  
 [Library controller](#-class-controller-tue-07-may-2013-132134-0000-- "") (root/.lib/controller.php, Len: 90/116, CIS: 9 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library db](#-class-db-mon-25-mar-2013-154730-0000-- "") &#10029;  (root/.lib/db.php, Len: 27/30, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library escort](#-class-escort-mon-25-mar-2013-100351-0000-- "") &#10029;  (root/.lib/escort.php, Len: 3/3, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -14,7 +14,7 @@ Table of contents
 [Library html_form](#-class-html_form-fri-03-may-2013-160132-0000-- "") (root/.lib/html_form.php, Len: 19/24, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library language](#-class-language-mon-04-mar-2013-104100-0000-- "") &#10029;  (root/.lib/language.php, Len: 80/93, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library main](#-class-main-tue-07-may-2013-171642-0000-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (root/.main.php, Len: 221/283, CIS: 28 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library md](#-class-md-tue-07-may-2013-171916-0000-- "") (root/.lib/md.php, Len: 182/226, CIS: 13 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library md](#-class-md-tue-07-may-2013-173932-0000-- "") (root/.lib/md.php, Len: 182/226, CIS: 13 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library navigator](#-class-navigator-tue-07-may-2013-132255-0000-- "") &#10029;&#10029;&#10029;  (root/.lib/navigator.php, Len: 308/379, CIS: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library powering](#-class-powering-tue-23-apr-2013-154248-0000-- "") &#10029;  (root/lib/powering.php, Len: 4/4, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library toolbox](#-class-toolbox-fri-03-may-2013-162514-0000-- "") (root/.lib/toolbox.php, Len: 23/24, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -107,7 +107,7 @@ General reference
   
 ***  
   
-[⇧](# "to the top") Class CODE (Tue, 07 May 2013 17:08:26 +0000)  
+[⇧](# "to the top") Class CODE (Tue, 07 May 2013 17:23:53 +0000)  
 --------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -395,7 +395,7 @@ Uses: **code**, **html**
   
 ***  
   
-[⇧](# "to the top") Class MD (Tue, 07 May 2013 17:19:16 +0000)  
+[⇧](# "to the top") Class MD (Tue, 07 May 2013 17:39:32 +0000)  
 ------------------------------------------  
   
 **CODE REFERENCE:**  

@@ -699,7 +699,7 @@ class code
 
     static function update_doc_wiki()
     {
-        file_put_contents("doc/index.md",
+        file_put_contents("doc/index.php.md",
                           md::code(file_get_contents('index.php')));
     }
 }
