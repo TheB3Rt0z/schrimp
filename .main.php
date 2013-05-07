@@ -33,11 +33,20 @@ class main
     function __construct($uri)
     {
         $this->_set_configuration("configuration"); // easy filename change if needed
+
         $this->_load_libraries();
 
-        if (_SET_DEVELOPMENT_MODE) // only for developers, no further error 500 required
+        if (_SET_DEVELOPMENT_MODE) { // only for developers, no further error 500 required
+            $md_documentation = code::get_documentation();
+
             file_put_contents(SET_DOCUMENTATION_MD . ".md",
-                              code::get_documentation()); // delete file to resolve permissions
+                              $md_documentation); // delete file to resolve permissions
+
+            file_put_contents("doc/Home.md", // updates 1st github wiki page..
+                              $md_documentation);
+
+            code::update_doc_wiki(); // updates other md files in doc github submodule
+        }
 
         $this->_initialize(str_replace(_SET_LOCAL_PATH . "/",
                                        '',

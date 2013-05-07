@@ -146,6 +146,14 @@ class md
         return $self->_md;
     }
 
+    static function code($content) // direct construct generator
+    {
+        $self = new self('text', // no formatting required..
+                         "```php\n" . $content . "```");
+
+        return $self->_md;
+    }
+
     static function hr() // direct constructing without any content
     {
         $self = new self(__FUNCTION__);

@@ -539,6 +539,11 @@ class html
                          'clearfix');
     }
 
+    static function codeblock($content)
+    {
+        return self::_code($content);
+    }
+
     static function text($content)
     {
         return self::_p($content);
