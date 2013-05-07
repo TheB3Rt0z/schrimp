@@ -32,6 +32,7 @@ class html
         'container' => array
         (
             'a',
+            'code',
             'div',
             'h1',
             'h2',
@@ -160,6 +161,15 @@ class html
 
         return str_repeat($self->_html,
                           $lines);
+    }
+
+    private static function _code($content)
+    {
+        $self = new self('code',
+                         array(),
+                         $content);
+
+        return $self->_html;
     }
 
     private static function _div($content,

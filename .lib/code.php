@@ -647,8 +647,8 @@ class code
                                : 0) - ($method->isAbstract() ? 0 : 2); // modifier
 
         $data['code'] = array_slice(file($method->getFileName()),
-                                    $method->getEndLine() - $data['length'] - 1,
-                                    $data['length']);
+                                    $method->getEndLine() - $data['length'],
+                                    $data['length'] - 1);
 
         $data['length_warning'] = 0;
         $data['cyc'] = 0;

@@ -1,0 +1,3 @@
+[submodule "doc"]
+	path = doc
+	url = https://github.com/TheB3Rt0z/schrimp.wiki.git
