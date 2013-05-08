@@ -15,15 +15,15 @@ Table of contents
 [Library language](#-class-language-mon-04-mar-2013-104100-0000-- "") &#10029;  (root/.lib/language.php, Len: 80/93, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library main](#-class-main-tue-07-may-2013-171642-0000-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (root/.main.php, Len: 221/283, CIS: 28 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library md](#-class-md-tue-07-may-2013-174623-0000-- "") (root/.lib/md.php, Len: 182/226, CIS: 13 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library navigator](#-class-navigator-tue-07-may-2013-132255-0000-- "") &#10029;&#10029;&#10029;  (root/.lib/navigator.php, Len: 308/379, CIS: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library navigator](#-class-navigator-wed-08-may-2013-131518-0000-- "") &#10029;&#10029;&#10029;  (root/.lib/navigator.php, Len: 308/379, CIS: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library powering](#-class-powering-tue-23-apr-2013-154248-0000-- "") &#10029;  (root/lib/powering.php, Len: 4/4, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library toolbox](#-class-toolbox-fri-03-may-2013-162514-0000-- "") (root/.lib/toolbox.php, Len: 23/24, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library widgets](#-class-widgets-tue-23-apr-2013-154136-0000-- "") &#10029;  (root/.lib/widgets.php, Len: 4/4, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Component admin](#-class-admin-tue-12-mar-2013-121930-0000-- "") (root/.app/admin.php, Len: 10/12, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- admin_helper](#-class-admin_helper-wed-20-mar-2013-194711-0000-- "") (root/.app/admin_helper.php, Len: 1/1, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Component control](#-class-control-wed-17-apr-2013-153359-0000-- "") &#10029;&#10029;&#10029;  (root/.app/control.php, Len: 204/239, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Component control](#-class-control-wed-08-may-2013-132105-0000-- "") &#10029;&#10029;&#10029;  (root/.app/control.php, Len: 205/241, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- control_helper](#-class-control_helper-thu-21-mar-2013-112255-0000-- "") (root/.app/control_helper.php, Len: 49/62, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Component documentation](#-class-documentation-mon-25-mar-2013-154333-0000-- "") &#10029;  (root/.app/documentation.php, Len: 50/57, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Component documentation](#-class-documentation-wed-08-may-2013-132147-0000-- "") &#10029;  (root/.app/documentation.php, Len: 51/59, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
 [- documentation_helper](#-class-documentation_helper-wed-20-mar-2013-194711-0000-- "") (root/.app/documentation_helper.php, Len: 1/1, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Component error](#-class-error-tue-07-may-2013-132450-0000-- "") (root/.app/error.php, Len: 80/106, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- error_helper](#-class-error_helper-wed-20-mar-2013-194711-0000-- "") (root/.app/error_helper.php, Len: 1/1, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -425,7 +425,7 @@ Uses: **code**, **html**
   
 ***  
   
-[⇧](# "to the top") Class NAVIGATOR (Tue, 07 May 2013 13:22:55 +0000)  
+[⇧](# "to the top") Class NAVIGATOR (Wed, 08 May 2013 13:15:18 +0000)  
 -------------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -536,7 +536,7 @@ Uses: **html**, **navigator**
   
 ***  
   
-[⇧](# "to the top") Class CONTROL (Wed, 17 Apr 2013 15:33:59 +0000)  
+[⇧](# "to the top") Class CONTROL (Wed, 08 May 2013 13:21:05 +0000)  
 -----------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -582,11 +582,11 @@ Uses: **html**, **navigator**
 - **get_nav()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_section()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_title()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **initialize()** (Pub, Len: 14/16 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **initialize()** (Pub, Len: 15/18 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
 **DEPENDENCIES:**  
   
-Uses: **html**, **language**, **main**  
+Uses: **html**, **language**, **main**, **navigator**  
   
 **TODOS**  
   
@@ -611,7 +611,7 @@ Uses: **html**
   
 ***  
   
-[⇧](# "to the top") Class DOCUMENTATION (Mon, 25 Mar 2013 15:43:33 +0000)  
+[⇧](# "to the top") Class DOCUMENTATION (Wed, 08 May 2013 13:21:47 +0000)  
 -----------------------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -640,7 +640,11 @@ Uses: **html**
 - **get_nav()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_section()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **get_title()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **initialize()** (Pub, Len: 27/30 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **initialize()** (Pub, Len: 28/32 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Method's length could be reduced..") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+  
+**DEPENDENCIES:**  
+  
+Uses: **html**, **navigator**  
   
 **TODOS**  
   

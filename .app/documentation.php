@@ -9,6 +9,8 @@ class documentation extends controller
 
 	function initialize()
 	{
+	    $this->_set_nav(html::box(navigator::render_list()));
+
 		switch ($this->_action)
 		{
 			case null :

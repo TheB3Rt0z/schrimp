@@ -11,7 +11,9 @@ class control extends controller
 
 	function initialize()
 	{
-		$fallback_method = '_handler' . (!empty($this->_action)
+		$this->_set_nav(html::box(navigator::render_list()));
+
+	    $fallback_method = '_handler' . (!empty($this->_action)
 						                ? '_' . $this->_action
 						                : '');
 
