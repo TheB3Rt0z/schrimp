@@ -11,6 +11,7 @@ class code
         'get_class_dependencies' => "too unaccurate, see navigator-controller",
         'get_class_dependencies 2' => "it should count, then order dependencies",
         'inherited methods' => "create another list, just after first one",
+        'save wiki pages' => "md file for each method, like 'root/.lib html NAME'",
     );
 
     const _STR_SUMMARY_BLUE = "Method(s) with too many parameters?";
