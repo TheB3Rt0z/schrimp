@@ -172,7 +172,7 @@ class md
 
     static function to_the_top()
     {
-        return self::_link("⇧", "#", 'to the top');
+        return self::_link("⇧", "javascript:window.scrollTo(0, 0);", 'to the top');
     }
 
     static function image($src,
