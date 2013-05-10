@@ -697,18 +697,17 @@ class code
                        . md::hr()
                        . self::_get_classes_information()
                        . self::_get_components_information() // adding more information?
-                     . str_repeat(MD_NEWLINE_SEQUENCE, 4)
-                     . md::text(_STR_COPYRIGHT_SIGNATURE);
+                     . self::get_documentation_footer();
 
         return self::get_documentation_title()
              . self::_get_summary_information()
              . $documentation;
     }
 
-    static function update_doc_wiki()
+    static function get_documentation_footer()
     {
-        file_put_contents("doc/index.php.md",
-                          md::code(file_get_contents('index.php')));
+         return str_repeat(MD_NEWLINE_SEQUENCE, 4)
+              . md::text(_STR_COPYRIGHT_SIGNATURE);
     }
 }
 

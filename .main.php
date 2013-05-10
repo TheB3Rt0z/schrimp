@@ -37,15 +37,15 @@ class main
         $this->_load_libraries();
 
         if (_SET_DEVELOPMENT_MODE) { // only for developers, no further error 500 required
-            $md_documentation = code::get_documentation();
-
             file_put_contents("README.md",
-                              code::get_documentation_title());
+                              code::get_documentation_title()
+                            . code::get_documentation_footer());
+
+            file_put_contents("doc/index.php.md", // main application executable
+                              md::code(file_get_contents('index.php')));
 
             file_put_contents(SET_DOCUMENTATION_MD . ".md", // updates 1st github wiki page..
-                              $md_documentation);
-
-            code::update_doc_wiki(); // updates other md files in doc github submodule
+                              code::get_documentation());
         }
 
         $this->_initialize(str_replace(_SET_LOCAL_PATH . "/",
