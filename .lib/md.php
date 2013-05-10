@@ -172,7 +172,7 @@ class md
 
     static function to_the_top()
     {
-        return self::_link("⇧", "#", 'to the top');
+        return self::_link("⇧", "#wiki", 'to the top');
     }
 
     static function image($src,

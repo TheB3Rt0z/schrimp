@@ -89,7 +89,7 @@ class code
                                                    '',
                                                    $data['header'])));
 
-        self::$_summary["#-" . $href . "--"] = array
+        self::$_summary["#wiki-" . $href . "--"] = array
         (
             'label' => $data['label'],
             'path' => $data['path'],

@@ -39,10 +39,7 @@ class main
         if (_SET_DEVELOPMENT_MODE) { // only for developers, no further error 500 required
             $md_documentation = code::get_documentation();
 
-            file_put_contents(SET_DOCUMENTATION_MD . ".md",
-                              $md_documentation); // delete file to resolve permissions
-
-            file_put_contents("doc/Home.md", // updates 1st github wiki page..
+            file_put_contents(SET_DOCUMENTATION_MD . ".md", // updates 1st github wiki page..
                               $md_documentation);
 
             code::update_doc_wiki(); // updates other md files in doc github submodule
