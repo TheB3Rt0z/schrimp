@@ -11,7 +11,6 @@ class code
         'get_class_dependencies' => "too unaccurate, see navigator-controller",
         'get_class_dependencies 2' => "it should count, then order dependencies",
         'inherited methods' => "create another list, just after first one",
-        'save wiki pages' => "md file for each method, like 'root/.lib html NAME'",
     );
 
     const _STR_SUMMARY_BLUE = "Method(s) with too many parameters?";
@@ -643,13 +642,17 @@ class code
 
         $data['real_length'] =
              $data['length'] = $method->getEndLine() - $method->getStartLine()
-                             - (($count = count($data['parameters']) > 1)
-                               ? $count - 1
+                             - ((count($data['parameters']) > 1)
+                               ? count($data['parameters']) - 1
                                : 0) - ($method->isAbstract() ? 0 : 2); // modifier
 
         $data['code'] = array_slice(file($method->getFileName()),
-                                    $method->getEndLine() - $data['length'],
-                                    $data['length'] - 1);
+                                    $method->getEndLine() - $data['length'] - 1,
+                                    $data['length']);
+
+        if (_SET_DEVELOPMENT_MODE)
+            file_put_contents("doc/" . $method->class . " " . $method->name . ".md",
+                              implode($data['code']));
 
         $data['length_warning'] = 0;
         $data['cyc'] = 0;
