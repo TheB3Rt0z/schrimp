@@ -39,6 +39,9 @@ class main
         if (_SET_DEVELOPMENT_MODE) { // only for developers, no further error 500 required
             $md_documentation = code::get_documentation();
 
+            file_put_contents("README.md",
+                              code::get_documentation_title());
+
             file_put_contents(SET_DOCUMENTATION_MD . ".md", // updates 1st github wiki page..
                               $md_documentation);
 

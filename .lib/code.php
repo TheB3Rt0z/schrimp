@@ -6,7 +6,6 @@ class code
     (
         'code analysis' => "load, analyse, printing and more.. use toolbox class?",
         'methods lists' => "add parameter class information, also for aliases",
-        'github wiki docs' => "generate wiki pages with md syntax and update",
         'add code-testing methods' => "usephpunit to autobuild and execute tests",
         'get_class_dependencies' => "too unaccurate, see navigator-controller",
         'get_class_dependencies 2' => "it should count, then order dependencies",
@@ -89,7 +88,7 @@ class code
                                                    '',
                                                    $data['header'])));
 
-        self::$_summary["#wiki-" . $href . "--"] = array
+        self::$_summary["#" . $href . "--"] = array
         (
             'label' => $data['label'],
             'path' => $data['path'],
@@ -677,12 +676,17 @@ class code
         return $data;
     }
 
-    static function get_documentation()
+    static function get_documentation_title()
     {
         $title = md::image(_SET_INCLUDES_PATH . "img/schrimp_favicon_md.ico")
                . " " . _STR_PROJECT_NAME . "'s Documentation "
                . main::get_version(1) . date('.Y.m.d');
 
+        return md::title(2, $title);
+    }
+
+    static function get_documentation()
+    {
         $documentation = md::title(2, "General reference")
                        . self::_add_paragraph(self::_get_constants_information(),
                                               "Global configuration constants")
@@ -696,7 +700,7 @@ class code
                      . str_repeat(MD_NEWLINE_SEQUENCE, 4)
                      . md::text(_STR_COPYRIGHT_SIGNATURE);
 
-        return md::title(1, $title)
+        return self::get_documentation_title()
              . self::_get_summary_information()
              . $documentation;
     }
