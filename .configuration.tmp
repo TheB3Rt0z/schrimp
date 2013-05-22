@@ -21,7 +21,7 @@
 
 'set_github_wikipath' => "https://github.com/TheB3Rt0z/schrimp/wiki/",
 'set_github_rawpath' => "https://raw.github.com/TheB3Rt0z/schrimp/master/", // prefix valid for static contents on github
-'set_documentation_md' => "doc/Home",
+'set_documentation_md' => "README",
 
 'set_complexity_index' => 12,
 

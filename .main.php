@@ -37,7 +37,7 @@ class main
         $this->_load_libraries();
 
         if (_SET_DEVELOPMENT_MODE) { // only for developers, no further error 500 required
-            file_put_contents("README.md",
+            file_put_contents("doc/Home.md",
                               code::get_documentation_title()
                             . code::get_documentation_footer());
 
