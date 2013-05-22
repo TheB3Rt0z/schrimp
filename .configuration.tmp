@@ -27,5 +27,4 @@
 
 '_str_kernel_salt' => "Sstm Cntrl Hdng_t_ Rw Incrs_f Mntl Prdctvt",
 '_str_project_name' => "Das S.C.H.R.I.M.P.",
-'_str_copyright_signature' => "Copyright © 2011-" . date('Y')
-                            . " | Das S.C.H.R.I.M.P. Project",
+'_str_copyright_signature' => "Copyright © 2011-" . date('Y') . " | Das S.C.H.R.I.M.P. Project",
