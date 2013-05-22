@@ -8,6 +8,7 @@
  * - always vertical aligned curly brackets (if not empty)
  * - string, paths & html attributes: "", identifiers & empty-string: '',
  * - inline comments with prefix " // " & only on not-empty lines
+ * - private or protected methods/variables/constants with prefix "_"
  */
 
 require_once ".main.php"; // loading main application

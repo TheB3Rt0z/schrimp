@@ -90,7 +90,7 @@ class code
                                                    '',
                                                    $data['header'])));
 
-        self::$_summary["#" . $href . "--"] = array
+        self::$_summary["#-" . $href . "--"] = array
         (
             'label' => $data['label'],
             'path' => $data['path'],
@@ -307,7 +307,10 @@ class code
     {
         extract(self::analyse_method($method)); // generates required variables
 
-        return "- **" . $method->getName() . "("
+        return "- **" . md::hyperlink($method->getName(),
+                                      SET_GITHUB_WIKIPATH
+                                    . $method->getDeclaringClass() . "-"
+                                    . $method->getName()) . "("
              . ($parameters_warning >= 0
                ? md::blue_boh("too many parameters used! (+"
                             . ($parameters_warning + 1) . ")") . " "
@@ -700,7 +703,8 @@ class code
                        . md::hr()
                        . self::_get_classes_information()
                        . self::_get_components_information() // adding more information?
-                     . self::get_documentation_footer();
+                     . str_repeat(MD_NEWLINE_SEQUENCE, 4)
+                     . md::text(_STR_COPYRIGHT_SIGNATURE);
 
         return self::get_documentation_title()
              . self::_get_summary_information()
