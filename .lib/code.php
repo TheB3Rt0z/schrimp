@@ -86,7 +86,13 @@ class code
     {
         $href = strtolower(str_replace(" ",
                                        "-",
-                                       str_replace(array("(", ",", ":", "+", ")"),
+                                       str_replace(array(
+                                                       "(",
+                                                       ",",
+                                                       ":",
+                                                       "+",
+                                                       ")",
+                                                       "@"),
                                                    '',
                                                    $data['header'])));
 
