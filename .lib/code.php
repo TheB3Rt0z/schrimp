@@ -309,7 +309,7 @@ class code
 
         return "- **" . md::hyperlink($method->getName(),
                                       SET_GITHUB_WIKIPATH
-                                    . $method->getDeclaringClass() . "-"
+                                    . $method->class . "-"
                                     . $method->getName()) . "("
              . ($parameters_warning >= 0
                ? md::blue_boh("too many parameters used! (+"
