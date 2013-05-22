@@ -1,5 +1,7 @@
 <?php
 
+define('CODE_DATE_FORMAT', "D, d M Y @ H:i:s");
+
 class code
 {
     public static $todos = array
@@ -579,7 +581,8 @@ class code
     static function get_class_data(reflectionClass $class)
     {
         $data['header'] = "Class " . strtoupper($class->name)
-                        . " (" . date('r', filemtime($class->getFileName())) . ")";
+                        . " (" . date(CODE_DATE_FORMAT,
+                                      filemtime($class->getFileName())) . ")";
 
         $data['class_constants'] = self::_get_class_constants($class);
         $data['reference'] = self::_get_class_reference($class);

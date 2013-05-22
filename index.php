@@ -2,7 +2,7 @@
 
 /* Das S.C.H.R.I.M.P. Project - Main-application launcher
  *
- * Syntax documentation (for developers only):
+ * Syntax conventions (for developers only):
  *
  * - indents always by 4 spaces, interval-lines have height 1
  * - always vertical aligned curly brackets (if not empty)

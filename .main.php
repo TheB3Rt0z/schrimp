@@ -37,11 +37,7 @@ class main
         $this->_load_libraries();
 
         if (_SET_DEVELOPMENT_MODE) { // only for developers, no further error 500 required
-            file_put_contents("doc/Home.md",
-                              code::get_documentation_title()
-                            . code::get_documentation_footer());
-
-            file_put_contents("doc/index.php.md", // main application executable
+            file_put_contents("doc/Home.md", // main application executable
                               md::code(file_get_contents('index.php')));
 
             file_put_contents(SET_DOCUMENTATION_MD . ".md", // updates 1st github wiki page..
