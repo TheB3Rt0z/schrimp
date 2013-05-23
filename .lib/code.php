@@ -693,7 +693,7 @@ class code
     {
         $title = md::image(_SET_INCLUDES_PATH . "img/schrimp_favicon_md.ico")
                . " " . _STR_PROJECT_NAME . "'s Documentation "
-               . main::get_version(1) . date('.Y.m.d');
+               . main::get_version(1) . "." . date('Y.m.d');
 
         return md::title(2, $title);
     }
