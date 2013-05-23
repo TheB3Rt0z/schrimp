@@ -1,5 +1,7 @@
 <?php
 
+define('CODE_DATE_FORMAT', "D, d M Y @ H:i:s");
+
 class code
 {
     public static $todos = array
@@ -10,6 +12,7 @@ class code
         'get_class_dependencies' => "too unaccurate, see navigator-controller",
         'get_class_dependencies 2' => "it should count, then order dependencies",
         'inherited methods' => "create another list, just after first one",
+        'auto generated wiki pages' => "add syntax highlighting? sub auto-push?",
     );
 
     const _STR_SUMMARY_BLUE = "Method(s) with too many parameters?";
@@ -84,11 +87,17 @@ class code
     {
         $href = strtolower(str_replace(" ",
                                        "-",
-                                       str_replace(array("(", ",", ":", "+", ")"),
+                                       str_replace(array(
+                                                       "(",
+                                                       ",",
+                                                       ":",
+                                                       "+",
+                                                       ")",
+                                                       "@"),
                                                    '',
                                                    $data['header'])));
 
-        self::$_summary["#" . $href . "--"] = array
+        self::$_summary["#-" . $href . "--"] = array
         (
             'label' => $data['label'],
             'path' => $data['path'],
@@ -305,7 +314,10 @@ class code
     {
         extract(self::analyse_method($method)); // generates required variables
 
-        return "- **" . $method->getName() . "("
+        return "- **" . md::hyperlink($method->getName(),
+                                      SET_GITHUB_WIKIPATH
+                                    . $method->class . "-"
+                                    . $method->getName()) . "("
              . ($parameters_warning >= 0
                ? md::blue_boh("too many parameters used! (+"
                             . ($parameters_warning + 1) . ")") . " "
@@ -579,7 +591,8 @@ class code
     static function get_class_data(reflectionClass $class)
     {
         $data['header'] = "Class " . strtoupper($class->name)
-                        . " (" . date('r', filemtime($class->getFileName())) . ")";
+                        . " (" . date(CODE_DATE_FORMAT,
+                                      filemtime($class->getFileName())) . ")";
 
         $data['class_constants'] = self::_get_class_constants($class);
         $data['reference'] = self::_get_class_reference($class);
@@ -697,7 +710,8 @@ class code
                        . md::hr()
                        . self::_get_classes_information()
                        . self::_get_components_information() // adding more information?
-                     . self::get_documentation_footer();
+                     . str_repeat(MD_NEWLINE_SEQUENCE, 4)
+                     . md::text(_STR_COPYRIGHT_SIGNATURE);
 
         return self::get_documentation_title()
              . self::_get_summary_information()

@@ -1,5 +1,16 @@
 <?php
 
+/* Das S.C.H.R.I.M.P. Project - Main-application launcher
+ *
+ * Syntax conventions (for developers only):
+ *
+ * - indents always by 4 spaces, interval-lines have height 1
+ * - always vertical aligned curly brackets (if not empty)
+ * - string, paths & html attributes: "", identifiers & empty-string: '',
+ * - inline comments with prefix " // " & only on not-empty lines
+ * - private or protected methods/variables/constants with prefix "_"
+ */
+
 require_once ".main.php"; // loading main application
 
 $main = new main($_SERVER['REQUEST_URI']);
