@@ -384,7 +384,9 @@ class code
 
                 self::_add_summary_entry(array(
                     'header' => $header,
-                    'label' => "Library " . $class->getName(),
+                    'label' => (substr_count($class->getName(), "_")
+                               ? "-"
+                               : "Library") . " " . $class->getName(),
                     'path' => $class_path,
                     'length_warning' => $length_warning,
                     'real_length' => $real_length,
