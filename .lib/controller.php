@@ -31,6 +31,9 @@ abstract class controller
 		$helper = get_class($this) . '_helper';
 		$this->helper = new $helper; // loading helper dynamically
 
+		escort::register_object($this,
+		                        $this->_action . '_' . implode($this->_args, '_'));
+
 		$this->initialize();
 	}
 

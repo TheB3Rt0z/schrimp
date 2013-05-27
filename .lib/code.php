@@ -7,7 +7,6 @@ class code
     public static $todos = array
     (
         'code analysis' => "load, analyse, printing and more.. use toolbox class?",
-        'methods lists' => "add parameter class information, also for aliases",
         'add code-testing methods' => "usephpunit to autobuild and execute tests",
         'get_class_dependencies' => "too unaccurate, see navigator-controller",
         'get_class_dependencies 2' => "it should count, then order dependencies",
@@ -217,15 +216,18 @@ class code
                                   $code_line[0])) > MAX_BLOCK_COMPLEXITY;
     }
 
-    private static function _list_method_parameters($method)
+    private static function _list_method_parameters($functional_code)
     {
         $parameters = array();
 
-        foreach ($method->getParameters() as $parameter)
-            $parameters[] = "$" . $parameter->getName()
+        foreach ($functional_code->getParameters() as $parameter) {
+            $class = $parameter->getClass();
+            $parameters[] = ($class ? $class->getName() . " " : '')
+                          . "$" . $parameter->getName()
                           . ($parameter->isOptional()
                             ? " = " . fv($parameter->getDefaultValue())
                             : '');
+        }
 
         return $parameters;
     }

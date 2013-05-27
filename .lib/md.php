@@ -53,6 +53,9 @@ class md
             $this->_set_content($content);
             $this->_set_formatting($attributes);
         }
+
+        escort::register_object($this,
+                                $this->_tag);
     }
 
     private function _validate_tag()

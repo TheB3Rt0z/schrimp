@@ -33,6 +33,9 @@ class db
                              "unknown %s database type",
 				             self::_DATABASE_TYPE));
 		}
+
+		escort::register_object($this,
+		                        self::_DB_DATABASE_TYPE);
 	}
 }
 

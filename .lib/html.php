@@ -82,6 +82,9 @@ class html
             if ($this->_is_container($this->_tag))
                 $this->_set_content($content);
         }
+
+        escort::register_object($this,
+                                $this->_tag);
     }
 
     private function _is_single()
