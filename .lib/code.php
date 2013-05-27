@@ -217,7 +217,7 @@ class code
                                   $code_line[0])) > MAX_BLOCK_COMPLEXITY;
     }
 
-    private static function _list_method_parameters(reflectionMethod $method)
+    private static function _list_method_parameters($method)
     {
         $parameters = array();
 
@@ -278,7 +278,7 @@ class code
         return $constants . MD_NEWLINE_SEQUENCE;
     }
 
-    private static function _get_functions_information()
+    private static function _get_functions_information() // these are aliases..
     {
         $functions = '';
 
@@ -287,12 +287,14 @@ class code
         {
             $function = new ReflectionFunction($function);
 
-            $parameters = array();
+            /*$parameters = array();
             foreach ($function->getParameters() as $parameter)
                 $parameters[] = "$" . $parameter->getName()
                               . ($parameter->isOptional()
                                 ? " = " . fv($parameter->getDefaultValue())
-                                : '');
+                                : '');*/
+
+            $parameters = self::_list_method_parameters($function);
 
             $functions .= "- **" . $function->getName() . "("
                         . implode($parameters, ", ") . ")** &#10140; "
@@ -658,21 +660,45 @@ class code
              . ($method->isAbstract() ? "A" : '');
     }
 
+    static function get_method_code(reflectionMethod $method,
+                                    $highlighting = false)
+    {
+        $parameters = self::_list_method_parameters($method);
+        $parameters_warning = count($parameters)
+                            - MAX_PARAMETERS_COMPLEXITY;
+
+        $real_length =
+             $length = $method->getEndLine() - $method->getStartLine()
+                     - ((count($parameters) > 1)
+                       ? count($parameters) - 1
+                       : 0) - ($method->isAbstract() ? 0 : 2); // modifier
+
+        $code = array_slice(file($method->getFileName()),
+                            $method->getEndLine() - $length - 1,
+                            $length);
+
+        if ($highlighting)
+            highlight_string("<?php " . implode($code) . " ?>");
+        else
+            return array
+            (
+                'parameters' => $parameters,
+                'parameters_warning' => $parameters_warning,
+                'real_length' => $real_length,
+                'length' => $length,
+                'code' => $code,
+            );
+    }
+
     static function analyse_method(reflectionMethod $method)
     {
-        $data['parameters'] = self::_list_method_parameters($method);
-        $data['parameters_warning'] = count($data['parameters'])
-                                    - MAX_PARAMETERS_COMPLEXITY;
+        extract(self::get_method_code($method));
 
-        $data['real_length'] =
-             $data['length'] = $method->getEndLine() - $method->getStartLine()
-                             - ((count($data['parameters']) > 1)
-                               ? count($data['parameters']) - 1
-                               : 0) - ($method->isAbstract() ? 0 : 2); // modifier
-
-        $data['code'] = array_slice(file($method->getFileName()),
-                                    $method->getEndLine() - $data['length'] - 1,
-                                    $data['length']);
+        $data['parameters'] = $parameters;
+        $data['parameters_warning'] = $parameters_warning;
+        $data['real_length'] = $real_length;
+        $data['length'] = $length;
+        $data['code'] = $code;
 
         if (_SET_DEVELOPMENT_MODE)
             file_put_contents("doc/" . $method->class . " " . $method->name . ".md",
