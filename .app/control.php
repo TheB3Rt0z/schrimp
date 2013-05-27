@@ -85,13 +85,6 @@ class control extends controller
 	            . $this->_translate(__FUNCTION__));
 	}
 
-	private function _handler_core_widget()
-	{
-		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
-		                . HTML_BREADCRUMB_SEPARATOR
-		                . $this->_translate(__FUNCTION__));
-	}
-
 	private function _handler_core_language()
 	{
 		//if (!func_num_args())
