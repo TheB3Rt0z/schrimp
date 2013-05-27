@@ -11,7 +11,6 @@ class code
         'add code-testing methods' => "usephpunit to autobuild and execute tests",
         'get_class_dependencies' => "too unaccurate, see navigator-controller",
         'get_class_dependencies 2' => "it should count, then order dependencies",
-        'inherited methods' => "create another list, just after first one",
         'auto generated wiki pages' => "add syntax highlighting? sub auto-push?",
     );
 
@@ -170,7 +169,7 @@ class code
 
         if (!empty($inherited_methods))
         {
-            $reference .= md::title(3, "Inherited methods:");
+            $reference .= MD_NEWLINE_SEQUENCE . md::title(3, "Inherited methods:");
             foreach ($inherited_methods as $method)
                 $reference .= self::_get_methods_information($method);
         }
@@ -194,7 +193,7 @@ class code
     {
         if (!empty($data))
             return md::title(3,
-                             $title . ":")
+                             $title)
                  . $data
                  . MD_NEWLINE_SEQUENCE;
     }
@@ -376,7 +375,7 @@ class code
                           . self::_add_paragraph($dependencies,
                                                  "Dependencies:")
                           . self::_add_paragraph($class_todos,
-                                                 "TODOs")
+                                                 "TODOs:")
                           . md::hr();
 
                 self::_add_summary_entry(array(
@@ -409,7 +408,7 @@ class code
                    . self::_add_paragraph($dependencies,
                                           "Dependencies:")
                    . self::_add_paragraph($class_todos,
-                                          "TODOs");
+                                          "TODOs:");
 
         self::_add_summary_entry(array(
             'header' => $header,
@@ -715,11 +714,11 @@ class code
     {
         $documentation = md::title(2, "General reference")
                        . self::_add_paragraph(self::_get_constants_information(),
-                                              "Global configuration constants")
+                                              "Global configuration constants:")
                        . self::_add_paragraph(self::_get_functions_information(),
-                                              "Function aliases")
+                                              "Function aliases:")
                        . self::_add_paragraph(self::_get_todos_information(),
-                                              "TODOs")
+                                              "TODOs:")
                        . md::hr()
                        . self::_get_classes_information()
                        . self::_get_components_information() // adding more information?
