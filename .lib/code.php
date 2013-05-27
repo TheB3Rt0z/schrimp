@@ -159,8 +159,21 @@ class code
                                   return $a->name > $b->name;
                               });
 
+        $inherited_methods = array();
         foreach ($class_methods as $method)
-            $reference .= self::_get_methods_information($method);
+        {
+            if ($method->class == $class->getName())
+                $reference .= self::_get_methods_information($method);
+            else
+                $inherited_methods[] = $method;
+        }
+
+        if (!empty($inherited_methods))
+        {
+            $reference .= md::title(3, "Inherited methods:");
+            foreach ($inherited_methods as $method)
+                $reference .= self::_get_methods_information($method);
+        }
 
         return $reference;
     }
@@ -181,7 +194,7 @@ class code
     {
         if (!empty($data))
             return md::title(3,
-                             $title)
+                             $title . ":")
                  . $data
                  . MD_NEWLINE_SEQUENCE;
     }
