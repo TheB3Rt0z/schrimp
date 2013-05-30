@@ -26,6 +26,19 @@ class toolbox
 		else
 			return $mixed; // fallback
 	}
+
+	static function highlight($string,
+	                          $type = '')
+	{
+	    switch ($type)
+	    {
+	        default :
+	        {
+	            return highlight_string($string, true);
+	            break;
+	        }
+	    }
+	}
 }
 
 /**

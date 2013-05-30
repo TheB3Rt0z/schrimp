@@ -10,7 +10,7 @@ class code
         'add code-testing methods' => "usephpunit to autobuild and execute tests",
         'get_class_dependencies' => "too unaccurate, see navigator-controller",
         'get_class_dependencies 2' => "it should count, then order dependencies",
-        'auto generated wiki pages' => "add syntax highlighting? sub auto-push?",
+        'code highlighting' => "apparently not working, maybe helper in toolbox?",
     );
 
     const _STR_SUMMARY_BLUE = "Method(s) with too many parameters?";
@@ -682,7 +682,7 @@ class code
                             $length);
 
         if ($highlighting)
-            highlight_string("<?php " . implode($code) . " ?>");
+            return toolbox::highlight("<?php\n" . implode($code) . "\n?>");
         else
             return array
             (
