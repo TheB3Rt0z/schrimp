@@ -330,35 +330,40 @@ class code
     {
         extract(self::analyse_method($method)); // generates required variables
 
-        return "- **" . md::hyperlink($method->getName(),
+        $infos = "**" . md::hyperlink($method->getName(),
                                       SET_GITHUB_WIKIPATH
                                     . $method->class . "-"
                                     . $method->getName()) . "("
-             . ($parameters_warning >= 0
-               ? md::blue_boh("too many parameters used! (+"
-                            . ($parameters_warning + 1) . ")") . " "
-               : '')
-             . implode($parameters, ", ") . ")** ("
-             . self::get_method_status($method)
-             . (!empty($length_warning)
-               ? " " . md::blue_boh($length_warning . " too long line(s) found!")
-               : ",")
-             . " Len: " . ($length > 0
-                          ? (($real_length != $length)
-                            ? $real_length . "/"
-                            : '') . $length
-                          : '-') . " "
-             . ($length <= (floor(MAX_METHODS_COMPLEXITY / 10) * 10)
-               ? ($length > 0
-                 ? md::green_ok()
+               . ($parameters_warning >= 0
+                 ? md::blue_boh("too many parameters used! (+"
+                              . ($parameters_warning + 1) . ")") . " "
                  : '')
-               : ($length <= MAX_METHODS_COMPLEXITY
-                 ? md::yellow_ops(self::_STR_LENGTH_WARNING)
-                 : md::red_ics(self::_STR_LENGTH_ERROR)))
-             . ($cyc > 0
-               ? " CyC: " . $cyc . " " . self::_get_cyc_marker($cyc)
-               : '')
-             . ")" . MD_NEWLINE_SEQUENCE;
+               . implode($parameters, ", ") . ")** ("
+               . self::get_method_status($method)
+               . (!empty($length_warning)
+                 ? " " . md::blue_boh($length_warning . " too long line(s) found!")
+                 : ",")
+               . " Len: " . ($length > 0
+                            ? (($real_length != $length)
+                              ? $real_length . "/"
+                              : '') . $length
+                            : '-') . " "
+               . ($length <= (floor(MAX_METHODS_COMPLEXITY / 10) * 10)
+                 ? ($length > 0
+                   ? md::green_ok()
+                   : '')
+                 : ($length <= MAX_METHODS_COMPLEXITY
+                   ? md::yellow_ops(self::_STR_LENGTH_WARNING)
+                   : md::red_ics(self::_STR_LENGTH_ERROR)))
+               . ($cyc > 0
+                 ? " CyC: " . $cyc . " " . self::_get_cyc_marker($cyc)
+                 : '')
+               . ")" . MD_NEWLINE_SEQUENCE;
+
+        if (_SET_DEVELOPMENT_MODE)
+            file_put_contents("doc/" . $method->class . " " . $method->name . ".md",
+                              $infos . MD_NEWLINE_SEQUENCE . implode($code));
+        return "- " . $infos;
     }
 
     private static function _get_classes_information($classes = '')
@@ -703,10 +708,6 @@ class code
         $data['real_length'] = $real_length;
         $data['length'] = $length;
         $data['code'] = $code;
-
-        if (_SET_DEVELOPMENT_MODE)
-            file_put_contents("doc/" . $method->class . " " . $method->name . ".md",
-                              implode($data['code']));
 
         $data['length_warning'] = 0;
         $data['cyc'] = 0;
