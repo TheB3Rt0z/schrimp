@@ -330,14 +330,10 @@ class code
     {
         extract(self::analyse_method($method)); // generates required variables
 
-        $infos = "**" . md::hyperlink($method->getName(),
-                                      SET_GITHUB_WIKIPATH
-                                    . $method->class . "-"
-                                    . $method->getName()) . "("
-               . ($parameters_warning >= 0
-                 ? md::blue_boh("too many parameters used! (+"
-                              . ($parameters_warning + 1) . ")") . " "
-                 : '')
+        $infos = "(" . ($parameters_warning >= 0
+                       ? md::blue_boh("too many parameters used! (+"
+                                   . ($parameters_warning + 1) . ")") . " "
+                       : '')
                . implode($parameters, ", ") . ")** ("
                . self::get_method_status($method)
                . (!empty($length_warning)
@@ -362,8 +358,13 @@ class code
 
         if (_SET_DEVELOPMENT_MODE)
             file_put_contents("doc/" . $method->class . " " . $method->name . ".md",
-                              $infos . MD_NEWLINE_SEQUENCE . implode($code));
-        return "- " . $infos;
+                              "**" . $method->getName() . $infos
+                            . MD_NEWLINE_SEQUENCE . implode($code));
+
+        return "- **" . md::hyperlink($method->getName(),
+                                      SET_GITHUB_WIKIPATH
+                                    . $method->class . "-"
+                                    . $method->getName()) . $infos;
     }
 
     private static function _get_classes_information($classes = '')
