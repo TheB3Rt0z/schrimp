@@ -9,6 +9,8 @@ class navigator
         'escort class functionalities' => "should they be here available?",
     );
 
+    public static $tests = array();
+
     private $_structure = null;
 
     function __construct()

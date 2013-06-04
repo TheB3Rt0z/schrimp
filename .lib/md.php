@@ -6,6 +6,8 @@ class md
 {
     public static $todos = array();
 
+    public static $tests = array();
+
     private $_tag = null;
     private $_content = '';
     private $_attributes = array();

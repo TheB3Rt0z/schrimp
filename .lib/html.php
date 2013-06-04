@@ -15,6 +15,8 @@ class html
         'ordered_list' => "fix numbers, falsed as visible in error 404",
     );
 
+    public static $tests = array();
+
     private $_tag = null;
     private $_attributes = array();
     private $_content = '';

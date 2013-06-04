@@ -10,13 +10,13 @@
         );
 
         foreach (glob(_SET_LIBRARIES_PATH . "*.php") as $filename) // scans core directory
-            if (!substr_count($filename, "_"))
+            //if (!substr_count($filename, "_"))
                 $libraries[str_replace($substitutions,
                                        '',
                                        $filename)] = filemtime($filename);
 
         foreach (glob(_SET_LIBRARIES_PUBLICPATH . "*.php") as $filename) // scans plugins directory
-            if (!substr_count($filename, "_"))
+            //if (!substr_count($filename, "_"))
                 $libraries[str_replace($substitutions,
                                        '',
                                        $filename)] = filemtime($filename);

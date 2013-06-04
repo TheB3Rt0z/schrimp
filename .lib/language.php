@@ -9,7 +9,9 @@ class language
 		'automatic translation' => "it could be interessant to use pspell&gettext",
 	);
 
-	static private $_languages = array
+    public static $tests = array();
+
+	private static $_languages = array
     (
         'de',
 		'en',

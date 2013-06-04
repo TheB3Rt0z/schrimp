@@ -2,7 +2,12 @@
 
 class toolbox
 {
-	public static $todos = array();
+	public static $todos = array
+	(
+	    'unit testing' => "this class should contain only single tools, beware..",
+	);
+
+    public static $tests = array();
 
 	static function format_value($mixed)
 	{
@@ -27,18 +32,30 @@ class toolbox
 			return $mixed; // fallback
 	}
 
-	static function highlight($string,
-	                          $type = '')
+	static function highlight_code($string,
+	                               $type = '')
 	{
 	    switch ($type)
 	    {
 	        default :
-	        {
 	            return highlight_string($string, true);
-	            break;
-	        }
 	    }
 	}
+
+	static function full_test() // only for libraries
+	{
+	    $check = true;
+
+	    foreach (code::get_libraries_list() as $key => $value)
+	    {
+	        $class = new ReflectionClass($key);
+	        foreach ($class->getStaticPropertyValue('tests') as $subkey => $values)
+                vd("here Executor needed!");
+	    }
+
+	    return $check;
+	}
+
 }
 
 /**

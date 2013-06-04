@@ -4,6 +4,8 @@ abstract class controller
 {
 	public static $todos = array();
 
+    public static $tests = array();
+
 	const VISIBLE_IN_NAVIGATION = true;
 
 	const RENDER_BREADCRUMB = true;

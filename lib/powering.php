@@ -6,6 +6,8 @@ class powering
 	(
 	    'test added library' => "to be filled with handlers, or something similar",
 	);
+
+    public static $tests = array();
 }
 
 ?>

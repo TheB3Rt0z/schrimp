@@ -13,6 +13,8 @@ class code
         'code highlighting' => "apparently not working, maybe helper in toolbox?",
     );
 
+    public static $tests = array();
+
     const _STR_SUMMARY_BLUE = "Method(s) with too many parameters?";
     const _STR_SUMMARY_YELLOW = "Attention! Some yellow alert(s)!";
     const _STR_SUMMARY_RED = "Warning! Warning! Some red alert(s)!";
@@ -533,13 +535,13 @@ class code
         );
 
         foreach (glob(_SET_LIBRARIES_PATH . "*.php") as $filename) // scans core directory
-            if (!substr_count($filename, "_"))
+            //if (!substr_count($filename, "_"))
                 $libraries[str_replace($substitutions,
                                        '',
                                        $filename)] = filemtime($filename);
 
         foreach (glob(_SET_LIBRARIES_PUBLICPATH . "*.php") as $filename) // scans plugins directory
-            if (!substr_count($filename, "_"))
+            //if (!substr_count($filename, "_"))
                 $libraries[str_replace($substitutions,
                                        '',
                                        $filename)] = filemtime($filename);

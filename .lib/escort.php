@@ -4,6 +4,8 @@ class escort
 {
 	public static $todos = array();
 
+    public static $tests = array();
+
 	private static $_register = array();
 
 	static function register_object($object,

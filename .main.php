@@ -10,8 +10,10 @@ class main
         'pdf documentation' => "check file mod-date -> reminder on first decimal?",
         'css selectors' => "uniform to html-class render-methods (default style)",
         'css autoload' => "automatically load ANY file in .inc/inc / css?",
-        'custom var_dump' => 'it should return ALL parameters, with get_args use',
+        'custom var_dump' => 'it should return ALL parameters, with get_args use!',
     );
+
+    public static $tests = array();
 
     private $_call = null;
 
@@ -36,7 +38,10 @@ class main
 
         $this->_load_libraries();
 
-        if (_SET_DEVELOPMENT_MODE) { // only for developers, no further error 500 required
+        if (_SET_DEVELOPMENT_MODE
+            && ($uri == _SET_LOCAL_PATH . '/')
+            && toolbox::full_test())
+        { // only for developers, no further error 500 required
             file_put_contents("doc/Home.md", // main application executable
                               md::code(file_get_contents('index.php')));
 

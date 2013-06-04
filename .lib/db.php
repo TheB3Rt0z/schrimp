@@ -9,6 +9,8 @@ class db
 	    'connection constants' => "they should be an array in main configuration" // to be unserialized before use?
 	);
 
+    public static $tests = array();
+
 	const _DATABASE_TYPE = "mysql";
 	const _SERVER_HOST = "127.0.0.1";
 	const _ACCOUNT_USER = "root";

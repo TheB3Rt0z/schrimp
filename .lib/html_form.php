@@ -2,7 +2,9 @@
 
 class html_form extends html
 {
-    public static $todos = array();
+    public static $todos = array(); // warning, inherited if not available
+
+    public static $tests = array(); // warning, inherited if not available
 
     static function dropdown($options,
                              $selected = null,
