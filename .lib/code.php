@@ -585,7 +585,7 @@ class code
         $dependencies = array(); // calculation is imprecise..
 
         if ($parent = $class->getParentClass())
-            $dependencies[$parent->name] = 0;
+            $dependencies[$parent->name] = true;
         foreach (self::get_libraries_list($class->name) as $key => $value)
             $dependencies[$key] = 0;
 
