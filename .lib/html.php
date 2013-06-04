@@ -444,6 +444,11 @@ class html
         return $self->_html;
     }
 
+    function get_content()
+    {
+        return $this->_content;
+    }
+
     static function add_favicon($href)
     {
         echo self::_link($href,
