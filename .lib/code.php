@@ -9,7 +9,7 @@ class code
         'code analysis' => "load, analyse, printing and more.. use toolbox class?",
         'add code-testing methods' => "usephpunit to autobuild and execute tests",
         'get_class_dependencies' => "too unaccurate, see navigator-controller",
-        'get_class_dependencies 2' => "it should count, then order dependencies",
+        'get_class_dependencies bis' => "it should count, then order dependencies",
         'code highlighting' => "apparently not working, maybe helper in toolbox?",
     );
 
@@ -584,6 +584,8 @@ class code
     {
         $dependencies = array(); // calculation is imprecise..
 
+        if ($parent = $class->getParentClass())
+            $dependencies[$parent->name] = 0;
         foreach (self::get_libraries_list($class->name) as $key => $value)
             $dependencies[$key] = 0;
 

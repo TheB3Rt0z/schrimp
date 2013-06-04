@@ -1,7 +1,9 @@
-**get_class_dependencies(ReflectionClass $class)** (PubS, Len: 23/28 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+**get_class_dependencies(ReflectionClass $class)** (PubS, Len: 25/30 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
         $dependencies = array(); // calculation is imprecise..
 
+        if ($parent = $class->getParentClass())
+            $dependencies[$parent->name] = 0;
         foreach (self::get_libraries_list($class->name) as $key => $value)
             $dependencies[$key] = 0;
 
