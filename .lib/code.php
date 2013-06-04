@@ -162,7 +162,7 @@ class code
         {
             if ($method->class == $class->getName())
                 $reference .= self::_get_methods_information($method);
-            else
+            elseif (!$method->isPrivate()) // we show only usable methods
                 $inherited_methods[] = $method;
         }
 
@@ -584,10 +584,10 @@ class code
     {
         $dependencies = array(); // calculation is imprecise..
 
-        if ($parent = $class->getParentClass())
-            $dependencies[$parent->name] = true;
         foreach (self::get_libraries_list($class->name) as $key => $value)
             $dependencies[$key] = 0;
+        if ($parent = $class->getParentClass()) // includes extended class if available
+            $dependencies[$parent->name]++;
 
         foreach (file($class->getFileName()) as $code_line)
             foreach ($dependencies as $key => $value)
@@ -669,7 +669,8 @@ class code
              . ($method->isProtected() ? "Pro" : '')
              . ($method->isPublic() ? "Pub" : '')
              . ($method->isStatic() ? "S" : '')
-             . ($method->isAbstract() ? "A" : '');
+             . ($method->isAbstract() ? "A" : '')
+             . ($method->isFinal() ? "F" : ''); // last 2 should not be used together..
     }
 
     static function get_method_code(reflectionMethod $method,

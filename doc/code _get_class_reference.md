@@ -1,4 +1,4 @@
-**_get_class_reference(ReflectionClass $class)** (PriS, Len: 21/26 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+**_get_class_reference(ReflectionClass $class)** (PriS, Len: 21/26 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
         $reference = '';
 
@@ -14,7 +14,7 @@
         {
             if ($method->class == $class->getName())
                 $reference .= self::_get_methods_information($method);
-            else
+            elseif (!$method->isPrivate()) // we show only usable methods
                 $inherited_methods[] = $method;
         }
 

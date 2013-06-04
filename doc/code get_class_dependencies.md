@@ -2,10 +2,10 @@
   
         $dependencies = array(); // calculation is imprecise..
 
-        if ($parent = $class->getParentClass())
-            $dependencies[$parent->name] = true;
         foreach (self::get_libraries_list($class->name) as $key => $value)
             $dependencies[$key] = 0;
+        if ($parent = $class->getParentClass()) // includes extended class if available
+            $dependencies[$parent->name]++;
 
         foreach (file($class->getFileName()) as $code_line)
             foreach ($dependencies as $key => $value)
