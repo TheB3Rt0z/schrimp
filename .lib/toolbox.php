@@ -49,8 +49,21 @@ class toolbox
 	    foreach (code::get_libraries_list() as $key => $value)
 	    {
 	        $class = new ReflectionClass($key);
-	        foreach ($class->getStaticPropertyValue('tests') as $subkey => $values)
-                vd("here Executor needed!");
+	        $tests = $class->getStaticPropertyValue('tests');
+	        foreach ($tests as $subkey => $values) {
+                $result = call_user_func_array(array($key, $values['method']),
+			                                   $values['parameters']);
+
+	            if (!call_user_func('is_' . $values['returns'],
+	                                $result))
+	                $check = false;
+
+	            if ($result != $values['result'])
+	                $check = false;
+
+	            if (!$check)
+	                vd($values['error']);
+	        }
 	    }
 
 	    return $check;

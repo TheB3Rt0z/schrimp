@@ -8,18 +8,24 @@ class html_form extends html
     (
         'base dropdown' => array
         (
-            'method' => "dropdown",
+            'method' => 'dropdown',
             'parameters' => array
             (
-                array(
-                    0 => '',
-                    1 => "1",
-                    2 => "2",
+                array
+                (
+                    array
+                    (
+                        'name' => '',
+                    ),
+                    array
+                    (
+                        'name' => "name",
+                    ),
                 ),
             ),
-            'returns' => "object",
-            'test' => "%s->get_content == ''",
-            'error' => "dropdown option were incorrectly initialized",
+            'returns' => 'string',
+            'result' => "<select><option value=\"0\"></option><option value=\"1\">name</option></select>",
+            'error' => "dropdown html output not valid",
         ),
     );
 
