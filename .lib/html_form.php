@@ -2,7 +2,10 @@
 
 class html_form extends html
 {
-    public static $todos = array(); // warning, inherited if not available
+    public static $todos = array
+    (
+        'test array result' => "find a way to reduce test string, otherwise error",
+    );
 
     public static $tests = array
     (
