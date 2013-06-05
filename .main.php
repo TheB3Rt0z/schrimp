@@ -8,7 +8,7 @@ class main
         'escort library' => "session su PHP poi DB se webstore & memcache fail?",
         'memcache support' => "verify in method, if at least one mem-server works",
         'css selectors' => "uniform to html-class render-methods (default style)",
-        'css autoload' => "automatically load ANY file in .inc/inc / css?",
+        'css autoload' => "automatically load ANY file in .inc/inc / css? nnouu..",
     );
 
     public static $tests = array();

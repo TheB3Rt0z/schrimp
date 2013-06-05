@@ -12,7 +12,7 @@ Table of contents
 [Library html](#-class-html-wed-05-jun-2013--153433-- "") &#10029;&#10029;  (root/.lib/html.php, Len: 467/575, CIS: 21 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- html_form](#-class-html_form-wed-05-jun-2013--113910-- "") &#10029;  (root/.lib/html_form.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "1 too long line(s) found!") Len: 46/52, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library language](#-class-language-tue-04-jun-2013--162233-- "") &#10029;  (root/.lib/language.php, Len: 81/95, CIS: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library main](#-class-main-wed-05-jun-2013--125223-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (root/.main.php, Len: 235/297, CIS: 29 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library main](#-class-main-wed-05-jun-2013--153827-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (root/.main.php, Len: 235/297, CIS: 29 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library md](#-class-md-tue-04-jun-2013--162307-- "") (root/.lib/md.php, Len: 185/231, CIS: 14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library navigator](#-class-navigator-wed-05-jun-2013--153309-- "") &#10029;&#10029;&#10029;  (root/.lib/navigator.php, Len: 309/381, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library powering](#-class-powering-tue-04-jun-2013--162326-- "") &#10029;  (root/lib/powering.php, Len: 5/6, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -346,7 +346,7 @@ Uses: **html**
   
 ***  
   
-[⇧](# "to the top") Class MAIN (Wed, 05 Jun 2013 @ 12:52:23)  
+[⇧](# "to the top") Class MAIN (Wed, 05 Jun 2013 @ 15:38:27)  
 ----------------------------------------  
   
 **CODE REFERENCE:**  
@@ -385,7 +385,7 @@ Uses: **code**, **html**, **md**, **toolbox**
 - **escort library** &#10140; session su PHP poi DB se webstore & memcache fail?  
 - **memcache support** &#10140; verify in method, if at least one mem-server works  
 - **css selectors** &#10140; uniform to html-class render-methods (default style)  
-- **css autoload** &#10140; automatically load ANY file in .inc/inc / css?  
+- **css autoload** &#10140; automatically load ANY file in .inc/inc / css? nnouu..  
   
   
 ***  
