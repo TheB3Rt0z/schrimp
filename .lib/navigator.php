@@ -297,7 +297,7 @@ class navigator
         $structure = $this->_structure[_SET_HOME_COMPONENT];
 
         $code = html::spanner(HTML_ICON_NAVIGATION,
-                             'marker')
+                             array('marker'))
               . html::hyperlink('',
                                 $structure['name'])
               . HTML_BREADCRUMB_SEPARATOR;
@@ -341,7 +341,7 @@ class navigator
         $self = new self;
 
         $code = html::spanner(HTML_ICON_LIST,
-                              'marker')
+                              array('marker'))
               . html::array_to_list($self->_structure[_SET_HOME_COMPONENT]['sub']);
 
         return html::divisor($code);

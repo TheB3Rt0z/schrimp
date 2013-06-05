@@ -159,7 +159,7 @@ class html
     {
         $attributes = array();
         if (!empty($classes))
-            $attributes['class'] = trim($classes);
+            $attributes['class'] = implode($classes, " ");
 
         $self = new self('br',
                          $attributes);
@@ -183,7 +183,7 @@ class html
     {
         $attributes = array();
         if (!empty($classes))
-            $attributes['class'] = implode($classes, ' ');
+            $attributes['class'] = implode($classes, " ");
         if (!empty($id))
             $attributes['id'] = trim($id);
 
@@ -275,11 +275,11 @@ class html
     }
 
     private static function _li($content,
-                                $classes = '')
+                                $classes = array())
     {
         $attributes = array();
         if (!empty($classes))
-            $attributes['class'] = trim($classes);
+            $attributes['class'] = implode($classes, " ");
 
         $self = new self('li',
                          $attributes,
@@ -315,11 +315,11 @@ class html
     }
 
     private static function _ol($content,
-                                $classes = '')
+                                $classes = array())
     {
         $attributes = array();
         if (!empty($classes))
-            $attributes['class'] = trim($classes);
+            $attributes['class'] = implode($classes, " ");
 
         $self = new self('ol',
                          $attributes,
@@ -404,10 +404,10 @@ class html
 
     protected static function _select($content,
                                       $attributes = array(),
-                                      $classes = '')
+                                      $classes = array())
     {
         if (!empty($classes))
-            $attributes['class'] = trim($classes);
+            $attributes['class'] = implode($classes, " ");
 
         $self = new self('select',
                          $attributes,
@@ -431,11 +431,11 @@ class html
     }
 
     private static function _ul($content,
-                                $classes = '')
+                                $classes = array())
     {
         $attributes = array();
         if (!empty($classes))
-            $attributes['class'] = trim($classes);
+            $attributes['class'] = implode($classes, " ");
 
         $self = new self('ul',
                          $attributes,
@@ -546,7 +546,7 @@ class html
     static function clearfix()
     {
         return self::_br(1,
-                         'clearfix');
+                         array('clearfix'));
     }
 
     static function codeblock($content)
@@ -560,11 +560,11 @@ class html
     }
 
     static function spanner($content,
-                            $classes = '')
+                            $classes = array())
     {
         return self::_span($content,
                            array(),
-                           explode(" ", $classes));
+                           $classes);
     }
 
     static function preform($content)
