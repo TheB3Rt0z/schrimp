@@ -7,10 +7,8 @@ class main
         'documentation' => "PHP highlight_string/file to rapresent code excerpts",
         'escort library' => "session su PHP poi DB se webstore & memcache fail?",
         'memcache support' => "verify in method, if at least one mem-server works",
-        'pdf documentation' => "check file mod-date -> reminder on first decimal?",
         'css selectors' => "uniform to html-class render-methods (default style)",
         'css autoload' => "automatically load ANY file in .inc/inc / css?",
-        'custom var_dump' => 'it should return ALL parameters, with get_args use!',
     );
 
     public static $tests = array();
@@ -201,7 +199,22 @@ class main
 
     static function var_dump($what)
     {
-        echo html::preform($what);
+        $args = func_get_args();
+
+        if (count($args) == 1) {
+            $args = $args[0];
+            if (is_array($args)
+                && count(debug_backtrace()) != 1)
+            {
+                foreach ($args as $arg)
+                    echo html::preform($arg);
+            }
+            else
+                echo html::preform($args);
+        }
+        else
+            foreach ($args as $arg)
+                echo html::preform($arg);
     }
 
     static function get_version($precision = 2)
@@ -290,12 +303,12 @@ class main
 
 /**
  * returns pre-formatted mixed variables;
- * @param mixed $what
+ * @param multi $what
  * @return void
  */
 function vd($what)
 {
-    main::var_dump($what);
+    main::var_dump(func_get_args());
 }
 
 /**

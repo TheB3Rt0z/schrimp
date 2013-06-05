@@ -12,7 +12,7 @@ Table of contents
 [Library html](#-class-html-wed-05-jun-2013--104851-- "") &#10029;&#10029;&#10029;  (root/.lib/html.php, Len: 468/576, CIS: 21 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- html_form](#-class-html_form-wed-05-jun-2013--113910-- "") &#10029;  (root/.lib/html_form.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "1 too long line(s) found!") Len: 46/52, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library language](#-class-language-tue-04-jun-2013--162233-- "") &#10029;  (root/.lib/language.php, Len: 81/95, CIS: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library main](#-class-main-tue-04-jun-2013--164847-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (root/.main.php, Len: 223/284, CIS: 29 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library main](#-class-main-wed-05-jun-2013--125223-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (root/.main.php, Len: 235/297, CIS: 29 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library md](#-class-md-tue-04-jun-2013--162307-- "") (root/.lib/md.php, Len: 185/231, CIS: 14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library navigator](#-class-navigator-tue-04-jun-2013--162314-- "") &#10029;&#10029;&#10029;  (root/.lib/navigator.php, Len: 309/381, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library powering](#-class-powering-tue-04-jun-2013--162326-- "") &#10029;  (root/lib/powering.php, Len: 5/6, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -57,7 +57,7 @@ General reference
   
 **FUNCTION ALIASES:**  
   
-- **fe($path)** &#10140; .main.php on line 306,
+- **fe($path)** &#10140; .main.php on line 319,
   returns boolean if realpath path exists on running server;
   @param string $path
   @return boolean true if realpath exists, false otherwise
@@ -67,22 +67,22 @@ General reference
   @param mixed $mixed
   @return mixed depending on internally defined rules
   
-- **le($msg)** &#10140; .main.php on line 336,
+- **le($msg)** &#10140; .main.php on line 349,
   launches a customizable error 500, mit optional backtrace for debug;
   @param string $msg
   @return boolean false after relocate
   
-- **rt($url = null)** &#10140; .main.php on line 326,
+- **rt($url = null)** &#10140; .main.php on line 339,
   relocates to given relative url or to base path on default;
   @param string $url
   @return void
   
-- **ru($uri = null)** &#10140; .main.php on line 316,
+- **ru($uri = null)** &#10140; .main.php on line 329,
   returns an absolute uri, based on current server configuration;
   @param string $uri
   @return string absolute http unified resource identifier
   
-- **sb()** &#10140; .main.php on line 345,
+- **sb()** &#10140; .main.php on line 358,
   show call's backtrace with help of error base handler
   @return void
   
@@ -92,9 +92,9 @@ General reference
   @param string $marker
   @return mixed callback function returned value(s)
   
-- **vd($what)** &#10140; .main.php on line 296,
+- **vd($what)** &#10140; .main.php on line 309,
   returns pre-formatted mixed variables;
-  @param mixed $what
+  @param multi $what
   @return void
   
   
@@ -347,7 +347,7 @@ Uses: **html**
   
 ***  
   
-[⇧](# "to the top") Class MAIN (Tue, 04 Jun 2013 @ 16:48:47)  
+[⇧](# "to the top") Class MAIN (Wed, 05 Jun 2013 @ 12:52:23)  
 ----------------------------------------  
   
 **CODE REFERENCE:**  
@@ -374,7 +374,7 @@ Uses: **html**
 - **[resolve_uri](https://github.com/TheB3Rt0z/schrimp/wiki/main-resolve_uri "")($uri = null)** (PubS, Len: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[set_buffer](https://github.com/TheB3Rt0z/schrimp/wiki/main-set_buffer "")($buffer)** (PubS, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[show_backtrace](https://github.com/TheB3Rt0z/schrimp/wiki/main-show_backtrace "")()** (PubS, Len: 5/6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **[var_dump](https://github.com/TheB3Rt0z/schrimp/wiki/main-var_dump "")($what)** (PubS, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[var_dump](https://github.com/TheB3Rt0z/schrimp/wiki/main-var_dump "")($what)** (PubS, Len: 15/16 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
 **DEPENDENCIES:**  
   
@@ -385,10 +385,8 @@ Uses: **code**, **html**, **md**, **toolbox**
 - **documentation** &#10140; PHP highlight_string/file to rapresent code excerpts  
 - **escort library** &#10140; session su PHP poi DB se webstore & memcache fail?  
 - **memcache support** &#10140; verify in method, if at least one mem-server works  
-- **pdf documentation** &#10140; check file mod-date -> reminder on first decimal?  
 - **css selectors** &#10140; uniform to html-class render-methods (default style)  
 - **css autoload** &#10140; automatically load ANY file in .inc/inc / css?  
-- **custom var_dump** &#10140; it should return ALL parameters, with get_args use!  
   
   
 ***  
