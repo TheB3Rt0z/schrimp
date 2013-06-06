@@ -1,6 +1,7 @@
 '_todos' => array
 (
     '? admin bar' => "optional control to measure run time performance (gApis)",
+    'configuration.tmp settings order' => "use comments and find a beautiful order",
 ),
 
 '_set_development_mode' => false,
@@ -28,3 +29,12 @@
 '_str_kernel_salt' => "Sstm Cntrl Hdng_t_ Rw Incrs_f Mntl Prdctvt",
 '_str_project_name' => "Das S.C.H.R.I.M.P.",
 '_str_copyright_signature' => "Copyright © 2011-" . date('Y') . " | Das S.C.H.R.I.M.P. Project",
+
+'_db_connection_settings' => array
+(
+    'database_type' => "mysql",
+    'server_host' => "127.0.0.1",
+    'account_user' => "root",
+    'account_password' => '',
+    'database_name' => "schrimp",
+),

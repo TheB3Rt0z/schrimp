@@ -2,42 +2,43 @@
 
 define('DB_TABLE_PREFIX', '');
 
+$_db_connection_settings = unserialize(_DB_CONNECTION_SETTINGS); // data from configuration
+
+define('_DB_DATABASE_TYPE', $_db_connection_settings['database_type']);
+define('_DB_SERVER_HOST', $_db_connection_settings['server_host']);
+define('_DB_ACCOUNT_USER', $_db_connection_settings['account_user']);
+define('_DB_ACCOUNT_PASSWORD', $_db_connection_settings['account_password']);
+define('_DB_DATABASE_NAME', $_db_connection_settings['database_name']);
+
 class db
 {
-	public static $todos = array
-	(
-	    'connection constants' => "they should be an array in main configuration" // to be unserialized before use?
-	);
+	public static $todos = array();
 
     public static $tests = array();
 
-	const _DATABASE_TYPE = "mysql";
-	const _SERVER_HOST = "127.0.0.1";
-	const _ACCOUNT_USER = "root";
-	const _ACCOUNT_PASSWORD = '';
-	const _DATABASE_NAME = "schrimp";
+    private $_db = null;
 
 	function __construct()
 	{
-		switch (self::_DB_DATABASE_TYPE)
+		switch (_DB_DATABASE_TYPE)
 		{
 			case 'mysql' :
 			{
-				mysql_connect(self::_SERVER_HOST,
-				              self::_ACCOUNT_USER,
-				              self::_ACCOUNT_PASSWORD);
-    			mysql_select_db(self::_DATABASE_NAME);
+				$this->_db = mysqli_connect(_DB_SERVER_HOST,
+				                            _DB_ACCOUNT_USER,
+				                            _DB_ACCOUNT_PASSWORD,
+				                            _DB_DATABASE_NAME);
 				break;
 			}
 
 			default :
 				return le(tr('error',
                              "unknown %s database type",
-				             self::_DATABASE_TYPE));
+				             _DB_DATABASE_TYPE));
 		}
 
 		escort::register_object($this,
-		                        self::_DB_DATABASE_TYPE);
+		                        _DB_DATABASE_TYPE);
 	}
 }
 

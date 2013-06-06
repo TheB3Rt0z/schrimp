@@ -1,4 +1,4 @@
-![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.7.2013.06.05  
+![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.7.2013.06.06  
 -----------------------------------------------------------------------------------------------------------------------------------------  
   
 Table of contents  
@@ -7,7 +7,7 @@ Table of contents
 [General reference](#general-reference-- "")  
 [Library code](#-class-code-tue-04-jun-2013--163926-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (root/.lib/code.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "1 too long line(s) found!") Len: 647/768, CIS: 14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  3 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!") 2 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!")  
 [Library controller](#-class-controller-tue-04-jun-2013--162129-- "") (root/.lib/controller.php, Len: 93/121, CIS: 10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library db](#-class-db-tue-04-jun-2013--162149-- "") &#10029;  (root/.lib/db.php, Len: 30/35, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library db](#-class-db-thu-06-jun-2013--141920-- "") (root/.lib/db.php, Len: 23/28, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library escort](#-class-escort-tue-04-jun-2013--162159-- "") (root/.lib/escort.php, Len: 32/40, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library html](#-class-html-wed-05-jun-2013--153433-- "") &#10029;&#10029;  (root/.lib/html.php, Len: 467/575, CIS: 21 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- html_form](#-class-html_form-wed-05-jun-2013--113910-- "") &#10029;  (root/.lib/html_form.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "1 too long line(s) found!") Len: 46/52, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -102,6 +102,7 @@ General reference
 **TODOS:**  
   
 - **? admin bar** &#10140; optional control to measure run time performance (gApis)  
+- **configuration.tmp settings order** &#10140; use comments and find a beautiful order  
   
   
   
@@ -193,7 +194,7 @@ Uses: **escort**, **html**, **navigator**
   
 ***  
   
-[⇧](# "to the top") Class DB (Tue, 04 Jun 2013 @ 16:21:49)  
+[⇧](# "to the top") Class DB (Thu, 06 Jun 2013 @ 14:19:20)  
 --------------------------------------  
   
 **CODE REFERENCE:**  
@@ -203,10 +204,6 @@ Uses: **escort**, **html**, **navigator**
 **DEPENDENCIES:**  
   
 Uses: **escort**  
-  
-**TODOS:**  
-  
-- **connection constants** &#10140; they should be an array in main configuration  
   
   
 ***  
