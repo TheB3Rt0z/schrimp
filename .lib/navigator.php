@@ -4,9 +4,7 @@ class navigator
 {
     public static $todos = array
     (
-        'render_breadcrumb' => "should return html code, or printing it directly?",
         'render_list' => "this should be CSS3 and appear on a mouse gesture..",
-        'escort class functionalities' => "should they be here available?",
     );
 
     public static $tests = array();
@@ -214,7 +212,7 @@ class navigator
                . ")";
     }
 
-    private function _render_breadcrumb($controller)
+    private function _print_breadcrumb($controller)
     {
         $structure = $this->_structure[_SET_HOME_COMPONENT];
 
@@ -292,7 +290,7 @@ class navigator
         return $code;
     }
 
-    private function _render_active_breadcrumb($controller)
+    private function _print_active_breadcrumb($controller)
     {
         $structure = $this->_structure[_SET_HOME_COMPONENT];
 
@@ -326,17 +324,17 @@ class navigator
         echo html::divisor($code);
     }
 
-    static function render_list()
+    static function get_list()
     {
         if (_SET_ADVANCED_INTERFACE)
-		    return self::render_advanced_list();
+		    return self::get_advanced_list();
 
         $self = new self;
 
         return html::array_to_list($self->_structure[_SET_HOME_COMPONENT]['sub']);
     }
 
-    static function render_advanced_list()
+    static function get_advanced_list()
     {
         $self = new self;
 
@@ -357,7 +355,7 @@ class navigator
         if ($controller != _SET_HOME_COMPONENT)
         {
             $self = new self;
-            $self->_render_breadcrumb($controller);
+            $self->_print_breadcrumb($controller);
         }
     }
 
@@ -371,11 +369,11 @@ class navigator
         if ($controller != _SET_HOME_COMPONENT)
         {
             $self = new self;
-            $self->_render_active_breadcrumb($controller);
+            $self->_print_active_breadcrumb($controller);
         }
     }
 
-    static function render_sitemap()
+    static function get_sitemap()
     {
         $self = new self; // populating structure array if still null (singleton)
 

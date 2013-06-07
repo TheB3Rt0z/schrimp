@@ -85,7 +85,7 @@ class error extends controller
 		$this->_set_section(html::title(2,
                                         $this->_translate('no content') . "!"));
 
-        $this->_set_article(navigator::render_sitemap());
+        $this->_set_article(navigator::get_sitemap());
 	}
 
 	private function _handler_500()
