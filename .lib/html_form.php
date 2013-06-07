@@ -4,7 +4,7 @@ class html_form extends html
 {
     public static $todos = array
     (
-        'test array result' => "find a way to reduce test string, otherwise error",
+        'test array result' => "should be saved anywhere and loaded by executor..",
     );
 
     public static $tests = array
@@ -14,7 +14,7 @@ class html_form extends html
             'method' => 'dropdown',
             'parameters' => array
             (
-                array
+                'options' => array
                 (
                     array
                     (

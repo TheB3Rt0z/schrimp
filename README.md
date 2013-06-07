@@ -1,4 +1,4 @@
-![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.7.2013.06.06  
+![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.7.2013.06.07  
 -----------------------------------------------------------------------------------------------------------------------------------------  
   
 Table of contents  
@@ -10,7 +10,7 @@ Table of contents
 [Library db](#-class-db-thu-06-jun-2013--141920-- "") (root/.lib/db.php, Len: 23/28, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library escort](#-class-escort-tue-04-jun-2013--162159-- "") (root/.lib/escort.php, Len: 32/40, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library html](#-class-html-wed-05-jun-2013--153433-- "") &#10029;&#10029;  (root/.lib/html.php, Len: 467/575, CIS: 21 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[- html_form](#-class-html_form-wed-05-jun-2013--113910-- "") &#10029;  (root/.lib/html_form.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "1 too long line(s) found!") Len: 46/52, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[- html_form](#-class-html_form-fri-07-jun-2013--093501-- "") &#10029;  (root/.lib/html_form.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "1 too long line(s) found!") Len: 46/52, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library language](#-class-language-tue-04-jun-2013--162233-- "") &#10029;  (root/.lib/language.php, Len: 81/95, CIS: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library main](#-class-main-wed-05-jun-2013--153827-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (root/.main.php, Len: 235/297, CIS: 29 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library md](#-class-md-tue-04-jun-2013--162307-- "") (root/.lib/md.php, Len: 185/231, CIS: 14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -284,7 +284,7 @@ Uses: **escort**
   
 ***  
   
-[⇧](# "to the top") Class HTML_FORM (Wed, 05 Jun 2013 @ 11:39:10)  
+[⇧](# "to the top") Class HTML_FORM (Fri, 07 Jun 2013 @ 09:35:01)  
 ---------------------------------------------  
   
 **CODE REFERENCE:**  
@@ -321,7 +321,7 @@ Uses: **html**
   
 **TODOS:**  
   
-- **test array result** &#10140; find a way to reduce test string, otherwise error  
+- **test array result** &#10140; should be saved anywhere and loaded by executor..  
   
   
 ***  
