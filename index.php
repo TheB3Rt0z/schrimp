@@ -9,6 +9,16 @@
  * - string, paths & html attributes: "", identifiers & empty-string: '',
  * - inline comments with prefix " // " & only on not-empty lines
  * - private or protected methods/variables/constants with prefix "_"
+ * - methods usage-compliant prefixes:
+ * - - add: usually add some elements to some internal structure..
+ * - - get: traditional getter for private/protected properties and more
+ * - - initialize: prepare objects (or singletones) after/during creation
+ * - - is: boolean check of various conditions
+ * - - list: outputs usually datasets, f.e. in array form
+ * - - print: outputs directly something (through echo or print family)
+ * - - render: like print, but for complete entities (f.e. html widgets)
+ * - - set: traditional setter for private/protected properties
+ * - - _handler: application controller, protected or private if not simple
  */
 
 require_once ".main.php"; // loading main application
