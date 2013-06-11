@@ -5,7 +5,7 @@ class toolbox
 	public static $todos = array
 	(
 	    'unit testing' => "..and what about a little code coverage measuring?",
-	    'error message' => "difference should be ",
+	    'error message' => "difference should be evidenced and a message showed",
 	);
 
     public static $tests = array();
@@ -45,8 +45,8 @@ class toolbox
 
 	static function full_test() // only for libraries
 	{
-	    eval("\$results = array(" . file_get_contents('.lib/' . __CLASS__ . '.tst') . ");"); // loads results file
-
+	    $tests = '.lib/' . __CLASS__ . '.tst';
+	    eval("\$results = array(" . file_get_contents($tests) . ");"); // loads results file
 	    $check = true;
 
 	    foreach (code::get_libraries_list() as $key => $value)
