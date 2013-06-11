@@ -6,11 +6,7 @@ class code
 {
     public static $todos = array
     (
-        'code analysis' => "load, analyse, printing and more.. use toolbox class?",
-        'add code-testing methods' => "usephpunit to autobuild and execute tests",
         'get_class_dependencies' => "too unaccurate, see navigator-controller",
-        'get_class_dependencies bis' => "it should count, then order dependencies",
-        'code highlighting' => "apparently not working, maybe helper in toolbox?",
     );
 
     public static $tests = array();
@@ -693,7 +689,7 @@ class code
                             $length);
 
         if ($highlighting)
-            return toolbox::highlight("<?php\n" . implode($code) . "\n?>");
+            return toolbox::highlight_code("<?\n" . implode($code) . "\n?>");
         else
             return array
             (

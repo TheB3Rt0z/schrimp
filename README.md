@@ -1,11 +1,11 @@
-![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.7.2013.06.07  
+![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.7.2013.06.11  
 -----------------------------------------------------------------------------------------------------------------------------------------  
   
 Table of contents  
 -----------------  
   
 [General reference](#general-reference-- "")  
-[Library code](#-class-code-tue-04-jun-2013--163926-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (root/.lib/code.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "1 too long line(s) found!") Len: 647/768, CIS: 14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  3 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!") 2 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!")  
+[Library code](#-class-code-tue-11-jun-2013--171848-- "") &#10029;  (root/.lib/code.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "1 too long line(s) found!") Len: 643/764, CIS: 14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  3 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!") 2 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!")  
 [Library controller](#-class-controller-tue-04-jun-2013--162129-- "") (root/.lib/controller.php, Len: 93/121, CIS: 10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library db](#-class-db-thu-06-jun-2013--141920-- "") (root/.lib/db.php, Len: 23/28, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library escort](#-class-escort-tue-04-jun-2013--162159-- "") (root/.lib/escort.php, Len: 32/40, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -16,7 +16,7 @@ Table of contents
 [Library md](#-class-md-tue-04-jun-2013--162307-- "") (root/.lib/md.php, Len: 185/231, CIS: 14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library navigator](#-class-navigator-fri-07-jun-2013--130937-- "") &#10029;  (root/.lib/navigator.php, Len: 307/379, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library powering](#-class-powering-tue-04-jun-2013--162326-- "") &#10029;  (root/lib/powering.php, Len: 5/6, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library toolbox](#-class-toolbox-wed-05-jun-2013--113155-- "") &#10029;  (root/.lib/toolbox.php, Len: 57/67, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library toolbox](#-class-toolbox-tue-11-jun-2013--171848-- "") &#10029;  (root/.lib/toolbox.php, Len: 57/67, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Component admin](#-class-admin-fri-07-jun-2013--131123-- "") (root/.app/admin.php, Len: 10/12, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- admin_helper](#-class-admin_helper-wed-20-mar-2013--194711-- "") (root/.app/admin_helper.php, Len: 1/1, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Component control](#-class-control-fri-07-jun-2013--131123-- "") &#10029;&#10029;&#10029;  (root/.app/control.php, Len: 199/234, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -108,7 +108,7 @@ General reference
   
 ***  
   
-[⇧](# "to the top") Class CODE (Tue, 04 Jun 2013 @ 16:39:26)  
+[⇧](# "to the top") Class CODE (Tue, 11 Jun 2013 @ 17:18:48)  
 ----------------------------------------  
   
 **CODE REFERENCE:**  
@@ -150,11 +150,7 @@ Uses: **main**, **md**, **toolbox**
   
 **TODOS:**  
   
-- **code analysis** &#10140; load, analyse, printing and more.. use toolbox class?  
-- **add code-testing methods** &#10140; usephpunit to autobuild and execute tests  
 - **get_class_dependencies** &#10140; too unaccurate, see navigator-controller  
-- **get_class_dependencies bis** &#10140; it should count, then order dependencies  
-- **code highlighting** &#10140; apparently not working, maybe helper in toolbox?  
   
   
 ***  
@@ -465,7 +461,7 @@ Uses: **controller**, **html**, **html_form**, **main**
   
 ***  
   
-[⇧](# "to the top") Class TOOLBOX (Wed, 05 Jun 2013 @ 11:31:55)  
+[⇧](# "to the top") Class TOOLBOX (Tue, 11 Jun 2013 @ 17:18:48)  
 -------------------------------------------  
   
 **CODE REFERENCE:**  
