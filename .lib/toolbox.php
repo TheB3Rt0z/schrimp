@@ -4,7 +4,8 @@ class toolbox
 {
 	public static $todos = array
 	(
-	    'unit testing' => "this class should contain only single tools, beware..",
+	    'unit testing' => "..and what about a little code coverage measuring?",
+	    'error message' => "difference should be ",
 	);
 
     public static $tests = array();
@@ -44,6 +45,8 @@ class toolbox
 
 	static function full_test() // only for libraries
 	{
+	    eval("\$results = array(" . file_get_contents('.lib/' . __CLASS__ . '.tst') . ");"); // loads results file
+
 	    $check = true;
 
 	    foreach (code::get_libraries_list() as $key => $value)
@@ -54,15 +57,12 @@ class toolbox
                 $result = call_user_func_array(array($key, $values['method']),
 			                                   $values['parameters']);
 
-	            if (!call_user_func('is_' . $values['returns'],
-	                                $result))
+                $answer = $results[$key][$subkey];
+	            if ($result !== $answer)
+	            {
+	                vd($values['error'] . ": " . $result . " vs " . $answer);
 	                $check = false;
-
-	            if ($result != $values['result'])
-	                $check = false;
-
-	            if (!$check)
-	                vd($values['error']);
+	            }
 	        }
 	    }
 

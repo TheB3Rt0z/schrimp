@@ -9,7 +9,7 @@ class html_form extends html
 
     public static $tests = array
     (
-        'base dropdown' => array
+        'base_dropdown' => array
         (
             'method' => 'dropdown',
             'parameters' => array
@@ -26,8 +26,27 @@ class html_form extends html
                     ),
                 ),
             ),
-            'returns' => 'string',
-            'result' => "<select><option value=\"0\"></option><option value=\"1\">name</option></select>",
+            'error' => "dropdown html output not valid",
+        ),
+        'advanced_dropdown' => array
+        (
+            'method' => 'dropdown',
+            'parameters' => array
+            (
+                'options' => array
+                (
+                    array
+                    (
+                        'name' => '',
+                    ),
+                    array
+                    (
+                        'name' => 'selected',
+                    ),
+                ),
+                'selected' => 1,
+                'onchange' => "javascript",
+            ),
             'error' => "dropdown html output not valid",
         ),
     );
