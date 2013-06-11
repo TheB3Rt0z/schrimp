@@ -45,7 +45,7 @@ class toolbox
 
 	static function full_test() // only for libraries
 	{
-	    $tests = '.lib/' . __CLASS__ . '.tst';
+	    $tests = '.lib/' . __CLASS__ . '.tsts';
 	    eval("\$results = array(" . file_get_contents($tests) . ");"); // loads results file
 	    $check = true;
 
