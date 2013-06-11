@@ -53,7 +53,8 @@ class toolbox
 	    {
 	        $class = new ReflectionClass($key);
 	        $tests = $class->getStaticPropertyValue('tests');
-	        foreach ($tests as $subkey => $values) {
+	        foreach ($tests as $subkey => $values)
+	        {
                 $result = call_user_func_array(array($key, $values['method']),
 			                                   $values['parameters']);
 
