@@ -38,10 +38,10 @@ class main
 
         if (_SET_DEVELOPMENT_MODE
             && ($uri == _SET_LOCAL_PATH . '/')
-            && toolbox::full_test())
+            && toolbox::fulltest())
         { // only for developers, no further error 500 required
             file_put_contents("doc/Home.md", // main application executable
-                              md::code(file_get_contents('index.php')));
+                              md::code(pr('index.php')));
 
             file_put_contents(SET_DOCUMENTATION_MD . ".md", // updates 1st github wiki page..
                               code::get_documentation());
@@ -282,7 +282,7 @@ class main
 
     static function get_buffer($delete = true)
     {
-        $buffer = unserialize(file_get_contents(".buffer"));
+        $buffer = unserialize(pr(".buffer"));
 
         if ($delete)
             unlink(".buffer");

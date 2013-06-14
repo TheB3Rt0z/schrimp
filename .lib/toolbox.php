@@ -10,7 +10,7 @@ class toolbox
 
     public static $tests = array();
 
-	static function format_value($mixed)
+	static function format($mixed)
 	{
 		if ($mixed === true
 		    || $mixed == "1")
@@ -33,8 +33,8 @@ class toolbox
 			return $mixed; // fallback
 	}
 
-	static function highlight_code($string,
-	                               $type = '')
+	static function highlight($string,
+	                          $type = '')
 	{
 	    switch ($type)
 	    {
@@ -43,10 +43,10 @@ class toolbox
 	    }
 	}
 
-	static function full_test() // only for libraries
+	static function fulltest() // only for libraries
 	{
 	    $tests = '.lib/' . __CLASS__ . '.tsts';
-	    eval("\$results = array(" . file_get_contents($tests) . ");"); // loads results file
+	    eval("\$results = array(" . pr($tests) . ");"); // loads results file
 	    $check = true;
 
 	    foreach (code::get_libraries_list() as $key => $value)
@@ -70,6 +70,14 @@ class toolbox
 	    return $check;
 	}
 
+	static function parse($source) {
+	    $output = file_get_contents($source);
+
+	    if (@simplexml_load_string($output))
+	        return new SimpleXmlElement($output);
+
+        return $output;
+	}
 }
 
 /**
@@ -79,7 +87,17 @@ class toolbox
  */
 function fv($mixed)
 {
-	return toolbox::format_value($mixed);
+	return toolbox::format($mixed);
+}
+
+/**
+ * returns a parsed output, source-type dependant;
+ * @param string $source
+ * @return mixed depending on source origin
+ */
+function pr($source)
+{
+	return toolbox::parse($source);
 }
 
 ?>

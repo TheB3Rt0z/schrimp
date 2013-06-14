@@ -1,23 +1,23 @@
-![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.7.2013.06.11  
+![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Documentation 0.7.2013.06.14  
 -----------------------------------------------------------------------------------------------------------------------------------------  
   
 Table of contents  
 -----------------  
   
 [General reference](#general-reference-- "")  
-[Library code](#-class-code-tue-11-jun-2013--171848-- "") &#10029;  (root/.lib/code.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "1 too long line(s) found!") Len: 643/764, CIS: 14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  3 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!") 2 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!")  
+[Library code](#-class-code-fri-14-jun-2013--145045-- "") &#10029;  (root/.lib/code.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "1 too long line(s) found!") Len: 643/764, CIS: 14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  3 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!") 2 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!")  
 [Library controller](#-class-controller-tue-04-jun-2013--162129-- "") (root/.lib/controller.php, Len: 93/121, CIS: 10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library db](#-class-db-thu-06-jun-2013--141920-- "") (root/.lib/db.php, Len: 23/28, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library escort](#-class-escort-tue-04-jun-2013--162159-- "") (root/.lib/escort.php, Len: 32/40, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library html](#-class-html-tue-11-jun-2013--180409-- "") &#10029;&#10029;  (root/.lib/html.php, Len: 467/575, CIS: 21 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- html_form](#-class-html_form-tue-11-jun-2013--181136-- "") &#10029;  (root/.lib/html_form.php, Len: 65/71, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library language](#-class-language-tue-04-jun-2013--162233-- "") &#10029;  (root/.lib/language.php, Len: 81/95, CIS: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library main](#-class-main-wed-05-jun-2013--153827-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (root/.main.php, Len: 235/297, CIS: 29 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library main](#-class-main-fri-14-jun-2013--145726-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (root/.main.php, Len: 235/297, CIS: 29 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library md](#-class-md-tue-04-jun-2013--162307-- "") (root/.lib/md.php, Len: 185/231, CIS: 14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library navigator](#-class-navigator-fri-07-jun-2013--130937-- "") &#10029;  (root/.lib/navigator.php, Len: 307/379, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library powering](#-class-powering-tue-04-jun-2013--162326-- "") &#10029;  (root/lib/powering.php, Len: 5/6, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library toolbox](#-class-toolbox-tue-11-jun-2013--182058-- "") &#10029;&#10029;  (root/.lib/toolbox.php, Len: 60/68, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Component admin](#-class-admin-fri-07-jun-2013--131123-- "") (root/.app/admin.php, Len: 10/12, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library toolbox](#-class-toolbox-fri-14-jun-2013--151508-- "") &#10029;&#10029;  (root/.lib/toolbox.php, Len: 66/76, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Component admin](#-class-admin-fri-14-jun-2013--151522-- "") (root/.app/admin.php, Len: 10/12, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- admin_helper](#-class-admin_helper-wed-20-mar-2013--194711-- "") (root/.app/admin_helper.php, Len: 1/1, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Component control](#-class-control-fri-07-jun-2013--131123-- "") &#10029;&#10029;&#10029;  (root/.app/control.php, Len: 199/234, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- control_helper](#-class-control_helper-thu-21-mar-2013--112255-- "") (root/.app/control_helper.php, Len: 49/62, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -62,7 +62,7 @@ General reference
   @param string $path
   @return boolean true if realpath exists, false otherwise
   
-- **fv($mixed)** &#10140; .lib/toolbox.php on line 80,
+- **fv($mixed)** &#10140; .lib/toolbox.php on line 88,
   returns a beautiful formatted value, mixed variable-type-dependant;
   @param mixed $mixed
   @return mixed depending on internally defined rules
@@ -71,6 +71,11 @@ General reference
   launches a customizable error 500, mit optional backtrace for debug;
   @param string $msg
   @return boolean false after relocate
+  
+- **pr($source)** &#10140; .lib/toolbox.php on line 98,
+  returns a parsed output, source-type dependant;
+  @param string $source
+  @return mixed depending on source origin
   
 - **rt($url = null)** &#10140; .main.php on line 339,
   relocates to given relative url or to base path on default;
@@ -108,7 +113,7 @@ General reference
   
 ***  
   
-[⇧](# "to the top") Class CODE (Tue, 11 Jun 2013 @ 17:18:48)  
+[⇧](# "to the top") Class CODE (Fri, 14 Jun 2013 @ 14:50:45)  
 ----------------------------------------  
   
 **CODE REFERENCE:**  
@@ -339,7 +344,7 @@ Uses: **html**
   
 ***  
   
-[⇧](# "to the top") Class MAIN (Wed, 05 Jun 2013 @ 15:38:27)  
+[⇧](# "to the top") Class MAIN (Fri, 14 Jun 2013 @ 14:57:26)  
 ----------------------------------------  
   
 **CODE REFERENCE:**  
@@ -461,14 +466,15 @@ Uses: **controller**, **html**, **html_form**, **main**
   
 ***  
   
-[⇧](# "to the top") Class TOOLBOX (Tue, 11 Jun 2013 @ 18:20:58)  
+[⇧](# "to the top") Class TOOLBOX (Fri, 14 Jun 2013 @ 15:15:08)  
 -------------------------------------------  
   
 **CODE REFERENCE:**  
   
-- **[format_value](https://github.com/TheB3Rt0z/schrimp/wiki/toolbox-format_value "")($mixed)** (PubS, Len: 19 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **[full_test](https://github.com/TheB3Rt0z/schrimp/wiki/toolbox-full_test "")()** (PubS, Len: 20/23 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **[highlight_code](https://github.com/TheB3Rt0z/schrimp/wiki/toolbox-highlight_code "")($string, $type = null)** (PubS, Len: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[format](https://github.com/TheB3Rt0z/schrimp/wiki/toolbox-format "")($mixed)** (PubS, Len: 19 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[fulltest](https://github.com/TheB3Rt0z/schrimp/wiki/toolbox-fulltest "")()** (PubS, Len: 20/23 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[highlight](https://github.com/TheB3Rt0z/schrimp/wiki/toolbox-highlight "")($string, $type = null)** (PubS, Len: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[parse](https://github.com/TheB3Rt0z/schrimp/wiki/toolbox-parse "")($source)** (PubS, Len: 3/5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
 **DEPENDENCIES:**  
   
@@ -487,7 +493,7 @@ Available components:
 =====================  
   
   
-[⇧](# "to the top") Class ADMIN (Fri, 07 Jun 2013 @ 13:11:23)  
+[⇧](# "to the top") Class ADMIN (Fri, 14 Jun 2013 @ 15:15:22)  
 -----------------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  

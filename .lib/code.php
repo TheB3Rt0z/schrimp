@@ -689,7 +689,7 @@ class code
                             $length);
 
         if ($highlighting)
-            return toolbox::highlight_code("<?\n" . implode($code) . "\n?>");
+            return toolbox::highlight("<?\n" . implode($code) . "\n?>");
         else
             return array
             (
