@@ -70,7 +70,8 @@ class toolbox
 	    return $check;
 	}
 
-	static function parse($source) {
+	static function parse($source)
+	{
 	    $output = file_get_contents($source);
 
 	    if (@simplexml_load_string($output))
