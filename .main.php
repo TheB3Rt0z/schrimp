@@ -39,11 +39,15 @@ class main
         if (_SET_DEVELOPMENT_MODE
             && ($uri == _SET_LOCAL_PATH . '/')
             && toolbox::fulltest())
-        { // only for developers, no further error 500 required
+        {
+            foreach (glob("doc/*.md") as $doc_file) // reset doc files
+                if (fe($doc_file))
+                    unlink($doc_file);
+
             file_put_contents("doc/Home.md", // main application executable
                               md::code(pr('index.php')));
 
-            file_put_contents(SET_DOCUMENTATION_MD . ".md", // updates 1st github wiki page..
+            file_put_contents(SET_DOCUMENTATION_MD . ".md",
                               code::get_documentation());
         }
 
