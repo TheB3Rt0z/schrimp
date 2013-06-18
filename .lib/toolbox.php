@@ -74,10 +74,12 @@ class toolbox
 	{
 	    $output = file_get_contents($source);
 
-	    if (@simplexml_load_string($output))
+	    if (substr_count(strtolower($source), ".csv"))
+	        return str_getcsv($output); // returns an array
+	    elseif (@simplexml_load_string($output))
 	        return new SimpleXmlElement($output);
-
-        return $output;
+	    else
+	        return $output;
 	}
 }
 
