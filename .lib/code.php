@@ -1,6 +1,6 @@
 <?php
 
-define('CODE_DATE_FORMAT', "D, d M Y");
+define('CODE_DATE_FORMAT', "d.m.Y");
 
 class code
 {
@@ -752,7 +752,7 @@ class code
     static function get_documentation_title()
     {
         $title = md::image(_SET_INCLUDES_PATH . "img/schrimp_favicon_md.ico")
-               . " " . _STR_PROJECT_NAME . "'s Docu v"
+               . " " . _STR_PROJECT_NAME . "'s Doku v"
                . main::get_version(1) . "." . date('Y.m.d');
 
         return md::title(2, $title);

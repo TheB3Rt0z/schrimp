@@ -1,41 +1,41 @@
-![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Docu v0.7.2013.06.18  
+![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Doku v0.7.2013.06.18  
 ---------------------------------------------------------------------------------------------------------------------------------  
   
 Table of contents  
 -----------------  
   
 [General reference](#general-reference-- "")  
-[Library code](#-class-code-tue-18-jun-2013-- "") &#10029;  (root/.lib/code.php, Len: 655/779, CIS: 14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  4 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!") 2 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!")  
-[Library controller](#-class-controller-tue-04-jun-2013-- "") (root/.lib/controller.php, Len: 93/121, CIS: 10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library db](#-class-db-thu-06-jun-2013-- "") (root/.lib/db.php, Len: 23/28, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library escort](#-class-escort-tue-04-jun-2013-- "") (root/.lib/escort.php, Len: 32/40, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library html](#-class-html-tue-11-jun-2013-- "") &#10029;&#10029;  (root/.lib/html.php, Len: 467/575, CIS: 21 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[- html_form](#-class-html_form-tue-11-jun-2013-- "") &#10029;  (root/.lib/html_form.php, Len: 65/71, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library language](#-class-language-tue-04-jun-2013-- "") &#10029;  (root/.lib/language.php, Len: 81/95, CIS: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library main](#-class-main-tue-18-jun-2013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (root/.main.php, Len: 238/301, CIS: 29 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library md](#-class-md-tue-04-jun-2013-- "") (root/.lib/md.php, Len: 185/231, CIS: 14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library navigator](#-class-navigator-fri-07-jun-2013-- "") &#10029;  (root/.lib/navigator.php, Len: 307/379, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library powering](#-class-powering-tue-04-jun-2013-- "") &#10029;  (root/lib/powering.php, Len: 5/6, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library toolbox](#-class-toolbox-tue-18-jun-2013-- "") &#10029;&#10029;  (root/.lib/toolbox.php, Len: 70/79, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Component admin](#-class-admin-fri-14-jun-2013-- "") (root/.app/admin.php, Len: 10/12, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[- admin_helper](#-class-admin_helper-wed-20-mar-2013-- "") (root/.app/admin_helper.php, Len: 1/1, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Component control](#-class-control-fri-07-jun-2013-- "") &#10029;&#10029;&#10029;  (root/.app/control.php, Len: 199/234, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[- control_helper](#-class-control_helper-thu-21-mar-2013-- "") (root/.app/control_helper.php, Len: 49/62, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Component documentation](#-class-documentation-tue-18-jun-2013-- "") &#10029;  (root/.app/documentation.php, Len: 38/45, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[- documentation_helper](#-class-documentation_helper-mon-27-may-2013-- "") (root/.app/documentation_helper.php, Len: 1/1, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Component error](#-class-error-fri-07-jun-2013-- "") (root/.app/error.php, Len: 80/106, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[- error_helper](#-class-error_helper-wed-20-mar-2013-- "") (root/.app/error_helper.php, Len: 1/1, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Component homepage](#-class-homepage-fri-07-jun-2013-- "") (root/app/homepage.php, Len: 10/12, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[- homepage_helper](#-class-homepage_helper-wed-20-mar-2013-- "") (root/app/homepage_helper.php, Len: 1/1, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Component power](#-class-power-tue-12-mar-2013-- "") (root/app/power.php, Len: 4/6, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[- power_helper](#-class-power_helper-wed-20-mar-2013-- "") (root/app/power_helper.php, Len: 1/1, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library code](#-class-code-18.06.2013-- "") &#10029;  (root/.lib/code.php, Len: 655/779, CIS: 14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  4 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!") 2 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!")  
+[Library controller](#-class-controller-04.06.2013-- "") (root/.lib/controller.php, Len: 93/121, CIS: 10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library db](#-class-db-06.06.2013-- "") (root/.lib/db.php, Len: 23/28, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library escort](#-class-escort-04.06.2013-- "") (root/.lib/escort.php, Len: 32/40, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library html](#-class-html-11.06.2013-- "") &#10029;&#10029;  (root/.lib/html.php, Len: 467/575, CIS: 21 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[- html_form](#-class-html_form-11.06.2013-- "") &#10029;  (root/.lib/html_form.php, Len: 65/71, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library language](#-class-language-04.06.2013-- "") &#10029;  (root/.lib/language.php, Len: 81/95, CIS: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library main](#-class-main-18.06.2013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (root/.main.php, Len: 238/301, CIS: 29 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library md](#-class-md-04.06.2013-- "") (root/.lib/md.php, Len: 185/231, CIS: 14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library navigator](#-class-navigator-07.06.2013-- "") &#10029;  (root/.lib/navigator.php, Len: 307/379, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library powering](#-class-powering-04.06.2013-- "") &#10029;  (root/lib/powering.php, Len: 5/6, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library toolbox](#-class-toolbox-18.06.2013-- "") &#10029;&#10029;  (root/.lib/toolbox.php, Len: 70/79, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Component admin](#-class-admin-14.06.2013-- "") (root/.app/admin.php, Len: 10/12, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[- admin_helper](#-class-admin_helper-20.03.2013-- "") (root/.app/admin_helper.php, Len: 1/1, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Component control](#-class-control-07.06.2013-- "") &#10029;&#10029;&#10029;  (root/.app/control.php, Len: 199/234, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[- control_helper](#-class-control_helper-21.03.2013-- "") (root/.app/control_helper.php, Len: 49/62, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Component documentation](#-class-documentation-18.06.2013-- "") &#10029;  (root/.app/documentation.php, Len: 38/45, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[- documentation_helper](#-class-documentation_helper-27.05.2013-- "") (root/.app/documentation_helper.php, Len: 1/1, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Component error](#-class-error-07.06.2013-- "") (root/.app/error.php, Len: 80/106, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[- error_helper](#-class-error_helper-20.03.2013-- "") (root/.app/error_helper.php, Len: 1/1, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Component homepage](#-class-homepage-07.06.2013-- "") (root/app/homepage.php, Len: 10/12, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[- homepage_helper](#-class-homepage_helper-20.03.2013-- "") (root/app/homepage_helper.php, Len: 1/1, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Component power](#-class-power-12.03.2013-- "") (root/app/power.php, Len: 4/6, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[- power_helper](#-class-power_helper-20.03.2013-- "") (root/app/power_helper.php, Len: 1/1, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
   
 General reference  
 -----------------  
   
 **GLOBAL CONFIGURATION CONSTANTS:**  
   
-- **CODE_DATE_FORMAT** &#10140; "D, d M Y"  
+- **CODE_DATE_FORMAT** &#10140; "d.m.Y"  
 - **DB_TABLE_PREFIX** &#10140; null  
 - **HTML_ARROW_LEFT** &#10140; "&laquo;"  
 - **HTML_ARROW_RIGHT** &#10140; "&raquo;"  
@@ -113,8 +113,8 @@ General reference
   
 ***  
   
-[⇧](# "to the top") Class CODE (Tue, 18 Jun 2013)  
------------------------------  
+[⇧](# "to the top") Class CODE (18.06.2013)  
+-----------------------  
   
 **CODE REFERENCE:**  
   
@@ -161,8 +161,8 @@ Uses: **main**, **md**, **toolbox**
   
 ***  
   
-[⇧](# "to the top") Class CONTROLLER (Tue, 04 Jun 2013)  
------------------------------------  
+[⇧](# "to the top") Class CONTROLLER (04.06.2013)  
+-----------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
   
@@ -196,8 +196,8 @@ Uses: **escort**, **html**, **navigator**
   
 ***  
   
-[⇧](# "to the top") Class DB (Thu, 06 Jun 2013)  
----------------------------  
+[⇧](# "to the top") Class DB (06.06.2013)  
+---------------------  
   
 **CODE REFERENCE:**  
   
@@ -210,8 +210,8 @@ Uses: **escort**
   
 ***  
   
-[⇧](# "to the top") Class ESCORT (Tue, 04 Jun 2013)  
--------------------------------  
+[⇧](# "to the top") Class ESCORT (04.06.2013)  
+-------------------------  
   
 **CODE REFERENCE:**  
   
@@ -222,8 +222,8 @@ Uses: **escort**
   
 ***  
   
-[⇧](# "to the top") Class HTML (Tue, 11 Jun 2013)  
------------------------------  
+[⇧](# "to the top") Class HTML (11.06.2013)  
+-----------------------  
   
 **CODE REFERENCE:**  
   
@@ -286,8 +286,8 @@ Uses: **escort**
   
 ***  
   
-[⇧](# "to the top") Class HTML_FORM (Tue, 11 Jun 2013)  
-----------------------------------  
+[⇧](# "to the top") Class HTML_FORM (11.06.2013)  
+----------------------------  
   
 **CODE REFERENCE:**  
   
@@ -328,8 +328,8 @@ Uses: **html**
   
 ***  
   
-[⇧](# "to the top") Class LANGUAGE (Tue, 04 Jun 2013)  
----------------------------------  
+[⇧](# "to the top") Class LANGUAGE (04.06.2013)  
+---------------------------  
   
 **CODE REFERENCE:**  
   
@@ -345,8 +345,8 @@ Uses: **html**
   
 ***  
   
-[⇧](# "to the top") Class MAIN (Tue, 18 Jun 2013)  
------------------------------  
+[⇧](# "to the top") Class MAIN (18.06.2013)  
+-----------------------  
   
 **CODE REFERENCE:**  
   
@@ -389,8 +389,8 @@ Uses: **code**, **html**, **md**, **toolbox**
   
 ***  
   
-[⇧](# "to the top") Class MD (Tue, 04 Jun 2013)  
----------------------------  
+[⇧](# "to the top") Class MD (04.06.2013)  
+---------------------  
   
 **CODE REFERENCE:**  
   
@@ -422,8 +422,8 @@ Uses: **escort**
   
 ***  
   
-[⇧](# "to the top") Class NAVIGATOR (Fri, 07 Jun 2013)  
-----------------------------------  
+[⇧](# "to the top") Class NAVIGATOR (07.06.2013)  
+----------------------------  
   
 **CODE REFERENCE:**  
   
@@ -457,8 +457,8 @@ Uses: **controller**, **html**, **html_form**, **main**
   
 ***  
   
-[⇧](# "to the top") Class POWERING (Tue, 04 Jun 2013)  
----------------------------------  
+[⇧](# "to the top") Class POWERING (04.06.2013)  
+---------------------------  
   
 **TODOS:**  
   
@@ -467,8 +467,8 @@ Uses: **controller**, **html**, **html_form**, **main**
   
 ***  
   
-[⇧](# "to the top") Class TOOLBOX (Tue, 18 Jun 2013)  
---------------------------------  
+[⇧](# "to the top") Class TOOLBOX (18.06.2013)  
+--------------------------  
   
 **CODE REFERENCE:**  
   
@@ -494,8 +494,8 @@ Available components:
 =====================  
   
   
-[⇧](# "to the top") Class ADMIN (Fri, 14 Jun 2013)  
-------------------------------  
+[⇧](# "to the top") Class ADMIN (14.06.2013)  
+------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
   
@@ -530,14 +530,14 @@ Available components:
   
 Uses: **controller**, **html**, **navigator**  
   
-[⇧](# "to the top") Class ADMIN_HELPER (Wed, 20 Mar 2013)  
--------------------------------------  
+[⇧](# "to the top") Class ADMIN_HELPER (20.03.2013)  
+-------------------------------  
   
   
 ***  
   
-[⇧](# "to the top") Class CONTROL (Fri, 07 Jun 2013)  
---------------------------------  
+[⇧](# "to the top") Class CONTROL (07.06.2013)  
+--------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
   
@@ -596,8 +596,8 @@ Uses: **controller**, **html**, **language**, **main**, **navigator**
 - **plugins libraries** &#10140; find a way to incapsulate needed translations  
 - **handler_core_language** &#10140; this should be te next to be written..  
   
-[⇧](# "to the top") Class CONTROL_HELPER (Thu, 21 Mar 2013)  
----------------------------------------  
+[⇧](# "to the top") Class CONTROL_HELPER (21.03.2013)  
+---------------------------------  
   
 **CODE REFERENCE:**  
   
@@ -613,8 +613,8 @@ Uses: **html**
   
 ***  
   
-[⇧](# "to the top") Class DOCUMENTATION (Tue, 18 Jun 2013)  
---------------------------------------  
+[⇧](# "to the top") Class DOCUMENTATION (18.06.2013)  
+--------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
   
@@ -655,14 +655,14 @@ Uses: **controller**, **html**, **main**, **navigator**
   
 - **method toString** &#10140; to get a informative highlighted code as reference  
   
-[⇧](# "to the top") Class DOCUMENTATION_HELPER (Mon, 27 May 2013)  
----------------------------------------------  
+[⇧](# "to the top") Class DOCUMENTATION_HELPER (27.05.2013)  
+---------------------------------------  
   
   
 ***  
   
-[⇧](# "to the top") Class ERROR (Fri, 07 Jun 2013)  
-------------------------------  
+[⇧](# "to the top") Class ERROR (07.06.2013)  
+------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
   
@@ -702,14 +702,14 @@ Uses: **controller**, **html**, **main**, **navigator**
   
 Uses: **controller**, **html**, **main**, **navigator**  
   
-[⇧](# "to the top") Class ERROR_HELPER (Wed, 20 Mar 2013)  
--------------------------------------  
+[⇧](# "to the top") Class ERROR_HELPER (20.03.2013)  
+-------------------------------  
   
   
 ***  
   
-[⇧](# "to the top") Class HOMEPAGE (Fri, 07 Jun 2013)  
----------------------------------  
+[⇧](# "to the top") Class HOMEPAGE (07.06.2013)  
+---------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
   
@@ -744,14 +744,14 @@ Uses: **controller**, **html**, **main**, **navigator**
   
 Uses: **controller**, **html**, **navigator**  
   
-[⇧](# "to the top") Class HOMEPAGE_HELPER (Wed, 20 Mar 2013)  
-----------------------------------------  
+[⇧](# "to the top") Class HOMEPAGE_HELPER (20.03.2013)  
+----------------------------------  
   
   
 ***  
   
-[⇧](# "to the top") Class POWER (Tue, 12 Mar 2013)  
-------------------------------  
+[⇧](# "to the top") Class POWER (12.03.2013)  
+------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
   
@@ -785,8 +785,8 @@ Uses: **controller**, **html**, **navigator**
   
 Uses: **controller**  
   
-[⇧](# "to the top") Class POWER_HELPER (Wed, 20 Mar 2013)  
--------------------------------------  
+[⇧](# "to the top") Class POWER_HELPER (20.03.2013)  
+-------------------------------  
   
   
 ***  
