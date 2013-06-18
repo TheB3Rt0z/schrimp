@@ -86,6 +86,7 @@ class code
                                        str_replace(array(
                                                        "(",
                                                        ",",
+                                                       ".",
                                                        ":",
                                                        "+",
                                                        ")",
