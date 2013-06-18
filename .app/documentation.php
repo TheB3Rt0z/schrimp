@@ -11,36 +11,22 @@ class documentation extends controller
 	{
 	    $this->_set_nav(html::box(navigator::get_list()));
 
-		switch ($this->_action)
-		{
-			case null :
-			{
-				$this->_handler();
-				break;
-			}
+        $fallback_method = '_handler' . (!empty($this->_action)
+                                        ? '_' . $this->_action
+                                        : '');
 
-			case 'list' :
-			{
-				if (!empty($this->_args))
-					switch ($this->_args[0])
-					{
-						case 'files' :
-						{
-							$this->_handler_list_files();
-							break;
-						}
+        $method = $fallback_method . (!empty($this->_args)
+                                     ? '_' . $this->_args[0]
+                                     : '');
 
-						default :
-							rt("error/404");
-					}
-				else
-					$this->_handler_list();
-				break;
-			}
-
-			default :
-				rt("error/404");
-		}
+        if (method_exists(__CLASS__, $method = $method)
+            || method_exists(__CLASS__, $method = $fallback_method))
+        {
+            call_user_func_array(array($this, $method),
+                                 array_slice(main::$args, 1));
+        }
+        else
+            rt("error/404");
 	}
 
 	protected function _handler()
