@@ -40,11 +40,11 @@ class main
             && ($uri == _SET_LOCAL_PATH . '/')
             && toolbox::fulltest())
         {
-            foreach (glob("doc/*.md") as $doc_file) // reset doc files
+            foreach (glob(_SET_WIKI_PATH . "*.md") as $doc_file) // reset doc files
                 if (fe($doc_file))
                     unlink($doc_file);
 
-            file_put_contents("doc/Home.md", // main application executable
+            file_put_contents(_SET_WIKI_PATH . "Home.md", // main application executable
                               md::code(pr('index.php')));
 
             file_put_contents(SET_DOCUMENTATION_MD . ".md",

@@ -1,6 +1,6 @@
 <?php
 
-define('CODE_DATE_FORMAT', "D, d M Y @ H:i:s");
+define('CODE_DATE_FORMAT', "D, d M Y");
 
 class code
 {
@@ -354,15 +354,15 @@ class code
                  : '')
                . ")" . MD_NEWLINE_SEQUENCE;
 
-        if (_SET_DEVELOPMENT_MODE)
-            file_put_contents("doc/" . $method->class . " " . $method->name . ".md",
-                              "**" . $method->getName() . $infos
-                            . MD_NEWLINE_SEQUENCE . implode($code));
+        if (_SET_DEVELOPMENT_MODE) // updates right md in doc directory
+            self::_update_wiki_file($class,
+                                    $name,
+                                    $infos,
+                                    $code);
 
         return "- **" . md::hyperlink($method->getName(),
                                       SET_GITHUB_WIKIPATH
-                                    . $method->class . "-"
-                                    . $method->getName()) . $infos;
+                                    . $class . "-" . $name) . $infos;
     }
 
     private static function _get_classes_information($classes = '')
@@ -499,6 +499,19 @@ class code
             else
                 self::$_class_warnings[$class_name]['red']++;
         }
+    }
+
+    private static function _update_wiki_file($class,
+                                              $method,
+                                              $infos,
+                                              $code)
+    {
+        $file = _SET_WIKI_PATH . $class . " " . $method . ".md";
+
+        $content = "**" . $method . $infos . MD_NEWLINE_SEQUENCE . implode($code);
+
+        file_put_contents($file,
+                          $content);
     }
 
     static function get_constants_list()
@@ -705,6 +718,8 @@ class code
     {
         extract(self::get_method_code($method));
 
+        $data['class'] = $method->class;
+        $data['name'] = $method->name;
         $data['parameters'] = $parameters;
         $data['parameters_warning'] = $parameters_warning;
         $data['real_length'] = $real_length;
@@ -737,7 +752,7 @@ class code
     static function get_documentation_title()
     {
         $title = md::image(_SET_INCLUDES_PATH . "img/schrimp_favicon_md.ico")
-               . " " . _STR_PROJECT_NAME . "'s Documentation "
+               . " " . _STR_PROJECT_NAME . "'s Docu v"
                . main::get_version(1) . "." . date('Y.m.d');
 
         return md::title(2, $title);

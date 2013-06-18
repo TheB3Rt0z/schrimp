@@ -18,6 +18,8 @@
 
 '_set_logs_path' => ".log/",
 
+'_set_wiki_path' => "doc/",
+
 'set_translations_extension' => ".txt",
 
 'set_github_wikipath' => "https://github.com/TheB3Rt0z/schrimp/wiki/",
