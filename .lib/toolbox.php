@@ -34,7 +34,7 @@ class toolbox
 	}
 
 	static function highlight($string,
-	                          $type = '')
+	                          $type = '') // default is php code (native)
 	{
 	    switch ($type)
 	    {

@@ -2,10 +2,7 @@
 
 class documentation extends controller
 {
-	public static $todos = array
-	(
-	    'method toString' => "to get a informative highlighted code as reference",
-	);
+	public static $todos = array();
 
 	function initialize()
 	{
