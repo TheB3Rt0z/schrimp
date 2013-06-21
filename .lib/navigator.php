@@ -62,23 +62,23 @@ class navigator
         return $options;
     }
 
-    private function _add_branch($controller)
+    private function _add_branch($ctrl_name)
     {
-        if ($controller::VISIBLE_IN_NAVIGATION)
+        if ($ctrl_name::VISIBLE_IN_NAVIGATION)
         {
-            $this->_structure[_SET_HOME_COMPONENT]['sub'][$controller] = array
+            $this->_structure[_SET_HOME_COMPONENT]['sub'][$ctrl_name] = array
             (
-                'name' => tr($controller,
+                'name' => tr($ctrl_name,
                              'COMPONENT VISIBLE NAME')
             );
 
-            $sub =& $this->_structure[_SET_HOME_COMPONENT]['sub'][$controller];
+            $sub =& $this->_structure[_SET_HOME_COMPONENT]['sub'][$ctrl_name];
 
-            $rc = new ReflectionClass($controller);
+            $rc = new ReflectionClass($ctrl_name);
             foreach ($rc->getMethods(ReflectionMethod::IS_PRIVATE
                      | !ReflectionMethod::IS_PROTECTED) as $object)
             {
-                $returns = $this->_add_handlers($controller,
+                $returns = $this->_add_handlers($ctrl_name,
                                                 $object,
                                                 $sub);
 
@@ -87,20 +87,20 @@ class navigator
                 if (!empty($static_variables['options']))
                     $this->_add_handler_static_options($static_variables,
                                                        $returns['sub'],
-                                                       $controller,
+                                                       $ctrl_name,
                                                        $returns['link'],
                                                        $object);
 
-                $sub =& $this->_structure[_SET_HOME_COMPONENT]['sub'][$controller];
+                $sub =& $this->_structure[_SET_HOME_COMPONENT]['sub'][$ctrl_name];
             }
         }
     }
 
-    private function _add_handlers($controller,
+    private function _add_handlers($ctrl_name,
                                    $object,
                                    &$sub)
     {
-        $link = $controller;
+        $link = $ctrl_name;
 
         $item = explode("_",
                         str_replace("_handler_",
@@ -113,7 +113,7 @@ class navigator
             if (!isset($sub['sub'][$link]))
                 $sub['sub'][$link] = array
                 (
-                    'name' => tr($controller,
+                    'name' => tr($ctrl_name,
                                  $object->name),
                     'handler' => $object->name
                 );
@@ -130,7 +130,7 @@ class navigator
 
     private function _add_handler_static_options($static_variables,
                                                  &$sub,
-                                                 $controller,
+                                                 $ctrl_name,
                                                  $link,
                                                  $object)
     {
@@ -139,7 +139,7 @@ class navigator
         if (!is_array($options))
             $options = eval($options); // dynamic from static code!
 
-        $option_component = $controller;
+        $option_component = $ctrl_name;
         $option_value = 'COMPONENT VISIBLE NAME';
         foreach ($options as $key => $value)
         {
@@ -162,21 +162,21 @@ class navigator
 
     private function _print_handler_name($branch,
                                          $link,
-                                         $controller)
+                                         $ctrl_name)
     {
         $handler = $link . "/" . main::$args[0];
 
-        $controller_check =@ $branch['sub'][$link]['sub'][$handler]['controller'];
+        $ctrl_name_check =@ $branch['sub'][$link]['sub'][$handler]['controller'];
 
-        echo tr((!empty($controller_check)
-                ? $controller_check
-                : $controller),
+        echo tr((!empty($ctrl_name_check)
+                ? $ctrl_name_check
+                : $ctrl_name),
                 $branch['sub'][$link]['handler']);
     }
 
     private function _print_handler_parameter($branch,
                                               $link,
-                                              $controller)
+                                              $ctrl_name)
     {
         echo html::hyperlink($link,
                              $branch['sub'][$link]['name'])
@@ -187,18 +187,18 @@ class navigator
         if (count(main::$args) > 1)
             $this->_print_additional_parameters($branch,
                                                 $link,
-                                                $controller);
+                                                $ctrl_name);
         else
             $this->_print_handler_name($branch,
                                        $link,
-                                       $controller);
+                                       $ctrl_name);
     }
 
     private function _print_additional_parameters($branch,
                                                   $link,
-                                                  $controller)
+                                                  $ctrl_name)
     {
-        $name = tr($controller,
+        $name = tr($ctrl_name,
                    $branch['sub'][$link]['handler']);
 
         echo html::hyperlink($link . "/" . main::$args[0],
@@ -212,7 +212,7 @@ class navigator
                . ")";
     }
 
-    private function _print_breadcrumb($controller)
+    private function _print_breadcrumb($ctrl_name)
     {
         $structure = $this->_structure[_SET_HOME_COMPONENT];
 
@@ -222,28 +222,28 @@ class navigator
 
         if (!empty(main::$action))
         {
-            $branch = $structure['sub'][$controller];
-            echo html::hyperlink($controller,
+            $branch = $structure['sub'][$ctrl_name];
+            echo html::hyperlink($ctrl_name,
                                  $branch['name']) . HTML_BREADCRUMB_SEPARATOR;
 
-            $link = $controller . "/" . main::$action;
+            $link = $ctrl_name . "/" . main::$action;
 
             if (!empty(main::$args))
                 $this->_print_handler_parameter($branch,
                                                 $link,
-                                                $controller);
+                                                $ctrl_name);
             else
                 echo $branch['sub'][$link]['name'];
         }
         else
-            echo $structure['sub'][$controller]['name'];
+            echo $structure['sub'][$ctrl_name]['name'];
     }
 
     private function _get_action_select($structure,
-                                        $controller,
+                                        $ctrl_name,
                                         $link)
     {
-        $branch = $structure['sub'][$controller];
+        $branch = $structure['sub'][$ctrl_name];
 
         $code = HTML_BREADCRUMB_SEPARATOR;
 
@@ -259,10 +259,10 @@ class navigator
     }
 
     private function _get_args_select($structure,
-                                      $controller,
+                                      $ctrl_name,
                                       $link)
     {
-        $branch = $structure['sub'][$controller]['sub'][$link];
+        $branch = $structure['sub'][$ctrl_name]['sub'][$link];
 
         $handler = $link .= '/' . main::$args[0];
 
@@ -290,7 +290,7 @@ class navigator
         return $code;
     }
 
-    private function _print_active_breadcrumb($controller)
+    private function _print_active_breadcrumb($ctrl_name)
     {
         $structure = $this->_structure[_SET_HOME_COMPONENT];
 
@@ -302,22 +302,22 @@ class navigator
 
         if (count($options = $this->_initialize_options($structure['sub'])) > 1)
             $code .= html_form::dropdown($options,
-                                         $controller,
+                                         $ctrl_name,
                                          "document.location.href='"
                                        . ru() . "' + this.value;");
         else
-            $code .= $structure['sub'][$controller]['name'];
+            $code .= $structure['sub'][$ctrl_name]['name'];
 
         if (!empty(main::$action))
         {
             $code .= $this->_get_action_select($structure,
-                                               $controller,
-                                               $link = $controller
+                                               $ctrl_name,
+                                               $link = $ctrl_name
                                                    . "/" . main::$action);
 
             if (!empty(main::$args))
                 $code .= $this->_get_args_select($structure,
-                                                 $controller,
+                                                 $ctrl_name,
                                                  $link);
         }
 
@@ -347,29 +347,29 @@ class navigator
 
     static function render_breadcrumb()
     {
-        $controller = main::$controller;
+        $ctrl_name = main::$ctrl_name;
 
-        if (!$controller::RENDER_BREADCRUMB)
+        if (!$ctrl_name::RENDER_BREADCRUMB)
             return false;
 
-        if ($controller != _SET_HOME_COMPONENT)
+        if ($ctrl_name != _SET_HOME_COMPONENT)
         {
             $self = new self;
-            $self->_print_breadcrumb($controller);
+            $self->_print_breadcrumb($ctrl_name);
         }
     }
 
     static function render_active_breadcrumb()
     {
-        $controller = main::$controller;
+        $ctrl_name = main::$controller;
 
-        if (!$controller::RENDER_BREADCRUMB)
+        if (!$ctrl_name::RENDER_BREADCRUMB)
             return false;
 
-        if ($controller != _SET_HOME_COMPONENT)
+        if ($ctrl_name != _SET_HOME_COMPONENT)
         {
             $self = new self;
-            $self->_print_active_breadcrumb($controller);
+            $self->_print_active_breadcrumb($ctrl_name);
         }
     }
 
