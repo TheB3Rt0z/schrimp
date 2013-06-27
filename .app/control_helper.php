@@ -4,6 +4,13 @@ class control_helper
 {
     public static $todos = array();
 
+    private $_access_levels = array
+    (
+        0 => 'system',
+        1 => 'perdir',
+        2 => 'script',
+    );
+
     function get_general_phpinfos($output = '')
     {
         ksort($_SERVER);
@@ -18,15 +25,25 @@ class control_helper
     function get_configuration_phpinfos($output = '')
     {
         foreach (ini_get_all() as $key => $values)
-            $output .= strtoupper($key) . " &#10140; "
+        {
+            $access = str_split(decbin($values['access']));
+            foreach ($access as $numkey => $value)
+                if (!empty($value))
+                    $access[$numkey] = $this->_access_levels[$numkey];
+            $access = implode(array_filter($access), ", ");
+
+            $output .= ($values['local_value'] != $values['global_value']
+                       ? "&nbsp;"
+                       : '') . strtoupper($key) . " &#10140; "
                      . fv(str_replace(",",
                                       ", ",
                                       $values['local_value'])) . " / "
                      . fv(str_replace(",",
                                       ", ",
                                       $values['global_value']))
-                     . " (" . $values['access'] . ")"
+                     . " (" . $access . ")"
                      . html::newline();
+        }
 
         return $output;
     }

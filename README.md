@@ -1,4 +1,4 @@
-![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Doku v0.7.2013.06.21  
+![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Doku v0.8.2013.06.27  
 ---------------------------------------------------------------------------------------------------------------------------------  
   
 Table of contents  
@@ -19,8 +19,8 @@ Table of contents
 [Library toolbox](#-class-toolbox-21062013-- "") &#10029;&#10029;  (root/.lib/toolbox.php, Len: 70/79, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Component admin](#-class-admin-14062013-- "") (root/.app/admin.php, Len: 10/12, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- admin_helper](#-class-admin_helper-20032013-- "") (root/.app/admin_helper.php, Len: 1/1, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Component control](#-class-control-07062013-- "") &#10029;&#10029;&#10029;  (root/.app/control.php, Len: 199/234, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[- control_helper](#-class-control_helper-21032013-- "") (root/.app/control_helper.php, Len: 49/62, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Component control](#-class-control-27062013-- "") &#10029;&#10029;  (root/.app/control.php, Len: 198/233, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[- control_helper](#-class-control_helper-27062013-- "") (root/.app/control_helper.php, Len: 64/79, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Component documentation](#-class-documentation-21062013-- "") (root/.app/documentation.php, Len: 35/42, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- documentation_helper](#-class-documentation_helper-21062013-- "") (root/.app/documentation_helper.php, Len: 6/7, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Component error](#-class-error-07062013-- "") (root/.app/error.php, Len: 80/106, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -536,7 +536,7 @@ Uses: **controller**, **html**, **navigator**
   
 ***  
   
-[⇧](# "to the top") Class CONTROL (07.06.2013)  
+[⇧](# "to the top") Class CONTROL (27.06.2013)  
 --------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -592,16 +592,15 @@ Uses: **controller**, **html**, **language**, **main**, **navigator**
   
 **TODOS:**  
   
-- **phpinfo server conf** &#10140; better rappresentation of access details  
 - **plugins libraries** &#10140; find a way to incapsulate needed translations  
 - **handler_core_language** &#10140; this should be te next to be written..  
   
-[⇧](# "to the top") Class CONTROL_HELPER (21.03.2013)  
+[⇧](# "to the top") Class CONTROL_HELPER (27.06.2013)  
 ---------------------------------  
   
 **CODE REFERENCE:**  
   
-- **[get_configuration_phpinfos](https://github.com/TheB3Rt0z/schrimp/wiki/control_helper-get_configuration_phpinfos "")($output = null)** (Pub, Len: 11/12 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[get_configuration_phpinfos](https://github.com/TheB3Rt0z/schrimp/wiki/control_helper-get_configuration_phpinfos "")($output = null)** (Pub, Len: 20/22 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[get_environment_phpinfos](https://github.com/TheB3Rt0z/schrimp/wiki/control_helper-get_environment_phpinfos "")($output = null)** (Pub, Len: 9/12 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[get_general_phpinfos](https://github.com/TheB3Rt0z/schrimp/wiki/control_helper-get_general_phpinfos "")($output = null)** (Pub, Len: 5/7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[get_phpinfos](https://github.com/TheB3Rt0z/schrimp/wiki/control_helper-get_phpinfos "")($arg)** (Pub, Len: 11/14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
