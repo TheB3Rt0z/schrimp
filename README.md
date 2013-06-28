@@ -1,22 +1,22 @@
-![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Doku v0.8.2013.06.27  
+![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Doku v0.8.2013.06.28  
 ---------------------------------------------------------------------------------------------------------------------------------  
   
 Table of contents  
 -----------------  
   
 [General reference](#general-reference-- "")  
-[Library code](#-class-code-18062013-- "") &#10029;  (root/.lib/code.php, Len: 656/780, CIS: 14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  4 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!") 2 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!")  
+[Library code](#-class-code-28062013-- "") &#10029;&#10029;  (root/.lib/code.php, Len: 657/781, CIS: 14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  4 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!") 2 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!")  
 [Library controller](#-class-controller-04062013-- "") (root/.lib/controller.php, Len: 93/121, CIS: 10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library db](#-class-db-06062013-- "") (root/.lib/db.php, Len: 23/28, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library escort](#-class-escort-04062013-- "") (root/.lib/escort.php, Len: 32/40, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library html](#-class-html-11062013-- "") &#10029;&#10029;  (root/.lib/html.php, Len: 467/575, CIS: 21 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- html_form](#-class-html_form-11062013-- "") &#10029;  (root/.lib/html_form.php, Len: 65/71, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library language](#-class-language-04062013-- "") &#10029;  (root/.lib/language.php, Len: 81/95, CIS: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library main](#-class-main-18062013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (root/.main.php, Len: 238/301, CIS: 29 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library main](#-class-main-28062013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (root/.main.php, Len: 242/306, CIS: 30 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library md](#-class-md-04062013-- "") (root/.lib/md.php, Len: 185/231, CIS: 14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library navigator](#-class-navigator-21062013-- "") &#10029;  (root/.lib/navigator.php, Len: 307/379, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library powering](#-class-powering-04062013-- "") &#10029;  (root/lib/powering.php, Len: 5/6, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library toolbox](#-class-toolbox-21062013-- "") &#10029;&#10029;  (root/.lib/toolbox.php, Len: 70/79, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library toolbox](#-class-toolbox-28062013-- "") &#10029;&#10029;&#10029;  (root/.lib/toolbox.php, Len: 71/80, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Component admin](#-class-admin-14062013-- "") (root/.app/admin.php, Len: 10/12, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- admin_helper](#-class-admin_helper-20032013-- "") (root/.app/admin_helper.php, Len: 1/1, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Component control](#-class-control-27062013-- "") &#10029;&#10029;  (root/.app/control.php, Len: 198/233, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -57,37 +57,37 @@ General reference
   
 **FUNCTION ALIASES:**  
   
-- **fe($path)** &#10140; .main.php on line 323,
+- **fe($path)** &#10140; .main.php on line 328,
   returns boolean if realpath path exists on running server;
   @param string $path
   @return boolean true if realpath exists, false otherwise
   
-- **fv($mixed)** &#10140; .lib/toolbox.php on line 91,
+- **fv($mixed)** &#10140; .lib/toolbox.php on line 92,
   returns a beautiful formatted value, mixed variable-type-dependant;
   @param mixed $mixed
   @return mixed depending on internally defined rules
   
-- **le($msg)** &#10140; .main.php on line 353,
+- **le($msg)** &#10140; .main.php on line 358,
   launches a customizable error 500, mit optional backtrace for debug;
   @param string $msg
   @return boolean false after relocate
   
-- **pr($source)** &#10140; .lib/toolbox.php on line 101,
+- **pr($source)** &#10140; .lib/toolbox.php on line 102,
   returns a parsed output, source-type dependant;
   @param string $source
   @return mixed depending on source origin
   
-- **rt($url = null)** &#10140; .main.php on line 343,
+- **rt($url = null)** &#10140; .main.php on line 348,
   relocates to given relative url or to base path on default;
   @param string $url
   @return void
   
-- **ru($uri = null)** &#10140; .main.php on line 333,
+- **ru($uri = null)** &#10140; .main.php on line 338,
   returns an absolute uri, based on current server configuration;
   @param string $uri
   @return string absolute http unified resource identifier
   
-- **sb()** &#10140; .main.php on line 362,
+- **sb()** &#10140; .main.php on line 367,
   show call's backtrace with help of error base handler
   @return void
   
@@ -97,7 +97,7 @@ General reference
   @param string $marker
   @return mixed callback function returned value(s)
   
-- **vd($what)** &#10140; .main.php on line 313,
+- **vd($what)** &#10140; .main.php on line 318,
   returns pre-formatted mixed variables;
   @param multi $what
   @return void
@@ -113,7 +113,7 @@ General reference
   
 ***  
   
-[⇧](# "to the top") Class CODE (18.06.2013)  
+[⇧](# "to the top") Class CODE (28.06.2013)  
 -----------------------  
   
 **CODE REFERENCE:**  
@@ -157,6 +157,7 @@ Uses: **main**, **md**, **toolbox**
 **TODOS:**  
   
 - **get_class_dependencies** &#10140; too unaccurate, see navigator-controller  
+- **wrong parentheses** &#10140; add checks on ) { et similia cases (f.e. array( )  
   
   
 ***  
@@ -345,7 +346,7 @@ Uses: **html**
   
 ***  
   
-[⇧](# "to the top") Class MAIN (18.06.2013)  
+[⇧](# "to the top") Class MAIN (28.06.2013)  
 -----------------------  
   
 **CODE REFERENCE:**  
@@ -364,6 +365,7 @@ Uses: **html**
 - **[get_head_links](https://github.com/TheB3Rt0z/schrimp/wiki/main-get_head_links "")()** (Pub, Len: 15/21 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[get_path](https://github.com/TheB3Rt0z/schrimp/wiki/main-get_path "")()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[get_version](https://github.com/TheB3Rt0z/schrimp/wiki/main-get_version "")($precision = 2)** (PubS, Len: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[is_apced](https://github.com/TheB3Rt0z/schrimp/wiki/main-is_apced "")()** (PubS, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[is_memcached](https://github.com/TheB3Rt0z/schrimp/wiki/main-is_memcached "")()** (PubS, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[is_webstoraged](https://github.com/TheB3Rt0z/schrimp/wiki/main-is_webstoraged "")()** (PubS, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[launch_error](https://github.com/TheB3Rt0z/schrimp/wiki/main-launch_error "")($msg)** (PubS, Len: 7/10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
@@ -381,7 +383,7 @@ Uses: **code**, **html**, **md**, **toolbox**
 **TODOS:**  
   
 - **documentation** &#10140; PHP highlight_string/file to rapresent code excerpts  
-- **escort library** &#10140; session su PHP poi DB se webstore & memcache fail?  
+- **escort library** &#10140; session by PHP and DB if webstore & memcache fail?  
 - **memcache support** &#10140; verify in method, if at least one mem-server works  
 - **css selectors** &#10140; uniform to html-class render-methods (default style)  
 - **css autoload** &#10140; automatically load ANY file in .inc/inc / css? nnouu..  
@@ -467,7 +469,7 @@ Uses: **html**, **html_form**, **main**
   
 ***  
   
-[⇧](# "to the top") Class TOOLBOX (21.06.2013)  
+[⇧](# "to the top") Class TOOLBOX (28.06.2013)  
 --------------------------  
   
 **CODE REFERENCE:**  
@@ -485,6 +487,7 @@ Uses: **code**
   
 - **unit testing** &#10140; ..and what about a little code coverage measuring?  
 - **error message** &#10140; difference should be evidenced and a message showed  
+- **fulltest procedure** &#10140; add more tests and implement more testtypes..  
   
   
 ***  

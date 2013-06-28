@@ -5,7 +5,7 @@ class main
     public static $todos = array
     (
         'documentation' => "PHP highlight_string/file to rapresent code excerpts",
-        'escort library' => "session su PHP poi DB se webstore & memcache fail?",
+        'escort library' => "session by PHP and DB if webstore & memcache fail?",
         'memcache support' => "verify in method, if at least one mem-server works",
         'css selectors' => "uniform to html-class render-methods (default style)",
         'css autoload' => "automatically load ANY file in .inc/inc / css? nnouu..",

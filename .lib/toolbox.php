@@ -6,6 +6,7 @@ class toolbox
 	(
 	    'unit testing' => "..and what about a little code coverage measuring?",
 	    'error message' => "difference should be evidenced and a message showed",
+	    'fulltest procedure' => "add more tests and implement more testtypes..",
 	);
 
     public static $tests = array();

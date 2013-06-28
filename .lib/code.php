@@ -7,6 +7,7 @@ class code
     public static $todos = array
     (
         'get_class_dependencies' => "too unaccurate, see navigator-controller",
+        'wrong parentheses' => "add checks on ) { et similia cases (f.e. array( )",
     );
 
     public static $tests = array();
