@@ -235,6 +235,11 @@ class main
         // local and/or session storage are available? only with js..
     }
 
+    static function is_apced()
+    {
+        return extension_loaded('apc');
+    }
+
     static function is_memcached()
     {
         return extension_loaded('memcache');
