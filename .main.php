@@ -237,7 +237,7 @@ class main
 
     static function is_apced()
     {
-        return extension_loaded('apc');
+        return extension_loaded('apc'); // http://linuxaria.com/howto/everything-you-need-to-know-about-apc-alternate-php-cache?lang=it & http://uk.php.net/manual/en/apc.configuration.php
     }
 
     static function is_memcached()
