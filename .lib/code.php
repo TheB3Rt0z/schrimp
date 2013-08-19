@@ -199,9 +199,12 @@ class code
 
     private static function _get_len_marker($length)
     {
-        if ($length <= (floor(MAX_METHODS_COMPLEXITY / 10) * 10))
+        if ($length <= (floor(MAX_METHODS_COMPLEXITY / 10) * 10)) {
             if ($length > 0)
                 return md::green_ok();
+            else
+                return '';
+        }
         elseif ($length <= MAX_METHODS_COMPLEXITY)
             return md::yellow_ops(self::_STR_LENGTH_WARNING);
         else
