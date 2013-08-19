@@ -675,6 +675,13 @@ class code
                 $data['real_length']--;
         }
 
+        $data['cis'] = self::get_class_cis($class);
+
+        return $data;
+    }
+
+    static function get_class_cis(reflectionClass $class)
+    {
         $class_properties = $class->getProperties(ReflectionProperty::IS_PUBLIC);
         foreach ($class_properties as $key => $property)
             if ($property->class != $class->name)
@@ -685,9 +692,7 @@ class code
             if ($method->class != $class->name)
                 unset($class_methods[$key]);
 
-        $data['cis'] = count($class_properties) + count($class_methods);
-
-        return $data;
+        return count($class_properties) + count($class_methods);
     }
 
     static function get_method_status(reflectionMethod $method)
