@@ -197,6 +197,17 @@ class code
                  . MD_NEWLINE_SEQUENCE;
     }
 
+    private static function _get_len_marker($length)
+    {
+        if ($length <= (floor(MAX_METHODS_COMPLEXITY / 10) * 10))
+            if ($length > 0)
+                return md::green_ok();
+        elseif ($length <= MAX_METHODS_COMPLEXITY)
+            return md::yellow_ops(self::_STR_LENGTH_WARNING);
+        else
+            return md::red_ics(self::_STR_LENGTH_ERROR);
+    }
+
     private static function _get_cyc_marker($cyc)
     {
         if ($cyc <= (floor(MAX_CYCLOMATIC_COMPLEXITY / 10) * 10))
@@ -343,14 +354,7 @@ class code
                             ? (($real_length != $length)
                               ? $real_length . "/"
                               : '') . $length
-                            : '-') . " "
-               . ($length <= (floor(MAX_METHODS_COMPLEXITY / 10) * 10)
-                 ? ($length > 0
-                   ? md::green_ok()
-                   : '')
-                 : ($length <= MAX_METHODS_COMPLEXITY
-                   ? md::yellow_ops(self::_STR_LENGTH_WARNING)
-                   : md::red_ics(self::_STR_LENGTH_ERROR)))
+                            : '-') . " " . self::_get_len_marker($length)
                . ($cyc > 0
                  ? " CyC: " . $cyc . " " . self::_get_cyc_marker($cyc)
                  : '')
