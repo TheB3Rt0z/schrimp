@@ -51,9 +51,10 @@ class main
                               code::get_documentation());
         }
 
-        $this->_initialize(str_replace(_SET_LOCAL_PATH . "/",
-                                       '',
-                                       $uri));
+        if (!empty($uri)) // using framework mode
+            $this->_initialize(str_replace(_SET_LOCAL_PATH . "/",
+                                           '',
+                                           $uri));
     }
 
     private function _set_configuration($conf_name)

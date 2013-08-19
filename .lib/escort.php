@@ -1,6 +1,6 @@
 <?php
 
-if (!empty(session_id()))
+if (!session_id())
     session_start();
 
 class escort

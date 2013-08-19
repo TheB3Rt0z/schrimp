@@ -294,7 +294,7 @@ class html
         $placeholder = $rel . '_' . $href;
 
         if (!fe($href))
-            return $main->launch_error_file_not_found($href);
+            return main::launch_error_file_not_found($href);
         elseif (!empty($href)
             && !in_array($placeholder, self::$_linked_files))
         {

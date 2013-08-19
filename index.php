@@ -23,7 +23,7 @@
 
 require_once ".main.php"; // loading main application
 
-$main = new main($_SERVER['REQUEST_URI']);
+$main = new main(false);
 
 ob_start();
 
