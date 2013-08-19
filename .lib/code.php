@@ -197,6 +197,20 @@ class code
                  . MD_NEWLINE_SEQUENCE;
     }
 
+    private static function _get_cis_marker($cis)
+    {
+        if ($cis <= (floor(MAX_METHODS_COMPLEXITY / 10) * 10)) {
+            if ($cis > 0)
+                return md::green_ok();
+            else
+                return '';
+        }
+        elseif ($cis <= MAX_METHODS_COMPLEXITY)
+            return md::yellow_ops(self::_STR_CIS_WARNING);
+        else
+            return md::red_ics(self::_STR_CIS_ERROR);
+    }
+
     private static function _get_len_marker($length)
     {
         if ($length <= (floor(MAX_METHODS_COMPLEXITY / 10) * 10)) {
@@ -268,13 +282,7 @@ class code
                       . " Len: "
                       . $values['real_length'] . "/" . $values['length']
                       . ", CIS: " . $values['cis'] . " "
-                      . ($values['cis'] <= floor(MAX_METHODS_COMPLEXITY / 10) * 10
-                        ? ($values['cis'] > 0
-                          ? md::green_ok()
-                          : '')
-                        : ($values['cis'] <= MAX_METHODS_COMPLEXITY
-                          ? md::yellow_ops(self::_STR_CIS_WARNING)
-                          : md::red_ics(self::_STR_CIS_ERROR))) . ") "
+                        . self::_get_cis_marker($values['cis']) . ") "
                       . self::_get_class_markers($values['class_name'])
                       . MD_NEWLINE_SEQUENCE;
 
