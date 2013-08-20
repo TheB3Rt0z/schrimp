@@ -388,7 +388,7 @@ class code
         asort($declared_classes);
         foreach ($declared_classes as $class)
             if (($class = new ReflectionClass($class)) // name converted to reflection class
-                && $class->isUserDefined())
+                && $class->isUserDefined()) // this block should be under _register_class_information (return)
             {
                 extract(self::get_class_data($class));
 

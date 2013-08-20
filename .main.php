@@ -30,7 +30,7 @@ class main
     var $aside = '';
     var $footer = '';
 
-    function __construct($uri)
+    function __construct($uri = false)
     {
         $this->_set_configuration("configuration"); // easy filename change if needed
 
