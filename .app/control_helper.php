@@ -35,10 +35,10 @@ class control_helper
             $output .= ($values['local_value'] != $values['global_value']
                        ? "&nbsp;"
                        : '') . strtoupper($key) . " &#10140; "
-                     . fv(str_replace(",",
+                     . fm(str_replace(",",
                                       ", ",
                                       $values['local_value'])) . " / "
-                     . fv(str_replace(",",
+                     . fm(str_replace(",",
                                       ", ",
                                       $values['global_value']))
                      . " (" . $access . ")"

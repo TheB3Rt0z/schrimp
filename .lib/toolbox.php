@@ -7,6 +7,7 @@ class toolbox
 	    'unit testing' => "..and what about a little code coverage measuring?",
 	    'error message' => "difference should be evidenced and a message showed",
 	    'fulltest procedure' => "add more tests and implement more testtypes..",
+	    'virus total' => "https://www.virustotal.com/it/documentation/public-api/",
 	);
 
     public static $tests = array();
@@ -89,7 +90,7 @@ class toolbox
  * @param mixed $mixed
  * @return mixed depending on internally defined rules
  */
-function fv($mixed)
+function fm($mixed)
 {
 	return toolbox::format($mixed);
 }

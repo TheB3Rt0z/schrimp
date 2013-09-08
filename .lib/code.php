@@ -141,7 +141,7 @@ class code
         foreach ($class->getConstants() as $key => $value)
             if (substr($key, 0, 1) != '_')
                 $class_constants .= "- **" . $key . "** &#10140; "
-                                  . fv($value) . MD_NEWLINE_SEQUENCE;
+                                  . fm($value) . MD_NEWLINE_SEQUENCE;
 
         return $class_constants;
     }
@@ -253,7 +253,7 @@ class code
             $parameters[] = ($class ? $class->getName() . " " : '')
                           . "$" . $parameter->getName()
                           . ($parameter->isOptional()
-                            ? " = " . fv($parameter->getDefaultValue())
+                            ? " = " . fm($parameter->getDefaultValue())
                             : '');
         }
 
@@ -296,7 +296,7 @@ class code
         $user_constants = self::get_constants_list();
         foreach ($user_constants as $key => $value)
             if (substr($key, 0, 1) != '_')
-                $constants .= "- **" . $key . "** &#10140; " . fv($value)
+                $constants .= "- **" . $key . "** &#10140; " . fm($value)
                             . MD_NEWLINE_SEQUENCE;
 
         return $constants . MD_NEWLINE_SEQUENCE;
@@ -310,13 +310,6 @@ class code
         foreach ($user_functions as $function)
         {
             $function = new ReflectionFunction($function);
-
-            /*$parameters = array();
-            foreach ($function->getParameters() as $parameter)
-                $parameters[] = "$" . $parameter->getName()
-                              . ($parameter->isOptional()
-                                ? " = " . fv($parameter->getDefaultValue())
-                                : '');*/
 
             $parameters = self::_list_method_parameters($function);
 
