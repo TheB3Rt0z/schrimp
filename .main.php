@@ -9,6 +9,7 @@ class main
         'memcache support' => "verify in method, if at least one mem-server works",
         'css selectors' => "uniform to html-class render-methods (default style)",
         'css autoload' => "automatically load ANY file in .inc/inc / css? nnouu..",
+        'error launchers' => "should be moved to a library (navigator, toolbox)?",
     );
 
     public static $tests = array();
@@ -275,7 +276,7 @@ class main
         if ($_SERVER['REQUEST_URI'] != (_SET_LOCAL_PATH . "/" . $url))
             rt($url);
 
-        return false; // just in case
+        return false; // just in case (somehow preferrable)
     }
 
     static function launch_error_file_not_found($file)

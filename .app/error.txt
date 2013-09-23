@@ -103,6 +103,31 @@ de||Datenbank-Typ "%s" nicht erkannt
 en||Database type "%s" not recognized
 it||Tipo del database "%s" sconosciuto
 
+connection to database not possible
+de||Mit aktuellen Anmeldeinformationen ist keine Verbindung zum Datenbank möglich
+en||Unable to connect to database with current credentials
+it||Impossibile connettersi al database con le credenziali correnti
+
+unable to create database %s
+de||Der Prozess ist nicht in der Lage, die Datenbank "%s" zu erstellen
+en||Process was unable to create database "%s" on server
+it||Il processo non é stato in grado di creare il database "%s"
+
+database server not available
+de||Datenbank-Server nicht zugänglich
+en||Database server not available for connection
+it||Il database online non é disponibile
+
+searching main table not possible
+de||Hauptindex-Tabelle nicht lesbar
+en||Unable to read database main index table
+it||Impossibile leggere la tabella indice
+
+unable to create main table
+de||Der Prozess ist nicht in der Lage, die Haupttabelle zu erstellen
+en||Process was unable to create database main table
+it||Il processo non é stato in grado di create la tabella principale
+
 unknown %s component
 de||Komponente "%s" ist nirgendwo zu finden
 en||Unable to find "%s" component
