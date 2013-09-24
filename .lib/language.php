@@ -7,6 +7,7 @@ class language
 	static $todos = array
 	(
 		'automatic translation' => "it could be interessant to use pspell&gettext",
+	    'implement euristic interpret' => "integrate it in translate as fallback!",
 	);
 
     static $tests = array();
@@ -90,7 +91,7 @@ class language
 						    || $text[0] == LANGUAGE_FALLBACK_LANG)
 						&& !empty($text[1]))
 					{
-						$str = $text[1];
+						$str = $text[1]; // can overwrite $_translations-based results (if required, use translation files)
 					}
 
 					if ($text[0] == $language || !$text[0])
@@ -98,6 +99,13 @@ class language
 				}
 
 		return vsprintf($str, $args);
+	}
+
+	static function interpret($string,
+	                          $from_lang, // or maybe auto-detection? (!!!)
+	                          $to_lang)
+	{
+	    return $string;
 	}
 }
 

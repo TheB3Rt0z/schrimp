@@ -12,7 +12,7 @@ Table of contents
 [Library escort](#-class-escort-24092013-- "") (root/.lib/escort.php, Len: 32/40, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library html](#-class-html-24092013-- "") &#10029;&#10029;  (root/.lib/html.php, Len: 467/575, CIS: 21 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- html_form](#-class-html_form-24092013-- "") &#10029;  (root/.lib/html_form.php, Len: 65/71, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library language](#-class-language-24092013-- "") &#10029;  (root/.lib/language.php, Len: 81/95, CIS: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library language](#-class-language-24092013-- "") &#10029;&#10029;  (root/.lib/language.php, Len: 88/103, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library main](#-class-main-24092013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (root/.main.php, Len: 244/308, CIS: 30 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library md](#-class-md-24092013-- "") (root/.lib/md.php, Len: 185/231, CIS: 14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library navigator](#-class-navigator-24092013-- "") &#10029;  (root/.lib/navigator.php, Len: 307/379, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -92,7 +92,7 @@ General reference
   show call's backtrace with help of error base handler
   @return void
   
-- **tr($component, $marker)** &#10140; .lib/language.php on line 110,
+- **tr($component, $marker)** &#10140; .lib/language.php on line 118,
   executes language translation of marker identifier, referring to given component;
   @param string $component
   @param string $marker
@@ -366,12 +366,14 @@ Uses: **html**
   
 - **[get_browser_language](https://github.com/TheB3Rt0z/schrimp/wiki/language-get_browser_language "")()** (PubS, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[get_component_translations_array](https://github.com/TheB3Rt0z/schrimp/wiki/language-get_component_translations_array "")($component)** (PubS, Len: 17/20 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[interpret](https://github.com/TheB3Rt0z/schrimp/wiki/language-interpret "")($string, $from_lang, $to_lang)** (PubS, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[is_supported](https://github.com/TheB3Rt0z/schrimp/wiki/language-is_supported "")($language)** (PubS, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[translate](https://github.com/TheB3Rt0z/schrimp/wiki/language-translate "")($component, $marker)** (PubS, Len: 23/27 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
 **TODOS:**  
   
 - **automatic translation** &#10140; it could be interessant to use pspell&gettext  
+- **implement euristic interpret** &#10140; integrate it in translate as fallback!  
   
   
 ***  
