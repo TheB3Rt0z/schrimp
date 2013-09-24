@@ -7,8 +7,8 @@ Table of contents
 [General reference](#general-reference-- "")  
 [Library code](#-class-code-24092013-- "") &#10029;&#10029;  (root/.lib/code.php, Len: 668/794, CIS: 15 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  3 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
 [Library controller](#-class-controller-24092013-- "") (root/.lib/controller.php, Len: 93/121, CIS: 10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library db](#-class-db-24092013-- "") &#10029;  (root/.lib/db.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "4 too long line(s) found!") Len: 91/106, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!")  
-[- db_object](#-class-db_object-24092013-- "") (root/.lib/db_object.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "6 too long line(s) found!") Len: 46/53, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!")  
+[Library db](#-class-db-24092013-- "") &#10029;  (root/.lib/db.php, Len: 93/109, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[- db_object](#-class-db_object-24092013-- "") (root/.lib/db_object.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "1 too long line(s) found!") Len: 36/43, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library escort](#-class-escort-24092013-- "") (root/.lib/escort.php, Len: 32/40, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library html](#-class-html-24092013-- "") &#10029;&#10029;  (root/.lib/html.php, Len: 467/575, CIS: 21 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- html_form](#-class-html_form-24092013-- "") &#10029;  (root/.lib/html_form.php, Len: 65/71, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -206,9 +206,10 @@ Uses: **escort**, **html**, **navigator**
   
 **CODE REFERENCE:**  
   
-- **[__construct](https://github.com/TheB3Rt0z/schrimp/wiki/db-__construct "")()** (CPub ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "4 too long line(s) found!") Len: 43/48 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Method's length should be reduced!") CyC: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[__construct](https://github.com/TheB3Rt0z/schrimp/wiki/db-__construct "")()** (CPub, Len: 18/21 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[_process_mysql_result](https://github.com/TheB3Rt0z/schrimp/wiki/db-_process_mysql_result "")(mysqli_result $result)** (Pri, Len: 11/13 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[_query](https://github.com/TheB3Rt0z/schrimp/wiki/db-_query "")($query, $type = null)** (Pro, Len: 21/24 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[_rescue_mysql_connection](https://github.com/TheB3Rt0z/schrimp/wiki/db-_rescue_mysql_connection "")()** (Pri, Len: 24/26 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
 **DEPENDENCIES:**  
   
@@ -226,7 +227,7 @@ Uses: **escort**
   
 **CODE REFERENCE:**  
   
-- **[__construct](https://github.com/TheB3Rt0z/schrimp/wiki/db_object-__construct "")($identifier = false)** (CPub ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "6 too long line(s) found!") Len: 36/39 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Method's length should be reduced!") CyC: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[__construct](https://github.com/TheB3Rt0z/schrimp/wiki/db_object-__construct "")($identifier = false)** (CPub ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "1 too long line(s) found!") Len: 26/29 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[load](https://github.com/TheB3Rt0z/schrimp/wiki/db_object-load "")($identifier)** (PubS, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[save](https://github.com/TheB3Rt0z/schrimp/wiki/db_object-save "")()** (Pub, Len: - )  
   

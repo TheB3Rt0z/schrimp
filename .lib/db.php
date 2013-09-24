@@ -10,7 +10,7 @@ define('_DB_ACCOUNT_USER', $_db_connection_settings['account_user']);
 define('_DB_ACCOUNT_PASSWORD', $_db_connection_settings['account_password']);
 define('_DB_DATABASE_NAME', $_db_connection_settings['database_name']);
 
-define('_DB_INDEX_TABLE', "_index");
+define('_DB_INDEX_TABLE', DB_TABLE_PREFIX . "_index");
 define('_DB_TABLE_ENGINE', "MYISAM");
 
 class db
@@ -34,34 +34,7 @@ class db
 				                                          _DB_ACCOUNT_USER,
 				                                          _DB_ACCOUNT_PASSWORD,
 				                                          _DB_DATABASE_NAME))
-				{
-				    switch (mysqli_connect_errno())
-			        {
-			            case 1049 : // database unknown, trying to create it..
-			            {
-			                if ($this->_connection = @mysqli_connect(_DB_SERVER_HOST,
-				                                                     _DB_ACCOUNT_USER,
-				                                                     _DB_ACCOUNT_PASSWORD))
-			                {
-			                    if ($this->_query("CREATE DATABASE " . _DB_DATABASE_NAME))
-			                        $this->_query("USE " . _DB_DATABASE_NAME);
-			                    else
-                                    return le(tr('error',
-                                                 "unable to create database %s",
-                                                 _DB_DATABASE_NAME));
-			                }
-			                else
-                                return le(tr('error',
-                                             "database server not available"));
-
-			                break;
-			            }
-
-			            default :
-			                return le(tr('error',
-                                         "connection to database not possible"));
-			        }
-				}
+				    $this->_rescue_mysql_connection();
 
 				break;
 			}
@@ -74,6 +47,36 @@ class db
 
 		escort::register_object($this,
 		                        _DB_DATABASE_TYPE);
+	}
+
+	private function _rescue_mysql_connection()
+	{
+	    switch (mysqli_connect_errno())
+        {
+            case 1049 : // database unknown, trying to create it..
+            {
+                if ($this->_connection = @mysqli_connect(_DB_SERVER_HOST,
+	                                                     _DB_ACCOUNT_USER,
+	                                                     _DB_ACCOUNT_PASSWORD))
+                {
+                    if ($this->_query("CREATE DATABASE " . _DB_DATABASE_NAME))
+                        $this->_query("USE " . _DB_DATABASE_NAME);
+                    else
+                        return le(tr('error',
+                                     "unable to create database %s",
+                                     _DB_DATABASE_NAME));
+                }
+                else
+                    return le(tr('error',
+                                 "database server not available"));
+
+                break;
+            }
+
+            default :
+                return le(tr('error',
+                             "connection to database not possible"));
+        }
 	}
 
 	private function _process_mysql_result(mysqli_result $result)
