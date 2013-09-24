@@ -2,12 +2,9 @@
 
 class db_object extends db
 {
-	public static $todos = array
-	(
-	    'uuid objects attribute' => "add support to generate it on insert queries",
-	);
+	static $todos = array();
 
-    public static $tests = array();
+    static $tests = array();
 
 	function __construct($identifier = false) // works with ID or UKEY
 	{
@@ -28,10 +25,12 @@ class db_object extends db
                                           (
                                               ID INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
                                               UKEY VARCHAR(32) NOT NULL,
+                                              UUID VARCHAR(36) NOT NULL DEFAULT 'UUID()',
                                               date_created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
                                               UNIQUE
                                               (
-                                                  UKEY
+                                                  UKEY,
+                                                  UUID
                                               )
                                           )
                                           ENGINE = " . _DB_TABLE_ENGINE))
@@ -54,6 +53,8 @@ class db_object extends db
 	{
 	    return new self($identifier);
 	}
+
+    function save() {} // automatic insert/replace thing
 }
 
 ?>

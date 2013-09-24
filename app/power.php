@@ -2,7 +2,7 @@
 
 class power extends controller
 {
-    public static $todos = array
+    static $todos = array
     (
         'anamnesys module' => "registration, evolution, calculations, analysis..",
         'store personal information' => "uses helper+db libraries as bridge tools",

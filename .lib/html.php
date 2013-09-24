@@ -8,13 +8,13 @@ define('HTML_ICON_LIST', "&#9992;");
 
 class html
 {
-    public static $todos = array
+    static $todos = array
     (
         'script online loading' => "if != local, should have a lfb..",
         'ordered_list' => "fix numbers, falsed as visible in error 404",
     );
 
-    public static $tests = array();
+    static $tests = array();
 
     private $_tag = null;
     private $_attributes = array();

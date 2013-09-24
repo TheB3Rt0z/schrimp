@@ -4,12 +4,12 @@ define('LANGUAGE_FALLBACK_LANG', "en");
 
 class language
 {
-	public static $todos = array
+	static $todos = array
 	(
 		'automatic translation' => "it could be interessant to use pspell&gettext",
 	);
 
-    public static $tests = array();
+    static $tests = array();
 
 	private static $_languages = array
     (

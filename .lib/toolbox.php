@@ -2,15 +2,16 @@
 
 class toolbox
 {
-	public static $todos = array
+	static $todos = array
 	(
 	    'unit testing' => "..and what about a little code coverage measuring?",
 	    'error message' => "difference should be evidenced and a message showed",
 	    'fulltest procedure' => "add more tests and implement more testtypes..",
 	    'virus total' => "https://www.virustotal.com/it/documentation/public-api/",
+	    'wide-range tests' => "include controller-derived + helpers etc. classes?",
 	);
 
-    public static $tests = array();
+    static $tests = array();
 
 	static function format($mixed)
 	{

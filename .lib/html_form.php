@@ -2,12 +2,12 @@
 
 class html_form extends html
 {
-    public static $todos = array
+    static $todos = array
     (
         'test array result' => "should be saved anywhere and loaded by executor..",
     );
 
-    public static $tests = array
+    static $tests = array
     (
         'base_dropdown' => array
         (

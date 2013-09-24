@@ -2,7 +2,7 @@
 
 class admin extends controller
 {
-    public static $todos = array();
+    static $todos = array();
 
 	function initialize()
 	{

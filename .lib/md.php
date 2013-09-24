@@ -4,9 +4,9 @@ define('MD_NEWLINE_SEQUENCE', "  \n"); // markdown-style new line with br conver
 
 class md
 {
-    public static $todos = array();
+    static $todos = array();
 
-    public static $tests = array();
+    static $tests = array();
 
     private $_tag = null;
     private $_content = '';

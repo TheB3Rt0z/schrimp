@@ -5,9 +5,9 @@ if (!session_id())
 
 class escort
 {
-	public static $todos = array();
+	static $todos = array();
 
-    public static $tests = array();
+    static $tests = array();
 
 	private static $_register = array();
 

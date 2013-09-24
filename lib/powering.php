@@ -2,12 +2,12 @@
 
 class powering
 {
-	public static $todos = array
+	static $todos = array
 	(
 	    'test added library' => "to be filled with handlers, or something similar",
 	);
 
-    public static $tests = array();
+    static $tests = array();
 }
 
 ?>

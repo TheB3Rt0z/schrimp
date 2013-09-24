@@ -1,35 +1,35 @@
-![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Doku v1.0.2013.09.23  
+![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Doku v1.0.2013.09.24  
 ---------------------------------------------------------------------------------------------------------------------------------  
   
 Table of contents  
 -----------------  
   
 [General reference](#general-reference-- "")  
-[Library code](#-class-code-22082013-- "") &#10029;&#10029;  (root/.lib/code.php, Len: 668/794, CIS: 15 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  3 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
-[Library controller](#-class-controller-04062013-- "") (root/.lib/controller.php, Len: 93/121, CIS: 10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library db](#-class-db-23092013-- "") &#10029;  (root/.lib/db.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "4 too long line(s) found!") Len: 91/106, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!")  
-[- db_object](#-class-db_object-23092013-- "") &#10029;  (root/.lib/db_object.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "5 too long line(s) found!") Len: 46/52, CIS: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!")  
-[Library escort](#-class-escort-19082013-- "") (root/.lib/escort.php, Len: 32/40, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library html](#-class-html-19082013-- "") &#10029;&#10029;  (root/.lib/html.php, Len: 467/575, CIS: 21 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[- html_form](#-class-html_form-11062013-- "") &#10029;  (root/.lib/html_form.php, Len: 65/71, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library language](#-class-language-04062013-- "") &#10029;  (root/.lib/language.php, Len: 81/95, CIS: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library main](#-class-main-23092013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (root/.main.php, Len: 244/308, CIS: 30 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library md](#-class-md-04062013-- "") (root/.lib/md.php, Len: 185/231, CIS: 14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library navigator](#-class-navigator-21062013-- "") &#10029;  (root/.lib/navigator.php, Len: 307/379, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library powering](#-class-powering-04062013-- "") &#10029;  (root/lib/powering.php, Len: 5/6, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library toolbox](#-class-toolbox-22082013-- "") &#10029;&#10029;&#10029;&#10029;  (root/.lib/toolbox.php, Len: 72/81, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Component admin](#-class-admin-23092013-- "") (root/.app/admin.php, Len: 10/12, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[- admin_helper](#-class-admin_helper-20032013-- "") (root/.app/admin_helper.php, Len: 1/1, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Component control](#-class-control-27062013-- "") &#10029;&#10029;  (root/.app/control.php, Len: 198/233, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[- control_helper](#-class-control_helper-22082013-- "") (root/.app/control_helper.php, Len: 64/79, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Component documentation](#-class-documentation-21062013-- "") (root/.app/documentation.php, Len: 35/42, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[- documentation_helper](#-class-documentation_helper-21062013-- "") (root/.app/documentation_helper.php, Len: 6/7, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Component error](#-class-error-07062013-- "") (root/.app/error.php, Len: 80/106, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[- error_helper](#-class-error_helper-20032013-- "") (root/.app/error_helper.php, Len: 1/1, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Component homepage](#-class-homepage-07062013-- "") (root/app/homepage.php, Len: 10/12, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[- homepage_helper](#-class-homepage_helper-20032013-- "") (root/app/homepage_helper.php, Len: 1/1, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Component power](#-class-power-18092013-- "") &#10029;&#10029;  (root/app/power.php, Len: 8/10, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[- power_helper](#-class-power_helper-20032013-- "") (root/app/power_helper.php, Len: 1/1, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library code](#-class-code-24092013-- "") &#10029;&#10029;  (root/.lib/code.php, Len: 668/794, CIS: 15 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  3 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
+[Library controller](#-class-controller-24092013-- "") (root/.lib/controller.php, Len: 93/121, CIS: 10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library db](#-class-db-24092013-- "") &#10029;  (root/.lib/db.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "4 too long line(s) found!") Len: 91/106, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!")  
+[- db_object](#-class-db_object-24092013-- "") (root/.lib/db_object.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "6 too long line(s) found!") Len: 46/53, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!")  
+[Library escort](#-class-escort-24092013-- "") (root/.lib/escort.php, Len: 32/40, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library html](#-class-html-24092013-- "") &#10029;&#10029;  (root/.lib/html.php, Len: 467/575, CIS: 21 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[- html_form](#-class-html_form-24092013-- "") &#10029;  (root/.lib/html_form.php, Len: 65/71, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library language](#-class-language-24092013-- "") &#10029;  (root/.lib/language.php, Len: 81/95, CIS: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library main](#-class-main-24092013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (root/.main.php, Len: 244/308, CIS: 30 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library md](#-class-md-24092013-- "") (root/.lib/md.php, Len: 185/231, CIS: 14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library navigator](#-class-navigator-24092013-- "") &#10029;  (root/.lib/navigator.php, Len: 307/379, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library powering](#-class-powering-24092013-- "") &#10029;  (root/lib/powering.php, Len: 5/6, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library toolbox](#-class-toolbox-24092013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (root/.lib/toolbox.php, Len: 73/82, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Component admin](#-class-admin-24092013-- "") (root/.app/admin.php, Len: 10/12, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[- admin_helper](#-class-admin_helper-24092013-- "") (root/.app/admin_helper.php, Len: 1/1, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Component control](#-class-control-24092013-- "") &#10029;&#10029;  (root/.app/control.php, Len: 198/233, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[- control_helper](#-class-control_helper-24092013-- "") (root/.app/control_helper.php, Len: 64/79, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Component documentation](#-class-documentation-24092013-- "") (root/.app/documentation.php, Len: 35/42, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[- documentation_helper](#-class-documentation_helper-24092013-- "") (root/.app/documentation_helper.php, Len: 6/7, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Component error](#-class-error-24092013-- "") (root/.app/error.php, Len: 80/106, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[- error_helper](#-class-error_helper-24092013-- "") (root/.app/error_helper.php, Len: 1/1, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Component homepage](#-class-homepage-24092013-- "") (root/app/homepage.php, Len: 10/12, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[- homepage_helper](#-class-homepage_helper-24092013-- "") (root/app/homepage_helper.php, Len: 1/1, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Component power](#-class-power-24092013-- "") &#10029;&#10029;  (root/app/power.php, Len: 8/10, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[- power_helper](#-class-power_helper-24092013-- "") (root/app/power_helper.php, Len: 1/1, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
   
 General reference  
 -----------------  
@@ -63,7 +63,7 @@ General reference
   @param string $path
   @return boolean true if realpath exists, false otherwise
   
-- **fm($mixed)** &#10140; .lib/toolbox.php on line 93,
+- **fm($mixed)** &#10140; .lib/toolbox.php on line 94,
   returns a beautiful formatted value, mixed variable-type-dependant;
   @param mixed $mixed
   @return mixed depending on internally defined rules
@@ -73,7 +73,7 @@ General reference
   @param string $msg
   @return boolean false after relocate
   
-- **pr($source)** &#10140; .lib/toolbox.php on line 103,
+- **pr($source)** &#10140; .lib/toolbox.php on line 104,
   returns a parsed output, source-type dependant;
   @param string $source
   @return mixed depending on source origin
@@ -114,7 +114,7 @@ General reference
   
 ***  
   
-[⇧](# "to the top") Class CODE (22.08.2013)  
+[⇧](# "to the top") Class CODE (24.09.2013)  
 -----------------------  
   
 **CODE REFERENCE:**  
@@ -166,7 +166,7 @@ Uses: **main**, **md**, **toolbox**
   
 ***  
   
-[⇧](# "to the top") Class CONTROLLER (04.06.2013)  
+[⇧](# "to the top") Class CONTROLLER (24.09.2013)  
 -----------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -201,7 +201,7 @@ Uses: **escort**, **html**, **navigator**
   
 ***  
   
-[⇧](# "to the top") Class DB (23.09.2013)  
+[⇧](# "to the top") Class DB (24.09.2013)  
 ---------------------  
   
 **CODE REFERENCE:**  
@@ -221,13 +221,14 @@ Uses: **escort**
   
 ***  
   
-[⇧](# "to the top") Class DB_OBJECT (23.09.2013)  
+[⇧](# "to the top") Class DB_OBJECT (24.09.2013)  
 ----------------------------  
   
 **CODE REFERENCE:**  
   
-- **[__construct](https://github.com/TheB3Rt0z/schrimp/wiki/db_object-__construct "")($identifier = false)** (CPub ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "5 too long line(s) found!") Len: 34/37 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Method's length should be reduced!") CyC: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[__construct](https://github.com/TheB3Rt0z/schrimp/wiki/db_object-__construct "")($identifier = false)** (CPub ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "6 too long line(s) found!") Len: 36/39 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Method's length should be reduced!") CyC: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[load](https://github.com/TheB3Rt0z/schrimp/wiki/db_object-load "")($identifier)** (PubS, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[save](https://github.com/TheB3Rt0z/schrimp/wiki/db_object-save "")()** (Pub, Len: - )  
   
 **INHERITED METHODS:**  
   
@@ -237,14 +238,10 @@ Uses: **escort**
   
 Uses: **db**  
   
-**TODOS:**  
-  
-- **uuid objects attribute** &#10140; add support to generate it on insert queries  
-  
   
 ***  
   
-[⇧](# "to the top") Class ESCORT (19.08.2013)  
+[⇧](# "to the top") Class ESCORT (24.09.2013)  
 -------------------------  
   
 **CODE REFERENCE:**  
@@ -256,7 +253,7 @@ Uses: **db**
   
 ***  
   
-[⇧](# "to the top") Class HTML (19.08.2013)  
+[⇧](# "to the top") Class HTML (24.09.2013)  
 -----------------------  
   
 **CODE REFERENCE:**  
@@ -320,7 +317,7 @@ Uses: **escort**, **main**
   
 ***  
   
-[⇧](# "to the top") Class HTML_FORM (11.06.2013)  
+[⇧](# "to the top") Class HTML_FORM (24.09.2013)  
 ----------------------------  
   
 **CODE REFERENCE:**  
@@ -362,7 +359,7 @@ Uses: **html**
   
 ***  
   
-[⇧](# "to the top") Class LANGUAGE (04.06.2013)  
+[⇧](# "to the top") Class LANGUAGE (24.09.2013)  
 ---------------------------  
   
 **CODE REFERENCE:**  
@@ -379,7 +376,7 @@ Uses: **html**
   
 ***  
   
-[⇧](# "to the top") Class MAIN (23.09.2013)  
+[⇧](# "to the top") Class MAIN (24.09.2013)  
 -----------------------  
   
 **CODE REFERENCE:**  
@@ -425,7 +422,7 @@ Uses: **code**, **html**, **md**, **toolbox**
   
 ***  
   
-[⇧](# "to the top") Class MD (04.06.2013)  
+[⇧](# "to the top") Class MD (24.09.2013)  
 ---------------------  
   
 **CODE REFERENCE:**  
@@ -458,7 +455,7 @@ Uses: **escort**
   
 ***  
   
-[⇧](# "to the top") Class NAVIGATOR (21.06.2013)  
+[⇧](# "to the top") Class NAVIGATOR (24.09.2013)  
 ----------------------------  
   
 **CODE REFERENCE:**  
@@ -493,7 +490,7 @@ Uses: **html**, **html_form**, **main**
   
 ***  
   
-[⇧](# "to the top") Class POWERING (04.06.2013)  
+[⇧](# "to the top") Class POWERING (24.09.2013)  
 ---------------------------  
   
 **TODOS:**  
@@ -503,7 +500,7 @@ Uses: **html**, **html_form**, **main**
   
 ***  
   
-[⇧](# "to the top") Class TOOLBOX (22.08.2013)  
+[⇧](# "to the top") Class TOOLBOX (24.09.2013)  
 --------------------------  
   
 **CODE REFERENCE:**  
@@ -523,6 +520,7 @@ Uses: **code**
 - **error message** &#10140; difference should be evidenced and a message showed  
 - **fulltest procedure** &#10140; add more tests and implement more testtypes..  
 - **virus total** &#10140; https://www.virustotal.com/it/documentation/public-api/  
+- **wide-range tests** &#10140; include controller-derived + helpers etc. classes?  
   
   
 ***  
@@ -532,7 +530,7 @@ Available components:
 =====================  
   
   
-[⇧](# "to the top") Class ADMIN (23.09.2013)  
+[⇧](# "to the top") Class ADMIN (24.09.2013)  
 ------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -568,13 +566,13 @@ Available components:
   
 Uses: **controller**, **html**, **navigator**  
   
-[⇧](# "to the top") Class ADMIN_HELPER (20.03.2013)  
+[⇧](# "to the top") Class ADMIN_HELPER (24.09.2013)  
 -------------------------------  
   
   
 ***  
   
-[⇧](# "to the top") Class CONTROL (27.06.2013)  
+[⇧](# "to the top") Class CONTROL (24.09.2013)  
 --------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -633,7 +631,7 @@ Uses: **controller**, **html**, **language**, **main**, **navigator**
 - **plugins libraries** &#10140; find a way to incapsulate needed translations  
 - **handler_core_language** &#10140; this should be te next to be written..  
   
-[⇧](# "to the top") Class CONTROL_HELPER (22.08.2013)  
+[⇧](# "to the top") Class CONTROL_HELPER (24.09.2013)  
 ---------------------------------  
   
 **CODE REFERENCE:**  
@@ -650,7 +648,7 @@ Uses: **html**
   
 ***  
   
-[⇧](# "to the top") Class DOCUMENTATION (21.06.2013)  
+[⇧](# "to the top") Class DOCUMENTATION (24.09.2013)  
 --------------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -688,7 +686,7 @@ Uses: **html**
   
 Uses: **controller**, **html**, **main**, **navigator**  
   
-[⇧](# "to the top") Class DOCUMENTATION_HELPER (21.06.2013)  
+[⇧](# "to the top") Class DOCUMENTATION_HELPER (24.09.2013)  
 ---------------------------------------  
   
 **CODE REFERENCE:**  
@@ -702,7 +700,7 @@ Uses: **code**, **html**
   
 ***  
   
-[⇧](# "to the top") Class ERROR (07.06.2013)  
+[⇧](# "to the top") Class ERROR (24.09.2013)  
 ------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -743,13 +741,13 @@ Uses: **code**, **html**
   
 Uses: **controller**, **html**, **main**, **navigator**  
   
-[⇧](# "to the top") Class ERROR_HELPER (20.03.2013)  
+[⇧](# "to the top") Class ERROR_HELPER (24.09.2013)  
 -------------------------------  
   
   
 ***  
   
-[⇧](# "to the top") Class HOMEPAGE (07.06.2013)  
+[⇧](# "to the top") Class HOMEPAGE (24.09.2013)  
 ---------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -785,13 +783,13 @@ Uses: **controller**, **html**, **main**, **navigator**
   
 Uses: **controller**, **html**, **navigator**  
   
-[⇧](# "to the top") Class HOMEPAGE_HELPER (20.03.2013)  
+[⇧](# "to the top") Class HOMEPAGE_HELPER (24.09.2013)  
 ----------------------------------  
   
   
 ***  
   
-[⇧](# "to the top") Class POWER (18.09.2013)  
+[⇧](# "to the top") Class POWER (24.09.2013)  
 ------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -831,7 +829,7 @@ Uses: **controller**
 - **anamnesys module** &#10140; registration, evolution, calculations, analysis..  
 - **store personal information** &#10140; uses helper+db libraries as bridge tools  
   
-[⇧](# "to the top") Class POWER_HELPER (20.03.2013)  
+[⇧](# "to the top") Class POWER_HELPER (24.09.2013)  
 -------------------------------  
   
   

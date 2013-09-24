@@ -2,7 +2,7 @@
 
 class documentation_helper
 {
-    public static $todos = array();
+    static $todos = array();
 
     function get_method_code(reflectionMethod $method)
     {

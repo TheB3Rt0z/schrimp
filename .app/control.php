@@ -2,7 +2,7 @@
 
 class control extends controller
 {
-    public static $todos = array
+    static $todos = array
     (
         'plugins libraries' => "find a way to incapsulate needed translations", // maybe static array of translations? default if only one level..) and controls (?) in backend!
         'handler_core_language' => "this should be te next to be written..",

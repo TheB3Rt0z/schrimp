@@ -2,7 +2,7 @@
 
 class homepage extends controller
 {
-    public static $todos = array();
+    static $todos = array();
 
 	function initialize()
 	{

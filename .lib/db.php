@@ -15,12 +15,12 @@ define('_DB_TABLE_ENGINE', "MYISAM");
 
 class db
 {
-	public static $todos = array
+	static $todos = array
 	(
 	    'check table engines' => "fix engine standard for (all?) database tables",
 	);
 
-    public static $tests = array();
+    static $tests = array();
 
     protected $_connection = null;
 

@@ -2,7 +2,7 @@
 
 class main
 {
-    public static $todos = array
+    static $todos = array
     (
         'documentation' => "PHP highlight_string/file to rapresent code excerpts",
         'escort library' => "session by PHP and DB if webstore & memcache fail?",
@@ -12,7 +12,7 @@ class main
         'error launchers' => "should be moved to a library (navigator, toolbox)?",
     );
 
-    public static $tests = array();
+    static $tests = array();
 
     private $_call = null;
 

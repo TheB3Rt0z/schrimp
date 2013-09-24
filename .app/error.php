@@ -2,7 +2,7 @@
 
 class error extends controller
 {
-	public static $todos = array();
+	static $todos = array();
 
 	const VISIBLE_IN_NAVIGATION = false;
 

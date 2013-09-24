@@ -4,13 +4,13 @@ define('CODE_DATE_FORMAT', "d.m.Y");
 
 class code
 {
-    public static $todos = array
+    static $todos = array
     (
         'get_class_dependencies' => "too unaccurate, see navigator-controller",
         'wrong parentheses' => "add checks on ) { et similia cases (f.e. array( )",
     );
 
-    public static $tests = array();
+    static $tests = array();
 
     const _STR_SUMMARY_BLUE = "Method(s) with too many parameters?";
     const _STR_SUMMARY_YELLOW = "Attention! Some yellow alert(s)!";

@@ -2,7 +2,7 @@
 
 class power_helper
 {
-    public static $todos = array();
+    static $todos = array();
 }
 
 ?>

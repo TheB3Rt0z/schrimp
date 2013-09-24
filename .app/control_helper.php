@@ -2,7 +2,7 @@
 
 class control_helper
 {
-    public static $todos = array();
+    static $todos = array();
 
     private $_access_levels = array
     (
