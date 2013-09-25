@@ -6,8 +6,7 @@ define('_DB_OBJECT_SQL_CREATE_INDEX', "CREATE TABLE " . _DB_DATABASE_NAME . "
                                            ID INT UNSIGNED NOT NULL AUTO_INCREMENT
                                                PRIMARY KEY,
                                            UKEY VARCHAR(32) NOT NULL,
-                                           UUID VARCHAR(36) NOT NULL
-                                               DEFAULT 'UUID()',
+                                           UUID VARCHAR(36) NOT NULL,
                                            date_created TIMESTAMP NOT NULL
                                                DEFAULT CURRENT_TIMESTAMP,
                                            UNIQUE
@@ -20,22 +19,25 @@ define('_DB_OBJECT_SQL_CREATE_INDEX', "CREATE TABLE " . _DB_DATABASE_NAME . "
 
 class db_object extends db
 {
-	static $todos = array();
+	static $todos = array
+	(
+	    'uuid objects attribute' => "add support to generate it on insert queries",
+	);
 
     static $tests = array();
 
-	function __construct($identifier = false) // works with ID or UKEY/UUID
+	function __construct($index = false) // works with ID or UKEY/UUID
 	{
-	    if (!empty($identifier))
+	    if (!empty($index))
         {
             $db = new parent;
 
             if (!$result = $db->_query("SELECT *
                                         FROM " . _DB_INDEX_TABLE . "
-                                        WHERE " . (is_int($identifier)
-                                                  ? "ID = " . $identifier
-                                                  : "UKEY LIKE '" . $identifier
-                                                  . "' OR UUID LIKE '" . $identifier
+                                        WHERE " . (is_int($index)
+                                                  ? "ID = " . $index
+                                                  : "UKEY LIKE '" . $index
+                                                  . "' OR UUID LIKE '" . $index
                                                   . "'")))
                 switch (mysqli_errno($db->_connection))
                 {
@@ -57,9 +59,9 @@ class db_object extends db
         }
 	}
 
-	static function load($identifier)
+	static function load($index)
 	{
-	    return new self($identifier);
+	    return new self($index);
 	}
 
     function save() {} // automatic insert/replace thing
