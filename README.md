@@ -1,4 +1,4 @@
-![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Doku v1.0.2013.09.25  
+![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Doku v1.0.2013.09.26  
 ---------------------------------------------------------------------------------------------------------------------------------  
   
 Table of contents  
@@ -7,8 +7,8 @@ Table of contents
 [General reference](#general-reference-- "")  
 [Library code](#-class-code-24092013-- "") &#10029;&#10029;  (root/.lib/code.php, Len: 668/794, CIS: 15 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  3 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
 [Library controller](#-class-controller-24092013-- "") (root/.lib/controller.php, Len: 93/121, CIS: 10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library db](#-class-db-24092013-- "") &#10029;  (root/.lib/db.php, Len: 93/109, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[- db_object](#-class-db_object-25092013-- "") &#10029;  (root/.lib/db_object.php, Len: 39/46, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library db](#-class-db-26092013-- "") &#10029;  (root/.lib/db.php, Len: 93/109, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[- db_object](#-class-db_object-26092013-- "") &#10029;&#10029;&#10029;  (root/.lib/db_object.php, Len: 94/114, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  2 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
 [Library escort](#-class-escort-24092013-- "") (root/.lib/escort.php, Len: 32/40, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library html](#-class-html-24092013-- "") &#10029;&#10029;  (root/.lib/html.php, Len: 467/575, CIS: 21 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- html_form](#-class-html_form-24092013-- "") &#10029;  (root/.lib/html_form.php, Len: 65/71, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -18,7 +18,7 @@ Table of contents
 [Library navigator](#-class-navigator-24092013-- "") &#10029;  (root/.lib/navigator.php, Len: 307/379, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library powering](#-class-powering-24092013-- "") &#10029;  (root/lib/powering.php, Len: 5/6, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library toolbox](#-class-toolbox-24092013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (root/.lib/toolbox.php, Len: 73/82, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Component admin](#-class-admin-25092013-- "") (root/.app/admin.php, Len: 10/12, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Component admin](#-class-admin-26092013-- "") (root/.app/admin.php, Len: 10/12, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- admin_helper](#-class-admin_helper-24092013-- "") (root/.app/admin_helper.php, Len: 1/1, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Component control](#-class-control-24092013-- "") &#10029;&#10029;  (root/.app/control.php, Len: 198/233, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- control_helper](#-class-control_helper-24092013-- "") (root/.app/control_helper.php, Len: 64/79, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -201,7 +201,7 @@ Uses: **escort**, **html**, **navigator**
   
 ***  
   
-[⇧](# "to the top") Class DB (24.09.2013)  
+[⇧](# "to the top") Class DB (26.09.2013)  
 ---------------------  
   
 **CODE REFERENCE:**  
@@ -222,14 +222,16 @@ Uses: **escort**
   
 ***  
   
-[⇧](# "to the top") Class DB_OBJECT (25.09.2013)  
+[⇧](# "to the top") Class DB_OBJECT (26.09.2013)  
 ----------------------------  
   
 **CODE REFERENCE:**  
   
-- **[__construct](https://github.com/TheB3Rt0z/schrimp/wiki/db_object-__construct "")($index = false)** (CPub, Len: 26/29 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **[load](https://github.com/TheB3Rt0z/schrimp/wiki/db_object-load "")($index)** (PubS, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **[save](https://github.com/TheB3Rt0z/schrimp/wiki/db_object-save "")()** (Pub, Len: - )  
+- **[__construct](https://github.com/TheB3Rt0z/schrimp/wiki/db_object-__construct "")($identifier_or_data = false)** (CPub, Len: 4/5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[_load](https://github.com/TheB3Rt0z/schrimp/wiki/db_object-_load "")($identifier)** (Pri, Len: 27/31 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Method's length could be reduced..") CyC: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[_save](https://github.com/TheB3Rt0z/schrimp/wiki/db_object-_save "")($attributes = null)** (Pri, Len: 29/34 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Method's length could be reduced..") CyC: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[load](https://github.com/TheB3Rt0z/schrimp/wiki/db_object-load "")($identifier)** (PubS, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[save](https://github.com/TheB3Rt0z/schrimp/wiki/db_object-save "")($attributes = null)** (PubS, Len: 2/3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
 **INHERITED METHODS:**  
   
@@ -241,7 +243,9 @@ Uses: **db**
   
 **TODOS:**  
   
-- **uuid objects attribute** &#10140; add support to generate it on insert queries  
+- **set attributes on construct event** &#10140; if given data is a values array..  
+- **_load output testing** &#10140; is really boolean return working or not?  
+- **_save event performance** &#10140; please avoid reloading 'same' object again!  
   
   
 ***  
@@ -537,7 +541,7 @@ Available components:
 =====================  
   
   
-[⇧](# "to the top") Class ADMIN (25.09.2013)  
+[⇧](# "to the top") Class ADMIN (26.09.2013)  
 ------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
