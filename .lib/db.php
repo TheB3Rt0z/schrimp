@@ -18,6 +18,7 @@ class db
 	static $todos = array
 	(
 	    'check table engines' => "fix engine standard for (all?) database tables",
+	    'query should return values lists?' => "check weight objects vs arrays..",
 	);
 
     static $tests = array();
