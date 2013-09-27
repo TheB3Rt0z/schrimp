@@ -83,13 +83,14 @@ class db
 	{
 	    if (empty($result->num_rows))
             return false;
-        elseif ($result->num_rows == 1)
-            return $result->fetch_object('db_object'); // normally stdClass type object
+        elseif ($result->num_rows == 1) {
+            return $result->fetch_object(); // normally returns stdClass type object
+        }
         else
         {
             $results = array();
 
-            while ($row = $result-fetch_object('db_object'))
+            while ($row = $result-fetch_object())
                 $results[] = $row;
 
             return $results; // numeric array of stdClass objects (if no class specified)

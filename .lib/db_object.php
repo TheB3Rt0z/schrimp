@@ -7,6 +7,7 @@ define('_SQL_CREATE_INDEX', "CREATE TABLE " . _DB_DATABASE_NAME . " . "
                                  UKEY VARCHAR(32) NOT NULL,
                                  UUID VARCHAR(36) NOT NULL,
                                  date_created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                                 date_updated TIMESTAMP NOT NULL,
                                  UNIQUE
                                  (
                                      UKEY,
@@ -38,27 +39,25 @@ class db_object extends db
 
     public $UUID = null;
 
-	function __construct($identifier_or_data = false)
-	{
-	    $this->_db = new parent;
-
-	    if (!empty($identifier_or_data)
-	        && !is_array($identifier_or_data))
-            $this->_load($identifier_or_data);
-	}
-
-	private function _load($identifier) // works with integer ID or UKEY/UUID strings
+	function __construct($index_or_data = null)
 	{
 	    if (empty($this->_db))
 	        $this->_db = new parent;
 
+	    if (!empty($index_or_data)
+	        && !is_array($index_or_data))
+            $this->_load($index_or_data);
+	}
+
+	private function _load($index) // works with integer ID or UKEY/UUID strings
+	{
 	    if (!$result = $this->_db->_query("SELECT *
-                                   FROM " . _DB_INDEX_TABLE . "
-                                   WHERE " . (is_int($identifier)
-                                             ? "ID = " . $identifier
-                                             : "UKEY LIKE '" . $identifier
-                                             . "' OR UUID LIKE '" . $identifier
-                                             . "'")))
+                                           FROM " . _DB_INDEX_TABLE . "
+                                           WHERE " . (is_numeric($index)
+                                                     ? "ID = " . $index
+                                                     : "UKEY LIKE '" . $index
+                                                     . "' OR UUID LIKE '" . $index
+                                                     . "'")))
 	        switch (mysqli_errno($this->_db->_connection))
             {
                 case 1146 : // main table not exists, trying to create it
@@ -87,9 +86,9 @@ class db_object extends db
         if (!empty($attributes))
             foreach ($attributes as $key => $value)
             {
-                $data[] = trim($key) . " = " . (is_numeric($value)
-                                               ? $value
-                                               : "'" . addslashes($value) . "'");
+                $data[$key] = trim($key) . " = " . (is_numeric($value)
+                                                   ? $value
+                                                   : "'" . addslashes($value) . "'");
 
                 if (!in_array($key,
                               $this->_meta_attributes))
@@ -98,14 +97,17 @@ class db_object extends db
 
         foreach (get_object_vars($this) as $key => $value)
             if (substr($key, 0, 1) != '_')
-                $data[] = $key . " = " . (is_numeric($value)
-                                         ? $value
-                                         : (($key == "UUID" && empty($value))
-                                           ? "UUID()"
-                                           : "'" . addslashes($value) . "'"));
+                $data[$key] = $key . " = " . (is_numeric($value)
+                                             ? $value
+                                             : (($key == "UUID" && empty($value))
+                                               ? "UUID()"
+                                               : "'" . addslashes($value) . "'"));
 
-        $this->_db->_query("REPLACE INTO " . _DB_INDEX_TABLE . "
-                            SET " . implode($data, ", "));
+        $data['date_updated'] = "date_updated = NOW()"; // needed for any update operation
+
+        if (!$this->_db->_query("REPLACE INTO " . _DB_INDEX_TABLE . "
+                                 SET " . implode($data, ", ")))
+            vd(mysqli_errno($this->_db->_connection)); // something better?
 
         if ($id = mysqli_insert_id($this->_db->_connection))
             $this->_db->_query("UPDATE " . _DB_INDEX_TABLE . "
@@ -115,21 +117,34 @@ class db_object extends db
             $id = $this->ID;
 
         if ($this->_load($id))
-            return $id;
+            return $this;
         else
             return false; // false why? some more precision required here..
     }
 
-    static function load($identifier) // works with integer ID or UKEY/UUID strings
+    static function load($index) // works with integer ID or UKEY/UUID strings
     {
-        return new self($identifier);
+        $self = new self($index);
+
+        foreach (get_object_vars($self) as $key => $value) // cleaning object for static usage
+            if (substr($key, 0, 1) == '_')
+                unset($self->$key);
+
+        return $self;
     }
 
-    static function save($attributes = array())
+    static function save($attributes = array(),
+                         $index = null) // if null a new object will be saved
     {
-        $self = new self;
+        $self = new self($index);
 
-        return $self->_save($attributes);
+        $self = $self->_save($attributes);
+
+        foreach (get_object_vars($self) as $key => $value) // cleaning object for static usage
+            if (substr($key, 0, 1) == '_')
+                unset($self->$key);
+
+        return $self;
     }
 }
 
