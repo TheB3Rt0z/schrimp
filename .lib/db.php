@@ -128,13 +128,17 @@ class db
 	    }
 	}
 
-	static function query($query,
-	                      $type = '')
+	static function query($options = array())
 	{
+	    $query = "SELECT *
+	              FROM " . _DB_INDEX_TABLE;
+
+	    if (!empty($options['orderby']))
+	        $query .= " ORDER BY " . implode($options['orderby'], ", ");
+
         $self = new self;
 
-        return $self->_query($query,
-                             $type);
+        return $self->_query($query);
 	}
 
 }
