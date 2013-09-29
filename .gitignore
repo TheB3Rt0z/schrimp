@@ -2,3 +2,5 @@
 /.configuration
 /.buffer
 /doc
+/.sass-cache
+/.externalToolBuilders
