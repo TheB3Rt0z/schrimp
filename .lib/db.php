@@ -130,7 +130,9 @@ class db
 
 	static function query($options = array())
 	{
-	    $query = "SELECT *
+	    $query = "SELECT " . (!empty($options['distinct'])
+	                         ? "DISTINCT"
+	                         : '') . " *
 	              FROM " . _DB_INDEX_TABLE;
 
 	    if (!empty($options['orderby']))

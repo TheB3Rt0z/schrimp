@@ -187,12 +187,14 @@ class main
             html::add_stylesheet(_SET_INCLUDES_PATH . "css/advin.css");
 
         if (fe(_SET_INCLUDES_PUBLICPATH . "css/style.css"))
-            html::add_stylesheet(_SET_INCLUDES_PUBLICPATH . "css/style.css");
+            html::add_stylesheet(_SET_INCLUDES_PUBLICPATH . "css/style.css"); // base style sheet for frontend
+        html::add_stylesheet(_SET_INCLUDES_PUBLICPATH . "css/style_sass.css"); // will be overridden by next
+        html::add_stylesheet(_SET_INCLUDES_PUBLICPATH . "css/style_scss.css"); // will be overridden by controller
 
         html::add_stylesheet($this->get_fullpath() . ".css"); // this adds extra controller css
 
         if (_SET_DESIGN_MODE)
-            html::add_stylesheet(_SET_INCLUDES_PATH . "css/debug.css");
+            html::add_stylesheet(_SET_INCLUDES_PATH . "css/debug.css"); // overrides all css sheets, only if debug mode is active..
 
         html::add_js_file(_SET_INCLUDES_PATH . "js/jquery.js"); // html::add_js_file("//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js");
         html::add_js_file(_SET_INCLUDES_PATH . "js/jquery_ui.js"); // html::add_js_file("//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js");
