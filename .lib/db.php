@@ -19,6 +19,7 @@ class db
 	(
 	    'check table engines' => "fix engine standard for (all?) database tables",
 	    'query should return values lists?' => "check weight objects vs arrays..",
+	    'database type' => "there is a configuration option to control this"
 	);
 
     static $tests = array();
@@ -126,6 +127,16 @@ class db
         		}
 	    }
 	}
+
+	static function query($query,
+	                      $type = '')
+	{
+        $self = new self;
+
+        return $self->_query($query,
+                             $type);
+	}
+
 }
 
 ?>
