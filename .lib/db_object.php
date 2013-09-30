@@ -81,19 +81,20 @@ class db_object extends db
         return false; // is this needed, check with break here up..
 	}
 
-    private function _save($attributes = array())
-    {
-        if (!empty($attributes))
-            foreach ($attributes as $key => $value)
-            {
-                $data[$key] = trim($key) . " = " . (is_numeric($value)
-                                                   ? $value
-                                                   : "'" . addslashes($value) . "'");
+	private function _prepare_object_data($attributes = array())
+	{
+        foreach ($attributes as $key => $value)
+        {
+            $key = trim($key);
 
-                if (!in_array($key,
-                              $this->_meta_attributes))
-                    unset($this->$key);
-            }
+            $data[$key] = $key . " = " . (is_numeric($value)
+                                         ? $value
+                                         : "'" . addslashes($value) . "'");
+
+            if (!in_array($key,
+                          $this->_meta_attributes))
+                unset($this->$key);
+        }
 
         foreach (get_object_vars($this) as $key => $value)
             if (substr($key, 0, 1) != '_')
@@ -103,23 +104,30 @@ class db_object extends db
                                                ? "UUID()"
                                                : "'" . addslashes($value) . "'"));
 
-        $data['date_updated'] = "date_updated = NOW()"; // needed for any update operation
+        $data['date_updated'] = "date_updated = NOW()"; // needed for any save/update/replace etc. operation
 
-        if (!$this->_db->_query("REPLACE INTO " . _DB_INDEX_TABLE . "
-                                 SET " . implode($data, ", ")))
-            vd(mysqli_errno($this->_db->_connection)); // something better?
+        return $data;
+	}
 
-        if ($id = mysqli_insert_id($this->_db->_connection))
-            $this->_db->_query("UPDATE " . _DB_INDEX_TABLE . "
-                                SET UKEY = MD5(CONCAT(ID, UUID, date_created))
-                                WHERE ID = " . $id);
-        else
-            $id = $this->ID;
+    private function _save($attributes = array())
+    {
+        $data = $this->_prepare_object_data($attributes);
 
-        if ($this->_load($id))
-            return $this;
-        else
-            return false; // false why? some more precision required here..
+        if ($this->_db->_query("REPLACE INTO " . _DB_INDEX_TABLE . "
+                                SET " . implode($data, ", ")))
+        {
+            if ($id = mysqli_insert_id($this->_db->_connection))
+                $this->_db->_query("UPDATE " . _DB_INDEX_TABLE . "
+                                    SET UKEY = MD5(CONCAT(ID, UUID, date_created))
+                                    WHERE ID = " . $id);
+            else
+                $id = $this->ID;
+
+            if ($this->_load($id))
+                return $this;
+        }
+
+        return false; // false why? some more precision required here..
     }
 
     static function load($index) // works with integer ID or UKEY/UUID strings
