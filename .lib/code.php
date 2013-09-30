@@ -8,6 +8,7 @@ class code
     (
         'get_class_dependencies' => "too unaccurate, see navigator-controller",
         'wrong parentheses' => "add checks on ) { et similia cases (f.e. array( )",
+        'convert &# special characters' => "they should be (private?) constants",
     );
 
     static $tests = array();
@@ -296,8 +297,15 @@ class code
         $user_constants = self::get_constants_list();
         foreach ($user_constants as $key => $value)
             if (substr($key, 0, 1) != '_')
-                $constants .= "- **" . $key . "** &#10140; " . fm($value)
+            {
+                $components = explode('_', $key);
+
+                $constants .= "- **" . $key . "** &#10140; " . fm($value) . " ("
+                            . (class_exists(strtolower($components[0]))
+                              ? "@ class " . $components[0]
+                              : "general scope") . ")"
                             . MD_NEWLINE_SEQUENCE;
+            }
 
         return $constants . MD_NEWLINE_SEQUENCE;
     }
