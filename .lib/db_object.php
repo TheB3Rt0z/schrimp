@@ -83,7 +83,9 @@ class db_object extends db
 
 	private function _prepare_object_data($attributes = array())
 	{
-        foreach ($attributes as $key => $value)
+        $data = array();
+
+	    foreach ($attributes as $key => $value)
         {
             $key = trim($key);
 
