@@ -4,6 +4,7 @@ class navigator
 {
     static $todos = array
     (
+        'fix (advanced) list/breadcrumb' => "not right initialized in dev mode..",
         'render_list' => "this should be CSS3 and appear on a mouse gesture..",
     );
 
@@ -85,11 +86,11 @@ class navigator
                 $static_variables = $object->getStaticVariables();
 
                 if (!empty($static_variables['options']))
-                    $this->_add_handler_options($static_variables,
-                                                $returns['sub'],
-                                                $ctrl_name,
-                                                $returns['link'],
-                                                $object);
+                    $this->_add_options($static_variables,
+                                        $returns['sub'],
+                                        $ctrl_name,
+                                        $returns['link'],
+                                        $object);
 
                 $sub =& $this->_structure[_SET_HOME_COMPONENT]['sub'][$ctrl_name];
             }
@@ -128,11 +129,11 @@ class navigator
         );
     }
 
-    private function _add_handler_options($static_variables,
-                                          &$sub,
-                                          $ctrl_name,
-                                          $link,
-                                          $object)
+    private function _add_options($static_variables,
+                                  &$sub,
+                                  $ctrl_name,
+                                  $link,
+                                  $object)
     {
         $options = $static_variables['options'];
 

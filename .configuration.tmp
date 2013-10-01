@@ -2,6 +2,7 @@
 (
     '? admin bar' => "optional control to measure run time performance (gApis)",
     'configuration.tmp settings order' => "use comments and find a beautiful order",
+    'framework mode usage' => "use namespace to avoid class-names conflicts..?"
 ),
 
 '_set_development_mode' => false,

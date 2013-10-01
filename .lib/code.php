@@ -486,10 +486,10 @@ class code
         return $components . MD_NEWLINE_SEQUENCE;
     }
 
-    private static function _update_class_warnings($class_name,
-                                                   $parameters,
-                                                   $length,
-                                                   $cyc)
+    private static function _update_class_warning($class_name,
+                                                  $parameters,
+                                                  $length,
+                                                  $cyc)
     {
         if (empty(self::$_class_warnings[$class_name]))
             self::$_class_warnings[$class_name] = array
@@ -708,7 +708,7 @@ class code
     }
 
     static function get_method_code(reflectionMethod $method,
-                                    $highlighting = false)
+                                    $highlight = false)
     {
         $parameters = self::_list_method_parameters($method);
         $parameters_warning = count($parameters)
@@ -724,7 +724,7 @@ class code
                             $method->getEndLine() - $length - 1,
                             $length);
 
-        if ($highlighting)
+        if ($highlight)
             return toolbox::highlight("<?\n" . implode($code) . "\n?>");
         else
             return array
@@ -764,10 +764,10 @@ class code
                 $data['cyc'] += substr_count($code_line, $counter);
         }
 
-        self::_update_class_warnings($method->getDeclaringClass()->getName(),
-                                     $data['parameters'],
-                                     $data['length'],
-                                     $data['cyc']);
+        self::_update_class_warning($method->getDeclaringClass()->getName(),
+                                    $data['parameters'],
+                                    $data['length'],
+                                    $data['cyc']);
 
         return $data;
     }

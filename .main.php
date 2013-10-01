@@ -180,10 +180,10 @@ class main
 
     function get_head_links() // SVG inline editing (php driven) if css + js != enough
     {
-        $favicon = _SET_INCLUDES_PUBLICPATH . "img/" . self::$controller . "_favicon.ico";
+        $favicon_path = _SET_INCLUDES_PUBLICPATH . "img/";
         if (!_SET_DEVELOPMENT_MODE
-            && fe($favicon)) // precheck on file existance to permit fallback
-            html::add_favicon($favicon);
+            && fe($favicon_path . self::$controller . "_favicon.ico")) // precheck on file existance to permit fallback
+            html::add_favicon($favicon_path . self::$controller . "_favicon.ico");
         else
             html::add_favicon(_SET_INCLUDES_PATH . "img/schrimp_favicon.ico"); // html::add_stylesheet("http://fonts.googleapis.com/css?family=Amaranth:700");
 

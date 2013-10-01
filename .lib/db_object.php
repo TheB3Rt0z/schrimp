@@ -41,8 +41,10 @@ class db_object extends db
 
 	function __construct($index_or_data = null)
 	{
-	    if (empty($this->_db))
+	    if (empty($this->_db)) {
 	        $this->_db = new parent;
+	        $this->_connection = $this->_db->_connection;
+	    }
 
 	    if (!empty($index_or_data)
 	        && !is_array($index_or_data))
@@ -51,18 +53,18 @@ class db_object extends db
 
 	private function _load($index) // works with integer ID or UKEY/UUID strings
 	{
-	    if (!$result = $this->_db->_query("SELECT *
-                                           FROM " . _DB_INDEX_TABLE . "
-                                           WHERE " . (is_numeric($index)
-                                                     ? "ID = " . $index
-                                                     : "UKEY LIKE '" . $index
-                                                     . "' OR UUID LIKE '" . $index
-                                                     . "'")))
+	    if (!$result = $this->_query("SELECT *
+                                      FROM " . _DB_INDEX_TABLE . "
+                                      WHERE " . (is_numeric($index)
+                                                ? "ID = " . $index
+                                                : "UKEY LIKE '" . $index
+                                                . "' OR UUID LIKE '" . $index
+                                                . "'")))
 	        switch (mysqli_errno($this->_db->_connection))
             {
                 case 1146 : // main table not exists, trying to create it
                 {
-                    if (!$this->_db->_query(_SQL_CREATE_INDEX))
+                    if (!$this->_query(_SQL_CREATE_INDEX))
                         return le(tr('error',
                                      "unable to create main table"));
 
@@ -115,13 +117,13 @@ class db_object extends db
     {
         $data = $this->_prepare_object_data($attributes);
 
-        if ($this->_db->_query("REPLACE INTO " . _DB_INDEX_TABLE . "
-                                SET " . implode($data, ", ")))
+        if ($this->_query("REPLACE INTO " . _DB_INDEX_TABLE . "
+                           SET " . implode($data, ", ")))
         {
             if ($id = mysqli_insert_id($this->_db->_connection))
-                $this->_db->_query("UPDATE " . _DB_INDEX_TABLE . "
-                                    SET UKEY = MD5(CONCAT(ID, UUID, date_created))
-                                    WHERE ID = " . $id);
+                $this->_query("UPDATE " . _DB_INDEX_TABLE . "
+                               SET UKEY = MD5(CONCAT(ID, UUID, date_created))
+                               WHERE ID = " . $id);
             else
                 $id = $this->ID;
 
@@ -148,13 +150,13 @@ class db_object extends db
     {
         $self = new self($index);
 
-        $self = $self->_save($attributes);
+        $object = $self->_save($attributes);
 
-        foreach (get_object_vars($self) as $key => $value) // cleaning object for static usage
+        foreach (get_object_vars($object) as $key => $value) // cleaning object for static usage
             if (substr($key, 0, 1) == '_')
-                unset($self->$key);
+                unset($object->$key);
 
-        return $self;
+        return $object;
     }
 }
 
