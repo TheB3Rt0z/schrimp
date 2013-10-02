@@ -9,9 +9,15 @@ class toolbox
 	    'fulltest procedure' => "add more tests and implement more testtypes..",
 	    'virus total' => "https://www.virustotal.com/it/documentation/public-api/",
 	    'wide-range tests' => "include controller-derived + helpers etc. classes?",
+	    'implement filter_functions' => "github-wiki-page / php.net-documentation",
 	);
 
     static $tests = array();
+
+    private static function _filter_functions($code)
+    {
+        return $code;
+    }
 
 	static function format($mixed)
 	{
@@ -37,13 +43,27 @@ class toolbox
 	}
 
 	static function highlight($string,
-	                          $type = '') // default is php code (native)
+	                          $type = '', // default is php code (native)
+	                          $filter = '')
 	{
 	    switch ($type)
 	    {
-	        default :
-	            return highlight_string($string, true);
+	        default : // this means php
+	        {
+	            $string = highlight_string($string, true);
+
+                if (!empty($filter))
+                    switch ($filter)
+                    {
+                        case 'functions' :
+                        {
+                            $string = self::_filter_functions($string);
+                        }
+                    }
+	        }
 	    }
+
+	    return $string;
 	}
 
 	static function fulltest() // only for libraries

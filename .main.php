@@ -4,7 +4,6 @@ class main
 {
     static $todos = array
     (
-        'documentation' => "PHP highlight_string/file to rapresent code excerpts",
         'escort library' => "session by PHP and DB if webstore & memcache fail?",
         'memcache support' => "verify in method, if at least one mem-server works",
         'css selectors' => "uniform to html-class render-methods (default style)",
@@ -230,7 +229,7 @@ class main
                 echo html::preform($arg);
     }
 
-    static function get_version($precision = 2)
+    static function get_version($precision = 2) // string for evens, numeric for odds
     {
         return (is_int($precision/2) ? "v": '')
              . number_format(((mktime(date('H'), date('i'), date('s'),

@@ -8,6 +8,7 @@ define('_SQL_CREATE_INDEX', "CREATE TABLE " . _DB_DATABASE_NAME . " . "
                                  UUID VARCHAR(36) NOT NULL,
                                  date_created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
                                  date_updated TIMESTAMP NOT NULL,
+                                 schrimp_version FLOAT NOT NULL,
                                  UNIQUE
                                  (
                                      UKEY,
@@ -39,26 +40,26 @@ class db_object extends db
 
     public $UUID = null;
 
-	function __construct($index_or_data = null)
+	function __construct($identifier_or_data = null)
 	{
 	    if (empty($this->_db)) {
 	        $this->_db = new parent;
 	        $this->_connection = $this->_db->_connection;
 	    }
 
-	    if (!empty($index_or_data)
-	        && !is_array($index_or_data))
-            $this->_load($index_or_data);
+	    if (!empty($identifier_or_data)
+	        && !is_array($identifier_or_data))
+            $this->_load($identifier_or_data);
 	}
 
-	private function _load($index) // works with integer ID or UKEY/UUID strings
+	private function _load($identifier) // works with integer ID or UKEY/UUID strings
 	{
 	    if (!$result = $this->_query("SELECT *
                                       FROM " . _DB_INDEX_TABLE . "
-                                      WHERE " . (is_numeric($index)
-                                                ? "ID = " . $index
-                                                : "UKEY LIKE '" . $index
-                                                . "' OR UUID LIKE '" . $index
+                                      WHERE " . (is_numeric($identifier)
+                                                ? "ID = " . $identifier
+                                                : "UKEY LIKE '" . $identifier
+                                                . "' OR UUID LIKE '" . $identifier
                                                 . "'")))
 	        switch (mysqli_errno($this->_db->_connection))
             {
@@ -110,6 +111,8 @@ class db_object extends db
 
         $data['date_updated'] = "date_updated = NOW()"; // needed for any save/update/replace etc. operation
 
+        $data['schrimp_version'] = "schrimp_version = " . main::get_version(3);
+
         return $data;
 	}
 
@@ -130,13 +133,17 @@ class db_object extends db
             if ($this->_load($id))
                 return $this;
         }
+        else
+        {
+            // query rescue procedure needed here
+        }
 
-        return false; // false why? some more precision required here..
+        return false; // false why? some more precision please (up)
     }
 
-    static function load($index) // works with integer ID or UKEY/UUID strings
+    static function load($identifier) // works with integer ID or UKEY/UUID strings
     {
-        $self = new self($index);
+        $self = new self($identifier);
 
         foreach (get_object_vars($self) as $key => $value) // cleaning object for static usage
             if (substr($key, 0, 1) == '_')
@@ -146,15 +153,14 @@ class db_object extends db
     }
 
     static function save($attributes = array(),
-                         $index = null) // if null a new object will be saved
+                         $identifier = null) // if null a new object will be saved
     {
-        $self = new self($index);
+        $self = new self($identifier);
 
-        $object = $self->_save($attributes);
-
-        foreach (get_object_vars($object) as $key => $value) // cleaning object for static usage
-            if (substr($key, 0, 1) == '_')
-                unset($object->$key);
+        if ($object = $self->_save($attributes))
+            foreach (get_object_vars($object) as $key => $value) // cleaning object for static usage
+                if (substr($key, 0, 1) == '_')
+                    unset($object->$key);
 
         return $object;
     }
