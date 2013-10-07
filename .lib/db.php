@@ -11,6 +11,7 @@ define('_DB_ACCOUNT_PASSWORD', $_db_connection_settings['account_password']);
 define('_DB_DATABASE_NAME', $_db_connection_settings['database_name']);
 
 define('_DB_INDEX_TABLE', DB_TABLE_PREFIX . "_index");
+define('_DB_TRAITS_TABLE', DB_TABLE_PREFIX . "_traits");
 define('_DB_TABLE_ENGINE', "MYISAM");
 
 class db

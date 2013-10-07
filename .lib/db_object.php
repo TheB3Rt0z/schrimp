@@ -1,19 +1,33 @@
 <?php
 
-define('_SQL_CREATE_INDEX', "CREATE TABLE " . _DB_DATABASE_NAME . " . "
-                           . DB_TABLE_PREFIX . _DB_INDEX_TABLE . "
-                             (
-                                 ID INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+define('_SQL_METAS_DEFINITION', "ID INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
                                  UKEY VARCHAR(32) NOT NULL,
                                  UUID VARCHAR(36) NOT NULL,
                                  date_created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
                                  date_updated TIMESTAMP NOT NULL,
-                                 schrimp_version FLOAT NOT NULL,
-                                 UNIQUE
-                                 (
-                                     UKEY,
-                                     UUID
-                                 )
+                                 schrimp_version FLOAT NOT NULL,");
+
+define('_SQL_UNIQUES_DEFINITION', "UNIQUE
+                                   (
+                                       UKEY,
+                                       UUID
+                                   )");
+
+define('_SQL_CREATE_INDEX', "CREATE TABLE " . _DB_DATABASE_NAME . " . "
+                           . DB_TABLE_PREFIX . _DB_INDEX_TABLE . "
+                             (
+                                 " . _SQL_METAS_DEFINITION . "
+                                 " . _SQL_UNIQUES_DEFINITION . "
+                             )
+                             ENGINE = " . _DB_TABLE_ENGINE);
+
+define('SQL_CREATE_TRAITS', "CREATE TABLE " . _DB_DATABASE_NAME . " . "
+                           . DB_TABLE_PREFIX . _DB_TRAITS_TABLE . "
+                             (
+                                 " . _SQL_METAS_DEFINITION . "
+                                 string_name VARCHAR(255) NOT NULL,
+                                 string_plural VARCHAR(255) NOT NULL,
+                                 " . _SQL_UNIQUES_DEFINITION . "
                              )
                              ENGINE = " . _DB_TABLE_ENGINE);
 
@@ -21,7 +35,7 @@ class db_object extends db
 {
 	static $todos = array
 	(
-	    'set attributes on construct event' => "if given data is a values array..",
+	    'set traits on construct event' => "if given data is a values array..",
 	    '_load output testing' => "is really boolean return working or not?",
 	    '_save event performance' => "please avoid reloading 'same' object again!",
 	);
@@ -30,7 +44,7 @@ class db_object extends db
 
     private $_db;
 
-    protected $_meta_attributes = array
+    protected $_metas = array
     (
         'ID',
         'UKEY',
@@ -84,11 +98,11 @@ class db_object extends db
         return false; // is this needed, check with break here up..
 	}
 
-	private function _prepare_object_data($attributes = array())
+	private function _prepare_object_data($traits = array())
 	{
         $data = array();
 
-	    foreach ($attributes as $key => $value)
+	    foreach ($traits as $key => $value)
         {
             $key = trim($key);
 
@@ -97,7 +111,7 @@ class db_object extends db
                                          : "'" . addslashes($value) . "'");
 
             if (!in_array($key,
-                          $this->_meta_attributes))
+                          $this->_metas))
                 unset($this->$key);
         }
 
@@ -116,9 +130,9 @@ class db_object extends db
         return $data;
 	}
 
-    private function _save($attributes = array())
+    private function _save($traits = array())
     {
-        $data = $this->_prepare_object_data($attributes);
+        $data = $this->_prepare_object_data($traits);
 
         if ($this->_query("REPLACE INTO " . _DB_INDEX_TABLE . "
                            SET " . implode($data, ", ")))
@@ -152,12 +166,12 @@ class db_object extends db
         return $self;
     }
 
-    static function save($attributes = array(),
+    static function save($traits = array(),
                          $identifier = null) // if null a new object will be saved
     {
         $self = new self($identifier);
 
-        if ($object = $self->_save($attributes))
+        if ($object = $self->_save($traits))
             foreach (get_object_vars($object) as $key => $value) // cleaning object for static usage
                 if (substr($key, 0, 1) == '_')
                     unset($object->$key);
