@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project basedir="." default="">
 
-<!-- Compile .scss and .sass files in the public/sass directory using SASS -->
 <target name="sass.compile">
     <property name="sass.dir" value="inc/css/sass" />
     <property name="css.dir" value="inc/css" />
@@ -18,6 +17,14 @@
         </firstmatchmapper>
     </apply>
     <eclipse.refreshLocal resource="xa/public" depth="infinite" />
+</target>
+    
+<target name="compass.compile">
+    <exec executable="compass.bat" dir="${basedir}">
+        <arg value="compile" />
+        <arg value="--no-line-comments" />
+    </exec>
+    <eclipse.refreshLocal resource="xa/public" depth="infinite"/>
 </target>
     
 </project>

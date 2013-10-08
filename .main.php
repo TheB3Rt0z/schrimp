@@ -179,10 +179,17 @@ class main
 
     function get_head_links() // SVG inline editing (php driven) if css + js != enough
     {
-        $favicon_path = _SET_INCLUDES_PUBLICPATH . "img/";
+        $favicon_path = _SET_INCLUDES_PATH . "img/"
+                      . self::$controller . "_favicon.ico";
+
+        $favicon_publicpath = _SET_INCLUDES_PUBLICPATH . "img/"
+                            . self::$controller . "_favicon.ico";
+
         if (!_SET_DEVELOPMENT_MODE
-            && fe($favicon_path . self::$controller . "_favicon.ico")) // precheck on file existance to permit fallback
-            html::add_favicon($favicon_path . self::$controller . "_favicon.ico");
+            && fe($favicon_publicpath)) // precheck on file existance to permit fallback
+            html::add_favicon($favicon_publicpath);
+        elseif (fe($favicon_path))
+            html::add_favicon($favicon_path);
         else
             html::add_favicon(_SET_INCLUDES_PATH . "img/schrimp_favicon.ico"); // html::add_stylesheet("http://fonts.googleapis.com/css?family=Amaranth:700");
 

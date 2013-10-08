@@ -21,15 +21,15 @@ define('_SQL_CREATE_INDEX', "CREATE TABLE " . _DB_DATABASE_NAME . " . "
                              )
                              ENGINE = " . _DB_TABLE_ENGINE);
 
-define('SQL_CREATE_TRAITS', "CREATE TABLE " . _DB_DATABASE_NAME . " . "
-                           . DB_TABLE_PREFIX . _DB_TRAITS_TABLE . "
-                             (
-                                 " . _SQL_METAS_DEFINITION . "
-                                 string_name VARCHAR(255) NOT NULL,
-                                 string_plural VARCHAR(255) NOT NULL,
-                                 " . _SQL_UNIQUES_DEFINITION . "
-                             )
-                             ENGINE = " . _DB_TABLE_ENGINE);
+define('_SQL_CREATE_TRAITS', "CREATE TABLE " . _DB_DATABASE_NAME . " . "
+                            . DB_TABLE_PREFIX . _DB_TRAITS_TABLE . "
+                              (
+                                  " . _SQL_METAS_DEFINITION . "
+                                  string_name VARCHAR(255) NOT NULL,
+                                  string_plural VARCHAR(255) NOT NULL,
+                                  " . _SQL_UNIQUES_DEFINITION . "
+                              )
+                              ENGINE = " . _DB_TABLE_ENGINE);
 
 class db_object extends db
 {
