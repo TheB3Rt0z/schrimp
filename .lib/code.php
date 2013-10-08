@@ -1,6 +1,8 @@
 <?php
 
 define('CODE_DATE_FORMAT', "d.m.Y");
+define('CODE_ICON_ARROW', "&#10140;");
+define('CODE_ICON_TODO', "&#10029;");
 
 class code
 {
@@ -8,7 +10,6 @@ class code
     (
         'get_class_dependencies' => "too unaccurate, see navigator-controller",
         'wrong parentheses' => "add checks on ) { et similia cases (f.e. array( )",
-        'convert &# special characters' => "they should be (private?) constants",
     );
 
     static $tests = array();
@@ -117,7 +118,7 @@ class code
             || !empty(self::$_class_warnings[$class_name]['yellow'])
             || !empty(self::$_class_warnings[$class_name]['red']))
         {
-            $output .= "&#10140; ";
+            $output .= CODE_ICON_ARROW . " ";
         }
 
         if (!empty(self::$_class_warnings[$class_name]['blue']))
@@ -141,7 +142,7 @@ class code
 
         foreach ($class->getConstants() as $key => $value)
             if (substr($key, 0, 1) != '_')
-                $class_constants .= "- **" . $key . "** &#10140; "
+                $class_constants .= "- **" . $key . "** " . CODE_ICON_ARROW . " "
                                   . fm($value) . MD_NEWLINE_SEQUENCE;
 
         return $class_constants;
@@ -182,7 +183,7 @@ class code
         $class_todos = '';
 
         foreach ($class->getStaticPropertyValue('todos') as $key => $value)
-            $class_todos .= "- **" . $key . "** &#10140; " . $value
+            $class_todos .= "- **" . $key . "** " . CODE_ICON_ARROW . " " . $value
                           . MD_NEWLINE_SEQUENCE;
 
         return $class_todos;
@@ -272,7 +273,7 @@ class code
             $summary .= md::hyperlink($values['label'],
                                       $key)
                       . (!empty($values['todos'])
-                        ? " " . str_repeat("&#10029;",
+                        ? " " . str_repeat(CODE_ICON_TODO,
                                            $values['todos']) . " "
                         : '')
                       . " (" . $values['path']
@@ -300,7 +301,8 @@ class code
             {
                 $components = explode('_', $key);
 
-                $constants .= "- **" . $key . "** &#10140; " . fm($value) . " ("
+                $constants .= "- **" . $key . "** " . CODE_ICON_ARROW . " "
+                            . fm($value) . " ("
                             . (class_exists(strtolower($components[0]))
                               ? "@ class " . $components[0]
                               : "general scope") . ")"
@@ -322,10 +324,10 @@ class code
             $parameters = self::_list_method_parameters($function);
 
             $functions .= "- **" . $function->getName() . "("
-                        . implode($parameters, ", ") . ")** &#10140; "
-                        . str_replace(realpath('') . "/",
-                                      '',
-                                      $function->getFileName())
+                        . implode($parameters, ", ") . ")** " . CODE_ICON_ARROW
+                        . " " . str_replace(realpath('') . "/",
+                                            '',
+                                            $function->getFileName())
                         . " on line " . $function->getStartLine()
                         . ($function->getDocComment()
                           ? "," . trim(str_replace(array("*", "/"),
@@ -343,7 +345,7 @@ class code
         $todos = '';
 
         foreach (unserialize(_TODOS) as $key => $value)
-            $todos .= "- **" . $key . "** &#10140; " . $value
+            $todos .= "- **" . $key . "** " . CODE_ICON_ARROW . " " . $value
                     . MD_NEWLINE_SEQUENCE;
 
         return $todos . MD_NEWLINE_SEQUENCE;

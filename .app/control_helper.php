@@ -16,7 +16,7 @@ class control_helper
         ksort($_SERVER);
 
         foreach ($_SERVER as $key => $value)
-            $output .= $key . " &#10140; "
+            $output .= $key . " " . CODE_ICON_ARROW . " "
                      . $value . html::newline();
 
         return $output;
@@ -34,7 +34,7 @@ class control_helper
 
             $output .= ($values['local_value'] != $values['global_value']
                        ? "&nbsp;"
-                       : '') . strtoupper($key) . " &#10140; "
+                       : '') . strtoupper($key) . " " . CODE_ICON_ARROW . " "
                      . fm(str_replace(",",
                                       ", ",
                                       $values['local_value'])) . " / "
@@ -53,7 +53,7 @@ class control_helper
         ksort($_ENV);
 
         foreach ($_ENV as $key => $value)
-            $output .= $key . " &#10140; "
+            $output .= $key . " " . CODE_ICON_ARROW . " "
                     . $value . html::newline();
 
         if (empty($output))
