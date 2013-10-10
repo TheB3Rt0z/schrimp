@@ -406,44 +406,49 @@ class code
                                     . $class . "-" . $name) . $infos;
     }
 
+    private static function _register_class_information(reflectionClass $class)
+    {
+        extract(self::get_class_data($class));
+
+        self::_add_summary_entry(array(
+            'header' => $header,
+            'label' => (substr_count($class->getName(), "_")
+                       ? "-"
+                       : "Library") . " " . $class->getName(),
+            'path' => $class_path,
+            'length_warning' => $length_warning,
+            'real_length' => $real_length,
+            'length' => $length,
+            'cis' => $cis,
+            'class_name' => $class->getName(),
+            'todos' => count($class->getStaticPropertyValue('todos')),
+            'tofix' => (!empty($fixs)),
+        ));
+
+        return md::to_the_top() . " " . md::title(2, $header)
+             . self::_add_paragraph($fixs,
+                                    "TOFIX:")
+             . self::_add_paragraph($class_constants,
+                                    "Class configuration constants:")
+             . self::_add_paragraph($reference,
+                                    "Code reference:")
+             . self::_add_paragraph($dependencies,
+                                    "Dependencies:")
+             . self::_add_paragraph($class_todos,
+                                    "TODOs:")
+             . md::hr();
+    }
+
     private static function _get_classes_information($classes = '')
     {
         $declared_classes = get_declared_classes();
+
         asort($declared_classes);
+
         foreach ($declared_classes as $class)
             if (($class = new ReflectionClass($class)) // name converted to reflection class
                 && $class->isUserDefined()) // this block should be under _register_class_information (return)
-            {
-                extract(self::get_class_data($class));
-
-                $classes .= md::to_the_top() . " " . md::title(2, $header)
-                          . self::_add_paragraph($fixs,
-                                                 "TOFIX:")
-                          . self::_add_paragraph($class_constants,
-                                                 "Class configuration constants:")
-                          . self::_add_paragraph($reference,
-                                                 "Code reference:")
-                          . self::_add_paragraph($dependencies,
-                                                 "Dependencies:")
-                          . self::_add_paragraph($class_todos,
-                                                 "TODOs:")
-                          . md::hr();
-
-                self::_add_summary_entry(array(
-                    'header' => $header,
-                    'label' => (substr_count($class->getName(), "_")
-                               ? "-"
-                               : "Library") . " " . $class->getName(),
-                    'path' => $class_path,
-                    'length_warning' => $length_warning,
-                    'real_length' => $real_length,
-                    'length' => $length,
-                    'cis' => $cis,
-                    'class_name' => $class->getName(),
-                    'todos' => count($class->getStaticPropertyValue('todos')),
-                    'tofix' => (!empty($fixs)),
-                ));
-            }
+                $classes .= self::_register_class_information($class);
 
         return $classes . MD_NEWLINE_SEQUENCE;
     }
@@ -677,22 +682,19 @@ class code
         $data['header'] = "Class " . strtoupper($class->name)
                         . " (" . date(CODE_DATE_FORMAT,
                                       filemtime($class->getFileName())) . ")";
-
         $data['class_constants'] = self::_get_class_constants($class);
         $data['reference'] = self::_get_class_reference($class);
         $data['dependencies'] = self::get_class_dependencies($class);
         $data['class_todos'] = self::_get_class_todos($class);
-
         $data['class_path'] = "root" . str_replace(realpath(null),
                                                    '',
                                                    $class->getFileName());
-
         $data['real_length'] =
              $data['length'] = $class->getEndLine() - $class->getStartLine() - 2;
-
         $data['code'] = array_slice(file($class->getFileName()),
                                     $class->getStartLine() + 1, // indentation + parentheses
                                     $data['length']);
+        $data['cis'] = self::get_class_cis($class);
 
         $data['length_warning'] = 0;
         $data['fixs'] = '';
@@ -712,8 +714,6 @@ class code
                                                            $class->getStartLine(),
                                                            $key);
         }
-
-        $data['cis'] = self::get_class_cis($class);
 
         return $data;
     }
