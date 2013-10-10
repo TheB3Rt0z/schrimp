@@ -86,9 +86,8 @@ class db
 	{
 	    if (empty($result->num_rows))
             return false;
-        elseif ($result->num_rows == 1) {
+        elseif ($result->num_rows == 1)
             return $result->fetch_object(); // normally returns stdClass type object
-        }
         else
         {
             $results = array();

@@ -56,7 +56,8 @@ class db_object extends db
 
 	function __construct($identifier_or_data = null)
 	{
-	    if (empty($this->_db)) {
+	    if (empty($this->_db))
+	    {
 	        $this->_db = new parent;
 	        $this->_connection = $this->_db->_connection;
 	    }
