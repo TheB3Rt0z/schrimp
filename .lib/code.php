@@ -8,8 +8,8 @@ class code
 {
     static $todos = array
     (
-        'get_class_dependencies' => "too unaccurate, see navigator-controller",
-        'wrong parentheses' => "add checks on ) { et similia cases (f.e. array( )",
+        'get_class_dependencies' => "too inaccurate, see navigator-controller",
+        'root/doc' => "should it not be in repository, with all includes?",
     );
 
     static $tests = array();
@@ -24,7 +24,14 @@ class code
     const _STR_CIS_WARNING = "Class interface size could lead to a refactoring";
     const _STR_CIS_ERROR = "Class interface size should lead to a refactoring!";
 
-    private static $_cyc_counters = array // do we need failsafe falls?
+    private static $_form_counters = array
+    (
+        ")%20{",
+        "array%20(",
+        "array(%20)",
+    );
+
+    private static $_cyc_counters = array // do we really really need failsafe falls?
     (
         "if (",
         "if(",
@@ -134,6 +141,15 @@ class code
                      . md::red_ics(self::_STR_SUMMARY_RED);
 
         return $output;
+    }
+
+    private static function _get_class_tofix($tofix,
+                                             $class_name,
+                                             $class_start,
+                                             $class_line)
+    {
+        return "- Form error(s) **" . $tofix . "** on file line **"
+             . ($class_start + 2 + $class_line) . "**" . MD_NEWLINE_SEQUENCE;
     }
 
     private static function _get_class_constants(reflectionClass $class)
@@ -304,8 +320,8 @@ class code
                 $constants .= "- **" . $key . "** " . CODE_ICON_ARROW . " "
                             . fm($value) . " ("
                             . (class_exists(strtolower($components[0]))
-                              ? "@ class " . $components[0]
-                              : "general scope") . ")"
+                              ? "defined by " . $components[0]
+                              : "global core constant") . ")"
                             . MD_NEWLINE_SEQUENCE;
             }
 
@@ -396,6 +412,8 @@ class code
                 extract(self::get_class_data($class));
 
                 $classes .= md::to_the_top() . " " . md::title(2, $header)
+                          . self::_add_paragraph($tofix,
+                                                 "TOFIX:")
                           . self::_add_paragraph($class_constants,
                                                  "Class configuration constants:")
                           . self::_add_paragraph($reference,
@@ -431,6 +449,8 @@ class code
         extract(self::get_class_data($class));
 
         $component = md::to_the_top() . " " . md::title(2, $header)
+                   . self::_add_paragraph($tofix,
+                                          "TOFIX:")
                    . self::_add_paragraph($class_constants,
                                           "Class configuration constants:")
                    . self::_add_paragraph($reference,
@@ -668,7 +688,8 @@ class code
                                     $data['length']);
 
         $data['length_warning'] = 0;
-        foreach ($data['code'] as $code_line)
+        $data['tofix'] = '';
+        foreach ($data['code'] as $key => $code_line)
         {
              if (self::_is_codeline_too_long($code_line))
                 $data['length_warning']++;
@@ -676,6 +697,13 @@ class code
             $code_line = trim($code_line);
             if (empty($code_line))
                 $data['real_length']--;
+
+            foreach (self::$_form_counters as $counter)
+                if (substr_count($code_line, rawurldecode($counter)))
+                    $data['tofix'] += self::_get_class_tofix(rawurldecode($counter),
+                                                             $class->name,
+                                                             $class->getStartLine(),
+                                                             $key);
         }
 
         $data['cis'] = self::get_class_cis($class);

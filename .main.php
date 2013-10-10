@@ -220,7 +220,8 @@ class main
     {
         $args = func_get_args();
 
-        if (count($args) == 1) {
+        if (count($args) == 1)
+        {
             $args = $args[0];
             if (is_array($args)
                 && count(debug_backtrace()) != 1)
