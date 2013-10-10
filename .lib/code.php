@@ -114,6 +114,7 @@ class code
             'cis' => $data['cis'],
             'class_name' => $data['class_name'],
             'todos' => $data['todos'],
+            'tofix' => $data['tofix'],
         );
     }
 
@@ -217,7 +218,8 @@ class code
 
     private static function _get_cis_marker($cis)
     {
-        if ($cis <= (floor(MAX_METHODS_COMPLEXITY / 10) * 10)) {
+        if ($cis <= (floor(MAX_METHODS_COMPLEXITY / 10) * 10))
+        {
             if ($cis > 0)
                 return md::green_ok();
             else
@@ -231,7 +233,8 @@ class code
 
     private static function _get_len_marker($length)
     {
-        if ($length <= (floor(MAX_METHODS_COMPLEXITY / 10) * 10)) {
+        if ($length <= (floor(MAX_METHODS_COMPLEXITY / 10) * 10))
+        {
             if ($length > 0)
                 return md::green_ok();
             else
@@ -266,7 +269,8 @@ class code
     {
         $parameters = array();
 
-        foreach ($functional_code->getParameters() as $parameter) {
+        foreach ($functional_code->getParameters() as $parameter)
+        {
             $class = $parameter->getClass();
             $parameters[] = ($class ? $class->getName() . " " : '')
                           . "$" . $parameter->getName()
@@ -302,6 +306,7 @@ class code
                       . ", CIS: " . $values['cis'] . " "
                         . self::_get_cis_marker($values['cis']) . ") "
                       . self::_get_class_markers($values['class_name'])
+                      . ($values['tofix'] ? " to be fixed!" : '')
                       . MD_NEWLINE_SEQUENCE;
 
         return $summary . MD_NEWLINE_SEQUENCE;
@@ -436,6 +441,7 @@ class code
                     'cis' => $cis,
                     'class_name' => $class->getName(),
                     'todos' => count($class->getStaticPropertyValue('todos')),
+                    'tofix' => (!empty($fixs)),
                 ));
             }
 
@@ -472,6 +478,7 @@ class code
             'cis' => $cis,
             'class_name' => $name,
             'todos' => count($class->getStaticPropertyValue('todos')),
+            'tofix' => (!empty($fixs)),
         ));
 
         return $component;
