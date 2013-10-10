@@ -145,7 +145,6 @@ class code
     }
 
     private static function _get_class_tofix($tofix,
-                                             $class_name,
                                              $class_start,
                                              $class_line)
     {
@@ -254,6 +253,32 @@ class code
             return md::yellow_ops(self::_STR_CYC_WARNING);
         else
             return md::red_ics(self::_STR_CYC_ERROR);
+    }
+
+    private static function _get_class_codedata($code,
+                                                $real_length,
+                                                $start_line)
+    {
+        $data['length_warning'] = 0;
+
+        $data['fixs'] = '';
+
+        foreach ($code as $key => $code_line)
+        {
+            if (self::_is_codeline_too_long($code_line))
+                $data['length_warning']++;
+
+            if (trim($code_line) == '')
+                $data['real_length']--;
+
+            foreach (self::$_form_counters as $counter)
+                if (substr_count($code_line, rawurldecode($counter)))
+                    $data['fixs'] .= self::_get_class_tofix(rawurldecode($counter),
+                                                            $start_line,
+                                                            $key);
+        }
+
+        return $data;
     }
 
     private static function _is_codeline_too_long($code_line)
@@ -406,7 +431,7 @@ class code
                                     . $class . "-" . $name) . $infos;
     }
 
-    private static function _register_class_information(reflectionClass $class)
+    private static function _get_class_information(reflectionClass $class)
     {
         extract(self::get_class_data($class));
 
@@ -448,7 +473,7 @@ class code
         foreach ($declared_classes as $class)
             if (($class = new ReflectionClass($class)) // name converted to reflection class
                 && $class->isUserDefined()) // this block should be under _register_class_information (return)
-                $classes .= self::_register_class_information($class);
+                $classes .= self::_get_class_information($class);
 
         return $classes . MD_NEWLINE_SEQUENCE;
     }
@@ -682,40 +707,29 @@ class code
         $data['header'] = "Class " . strtoupper($class->name)
                         . " (" . date(CODE_DATE_FORMAT,
                                       filemtime($class->getFileName())) . ")";
+
         $data['class_constants'] = self::_get_class_constants($class);
         $data['reference'] = self::_get_class_reference($class);
         $data['dependencies'] = self::get_class_dependencies($class);
         $data['class_todos'] = self::_get_class_todos($class);
+
         $data['class_path'] = "root" . str_replace(realpath(null),
                                                    '',
                                                    $class->getFileName());
+
         $data['real_length'] =
              $data['length'] = $class->getEndLine() - $class->getStartLine() - 2;
+
         $data['code'] = array_slice(file($class->getFileName()),
                                     $class->getStartLine() + 1, // indentation + parentheses
                                     $data['length']);
+
         $data['cis'] = self::get_class_cis($class);
 
-        $data['length_warning'] = 0;
-        $data['fixs'] = '';
-        foreach ($data['code'] as $key => $code_line)
-        {
-             if (self::_is_codeline_too_long($code_line))
-                $data['length_warning']++;
-
-            $code_line = trim($code_line);
-            if (empty($code_line))
-                $data['real_length']--;
-
-            foreach (self::$_form_counters as $counter)
-                if (substr_count($code_line, rawurldecode($counter)))
-                    $data['fixs'] .= self::_get_class_tofix(rawurldecode($counter),
-                                                           $class->name,
-                                                           $class->getStartLine(),
-                                                           $key);
-        }
-
-        return $data;
+        return array_merge($data,
+                           self::_get_code_data($data['code'],
+                                                $data['real_length'],
+                                                $class->getStartLine()));
     }
 
     static function get_class_cis(reflectionClass $class)
@@ -793,8 +807,7 @@ class code
             if (self::_is_codeline_too_long($code_line))
                 $data['length_warning']++;
 
-            $code_line = trim($code_line);
-            if (empty($code_line))
+            if (trim($code_line) == '')
                 $data['real_length']--;
 
             foreach (self::$_cyc_counters as $counter)
