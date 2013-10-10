@@ -412,7 +412,7 @@ class code
                 extract(self::get_class_data($class));
 
                 $classes .= md::to_the_top() . " " . md::title(2, $header)
-                          . self::_add_paragraph($tofix,
+                          . self::_add_paragraph($fixs,
                                                  "TOFIX:")
                           . self::_add_paragraph($class_constants,
                                                  "Class configuration constants:")
@@ -449,7 +449,7 @@ class code
         extract(self::get_class_data($class));
 
         $component = md::to_the_top() . " " . md::title(2, $header)
-                   . self::_add_paragraph($tofix,
+                   . self::_add_paragraph($fixs,
                                           "TOFIX:")
                    . self::_add_paragraph($class_constants,
                                           "Class configuration constants:")
@@ -688,7 +688,7 @@ class code
                                     $data['length']);
 
         $data['length_warning'] = 0;
-        $data['tofix'] = '';
+        $data['fixs'] = '';
         foreach ($data['code'] as $key => $code_line)
         {
              if (self::_is_codeline_too_long($code_line))
@@ -700,10 +700,10 @@ class code
 
             foreach (self::$_form_counters as $counter)
                 if (substr_count($code_line, rawurldecode($counter)))
-                    $data['tofix'] += self::_get_class_tofix(rawurldecode($counter),
-                                                             $class->name,
-                                                             $class->getStartLine(),
-                                                             $key);
+                    $data['fixs'] .= self::_get_class_tofix(rawurldecode($counter),
+                                                           $class->name,
+                                                           $class->getStartLine(),
+                                                           $key);
         }
 
         $data['cis'] = self::get_class_cis($class);
