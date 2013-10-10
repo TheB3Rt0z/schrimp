@@ -256,7 +256,7 @@ class code
     }
 
     private static function _get_class_codedata($code,
-                                                $real_length,
+                                                &$real_length,
                                                 $start_line)
     {
         $data['length_warning'] = 0;
@@ -269,7 +269,7 @@ class code
                 $data['length_warning']++;
 
             if (trim($code_line) == '')
-                $data['real_length']--;
+                $real_length--;
 
             foreach (self::$_form_counters as $counter)
                 if (substr_count($code_line, rawurldecode($counter)))
@@ -727,9 +727,9 @@ class code
         $data['cis'] = self::get_class_cis($class);
 
         return array_merge($data,
-                           self::_get_code_data($data['code'],
-                                                $data['real_length'],
-                                                $class->getStartLine()));
+                           self::_get_class_codedata($data['code'],
+                                                     $data['real_length'],
+                                                     $class->getStartLine()));
     }
 
     static function get_class_cis(reflectionClass $class)
