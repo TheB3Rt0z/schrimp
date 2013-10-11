@@ -1,39 +1,38 @@
 '_todos' => array
 (
     '? admin bar' => "optional control to measure run time performance (gApis)",
-    'configuration.tmp settings order' => "use comments and find a beautiful order",
     'framework mode usage' => "use namespace to avoid class-names conflicts..?"
 ),
 
-'_set_development_mode' => false,
-'_set_design_mode' => false,
-'_set_advanced_interface' => false,
+'_set_development_mode' => false, // backend mode with doc generation
+'_set_design_mode' => false, // activates an extra css file
+'_set_advanced_interface' => false, // advanced controls will be used
 '_set_local_path' => '', // server root will be used (worth as base-path)
 
-'_set_application_path' => ".app/",
-'_set_application_publicpath' => "app/",
-'_set_includes_path' => ".inc/",
-'_set_includes_publicpath' => "inc/",
-'_set_libraries_path' => ".lib/",
-'_set_libraries_publicpath' => "lib/",
+'_set_application_path' => ".app/", // backend components directory
+'_set_application_publicpath' => "app/", // frontend components directory
+'_set_includes_path' => ".inc/", // backend static files
+'_set_includes_publicpath' => "inc/", // frontend static files
+'_set_libraries_path' => ".lib/", // backend libraries directory
+'_set_libraries_publicpath' => "lib/", // frontend libraries directory
 
-'_set_logs_path' => ".log/",
+'_set_logs_path' => ".log/", // where log files will be saved
 
-'_set_wiki_path' => "doc/",
+'_set_wiki_path' => "doc/", // github wiki repository
 
-'set_translations_extension' => ".txt",
+'set_translations_extension' => ".txt", // components neede translation files extension
 
-'set_github_wikipath' => "https://github.com/TheB3Rt0z/schrimp/wiki/",
+'set_github_wikipath' => "https://github.com/TheB3Rt0z/schrimp/wiki/", // online wiki documentation
 'set_github_rawpath' => "https://raw.github.com/TheB3Rt0z/schrimp/master/", // prefix valid for static contents on github
-'set_documentation_md' => "README",
+'set_documentation_md' => "README", // main documentation filename
 
-'set_complexity_index' => 12,
+'set_complexity_index' => 12, // it can be raised for big projects
 
-'_str_kernel_salt' => "Sstm Cntrl Hdng_t_ Rw Incrs_f Mntl Prdctvt",
-'_str_project_name' => "Das S.C.H.R.I.M.P.",
-'_str_copyright_signature' => "Copyright © 2011-" . date('Y') . " | Das S.C.H.R.I.M.P. Project",
+'_str_kernel_salt' => "Sstm Cntrl Hdng_t_ Rw Incrs_f Mntl Prdctvt", // main salt string
+'_str_project_name' => "Das S.C.H.R.I.M.P.", // project's namecode
+'_str_copyright_signature' => "Copyright © 2011-" . date('Y') . " | The S.C.H.R.I.M.P. Project",
 
-'_db_connection_settings' => array
+'_db_connection_settings' => array // main (mysql) database connection settings
 (
     'database_type' => "mysql",
     'server_host' => "127.0.0.1",

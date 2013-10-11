@@ -1,4 +1,4 @@
-![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Doku v1.1.2013.10.10  
+![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Doku v1.1.2013.10.11  
 ---------------------------------------------------------------------------------------------------------------------------------  
   
 Table of contents  
@@ -7,7 +7,7 @@ Table of contents
 [General reference](#general-reference-- "")  
 [Library code](#-class-code-10102013-- "") &#10029;&#10029;  (root/.lib/code.php, Len: 850/850, CIS: 15 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
 [Library controller](#-class-controller-24092013-- "") (root/.lib/controller.php, Len: 121/121, CIS: 10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library db](#-class-db-10102013-- "") &#10029;&#10029;&#10029;  (root/.lib/db.php, Len: 127/127, CIS: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library db](#-class-db-11102013-- "") &#10029;&#10029;  (root/.lib/db.php, Len: 126/126, CIS: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- db_object](#-class-db_object-10102013-- "") &#10029;&#10029;&#10029;  (root/.lib/db_object.php, Len: 146/146, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library escort](#-class-escort-24092013-- "") (root/.lib/escort.php, Len: 40/40, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library html](#-class-html-24092013-- "") &#10029;&#10029;  (root/.lib/html.php, Len: 575/575, CIS: 21 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -110,7 +110,6 @@ General reference
 **TODOS:**  
   
 - **? admin bar** &#10140; optional control to measure run time performance (gApis)  
-- **configuration.tmp settings order** &#10140; use comments and find a beautiful order  
 - **framework mode usage** &#10140; use namespace to avoid class-names conflicts..?  
   
   
@@ -207,7 +206,7 @@ Uses: **escort**, **html**, **navigator**
   
 ***  
   
-[⇧](# "to the top") Class DB (10.10.2013)  
+[⇧](# "to the top") Class DB (11.10.2013)  
 ---------------------  
   
 **CODE REFERENCE:**  
@@ -226,7 +225,6 @@ Uses: **escort**
   
 - **check table engines** &#10140; fix engine standard for (all?) database tables  
 - **query should return values lists?** &#10140; check weight objects vs arrays..  
-- **database type** &#10140; there is a configuration option to control this  
   
   
 ***  
@@ -864,4 +862,4 @@ Uses: **controller**
   
   
   
-Copyright © 2011-2013 | Das S.C.H.R.I.M.P. Project  
+Copyright © 2011-2013 | The S.C.H.R.I.M.P. Project  
