@@ -185,8 +185,7 @@ class main
         $favicon_publicpath = _SET_INCLUDES_PUBLICPATH . "img/"
                             . self::$controller . "_favicon.ico";
 
-        if (!_SET_DEVELOPMENT_MODE
-            && fe($favicon_publicpath)) // precheck on file existance to permit fallback
+        if (fe($favicon_publicpath)) // precheck on file existance to permit fallback
             html::add_favicon($favicon_publicpath);
         elseif (fe($favicon_path))
             html::add_favicon($favicon_path);
