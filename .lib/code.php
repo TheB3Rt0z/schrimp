@@ -9,7 +9,6 @@ class code
     static $todos = array
     (
         'get_class_dependencies' => "too inaccurate, see navigator-controller",
-        'root/doc' => "should it not be in repository, with all includes?",
     );
 
     static $tests = array();

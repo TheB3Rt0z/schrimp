@@ -1,11 +1,11 @@
-![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Doku v1.1.2013.10.13  
+![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Doku v1.1.2013.10.14  
 ---------------------------------------------------------------------------------------------------------------------------------  
   
 Table of contents  
 -----------------  
   
 [General reference](#general-reference-- "")  
-[Library code](#-class-code-10102013-- "") &#10029;&#10029;  (root/.lib/code.php, Len: 850/850, CIS: 15 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
+[Library code](#-class-code-14102013-- "") &#10029;  (root/.lib/code.php, Len: 849/849, CIS: 15 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
 [Library controller](#-class-controller-24092013-- "") (root/.lib/controller.php, Len: 121/121, CIS: 10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library db](#-class-db-11102013-- "") &#10029;&#10029;  (root/.lib/db.php, Len: 126/126, CIS: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- db_object](#-class-db_object-10102013-- "") &#10029;&#10029;&#10029;  (root/.lib/db_object.php, Len: 146/146, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -16,7 +16,7 @@ Table of contents
 [Library main](#-class-main-12102013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (root/.main.php, Len: 321/321, CIS: 30 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
 [Library md](#-class-md-24092013-- "") (root/.lib/md.php, Len: 231/231, CIS: 14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library navigator](#-class-navigator-01102013-- "") &#10029;&#10029;  (root/.lib/navigator.php, Len: 380/380, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library powering](#-class-powering-24092013-- "") &#10029;  (root/lib/powering.php, Len: 6/6, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library powering](#-class-powering-14102013-- "") (root/lib/powering.php, Len: 3/3, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library toolbox](#-class-toolbox-02102013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (root/.lib/toolbox.php, Len: 102/102, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Component admin](#-class-admin-02102013-- "") (root/.app/admin.php, Len: 12/12, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- admin_helper](#-class-admin_helper-24092013-- "") (root/.app/admin_helper.php, Len: 1/1, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -28,7 +28,7 @@ Table of contents
 [- error_helper](#-class-error_helper-24092013-- "") (root/.app/error_helper.php, Len: 1/1, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Component homepage](#-class-homepage-24092013-- "") (root/app/homepage.php, Len: 12/12, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- homepage_helper](#-class-homepage_helper-24092013-- "") (root/app/homepage_helper.php, Len: 1/1, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Component power](#-class-power-01102013-- "") &#10029;&#10029;  (root/app/power.php, Len: 10/10, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Component power](#-class-power-14102013-- "") &#10029;&#10029;  (root/app/power.php, Len: 16/16, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- power_helper](#-class-power_helper-24092013-- "") (root/app/power_helper.php, Len: 1/1, CIS: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
   
 General reference  
@@ -116,7 +116,7 @@ General reference
   
 ***  
   
-[⇧](# "to the top") Class CODE (10.10.2013)  
+[⇧](# "to the top") Class CODE (14.10.2013)  
 -----------------------  
   
 **CODE REFERENCE:**  
@@ -166,7 +166,6 @@ Uses: **main**, **md**, **toolbox**
 **TODOS:**  
   
 - **get_class_dependencies** &#10140; too inaccurate, see navigator-controller  
-- **root/doc** &#10140; should it not be in repository, with all includes?  
   
   
 ***  
@@ -510,12 +509,8 @@ Uses: **html**, **html_form**, **main**
   
 ***  
   
-[⇧](# "to the top") Class POWERING (24.09.2013)  
+[⇧](# "to the top") Class POWERING (14.10.2013)  
 ---------------------------  
-  
-**TODOS:**  
-  
-- **test added library** &#10140; to be filled with handlers, or something similar  
   
   
 ***  
@@ -811,7 +806,7 @@ Uses: **controller**, **html**, **navigator**
   
 ***  
   
-[⇧](# "to the top") Class POWER (01.10.2013)  
+[⇧](# "to the top") Class POWER (14.10.2013)  
 ------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -821,7 +816,8 @@ Uses: **controller**, **html**, **navigator**
   
 **CODE REFERENCE:**  
   
-- **[initialize](https://github.com/TheB3Rt0z/schrimp/wiki/power-initialize "")()** (Pub, Len: 0/1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[_handler](https://github.com/TheB3Rt0z/schrimp/wiki/power-_handler "")()** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[initialize](https://github.com/TheB3Rt0z/schrimp/wiki/power-initialize "")()** (Pub, Len: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
 **INHERITED METHODS:**  
   
@@ -844,7 +840,7 @@ Uses: **controller**, **html**, **navigator**
   
 **DEPENDENCIES:**  
   
-Uses: **controller**  
+Uses: **controller**, **html**, **navigator**  
   
 **TODOS:**  
   
