@@ -31,6 +31,10 @@ ob_start();
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="user-scalable=no,width=device-width" />
+        <meta name="author" content="<?php echo _STR_PROJECT_NAME ?> <?php echo $main->get_version() ?>">
+        <meta name="copyright" content="<?php echo _STR_COPYRIGHT_SIGNATURE ?>">
+        <meta name="robots" content="noindex, nofollow">
+
         <title>
             <?php
             echo _STR_PROJECT_NAME . " "
