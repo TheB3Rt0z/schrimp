@@ -24,7 +24,7 @@ class control extends controller
 			|| method_exists(__CLASS__, $method = $fallback_method))
 		{
 			call_user_func_array(array($this, $method),
-			                     array_slice(main::$args, 1));
+			                     array_slice($this->_args, 1));
 		}
 		else
 			rt("error/404");

@@ -392,7 +392,7 @@ class html
             if (!fe($src) && !parse_url($src))
                 return $main->launch_error_file_not_found($src);
 
-            $attributes['src'] = $src;
+            $attributes['src'] = ru($src);
             $self = new self('script',
                              $attributes);
 

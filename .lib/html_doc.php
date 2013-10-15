@@ -53,7 +53,8 @@ class html_doc extends html
             parent::add_favicon(_SET_INCLUDES_PATH . "img/schrimp_favicon.ico"); // parent::add_stylesheet("http://fonts.googleapis.com/css?family=Amaranth:700");
     }
 
-    static function get_head_links($fullpath) // SVG inline editing (php driven) if css + js != enough
+    static function get_head_links($path,
+                                   $fullpath) // SVG inline editing (php driven) if css + js != enough
     {
         parent::add_stylesheet(_SET_INCLUDES_PATH . "css/style.css");
         if (_SET_ADVANCED_INTERFACE)
@@ -74,7 +75,7 @@ class html_doc extends html
         parent::add_js_file(_SET_INCLUDES_PATH . "js/jquery.js"); // parent::add_js_file("//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js");
         parent::add_js_file(_SET_INCLUDES_PATH . "js/jquery_ui.js"); // parent::add_js_file("//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js");
         parent::add_js_file(_SET_INCLUDES_PATH . "js/jquery_gestures.js");
-        parent::add_js_file(_SET_INCLUDES_PATH . "js/jquery_jcarousel.js");
+        parent::add_js_file($path . _SET_INCLUDES_PATH . "js/jquery_jcarousel.js");
 
         if (_SET_ADVANCED_INTERFACE)
             parent::add_js_file(_SET_INCLUDES_PATH . "js/advanced_interface.js");

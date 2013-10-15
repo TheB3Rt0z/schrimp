@@ -39,29 +39,48 @@ ob_start();
             ?>
         </title>
         <?php echo html_doc::get_head_favicon($main->controller) ?>
-        <?php echo html_doc::get_head_links($main->get_fullpath()) ?>
+        <?php echo html_doc::get_head_links($main->get_path(),
+                                            $main->get_fullpath()) ?>
     </head>
     <body>
         <header>
-            <?php echo html::divisor($main->header, null, 'header') ?>
+            <?php echo html::divisor($main->header,
+                                     null,
+                                     'header') ?>
         </header>
         <nav>
-            <?php echo html::divisor($main->nav, null, 'nav') ?>
+            <?php echo html::divisor($main->nav,
+                                     null,
+                                     'nav') ?>
         </nav>
         <section>
-            <?php echo html::divisor($main->section, null, 'section') ?>
+            <?php echo html::divisor($main->section,
+                                     null,
+                                     'section') ?>
             <article>
-                <?php echo html::divisor($main->article, null, 'article') ?>
+                <?php echo html::divisor($main->article,
+                                         null,
+                                         'article') ?>
             </article>
             <aside>
-                <?php echo html::divisor($main->aside, null, 'aside') ?>
+                <?php echo html::divisor($main->aside,
+                                         null,
+                                         'aside') ?>
             </aside>
         </section>
         <footer>
-            <?php echo html::divisor($main->footer, null, 'footer') ?>
+            <?php echo html::divisor($main->footer,
+                                     null,
+                                     'footer') ?>
         </footer>
         <?php echo html::clearfix() ?>
     </body>
+    <?php
+    if (_SET_ADVANCED_INTERFACE)
+        echo html::divisor('',
+                           null,
+                           'loading');
+    ?>
 </html><?php
 
 if (!_SET_DEVELOPMENT_MODE)
