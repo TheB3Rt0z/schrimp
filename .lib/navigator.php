@@ -6,6 +6,7 @@ class navigator
     (
         'fix (advanced) list/breadcrumb' => "not right initialized in dev mode..",
         'render_list' => "this should be CSS3 and appear on a mouse gesture..",
+        'list & advanced list' => "should mark as active current handler..",
     );
 
     static $tests = array();
@@ -360,10 +361,8 @@ class navigator
         }
     }
 
-    static function render_active_breadcrumb()
+    static function render_active_breadcrumb($ctrl_name)
     {
-        $ctrl_name = main::$controller;
-
         if (!$ctrl_name::RENDER_BREADCRUMB)
             return false;
 

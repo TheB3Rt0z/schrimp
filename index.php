@@ -29,7 +29,7 @@ ob_start();
 
 ?><!DOCTYPE html>
     <head>
-        <?php echo $main->get_head_metatags() ?>
+        <?php echo html_doc::get_head_metatags() ?>
         <title>
             <?php
             echo _STR_PROJECT_NAME . " "
@@ -38,8 +38,8 @@ ob_start();
                . $main->title
             ?>
         </title>
-        <?php echo $main->get_head_favicon() ?>
-        <?php echo $main->get_head_links() ?>
+        <?php echo html_doc::get_head_favicon($main->controller) ?>
+        <?php echo html_doc::get_head_links($main->get_fullpath()) ?>
     </head>
     <body>
         <header>

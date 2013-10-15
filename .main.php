@@ -17,9 +17,9 @@ class main
 
     private $_path = '';
 
-    static $controller = '';
-    static $action = null;
-    static $args = array();
+    var $controller = '';
+    var $action = null;
+    var $args = array();
 
     var $title = '';
 
@@ -99,18 +99,18 @@ class main
 
     private function _set_route_static_traits($components)
     {
-        self::$controller = array_shift($components);
+        $this->controller = array_shift($components);
         if (!empty($components))
         {
-            self::$action = array_shift($components);
+            $this->action = array_shift($components);
             if (!empty($components))
-                self::$args = array_filter($components);
+                $this->args = array_filter($components);
         }
     }
 
     private function _set_home_component()
     {
-        self::$controller = _SET_HOME_COMPONENT;
+        $this->controller = _SET_HOME_COMPONENT;
 
         if (!_SET_DEVELOPMENT_MODE)
             $this->_path = _SET_APPLICATION_PUBLICPATH;
@@ -152,12 +152,12 @@ class main
         else
             $this->_set_home_component();
 
-        require_once $this->_path . self::$controller . ".php";
-        foreach (glob($this->_path . self::$controller . "_*.php") as $filename)
+        require_once $this->_path . $this->controller . ".php";
+        foreach (glob($this->_path . $this->controller . "_*.php") as $filename)
             require_once $filename;
 
-        $this->_call = new self::$controller(self::$action,
-                                             self::$args);
+        $this->_call = new $this->controller($this->action,
+                                             $this->args);
 
         $this->_set_htmls_from_controller();
     }
@@ -174,79 +174,7 @@ class main
 
     function get_fullpath()
     {
-        return $this->get_path() . self::$controller;
-    }
-
-    function get_head_metatags()
-    {
-        html::add_metatags(array
-        (
-            array
-            (
-                'charset' => "UTF-8",
-            ),
-            array
-            (
-                'name' => "author",
-                'content' => _STR_PROJECT_NAME . " " . main::get_version(),
-            ),
-            array
-            (
-                'name' => "copyright",
-                'content' => _STR_COPYRIGHT_SIGNATURE,
-            ),
-            array
-            (
-                'name' => "robots",
-                'content' => "noindex, nofollow",
-            ),
-            array
-            (
-                'name' => "viewport",
-                'content' => "user-scalable=no, width=device-width",
-            ),
-        ));
-    }
-
-    function get_head_favicon()
-    {
-        $favicon_path = _SET_INCLUDES_PATH . "img/"
-                      . self::$controller . "_favicon.ico";
-
-        $favicon_publicpath = _SET_INCLUDES_PUBLICPATH . "img/"
-                            . self::$controller . "_favicon.ico";
-
-        if (fe($favicon_publicpath)) // precheck on file existance to permit fallback
-            html::add_favicon($favicon_publicpath);
-        elseif (fe($favicon_path))
-            html::add_favicon($favicon_path);
-        else
-            html::add_favicon(_SET_INCLUDES_PATH . "img/schrimp_favicon.ico"); // html::add_stylesheet("http://fonts.googleapis.com/css?family=Amaranth:700");
-    }
-
-    function get_head_links() // SVG inline editing (php driven) if css + js != enough
-    {
-        html::add_stylesheet(_SET_INCLUDES_PATH . "css/style.css");
-        if (_SET_ADVANCED_INTERFACE)
-            html::add_stylesheet(_SET_INCLUDES_PATH . "css/advin.css");
-
-        if (fe(_SET_INCLUDES_PUBLICPATH . "css/style.css"))
-            html::add_stylesheet(_SET_INCLUDES_PUBLICPATH . "css/style.css"); // base style sheet for frontend
-        html::add_stylesheet(_SET_INCLUDES_PUBLICPATH . "css/style_sass.css"); // will be overridden by next
-        html::add_stylesheet(_SET_INCLUDES_PUBLICPATH . "css/style_scss.css"); // will be overridden by controller
-
-        html::add_stylesheet($this->get_fullpath() . ".css"); // this adds extra controller css
-
-        if (_SET_DESIGN_MODE)
-            html::add_stylesheet(_SET_INCLUDES_PATH . "css/debug.css"); // overrides all css sheets, only if debug mode is active..
-
-        html::add_js_file(_SET_INCLUDES_PATH . "js/jquery.js"); // html::add_js_file("//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js");
-        html::add_js_file(_SET_INCLUDES_PATH . "js/jquery_ui.js"); // html::add_js_file("//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js");
-        html::add_js_file(_SET_INCLUDES_PATH . "js/jquery_gestures.js");
-        html::add_js_file(_SET_INCLUDES_PATH . "js/jquery_jcarousel.js");
-
-        if (_SET_ADVANCED_INTERFACE)
-            html::add_js_file(_SET_INCLUDES_PATH . "js/advanced_interface.js");
+        return $this->get_path() . $this->controller;
     }
 
     static function var_dump($what)

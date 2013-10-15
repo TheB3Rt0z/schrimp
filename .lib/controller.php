@@ -10,6 +10,7 @@ abstract class controller
 
 	const RENDER_BREADCRUMB = true;
 
+	protected $_controller = '';
 	protected $_action = null;
 	protected $_args = array();
 
@@ -27,10 +28,11 @@ abstract class controller
 	function __construct($action,
 			             $args)
 	{
-		$this->_action = $action;
+		$this->_controller = get_class($this);
+	    $this->_action = $action;
 		$this->_args = $args;
 
-		$helper = get_class($this) . '_helper';
+		$helper = $this->_controller . '_helper';
 		$this->helper = new $helper; // loading helper dynamically
 
 		escort::register_object($this,
@@ -91,7 +93,7 @@ abstract class controller
 	{
 	    ob_start();
     	    if (_SET_ADVANCED_INTERFACE)
-    	        navigator::render_active_breadcrumb();
+    	        navigator::render_active_breadcrumb($this->_controller);
     	    else
     	        navigator::render_breadcrumb(); // nothing shown on home page
 	    $breadcrumb = ob_get_clean();
