@@ -10,6 +10,7 @@ class html
 {
     static $todos = array
     (
+        'newline/return after html tags' => "in order to save goat and cabbages",
         'script online loading' => "if != local, should have a lfb..",
         'ordered_list' => "fix numbers, falsed as visible in error 404",
     );
@@ -29,6 +30,7 @@ class html
             'br',
             'img',
             'link',
+            'meta',
         ),
         'container' => array
         (
@@ -41,7 +43,7 @@ class html
             'h4',
             'h5',
             'h6',
-            'h7', // experimental
+            'h7', // experimental..
             'li',
             'ol',
             'option',
@@ -313,6 +315,17 @@ class html
         return $self->_html;
     }
 
+    private static function _meta($attributes)
+    {
+        if (!empty($attributes))
+        {
+            $self = new self('meta',
+                             $attributes);
+
+            return $self->_html;
+        }
+    }
+
     private static function _ol($content,
                                 $classes = array())
     {
@@ -446,6 +459,12 @@ class html
     function get_content()
     {
         return $this->_content;
+    }
+
+    static function add_metatags($metatags = array())
+    {
+        foreach ($metatags as $values)
+            echo self::_meta($values);
     }
 
     static function add_favicon($href)

@@ -29,42 +29,38 @@ ob_start();
 
 ?><!DOCTYPE html>
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="user-scalable=no,width=device-width" />
-        <meta name="author" content="<?php echo _STR_PROJECT_NAME ?> <?php echo $main->get_version() ?>">
-        <meta name="copyright" content="<?php echo _STR_COPYRIGHT_SIGNATURE ?>">
-        <meta name="robots" content="noindex, nofollow">
-
+        <?php echo $main->get_head_metatags() ?>
         <title>
             <?php
             echo _STR_PROJECT_NAME . " "
                . $main->get_version()
                . " | "
-               . $main->title;
+               . $main->title
             ?>
         </title>
-        <?php echo $main->get_head_links(); ?>
+        <?php echo $main->get_head_favicon() ?>
+        <?php echo $main->get_head_links() ?>
     </head>
     <body>
         <header>
-            <?php echo html::divisor($main->header, null, 'header'); ?>
+            <?php echo html::divisor($main->header, null, 'header') ?>
         </header>
         <nav>
-            <?php echo html::divisor($main->nav, null, 'nav'); ?>
+            <?php echo html::divisor($main->nav, null, 'nav') ?>
         </nav>
         <section>
-            <?php echo html::divisor($main->section, null, 'section'); ?>
+            <?php echo html::divisor($main->section, null, 'section') ?>
             <article>
-                <?php echo html::divisor($main->article, null, 'article'); ?>
+                <?php echo html::divisor($main->article, null, 'article') ?>
             </article>
             <aside>
-                <?php echo html::divisor($main->aside, null, 'aside'); ?>
+                <?php echo html::divisor($main->aside, null, 'aside') ?>
             </aside>
         </section>
         <footer>
-            <?php echo html::divisor($main->footer, null, 'footer'); ?>
+            <?php echo html::divisor($main->footer, null, 'footer') ?>
         </footer>
-        <?php echo html::clearfix(); ?>
+        <?php echo html::clearfix() ?>
     </body>
 </html><?php
 

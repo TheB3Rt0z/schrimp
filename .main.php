@@ -177,7 +177,38 @@ class main
         return $this->get_path() . self::$controller;
     }
 
-    function get_head_links() // SVG inline editing (php driven) if css + js != enough
+    function get_head_metatags()
+    {
+        html::add_metatags(array
+        (
+            array
+            (
+                'charset' => "UTF-8",
+            ),
+            array
+            (
+                'name' => "author",
+                'content' => _STR_PROJECT_NAME . " " . main::get_version(),
+            ),
+            array
+            (
+                'name' => "copyright",
+                'content' => _STR_COPYRIGHT_SIGNATURE,
+            ),
+            array
+            (
+                'name' => "robots",
+                'content' => "noindex, nofollow",
+            ),
+            array
+            (
+                'name' => "viewport",
+                'content' => "user-scalable=no, width=device-width",
+            ),
+        ));
+    }
+
+    function get_head_favicon()
     {
         $favicon_path = _SET_INCLUDES_PATH . "img/"
                       . self::$controller . "_favicon.ico";
@@ -191,7 +222,10 @@ class main
             html::add_favicon($favicon_path);
         else
             html::add_favicon(_SET_INCLUDES_PATH . "img/schrimp_favicon.ico"); // html::add_stylesheet("http://fonts.googleapis.com/css?family=Amaranth:700");
+    }
 
+    function get_head_links() // SVG inline editing (php driven) if css + js != enough
+    {
         html::add_stylesheet(_SET_INCLUDES_PATH . "css/style.css");
         if (_SET_ADVANCED_INTERFACE)
             html::add_stylesheet(_SET_INCLUDES_PATH . "css/advin.css");
