@@ -59,10 +59,12 @@ class html_doc extends html
         if (_SET_ADVANCED_INTERFACE)
             parent::add_stylesheet(_SET_INCLUDES_PATH . "css/advin.css");
 
-        if (fe(_SET_INCLUDES_PUBLICPATH . "css/style.css"))
-            parent::add_stylesheet(_SET_INCLUDES_PUBLICPATH . "css/style.css"); // base style sheet for frontend
+        parent::add_stylesheet(_SET_INCLUDES_PUBLICPATH . "css/style.css"); // base style sheet for frontend
         parent::add_stylesheet(_SET_INCLUDES_PUBLICPATH . "css/style_sass.css"); // will be overridden by next
         parent::add_stylesheet(_SET_INCLUDES_PUBLICPATH . "css/style_scss.css"); // will be overridden by controller
+
+        if (SET_RESPONSIVE_DESIGN)
+            parent::add_stylesheet(_SET_INCLUDES_PUBLICPATH . "css/resps.css"); // adds responsive media-queries based designs
 
         parent::add_stylesheet($fullpath . ".css"); // this adds extra controller css
 

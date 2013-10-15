@@ -28,6 +28,8 @@
 
 'set_complexity_index' => 12, // it can be raised for big projects
 
+'set_responsive_design' => false, // activates responsive stylesheets if needed
+
 '_str_kernel_salt' => "Sstm Cntrl Hdng_t_ Rw Incrs_f Mntl Prdctvt", // main salt string
 '_str_project_name' => "Das S.C.H.R.I.M.P.", // project's namecode
 '_str_copyright_signature' => "Copyright © 2011-" . date('Y') . " | The S.C.H.R.I.M.P. Project",
