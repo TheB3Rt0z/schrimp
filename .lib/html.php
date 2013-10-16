@@ -291,7 +291,7 @@ class html
 
     private static function _link($href,
                                   $rel,
-                                  $type)
+                                  $type = null)
     {
         $placeholder = $rel . '_' . $href;
 
@@ -301,8 +301,10 @@ class html
             && !in_array($placeholder, self::$_linked_files))
         {
             $attributes = array('href' => ru($href),
-                                'rel' => $rel,
-                                'type' => $type);
+                                'rel' => $rel);
+
+            if (!empty($type))
+                $attributes['type'] = $type;
 
             $self = new self('link',
                              $attributes);
@@ -483,6 +485,12 @@ class html
         echo self::_link($href,
                          "stylesheet",
                          "text/css");
+    }
+
+    static function add_canonical($href)
+    {
+        echo self::_link($href,
+                         "canonical");
     }
 
     static function add_js_file($src)
