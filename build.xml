@@ -2,10 +2,9 @@
 <project basedir="." default="">
 
 <target name="sass.compile">
-    <property name="sass.dir" value="inc/css/sass" />
-    <property name="css.dir" value="inc/css" />
+    <property name="sass.dir" value="inc/css" />
 
-    <apply executable="sass" dest="${css.dir}" verbose="true" force="true" failonerror="true">
+    <apply executable="sass" dest="${sass.dir}" verbose="true" force="true" failonerror="true">
         <arg value="--unix-newline" />
         <arg value="--compass" />
         <srcfile />

@@ -1,4 +1,4 @@
-![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Doku v1.1.2013.10.15  
+![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Doku v1.1.2013.10.16  
 ---------------------------------------------------------------------------------------------------------------------------------  
   
 Table of contents  
@@ -11,7 +11,7 @@ Table of contents
 [- db_object](#-class-db_object-10102013-- "") &#10029;&#10029;&#10029;  (root/.lib/db_object.php, Len: 146/146, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library escort](#-class-escort-24092013-- "") (root/.lib/escort.php, Len: 40/40, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library html](#-class-html-15102013-- "") &#10029;&#10029;&#10029;  (root/.lib/html.php, Len: 594/594, CIS: 22 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[- html_doc](#-class-html_doc-15102013-- "") (root/.lib/html_doc.php, Len: 78/78, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[- html_doc](#-class-html_doc-16102013-- "") &#10029;  (root/.lib/html_doc.php, Len: 78/78, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- html_form](#-class-html_form-24092013-- "") &#10029;  (root/.lib/html_form.php, Len: 71/71, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library language](#-class-language-24092013-- "") &#10029;&#10029;  (root/.lib/language.php, Len: 103/103, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library main](#-class-main-15102013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (root/.main.php, Len: 283/283, CIS: 29 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -339,13 +339,13 @@ Uses: **escort**, **main**
   
 ***  
   
-[⇧](# "to the top") Class HTML_DOC (15.10.2013)  
+[⇧](# "to the top") Class HTML_DOC (16.10.2013)  
 ---------------------------  
   
 **CODE REFERENCE:**  
   
 - **[get_head_favicon](https://github.com/TheB3Rt0z/schrimp/wiki/html_doc-get_head_favicon "")($controller)** (PubS, Len: 10/12 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **[get_head_links](https://github.com/TheB3Rt0z/schrimp/wiki/html_doc-get_head_links "")($path, $fullpath)** (PubS, Len: 17/23 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[get_head_links](https://github.com/TheB3Rt0z/schrimp/wiki/html_doc-get_head_links "")($path, $fullpath)** (PubS, Len: 15/20 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[get_head_metatags](https://github.com/TheB3Rt0z/schrimp/wiki/html_doc-get_head_metatags "")()** (PubS, Len: 27 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
 **INHERITED METHODS:**  
@@ -376,6 +376,10 @@ Uses: **escort**, **main**
 **DEPENDENCIES:**  
   
 Uses: **html**, **main**  
+  
+**TODOS:**  
+  
+- **backend/frontend controller** &#10140; it should load only right style.css..  
   
   
 ***  

@@ -2,7 +2,10 @@
 
 class html_doc extends html
 {
-    static $todos = array();
+    static $todos = array
+    (
+        'backend/frontend controller' => "it should load only right style.css..",
+    );
 
     static $tests = array();
 
@@ -61,11 +64,8 @@ class html_doc extends html
             parent::add_stylesheet(_SET_INCLUDES_PATH . "css/advin.css");
 
         parent::add_stylesheet(_SET_INCLUDES_PUBLICPATH . "css/style.css"); // base style sheet for frontend
-        parent::add_stylesheet(_SET_INCLUDES_PUBLICPATH . "css/style_sass.css"); // will be overridden by next
-        parent::add_stylesheet(_SET_INCLUDES_PUBLICPATH . "css/style_scss.css"); // will be overridden by controller
-
         if (SET_RESPONSIVE_DESIGN)
-            parent::add_stylesheet(_SET_INCLUDES_PUBLICPATH . "css/resps.css"); // adds responsive media-queries based designs
+            parent::add_stylesheet(_SET_INCLUDES_PUBLICPATH . "css/responsive.css"); // adds responsive media-queries based designs
 
         parent::add_stylesheet($fullpath . ".css"); // this adds extra controller css
 
