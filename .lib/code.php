@@ -26,6 +26,8 @@ class code
     private static $_form_counters = array
     (
         ")%20{",
+        "array(\n",
+        "array(\r",
         "array%20(",
         "array(%20)",
     );
