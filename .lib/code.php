@@ -94,14 +94,16 @@ class code
     {
         $href = strtolower(str_replace(" ",
                                        "-",
-                                       str_replace(array(
+                                       str_replace(array
+                                                   (
                                                        "(",
                                                        ",",
                                                        ".",
                                                        ":",
                                                        "+",
                                                        ")",
-                                                       "@"),
+                                                       "@",
+                                                   ),
                                                    '',
                                                    $data['header'])));
 
@@ -436,7 +438,8 @@ class code
     {
         extract(self::get_class_data($class));
 
-        self::_add_summary_entry(array(
+        self::_add_summary_entry(array
+        (
             'header' => $header,
             'label' => (substr_count($class->getName(), "_")
                        ? "-"
@@ -497,7 +500,8 @@ class code
                    . self::_add_paragraph($class_todos,
                                           "TODOs:");
 
-        self::_add_summary_entry(array(
+        self::_add_summary_entry(array
+        (
             'header' => $header,
             'label' => (substr_count($name, "_")
                        ? "-"

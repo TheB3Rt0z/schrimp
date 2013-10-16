@@ -114,7 +114,8 @@ class control extends controller
 
 	private function _handler_plugins() // from lib directory
 	{
-		static $options = "\$substitutions = array(
+		static $options = "\$substitutions = array
+		                   (
 		                       _SET_LIBRARIES_PUBLICPATH,
 		                       \".php\",
 		                   );
@@ -177,7 +178,8 @@ class control extends controller
 
 	private function _handler_application() // from app directory
 	{
-		static $options = "\$substitutions = array(
+		static $options = "\$substitutions = array
+		                   (
 		                       _SET_APPLICATION_PUBLICPATH,
 		                       \".php\",
 		                   );
