@@ -53,9 +53,10 @@ div#loading
 	background-color: black;
 	background-image: url('../img/anim_loading.gif');
 	background-position: center center;
-	background-size: auto 75%;
+	background-size: auto 50%;
 	background-repeat: no-repeat;
-	opacity: .25;
+	opacity: 0;
+	transition: opacity .5s;
 }
 
 div#nav > div.box
