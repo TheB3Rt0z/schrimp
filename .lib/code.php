@@ -464,7 +464,7 @@ class code
             'tofix' => (!empty($fixs)),
         ));
 
-        return md::to_the_top() . " " . md::title(2, $header)
+        return md::title(2, $header)
              . self::_add_paragraph($fixs,
                                     "TOFIX:")
              . self::_add_paragraph($class_constants,
@@ -474,8 +474,7 @@ class code
              . self::_add_paragraph($dependencies,
                                     "Dependencies:")
              . self::_add_paragraph($class_todos,
-                                    "TODOs:")
-             . md::hr();
+                                    "TODOs:");
     }
 
     private static function _get_classes_information($classes = '')
@@ -487,7 +486,9 @@ class code
         foreach ($declared_classes as $class)
             if (($class = new ReflectionClass($class)) // name converted to reflection class
                 && $class->isUserDefined()) // this block should be under _register_class_information (return)
-                $classes .= self::_get_class_information($class);
+                $classes .= md::to_the_top() . " "
+                          . self::_get_class_information($class)
+                          . md::hr();
 
         return $classes . MD_NEWLINE_SEQUENCE;
     }
