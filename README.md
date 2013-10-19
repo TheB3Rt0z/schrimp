@@ -1,20 +1,20 @@
-![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Doku v1.1.2013.10.17  
+![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Doku v1.1.2013.10.19  
 ---------------------------------------------------------------------------------------------------------------------------------  
   
 Table of contents  
 -----------------  
   
 [General reference](#general-reference-- "")  
-[Library code](#-class-code-16102013-- "") &#10029;  (root/.lib/code.php, Len: 855/855, CIS: 15 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
+[Library code](#-class-code-19102013-- "") &#10029;  (root/.lib/code.php, Len: 863/863, CIS: 15 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!") to be fixed!  
 [Library controller](#-class-controller-15102013-- "") (root/.lib/controller.php, Len: 123/123, CIS: 10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library db](#-class-db-11102013-- "") &#10029;&#10029;  (root/.lib/db.php, Len: 126/126, CIS: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- db_object](#-class-db_object-10102013-- "") &#10029;&#10029;&#10029;  (root/.lib/db_object.php, Len: 146/146, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library escort](#-class-escort-24092013-- "") (root/.lib/escort.php, Len: 40/40, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library html](#-class-html-16102013-- "") &#10029;&#10029;&#10029;  (root/.lib/html.php, Len: 602/602, CIS: 23 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[- html_doc](#-class-html_doc-16102013-- "") &#10029;  (root/.lib/html_doc.php, Len: 78/78, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[- html_doc](#-class-html_doc-17102013-- "") &#10029;&#10029;&#10029;  (root/.lib/html_doc.php, Len: 80/80, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- html_form](#-class-html_form-24092013-- "") &#10029;  (root/.lib/html_form.php, Len: 71/71, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library language](#-class-language-24092013-- "") &#10029;&#10029;  (root/.lib/language.php, Len: 103/103, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library main](#-class-main-15102013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (root/.main.php, Len: 283/283, CIS: 29 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library main](#-class-main-17102013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (root/.main.php, Len: 284/284, CIS: 29 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library md](#-class-md-24092013-- "") (root/.lib/md.php, Len: 231/231, CIS: 14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library navigator](#-class-navigator-15102013-- "") &#10029;&#10029;&#10029;  (root/.lib/navigator.php, Len: 379/379, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library powering](#-class-powering-14102013-- "") (root/lib/powering.php, Len: 3/3, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -62,7 +62,7 @@ General reference
   
 **FUNCTION ALIASES:**  
   
-- **fe($path)** &#10140; .main.php on line 305,
+- **fe($path)** &#10140; .main.php on line 306,
   returns boolean if realpath path exists on running server;
   @param string $path
   @return boolean true if realpath exists, false otherwise
@@ -72,7 +72,7 @@ General reference
   @param mixed $mixed
   @return mixed depending on internally defined rules
   
-- **le($msg)** &#10140; .main.php on line 335,
+- **le($msg)** &#10140; .main.php on line 336,
   launches a customizable error 500, mit optional backtrace for debug;
   @param string $msg
   @return boolean false after relocate
@@ -82,17 +82,17 @@ General reference
   @param string $source
   @return mixed depending on source origin
   
-- **rt($url = null)** &#10140; .main.php on line 325,
+- **rt($url = null)** &#10140; .main.php on line 326,
   relocates to given relative url or to base path on default;
   @param string $url
   @return void
   
-- **ru($uri = null)** &#10140; .main.php on line 315,
+- **ru($uri = null)** &#10140; .main.php on line 316,
   returns an absolute uri, based on current server configuration;
   @param string $uri
   @return string absolute http unified resource identifier
   
-- **sb()** &#10140; .main.php on line 344,
+- **sb()** &#10140; .main.php on line 345,
   show call's backtrace with help of error base handler
   @return void
   
@@ -102,7 +102,7 @@ General reference
   @param string $marker
   @return mixed callback function returned value(s)
   
-- **vd($what)** &#10140; .main.php on line 295,
+- **vd($what)** &#10140; .main.php on line 296,
   returns pre-formatted mixed variables;
   @param multi $what
   @return void
@@ -118,8 +118,12 @@ General reference
   
 ***  
   
-[⇧](# "to the top") Class CODE (16.10.2013)  
+[⇧](# "to the top") Class CODE (19.10.2013)  
 -----------------------  
+  
+**TOFIX:**  
+  
+- Form error(s) **){** on file line **29**  
   
 **CODE REFERENCE:**  
   
@@ -340,7 +344,7 @@ Uses: **escort**, **main**
   
 ***  
   
-[⇧](# "to the top") Class HTML_DOC (16.10.2013)  
+[⇧](# "to the top") Class HTML_DOC (17.10.2013)  
 ---------------------------  
   
 **CODE REFERENCE:**  
@@ -382,6 +386,8 @@ Uses: **html**, **main**
 **TODOS:**  
   
 - **backend/frontend controller** &#10140; it should load only right style.css..  
+- **meta keywords** &#10140; automatic population based on content/siloing  
+- **keywords native proofing** &#10140; 3 to 9 in deepest level, online g-planner  
   
   
 ***  
@@ -449,7 +455,7 @@ Uses: **html**
   
 ***  
   
-[⇧](# "to the top") Class MAIN (15.10.2013)  
+[⇧](# "to the top") Class MAIN (17.10.2013)  
 -----------------------  
   
 **CODE REFERENCE:**  
@@ -489,6 +495,7 @@ Uses: **code**, **html**, **md**, **toolbox**
 - **css selectors** &#10140; uniform to html-class render-methods (default style)  
 - **css autoload** &#10140; automatically load ANY file in .inc/inc / css? nnouu..  
 - **error launchers** &#10140; should be moved to a library (navigator, toolbox)?  
+- **no stealth mode** &#10140; no uri interpretation + htaccess automatic creation  
   
   
 ***  

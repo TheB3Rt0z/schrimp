@@ -9,6 +9,7 @@ class main
         'css selectors' => "uniform to html-class render-methods (default style)",
         'css autoload' => "automatically load ANY file in .inc/inc / css? nnouu..",
         'error launchers' => "should be moved to a library (navigator, toolbox)?",
+        'no stealth mode' => "no uri interpretation + htaccess automatic creation",
     );
 
     static $tests = array();

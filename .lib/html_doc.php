@@ -5,6 +5,8 @@ class html_doc extends html
     static $todos = array
     (
         'backend/frontend controller' => "it should load only right style.css..",
+        'meta keywords' => "automatic population based on content/siloing",
+        'keywords native proofing' => "3 to 9 in deepest level, online g-planner",
     );
 
     static $tests = array();
