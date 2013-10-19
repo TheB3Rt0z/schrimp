@@ -146,7 +146,10 @@ class html
         if (!strpos($href, "://"))
             $href = ru($href);
 
-        $attributes = array('href' => $href);
+        $attributes = array
+                      (
+                          'href' => $href,
+                      );
 
         $self = new self('a',
                          $attributes,
@@ -265,9 +268,12 @@ class html
         if (!fe($src))
             return $main->launch_error_file_not_found($src);
 
-        $attributes = array('src' => ru($src),
-                            'alt' => $alt,
-                            'title' => $title);
+        $attributes = array
+                      (
+                          'src' => ru($src),
+                          'alt' => $alt,
+                          'title' => $title,
+                      );
 
         $self = new self('img',
                          $attributes);
@@ -300,8 +306,11 @@ class html
         elseif (!empty($href)
             && !in_array($placeholder, self::$_linked_files))
         {
-            $attributes = array('href' => ru($href),
-                                'rel' => $rel);
+            $attributes = array
+                          (
+                              'href' => ru($href),
+                              'rel' => $rel,
+                          );
 
             if (!empty($type))
                 $attributes['type'] = $type;
@@ -537,13 +546,20 @@ class html
     static function box($content)
     {
         return self::_div($content,
-                          array('box'));
+                          array
+                          (
+                              'box',
+                          ));
     }
 
     static function highbox($content)
     {
         return self::_div($content,
-                          array('box', 'high'));
+                          array
+                          (
+                              'box',
+                              'high',
+                          ));
     }
 
     static function hyperlink($href,
@@ -572,7 +588,10 @@ class html
     static function clearfix()
     {
         return self::_br(1,
-                         array('clearfix'));
+                         array
+                         (
+                             'clearfix',
+                         ));
     }
 
     static function codeblock($content)

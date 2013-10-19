@@ -69,7 +69,10 @@ class toolbox
 	static function fulltest() // only for libraries
 	{
 	    $tests = '.lib/' . __CLASS__ . '.tsts';
-	    eval("\$results = array(" . pr($tests) . ");"); // loads results file
+	    eval("\$results = array
+	                      (
+	                          " . pr($tests) . "
+	                      );"); // loads results file
 	    $check = true;
 
 	    foreach (code::get_libraries_list() as $key => $value)

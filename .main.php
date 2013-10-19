@@ -63,8 +63,14 @@ class main
         $user_file = "." . $conf_name;
         $base_file = $user_file . ".tmp";
 
-        eval("\$base_conf = array(" . file_get_contents($base_file) . ");");
-        eval("\$user_conf = array(" . file_get_contents($user_file) . ");");
+        eval("\$base_conf = array
+                            (
+                                " . file_get_contents($base_file) . "
+                            );");
+        eval("\$user_conf = array
+                            (
+                                " . file_get_contents($user_file) . "
+                            );");
 
         $configuration = $user_conf + $base_conf;
 

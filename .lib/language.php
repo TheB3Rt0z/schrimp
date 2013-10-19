@@ -55,7 +55,10 @@ class language
 	                       . $component
 	                       . SET_TRANSLATIONS_EXTENSION;
 
-	    $placeholder = array('');
+	    $placeholder = array
+	                   (
+	                       '',
+	                   );
 
 	    if (fe($translations_publicpath))
 	        return array_map('trim',
