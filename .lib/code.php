@@ -26,7 +26,9 @@ class code
     private static $_form_counters = array // encoded as checked on whole class files
     (
         ")%20{",
-            "){",
+            "){\n",
+            "){\r",
+            "){\t",
             ")%20%20{",
         "array(\n",
             "array(%20\n",
