@@ -391,7 +391,11 @@ class code
                                             $function->getFileName())
                         . " on line " . $function->getStartLine()
                         . ($function->getDocComment()
-                          ? "," . trim(str_replace(array("*", "/"),
+                          ? "," . trim(str_replace(array
+                                                   (
+                                                       "*",
+                                                       "/",
+                                                   ),
                                                    '',
                                                    $function->getDocComment()),
                                        " ")
@@ -537,16 +541,19 @@ class code
             if (!ld(_SET_APPLICATION_PATH . $component . ".php"))
                 ld(_SET_APPLICATION_PUBLICPATH . $component . ".php");
 
+            $component_class= new ReflectionClass($component);
             $components .= md::to_the_top() . " "
-                         . self::_get_component_information(new ReflectionClass($component));
+                         . self::_get_component_information($component_class);
 
             $helper = $component . "_helper";
-            if (ld(_SET_APPLICATION_PATH . $helper . ".php"))
+            if (ld(_SET_APPLICATION_PATH . $helper . ".php")
+                && $helper_class = new ReflectionClass($helper))
                 $components .= md::to_the_top() . " "
-                             . self::_get_component_information(new ReflectionClass($helper));
-            elseif (ld(_SET_APPLICATION_PUBLICPATH . $helper . ".php"))
+                             . self::_get_component_information($helper_class);
+            elseif (ld(_SET_APPLICATION_PUBLICPATH . $helper . ".php")
+                && $helper_class = new ReflectionClass($helper))
                 $components .= md::to_the_top() . " "
-                             . self::_get_component_information(new ReflectionClass($helper));
+                             . self::_get_component_information($helper_class);
 
             $components .= md::hr();
         }
@@ -620,7 +627,10 @@ class code
 
     static function get_libraries_list($exclude = null)
     {
-        $libraries = array('main' => filemtime(".main.php")); // hardcoded? mmm..
+        $libraries = array
+                     (
+                         'main' => filemtime(".main.php"),
+                     ); // hardcoded? mmm..
 
         $substitutions = array
         (
