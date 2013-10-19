@@ -30,6 +30,8 @@ class code
             "){\r",
             "){\t",
             ")%20%20{",
+        "array(%22",
+        "array(%27",
         "array(\n",
             "array(%20\n",
         "array(\r",
@@ -493,29 +495,27 @@ class code
         return $classes . MD_NEWLINE_SEQUENCE;
     }
 
-    private static function _get_component_information($name)
+    private static function _get_component_information(ReflectionClass $class)
     {
-        $class = new ReflectionClass($name);
-
         extract(self::get_class_data($class));
 
         self::_add_summary_entry(array
         (
             'header' => $header,
-            'label' => (substr_count($name, "_")
+            'label' => (substr_count($class->name, "_")
                        ? "-"
-                       : "Component") . " " . $name,
+                       : "Component") . " " . $class->name,
             'path' => $class_path,
             'length_warning' => $length_warning,
             'real_length' => $real_length,
             'length' => $length,
             'cis' => $cis,
-            'class_name' => $name,
+            'class_name' => $class->name,
             'todos' => count($class->getStaticPropertyValue('todos')),
             'tofix' => (!empty($fixs)),
         ));
 
-        return md::to_the_top() . " " . md::title(2, $header)
+        return md::title(2, $header)
              . self::_add_paragraph($fixs,
                                     "TOFIX:")
              . self::_add_paragraph($class_constants,
@@ -534,24 +534,19 @@ class code
 
         foreach (self::get_components_list() as $component => $uts)
         {
-            if (fe(_SET_APPLICATION_PATH . $component . ".php"))
-                require_once _SET_APPLICATION_PATH . $component . ".php";
-            else
-                require_once _SET_APPLICATION_PUBLICPATH . $component . ".php";
+            if (!ld(_SET_APPLICATION_PATH . $component . ".php"))
+                ld(_SET_APPLICATION_PUBLICPATH . $component . ".php");
 
-            $components .= self::_get_component_information($component);
+            $components .= md::to_the_top() . " "
+                         . self::_get_component_information(new ReflectionClass($component));
 
             $helper = $component . "_helper";
-            if (fe(_SET_APPLICATION_PATH . $helper . ".php"))
-            {
-                require_once _SET_APPLICATION_PATH . $helper . ".php";
-                $components .= self::_get_component_information($helper);
-            }
-            elseif (fe(_SET_APPLICATION_PUBLICPATH . $helper . ".php"))
-            {
-                require_once _SET_APPLICATION_PUBLICPATH . $helper . ".php";
-                $components .= self::_get_component_information($helper);
-            }
+            if (ld(_SET_APPLICATION_PATH . $helper . ".php"))
+                $components .= md::to_the_top() . " "
+                             . self::_get_component_information(new ReflectionClass($helper));
+            elseif (ld(_SET_APPLICATION_PUBLICPATH . $helper . ".php"))
+                $components .= md::to_the_top() . " "
+                             . self::_get_component_information(new ReflectionClass($helper));
 
             $components .= md::hr();
         }

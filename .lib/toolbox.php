@@ -93,6 +93,14 @@ class toolbox
 	    return $check;
 	}
 
+	static function load($file)
+	{
+	    if (fe($file))
+            return require_once $file;
+	    else
+	        return false;
+	}
+
 	static function parse($source)
 	{
 	    $output = file_get_contents($source);
@@ -114,6 +122,16 @@ class toolbox
 function fm($mixed)
 {
 	return toolbox::format($mixed);
+}
+
+/**
+ * require (once) a file and launch a php warning if not successful
+ * @param string $file
+ * @return 1 on success or false on file not exists or require_once failure
+ */
+function ld($file)
+{
+    return toolbox::load($file);
 }
 
 /**

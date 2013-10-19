@@ -1,5 +1,11 @@
 $(document).ready(function()
 {
+	$(window).load(function()
+	{
+		$('body').css('opacity',
+				      1);
+	});
+	
 	$(window).unload(function()
 	{
 		$('div#loading').css('top',

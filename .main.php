@@ -92,10 +92,10 @@ class main
     private function _load_libraries()
     {
         foreach (glob(_SET_LIBRARIES_PATH . "*.php") as $filename) // core libraries first
-            require_once $filename;
+            require_once $filename; // now all internal classes/methods and alias are available
 
         foreach (glob(_SET_LIBRARIES_PUBLICPATH . "*.php") as $filename) // if file/class name was already used an error will be generated
-            require_once $filename;
+            ld($filename); // toolbox helper alias
     }
 
     private function _set_route_static_traits($components)
@@ -153,9 +153,9 @@ class main
         else
             $this->_set_home_component();
 
-        require_once $this->_path . $this->controller . ".php";
+        ld($this->_path . $this->controller . ".php");
         foreach (glob($this->_path . $this->controller . "_*.php") as $filename)
-            require_once $filename;
+            ld($filename);
 
         $this->_call = new $this->controller($this->action,
                                              $this->args);

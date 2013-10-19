@@ -29,9 +29,13 @@ class navigator
                                                        _SET_HOME_COMPONENT);
                               }) as $filename)
         {
-            require_once $filename;
+            ld($filename);
 
-            $branch = str_replace(array(_SET_APPLICATION_PATH, ".php"),
+            $branch = str_replace(array
+                                  (
+                                      _SET_APPLICATION_PATH,
+                                      ".php",
+                                  ),
                                   '',
                                   $filename);
 
