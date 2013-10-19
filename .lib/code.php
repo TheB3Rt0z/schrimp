@@ -498,18 +498,6 @@ class code
 
         extract(self::get_class_data($class));
 
-        $component = md::to_the_top() . " " . md::title(2, $header)
-                   . self::_add_paragraph($fixs,
-                                          "TOFIX:")
-                   . self::_add_paragraph($class_constants,
-                                          "Class configuration constants:")
-                   . self::_add_paragraph($reference,
-                                          "Code reference:")
-                   . self::_add_paragraph($dependencies,
-                                          "Dependencies:")
-                   . self::_add_paragraph($class_todos,
-                                          "TODOs:");
-
         self::_add_summary_entry(array
         (
             'header' => $header,
@@ -526,7 +514,17 @@ class code
             'tofix' => (!empty($fixs)),
         ));
 
-        return $component;
+        return md::to_the_top() . " " . md::title(2, $header)
+             . self::_add_paragraph($fixs,
+                                    "TOFIX:")
+             . self::_add_paragraph($class_constants,
+                                    "Class configuration constants:")
+             . self::_add_paragraph($reference,
+                                    "Code reference:")
+             . self::_add_paragraph($dependencies,
+                                    "Dependencies:")
+             . self::_add_paragraph($class_todos,
+                                    "TODOs:");
     }
 
     private static function _get_components_information()

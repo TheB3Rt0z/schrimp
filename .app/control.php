@@ -188,7 +188,6 @@ class control extends controller
 
 		                   foreach (glob(_SET_APPLICATION_PUBLICPATH . \"*.php\")
 		                            as \$filename)
-				           {
 							   if (!substr_count(\$filename, \"_\"))
 							   {
 							       \$option = str_replace(\$substitutions,
@@ -196,7 +195,6 @@ class control extends controller
 				                                          \$filename);
 							       \$output[\$option] = null;
 							   }
-		                   }
 
 				           return \$output;";
 
