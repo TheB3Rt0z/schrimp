@@ -845,7 +845,7 @@ class code
     {
         $title = md::image(_SET_INCLUDES_PATH . "img/schrimp_favicon_md.ico")
                . " " . _STR_PROJECT_NAME . "'s Doku v"
-               . main::get_version(1) . "." . date('Y.m.d');
+               . main::get_version(1) . "|" . main::get_timestone();
 
         return md::title(2, $title);
     }

@@ -211,7 +211,12 @@ class main
              . number_format(((mktime(date('H'), date('i'), date('s'),
                                       date('n'), date('j'), date('Y'))
                              - mktime(17, 11, 33,
-                                      9, 21, 2012)) / 31557600), $precision);
+                                      9, 21, 2012)) / 31557600), $precision); // gragorian 4-years average
+    }
+
+    static function get_timestone()
+    {
+        return date('y.m'); // just for documentation
     }
 
     static function is_webstoraged()
