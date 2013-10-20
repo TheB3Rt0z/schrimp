@@ -9,6 +9,7 @@ class code
     static $todos = array
     (
         'get_class_dependencies' => "too inaccurate, see navigator-controller",
+        'static files form' => "check backend&component css files + schrimp_*.js",
     );
 
     static $tests = array();
@@ -844,8 +845,8 @@ class code
     static function get_documentation_title()
     {
         $title = md::image(_SET_INCLUDES_PATH . "img/schrimp_favicon_md.ico")
-               . " " . _STR_PROJECT_NAME . "'s Doku v"
-               . main::get_version(1) . "|" . main::get_timestone();
+               . " " . _STR_PROJECT_NAME . "'s Dokumentation v"
+               . main::get_version(1) . " | " . main::get_timestone();
 
         return md::title(2, $title);
     }

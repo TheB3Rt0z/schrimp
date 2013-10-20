@@ -80,6 +80,6 @@ class html_doc extends html
         parent::add_js_file($path . _SET_INCLUDES_PATH . "js/jquery_jcarousel.js");
 
         if (_SET_ADVANCED_INTERFACE)
-            parent::add_js_file(_SET_INCLUDES_PATH . "js/advanced_interface.js");
+            parent::add_js_file(_SET_INCLUDES_PATH . "js/schrimp_advin.js");
     }
 }
