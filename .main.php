@@ -79,6 +79,9 @@ class main
                                      ? serialize($value)
                                      : $value));
 
+        if (_SET_DEVELOPMENT_MODE)
+            error_reporting(E_ALL);
+
         define('_SET_TRANSPORT_PROTOCOL', "http" . (getenv('HTTPS') == 'on'
                                                   ? "s"
                                                   : '')); // auto-detecting

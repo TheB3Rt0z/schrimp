@@ -13,6 +13,8 @@ class html
         'newline/return after html tags' => "in order to save goat and cabbages",
         'script online loading' => "if != local, should have a lfb..",
         'ordered_list' => "fix numbers, falsed as visible in error 404",
+        'over-components links' => "maybe automatic no-follow attribute (siloing)",
+        'allowed per-tag attributes' => "just enlarge private _tags with subarray",
     );
 
     static $tests = array();

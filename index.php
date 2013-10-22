@@ -1,6 +1,6 @@
 <?php
 
-/* Das S.C.H.R.I.M.P. Project - Main-application launcher
+/* The S.C.H.R.I.M.P. Project - Main-application launcher
  *
  * Syntax conventions (for developers only):
  *
