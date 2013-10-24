@@ -29,61 +29,79 @@ ob_start();
 
 ?><!DOCTYPE html>
     <head>
-        <?php echo html_doc::get_head_metatags() ?>
+        <?php echo html_doc::get_head_metatags() . "\n" ?>
+
         <title>
             <?php
             echo _STR_PROJECT_NAME . " "
                . $main->get_version()
-               . " | "
-               . $main->title
+               . " | " . $main->title . "\n"
             ?>
         </title>
-        <?php echo html_doc::get_head_favicon($main->controller) ?>
-        <?php echo html_doc::get_head_links($main->get_fullpath()) ?>
+
+        <?php echo html_doc::get_head_favicon($main->controller) . "\n" ?>
+
+        <?php echo html_doc::get_head_links($main->get_fullpath()) . "\n" ?>
     </head>
+
     <body>
         <header>
             <?php echo html::divisor($main->header,
                                      null,
-                                     'header') ?>
+                                     'header') . "\n" ?>
         </header>
+
         <nav>
             <?php echo html::divisor($main->nav,
                                      null,
-                                     'nav') ?>
+                                     'nav') . "\n" ?>
         </nav>
+
         <section>
             <?php echo html::divisor($main->section,
                                      null,
-                                     'section') ?>
+                                     'section') . "\n" ?>
+
             <article>
                 <?php echo html::divisor($main->article,
                                          null,
-                                         'article') ?>
+                                         'article') . "\n" ?>
             </article>
+
             <aside>
                 <?php echo html::divisor($main->aside,
                                          null,
-                                         'aside') ?>
+                                         'aside') . "\n" ?>
             </aside>
         </section>
+
         <footer>
             <?php echo html::divisor($main->footer,
                                      null,
-                                     'footer') ?>
+                                     'footer') . "\n" ?>
         </footer>
-        <?php echo html::clearfix() ?>
+
+        <?php echo html::clearfix() . "\n" ?>
+
+        <?php
+        if (_SET_ADVANCED_INTERFACE)
+            echo html::divisor('',
+                               null,
+                               'loading') . "\n"
+        ?>
     </body>
-    <?php
-    if (_SET_ADVANCED_INTERFACE)
-        echo html::divisor('',
-                           null,
-                           'loading');
-    ?>
 </html><?php
 
 if (!_SET_DEVELOPMENT_MODE)
-    echo str_replace(array("\t", "\n", "\r", "  "), '', ob_get_clean());
+    echo str_replace(array
+                     (
+                         "\t",
+                         "\n",
+                         "\r",
+                         "  ",
+                     ),
+                     '',
+                     ob_get_clean());
 else
     echo ob_get_clean();
 
