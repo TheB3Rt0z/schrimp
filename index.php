@@ -39,8 +39,7 @@ ob_start();
             ?>
         </title>
         <?php echo html_doc::get_head_favicon($main->controller) ?>
-        <?php echo html_doc::get_head_links($main->get_path(),
-                                            $main->get_fullpath()) ?>
+        <?php echo html_doc::get_head_links($main->get_fullpath()) ?>
     </head>
     <body>
         <header>

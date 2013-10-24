@@ -400,12 +400,11 @@ class html
     {
         $attributes['type'] = $type;
 
-        if (!empty($src)
+        if (!fe($src))
+            return main::launch_error_file_not_found($src);
+        elseif (!empty($src)
             && !in_array($src, self::$_loaded_scripts))
         {
-            if (!fe($src) && !parse_url($src))
-                return $main->launch_error_file_not_found($src);
-
             $attributes['src'] = ru($src);
             $self = new self('script',
                              $attributes);
@@ -423,7 +422,7 @@ class html
             self::$_loaded_scripts[] = $content;
         }
         else
-            return false; // this script SEEMS to be already loaded
+            return false; // this script SEEMS to be already loaded, or to be empty!
 
         return $self->_html;
     }
