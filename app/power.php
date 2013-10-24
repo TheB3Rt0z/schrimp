@@ -8,6 +8,8 @@ class power extends controller
         'store personal information' => "uses helper+db libraries as bridge tools",
     );
 
+    static $tests = array();
+
 	function initialize()
 	{
 	    $this->_set_title($this->_translate("COMPONENT VISIBLE NAME"));

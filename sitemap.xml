@@ -2,7 +2,17 @@
 
 <?xml-stylesheet type="text/xsl" href="gss.xsl" ?>
 
-<urlset xmlns="http://www.google.com/schemas/sitemap/0.84"
+<urlset xmlns="http://www.google.com/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
+        xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.google.com/schemas/sitemap/0.84 http://www.google.com/schemas/sitemap/0.84/sitemap.xsd">
+        xsi:schemaLocation="http://www.google.com/schemas/sitemap/0.9 http://www.google.com/schemas/sitemap/0.9/sitemap.xsd">
+    <url> 
+        <loc>http://www.das-schrimp.net</loc>
+<lastmod>2010-02-11T20:48:33+01:00</lastmod> <!-- example, to be updated/continued -->
+        <changefreq>always</changefreq>
+        <priority>1.0</priority>
+    </url>
 </urlset>

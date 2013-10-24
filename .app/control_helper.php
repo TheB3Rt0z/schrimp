@@ -4,6 +4,8 @@ class control_helper
 {
     static $todos = array();
 
+    static $tests = array();
+
     private $_access_levels = array
     (
         0 => 'system',

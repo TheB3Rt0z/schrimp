@@ -8,6 +8,8 @@ class control extends controller
         'handler_core_language' => "this should be te next to be written..",
     );
 
+    static $tests = array();
+
 	function initialize()
 	{
 		$this->_set_nav(html::box(navigator::get_list()));

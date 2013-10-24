@@ -15,6 +15,7 @@ class html
         'ordered_list' => "fix numbers, falsed as visible in error 404",
         'over-components links' => "maybe automatic no-follow attribute (siloing)",
         'allowed per-tag attributes' => "just enlarge private _tags with subarray",
+        'custom class prefixes' => "should be generated from keywords (!) ..csss?",
     );
 
     static $tests = array();

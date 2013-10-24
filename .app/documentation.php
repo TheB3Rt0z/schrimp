@@ -4,6 +4,8 @@ class documentation extends controller
 {
 	static $todos = array();
 
+	static $tests = array();
+
 	function initialize()
 	{
 	    $this->_set_nav(html::box(navigator::get_list()));

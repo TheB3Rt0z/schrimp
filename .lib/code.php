@@ -10,6 +10,7 @@ class code
     (
         'get_class_dependencies' => "too inaccurate, see navigator-controller",
         'static files form' => "check backend&component css files + schrimp_*.js",
+        'test list in documentation footer' => "see scaffold method for infos",
     );
 
     static $tests = array();
@@ -219,6 +220,16 @@ class code
                           . MD_NEWLINE_SEQUENCE;
 
         return $class_todos;
+    }
+
+    private static function _get_class_tests(reflectionClass $class)
+    {
+        $class_tests = '';
+
+        foreach ($class->getStaticPropertyValue('tests') as $key => $value)
+            $class_tests .= ''; // to be continued
+
+        return $class_tests;
     }
 
     private static function _add_paragraph($data,
@@ -732,6 +743,7 @@ class code
         $data['reference'] = self::_get_class_reference($class);
         $data['dependencies'] = self::get_class_dependencies($class);
         $data['class_todos'] = self::_get_class_todos($class);
+        $data['class_tests'] = self::_get_class_tests($class);
 
         $data['class_path'] = "root" . str_replace(realpath(null),
                                                    '',

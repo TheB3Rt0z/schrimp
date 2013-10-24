@@ -4,6 +4,8 @@ class error extends controller
 {
 	static $todos = array();
 
+	static $tests = array();
+
 	const VISIBLE_IN_NAVIGATION = false;
 
 	const RENDER_BREADCRUMB = false;

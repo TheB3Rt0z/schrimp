@@ -10,6 +10,7 @@ class main
         'css autoload' => "automatically load ANY file in .inc/inc / css? nnouu..",
         'error launchers' => "should be moved to a library (navigator, toolbox)?",
         'no stealth mode' => "no uri interpretation + htaccess automatic creation",
+        'set_htmls_from_controller' => "could we update here our sitemap.xml?",
     );
 
     static $tests = array();
@@ -101,7 +102,7 @@ class main
     private function _load_libraries()
     {
         foreach (glob(_SET_LIBRARIES_PATH . "*.php") as $filename) // core libraries first
-            require_once $filename; // now all internal classes/methods and alias are available
+            require_once $filename; // now all internal classes/methods with alias are available
 
         foreach (glob(_SET_LIBRARIES_PUBLICPATH . "*.php") as $filename) // if file/class name was already used an error will be generated
             ld($filename); // toolbox helper alias
@@ -222,10 +223,7 @@ class main
         return date('y.m'); // just for documentation
     }
 
-    static function is_webstoraged()
-    {
-        // local and/or session storage are available? only with js..
-    }
+    static function is_webstoraged() {} // local and/or session storage are available? only with js..
 
     static function is_apced()
     {
@@ -234,8 +232,10 @@ class main
 
     static function is_memcached()
     {
-        return extension_loaded('memcache');
+        return extension_loaded('memcache'); // ok, but check it please..
     }
+
+    static function is_varnished() {}// just a placeholder..
 
     static function exists_file($path)
     {

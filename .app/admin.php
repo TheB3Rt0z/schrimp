@@ -4,6 +4,8 @@ class admin extends controller
 {
     static $todos = array();
 
+    static $tests = array();
+
 	function initialize()
 	{
 		$this->_set_title($this->_translate("COMPONENT VISIBLE NAME"));

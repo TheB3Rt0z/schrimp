@@ -10,6 +10,7 @@ class toolbox
 	    'virus total' => "https://www.virustotal.com/it/documentation/public-api/",
 	    'wide-range tests' => "include controller-derived + helpers etc. classes?",
 	    'implement filter_functions' => "github-wiki-page / php.net-documentation",
+	    'xml parser/updater needed' => "maybe in a extra class, like md..?",
 	);
 
     static $tests = array();
