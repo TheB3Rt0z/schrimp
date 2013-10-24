@@ -237,7 +237,7 @@ class main
 
     static function is_varnished() {}// just a placeholder..
 
-    static function exists_file($path)
+    static function file_exists($path)
     {
         return file_exists(realpath($path)); // works only if read permissions on subdirs are available!
     }
@@ -319,7 +319,7 @@ function vd($what)
  */
 function fe($path)
 {
-    return main::exists_file($path);
+    return main::file_exists($path);
 }
 
 /**
