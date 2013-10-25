@@ -10,7 +10,7 @@ Table of contents
 [Library db](#-class-db-11102013-- "") &#10029;&#10029;  (root/.lib/db.php, Len: 126/126, CIS: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- db_object](#-class-db_object-10102013-- "") &#10029;&#10029;&#10029;  (root/.lib/db_object.php, Len: 146/146, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library escort](#-class-escort-24102013-- "") (root/.lib/escort.php, Len: 40/40, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library html](#-class-html-24102013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (root/.lib/html.php, Len: 623/623, CIS: 23 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library html](#-class-html-25102013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (root/.lib/html.php, Len: 666/666, CIS: 23 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- html_doc](#-class-html_doc-24102013-- "") &#10029;&#10029;&#10029;  (root/.lib/html_doc.php, Len: 81/81, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- html_form](#-class-html_form-24092013-- "") &#10029;  (root/.lib/html_form.php, Len: 71/71, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library language](#-class-language-19102013-- "") &#10029;&#10029;  (root/.lib/language.php, Len: 106/106, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -117,6 +117,7 @@ General reference
 **TODOS:**  
   
 - **? admin bar** &#10140; optional control to measure run time performance (gApis)  
+- **web diagnostics tool** &#10140; only if online and reachable ..embed in admin bar?  
 - **framework mode usage** &#10140; use namespace to avoid class-names conflicts..?  
   
   
@@ -280,7 +281,7 @@ Uses: **db**, **main**
   
 ***  
   
-[⇧](# "to the top") Class HTML (24.10.2013)  
+[⇧](# "to the top") Class HTML (25.10.2013)  
 -----------------------  
   
 **CODE REFERENCE:**  

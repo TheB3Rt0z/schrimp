@@ -30,32 +30,75 @@ class html
     (
         'single' => array
         (
-            'br',
-            'img',
-            'link',
-            'meta',
+            'area' => array
+            (
+                'rel' => array // index? first? last? up? sidebar? archives? pingback?
+                (
+                    'alternate', // links to an alternate version of the document (i.e. print page, translated or mirror)
+                    'author', // links to the author of the document
+                    'bookmark', // permanent URL used for bookmarking
+                    'chapter', // links to parent chapter of this document
+                    'copyright', // copyright information for linked document
+                    'help', // links to a help document
+                    'license', // links to copyright information for the document
+                    'next', // the next document in a selection
+                    'nofollow', // links to an unendorsed document, like a paid link (used by Google, to specify that the Google search spider should not follow that link)
+                    'noreferrer', // specifies that the browser should not send a HTTP referer header if the user follows the hyperlink
+                    'prefetch', // specifies that the target document should be cached
+                    'prev', // the previous document in a selection
+                    'search', // links to a search tool for the document
+                    'tag', // a tag (keyword) for the current document
+                ),
+            ),
+            'br' => array(),
+            'img' => array(),
+            'link' => array(),
+                /*icon Favicon zum Dokument
+    stylesheet Stylesheet-Datei des Dokuments
+     nofollow & noreferrer not possible*/
+            'meta' => array(),
         ),
         'container' => array
         (
-            'a',
-            'code',
-            'div',
-            'h1',
-            'h2',
-            'h3',
-            'h4',
-            'h5',
-            'h6',
-            'h7', // experimental..
-            'li',
-            'ol',
-            'option',
-            'p',
-            'pre',
-            'script',
-            'select',
-            'span',
-            'ul',
+            'a' => array
+            (
+                'rel' => array
+                (
+                    'alternate', // links to an alternate version of the document (i.e. print page, translated or mirror)
+                    'author', // links to the author of the document
+                    'bookmark', // permanent URL used for bookmarking
+                    'chapter', // links to parent chapter of this document
+                    'copyright', // copyright information for linked document
+                    'help', // links to a help document
+                    'license', // links to copyright information for the document
+                    'next', // the next document in a selection
+                    'nofollow', // links to an unendorsed document, like a paid link (used by Google, to specify that the Google search spider should not follow that link)
+                    'noreferrer', // specifies that the browser should not send a HTTP referer header if the user follows the hyperlink
+                    'prefetch', // specifies that the target document should be cached
+                    'prev', // the previous document in a selection
+                    'search', // links to a search tool for the document
+                    'tag', // a tag (keyword) for the current document
+                ),
+            ),
+            'code' => array(),
+            'div' => array(),
+            'h1' => array(),
+            'h2' => array(),
+            'h3' => array(),
+            'h4' => array(),
+            'h5' => array(),
+            'h6' => array(),
+            'h7' => array(), // experimental..
+            'li' => array(),
+            'map' => array(),
+            'ol' => array(),
+            'option' => array(),
+            'p' => array(),
+            'pre' => array(),
+            'script' => array(),
+            'select' => array(),
+            'span' => array(),
+            'ul' => array(),
         )
     );
 
@@ -95,14 +138,14 @@ class html
 
     private function _is_single()
     {
-        return in_array($this->_tag,
-                        $this->_tags['single']);
+        return array_key_exists($this->_tag,
+                                $this->_tags['single']);
     }
 
     private function _is_container()
     {
-        return in_array($this->_tag,
-                        $this->_tags['container']);
+        return array_key_exists($this->_tag,
+                                $this->_tags['container']);
     }
 
     private function _validate_tag()
