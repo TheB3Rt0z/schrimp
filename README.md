@@ -62,66 +62,42 @@ General reference
   
 **FUNCTION ALIASES:**  
   
-- **bs($infos)** &#10140; .main.php on line 393,**
-  triggers an error if bad syntax events occur
+- **bs($infos)** &#10140; .main.php on line 393,**triggers an error if bad syntax events occur
   @param string $msg
-  @return boolean indicating notification success
-  
-- **fe($path)** &#10140; .main.php on line 343,**
-  returns boolean if realpath path exists on running server;
+  @return boolean indicating notification success**   
+- **fe($path)** &#10140; .main.php on line 343,**returns boolean if realpath path exists on running server;
   @param string $path
-  @return boolean true if realpath exists, false otherwise
-  
-- **fm($mixed)** &#10140; .lib/toolbox.php on line 129,**
-  returns a beautiful formatted value, mixed variable-type-dependant;
+  @return boolean true if realpath exists, false otherwise**   
+- **fm($mixed)** &#10140; .lib/toolbox.php on line 129,**returns a beautiful formatted value, mixed variable-type-dependant;
   @param mixed $mixed
-  @return mixed depending on internally defined rules
-  
-- **ld($file)** &#10140; .lib/toolbox.php on line 139,**
-  require (once) a file and launch a php warning if not successful
+  @return mixed depending on internally defined rules**   
+- **ld($file)** &#10140; .lib/toolbox.php on line 139,**require (once) a file and launch a php warning if not successful
   @param string $file
-  @return 1 on success or false on file not exists or require_once failure
-  
-- **le($msg)** &#10140; .main.php on line 373,**
-  launches a customizable error 500, mit optional backtrace for debug;
+  @return 1 on success or false on file not exists or require_once failure**   
+- **le($msg)** &#10140; .main.php on line 373,**launches a customizable error 500, mit optional backtrace for debug;
   @param string $msg
-  @return boolean false after relocate
-  
-- **mf($file)** &#10140; .main.php on line 383,**
-  triggers an error if a needed file is missing
+  @return boolean false after relocate**   
+- **mf($file)** &#10140; .main.php on line 383,**triggers an error if a needed file is missing
   @param string $file
-  @return boolean indicating notification success
-  
-- **pr($source)** &#10140; .lib/toolbox.php on line 149,**
-  returns a parsed output, source-type dependant;
+  @return boolean indicating notification success**   
+- **pr($source)** &#10140; .lib/toolbox.php on line 149,**returns a parsed output, source-type dependant;
   @param string $source
-  @return mixed depending on source origin
-  
-- **rt($url = null)** &#10140; .main.php on line 363,**
-  relocates to given relative url or to base path on default;
+  @return mixed depending on source origin**   
+- **rt($url = null)** &#10140; .main.php on line 363,**relocates to given relative url or to base path on default;
   @param string $url
-  @return void
-  
-- **ru($uri = null)** &#10140; .main.php on line 353,**
-  returns an absolute uri, based on current server configuration;
+  @return void**   
+- **ru($uri = null)** &#10140; .main.php on line 353,**returns an absolute uri, based on current server configuration;
   @param string $uri
-  @return string absolute http unified resource identifier
-  
-- **sb()** &#10140; .main.php on line 402,**
-  show call's backtrace with help of error base handler
-  @return void
-  
-- **tr($component, $marker)** &#10140; .lib/language.php on line 122,**
-  executes language translation of marker identifier, referring to given component;
+  @return string absolute http unified resource identifier**   
+- **sb()** &#10140; .main.php on line 402,**show call's backtrace with help of error base handler
+  @return void**   
+- **tr($component, $marker)** &#10140; .lib/language.php on line 122,**executes language translation of marker identifier, referring to given component;
   @param string $component
   @param string $marker
-  @return mixed callback function returned value(s)
-  
-- **vd($what)** &#10140; .main.php on line 333,**
-  returns pre-formatted mixed variables;
+  @return mixed callback function returned value(s)**   
+- **vd($what)** &#10140; .main.php on line 333,**returns pre-formatted mixed variables;
   @param multi $what
-  @return void
-  
+  @return void**   
   
   
 **TODOS:**  

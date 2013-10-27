@@ -420,8 +420,8 @@ class code
                                                          "/",
                                                      ),
                                                      '',
-                                                     $function->getDocComment()),
-                                       "** ")
+                                                     $function->getDocComment()))
+                          . "** "
                           : '') . MD_NEWLINE_SEQUENCE;
         }
 
