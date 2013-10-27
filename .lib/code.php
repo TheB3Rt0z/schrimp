@@ -418,8 +418,14 @@ class code
                                                      (
                                                          "*",
                                                          "/",
+                                                         ";",
                                                      ),
-                                                     '',
+                                                     array
+                                                     (
+                                                         '',
+                                                         '',
+                                                         '**',
+                                                     ),
                                                      $function->getDocComment()))
                           : '') . MD_NEWLINE_SEQUENCE;
         }
