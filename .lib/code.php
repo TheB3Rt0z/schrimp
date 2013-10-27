@@ -414,14 +414,13 @@ class code
                                             $function->getFileName())
                         . " on line " . $function->getStartLine()
                         . ($function->getDocComment()
-                          ? ",**" . trim(str_replace(array
+                          ? ", **" . trim(str_replace(array
                                                      (
                                                          "*",
                                                          "/",
                                                      ),
                                                      '',
                                                      $function->getDocComment()))
-                          . "** "
                           : '') . MD_NEWLINE_SEQUENCE;
         }
 

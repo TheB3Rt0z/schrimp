@@ -376,7 +376,7 @@ function le($msg)
 }
 
 /**
- * triggers an error if a needed file is missing
+ * triggers an error if a needed file is missing;
  * @param string $file
  * @return boolean indicating notification success
  */
@@ -386,7 +386,7 @@ function mf($file)
 }
 
 /**
- * triggers an error if bad syntax events occur
+ * triggers an error if bad syntax events occur;
  * @param string $msg
  * @return boolean indicating notification success
  */
@@ -396,7 +396,7 @@ function bs($infos)
 }
 
 /**
- * show call's backtrace with help of error base handler
+ * show call's backtrace with help of error base handler;
  * @return void
  */
 function sb()

@@ -5,7 +5,7 @@ Table of contents
 -----------------  
   
 [General reference](#general-reference-- "")  
-[Library code](#-class-code-27102013-- "") &#10029;&#10029;&#10029;  (root/.lib/code.php, Len: 893/893, CIS: 15 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library code](#-class-code-27102013-- "") &#10029;&#10029;&#10029;  (root/.lib/code.php, Len: 892/892, CIS: 15 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library controller](#-class-controller-15102013-- "") (root/.lib/controller.php, Len: 123/123, CIS: 10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library db](#-class-db-11102013-- "") &#10029;&#10029;  (root/.lib/db.php, Len: 126/126, CIS: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- db_object](#-class-db_object-10102013-- "") &#10029;&#10029;&#10029;  (root/.lib/db_object.php, Len: 146/146, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -62,42 +62,42 @@ General reference
   
 **FUNCTION ALIASES:**  
   
-- **bs($infos)** &#10140; .main.php on line 393,**triggers an error if bad syntax events occur
+- **bs($infos)** &#10140; .main.php on line 393, **triggers an error if bad syntax events occur;
   @param string $msg
-  @return boolean indicating notification success**   
-- **fe($path)** &#10140; .main.php on line 343,**returns boolean if realpath path exists on running server;
+  @return boolean indicating notification success  
+- **fe($path)** &#10140; .main.php on line 343, **returns boolean if realpath path exists on running server;
   @param string $path
-  @return boolean true if realpath exists, false otherwise**   
-- **fm($mixed)** &#10140; .lib/toolbox.php on line 129,**returns a beautiful formatted value, mixed variable-type-dependant;
+  @return boolean true if realpath exists, false otherwise  
+- **fm($mixed)** &#10140; .lib/toolbox.php on line 129, **returns a beautiful formatted value, mixed variable-type-dependant;
   @param mixed $mixed
-  @return mixed depending on internally defined rules**   
-- **ld($file)** &#10140; .lib/toolbox.php on line 139,**require (once) a file and launch a php warning if not successful
+  @return mixed depending on internally defined rules  
+- **ld($file)** &#10140; .lib/toolbox.php on line 139, **require (once) a file and launch a php warning if not successful
   @param string $file
-  @return 1 on success or false on file not exists or require_once failure**   
-- **le($msg)** &#10140; .main.php on line 373,**launches a customizable error 500, mit optional backtrace for debug;
+  @return 1 on success or false on file not exists or require_once failure  
+- **le($msg)** &#10140; .main.php on line 373, **launches a customizable error 500, mit optional backtrace for debug;
   @param string $msg
-  @return boolean false after relocate**   
-- **mf($file)** &#10140; .main.php on line 383,**triggers an error if a needed file is missing
+  @return boolean false after relocate  
+- **mf($file)** &#10140; .main.php on line 383, **triggers an error if a needed file is missing;
   @param string $file
-  @return boolean indicating notification success**   
-- **pr($source)** &#10140; .lib/toolbox.php on line 149,**returns a parsed output, source-type dependant;
+  @return boolean indicating notification success  
+- **pr($source)** &#10140; .lib/toolbox.php on line 149, **returns a parsed output, source-type dependant;
   @param string $source
-  @return mixed depending on source origin**   
-- **rt($url = null)** &#10140; .main.php on line 363,**relocates to given relative url or to base path on default;
+  @return mixed depending on source origin  
+- **rt($url = null)** &#10140; .main.php on line 363, **relocates to given relative url or to base path on default;
   @param string $url
-  @return void**   
-- **ru($uri = null)** &#10140; .main.php on line 353,**returns an absolute uri, based on current server configuration;
+  @return void  
+- **ru($uri = null)** &#10140; .main.php on line 353, **returns an absolute uri, based on current server configuration;
   @param string $uri
-  @return string absolute http unified resource identifier**   
-- **sb()** &#10140; .main.php on line 402,**show call's backtrace with help of error base handler
-  @return void**   
-- **tr($component, $marker)** &#10140; .lib/language.php on line 122,**executes language translation of marker identifier, referring to given component;
+  @return string absolute http unified resource identifier  
+- **sb()** &#10140; .main.php on line 402, **show call's backtrace with help of error base handler;
+  @return void  
+- **tr($component, $marker)** &#10140; .lib/language.php on line 122, **executes language translation of marker identifier, referring to given component;
   @param string $component
   @param string $marker
-  @return mixed callback function returned value(s)**   
-- **vd($what)** &#10140; .main.php on line 333,**returns pre-formatted mixed variables;
+  @return mixed callback function returned value(s)  
+- **vd($what)** &#10140; .main.php on line 333, **returns pre-formatted mixed variables;
   @param multi $what
-  @return void**   
+  @return void  
   
   
 **TODOS:**  
@@ -132,7 +132,7 @@ General reference
 - **[_get_components_information](https://github.com/TheB3Rt0z/schrimp/wiki/code-_get_components_information "")()** (PriS, Len: 20/25 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[_get_constants_information](https://github.com/TheB3Rt0z/schrimp/wiki/code-_get_constants_information "")()** (PriS, Len: 14/17 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[_get_cyc_marker](https://github.com/TheB3Rt0z/schrimp/wiki/code-_get_cyc_marker "")($cyc)** (PriS, Len: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **[_get_functions_information](https://github.com/TheB3Rt0z/schrimp/wiki/code-_get_functions_information "")()** (PriS, Len: 24/28 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[_get_functions_information](https://github.com/TheB3Rt0z/schrimp/wiki/code-_get_functions_information "")()** (PriS, Len: 23/27 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[_get_len_marker](https://github.com/TheB3Rt0z/schrimp/wiki/code-_get_len_marker "")($length)** (PriS, Len: 11 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[_get_methods_information](https://github.com/TheB3Rt0z/schrimp/wiki/code-_get_methods_information "")(ReflectionMethod $method)** (PriS, Len: 27/30 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[_get_summary_information](https://github.com/TheB3Rt0z/schrimp/wiki/code-_get_summary_information "")()** (PriS, Len: 24/26 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
