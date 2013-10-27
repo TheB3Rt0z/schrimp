@@ -5,7 +5,7 @@ Table of contents
 -----------------  
   
 [General reference](#general-reference-- "")  
-[Library code](#-class-code-24102013-- "") &#10029;&#10029;&#10029;  (root/.lib/code.php, Len: 893/893, CIS: 15 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library code](#-class-code-27102013-- "") &#10029;&#10029;&#10029;  (root/.lib/code.php, Len: 893/893, CIS: 15 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library controller](#-class-controller-15102013-- "") (root/.lib/controller.php, Len: 123/123, CIS: 10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library db](#-class-db-11102013-- "") &#10029;&#10029;  (root/.lib/db.php, Len: 126/126, CIS: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- db_object](#-class-db_object-10102013-- "") &#10029;&#10029;&#10029;  (root/.lib/db_object.php, Len: 146/146, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -14,9 +14,10 @@ Table of contents
 [- html_doc](#-class-html_doc-27102013-- "") &#10029;&#10029;&#10029;&#10029;  (root/.lib/html_doc.php, Len: 82/82, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- html_form](#-class-html_form-24092013-- "") &#10029;  (root/.lib/html_form.php, Len: 71/71, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library language](#-class-language-27102013-- "") &#10029;&#10029;&#10029;  (root/.lib/language.php, Len: 107/107, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library main](#-class-main-27102013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (root/.main.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "1 too long line(s) found!") Len: 321/321, CIS: 33 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Class interface size could lead to a refactoring")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
+[Library main](#-class-main-27102013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (root/.main.php, Len: 321/321, CIS: 33 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Class interface size could lead to a refactoring")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
 [Library md](#-class-md-24092013-- "") (root/.lib/md.php, Len: 231/231, CIS: 14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library navigator](#-class-navigator-19102013-- "") &#10029;&#10029;&#10029;  (root/.lib/navigator.php, Len: 389/389, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
+[Library powering](#-class-powering-27102013-- "") (root/lib/powering.php, Len: 3/3, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library toolbox](#-class-toolbox-27102013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (root/.lib/toolbox.php, Len: 117/117, CIS: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Component admin](#-class-admin-24102013-- "") (root/.app/admin.php, Len: 14/14, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- admin_helper](#-class-admin_helper-24102013-- "") (root/.app/admin_helper.php, Len: 3/3, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -61,62 +62,62 @@ General reference
   
 **FUNCTION ALIASES:**  
   
-- **bs($infos)** &#10140; .main.php on line 393,
+- **bs($infos)** &#10140; .main.php on line 393,**
   triggers an error if bad syntax events occur
   @param string $msg
   @return boolean indicating notification success
   
-- **fe($path)** &#10140; .main.php on line 343,
+- **fe($path)** &#10140; .main.php on line 343,**
   returns boolean if realpath path exists on running server;
   @param string $path
   @return boolean true if realpath exists, false otherwise
   
-- **fm($mixed)** &#10140; .lib/toolbox.php on line 129,
+- **fm($mixed)** &#10140; .lib/toolbox.php on line 129,**
   returns a beautiful formatted value, mixed variable-type-dependant;
   @param mixed $mixed
   @return mixed depending on internally defined rules
   
-- **ld($file)** &#10140; .lib/toolbox.php on line 139,
+- **ld($file)** &#10140; .lib/toolbox.php on line 139,**
   require (once) a file and launch a php warning if not successful
   @param string $file
   @return 1 on success or false on file not exists or require_once failure
   
-- **le($msg)** &#10140; .main.php on line 373,
+- **le($msg)** &#10140; .main.php on line 373,**
   launches a customizable error 500, mit optional backtrace for debug;
   @param string $msg
   @return boolean false after relocate
   
-- **mf($file)** &#10140; .main.php on line 383,
+- **mf($file)** &#10140; .main.php on line 383,**
   triggers an error if a needed file is missing
   @param string $file
   @return boolean indicating notification success
   
-- **pr($source)** &#10140; .lib/toolbox.php on line 149,
+- **pr($source)** &#10140; .lib/toolbox.php on line 149,**
   returns a parsed output, source-type dependant;
   @param string $source
   @return mixed depending on source origin
   
-- **rt($url = null)** &#10140; .main.php on line 363,
+- **rt($url = null)** &#10140; .main.php on line 363,**
   relocates to given relative url or to base path on default;
   @param string $url
   @return void
   
-- **ru($uri = null)** &#10140; .main.php on line 353,
+- **ru($uri = null)** &#10140; .main.php on line 353,**
   returns an absolute uri, based on current server configuration;
   @param string $uri
   @return string absolute http unified resource identifier
   
-- **sb()** &#10140; .main.php on line 402,
+- **sb()** &#10140; .main.php on line 402,**
   show call's backtrace with help of error base handler
   @return void
   
-- **tr($component, $marker)** &#10140; .lib/language.php on line 122,
+- **tr($component, $marker)** &#10140; .lib/language.php on line 122,**
   executes language translation of marker identifier, referring to given component;
   @param string $component
   @param string $marker
   @return mixed callback function returned value(s)
   
-- **vd($what)** &#10140; .main.php on line 333,
+- **vd($what)** &#10140; .main.php on line 333,**
   returns pre-formatted mixed variables;
   @param multi $what
   @return void
@@ -134,7 +135,7 @@ General reference
   
 ***  
   
-[⇧](# "to the top") Class CODE (24.10.2013)  
+[⇧](# "to the top") Class CODE (27.10.2013)  
 -----------------------  
   
 **CODE REFERENCE:**  
@@ -514,7 +515,7 @@ Uses: **code**, **html**, **md**, **toolbox**
   
 **TODOS:**  
   
-- **double error redirect** &#10140; rewrite this thing to avoid the doppler effect  
+- **double error redirect** &#10140; rewrite this ding to avoid the doppler effect  
 - **get buffer effect** &#10140; is file deletion really working? a better system?  
 - **escort library** &#10140; session by PHP and DB if webstore & memcache fail?  
 - **memcache support** &#10140; verify in method, if at least one mem-server works  
@@ -594,6 +595,12 @@ Uses: **html**, **html_form**, **main**
 - **fix (advanced) list/breadcrumb** &#10140; not right initialized in dev mode..  
 - **render_list** &#10140; this should be CSS3 and appear on a mouse gesture..  
 - **list & advanced list** &#10140; should mark as active current handler..  
+  
+  
+***  
+  
+[⇧](# "to the top") Class POWERING (27.10.2013)  
+---------------------------  
   
   
 ***  

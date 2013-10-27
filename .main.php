@@ -4,7 +4,7 @@ class main
 {
     static $todos = array
     (
-        'double error redirect' => "rewrite this thing to avoid the doppler effect",
+        'double error redirect' => "rewrite this ding to avoid the doppler effect",
         'get buffer effect' => "is file deletion really working? a better system?",
         'escort library' => "session by PHP and DB if webstore & memcache fail?",
         'memcache support' => "verify in method, if at least one mem-server works",
