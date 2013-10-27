@@ -6,6 +6,7 @@ class language
 {
 	static $todos = array
 	(
+	    'integrates ISO 639-1 codes' => "combine with html attributes check..", // http://www.w3schools.com/tags/ref_language_codes.asp
 		'automatic translation' => "it could be interessant to use pspell&gettext",
 	    'implement euristic interpret' => "integrate it in translate as fallback!",
 	);

@@ -107,7 +107,10 @@ class toolbox
 
 	static function parse($source)
 	{
-	    $output = file_get_contents($source);
+	    if (fe($source))
+	        $output = file_get_contents($source);
+	    else
+	        return false;
 
 	    if (substr_count(strtolower($source), ".csv"))
 	        return str_getcsv($output); // returns an array

@@ -93,6 +93,11 @@ de||Die benötigte Datei (%s) existiert scheibar nicht
 en||Required file (%s) not seems to exist
 it||Il file richiesto (%s) non pare esistere
 
+bad syntax to correct: %s
+de||Nicht erlaubte Syntax zu korrigieren: %s
+en||Not allowed syntax to correct: %s
+it||Sintassi non ammessa da correggere: %s
+
 documentation file "%s" not writable
 de||Dokumentationdatei "%s" kann nicht geschrieben werden
 en||Documentation file "%s" can not be (over)written ATM

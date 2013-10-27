@@ -10,17 +10,17 @@ class html
 {
     static $todos = array
     (
-        'newline/return after html tags' => "in order to save goat and cabbages",
         'script online loading' => "if != local, should have a lfb..",
         'ordered_list' => "fix numbers, falsed as visible in error 404",
         'over-components links' => "maybe automatic no-follow attribute (siloing)",
-        'allowed per-tag attributes' => "just enlarge private _tags with subarray",
         'custom class prefixes' => "should be generated from keywords (!) ..csss?",
+        'valid attributest' => "check classes string, register id + check",
     );
 
     static $tests = array();
 
     private $_tag = null;
+    private $_type = null;
     private $_attributes = array();
     private $_content = '';
 
@@ -51,17 +51,66 @@ class html
                 ),
             ),
             'br' => array(),
-            'img' => array(),
-            'link' => array(),
-                /*icon Favicon zum Dokument
-    stylesheet Stylesheet-Datei des Dokuments
-     nofollow & noreferrer not possible*/
-            'meta' => array(),
+            'img' => array
+            (
+                'alt' => true,
+                'src' => true,
+            ),
+            'link' => array
+            (
+                'href' => true,
+                'rel' => array
+                (
+                    'alternate', // links to an alternate version of the document (i.e. print page, translated or mirror)
+                    'author', // links to the author of the document
+                    'bookmark', // permanent URL used for bookmarking
+                    'chapter', // links to parent chapter of this document
+                    'copyright', // copyright information for linked document
+                    'help', // links to a help document
+                    'icon', // favicon for document
+                        'shortcut icon', // for historical reasons, to be deleted in the future..?
+                    'license', // links to copyright information for the document
+                    'next', // the next document in a selection
+                    'prefetch', // specifies that the target document should be cached
+                    'prev', // the previous document in a selection
+                    'search', // links to a search tool for the document
+                    'stylesheet', // style sheet file for document
+                    'tag', // a tag (keyword) for the current document
+                ),
+                'type' => array // for reference: http://www.iana.org/assignments/media-types
+                (
+                    'image/x-icon',
+                    'text/css',
+                ),
+            ),
+            'meta' => array
+            (
+                'charset' => 'UTF-8', // ..or see http://www.iana.org/assignments/character-sets/character-sets.xhtml
+                'content' => true,
+                'http-equiv' => array
+                (
+                    'content-type', // specifies the character encoding for the document
+                    'default-style', // specified the preferred style sheet to use (note: The value of the content attribute above must match the value of the title attribute on a link element in the same document, or it must match the value of the title attribute on a style element in the same document)
+                    'refresh', // defines a time interval for the document to refresh itself (discouraged as of W3C's content accessibility guidelnes)
+                ),
+                'name' => array
+                (
+                    'application-name',
+                    'author',
+                    'copyright',
+                    'description',
+                    'generator',
+                    'keywords',
+                    'robots',
+                    'viewport',
+                ),
+            ),
         ),
         'container' => array
         (
             'a' => array
             (
+                'href' => true,
                 'rel' => array
                 (
                     'alternate', // links to an alternate version of the document (i.e. print page, translated or mirror)
@@ -92,11 +141,26 @@ class html
             'li' => array(),
             'map' => array(),
             'ol' => array(),
-            'option' => array(),
+            'option' => array
+            (
+                'disabled' => 'disabled',
+                'selected' => 'selected',
+                'value' => true,
+            ),
             'p' => array(),
             'pre' => array(),
-            'script' => array(),
-            'select' => array(),
+            'script' => array
+            (
+                'src' => true,
+                'type' => array // for reference: http://www.iana.org/assignments/media-types
+                (
+                    'text/javascript', // this is default if no value specified
+                ),
+            ),
+            'select' => array
+            (
+                'onchange' => true,
+            ),
             'span' => array(),
             'ul' => array(),
         )
@@ -115,12 +179,12 @@ class html
         if ($this->_validate_tag())
         {
             $this->_html .= "<" . $this->_tag . "__ATTRIBUTES__";
-            if ($this->_is_single())
+            if ($this->_type == 'single')
                 $this->_html .= " /";
             else
             {
                 $this->_html .= ">";
-                if ($this->_is_container())
+                if ($this->_type == 'container')
                     $this->_html .= "__CONTENT__";
                 $this->_html .= "</" . $this->_tag;
             }
@@ -128,7 +192,7 @@ class html
 
             $this->_set_attributes($attributes);
 
-            if ($this->_is_container($this->_tag))
+            if ($this->_type == 'container')
                 $this->_set_content($content);
         }
 
@@ -136,21 +200,65 @@ class html
                                 $this->_tag);
     }
 
-    private function _is_single()
+    private function _is_tag_single()
     {
-        return array_key_exists($this->_tag,
-                                $this->_tags['single']);
+        if ($response = array_key_exists($this->_tag,
+                                         $this->_tags['single']))
+            $this->_type = 'single';
+
+        return $response;
     }
 
-    private function _is_container()
+    private function _is_tag_container()
     {
-        return array_key_exists($this->_tag,
-                                $this->_tags['container']);
+        if ($response = array_key_exists($this->_tag,
+                                         $this->_tags['container']))
+            $this->_type = 'container';
+
+        return $response;
+    }
+
+    private function _is_attribute_valid($attribute,
+                                         $value)
+    {
+        $core_attributes = array
+        (
+            'class' => true, // free text, not under control
+            'dir' => array // should be set automatic (trough class language?)
+            (
+                'ltr', // default, left-to-right text direction
+                'rtl', // right-to-left text direction
+                'auto', // let the browser figure out the text direction, based on the content (only recommended if the text direction is unknown)
+            ),
+            'id' => true, // text identifier, check for syntax?
+            'lang' => true, // should be set automatic (trough class language?)
+            // not really valid in schrimpisch.. 'style',
+            'title' => true, // WARNING, not really fully compatible..
+            'xml:lang' => true, // should be set automatic (trough class language?)
+        );
+
+        $valid_attributes = array_merge($core_attributes,
+                                        $this->_tags[$this->_type][$this->_tag]);
+
+        if (!empty($valid_attributes[$attribute]))
+        {
+            $tag_attributes = $valid_attributes[$attribute];
+
+            if (is_array($tag_attributes))
+                return in_array($value,
+                                $tag_attributes);
+            elseif (is_string($tag_attributes))
+                return ($value == $tag_attributes);
+            else
+                return true;
+        }
+        else
+            return false;
     }
 
     private function _validate_tag()
     {
-        return ($this->_is_single() || $this->_is_container());
+        return ($this->_is_tag_single() || $this->_is_tag_container());
     }
 
     private function _set_attributes($attributes)
@@ -161,15 +269,22 @@ class html
 
         foreach ($this->_attributes as $key => $value)
         {
-            $attributes .= " " . trim(strtolower($key)) . "=\"";
+            if ($this->_is_attribute_valid($key,
+                                           $value))
+            {
+                $attributes .= " " . trim(strtolower($key)) . "=\"";
 
-            if (is_array($value))
-                $attributes .= implode(" ",
-                                       $value);
+                if (is_array($value))
+                    $attributes .= implode(" ",
+                                           $value);
+                else
+                    $attributes .= $value;
+
+                $attributes .= "\"";
+            }
             else
-                $attributes .= $value;
-
-            $attributes .= "\"";
+                return bs(__CLASS__ . " " . CODE_ICON_ARROW . " " . $value . " | "
+                        . $key . " | " . $this->_tag . " (" . $this->_type . ")");
         }
 
         $this->_html = str_replace("__ATTRIBUTES__",
@@ -312,7 +427,7 @@ class html
                                  $title = '')
     {
         if (!fe($src))
-            return $main->launch_error_file_not_found($src);
+            return mf($src);
 
         $attributes = array
                       (
@@ -348,7 +463,7 @@ class html
         $placeholder = $rel . '_' . $href;
 
         if (!fe($href))
-            return main::launch_error_file_not_found($href);
+            return mf($href);
         elseif (!empty($href)
             && !in_array($placeholder, self::$_linked_files))
         {
@@ -444,7 +559,7 @@ class html
         $attributes['type'] = $type;
 
         if (!fe($src))
-            return main::launch_error_file_not_found($src);
+            return mf($src);
         elseif (!empty($src)
             && !in_array($src, self::$_loaded_scripts))
         {

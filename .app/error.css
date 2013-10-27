@@ -11,9 +11,15 @@ article, #article
 	width: auto;
 }
 
+body
+{
+	padding: 10px 0 0 10px;
+}
+
 h1
 {
 	color: #666;
+	margin-bottom: 10px;
 	animation: red_alert .75s ease-out infinite alternate;
 	-webkit-animation: red_alert .75s ease-out infinite alternate;
     -moz-animation: red_alert .75s ease-out infinite alternate;

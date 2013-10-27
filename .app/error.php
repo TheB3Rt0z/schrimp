@@ -98,9 +98,9 @@ class error extends controller
 		$this->_set_header(html::title(1,
                                        "Ooops!!! " . $this->get_title() . "!"));
 
-		$ending = !empty($this->_args[0])
+		$ending = (!empty($this->_args[0])
 		          ? $this->_translate('here') . ":"
-		          : $this->_translate('now') . "!";
+		          : $this->_translate('now') . "!");
 
 		$this->_set_section(html::title(2,
                                         $this->_translate('something not works')

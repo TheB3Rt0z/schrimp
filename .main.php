@@ -4,6 +4,8 @@ class main
 {
     static $todos = array
     (
+        'double error redirect' => "rewrite this thing to avoid the doppler effect",
+        'get buffer effect' => "is file deletion really working? a better system?",
         'escort library' => "session by PHP and DB if webstore & memcache fail?",
         'memcache support' => "verify in method, if at least one mem-server works",
         'css selectors' => "uniform to html-class render-methods (default style)",
@@ -11,12 +13,13 @@ class main
         'error launchers' => "should be moved to a library (navigator, toolbox)?",
         'no stealth mode' => "no uri interpretation + htaccess automatic creation",
         'set_htmls_from_controller' => "could we update here our sitemap.xml?",
+        'better css for error notifications' => "..and interface triggers style!",
     );
 
     static $tests = array();
 
+    private $_uri = false;
     private $_call = null;
-
     private $_path = '';
 
     var $controller = '';
@@ -53,10 +56,12 @@ class main
                               code::get_documentation());
         }
 
-        if (!empty($uri)) // using framework mode
+        if (!empty($uri)) { // using framework mode
+            $this->_uri = $uri;
             $this->_initialize(str_replace(_SET_LOCAL_PATH . "/",
                                            '',
                                            $uri));
+        }
     }
 
     private function _set_configuration($conf_name)
@@ -173,6 +178,11 @@ class main
         $this->_set_htmls_from_controller();
     }
 
+    function get_route()
+    {
+        return $this->_uri;
+    }
+
     function get_call()
     {
         return $this->_call;
@@ -269,11 +279,20 @@ class main
         return false; // just in case (somehow preferrable)
     }
 
-    static function launch_error_file_not_found($file)
+    static function trigger_error_missing_file($file)
     {
-        return le(tr('error',
-                     'required file (%s) not exists',
-                     $file));
+        return trigger_error(tr('error',
+                                'required file (%s) not exists',
+                                $file,
+                             E_USER_ERROR));
+    }
+
+    static function trigger_error_bad_syntax($infos)
+    {
+        return trigger_error(tr('error',
+                                'bad syntax to correct: %s',
+                                $infos),
+                             E_USER_WARNING);
     }
 
     static function set_buffer($buffer)
@@ -288,14 +307,18 @@ class main
         if ($delete)
             unlink(".buffer");
 
-        return $buffer;
+        return (!empty($buffer)
+               ? $buffer
+               : false);
     }
 
     static function show_backtrace()
     {
         ob_start();
             debug_print_backtrace();
-        main::set_buffer(str_replace("#", html::newline(), ob_get_clean()));
+        main::set_buffer(str_replace("#",
+                                     html::newline(),
+                                     ob_get_clean()));
 
         if ($_SERVER['REQUEST_URI'] != (_SET_LOCAL_PATH . "/error"))
             rt("error");
@@ -350,6 +373,26 @@ function rt($url = '')
 function le($msg)
 {
     return main::launch_error($msg);
+}
+
+/**
+ * triggers an error if a needed file is missing
+ * @param string $file
+ * @return boolean indicating notification success
+ */
+function mf($file)
+{
+    return main::trigger_error_missing_file($file);
+}
+
+/**
+ * triggers an error if bad syntax events occur
+ * @param string $msg
+ * @return boolean indicating notification success
+ */
+function bs($infos)
+{
+    return main::trigger_error_bad_syntax($infos);
 }
 
 /**
