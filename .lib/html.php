@@ -59,24 +59,35 @@ class html
             'link' => array
             (
                 'href' => true,
+                'hreflang' => true, // language code ISO 639-1, see http://www.w3schools.com/tags/ref_language_codes.asp
+                'media' => true, // specifies on what device the linked document will be displayed, see http://www.w3schools.com/tags/att_link_media.asp
                 'rel' => array
                 (
                     'alternate', // links to an alternate version of the document (i.e. print page, translated or mirror)
+                    // 'archives',
                     'author', // links to the author of the document
                     'bookmark', // permanent URL used for bookmarking
                     'chapter', // links to parent chapter of this document
                     'copyright', // copyright information for linked document
+                    //'external',
+                    //'first',
                     'help', // links to a help document
                     'icon', // favicon for document
                         'shortcut icon', // for historical reasons, to be deleted in the future..?
+                    //'last',
                     'license', // links to copyright information for the document
                     'next', // the next document in a selection
+                    //'nofollow', 'noreferrer', apparently not allowed..
+                    //'pingback',
                     'prefetch', // specifies that the target document should be cached
                     'prev', // the previous document in a selection
                     'search', // links to a search tool for the document
+                    //'sidebar',
                     'stylesheet', // style sheet file for document
                     'tag', // a tag (keyword) for the current document
+                    //'up',
                 ),
+                'sizes' => true, // HeightxWidth|any, specifies the size of the linked resource (nly for rel="icon")
                 'type' => array // for reference: http://www.iana.org/assignments/media-types
                 (
                     'image/x-icon',
