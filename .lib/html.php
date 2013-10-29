@@ -36,10 +36,13 @@ class html
                 'rel' => array // index? first? last? up? sidebar? archives? pingback?
                 (
                     'alternate', // links to an alternate version of the document (i.e. print page, translated or mirror)
+                    //'appendix', // refers to a document serving as an appendix in a collection of documents
                     'author', // links to the author of the document
                     'bookmark', // permanent URL used for bookmarking
                     'chapter', // links to parent chapter of this document
+                    //'contents', // refers to a document serving as a table of contents. Some user agents also support the synonym ToC (from "Table of Contents")
                     'copyright', // copyright information for linked document
+                    //'glossary', // refers to a document providing a list of terms and their definitions that pertain to the current document
                     'help', // links to a help document
                     'license', // links to copyright information for the document
                     'next', // the next document in a selection
@@ -48,6 +51,9 @@ class html
                     'prefetch', // specifies that the target document should be cached
                     'prev', // the previous document in a selection
                     'search', // links to a search tool for the document
+                    //'section', // refers to a document serving as a section in a collection of documents
+                    //'start', // refers to the first document in a collection of documents
+                    //'subsection', // refers to a document serving as a subsection in a collection of documents
                     'tag', // a tag (keyword) for the current document
                 ),
             ),
@@ -65,13 +71,15 @@ class html
                 'rel' => array
                 (
                     'alternate', // links to an alternate version of the document (i.e. print page, translated or mirror)
-                    // 'archives',
+                    //'archives',
+                    //'appendix', // refers to a document serving as an appendix in a collection of documents
                     'author', // links to the author of the document
-                    'bookmark', // permanent URL used for bookmarking
                     'chapter', // links to parent chapter of this document
+                    //'contents', // refers to a document serving as a table of contents. Some user agents also support the synonym ToC (from "Table of Contents")
                     'copyright', // copyright information for linked document
                     //'external',
                     //'first',
+                    //'glossary', // refers to a document providing a list of terms and their definitions that pertain to the current document
                     'help', // links to a help document
                     'icon', // favicon for document
                         'shortcut icon', // for historical reasons, to be deleted in the future..?
@@ -83,8 +91,11 @@ class html
                     'prefetch', // specifies that the target document should be cached
                     'prev', // the previous document in a selection
                     'search', // links to a search tool for the document
+                    //'section', // refers to a document serving as a section in a collection of documents
                     //'sidebar',
+                    //'start', // refers to the first document in a collection of documents
                     'stylesheet', // style sheet file for document
+                    //'subsection', // refers to a document serving as a subsection in a collection of documents
                     'tag', // a tag (keyword) for the current document
                     //'up',
                 ),
@@ -126,10 +137,13 @@ class html
                 'rel' => array
                 (
                     'alternate', // links to an alternate version of the document (i.e. print page, translated or mirror)
+                    //'appendix', // refers to a document serving as an appendix in a collection of documents
                     'author', // links to the author of the document
                     'bookmark', // permanent URL used for bookmarking
                     'chapter', // links to parent chapter of this document
+                    //'contents', // refers to a document serving as a table of contents. Some user agents also support the synonym ToC (from "Table of Contents")
                     'copyright', // copyright information for linked document
+                    //'glossary', // refers to a document providing a list of terms and their definitions that pertain to the current document
                     'help', // links to a help document
                     'license', // links to copyright information for the document
                     'next', // the next document in a selection
@@ -138,6 +152,9 @@ class html
                     'prefetch', // specifies that the target document should be cached
                     'prev', // the previous document in a selection
                     'search', // links to a search tool for the document
+                    //'section', // refers to a document serving as a section in a collection of documents
+                    //'start', // refers to the first document in a collection of documents
+                    //'subsection', // refers to a document serving as a subsection in a collection of documents
                     'tag', // a tag (keyword) for the current document
                 ),
             ),
