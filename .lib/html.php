@@ -195,6 +195,34 @@ class html
         )
     );
 
+    private $_core_attributes = array
+    (
+        'accesskey' => true, // specifies a shortcut key to activate/focus an element, ATM not compatible with opera
+        'class' => true, // free text, not under control
+        'dir' => array // should be set automatic (trough class language?)
+        (
+            'ltr', // default, left-to-right text direction
+            'rtl', // right-to-left text direction
+            'auto', // let the browser figure out the text direction, based on the content (only recommended if the text direction is unknown)
+        ),
+        'id' => true, // text identifier, the attribute's value must begin with a letter in the range A-Z or a-z and may be followed by letters (A-Za-z), digits (0-9), hyphens ("-"), underscores ("_"), colons (":"), and periods ("."); the value is case-sensitive
+        'lang' => true, // should be set automatic (trough class language?)
+        'onclick' => true, // the JavaScript of the value is executed when a pointing-device is used to 'click' on the element.
+        'ondblclick' => true, // the JavaScript of the value is executed when a pointing-device is used to 'double-click' on the element.
+        'onkeydown' => true, // the JavaScript of the value is executed when an element is in focus and a key on the keyboard is pressed down.
+        'onkeypress' => true, // the JavaScript of the value is executed when an element is in focus and a key on the keyboard is pressed down and released.
+        'onkeyup' => true, // the JavaScript of the value is executed when an element is in focus and a key on the keyboard is released.
+        'onmousedown' => true, // the JavaScript of the value is executed when the button on a pointing-device is pressed down while the cursor is over the element.
+        'onmousemove' => true, // the JavaScript of the value is executed when the cursor is moved over an element.
+        'onmouseover' => true, // the JavaScript of the value is executed when the cursor is moved onto an element.
+        'onmouseout' => true, // the JavaScript of the value is executed when the cursor is moved off an element.
+        'onmouseup' => true, // the JavaScript of the value is executed when the button on a pointing-device is released while the cursor is over the element.
+        // not really valid in schrimpisch.. 'style',
+        'tabindex' => true, // specifies the tabbing order of an element
+        'title' => true, // WARNING, not really fully compatible..
+        'xml:lang' => true, // should be set automatic (trough class language?)
+    );
+
     private static $_linked_files = array();
 
     private static $_loaded_scripts = array();
@@ -250,35 +278,7 @@ class html
     private function _is_attribute_valid($attribute,
                                          $value)
     {
-        $core_attributes = array
-        (
-            'accesskey' => true, // specifies a shortcut key to activate/focus an element, ATM not compatible with opera
-            'class' => true, // free text, not under control
-            'dir' => array // should be set automatic (trough class language?)
-            (
-                'ltr', // default, left-to-right text direction
-                'rtl', // right-to-left text direction
-                'auto', // let the browser figure out the text direction, based on the content (only recommended if the text direction is unknown)
-            ),
-            'id' => true, // text identifier, the attribute's value must begin with a letter in the range A-Z or a-z and may be followed by letters (A-Za-z), digits (0-9), hyphens ("-"), underscores ("_"), colons (":"), and periods ("."); the value is case-sensitive
-            'lang' => true, // should be set automatic (trough class language?)
-            'onclick' => true, // the JavaScript of the value is executed when a pointing-device is used to 'click' on the element.
-            'ondblclick' => true, // the JavaScript of the value is executed when a pointing-device is used to 'double-click' on the element.
-            'onkeydown' => true, // the JavaScript of the value is executed when an element is in focus and a key on the keyboard is pressed down.
-            'onkeypress' => true, // the JavaScript of the value is executed when an element is in focus and a key on the keyboard is pressed down and released.
-            'onkeyup' => true, // the JavaScript of the value is executed when an element is in focus and a key on the keyboard is released.
-            'onmousedown' => true, // the JavaScript of the value is executed when the button on a pointing-device is pressed down while the cursor is over the element.
-            'onmousemove' => true, // the JavaScript of the value is executed when the cursor is moved over an element.
-            'onmouseover' => true, // the JavaScript of the value is executed when the cursor is moved onto an element.
-            'onmouseout' => true, // the JavaScript of the value is executed when the cursor is moved off an element.
-            'onmouseup' => true, // the JavaScript of the value is executed when the button on a pointing-device is released while the cursor is over the element.
-            // not really valid in schrimpisch.. 'style',
-            'tabindex' => true, // specifies the tabbing order of an element
-            'title' => true, // WARNING, not really fully compatible..
-            'xml:lang' => true, // should be set automatic (trough class language?)
-        );
-
-        $valid_attributes = array_merge($core_attributes,
+        $valid_attributes = array_merge($this->_core_attributes,
                                         $this->_tags[$this->_type][$this->_tag]);
 
         if (!empty($valid_attributes[$attribute]))
