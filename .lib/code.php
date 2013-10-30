@@ -294,11 +294,12 @@ class code
     }
 
     private static function _get_class_codedata($code,
-                                                &$real_length,
-                                                $start_line)
+                                                $real_length,
+                                                $start_line,
+                                                $data = array())
     {
         $data['length_warning'] = 0;
-
+        $data['real_length'] = $real_length;
         $data['fixs'] = '';
 
         foreach ($code as $key => $code_line)
@@ -307,7 +308,7 @@ class code
                 $data['length_warning']++;
 
             if (trim($code_line) == '')
-                $real_length--;
+                $data['real_length']--;
 
             foreach (self::$_form_counters as $counter)
                 if (substr_count($code_line, rawurldecode($counter)))
