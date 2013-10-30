@@ -41,7 +41,7 @@ abstract class controller
 		$this->initialize();
 	}
 
-	protected abstract function initialize();
+	protected abstract function _handler(); // assuring that at least base handler will be defined
 
 	protected function _set_title($html)
 	{
@@ -83,6 +83,8 @@ abstract class controller
 		return tr(get_class($this),
 		          $placeholder);
 	}
+
+	abstract function initialize();
 
 	function get_title()
 	{
