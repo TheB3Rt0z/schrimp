@@ -23,13 +23,13 @@
 
 require_once ".main.php"; // loading main application
 
-$main = new main($_SERVER['REQUEST_URI']);
+$main = new schrimp\main($_SERVER['REQUEST_URI']);
 
 ob_start();
 
 ?><!DOCTYPE html>
     <head>
-        <?php echo html_doc::get_head_metatags() . "\n" ?>
+        <?php echo schrimp\html_doc::get_head_metatags() . "\n" ?>
 
         <title>
             <?php
@@ -39,55 +39,55 @@ ob_start();
             ?>
         </title>
 
-        <?php echo html_doc::get_head_favicon($main->controller) . "\n" ?>
+        <?php echo schrimp\html_doc::get_head_favicon($main->controller) . "\n" ?>
 
-        <?php echo html_doc::get_head_links($main->get_fullpath()) . "\n" ?>
+        <?php echo schrimp\html_doc::get_head_links($main->get_fullpath()) . "\n" ?>
     </head>
 
     <body>
         <header>
-            <?php echo html::divisor($main->header,
-                                     null,
-                                     'header') . "\n" ?>
+            <?php echo schrimp\html::divisor($main->header,
+                                             null,
+                                             'header') . "\n" ?>
         </header>
 
         <nav>
-            <?php echo html::divisor($main->nav,
-                                     null,
-                                     'nav') . "\n" ?>
+            <?php echo schrimp\html::divisor($main->nav,
+                                             null,
+                                             'nav') . "\n" ?>
         </nav>
 
         <section>
-            <?php echo html::divisor($main->section,
-                                     null,
-                                     'section') . "\n" ?>
+            <?php echo schrimp\html::divisor($main->section,
+                                             null,
+                                             'section') . "\n" ?>
 
             <article>
-                <?php echo html::divisor($main->article,
-                                         null,
-                                         'article') . "\n" ?>
+                <?php echo schrimp\html::divisor($main->article,
+                                                 null,
+                                                 'article') . "\n" ?>
             </article>
 
             <aside>
-                <?php echo html::divisor($main->aside,
-                                         null,
-                                         'aside') . "\n" ?>
+                <?php echo schrimp\html::divisor($main->aside,
+                                                 null,
+                                                 'aside') . "\n" ?>
             </aside>
         </section>
 
         <footer>
-            <?php echo html::divisor($main->footer,
-                                     null,
-                                     'footer') . "\n" ?>
+            <?php echo schrimp\html::divisor($main->footer,
+                                             null,
+                                             'footer') . "\n" ?>
         </footer>
 
-        <?php echo html::clearfix() . "\n" ?>
+        <?php echo schrimp\html::clearfix() . "\n" ?>
 
         <?php
         if (_SET_ADVANCED_INTERFACE)
-            echo html::divisor('',
-                               null,
-                               'loading') . "\n"
+            echo schrimp\html::divisor('',
+                                       null,
+                                       'loading') . "\n"
         ?>
     </body>
 </html><?php
@@ -104,5 +104,3 @@ if (!_SET_DEVELOPMENT_MODE)
                      ob_get_clean());
 else
     echo ob_get_clean();
-
-?>

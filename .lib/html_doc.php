@@ -1,4 +1,4 @@
-<?php
+<?php namespace schrimp;
 
 class html_doc extends html
 {

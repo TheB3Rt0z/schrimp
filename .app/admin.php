@@ -1,4 +1,4 @@
-<?php
+<?php namespace schrimp;
 
 class admin extends controller
 {
@@ -17,5 +17,3 @@ class admin extends controller
 		$this->_set_nav(html::box(navigator::get_list()));
 	}
 }
-
-?>

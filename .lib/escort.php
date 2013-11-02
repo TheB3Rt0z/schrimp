@@ -1,4 +1,4 @@
-<?php
+<?php namespace schrimp;
 
 if (!session_id())
     session_start();
@@ -46,5 +46,3 @@ class escort
 	    return $objects;
 	}
 }
-
-?>

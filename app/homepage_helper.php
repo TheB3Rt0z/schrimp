@@ -6,5 +6,3 @@ class homepage_helper
 
     static $tests = array();
 }
-
-?>

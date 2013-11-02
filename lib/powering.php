@@ -6,5 +6,3 @@ class powering
 
     static $tests = array();
 }
-
-?>

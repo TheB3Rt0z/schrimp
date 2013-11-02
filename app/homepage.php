@@ -1,6 +1,6 @@
 <?php
 
-class homepage extends controller
+class homepage extends schrimp\controller
 {
     static $todos = array();
 
@@ -17,5 +17,3 @@ class homepage extends controller
 		$this->_set_nav(html::box(navigator::get_list()));
 	}
 }
-
-?>

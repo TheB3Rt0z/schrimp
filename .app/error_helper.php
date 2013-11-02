@@ -1,4 +1,4 @@
-<?php
+<?php namespace schrimp;
 
 class error_helper
 {
@@ -6,5 +6,3 @@ class error_helper
 
     static $tests = array();
 }
-
-?>

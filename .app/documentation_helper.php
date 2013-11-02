@@ -1,4 +1,4 @@
-<?php
+<?php namespace schrimp;
 
 class documentation_helper
 {
@@ -6,11 +6,9 @@ class documentation_helper
 
     static $tests = array();
 
-    function get_method_code(reflectionMethod $method)
+    function get_method_code(\ReflectionMethod $method)
     {
         return html::codeblock(code::get_method_code($method,
                                                      true));
     }
 }
-
-?>

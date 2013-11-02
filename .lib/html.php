@@ -1,4 +1,4 @@
-<?php
+<?php namespace schrimp;
 
 define('HTML_BREADCRUMB_SEPARATOR', " &rsaquo; ");
 define('HTML_ARROW_LEFT', "&laquo;");
@@ -831,5 +831,3 @@ class html
         }
     }
 }
-
-?>

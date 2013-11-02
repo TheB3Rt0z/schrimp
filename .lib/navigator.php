@@ -1,4 +1,4 @@
-<?php
+<?php namespace schrimp;
 
 class navigator
 {
@@ -39,7 +39,7 @@ class navigator
                                   '',
                                   $filename);
 
-            $this->_add_branch($branch); // addition performed only if visible
+            $this->_add_branch(__NAMESPACE__ . "\\" . $branch); // addition performed only if visible
         }
     }
 
@@ -80,9 +80,9 @@ class navigator
 
             $sub =& $this->_structure[_SET_HOME_COMPONENT]['sub'][$ctrl_name];
 
-            $rc = new ReflectionClass($ctrl_name);
-            foreach ($rc->getMethods(ReflectionMethod::IS_PRIVATE
-                     | !ReflectionMethod::IS_PROTECTED) as $object)
+            $rc = new \ReflectionClass($ctrl_name);
+            foreach ($rc->getMethods(\ReflectionMethod::IS_PRIVATE
+                     | !\ReflectionMethod::IS_PROTECTED) as $object)
             {
                 $returns = $this->_add_handlers($ctrl_name,
                                                 $object,
@@ -392,5 +392,3 @@ class navigator
         return html::array_to_list($sub_structure, 'ol');
     }
 }
-
-?>

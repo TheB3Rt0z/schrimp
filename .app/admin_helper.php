@@ -1,4 +1,4 @@
-<?php
+<?php namespace schrimp;
 
 class admin_helper
 {
@@ -6,5 +6,3 @@ class admin_helper
 
     static $tests = array();
 }
-
-?>

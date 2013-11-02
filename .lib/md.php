@@ -1,4 +1,4 @@
-<?php
+<?php namespace schrimp;
 
 define('MD_NEWLINE_SEQUENCE', "  \n"); // markdown-style new line with br conversion
 
@@ -236,5 +236,3 @@ class md
         }
     }
 }
-
-?>

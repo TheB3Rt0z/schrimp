@@ -6,5 +6,3 @@ class power_helper
 
     static $tests = array();
 }
-
-?>

@@ -1,4 +1,4 @@
-<?php
+<?php namespace schrimp;
 
 define('DB_TABLE_PREFIX', '');
 
@@ -81,7 +81,7 @@ class db
         }
 	}
 
-	private function _process_mysql_result(mysqli_result $result)
+	private function _process_mysql_result(\mysqli_result $result)
 	{
 	    if (empty($result->num_rows))
             return false;
@@ -141,7 +141,4 @@ class db
 
         return $self->_query($query);
 	}
-
 }
-
-?>

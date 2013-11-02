@@ -1,4 +1,4 @@
-<?php
+<?php namespace schrimp;
 
 define('LANGUAGE_FALLBACK_LANG', "en");
 
@@ -122,7 +122,5 @@ class language
 function tr($component,
 	        $marker)
 {
-	return call_user_func_array('language::translate', func_get_args()); // quick-alias
+	return call_user_func_array('schrimp\language::translate', func_get_args()); // quick-alias
 }
-
-?>

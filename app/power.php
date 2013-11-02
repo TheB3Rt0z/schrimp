@@ -1,6 +1,9 @@
 <?php
 
-class power extends controller
+use schrimp\html as html;
+use schrimp\navigator as navigator;
+
+class power extends schrimp\controller
 {
     static $todos = array
     (
@@ -21,5 +24,3 @@ class power extends controller
 		$this->_set_nav(html::box(navigator::get_list()));
 	}
 }
-
-?>

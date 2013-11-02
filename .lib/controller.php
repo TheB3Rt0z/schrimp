@@ -1,4 +1,4 @@
-<?php
+<?php namespace schrimp;
 
 abstract class controller
 {
@@ -128,5 +128,3 @@ abstract class controller
 		return $this->_footer;
 	}
 }
-
-?>

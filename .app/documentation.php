@@ -1,4 +1,4 @@
-<?php
+<?php namespace schrimp;
 
 class documentation extends controller
 {
@@ -47,5 +47,3 @@ class documentation extends controller
 		                . $this->_translate(__FUNCTION__));
 	}
 }
-
-?>

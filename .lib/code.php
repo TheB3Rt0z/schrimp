@@ -1,4 +1,4 @@
-<?php
+<?php namespace schrimp;
 
 define('CODE_DATE_FORMAT', "d.m.Y");
 define('CODE_ICON_ARROW', "&#10140;");
@@ -42,6 +42,9 @@ class code
         "array(%27", // it means '
             "array(%20%27",
             "array(%20%20%27",
+        "array(%24", // it means $
+            "array(%20%24",
+            "array(%20%20%24",
         "array(\n",
             "array(%20\n",
             "array(%20%20\n",
@@ -180,7 +183,7 @@ class code
              . ($class_start + 2 + $class_line) . "**" . MD_NEWLINE_SEQUENCE;
     }
 
-    private static function _get_class_constants(reflectionClass $class)
+    private static function _get_class_constants(\ReflectionClass $class)
     {
         $class_constants = '';
 
@@ -192,7 +195,7 @@ class code
         return $class_constants;
     }
 
-    private static function _get_class_reference(reflectionClass $class)
+    private static function _get_class_reference(\ReflectionClass $class)
     {
         $reference = '';
 
@@ -222,7 +225,7 @@ class code
         return $reference;
     }
 
-    private static function _get_class_todos(reflectionClass $class)
+    private static function _get_class_todos(\ReflectionClass $class)
     {
         $class_todos = '';
 
@@ -233,7 +236,7 @@ class code
         return $class_todos;
     }
 
-    private static function _get_class_tests(reflectionClass $class)
+    private static function _get_class_tests(\ReflectionClass $class)
     {
         $class_tests = '';
 
@@ -336,7 +339,7 @@ class code
         foreach ($functional_code->getParameters() as $parameter)
         {
             $class = $parameter->getClass();
-            $parameters[] = ($class ? $class->getName() . " " : '')
+            $parameters[] = (!empty($class) ? $class->getName() . " " : '')
                           . "$" . $parameter->getName()
                           . ($parameter->isOptional()
                             ? " = " . fm($parameter->getDefaultValue())
@@ -404,7 +407,7 @@ class code
         $user_functions = self::get_functions_list();
         foreach ($user_functions as $function)
         {
-            $function = new ReflectionFunction($function);
+            $function = new \ReflectionFunction($function);
 
             $parameters = self::_list_method_parameters($function);
 
@@ -445,7 +448,7 @@ class code
         return $todos . MD_NEWLINE_SEQUENCE;
     }
 
-    private static function _get_methods_information(reflectionMethod $method)
+    private static function _get_methods_information(\ReflectionMethod $method)
     {
         extract(self::analyse_method($method)); // generates required variables
 
@@ -479,7 +482,7 @@ class code
                                     . $class . "-" . $name) . $infos;
     }
 
-    private static function _get_class_information(reflectionClass $class)
+    private static function _get_class_information(\ReflectionClass $class)
     {
         extract(self::get_class_data($class));
 
@@ -519,7 +522,7 @@ class code
         asort($declared_classes);
 
         foreach ($declared_classes as $class)
-            if (($class = new ReflectionClass($class)) // name converted to reflection class
+            if (($class = new \ReflectionClass($class)) // name converted to reflection class
                 && $class->isUserDefined()) // this block should be under _register_class_information (return)
                 $classes .= md::to_the_top() . " "
                           . self::_get_class_information($class)
@@ -528,7 +531,7 @@ class code
         return $classes . MD_NEWLINE_SEQUENCE;
     }
 
-    private static function _get_component_information(ReflectionClass $class)
+    private static function _get_component_information(\ReflectionClass $class)
     {
         extract(self::get_class_data($class));
 
@@ -570,17 +573,19 @@ class code
             if (!ld(_SET_APPLICATION_PATH . $component . ".php"))
                 ld(_SET_APPLICATION_PUBLICPATH . $component . ".php");
 
-            $component_class= new ReflectionClass($component);
+            $component_class = new \ReflectionClass((class_exists($component)
+                                                    ? $component
+                                                    : 'schrimp\\' . $component));
             $components .= md::to_the_top() . " "
                          . self::_get_component_information($component_class);
 
             $helper = $component . "_helper";
             if (ld(_SET_APPLICATION_PATH . $helper . ".php")
-                && $helper_class = new ReflectionClass($helper))
+                && $helper_class = new \ReflectionClass('schrimp\\' . $helper))
                 $components .= md::to_the_top() . " "
                              . self::_get_component_information($helper_class);
             elseif (ld(_SET_APPLICATION_PUBLICPATH . $helper . ".php")
-                && $helper_class = new ReflectionClass($helper))
+                && $helper_class = new \ReflectionClass($helper))
                 $components .= md::to_the_top() . " "
                              . self::_get_component_information($helper_class);
 
@@ -658,8 +663,8 @@ class code
     {
         $libraries = array
                      (
-                         'main' => filemtime(".main.php"),
-                     ); // hardcoded? mmm..
+                         'main' => filemtime(".main.php"), // hardcoded? mmm..
+                     );
 
         $substitutions = array
         (
@@ -682,8 +687,12 @@ class code
 
         ksort($libraries);
 
-        if (!empty($libraries[$exclude]))
+        if (is_string($exclude) && !empty($libraries[$exclude]))
             unset($libraries[$exclude]);
+        elseif (is_array($exclude))
+            foreach ($exclude as $class)
+                if (!empty($libraries[$class]))
+                    unset($libraries[$class]);
 
         return $libraries;
     }
@@ -716,14 +725,16 @@ class code
         return $components;
     }
 
-    static function get_class_dependencies(reflectionClass $class)
+    static function get_class_dependencies(\ReflectionClass $class)
     {
         $dependencies = array(); // calculation is imprecise..
 
         foreach (self::get_libraries_list($class->name) as $key => $value)
             $dependencies[$key] = 0;
         if ($parent = $class->getParentClass()) // includes extended class if available
-            $dependencies[$parent->name]++;
+            $dependencies[str_replace('schrimp\\',
+                                      '',
+                                      $parent->name)]++;
 
         foreach (file($class->getFileName()) as $code_line)
             foreach ($dependencies as $key => $value)
@@ -750,7 +761,7 @@ class code
             return null;
     }
 
-    static function get_class_data(reflectionClass $class)
+    static function get_class_data(\ReflectionClass $class)
     {
         $data['header'] = "Class " . strtoupper($class->name)
                         . " (" . date(CODE_DATE_FORMAT,
@@ -781,14 +792,14 @@ class code
                                                      $class->getStartLine()));
     }
 
-    static function get_class_cis(reflectionClass $class)
+    static function get_class_cis(\ReflectionClass $class)
     {
-        $class_properties = $class->getProperties(ReflectionProperty::IS_PUBLIC);
+        $class_properties = $class->getProperties(\ReflectionProperty::IS_PUBLIC);
         foreach ($class_properties as $key => $property)
             if ($property->class != $class->name)
                 unset($class_properties[$key]);
 
-        $class_methods = $class->getMethods(ReflectionMethod::IS_PUBLIC);
+        $class_methods = $class->getMethods(\ReflectionMethod::IS_PUBLIC);
         foreach ($class_methods as $key => $method)
             if ($method->class != $class->name)
                 unset($class_methods[$key]);
@@ -796,7 +807,7 @@ class code
         return count($class_properties) + count($class_methods);
     }
 
-    static function get_method_status(reflectionMethod $method)
+    static function get_method_status(\ReflectionMethod $method)
     {
         return ($method->isConstructor() ? "C" : '')
              . ($method->isPrivate() ? "Pri" : '')
@@ -807,7 +818,7 @@ class code
              . ($method->isFinal() ? "F" : ''); // last 2 should not be used together..
     }
 
-    static function get_method_code(reflectionMethod $method,
+    static function get_method_code(\ReflectionMethod $method,
                                     $highlight = false)
     {
         $parameters = self::_list_method_parameters($method);
@@ -837,7 +848,7 @@ class code
             );
     }
 
-    static function analyse_method(reflectionMethod $method)
+    static function analyse_method(\ReflectionMethod $method)
     {
         extract(self::get_method_code($method));
 
@@ -906,5 +917,3 @@ class code
               . md::text(_STR_COPYRIGHT_SIGNATURE);
     }
 }
-
-?>

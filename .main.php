@@ -1,4 +1,4 @@
-<?php
+<?php namespace schrimp;
 
 class main
 {
@@ -172,8 +172,9 @@ class main
         foreach (glob($this->_path . $this->controller . "_*.php") as $filename)
             ld($filename);
 
-        $this->_call = new $this->controller($this->action,
-                                             $this->args);
+        $controller = 'schrimp\\' . $this->controller;
+        $this->_call = new $controller($this->action,
+                                       $this->args);
 
         $this->_set_htmls_from_controller();
     }
@@ -403,5 +404,3 @@ function sb()
 {
     main::show_backtrace();
 }
-
-?>

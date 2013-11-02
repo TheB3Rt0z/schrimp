@@ -1,4 +1,4 @@
-<?php
+<?php namespace schrimp;
 
 class control extends controller
 {
@@ -238,5 +238,3 @@ class control extends controller
             $this->_set_article(html::highbox($output));
 	}
 }
-
-?>

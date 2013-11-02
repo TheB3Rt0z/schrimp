@@ -1,4 +1,4 @@
-<?php
+<?php namespace schrimp;
 
 define('_SQL_METAS_DEFINITION', "ID INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
                                  UKEY VARCHAR(32) NOT NULL,
@@ -180,5 +180,3 @@ class db_object extends db
         return $object;
     }
 }
-
-?>

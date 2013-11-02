@@ -1,4 +1,4 @@
-<?php
+<?php namespace schrimp;
 
 class error extends controller
 {
@@ -111,5 +111,3 @@ class error extends controller
 			                                urldecode($this->_args[0])));
 	}
 }
-
-?>

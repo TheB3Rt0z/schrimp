@@ -1,4 +1,4 @@
-<?php
+<?php namespace schrimp;
 
 class toolbox
 {
@@ -69,7 +69,7 @@ class toolbox
 
 	static function fulltest() // only for libraries
 	{
-	    $tests = '.lib/' . __CLASS__ . '.tsts';
+	    $tests = '.lib/toolbox.tsts';
 	    eval("\$results = array
 	                      (
 	                          " . pr($tests) . "
@@ -78,17 +78,20 @@ class toolbox
 
 	    foreach (code::get_libraries_list() as $key => $value)
 	    {
-	        $class = new ReflectionClass($key);
+	        $fullkey = (class_exists($key)
+	                   ? $key
+	                   : 'schrimp\\' . $key);
+	        $class = new \ReflectionClass($fullkey);
 	        $tests = $class->getStaticPropertyValue('tests');
 	        foreach ($tests as $subkey => $values)
 	        {
-                $result = call_user_func_array(array($key, $values['method']),
+                $result = call_user_func_array(array($fullkey, $values['method']),
 			                                   $values['parameters']);
 
                 $answer = $results[$key][$subkey];
 	            if ($result !== $answer)
 	            {
-	                vd($values['error'] . ": " . $result . " vs " . $answer);
+	                vd($values['error'] . ": " . $result . " vs " . $answer); // ups..
 	                $check = false;
 	            }
 	        }
@@ -150,5 +153,3 @@ function pr($source)
 {
 	return toolbox::parse($source);
 }
-
-?>

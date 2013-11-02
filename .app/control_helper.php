@@ -1,4 +1,4 @@
-<?php
+<?php namespace schrimp;
 
 class control_helper
 {
@@ -84,5 +84,3 @@ class control_helper
         }
     }
 }
-
-?>

@@ -1,4 +1,4 @@
-<?php
+<?php namespace schrimp;
 
 class html_form extends html
 {
@@ -74,5 +74,3 @@ class html_form extends html
                              $attributes);
     }
 }
-
-?>
