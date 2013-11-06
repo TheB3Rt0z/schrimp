@@ -8,6 +8,7 @@ class code
 {
     static $todos = array
     (
+        'namespace revolution' => "remove schrimp\ notation + check github wiki",
         'get_class_dependencies' => "too inaccurate, see navigator-controller",
         'static files form' => "check backend&component css files + schrimp_*.js",
         'test list in documentation footer' => "see scaffold method for infos",

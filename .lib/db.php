@@ -18,7 +18,7 @@ class db
 {
 	static $todos = array
 	(
-	    '_traits table specs' => "ID, TYPE, UKEY, date_created/updated, schrimp_version",
+	    '_traits table specs' => "ID, TYPE, UKEY, date_created/updated, schrimp_v",
 	    'check table engines' => "fix engine standard for (all?) database tables",
 	    'query should return values lists?' => "check weight objects vs arrays..",
 	);

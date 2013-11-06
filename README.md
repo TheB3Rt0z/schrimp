@@ -6,9 +6,9 @@ Table of contents
   
 [General reference](#general-reference-- "")  
 [Library powering](#-class-powering-06112013-- "") &#10029;&#10029;&#10029;  (root/lib/powering.php, Len: 7/8, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library schrimp\code](#-class-schrimp\code-02112013-- "") &#10029;&#10029;&#10029;  (root/.lib/code.php, Len: 774/910, CIS: 15 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  3 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
+[Library schrimp\code](#-class-schrimp\code-06112013-- "") &#10029;&#10029;&#10029;&#10029;  (root/.lib/code.php, Len: 775/911, CIS: 15 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  3 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
 [Library schrimp\controller](#-class-schrimp\controller-31102013-- "") (root/.lib/controller.php, Len: 96/125, CIS: 11 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library schrimp\db](#-class-schrimp\db-06112013-- "") &#10029;&#10029;&#10029;  (root/.lib/db.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "1 too long line(s) found!") Len: 106/126, CIS: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library schrimp\db](#-class-schrimp\db-06112013-- "") &#10029;&#10029;&#10029;  (root/.lib/db.php, Len: 106/126, CIS: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- schrimp\db_object](#-class-schrimp\db_object-31102013-- "") &#10029;&#10029;&#10029;  (root/.lib/db_object.php, Len: 118/146, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library schrimp\escort](#-class-schrimp\escort-31102013-- "") (root/.lib/escort.php, Len: 32/40, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library schrimp\html](#-class-schrimp\html-31102013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (root/.lib/html.php, Len: 704/822, CIS: 23 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -125,7 +125,7 @@ General reference
   
 ***  
   
-[⇧](# "to the top") Class SCHRIMP\CODE (02.11.2013)  
+[⇧](# "to the top") Class SCHRIMP\CODE (06.11.2013)  
 -------------------------------  
   
 **CODE REFERENCE:**  
@@ -175,6 +175,7 @@ Uses: **main**, **md**, **toolbox**
   
 **TODOS:**  
   
+- **namespace revolution** &#10140; remove schrimp\ notation + check github wiki  
 - **get_class_dependencies** &#10140; too inaccurate, see navigator-controller  
 - **static files form** &#10140; check backend&component css files + schrimp_*.js  
 - **test list in documentation footer** &#10140; see scaffold method for infos  
@@ -235,7 +236,7 @@ Uses: **escort**
   
 **TODOS:**  
   
-- **_traits table specs** &#10140; ID, TYPE, UKEY, date_created/updated, schrimp_version  
+- **_traits table specs** &#10140; ID, TYPE, UKEY, date_created/updated, schrimp_v  
 - **check table engines** &#10140; fix engine standard for (all?) database tables  
 - **query should return values lists?** &#10140; check weight objects vs arrays..  
   
