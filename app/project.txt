@@ -1,0 +1,9 @@
+COMPONENT VISIBLE NAME
+de||Projekt-Weber
+en||Project Composer
+it||Tessi-Progetti
+
+_handler_application_project
+de||Projekt-Weber
+en||Project Weaver
+it||Tessi-Progetti

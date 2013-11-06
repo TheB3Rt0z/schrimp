@@ -39,7 +39,7 @@ class navigator
                                   '',
                                   $filename);
 
-            $this->_add_branch(__NAMESPACE__ . "\\" . $branch); // addition performed only if visible
+            $this->_add_branch($branch); // addition performed only if visible
         }
     }
 
@@ -70,7 +70,8 @@ class navigator
 
     private function _add_branch($ctrl_name)
     {
-        if ($ctrl_name::VISIBLE_IN_NAVIGATION)
+        $full_ctrl_name = 'schrimp\\' . $ctrl_name;
+        if ($full_ctrl_name::VISIBLE_IN_NAVIGATION)
         {
             $this->_structure[_SET_HOME_COMPONENT]['sub'][$ctrl_name] = array
             (
@@ -80,7 +81,7 @@ class navigator
 
             $sub =& $this->_structure[_SET_HOME_COMPONENT]['sub'][$ctrl_name];
 
-            $rc = new \ReflectionClass($ctrl_name);
+            $rc = new \ReflectionClass($full_ctrl_name);
             foreach ($rc->getMethods(\ReflectionMethod::IS_PRIVATE
                      | !\ReflectionMethod::IS_PROTECTED) as $object)
             {

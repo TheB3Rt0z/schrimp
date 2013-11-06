@@ -42,9 +42,9 @@ class code
         "array(%27", // it means '
             "array(%20%27",
             "array(%20%20%27",
-        "array(%24", // it means $
-            "array(%20%24",
-            "array(%20%20%24",
+        "%20array(%24", // it means $
+            "%20array(%20%24",
+            "%20array(%20%20%24",
         "array(\n",
             "array(%20\n",
             "array(%20%20\n",
