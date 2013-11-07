@@ -80,7 +80,9 @@ abstract class controller
 
 	protected function _translate($placeholder)
 	{
-		return tr(get_class($this),
+		return tr(str_replace('schrimp\\',
+		                      '',
+		                      get_class($this)),
 		          $placeholder);
 	}
 

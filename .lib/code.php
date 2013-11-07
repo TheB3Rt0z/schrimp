@@ -482,7 +482,9 @@ class code
 
         return "- **" . md::hyperlink($method->getName(),
                                       SET_GITHUB_WIKIPATH
-                                    . $class . "-" . $name) . $infos;
+                                    . str_replace(self::_SET_NS_PREFIX,
+                                                  '',
+                                                  $class) . "-" . $name) . $infos;
     }
 
     private static function _get_class_information(\ReflectionClass $class)
@@ -524,7 +526,16 @@ class code
     {
         $declared_classes = get_declared_classes();
 
-        asort($declared_classes);
+        usort($declared_classes, function($a, $b)
+                                 {
+                                     return str_replace(code::_SET_NS_PREFIX,
+                                                        '',
+                                                        $a)
+                                            >
+                                            str_replace(code::_SET_NS_PREFIX,
+                                                        '',
+                                                        $b);
+                                 });
 
         foreach ($declared_classes as $class)
             if (($class = new \ReflectionClass($class)) // name converted to reflection class
@@ -589,7 +600,8 @@ class code
 
             $helper = $component . "_helper";
             if (ld(_SET_APPLICATION_PATH . $helper . ".php")
-                && $helper_class = new \ReflectionClass(self::_SET_NS_PREFIX . $helper))
+                && $helper_class = new \ReflectionClass(self::_SET_NS_PREFIX
+                                                      . $helper))
                 $components .= md::to_the_top() . " "
                              . self::_get_component_information($helper_class);
             elseif (ld(_SET_APPLICATION_PUBLICPATH . $helper . ".php")
