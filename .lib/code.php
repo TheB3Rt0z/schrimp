@@ -8,13 +8,15 @@ class code
 {
     static $todos = array
     (
-        'namespace revolution' => "remove schrimp\ notation + check github wiki",
+        //'namespace revolution' => "remove schrimp\ notation + check github wiki",
         'get_class_dependencies' => "too inaccurate, see navigator-controller",
         'static files form' => "check backend&component css files + schrimp_*.js",
         'test list in documentation footer' => "see scaffold method for infos",
     );
 
     static $tests = array();
+
+    const _SET_NS_PREFIX = 'schrimp\\';
 
     const _STR_SUMMARY_BLUE = "Method(s) with too many parameters?";
     const _STR_SUMMARY_YELLOW = "Attention! Some yellow alert(s)!";
@@ -492,7 +494,9 @@ class code
             'header' => $header,
             'label' => (substr_count($class->getName(), "_")
                        ? "-"
-                       : "Library") . " " . $class->getName(),
+                       : "Library") . " " . str_replace(self::_SET_NS_PREFIX,
+                                                       '',
+                                                       $class->getName()),
             'path' => $class_path,
             'length_warning' => $length_warning,
             'real_length' => $real_length,
@@ -541,7 +545,9 @@ class code
             'header' => $header,
             'label' => (substr_count($class->name, "_")
                        ? "-"
-                       : "Component") . " " . $class->name,
+                       : "Component") . " " . str_replace(self::_SET_NS_PREFIX,
+                                                          '',
+                                                          $class->name),
             'path' => $class_path,
             'length_warning' => $length_warning,
             'real_length' => $real_length,
@@ -576,13 +582,14 @@ class code
 
             $component_class = new \ReflectionClass((class_exists($component)
                                                     ? $component
-                                                    : 'schrimp\\' . $component));
+                                                    : self::_SET_NS_PREFIX
+                                                    . $component));
             $components .= md::to_the_top() . " "
                          . self::_get_component_information($component_class);
 
             $helper = $component . "_helper";
             if (ld(_SET_APPLICATION_PATH . $helper . ".php")
-                && $helper_class = new \ReflectionClass('schrimp\\' . $helper))
+                && $helper_class = new \ReflectionClass(self::_SET_NS_PREFIX . $helper))
                 $components .= md::to_the_top() . " "
                              . self::_get_component_information($helper_class);
             elseif (ld(_SET_APPLICATION_PUBLICPATH . $helper . ".php")
@@ -634,7 +641,9 @@ class code
                                               $infos,
                                               $code)
     {
-        $file = _SET_WIKI_PATH . $class . " " . $method . ".md";
+        $file = _SET_WIKI_PATH . str_replace(self::_SET_NS_PREFIX,
+                                             '',
+                                             $class) . " " . $method . ".md";
 
         $content = "**" . $method . $infos . MD_NEWLINE_SEQUENCE . implode($code);
 
@@ -733,7 +742,7 @@ class code
         foreach (self::get_libraries_list($class->name) as $key => $value)
             $dependencies[$key] = 0;
         if ($parent = $class->getParentClass()) // includes extended class if available
-            $dependencies[str_replace('schrimp\\',
+            $dependencies[str_replace(self::_SET_NS_PREFIX,
                                       '',
                                       $parent->name)]++;
 
@@ -764,7 +773,9 @@ class code
 
     static function get_class_data(\ReflectionClass $class)
     {
-        $data['header'] = "Class " . strtoupper($class->name)
+        $data['header'] = "Class " . strtoupper(str_replace(self::_SET_NS_PREFIX,
+                                                            '',
+                                                            $class->name))
                         . " (" . date(CODE_DATE_FORMAT,
                                       filemtime($class->getFileName())) . ")";
 
@@ -774,9 +785,9 @@ class code
         $data['class_todos'] = self::_get_class_todos($class);
         $data['class_tests'] = self::_get_class_tests($class);
 
-        $data['class_path'] = "root" . str_replace(realpath(null),
-                                                   '',
-                                                   $class->getFileName());
+        $data['class_path'] = str_replace(realpath(null) . "/",
+                                          '',
+                                          $class->getFileName());
 
         $data['real_length'] =
              $data['length'] = $class->getEndLine() - $class->getStartLine() - 2;
