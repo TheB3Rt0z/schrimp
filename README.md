@@ -5,7 +5,7 @@ Table of contents
 -----------------  
   
 [General reference](#general-reference-- "")  
-[Library code](#-class-code-07112013-- "") &#10029;&#10029;&#10029;  (.lib/code.php, Len: 797/933, CIS: 15 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  6 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
+[Library code](#-class-code-08112013-- "") &#10029;&#10029;&#10029;  (.lib/code.php, Len: 798/934, CIS: 15 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  6 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
 [Library controller](#-class-controller-07112013-- "") (.lib/controller.php, Len: 98/127, CIS: 11 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library db](#-class-db-06112013-- "") &#10029;&#10029;&#10029;  (.lib/db.php, Len: 106/126, CIS: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- db_object](#-class-db_object-31102013-- "") &#10029;&#10029;&#10029;  (.lib/db_object.php, Len: 118/146, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -39,21 +39,21 @@ General reference
   
 **GLOBAL CONFIGURATION CONSTANTS:**  
   
-- **CODE_DATE_FORMAT** &#10140; "d.m.Y" (global core constant)  
-- **CODE_ICON_ARROW** &#10140; "&#10140;" (global core constant)  
-- **CODE_ICON_TODO** &#10140; "&#10029;" (global core constant)  
-- **DB_TABLE_PREFIX** &#10140; null (global core constant)  
-- **HTML_ARROW_LEFT** &#10140; "&laquo;" (global core constant)  
-- **HTML_ARROW_RIGHT** &#10140; "&raquo;" (global core constant)  
-- **HTML_BREADCRUMB_SEPARATOR** &#10140; " &rsaquo; " (global core constant)  
-- **HTML_ICON_LIST** &#10140; "&#9992;" (global core constant)  
-- **HTML_ICON_NAVIGATION** &#10140; "&#9784;" (global core constant)  
-- **LANGUAGE_FALLBACK_LANG** &#10140; "en" (global core constant)  
+- **CODE_DATE_FORMAT** &#10140; "d.m.Y" (defined by CODE)  
+- **CODE_ICON_ARROW** &#10140; "&#10140;" (defined by CODE)  
+- **CODE_ICON_TODO** &#10140; "&#10029;" (defined by CODE)  
+- **DB_TABLE_PREFIX** &#10140; null (defined by DB)  
+- **HTML_ARROW_LEFT** &#10140; "&laquo;" (defined by HTML)  
+- **HTML_ARROW_RIGHT** &#10140; "&raquo;" (defined by HTML)  
+- **HTML_BREADCRUMB_SEPARATOR** &#10140; " &rsaquo; " (defined by HTML)  
+- **HTML_ICON_LIST** &#10140; "&#9992;" (defined by HTML)  
+- **HTML_ICON_NAVIGATION** &#10140; "&#9784;" (defined by HTML)  
+- **LANGUAGE_FALLBACK_LANG** &#10140; "en" (defined by LANGUAGE)  
 - **MAX_BLOCK_COMPLEXITY** &#10140; 84 (global core constant)  
 - **MAX_CYCLOMATIC_COMPLEXITY** &#10140; 12 (global core constant)  
 - **MAX_METHODS_COMPLEXITY** &#10140; 36 (global core constant)  
 - **MAX_PARAMETERS_COMPLEXITY** &#10140; 6 (global core constant)  
-- **MD_NEWLINE_SEQUENCE** &#10140; "  \n" (global core constant)  
+- **MD_NEWLINE_SEQUENCE** &#10140; "  \n" (defined by MD)  
 - **SET_COMPLEXITY_INDEX** &#10140; 12 (global core constant)  
 - **SET_DOCUMENTATION_MD** &#10140; "README" (global core constant)  
 - **SET_GITHUB_RAWPATH** &#10140; "https://raw.github.com/TheB3Rt0z/schrimp/master/" (global core constant)  
@@ -113,7 +113,7 @@ General reference
   
 ***  
   
-[⇧](# "to the top") Class CODE (07.11.2013)  
+[⇧](# "to the top") Class CODE (08.11.2013)  
 -----------------------  
   
 **CODE REFERENCE:**  
@@ -132,7 +132,7 @@ General reference
 - **[_get_classes_information](https://github.com/TheB3Rt0z/schrimp/wiki/code-_get_classes_information "")($classes = null)** (PriS, Len: 18/21 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[_get_component_information](https://github.com/TheB3Rt0z/schrimp/wiki/code-_get_component_information "")(ReflectionClass $class)** (PriS, Len: 29/31 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Method's length could be reduced..") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[_get_components_information](https://github.com/TheB3Rt0z/schrimp/wiki/code-_get_components_information "")()** (PriS, Len: 24/29 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **[_get_constants_information](https://github.com/TheB3Rt0z/schrimp/wiki/code-_get_constants_information "")()** (PriS, Len: 14/17 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[_get_constants_information](https://github.com/TheB3Rt0z/schrimp/wiki/code-_get_constants_information "")()** (PriS, Len: 15/18 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[_get_cyc_marker](https://github.com/TheB3Rt0z/schrimp/wiki/code-_get_cyc_marker "")($cyc)** (PriS, Len: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[_get_functions_information](https://github.com/TheB3Rt0z/schrimp/wiki/code-_get_functions_information "")($functions = null)** (PriS, Len: 30/33 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Method's length could be reduced..") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[_get_len_marker](https://github.com/TheB3Rt0z/schrimp/wiki/code-_get_len_marker "")($length)** (PriS, Len: 11 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  

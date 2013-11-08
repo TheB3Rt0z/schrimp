@@ -393,7 +393,8 @@ class code
 
                 $constants .= "- **" . $key . "** " . CODE_ICON_ARROW . " "
                             . fm($value) . " ("
-                            . (class_exists(strtolower($components[0]))
+                            . (class_exists(self::_SET_NS_PREFIX
+                                          . strtolower($components[0]))
                               ? "defined by " . $components[0]
                               : "global core constant") . ")"
                             . MD_NEWLINE_SEQUENCE;
