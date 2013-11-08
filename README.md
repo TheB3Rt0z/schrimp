@@ -14,7 +14,7 @@ Table of contents
 [- html_doc](#-class-html_doc-31102013-- "") &#10029;&#10029;&#10029;&#10029;  (.lib/html_doc.php, Len: 70/82, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- html_form](#-class-html_form-31102013-- "") &#10029;  (.lib/html_form.php, Len: 65/71, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library language](#-class-language-07112013-- "") &#10029;&#10029;&#10029;  (.lib/language.php, Len: 92/107, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library main](#-class-main-31102013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (.main.php, Len: 261/322, CIS: 33 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Class interface size could lead to a refactoring")) &#10140;  2 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
+[Library main](#-class-main-08112013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (.main.php, Len: 262/323, CIS: 33 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Class interface size could lead to a refactoring")) &#10140;  2 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
 [Library md](#-class-md-31102013-- "") (.lib/md.php, Len: 185/231, CIS: 14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library navigator](#-class-navigator-06112013-- "") &#10029;&#10029;&#10029;  (.lib/navigator.php, Len: 319/390, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  2 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
 [Library powering](#-class-powering-06112013-- "") &#10029;&#10029;&#10029;  (lib/powering.php, Len: 7/8, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -64,10 +64,10 @@ General reference
   
 **FUNCTION ALIASES:**  
   
-- **bs($infos)** &#10140; .main.php on line 394, **triggers an error if bad syntax events occur**
+- **bs($infos)** &#10140; .main.php on line 395, **triggers an error if bad syntax events occur**
   @param string $msg
   @return boolean indicating notification success  
-- **fe($path)** &#10140; .main.php on line 344, **returns boolean if realpath path exists on running server**
+- **fe($path)** &#10140; .main.php on line 345, **returns boolean if realpath path exists on running server**
   @param string $path
   @return boolean true if realpath exists, false otherwise  
 - **fm($mixed)** &#10140; .lib/toolbox.php on line 132, **returns a beautiful formatted value, mixed variable-type-dependant**
@@ -76,28 +76,28 @@ General reference
 - **ld($file)** &#10140; .lib/toolbox.php on line 142, **require (once) a file and launch a php warning if not successful
   @param string $file
   @return 1 on success or false on file not exists or require_once failure  
-- **le($msg)** &#10140; .main.php on line 374, **launches a customizable error 500, mit optional backtrace for debug**
+- **le($msg)** &#10140; .main.php on line 375, **launches a customizable error 500, mit optional backtrace for debug**
   @param string $msg
   @return boolean false after relocate  
-- **mf($file)** &#10140; .main.php on line 384, **triggers an error if a needed file is missing**
+- **mf($file)** &#10140; .main.php on line 385, **triggers an error if a needed file is missing**
   @param string $file
   @return boolean indicating notification success  
 - **pr($source)** &#10140; .lib/toolbox.php on line 152, **returns a parsed output, source-type dependant**
   @param string $source
   @return mixed depending on source origin  
-- **rt($url = null)** &#10140; .main.php on line 364, **relocates to given relative url or to base path on default**
+- **rt($url = null)** &#10140; .main.php on line 365, **relocates to given relative url or to base path on default**
   @param string $url
   @return void  
-- **ru($uri = null)** &#10140; .main.php on line 354, **returns an absolute uri, based on current server configuration**
+- **ru($uri = null)** &#10140; .main.php on line 355, **returns an absolute uri, based on current server configuration**
   @param string $uri
   @return string absolute http unified resource identifier  
-- **sb()** &#10140; .main.php on line 403, **show call's backtrace with help of error base handler**
+- **sb()** &#10140; .main.php on line 404, **show call's backtrace with help of error base handler**
   @return void  
 - **tr($component, $marker)** &#10140; .lib/language.php on line 122, **executes language translation of marker identifier, referring to given component**
   @param string $component
   @param string $marker
   @return mixed callback function returned value(s)  
-- **vd($what)** &#10140; .main.php on line 334, **returns pre-formatted mixed variables**
+- **vd($what)** &#10140; .main.php on line 335, **returns pre-formatted mixed variables**
   @param multi $what
   @return void  
   
@@ -461,7 +461,7 @@ Uses: **language**
   
 ***  
   
-[⇧](# "to the top") Class MAIN (31.10.2013)  
+[⇧](# "to the top") Class MAIN (08.11.2013)  
 -----------------------  
   
 **CODE REFERENCE:**  
@@ -510,6 +510,7 @@ Uses: **code**, **html**, **main**, **md**, **toolbox**
 - **no stealth mode** &#10140; no uri interpretation + htaccess automatic creation  
 - **set_htmls_from_controller** &#10140; could we update here our sitemap.xml?  
 - **better css for error notifications** &#10140; ..and interface triggers style!  
+- **check var_dump/vd calls** &#10140; indirect use + ($)main->/::var_dump([X])..  
   
   
 ***  

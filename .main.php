@@ -14,6 +14,7 @@ class main
         'no stealth mode' => "no uri interpretation + htaccess automatic creation",
         'set_htmls_from_controller' => "could we update here our sitemap.xml?",
         'better css for error notifications' => "..and interface triggers style!",
+        'check var_dump/vd calls' => "indirect use + ($)main->/::var_dump([X])..",
     );
 
     static $tests = array();
