@@ -8,7 +8,6 @@ class code
 {
     static $todos = array
     (
-        //'namespace revolution' => "remove schrimp\ notation + check github wiki",
         'get_class_dependencies' => "too inaccurate, see navigator-controller",
         'static files form' => "check backend&component css files + schrimp_*.js",
         'test list in documentation footer' => "see scaffold method for infos",
@@ -403,10 +402,8 @@ class code
         return $constants . MD_NEWLINE_SEQUENCE;
     }
 
-    private static function _get_functions_information() // these are aliases..
+    private static function _get_functions_information($functions = '') // these are aliases..
     {
-        $functions = '';
-
         $user_functions = self::get_functions_list();
         foreach ($user_functions as $function)
         {
@@ -414,7 +411,9 @@ class code
 
             $parameters = self::_list_method_parameters($function);
 
-            $functions .= "- **" . $function->getName() . "("
+            $functions .= "- **" . str_replace(self::_SET_NS_PREFIX,
+                                               '',
+                                               $function->getName()) . "("
                         . implode($parameters, ", ") . ")** " . CODE_ICON_ARROW
                         . " " . str_replace(realpath('') . "/",
                                             '',
