@@ -4,10 +4,10 @@ class main
 {
     static $todos = array
     (
+        'move some methods in toolbox' => "there are too much general functions..",
         'double error redirect' => "rewrite this ding to avoid the doppler effect",
         'get buffer effect' => "is file deletion really working? a better system?",
         'escort library' => "session by PHP and DB if webstore & memcache fail?",
-        'memcache support' => "verify in method, if at least one mem-server works",
         'css selectors' => "uniform to html-class render-methods (default style)",
         'css autoload' => "automatically load ANY file in .inc/inc / css? nnouu..",
         'error launchers' => "should be moved to a library (navigator, toolbox)?",

@@ -5,7 +5,7 @@ Table of contents
 -----------------  
   
 [General reference](#general-reference-- "")  
-[Library cache](#-class-cache-11112013-- "") (.lib/cache.php, Len: 12/17, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library cache](#-class-cache-11112013-- "") &#10029;  (.lib/cache.php, Len: 15/20, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library code](#-class-code-08112013-- "") &#10029;&#10029;&#10029;  (.lib/code.php, Len: 798/934, CIS: 15 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  6 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
 [Library controller](#-class-controller-07112013-- "") (.lib/controller.php, Len: 98/127, CIS: 11 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library db](#-class-db-06112013-- "") &#10029;&#10029;&#10029;  (.lib/db.php, Len: 106/126, CIS: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -18,6 +18,7 @@ Table of contents
 [Library main](#-class-main-11112013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (.main.php, Len: 252/309, CIS: 29 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  2 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
 [Library md](#-class-md-31102013-- "") (.lib/md.php, Len: 185/231, CIS: 14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library navigator](#-class-navigator-06112013-- "") &#10029;&#10029;&#10029;  (.lib/navigator.php, Len: 319/390, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  2 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
+[Library pdf](#-class-pdf-11112013-- "") &#10029;  (.lib/pdf.php, Len: 5/6, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library powering](#-class-powering-06112013-- "") &#10029;&#10029;&#10029;  (lib/powering.php, Len: 7/8, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library toolbox](#-class-toolbox-31102013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/toolbox.php, Len: 107/120, CIS: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Component admin](#-class-admin-31102013-- "") (.app/admin.php, Len: 11/14, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -123,6 +124,10 @@ General reference
 - **[is_memcached](https://github.com/TheB3Rt0z/schrimp/wiki/cache-is_memcached "")()** (PubS, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[is_varnished](https://github.com/TheB3Rt0z/schrimp/wiki/cache-is_varnished "")()** (PubS, Len: - )  
 - **[is_webstoraged](https://github.com/TheB3Rt0z/schrimp/wiki/cache-is_webstoraged "")()** (PubS, Len: -  CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+  
+**TODOS:**  
+  
+- **memcache support** &#10140; verify in method, if at least one mem-server works  
   
   
 ***  
@@ -510,10 +515,10 @@ Uses: **code**, **html**, **main**, **md**, **toolbox**
   
 **TODOS:**  
   
+- **move some methods in toolbox** &#10140; there are too much general functions..  
 - **double error redirect** &#10140; rewrite this ding to avoid the doppler effect  
 - **get buffer effect** &#10140; is file deletion really working? a better system?  
 - **escort library** &#10140; session by PHP and DB if webstore & memcache fail?  
-- **memcache support** &#10140; verify in method, if at least one mem-server works  
 - **css selectors** &#10140; uniform to html-class render-methods (default style)  
 - **css autoload** &#10140; automatically load ANY file in .inc/inc / css? nnouu..  
 - **error launchers** &#10140; should be moved to a library (navigator, toolbox)?  
@@ -591,6 +596,16 @@ Uses: **html**, **html_form**, **main**
 - **fix (advanced) list/breadcrumb** &#10140; not right initialized in dev mode..  
 - **render_list** &#10140; this should be CSS3 and appear on a mouse gesture..  
 - **list & advanced list** &#10140; should mark as active current handler..  
+  
+  
+***  
+  
+[⇧](# "to the top") Class PDF (11.11.2013)  
+----------------------  
+  
+**TODOS:**  
+  
+- **preferred native constructor** &#10140; no fpdf or similar, yes to js viewers  
   
   
 ***  
