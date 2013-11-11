@@ -5,6 +5,7 @@ Table of contents
 -----------------  
   
 [General reference](#general-reference-- "")  
+[Library cache](#-class-cache-11112013-- "") (.lib/cache.php, Len: 12/17, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library code](#-class-code-08112013-- "") &#10029;&#10029;&#10029;  (.lib/code.php, Len: 798/934, CIS: 15 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  6 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
 [Library controller](#-class-controller-07112013-- "") (.lib/controller.php, Len: 98/127, CIS: 11 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library db](#-class-db-06112013-- "") &#10029;&#10029;&#10029;  (.lib/db.php, Len: 106/126, CIS: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -14,7 +15,7 @@ Table of contents
 [- html_doc](#-class-html_doc-31102013-- "") &#10029;&#10029;&#10029;&#10029;  (.lib/html_doc.php, Len: 70/82, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- html_form](#-class-html_form-31102013-- "") &#10029;  (.lib/html_form.php, Len: 65/71, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library language](#-class-language-07112013-- "") &#10029;&#10029;&#10029;  (.lib/language.php, Len: 92/107, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library main](#-class-main-08112013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (.main.php, Len: 262/323, CIS: 33 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Class interface size could lead to a refactoring")) &#10140;  2 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
+[Library main](#-class-main-11112013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (.main.php, Len: 252/309, CIS: 29 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  2 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
 [Library md](#-class-md-31102013-- "") (.lib/md.php, Len: 185/231, CIS: 14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library navigator](#-class-navigator-06112013-- "") &#10029;&#10029;&#10029;  (.lib/navigator.php, Len: 319/390, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  2 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
 [Library powering](#-class-powering-06112013-- "") &#10029;&#10029;&#10029;  (lib/powering.php, Len: 7/8, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -64,10 +65,10 @@ General reference
   
 **FUNCTION ALIASES:**  
   
-- **bs($infos)** &#10140; .main.php on line 395, **triggers an error if bad syntax events occur**
+- **bs($infos)** &#10140; .main.php on line 381, **triggers an error if bad syntax events occur**
   @param string $msg
   @return boolean indicating notification success  
-- **fe($path)** &#10140; .main.php on line 345, **returns boolean if realpath path exists on running server**
+- **fe($path)** &#10140; .main.php on line 331, **returns boolean if realpath path exists on running server**
   @param string $path
   @return boolean true if realpath exists, false otherwise  
 - **fm($mixed)** &#10140; .lib/toolbox.php on line 132, **returns a beautiful formatted value, mixed variable-type-dependant**
@@ -76,28 +77,28 @@ General reference
 - **ld($file)** &#10140; .lib/toolbox.php on line 142, **require (once) a file and launch a php warning if not successful
   @param string $file
   @return 1 on success or false on file not exists or require_once failure  
-- **le($msg)** &#10140; .main.php on line 375, **launches a customizable error 500, mit optional backtrace for debug**
+- **le($msg)** &#10140; .main.php on line 361, **launches a customizable error 500, mit optional backtrace for debug**
   @param string $msg
   @return boolean false after relocate  
-- **mf($file)** &#10140; .main.php on line 385, **triggers an error if a needed file is missing**
+- **mf($file)** &#10140; .main.php on line 371, **triggers an error if a needed file is missing**
   @param string $file
   @return boolean indicating notification success  
 - **pr($source)** &#10140; .lib/toolbox.php on line 152, **returns a parsed output, source-type dependant**
   @param string $source
   @return mixed depending on source origin  
-- **rt($url = null)** &#10140; .main.php on line 365, **relocates to given relative url or to base path on default**
+- **rt($url = null)** &#10140; .main.php on line 351, **relocates to given relative url or to base path on default**
   @param string $url
   @return void  
-- **ru($uri = null)** &#10140; .main.php on line 355, **returns an absolute uri, based on current server configuration**
+- **ru($uri = null)** &#10140; .main.php on line 341, **returns an absolute uri, based on current server configuration**
   @param string $uri
   @return string absolute http unified resource identifier  
-- **sb()** &#10140; .main.php on line 404, **show call's backtrace with help of error base handler**
+- **sb()** &#10140; .main.php on line 390, **show call's backtrace with help of error base handler**
   @return void  
 - **tr($component, $marker)** &#10140; .lib/language.php on line 122, **executes language translation of marker identifier, referring to given component**
   @param string $component
   @param string $marker
   @return mixed callback function returned value(s)  
-- **vd($what)** &#10140; .main.php on line 335, **returns pre-formatted mixed variables**
+- **vd($what)** &#10140; .main.php on line 321, **returns pre-formatted mixed variables**
   @param multi $what
   @return void  
   
@@ -109,6 +110,19 @@ General reference
 - **siloing tests** &#10140; based on google syntax operators, to build some indexes  
 - **framework mode usage** &#10140; use namespace to avoid class-names conflicts..?  
   
+  
+  
+***  
+  
+[⇧](# "to the top") Class CACHE (11.11.2013)  
+------------------------  
+  
+**CODE REFERENCE:**  
+  
+- **[is_apced](https://github.com/TheB3Rt0z/schrimp/wiki/cache-is_apced "")()** (PubS, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[is_memcached](https://github.com/TheB3Rt0z/schrimp/wiki/cache-is_memcached "")()** (PubS, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[is_varnished](https://github.com/TheB3Rt0z/schrimp/wiki/cache-is_varnished "")()** (PubS, Len: - )  
+- **[is_webstoraged](https://github.com/TheB3Rt0z/schrimp/wiki/cache-is_webstoraged "")()** (PubS, Len: -  CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
   
 ***  
@@ -461,7 +475,7 @@ Uses: **language**
   
 ***  
   
-[⇧](# "to the top") Class MAIN (08.11.2013)  
+[⇧](# "to the top") Class MAIN (11.11.2013)  
 -----------------------  
   
 **CODE REFERENCE:**  
@@ -481,10 +495,6 @@ Uses: **language**
 - **[get_route](https://github.com/TheB3Rt0z/schrimp/wiki/main-get_route "")()** (Pub, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[get_timestone](https://github.com/TheB3Rt0z/schrimp/wiki/main-get_timestone "")()** (PubS, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[get_version](https://github.com/TheB3Rt0z/schrimp/wiki/main-get_version "")($precision = 2)** (PubS, Len: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **[is_apced](https://github.com/TheB3Rt0z/schrimp/wiki/main-is_apced "")()** (PubS, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **[is_memcached](https://github.com/TheB3Rt0z/schrimp/wiki/main-is_memcached "")()** (PubS, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **[is_varnished](https://github.com/TheB3Rt0z/schrimp/wiki/main-is_varnished "")()** (PubS, Len: -  CyC: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **[is_webstoraged](https://github.com/TheB3Rt0z/schrimp/wiki/main-is_webstoraged "")()** (PubS, Len: -  CyC: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[launch_error](https://github.com/TheB3Rt0z/schrimp/wiki/main-launch_error "")($msg)** (PubS, Len: 7/10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[relocate_to](https://github.com/TheB3Rt0z/schrimp/wiki/main-relocate_to "")($url = null)** (PubS, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[resolve_uri](https://github.com/TheB3Rt0z/schrimp/wiki/main-resolve_uri "")($uri = null)** (PubS, Len: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
