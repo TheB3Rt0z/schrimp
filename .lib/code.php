@@ -337,10 +337,11 @@ class code
     private static function _calculate_codeline_cyc($code_line)
     {
         $code_line = explode(" // ", $code_line);
+        $code_line = $code_line[0];
 
         $cyc = 0;
         foreach (self::$_cyc_counters as $counter)
-            $cyc += substr_count($code_line[0], $counter);
+            $cyc += substr_count($code_line, $counter);
 
         return $cyc;
     }
@@ -902,10 +903,10 @@ class code
             if (trim($code_line) == '')
                 $data['real_length']--;
 
-            if (self::_is_codeline_too_long($code_line[0]))
+            if (self::_is_codeline_too_long($code_line))
                 $data['length_warning']++;
 
-            $data['cyc'] = self::_calculate_codeline_cyc($code_line);
+            $data['cyc'] += self::_calculate_codeline_cyc($code_line);
         }
 
         self::_update_class_warning($method->getDeclaringClass()->getName(),
