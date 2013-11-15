@@ -290,7 +290,7 @@ class code
 
     private static function _get_cyc_marker($cyc)
     {
-        if ($cyc <= (floor(MAX_CYCLOMATIC_COMPLEXITY / 10) * 10))
+        if ($cyc <= (floor(MAX_CYCLOMATIC_COMPLEXITY / 7) * 7))
             return md::green_ok();
         elseif ($cyc <= MAX_CYCLOMATIC_COMPLEXITY)
             return md::yellow_ops(self::_STR_CYC_WARNING);
