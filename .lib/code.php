@@ -334,6 +334,17 @@ class code
                                   $code_line[0])) > MAX_BLOCK_COMPLEXITY;
     }
 
+    private static function _calculate_codeline_cyc($code_line)
+    {
+        $code_line = explode(" // ", $code_line);
+
+        $cyc = 0;
+        foreach (self::$_cyc_counters as $counter)
+            $cyc += substr_count($code_line[0], $counter);
+
+        return $cyc;
+    }
+
     private static function _list_method_parameters($functional_code)
     {
         $parameters = array();
@@ -888,14 +899,13 @@ class code
         $data['cyc'] = 0;
         foreach ($data['code'] as $code_line)
         {
-            if (self::_is_codeline_too_long($code_line))
-                $data['length_warning']++;
-
             if (trim($code_line) == '')
                 $data['real_length']--;
 
-            foreach (self::$_cyc_counters as $counter)
-                $data['cyc'] += substr_count($code_line, $counter);
+            if (self::_is_codeline_too_long($code_line[0]))
+                $data['length_warning']++;
+
+            $data['cyc'] = self::_calculate_codeline_cyc($code_line);
         }
 
         self::_update_class_warning($method->getDeclaringClass()->getName(),
