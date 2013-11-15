@@ -14,6 +14,6 @@ class regex
     private $_types = array
     (
         'pcre' => "Perl-Compatible", // http://www.php.net/manual/en/book.pcre.php
-        //'posix' => "POSIX Extended", deprecated, http://www.php.net/manual/en/book.regex.php
+        //'posix' => "POSIX Extended", // deprecated, http://www.php.net/manual/en/book.regex.php
     );
 }

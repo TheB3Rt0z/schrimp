@@ -36,6 +36,30 @@ class language
 	   	)
 	);
 
+	static protected function _search_for_translation($translations,
+		                                              $marker)
+	{
+	    $language = self::get_browser_language();
+
+	    $str = false;
+    	foreach ($translations as $key => $value)
+            if ($marker == $value)
+				while ($text = explode("||", $translations[++$key]))
+				{
+					if (($text[0] == $language
+						    || $text[0] == LANGUAGE_FALLBACK_LANG)
+						&& !empty($text[1]))
+					{
+						$str = $text[1]; // can overwrite $_translations-based results (if required, use translation files)
+					}
+
+					if ($text[0] == $language || !$text[0])
+						break;
+				}
+
+    	return $str;
+	}
+
 	static function get_browser_language()
 	{
 	    return substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
@@ -87,20 +111,9 @@ class language
 		elseif (isset(self::$_translations[$marker][LANGUAGE_FALLBACK_LANG]))
 			$str = self::$_translations[$marker][LANGUAGE_FALLBACK_LANG];
 
-		foreach ($translations as $key => $value)
-			if ($marker == $value)
-				while ($text = explode("||", $translations[++$key]))
-				{
-					if (($text[0] == $language
-						    || $text[0] == LANGUAGE_FALLBACK_LANG)
-						&& !empty($text[1]))
-					{
-						$str = $text[1]; // can overwrite $_translations-based results (if required, use translation files)
-					}
-
-					if ($text[0] == $language || !$text[0])
-						break;
-				}
+		if ($found = self::_search_for_translation($translations,
+		                                           $marker))
+		    $str = $found;
 
 		return vsprintf($str, $args);
 	}
