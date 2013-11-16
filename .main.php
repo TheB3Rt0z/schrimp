@@ -97,7 +97,7 @@ class main
                                      ? "admin"
                                      : "homepage"); // convention
 
-        define('MAX_CYCLOMATIC_COMPLEXITY', SET_COMPLEXITY_INDEX / 1.5); // base complexity index
+        define('MAX_CYCLOMATIC_COMPLEXITY', SET_COMPLEXITY_INDEX / 1.5); // base complexity index, ATM 8
         define('MAX_METHODS_COMPLEXITY', SET_COMPLEXITY_INDEX * 3); // ATM 36 max code lines
         define('MAX_BLOCK_COMPLEXITY', SET_COMPLEXITY_INDEX * 7); // ATM 84 max code line length
         define('MAX_PARAMETERS_COMPLEXITY', SET_COMPLEXITY_INDEX / 2); // if more than 6 ATM..

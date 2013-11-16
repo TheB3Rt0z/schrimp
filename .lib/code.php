@@ -4,6 +4,9 @@ define('CODE_DATE_FORMAT', "d.m.Y");
 define('CODE_ICON_ARROW', "&#10140;");
 define('CODE_ICON_TODO', "&#10029;");
 
+define('_CODE_MC_THRESHOLD', floor(MAX_METHODS_COMPLEXITY / 10) * 10);
+define('_CODE_CYC_THRESHOLD', floor(MAX_CYCLOMATIC_COMPLEXITY / 7) * 7);
+
 class code
 {
     static $todos = array
@@ -260,7 +263,7 @@ class code
 
     private static function _get_cis_marker($cis)
     {
-        if ($cis <= (floor(MAX_METHODS_COMPLEXITY / 10) * 10))
+        if ($cis <= _CODE_MC_THRESHOLD)
         {
             if ($cis > 0)
                 return md::green_ok();
@@ -275,7 +278,7 @@ class code
 
     private static function _get_len_marker($length)
     {
-        if ($length <= (floor(MAX_METHODS_COMPLEXITY / 10) * 10))
+        if ($length <= _CODE_MC_THRESHOLD)
         {
             if ($length > 0)
                 return md::green_ok();
@@ -290,7 +293,7 @@ class code
 
     private static function _get_cyc_marker($cyc)
     {
-        if ($cyc <= (floor(MAX_CYCLOMATIC_COMPLEXITY / 7) * 7))
+        if ($cyc <= _CODE_CYC_THRESHOLD)
             return md::green_ok();
         elseif ($cyc <= MAX_CYCLOMATIC_COMPLEXITY)
             return md::yellow_ops(self::_STR_CYC_WARNING);
@@ -643,7 +646,7 @@ class code
         if ((count($parameters) - MAX_PARAMETERS_COMPLEXITY) >= 0)
             self::$_class_warnings[$class_name]['blue']++;
 
-        if ($length > (floor(MAX_METHODS_COMPLEXITY / 10) * 10))
+        if ($length > _CODE_MC_THRESHOLD)
         {
             if ($length <= MAX_METHODS_COMPLEXITY)
                 self::$_class_warnings[$class_name]['yellow']++;
@@ -651,7 +654,7 @@ class code
                 self::$_class_warnings[$class_name]['red']++;
         }
 
-        if ($cyc > (floor(MAX_CYCLOMATIC_COMPLEXITY / 10) * 10))
+        if ($cyc > _CODE_CYC_THRESHOLD)
         {
             if ($cyc <= MAX_CYCLOMATIC_COMPLEXITY)
                 self::$_class_warnings[$class_name]['yellow']++;
