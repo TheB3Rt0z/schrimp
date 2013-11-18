@@ -28,7 +28,7 @@ class powering
             'planet' => "jupiter", // mars, earth, venus, mercury
             'number' => 8, // 7, 5, 9, 6
             'emotion' => "anger", // joy, sympathy / anxiety, distress, fear
-            'expression' => "shouts", // rice, singing, crying, moaning
+            'expression' => "shouts", // laugh, singing, crying, moaning
             'reaction' => "self-control", // sadness / anxiety, stubbornness, cough, tremor
             'capability' => "spirituality", // inspiration, intellect, vitality, will
             'flavor' => "sour", // bitter, sweet, spicy, salty
