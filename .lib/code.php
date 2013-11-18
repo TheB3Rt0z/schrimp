@@ -261,6 +261,26 @@ class code
                  . MD_NEWLINE_SEQUENCE;
     }
 
+    private static function _get_clean_doccom(\ReflectionFunction $function)
+    {
+        $doc_com = $function->getDocComment();
+
+        if (!empty($doc_com))
+            return ", **" . trim(str_replace(array
+            (
+                "*",
+                "/",
+                ";",
+            ),
+            array
+            (
+                '',
+                '',
+                '**',
+            ),
+            $doc_com));
+    }
+
     private static function _get_cis_marker($cis)
     {
         if ($cis <= _CODE_MC_THRESHOLD)
@@ -435,21 +455,7 @@ class code
                                             '',
                                             $function->getFileName())
                         . " on line " . $function->getStartLine()
-                        . ($function->getDocComment()
-                          ? ", **" . trim(str_replace(array
-                                                     (
-                                                         "*",
-                                                         "/",
-                                                         ";",
-                                                     ),
-                                                     array
-                                                     (
-                                                         '',
-                                                         '',
-                                                         '**',
-                                                     ),
-                                                     $function->getDocComment()))
-                          : '') . MD_NEWLINE_SEQUENCE;
+                        . self::_get_clean_doccom($function) . MD_NEWLINE_SEQUENCE;
         }
 
         return $functions . MD_NEWLINE_SEQUENCE;
