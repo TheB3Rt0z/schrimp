@@ -47,13 +47,14 @@ class language
 				while ($text = explode("||", $translations[++$key]))
 				{
 					if (($text[0] == $language
-						    || $text[0] == LANGUAGE_FALLBACK_LANG)
+						|| $text[0] == LANGUAGE_FALLBACK_LANG)
 						&& !empty($text[1]))
 					{
 						$str = $text[1]; // can overwrite $_translations-based results (if required, use translation files)
 					}
 
-					if ($text[0] == $language || !$text[0])
+					if ($text[0] == $language
+					    || !$text[0])
 						break;
 				}
 

@@ -20,6 +20,21 @@ class toolbox
         return $code;
     }
 
+    static function filter($array,
+                           $key_s)
+    {
+        if ((is_string($key_s)
+                || is_numeric($key_s)) // single associative key
+            && !empty($array[$key_s]))
+            unset($array[$key_s]);
+        elseif (is_array($key_s))
+            foreach ($key_s as $key)
+                if (!empty($array[$key]))
+                    unset($array[$key]);
+
+        return $array;
+    }
+
 	static function format($mixed)
 	{
 		if ($mixed === true

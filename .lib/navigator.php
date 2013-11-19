@@ -83,7 +83,7 @@ class navigator
 
             $rc = new \ReflectionClass($full_ctrl_name);
             foreach ($rc->getMethods(\ReflectionMethod::IS_PRIVATE
-                     | !\ReflectionMethod::IS_PROTECTED) as $object)
+                | !\ReflectionMethod::IS_PROTECTED) as $object)
             {
                 $returns = $this->_add_handlers($ctrl_name,
                                                 $object,
@@ -323,7 +323,7 @@ class navigator
             $code .= $this->_get_action_select($structure,
                                                $ctrl_name,
                                                $link = $ctrl_name
-                                                   . "/" . main::$action);
+                                                     . "/" . main::$action);
 
             if (!empty(main::$args))
                 $code .= $this->_get_args_select($structure,

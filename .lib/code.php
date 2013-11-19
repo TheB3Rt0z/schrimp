@@ -505,7 +505,7 @@ class code
                                       SET_GITHUB_WIKIPATH
                                     . str_replace(self::_SET_NS_PREFIX,
                                                   '',
-                                                  $class) . "-" . $name) . $infos;
+                                                  $class) . " " . $name) . $infos;
     }
 
     private static function _get_class_information(\ReflectionClass $class)
@@ -720,20 +720,12 @@ class code
                 $libraries[str_replace($substitutions,
                                        '',
                                        $filename)] = filemtime($filename);
-
         foreach (glob(_SET_LIBRARIES_PUBLICPATH . "*.php") as $filename) // scans plugins directory
                 $libraries[str_replace($substitutions,
                                        '',
                                        $filename)] = filemtime($filename);
-
-        ksort($libraries);
-
-        if (is_string($exclude) && !empty($libraries[$exclude]))
-            unset($libraries[$exclude]);
-        elseif (is_array($exclude))
-            foreach ($exclude as $class)
-                if (!empty($libraries[$class]))
-                    unset($libraries[$class]);
+        ksort(toolbox::filter($libraries,
+                              $exclude));
 
         return $libraries;
     }
