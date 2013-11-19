@@ -23,6 +23,8 @@ class main
     private $_call = null;
     private $_path = '';
 
+    private $_configuration = null;
+
     var $controller = '';
     var $action = null;
     var $args = array();
@@ -65,9 +67,9 @@ class main
         }
     }
 
-    private function _set_configuration($conf_name)
+    private function _define_configuration_constants()
     {
-        $user_file = "." . $conf_name;
+        $user_file = "." . $this->_configuration;
         $base_file = $user_file . ".tmp";
 
         eval("\$base_conf = array
@@ -85,9 +87,16 @@ class main
             define(strtoupper($key), (is_array($value)
                                      ? serialize($value)
                                      : $value));
+    }
+
+    private function _set_configuration($conf_name)
+    {
+        $this->_configuration = trim($conf_name);
+
+        $this->_define_configuration_constants();
 
         if (_SET_DEVELOPMENT_MODE)
-            error_reporting(E_ALL);
+            error_reporting(E_ALL); // it would be better to test this thing..
 
         define('_SET_TRANSPORT_PROTOCOL', "http" . (getenv('HTTPS') == 'on'
                                                   ? "s"

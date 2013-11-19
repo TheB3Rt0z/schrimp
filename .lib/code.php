@@ -101,15 +101,15 @@ class code
             "\nxor ",
             "\rxor ",
             "\txor ",
-        " & ",
+        " & ", // bitwise operator and, bits that are set in both integers are set
             "\n& ",
             "\r& ",
             "\t& ",
-        " | ",
+        " | ", // bitwise operator or, bits that are set in either integers are set
             "\n| ",
             "\r| ",
             "\t| ",
-        " ^ ",
+        " ^ ", // bitwise operator xor, bits that are set in either integers (but not both) are set
             "\n^ ",
             "\r^ ",
             "\t^ ",
@@ -267,18 +267,18 @@ class code
 
         if (!empty($doc_com))
             return ", **" . trim(str_replace(array
-            (
-                "*",
-                "/",
-                ";",
-            ),
-            array
-            (
-                '',
-                '',
-                '**',
-            ),
-            $doc_com));
+                                             (
+                                                 "*",
+                                                 "/",
+                                                 ";",
+                                             ),
+                                             array
+                                             (
+                                                 '',
+                                                 '',
+                                                 '**',
+                                             ),
+                                             $doc_com));
     }
 
     private static function _get_cis_marker($cis)
