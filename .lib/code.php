@@ -720,10 +720,12 @@ class code
                 $libraries[str_replace($substitutions,
                                        '',
                                        $filename)] = filemtime($filename);
+
         foreach (glob(_SET_LIBRARIES_PUBLICPATH . "*.php") as $filename) // scans plugins directory
                 $libraries[str_replace($substitutions,
                                        '',
                                        $filename)] = filemtime($filename);
+
         ksort(toolbox::filter($libraries,
                               $exclude));
 
