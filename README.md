@@ -9,7 +9,7 @@ Table of contents
 [Library code](#-class-code-19112013-- "") &#10029;&#10029;&#10029;  (.lib/code.php, Len: 803/943, CIS: 15 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  4 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
 [Library controller](#-class-controller-07112013-- "") (.lib/controller.php, Len: 98/127, CIS: 11 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library db](#-class-db-06112013-- "") &#10029;&#10029;&#10029;  (.lib/db.php, Len: 106/126, CIS: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[- db_object](#-class-db_object-31102013-- "") &#10029;&#10029;&#10029;  (.lib/db_object.php, Len: 118/146, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
+[- db_object](#-class-db_object-22112013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/db_object.php, Len: 120/148, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
 [Library escort](#-class-escort-31102013-- "") (.lib/escort.php, Len: 32/40, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library html](#-class-html-31102013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/html.php, Len: 704/822, CIS: 23 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- html_doc](#-class-html_doc-31102013-- "") &#10029;&#10029;&#10029;&#10029;  (.lib/html_doc.php, Len: 70/82, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -19,8 +19,8 @@ Table of contents
 [Library md](#-class-md-19112013-- "") (.lib/md.php, Len: 185/231, CIS: 14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library navigator](#-class-navigator-19112013-- "") &#10029;&#10029;&#10029;  (.lib/navigator.php, Len: 319/390, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  2 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
 [Library pdf](#-class-pdf-11112013-- "") &#10029;  (.lib/pdf.php, Len: 5/6, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library powering](#-class-powering-22112013-- "") &#10029;&#10029;&#10029;  (lib/powering.php, Len: 41/44, CIS: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[- powering_status](#-class-powering_status-22112013-- "") &#10029;&#10029;&#10029;  (lib/powering.php, Len: -5/-2, CIS: 0 )   
+[Library powering](#-class-powering-22112013-- "") (lib/powering.php, Len: 36/39, CIS: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[- powering_status](#-class-powering_status-22112013-- "") &#10029;  (lib/powering.php, Len: 5/6, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library regex](#-class-regex-15112013-- "") &#10029;&#10029;&#10029;  (.lib/regex.php, Len: 12/14, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library toolbox](#-class-toolbox-19112013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/toolbox.php, Len: 120/135, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Component admin](#-class-admin-31102013-- "") (.app/admin.php, Len: 11/14, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -253,7 +253,7 @@ Uses: **escort**
   
 ***  
   
-[⇧](# "to the top") Class DB_OBJECT (31.10.2013)  
+[⇧](# "to the top") Class DB_OBJECT (22.11.2013)  
 ----------------------------  
   
 **CODE REFERENCE:**  
@@ -277,6 +277,8 @@ Uses: **db**, **main**
 **TODOS:**  
   
 - **set traits on construct event** &#10140; if given data is a values array..  
+- **index table specs** &#10140; ID, id_traits, UKEY, date_created/updated, value?  
+- **extra table for read events** &#10140; ID, id_powering, UKEY etc + traits list  
 - **_load output testing** &#10140; is really boolean return working or not?  
 - **_save event performance** &#10140; please avoid reloading 'same' object again!  
   
@@ -619,12 +621,6 @@ Uses: **html**, **html_form**, **main**
 [⇧](# "to the top") Class POWERING (22.11.2013)  
 ---------------------------  
   
-**TODOS:**  
-  
-- **status db objects** &#10140; to be saved in ['CLASS_TYPE'] eg. powering_status  
-- **index table specs** &#10140; ID, id_traits, UKEY, date_created/updated, value?  
-- **extra table for read events** &#10140; ID, id_powering, UKEY etc + traits list  
-  
   
 ***  
   
@@ -648,9 +644,7 @@ Uses: **db_object**
   
 **TODOS:**  
   
-- **set traits on construct event** &#10140; if given data is a values array..  
-- **_load output testing** &#10140; is really boolean return working or not?  
-- **_save event performance** &#10140; please avoid reloading 'same' object again!  
+- **status db objects** &#10140; to be saved in ['CLASS_TYPE'] eg. powering_status  
   
   
 ***  

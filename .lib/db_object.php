@@ -36,6 +36,8 @@ class db_object extends db
 	static $todos = array
 	(
 	    'set traits on construct event' => "if given data is a values array..",
+	    'index table specs' => "ID, id_traits, UKEY, date_created/updated, value?",
+	    'extra table for read events' => "ID, id_powering, UKEY etc + traits list",
 	    '_load output testing' => "is really boolean return working or not?",
 	    '_save event performance' => "please avoid reloading 'same' object again!",
 	);

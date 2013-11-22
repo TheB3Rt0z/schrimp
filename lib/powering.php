@@ -1,15 +1,18 @@
 <?php
 
-class powering_status extends schrimp\db_object {}
+class powering_status extends schrimp\db_object
+{
+    static $todos = array
+    (
+        'status db objects' => "to be saved in ['CLASS_TYPE'] eg. powering_status",
+    );
+
+    static $tests = array();
+}
 
 class powering
 {
-	static $todos = array
-	(
-	    'status db objects' => "to be saved in ['CLASS_TYPE'] eg. powering_status",
-	    'index table specs' => "ID, id_traits, UKEY, date_created/updated, value?",
-	    'extra table for read events' => "ID, id_powering, UKEY etc + traits list",
-	);
+	static $todos = array();
 
     static $tests = array();
 
