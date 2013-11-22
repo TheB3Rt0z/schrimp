@@ -19,7 +19,8 @@ Table of contents
 [Library md](#-class-md-19112013-- "") (.lib/md.php, Len: 185/231, CIS: 14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library navigator](#-class-navigator-19112013-- "") &#10029;&#10029;&#10029;  (.lib/navigator.php, Len: 319/390, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  2 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
 [Library pdf](#-class-pdf-11112013-- "") &#10029;  (.lib/pdf.php, Len: 5/6, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library powering](#-class-powering-17112013-- "") &#10029;&#10029;&#10029;  (lib/powering.php, Len: 34/36, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library powering](#-class-powering-22112013-- "") &#10029;&#10029;&#10029;  (lib/powering.php, Len: 41/44, CIS: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[- powering_status](#-class-powering_status-22112013-- "") &#10029;&#10029;&#10029;  (lib/powering.php, Len: -5/-2, CIS: 0 )   
 [Library regex](#-class-regex-15112013-- "") &#10029;&#10029;&#10029;  (.lib/regex.php, Len: 12/14, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library toolbox](#-class-toolbox-19112013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/toolbox.php, Len: 120/135, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Component admin](#-class-admin-31102013-- "") (.app/admin.php, Len: 11/14, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -615,14 +616,41 @@ Uses: **html**, **html_form**, **main**
   
 ***  
   
-[⇧](# "to the top") Class POWERING (17.11.2013)  
+[⇧](# "to the top") Class POWERING (22.11.2013)  
 ---------------------------  
   
 **TODOS:**  
   
-- **status db objects** &#10140; to be saved in ['CLASS_TYPE'] eg. powering  
+- **status db objects** &#10140; to be saved in ['CLASS_TYPE'] eg. powering_status  
 - **index table specs** &#10140; ID, id_traits, UKEY, date_created/updated, value?  
 - **extra table for read events** &#10140; ID, id_powering, UKEY etc + traits list  
+  
+  
+***  
+  
+[⇧](# "to the top") Class POWERING_STATUS (22.11.2013)  
+----------------------------------  
+  
+**CODE REFERENCE:**  
+  
+  
+**INHERITED METHODS:**  
+  
+- **[__construct](https://github.com/TheB3Rt0z/schrimp/wiki/db_object __construct "")($identifier_or_data = null)** (CPub, Len: 8/9 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[_query](https://github.com/TheB3Rt0z/schrimp/wiki/db _query "")($query, $type = null)** (Pro, Len: 21/24 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[load](https://github.com/TheB3Rt0z/schrimp/wiki/db_object load "")($identifier)** (PubS, Len: 5/7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[query](https://github.com/TheB3Rt0z/schrimp/wiki/db query "")($options = null)** (PubS, Len: 8/11 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[save](https://github.com/TheB3Rt0z/schrimp/wiki/db_object save "")($traits = null, $identifier = null)** (PubS, Len: 6/8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+  
+**DEPENDENCIES:**  
+  
+Uses: **db_object**  
+  
+**TODOS:**  
+  
+- **set traits on construct event** &#10140; if given data is a values array..  
+- **_load output testing** &#10140; is really boolean return working or not?  
+- **_save event performance** &#10140; please avoid reloading 'same' object again!  
   
   
 ***  

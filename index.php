@@ -19,6 +19,8 @@
  * - - render: like print, but for complete entities (f.e. html widgets)
  * - - set: traditional setter for private/protected properties
  * - - _handler: application controller, protected or private if not simple
+ *
+ * Make it function, make it ordently, make it performant, make it beautiful
  */
 
 require_once ".main.php"; // loading main application

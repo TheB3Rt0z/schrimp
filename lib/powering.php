@@ -1,10 +1,12 @@
 <?php
 
+class powering_status extends schrimp\db_object {}
+
 class powering
 {
 	static $todos = array
 	(
-	    'status db objects' => "to be saved in ['CLASS_TYPE'] eg. powering",
+	    'status db objects' => "to be saved in ['CLASS_TYPE'] eg. powering_status",
 	    'index table specs' => "ID, id_traits, UKEY, date_created/updated, value?",
 	    'extra table for read events' => "ID, id_powering, UKEY etc + traits list",
 	);
@@ -38,4 +40,12 @@ class powering
             'pet' => "fowl", // sheep, cow, horse, pig
         ),
     );
+
+    static $shins = array // all to be self made
+    (
+        'bo' => "sight + intuition",
+        'bun' => "hearing + olfaction",
+        'mon' => "job + family-life + anamnesis",
+        'setzu' => "touch + feel",
+    ); // lists of tests, from (integers) -∞ (yin) to +∞ (yang) * coefficient -> cure to the other side (if too yin then a bit more yangs..)
 }
