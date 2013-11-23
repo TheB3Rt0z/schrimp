@@ -327,7 +327,7 @@ class main
             return $backtrace;
         else
         {
-            main::set_buffer($backtrace);
+            self::set_buffer($backtrace);
 
             if ($_SERVER['REQUEST_URI'] != (_SET_LOCAL_PATH . "/error"))
                 rt("error");

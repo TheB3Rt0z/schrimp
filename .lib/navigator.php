@@ -13,7 +13,7 @@ class navigator
 
     static $tests = array();
 
-    private $_current_home = '';
+    private $_actual_home = '';
     private $_structure = null;
 
     function __construct()
@@ -48,14 +48,14 @@ class navigator
 
     private function _initialize_structure()
     {
-        $this->_current_home = str_replace(code::_SET_NS_PREFIX,
+        $this->_actual_home = str_replace(code::_SET_NS_PREFIX,
                                            '',
                                            _SET_HOME_COMPONENT);
         $this->_structure = array
         (
-            $this->_current_home => array
+            $this->_actual_home => array
             (
-                'name' => tr($this->_current_home,
+                'name' => tr($this->_actual_home,
                              'COMPONENT VISIBLE NAME'),
             ),
         );
@@ -79,13 +79,13 @@ class navigator
         $full_ctrl_name = code::_SET_NS_PREFIX . $ctrl_name;
         if ($full_ctrl_name::VISIBLE_IN_NAVIGATION)
         {
-            $this->_structure[$this->_current_home]['sub'][$ctrl_name] = array
+            $this->_structure[$this->_actual_home]['sub'][$ctrl_name] = array
             (
                 'name' => tr($ctrl_name,
                              'COMPONENT VISIBLE NAME')
             );
 
-            $sub =& $this->_structure[$this->_current_home]['sub'][$ctrl_name];
+            $sub =& $this->_structure[$this->_actual_home]['sub'][$ctrl_name];
 
             $rc = new \ReflectionClass($full_ctrl_name);
             foreach ($rc->getMethods(\ReflectionMethod::IS_PRIVATE
@@ -104,7 +104,7 @@ class navigator
                                         $returns['link'],
                                         $object);
 
-                $sub =& $this->_structure[$this->_current_home]['sub'][$ctrl_name];
+                $sub =& $this->_structure[$this->_actual_home]['sub'][$ctrl_name];
             }
         }
     }
@@ -227,7 +227,7 @@ class navigator
 
     private function _print_breadcrumb($ctrl_name)
     {
-        $structure = $this->_structure[$this->_current_home];
+        $structure = $this->_structure[$this->_actual_home];
 
         echo html::hyperlink('',
                              $structure['name'])
@@ -305,7 +305,7 @@ class navigator
 
     private function _print_active_breadcrumb($ctrl_name)
     {
-        $structure = $this->_structure[$this->_current_home];
+        $structure = $this->_structure[$this->_actual_home];
 
         $code = html::spanner(HTML_ICON_NAVIGATION,
                               array
@@ -347,7 +347,7 @@ class navigator
 
         $self = new self;
 
-        return html::array_to_list($self->_structure[$self->_current_home]['sub']);
+        return html::array_to_list($self->_structure[$self->_actual_home]['sub']);
     }
 
     static function get_advanced_list()
@@ -359,7 +359,7 @@ class navigator
                               (
                                   'marker',
                               ))
-              . html::array_to_list($self->_structure[$self->_current_home]['sub']);
+              . html::array_to_list($self->_structure[$self->_actual_home]['sub']);
 
         return html::divisor($code);
     }
@@ -394,7 +394,7 @@ class navigator
     {
         $self = new self; // populating structure array if still null (singleton)
 
-        $sub_structure = $self->_structure[$this->_current_home]['sub'];
+        $sub_structure = $self->_structure[$this->_actual_home]['sub'];
 
         return html::array_to_list($sub_structure, 'ol');
     }
