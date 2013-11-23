@@ -25,10 +25,6 @@ class main
 
     private $_configuration = null;
 
-    var $controller = '';
-    var $action = null;
-    var $args = array();
-
     var $title = '';
 
     var $header = '';
@@ -37,6 +33,10 @@ class main
     var $article = '';
     var $aside = '';
     var $footer = '';
+
+    static $controller = '';
+    static $action = null;
+    static $args = array();
 
     function __construct($uri = false)
     {
@@ -103,7 +103,7 @@ class main
                                                   : '')); // auto-detecting
 
         define('_SET_HOME_COMPONENT', _SET_DEVELOPMENT_MODE
-                                     ? "admin"
+                                     ? __NAMESPACE__ . '\\' ."admin"
                                      : "homepage"); // convention
 
         define('MAX_CYCLOMATIC_COMPLEXITY', SET_COMPLEXITY_INDEX / 1.5); // base complexity index, ATM 8
@@ -125,18 +125,22 @@ class main
 
     private function _set_route_static_traits($components)
     {
-        $this->controller = array_shift($components);
+        self::$controller = array_shift($components);
+
         if (!empty($components))
         {
-            $this->action = array_shift($components);
+            self::$action = array_shift($components);
+
             if (!empty($components))
-                $this->args = array_filter($components);
+                self::$args = array_filter($components);
         }
     }
 
     private function _set_home_component()
     {
-        $this->controller = _SET_HOME_COMPONENT;
+        self::$controller = str_replace(code::_SET_NS_PREFIX,
+                                        '',
+                                        _SET_HOME_COMPONENT);
 
         if (!_SET_DEVELOPMENT_MODE)
             $this->_path = _SET_APPLICATION_PUBLICPATH;
@@ -178,13 +182,15 @@ class main
         else
             $this->_set_home_component();
 
-        ld($this->_path . $this->controller . ".php");
-        foreach (glob($this->_path . $this->controller . "_*.php") as $filename)
+        ld($this->_path . self::$controller . ".php");
+        foreach (glob($this->_path . self::$controller . "_*.php") as $filename)
             ld($filename);
 
-        $controller = 'schrimp\\' . $this->controller;
-        $this->_call = new $controller($this->action,
-                                       $this->args);
+        $controller = self::$controller;
+        if (!class_exists($controller))
+            $controller = code::_SET_NS_PREFIX . $controller;
+        $this->_call = new $controller(self::$action,
+                                       self::$args);
 
         $this->_set_htmls_from_controller();
     }
@@ -206,7 +212,7 @@ class main
 
     function get_fullpath()
     {
-        return $this->get_path() . $this->controller;
+        return $this->get_path() . self::$controller;
     }
 
     static function var_dump($what)
@@ -278,18 +284,18 @@ class main
 
     static function trigger_error_missing_file($file)
     {
-        return trigger_error(tr('error',
-                                'required file (%s) not exists',
-                                $file,
-                             E_USER_ERROR));
+        trigger_error(tr('error',
+                         'required file (%s) not exists',
+                         $file) . html::newline() . self::show_backtrace(),
+                      E_USER_ERROR);
     }
 
     static function trigger_error_bad_syntax($infos)
     {
-        return trigger_error(tr('error',
-                                'bad syntax to correct: %s',
-                                $infos),
-                             E_USER_WARNING);
+        trigger_error(tr('error',
+                         'bad syntax to correct: %s',
+                         $infos) . html::newline() . self::show_backtrace(),
+                      E_USER_WARNING);
     }
 
     static function set_buffer($buffer)
@@ -309,16 +315,23 @@ class main
                : false);
     }
 
-    static function show_backtrace()
+    static function show_backtrace($tostring = true)
     {
         ob_start();
             debug_print_backtrace();
-        main::set_buffer(str_replace("#",
-                                     html::newline(),
-                                     ob_get_clean()));
+        $backtrace = str_replace("#",
+                                 html::newline(),
+                                 ob_get_clean());
 
-        if ($_SERVER['REQUEST_URI'] != (_SET_LOCAL_PATH . "/error"))
-            rt("error");
+        if ($tostring)
+            return $backtrace;
+        else
+        {
+            main::set_buffer($backtrace);
+
+            if ($_SERVER['REQUEST_URI'] != (_SET_LOCAL_PATH . "/error"))
+                rt("error");
+        }
     }
 }
 

@@ -136,5 +136,5 @@ class language
 function tr($component,
 	        $marker)
 {
-	return call_user_func_array('schrimp\language::translate', func_get_args()); // quick-alias
+	return call_user_func_array(code::_SET_NS_PREFIX . 'language::translate', func_get_args()); // quick-alias
 }

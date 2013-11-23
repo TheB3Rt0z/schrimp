@@ -1,10 +1,15 @@
 <?php
 
+use schrimp\html as html;
+use schrimp\navigator as navigator;
+
 class homepage extends schrimp\controller
 {
     static $todos = array();
 
     static $tests = array();
+
+    const VISIBLE_IN_NAVIGATION = false;
 
 	function initialize()
 	{

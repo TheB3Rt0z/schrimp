@@ -43,13 +43,13 @@ class html_doc extends html
         ));
     }
 
-    static function get_head_favicon($controller)
+    static function get_head_favicon()
     {
         $favicon_path = _SET_INCLUDES_PATH . "img/"
-                      . $controller . "_favicon.ico";
+                      . main::$controller . "_favicon.ico";
 
         $favicon_publicpath = _SET_INCLUDES_PUBLICPATH . "img/"
-                            . $controller . "_favicon.ico";
+                            . main::$controller . "_favicon.ico";
 
         if (fe($favicon_publicpath)) // precheck on file existance to permit fallback
             parent::add_favicon($favicon_publicpath);

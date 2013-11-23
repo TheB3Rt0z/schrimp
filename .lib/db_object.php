@@ -69,39 +69,7 @@ class db_object extends db
             $this->_load($identifier_or_data);
 	}
 
-	private function _load($identifier) // works with integer ID or UKEY/UUID strings
-	{
-	    if (!$result = $this->_query("SELECT *
-                                      FROM " . _DB_INDEX_TABLE . "
-                                      WHERE " . (is_numeric($identifier)
-                                                ? "ID = " . $identifier
-                                                : "UKEY LIKE '" . $identifier
-                                                . "' OR UUID LIKE '" . $identifier
-                                                . "'")))
-	        switch (mysqli_errno($this->_db->_connection))
-            {
-                case 1146 : // main table not exists, trying to create it
-                {
-                    if (!$this->_query(_SQL_CREATE_INDEX))
-                        return le(tr('error',
-                                     "unable to create main table"));
-
-                    break;
-                }
-            }
-        else
-        {
-            foreach (get_object_vars($result) as $key => $value)
-                if (substr($key, 0, 1) != '_')
-                    $this->$key = $value;
-
-            return true; // to be tested..
-        }
-
-        return false; // is this needed, check with break here up..
-	}
-
-	private function _prepare_object_data($traits = array())
+    private function _prepare_object_data($traits = array())
 	{
         $data = array();
 
@@ -133,7 +101,39 @@ class db_object extends db
         return $data;
 	}
 
-    private function _save($traits = array())
+	protected function _load($identifier) // works with integer ID or UKEY/UUID strings
+	{
+	    if (!$result = $this->_query("SELECT *
+                                      FROM " . _DB_INDEX_TABLE . "
+                                      WHERE " . (is_numeric($identifier)
+                                                ? "ID = " . $identifier
+                                                : "UKEY LIKE '" . $identifier
+                                                . "' OR UUID LIKE '" . $identifier
+                                                . "'")))
+	        switch (mysqli_errno($this->_db->_connection))
+            {
+                case 1146 : // main table not exists, trying to create it
+                {
+                    if (!$this->_query(_SQL_CREATE_INDEX))
+                        return le(tr('error',
+                                     "unable to create main table"));
+
+                    break;
+                }
+            }
+        else
+        {
+            foreach (get_object_vars($result) as $key => $value)
+                if (substr($key, 0, 1) != '_')
+                    $this->$key = $value;
+
+            return true; // to be tested..
+        }
+
+        return false; // is this needed, check with break here up..
+	}
+
+    protected function _save($traits = array())
     {
         $data = $this->_prepare_object_data($traits);
 

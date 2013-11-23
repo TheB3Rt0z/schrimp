@@ -80,7 +80,7 @@ abstract class controller
 
 	protected function _translate($placeholder)
 	{
-		return tr(str_replace('schrimp\\',
+		return tr(str_replace(code::_SET_NS_PREFIX,
 		                      '',
 		                      get_class($this)),
 		          $placeholder);
@@ -99,7 +99,7 @@ abstract class controller
     	    if (_SET_ADVANCED_INTERFACE)
     	        navigator::render_active_breadcrumb($this->_controller);
     	    else
-    	        navigator::render_breadcrumb(); // nothing shown on home page
+    	        navigator::render_breadcrumb($this->_controller); // nothing shown on home page
 	    $breadcrumb = ob_get_clean();
 
 		return $this->_header . ($breadcrumb ? html::box($breadcrumb) : '');

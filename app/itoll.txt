@@ -1,0 +1,9 @@
+COMPONENT VISIBLE NAME
+de||iToll Suite
+en||iToll Suite
+it||iToll Suite
+
+_handler_application_itoll
+de||iToll Suite
+en||iToll Suite
+it||iToll Suite

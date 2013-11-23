@@ -1,5 +1,8 @@
 <?php
 
+use schrimp\html as html;
+use schrimp\navigator as navigator;
+
 class project extends schrimp\controller
 {
     static $todos = array

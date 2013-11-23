@@ -41,7 +41,7 @@ ob_start();
             ?>
         </title>
 
-        <?php echo schrimp\html_doc::get_head_favicon($main->controller) . "\n" ?>
+        <?php echo schrimp\html_doc::get_head_favicon() . "\n" ?>
 
         <?php echo schrimp\html_doc::get_head_links($main->get_fullpath()) . "\n" ?>
     </head>

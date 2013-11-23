@@ -1,15 +1,16 @@
-<?php namespace schrimp;
+<?php
 
-class admin extends controller
+use schrimp\html as html;
+use schrimp\navigator as navigator;
+
+class itoll extends schrimp\controller
 {
     static $todos = array
     (
-        'administration style' => "change font and test page-load on all browsers",
+        'personal production utility' => "main theme should be user-interface..",
     );
 
     static $tests = array();
-
-    const VISIBLE_IN_NAVIGATION = false;
 
 	function initialize()
 	{
@@ -17,7 +18,7 @@ class admin extends controller
         $this->_handler();
 	}
 
-	protected function _handler() // also test handler
+	protected function _handler()
 	{
 		$this->_set_nav(html::box(navigator::get_list()));
 	}

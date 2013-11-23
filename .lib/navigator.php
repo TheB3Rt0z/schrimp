@@ -4,52 +4,58 @@ class navigator
 {
     static $todos = array
     (
+        'function unification' => "compress bc-renders to one render_bc(active)",
         'fix (advanced) list/breadcrumb' => "not right initialized in dev mode..",
+        'fix navi when no dev..' => "breadcrumb false, no structure, errors..",
         'render_list' => "this should be CSS3 and appear on a mouse gesture..",
         'list & advanced list' => "should mark as active current handler..",
     );
 
     static $tests = array();
 
+    private $_current_home = '';
     private $_structure = null;
 
     function __construct()
     {
-        if (!empty($this->_structure))
-            return false; // for singleton capability
-        else
+        if (empty($this->_structure))
+        {
             $this->_initialize_structure();
 
-        foreach (array_filter(glob(_SET_APPLICATION_PATH . "*.php"),
-                              function($value)
-                              {
-                                  return !substr_count($value,
-                                                       "_")
-                                      && !substr_count($value,
-                                                       _SET_HOME_COMPONENT);
-                              }) as $filename)
-        {
-            ld($filename);
+            foreach (array_filter(glob(_SET_APPLICATION_PATH . "*.php"),
+                                  function($value)
+                                  {
+                                      return !substr_count($value,
+                                                           "_")
+                                          && !substr_count($value,
+                                                           _SET_HOME_COMPONENT);
+                                  }) as $filename)
+            {
+                ld($filename);
 
-            $branch = str_replace(array
-                                  (
-                                      _SET_APPLICATION_PATH,
-                                      ".php",
-                                  ),
-                                  '',
-                                  $filename);
+                $branch = str_replace(array
+                                      (
+                                          _SET_APPLICATION_PATH,
+                                          ".php",
+                                      ),
+                                      '',
+                                      $filename);
 
-            $this->_add_branch($branch); // addition performed only if visible
+                $this->_add_branch($branch); // addition performed only if visible
+            }
         }
     }
 
     private function _initialize_structure()
     {
+        $this->_current_home = str_replace(code::_SET_NS_PREFIX,
+                                           '',
+                                           _SET_HOME_COMPONENT);
         $this->_structure = array
         (
-            _SET_HOME_COMPONENT => array
+            $this->_current_home => array
             (
-                'name' => tr(_SET_HOME_COMPONENT,
+                'name' => tr($this->_current_home,
                              'COMPONENT VISIBLE NAME'),
             ),
         );
@@ -70,16 +76,16 @@ class navigator
 
     private function _add_branch($ctrl_name)
     {
-        $full_ctrl_name = 'schrimp\\' . $ctrl_name;
+        $full_ctrl_name = code::_SET_NS_PREFIX . $ctrl_name;
         if ($full_ctrl_name::VISIBLE_IN_NAVIGATION)
         {
-            $this->_structure[_SET_HOME_COMPONENT]['sub'][$ctrl_name] = array
+            $this->_structure[$this->_current_home]['sub'][$ctrl_name] = array
             (
                 'name' => tr($ctrl_name,
                              'COMPONENT VISIBLE NAME')
             );
 
-            $sub =& $this->_structure[_SET_HOME_COMPONENT]['sub'][$ctrl_name];
+            $sub =& $this->_structure[$this->_current_home]['sub'][$ctrl_name];
 
             $rc = new \ReflectionClass($full_ctrl_name);
             foreach ($rc->getMethods(\ReflectionMethod::IS_PRIVATE
@@ -98,7 +104,7 @@ class navigator
                                         $returns['link'],
                                         $object);
 
-                $sub =& $this->_structure[_SET_HOME_COMPONENT]['sub'][$ctrl_name];
+                $sub =& $this->_structure[$this->_current_home]['sub'][$ctrl_name];
             }
         }
     }
@@ -221,7 +227,7 @@ class navigator
 
     private function _print_breadcrumb($ctrl_name)
     {
-        $structure = $this->_structure[_SET_HOME_COMPONENT];
+        $structure = $this->_structure[$this->_current_home];
 
         echo html::hyperlink('',
                              $structure['name'])
@@ -299,7 +305,7 @@ class navigator
 
     private function _print_active_breadcrumb($ctrl_name)
     {
-        $structure = $this->_structure[_SET_HOME_COMPONENT];
+        $structure = $this->_structure[$this->_current_home];
 
         $code = html::spanner(HTML_ICON_NAVIGATION,
                               array
@@ -341,7 +347,7 @@ class navigator
 
         $self = new self;
 
-        return html::array_to_list($self->_structure[_SET_HOME_COMPONENT]['sub']);
+        return html::array_to_list($self->_structure[$self->_current_home]['sub']);
     }
 
     static function get_advanced_list()
@@ -353,19 +359,17 @@ class navigator
                               (
                                   'marker',
                               ))
-              . html::array_to_list($self->_structure[_SET_HOME_COMPONENT]['sub']);
+              . html::array_to_list($self->_structure[$self->_current_home]['sub']);
 
         return html::divisor($code);
     }
 
-    static function render_breadcrumb()
+    static function render_breadcrumb($ctrl_name)
     {
-        $ctrl_name = main::$ctrl_name;
-
         if (!$ctrl_name::RENDER_BREADCRUMB)
             return false;
 
-        if ($ctrl_name != _SET_HOME_COMPONENT)
+        if ($ctrl_name != _SET_HOME_COMPONENT) // excludes breadcrumb on first page
         {
             $self = new self;
             $self->_print_breadcrumb($ctrl_name);
@@ -377,10 +381,12 @@ class navigator
         if (!$ctrl_name::RENDER_BREADCRUMB)
             return false;
 
-        if ($ctrl_name != _SET_HOME_COMPONENT)
+        if ($ctrl_name != _SET_HOME_COMPONENT) // excludes breadcrumb on first page
         {
             $self = new self;
-            $self->_print_active_breadcrumb($ctrl_name);
+            $self->_print_active_breadcrumb(str_replace(code::_SET_NS_PREFIX,
+                                            '',
+                                            $ctrl_name));
         }
     }
 
@@ -388,7 +394,7 @@ class navigator
     {
         $self = new self; // populating structure array if still null (singleton)
 
-        $sub_structure = $self->_structure[_SET_HOME_COMPONENT]['sub'];
+        $sub_structure = $self->_structure[$this->_current_home]['sub'];
 
         return html::array_to_list($sub_structure, 'ol');
     }

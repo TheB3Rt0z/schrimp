@@ -95,7 +95,7 @@ class toolbox
 	    {
 	        $fullkey = (class_exists($key)
 	                   ? $key
-	                   : 'schrimp\\' . $key);
+	                   : code::_SET_NS_PREFIX . $key);
 	        $class = new \ReflectionClass($fullkey);
 	        $tests = $class->getStaticPropertyValue('tests');
 	        foreach ($tests as $subkey => $values)
