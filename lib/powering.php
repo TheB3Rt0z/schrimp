@@ -12,9 +12,14 @@ class powering_status extends schrimp\db_object
 
 class powering
 {
-	static $todos = array();
+    static $todos = array();
 
     static $tests = array();
+
+    static $foods = array
+    (
+        'anti-infiammatory' => "integral-rice, no-fat-fish, curcuma, berries",
+    );
 
     static $elements = array // to be combined in objects, see wroten ostsee notes..
     (
