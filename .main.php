@@ -99,12 +99,12 @@ class main
             error_reporting(E_ALL); // it would be better to test this thing..
 
         define('_SET_TRANSPORT_PROTOCOL', "http" . (getenv('HTTPS') == 'on'
-                                                  ? "s"
-                                                  : '')); // auto-detecting
+                                                   ? "s"
+                                                   : '')); // auto-detecting
 
-        define('_SET_HOME_COMPONENT', _SET_DEVELOPMENT_MODE
-                                     ? __NAMESPACE__ . '\\' ."admin"
-                                     : "homepage"); // convention
+        define('_SET_HOME_COMPONENT', (_SET_DEVELOPMENT_MODE
+                                      ? __NAMESPACE__ . '\\' ."admin"
+                                      : "homepage")); // convention
 
         define('MAX_CYCLOMATIC_COMPLEXITY', SET_COMPLEXITY_INDEX / 1.5); // base complexity index, ATM 8
         define('MAX_METHODS_COMPLEXITY', SET_COMPLEXITY_INDEX * 3); // ATM 36 max code lines
@@ -238,7 +238,7 @@ class main
 
     static function get_version($precision = 2) // string for evens, numeric for odds
     {
-        return (is_int($precision/2) ? "v": '')
+        return (is_int($precision/2) ? "v" : '')
              . number_format(((mktime(date('H'), date('i'), date('s'),
                                       date('n'), date('j'), date('Y'))
                              - mktime(17, 11, 33,

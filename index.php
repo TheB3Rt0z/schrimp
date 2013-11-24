@@ -20,7 +20,7 @@
  * - - set: traditional setter for private/protected properties
  * - - _handler: application controller, protected or private if not simple
  *
- * Make it function, make it ordently, make it performant, make it beautiful
+ * Make it work, make it ordently, make it performant, make it beautiful
  */
 
 require_once ".main.php"; // loading main application
@@ -35,9 +35,9 @@ ob_start();
 
         <title>
             <?php
-            echo _STR_PROJECT_NAME . " "
-               . $main->get_version()
-               . " | " . $main->title . "\n"
+            echo (_SET_DEVELOPMENT_MODE
+                 ? _STR_PROJECT_NAME . " " . $main->get_version() . " | "
+                 : '') . $main->title . "\n"
             ?>
         </title>
 
