@@ -771,10 +771,13 @@ class code
                                       '',
                                       $parent->name)]++;
 
-        foreach (file($class->getFileName()) as $code_line)
+        $class_length = $class->getEndLine() - $class->getStartLine() - 2;
+        foreach (array_slice(file($class->getFileName()),
+                             $class->getStartLine() + 1,
+                             $class_length) as $code_line)
             foreach ($dependencies as $key => $value)
                 if (substr_count($code_line, $key . '::')
-                    || substr_count($code_line, ' new ' . $key))
+                    || substr_count($code_line, ' = new ' . $key))
                 {
                     $dependencies[$key]++;
                 }
