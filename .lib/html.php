@@ -74,6 +74,7 @@ class html
                     //'archives',
                     //'appendix', // refers to a document serving as an appendix in a collection of documents
                     'author', // links to the author of the document
+                    'canonical', // strongly followed instruction, contains official page uri (if more pages, eg. 301 relocations, point to the same resource) see http://speckyboy.com/2012/07/16/what-a-canonical-link-is-and-how-to-use-it-properly/
                     'chapter', // links to parent chapter of this document
                     //'contents', // refers to a document serving as a table of contents. Some user agents also support the synonym ToC (from "Table of Contents")
                     'copyright', // copyright information for linked document

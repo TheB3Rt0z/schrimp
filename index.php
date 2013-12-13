@@ -44,6 +44,8 @@ ob_start();
         <?php echo schrimp\html_doc::get_head_favicon() . "\n" ?>
 
         <?php echo schrimp\html_doc::get_head_links($main->get_fullpath()) . "\n" ?>
+
+        <?php echo schrimp\html_doc::get_head_scripts() . "\n" ?>
     </head>
 
     <body>

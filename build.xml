@@ -18,12 +18,4 @@
     <eclipse.refreshLocal resource="xa/public" depth="infinite" />
 </target>
     
-<target name="compass.compile">
-    <exec executable="compass.bat" dir="${basedir}">
-        <arg value="compile" />
-        <arg value="--no-line-comments" />
-    </exec>
-    <eclipse.refreshLocal resource="xa/public" depth="infinite"/>
-</target>
-    
 </project>

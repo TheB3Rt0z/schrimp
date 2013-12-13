@@ -21,6 +21,7 @@ class power extends schrimp\controller
 
 	protected function _handler()
 	{
+	    $powerring = new powerring;
 		$this->_set_nav(html::box(navigator::get_list()));
 	}
 }

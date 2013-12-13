@@ -58,7 +58,7 @@ de||Anwendungsbibliothek
 en||Application libraries
 it||Librerie addizionali
 
-_handler_plugins_powering
+_handler_plugins_powerring
 de||Stärkung
 en||Strengthening
 it||Potenziamento

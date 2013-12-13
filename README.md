@@ -1,4 +1,4 @@
-![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Dokumentation v1.2 | 13.11  
+![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Dokumentation v1.2 | 13.12  
 ---------------------------------------------------------------------------------------------------------------------------------------  
   
 Table of contents  
@@ -10,17 +10,18 @@ Table of contents
 [Library controller](#-class-controller-23112013-- "") (.lib/controller.php, Len: 98/127, CIS: 11 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library db](#-class-db-06112013-- "") &#10029;&#10029;&#10029;  (.lib/db.php, Len: 106/126, CIS: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- db_object](#-class-db_object-22112013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/db_object.php, Len: 120/148, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
+[- db_object_user](#-class-db_object_user-13122013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/db_object_user.php, Len: 0/1, CIS: 0 )   
 [Library escort](#-class-escort-31102013-- "") (.lib/escort.php, Len: 32/40, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library html](#-class-html-23112013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/html.php, Len: 704/822, CIS: 23 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[- html_doc](#-class-html_doc-23112013-- "") &#10029;&#10029;&#10029;&#10029;  (.lib/html_doc.php, Len: 70/82, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library html](#-class-html-27112013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/html.php, Len: 705/823, CIS: 23 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[- html_doc](#-class-html_doc-13122013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/html_doc.php, Len: 79/94, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- html_form](#-class-html_form-31102013-- "") &#10029;  (.lib/html_form.php, Len: 65/71, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library language](#-class-language-23112013-- "") &#10029;&#10029;&#10029;  (.lib/language.php, Len: 103/121, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
 [Library main](#-class-main-24112013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (.main.php, Len: 268/331, CIS: 29 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
 [Library md](#-class-md-19112013-- "") (.lib/md.php, Len: 185/231, CIS: 14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library navigator](#-class-navigator-23112013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/navigator.php, Len: 326/396, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  2 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
 [Library pdf](#-class-pdf-11112013-- "") &#10029;  (.lib/pdf.php, Len: 5/6, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library powering](#-class-powering-24112013-- "") (lib/powering.php, Len: 40/44, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[- powering_status](#-class-powering_status-24112013-- "") &#10029;  (lib/powering.php, Len: 5/6, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library powerring](#-class-powerring-07122013-- "") (lib/powerring.php, Len: 124/140, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!") 2 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!")  
+[- powerring_status](#-class-powerring_status-07122013-- "") &#10029;&#10029;&#10029;  (lib/powerring.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "1 too long line(s) found!") Len: 7/8, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library regex](#-class-regex-15112013-- "") &#10029;&#10029;&#10029;  (.lib/regex.php, Len: 12/14, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library toolbox](#-class-toolbox-23112013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/toolbox.php, Len: 120/135, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Component admin](#-class-admin-23112013-- "") &#10029;  (.app/admin.php, Len: 15/19, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -35,7 +36,7 @@ Table of contents
 [- homepage_helper](#-class-homepage_helper-31102013-- "") (app/homepage_helper.php, Len: 2/3, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Component itoll](#-class-itoll-23112013-- "") &#10029;  (app/itoll.php, Len: 14/17, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- itoll_helper](#-class-itoll_helper-23112013-- "") (app/itoll_helper.php, Len: 2/3, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Component power](#-class-power-31102013-- "") &#10029;&#10029;  (app/power.php, Len: 15/18, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Component power](#-class-power-03122013-- "") &#10029;&#10029;  (app/power.php, Len: 16/19, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- power_helper](#-class-power_helper-31102013-- "") (app/power_helper.php, Len: 2/3, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Component project](#-class-project-23112013-- "") &#10029;  (app/project.php, Len: 14/17, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- project_helper](#-class-project_helper-05112013-- "") (app/project_helper.php, Len: 2/3, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -287,6 +288,37 @@ Uses: **db**, **main**
   
 ***  
   
+[⇧](# "to the top") Class DB_OBJECT_USER (13.12.2013)  
+---------------------------------  
+  
+**CODE REFERENCE:**  
+  
+  
+**INHERITED METHODS:**  
+  
+- **[__construct](https://github.com/TheB3Rt0z/schrimp/wiki/db_object __construct "")($identifier_or_data = null)** (CPub, Len: 8/9 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[_load](https://github.com/TheB3Rt0z/schrimp/wiki/db_object _load "")($identifier)** (Pro, Len: 25/28 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[_query](https://github.com/TheB3Rt0z/schrimp/wiki/db _query "")($query, $type = null)** (Pro, Len: 21/24 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[_save](https://github.com/TheB3Rt0z/schrimp/wiki/db_object _save "")($traits = null)** (Pro, Len: 18/21 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[load](https://github.com/TheB3Rt0z/schrimp/wiki/db_object load "")($identifier)** (PubS, Len: 5/7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[query](https://github.com/TheB3Rt0z/schrimp/wiki/db query "")($options = null)** (PubS, Len: 8/11 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[save](https://github.com/TheB3Rt0z/schrimp/wiki/db_object save "")($traits = null, $identifier = null)** (PubS, Len: 6/8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+  
+**DEPENDENCIES:**  
+  
+Uses: **db_object**  
+  
+**TODOS:**  
+  
+- **set traits on construct event** &#10140; if given data is a values array..  
+- **index table specs** &#10140; ID, id_traits, UKEY, date_created/updated, value?  
+- **extra table for read events** &#10140; ID, id_powering, UKEY etc + traits list  
+- **_load output testing** &#10140; is really boolean return working or not?  
+- **_save event performance** &#10140; please avoid reloading 'same' object again!  
+  
+  
+***  
+  
 [⇧](# "to the top") Class ESCORT (31.10.2013)  
 -------------------------  
   
@@ -299,7 +331,7 @@ Uses: **db**, **main**
   
 ***  
   
-[⇧](# "to the top") Class HTML (23.11.2013)  
+[⇧](# "to the top") Class HTML (27.11.2013)  
 -----------------------  
   
 **CODE REFERENCE:**  
@@ -371,14 +403,15 @@ Uses: **escort**
   
 ***  
   
-[⇧](# "to the top") Class HTML_DOC (23.11.2013)  
+[⇧](# "to the top") Class HTML_DOC (13.12.2013)  
 ---------------------------  
   
 **CODE REFERENCE:**  
   
 - **[get_head_favicon](https://github.com/TheB3Rt0z/schrimp/wiki/html_doc get_head_favicon "")()** (PubS, Len: 10/12 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **[get_head_links](https://github.com/TheB3Rt0z/schrimp/wiki/html_doc get_head_links "")($fullpath)** (PubS, Len: 16/22 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[get_head_links](https://github.com/TheB3Rt0z/schrimp/wiki/html_doc get_head_links "")($fullpath)** (PubS, Len: 9/12 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[get_head_metatags](https://github.com/TheB3Rt0z/schrimp/wiki/html_doc get_head_metatags "")()** (PubS, Len: 27 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[get_head_scripts](https://github.com/TheB3Rt0z/schrimp/wiki/html_doc get_head_scripts "")()** (PubS, Len: 12/17 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
 **INHERITED METHODS:**  
   
@@ -412,6 +445,7 @@ Uses: **html**, **main**
   
 **TODOS:**  
   
+- **get_head_links** &#10140; all if () modifiers should call internal methods  
 - **backend/frontend controller** &#10140; it should load only right style.css..  
 - **meta application-name** &#10140; should be generated by homepage controller!  
 - **meta keywords** &#10140; automatic population based on content/siloing  
@@ -618,14 +652,21 @@ Uses: **code**, **html**, **html_form**, **main**
   
 ***  
   
-[⇧](# "to the top") Class POWERING (24.11.2013)  
----------------------------  
+[⇧](# "to the top") Class POWERRING (07.12.2013)  
+----------------------------  
+  
+**CODE REFERENCE:**  
+  
+- **[_calculate_antropometric_fm](https://github.com/TheB3Rt0z/schrimp/wiki/powerring _calculate_antropometric_fm "")()** (Pri, Len: 21/23 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 8 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Method's cyclomatic complexity could be reduced.."))  
+- **[_calculate_bd](https://github.com/TheB3Rt0z/schrimp/wiki/powerring _calculate_bd "")($folds)** (Pri, Len: 13/14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[_calculate_percentage_fm](https://github.com/TheB3Rt0z/schrimp/wiki/powerring _calculate_percentage_fm "")($folds)** (Pri, Len: 36/40 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Method's length should be reduced!") CyC: 14 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Method's cyclomatic complexity should be reduced!"))  
+- **[get_ffm](https://github.com/TheB3Rt0z/schrimp/wiki/powerring get_ffm "")()** (Pub, Len: 2/3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
   
 ***  
   
-[⇧](# "to the top") Class POWERING_STATUS (24.11.2013)  
-----------------------------------  
+[⇧](# "to the top") Class POWERRING_STATUS (07.12.2013)  
+-----------------------------------  
   
 **CODE REFERENCE:**  
   
@@ -647,6 +688,8 @@ Uses: **db_object**
 **TODOS:**  
   
 - **status db objects** &#10140; to be saved in ['CLASS_TYPE'] eg. powering_status  
+- **user:status = 1:∞** &#10140; anamnesis + body-composition + muscular tests..  
+- **status attachments** &#10140; 3 photos: frontal, lateral from behind (optional)  
   
   
 ***  
@@ -1008,7 +1051,7 @@ Uses: **controller**, **html**, **navigator**
   
 ***  
   
-[⇧](# "to the top") Class POWER (31.10.2013)  
+[⇧](# "to the top") Class POWER (03.12.2013)  
 ------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -1018,7 +1061,7 @@ Uses: **controller**, **html**, **navigator**
   
 **CODE REFERENCE:**  
   
-- **[_handler](https://github.com/TheB3Rt0z/schrimp/wiki/power _handler "")()** (Pro, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[_handler](https://github.com/TheB3Rt0z/schrimp/wiki/power _handler "")()** (Pro, Len: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[initialize](https://github.com/TheB3Rt0z/schrimp/wiki/power initialize "")()** (Pub, Len: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
 **INHERITED METHODS:**  
@@ -1042,7 +1085,7 @@ Uses: **controller**, **html**, **navigator**
   
 **DEPENDENCIES:**  
   
-Uses: **controller**, **html**, **navigator**  
+Uses: **controller**, **html**, **navigator**, **powerring**  
   
 **TODOS:**  
   
