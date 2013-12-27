@@ -394,7 +394,7 @@ class navigator
     {
         $self = new self; // populating structure array if still null (singleton)
 
-        $sub_structure = $self->_structure[$this->_actual_home]['sub'];
+        $sub_structure = $self->_structure[$self->_actual_home]['sub'];
 
         return html::array_to_list($sub_structure, 'ol');
     }
