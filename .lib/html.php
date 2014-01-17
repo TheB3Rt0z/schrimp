@@ -20,6 +20,8 @@ class html
 
     static $tests = array();
 
+    const _HTML_HEAD_INDENTATION = "\n        ";
+
     private $_tag = null;
     private $_type = null;
     private $_attributes = array();
@@ -167,7 +169,9 @@ class html
             'h4' => array(),
             'h5' => array(),
             'h6' => array(),
-            'h7' => array(), // experimental..
+            'h7' => array(),
+            'h8' => array(),
+            'h9' => array(),
             'li' => array(),
             'map' => array(),
             'ol' => array(),
@@ -464,6 +468,24 @@ class html
         return $self->_html;
     }
 
+    private static function _h8($content)
+    {
+        $self = new self('h8',
+                         array(),
+                         $content);
+
+        return $self->_html;
+    }
+
+    private static function _h9($content)
+    {
+        $self = new self('h9',
+                         array(),
+                         $content);
+
+        return $self->_html;
+    }
+
     private static function _img($src,
                                  $alt,
                                  $title = '')
@@ -526,7 +548,7 @@ class html
         else
             return false; // MAYBE this link was already loaded, to be continued..
 
-        return $self->_html;
+        return $self->_html . self::_HTML_HEAD_INDENTATION;
     }
 
     private static function _meta($attributes)
@@ -536,7 +558,7 @@ class html
             $self = new self('meta',
                              $attributes);
 
-            return $self->_html;
+            return $self->_html . self::_HTML_HEAD_INDENTATION;
         }
     }
 
@@ -622,9 +644,9 @@ class html
             self::$_loaded_scripts[] = $content;
         }
         else
-            return false; // this script SEEMS to be already loaded, or to be empty!
+            return false; // this script SEEMS to be already loaded, or to be empty
 
-        return $self->_html;
+        return $self->_html . self::_HTML_HEAD_INDENTATION;
     }
 
     protected static function _select($content,

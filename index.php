@@ -31,21 +31,15 @@ ob_start();
 
 ?><!DOCTYPE html>
     <head>
-        <?php echo schrimp\html_doc::get_head_metatags() . "\n" ?>
+        <?php
+        echo schrimp\html_doc::get_head_metatags()
+           . schrimp\html_doc::get_head_favicon()
+           . schrimp\html_doc::get_head_links($main->get_fullpath())
+           . schrimp\html_doc::get_head_scripts() ?>
 
-        <title>
-            <?php
-            echo (_SET_DEVELOPMENT_MODE
-                 ? _STR_PROJECT_NAME . " " . $main->get_version() . " | "
-                 : '') . $main->title . "\n"
-            ?>
-        </title>
-
-        <?php echo schrimp\html_doc::get_head_favicon() . "\n" ?>
-
-        <?php echo schrimp\html_doc::get_head_links($main->get_fullpath()) . "\n" ?>
-
-        <?php echo schrimp\html_doc::get_head_scripts() . "\n" ?>
+        <title><?php echo (_SET_DEVELOPMENT_MODE
+                          ? _STR_PROJECT_NAME . " " . $main->get_version() . " | "
+                          : '') . $main->title ?></title>
     </head>
 
     <body>

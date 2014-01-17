@@ -1,4 +1,4 @@
-![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Dokumentation v1.2 | 13.12  
+![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Dokumentation v1.3 | 14.01  
 ---------------------------------------------------------------------------------------------------------------------------------------  
   
 Table of contents  
@@ -12,13 +12,13 @@ Table of contents
 [- db_object](#-class-db_object-22112013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/db_object.php, Len: 120/148, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
 [- db_object_user](#-class-db_object_user-13122013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/db_object_user.php, Len: 0/1, CIS: 0 )   
 [Library escort](#-class-escort-31102013-- "") (.lib/escort.php, Len: 32/40, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library html](#-class-html-27112013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/html.php, Len: 705/823, CIS: 23 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[- html_doc](#-class-html_doc-13122013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/html_doc.php, Len: 79/94, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library html](#-class-html-16012014-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/html.php, Len: 722/845, CIS: 23 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[- html_doc](#-class-html_doc-16122013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/html_doc.php, Len: 79/94, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- html_form](#-class-html_form-31102013-- "") &#10029;  (.lib/html_form.php, Len: 65/71, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library language](#-class-language-23112013-- "") &#10029;&#10029;&#10029;  (.lib/language.php, Len: 103/121, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
 [Library main](#-class-main-24112013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (.main.php, Len: 268/331, CIS: 29 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
 [Library md](#-class-md-19112013-- "") (.lib/md.php, Len: 185/231, CIS: 14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library navigator](#-class-navigator-23112013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/navigator.php, Len: 326/396, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  2 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
+[Library navigator](#-class-navigator-27122013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/navigator.php, Len: 326/396, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  2 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
 [Library pdf](#-class-pdf-11112013-- "") &#10029;  (.lib/pdf.php, Len: 5/6, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library powerring](#-class-powerring-07122013-- "") (lib/powerring.php, Len: 124/140, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!") 2 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!")  
 [- powerring_status](#-class-powerring_status-07122013-- "") &#10029;&#10029;&#10029;  (lib/powerring.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "1 too long line(s) found!") Len: 7/8, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -331,7 +331,7 @@ Uses: **db_object**
   
 ***  
   
-[⇧](# "to the top") Class HTML (27.11.2013)  
+[⇧](# "to the top") Class HTML (16.01.2014)  
 -----------------------  
   
 **CODE REFERENCE:**  
@@ -348,6 +348,8 @@ Uses: **db_object**
 - **[_h5](https://github.com/TheB3Rt0z/schrimp/wiki/html _h5 "")($content)** (PriS, Len: 4/5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[_h6](https://github.com/TheB3Rt0z/schrimp/wiki/html _h6 "")($content)** (PriS, Len: 4/5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[_h7](https://github.com/TheB3Rt0z/schrimp/wiki/html _h7 "")($content)** (PriS, Len: 4/5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[_h8](https://github.com/TheB3Rt0z/schrimp/wiki/html _h8 "")($content)** (PriS, Len: 4/5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[_h9](https://github.com/TheB3Rt0z/schrimp/wiki/html _h9 "")($content)** (PriS, Len: 4/5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[_img](https://github.com/TheB3Rt0z/schrimp/wiki/html _img "")($src, $alt, $title = null)** (PriS, Len: 11/14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[_is_attribute_valid](https://github.com/TheB3Rt0z/schrimp/wiki/html _is_attribute_valid "")($attribute, $value)** (Pri, Len: 15/17 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[_is_tag_container](https://github.com/TheB3Rt0z/schrimp/wiki/html _is_tag_container "")()** (Pri, Len: 4/5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
@@ -403,7 +405,7 @@ Uses: **escort**
   
 ***  
   
-[⇧](# "to the top") Class HTML_DOC (13.12.2013)  
+[⇧](# "to the top") Class HTML_DOC (16.12.2013)  
 ---------------------------  
   
 **CODE REFERENCE:**  
@@ -603,7 +605,7 @@ Uses: **escort**
   
 ***  
   
-[⇧](# "to the top") Class NAVIGATOR (23.11.2013)  
+[⇧](# "to the top") Class NAVIGATOR (27.12.2013)  
 ----------------------------  
   
 **CODE REFERENCE:**  
@@ -1149,4 +1151,4 @@ Uses: **controller**, **html**, **navigator**
   
   
   
-Copyright © 2011-2013 | The S.C.H.R.I.M.P. Project  
+Copyright © 2011-2014 | The S.C.H.R.I.M.P. Project  
