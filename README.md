@@ -26,7 +26,7 @@ Table of contents
 [Library toolbox](#-class-toolbox-23112013-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/toolbox.php, Len: 120/135, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Component admin](#-class-admin-23112013-- "") &#10029;  (.app/admin.php, Len: 15/19, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- admin_helper](#-class-admin_helper-31102013-- "") (.app/admin_helper.php, Len: 2/3, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Component control](#-class-control-23112013-- "") &#10029;&#10029;&#10029;  (.app/control.php, Len: 200/236, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Component control](#-class-control-17012014-- "") &#10029;&#10029;&#10029;  (.app/control.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "1 too long line(s) found!") Len: 203/239, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- control_helper](#-class-control_helper-31102013-- "") (.app/control_helper.php, Len: 65/81, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Component documentation](#-class-documentation-31102013-- "") (.app/documentation.php, Len: 36/44, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- documentation_helper](#-class-documentation_helper-02112013-- "") (.app/documentation_helper.php, Len: 7/9, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -789,7 +789,7 @@ Uses: **controller**, **html**, **navigator**
   
 ***  
   
-[⇧](# "to the top") Class CONTROL (23.11.2013)  
+[⇧](# "to the top") Class CONTROL (17.01.2014)  
 --------------------------  
   
 **CLASS CONFIGURATION CONSTANTS:**  
@@ -817,7 +817,7 @@ Uses: **controller**, **html**, **navigator**
 - **[_handler_modules_documentation](https://github.com/TheB3Rt0z/schrimp/wiki/control _handler_modules_documentation "")()** (Pri, Len: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[_handler_modules_error](https://github.com/TheB3Rt0z/schrimp/wiki/control _handler_modules_error "")()** (Pri, Len: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[_handler_phpinfo](https://github.com/TheB3Rt0z/schrimp/wiki/control _handler_phpinfo "")()** (Pri, Len: 20/23 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **[_handler_plugins](https://github.com/TheB3Rt0z/schrimp/wiki/control _handler_plugins "")()** (Pri, Len: 21/25 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[_handler_plugins](https://github.com/TheB3Rt0z/schrimp/wiki/control _handler_plugins "")()** (Pri ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "1 too long line(s) found!") Len: 24/28 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[initialize](https://github.com/TheB3Rt0z/schrimp/wiki/control initialize "")()** (Pub, Len: 15/18 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
 **INHERITED METHODS:**  

@@ -128,10 +128,13 @@ class control extends controller
 		                   foreach (glob(_SET_LIBRARIES_PUBLICPATH . \"*.php\")
 		                            as \$filename)
 				           {
-							   \$option = str_replace(\$substitutions,
-				                                      '',
-				                                      \$filename);
-			                   \$output[\$option] = '_handler_plugins_' . \$option;
+							   if (!substr_count(\$filename, \"_\"))
+							   {
+		                           \$option = str_replace(\$substitutions,
+				                                          '',
+				                                          \$filename);
+			                       \$output[\$option] = '_handler_plugins_' . \$option;
+		                       }
 		                   }
 
 				           return \$output;"; // ATM translation should go in control.txt, if official
