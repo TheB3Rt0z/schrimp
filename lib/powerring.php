@@ -1,17 +1,5 @@
 <?php
 
-class powerring_status extends schrimp\db_object
-{
-    static $todos = array
-    (
-        'status db objects' => "to be saved in ['CLASS_TYPE'] eg. powering_status", // datum, weight, height
-        'user:status = 1:∞' => "anamnesis + body-composition + muscular tests..", // from user: name, gender, age.. + medic problems and food data -> training setting
-        'status attachments' => "3 photos: frontal, lateral from behind (optional)",
-    );
-
-    static $tests = array();
-}
-
 class powerring
 {
     static $todos = array();
@@ -109,16 +97,18 @@ class powerring
 
 
             }
-            elseif ($this->_user->age <= 29
+            elseif ($this->_user->age > 29
                 && !empty($folds['stringer'])
                 && !empty($folds['superiliacal'])
                 && !empty($folds['triceps']))
             {
-
+                $folds_sum = $folds['stringer']
+                           + $folds['superiliacal']
+                           + $folds['triceps']; // Jackson & Pollock (after 29 years)
             }
         }
         else
-            // specimen too young
+            // specimen too young, throw error
 
         if ($this->_user->gender) // jackson & pollock 3 folds (for 8 to 61 years)
         {
@@ -126,7 +116,7 @@ class powerring
         }
         else
         {
-            return ((5.01 / $this->_calculate_bd($folds)) - 4.57) * 100;;
+            return ((5.01 / $this->_calculate_bd($folds)) - 4.57) * 100;
         }
     }
 
