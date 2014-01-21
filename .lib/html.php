@@ -348,7 +348,8 @@ class html
     }
 
     private static function _a($href,
-                               $content)
+                               $content,
+                               $classes = array())
     {
         if (!strpos($href, "://"))
             $href = ru($href);
@@ -357,6 +358,9 @@ class html
                       (
                           'href' => $href,
                       );
+
+        if (!empty($classes))
+            $attributes['class'] = implode($classes, " ");
 
         $self = new self('a',
                          $attributes,
@@ -740,16 +744,24 @@ class html
     }
 
     static function array_to_list($tree,
+                                  $link = false,
                                   $type = 'ul')
     {
         $content = '';
 
         foreach ($tree as $key => $value)
         {
-            $content .= self::_li(self::_a($key,
-                                           $value['name']));
+            $content .= self::_li($link
+                                  ? self::_a($key,
+                                             $value['name'],
+                                             (!empty($value['classes'])
+                                             ? $value['classes']
+                                             : false))
+                                  : self::_p($value['name']));
+
             if (!empty($value['sub']))
                 $content .= self::_li(self::array_to_list($value['sub'],
+                                                          $link,
                                                           $type));
         }
 

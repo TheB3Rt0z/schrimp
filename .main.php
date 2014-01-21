@@ -37,6 +37,7 @@ class main
     static $controller = '';
     static $action = null;
     static $args = array();
+    static $route = false;
 
     function __construct($uri = false)
     {
@@ -134,6 +135,14 @@ class main
             if (!empty($components))
                 self::$args = array_filter($components);
         }
+
+        self::$route = self::$controller
+                     . (!empty(self::$action)
+                       ? '/' . self::$action
+                       . (!empty(self::$args)
+                         ? '/' . implode('/', self::$args)
+                         : '')
+                       : '');
     }
 
     private function _set_home_component()

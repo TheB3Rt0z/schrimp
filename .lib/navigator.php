@@ -8,7 +8,6 @@ class navigator
         'fix (advanced) list/breadcrumb' => "not right initialized in dev mode..",
         'fix navi when no dev..' => "breadcrumb false, no structure, errors..",
         'render_list' => "this should be CSS3 and appear on a mouse gesture..",
-        'list & advanced list' => "should mark as active current handler..",
     );
 
     static $tests = array();
@@ -82,10 +81,16 @@ class navigator
             $this->_structure[$this->_actual_home]['sub'][$ctrl_name] = array
             (
                 'name' => tr($ctrl_name,
-                             'COMPONENT VISIBLE NAME')
+                             'COMPONENT VISIBLE NAME'),
             );
 
             $sub =& $this->_structure[$this->_actual_home]['sub'][$ctrl_name];
+
+            if ($ctrl_name == main::$route)
+                 $sub['classes'] = array
+                                   (
+                                       'active',
+                                   );
 
             $rc = new \ReflectionClass($full_ctrl_name);
             foreach ($rc->getMethods(\ReflectionMethod::IS_PRIVATE
@@ -132,6 +137,12 @@ class navigator
                 );
 
             $sub =& $sub['sub'][$link];
+
+            if ($link == main::$route)
+                 $sub['classes'] = array
+                                   (
+                                       'active',
+                                   );
         }
 
         return array
@@ -170,6 +181,12 @@ class navigator
 
             if (empty($value))
                 $sub['sub'][$link . "/" . $key]['controller'] = $key;
+
+            if ($link . "/" . $key == main::$route)
+                 $sub['sub'][$link . "/" . $key]['classes'] = array
+                                                              (
+                                                                  'active',
+                                                              );
         }
     }
 
@@ -347,7 +364,8 @@ class navigator
 
         $self = new self;
 
-        return html::array_to_list($self->_structure[$self->_actual_home]['sub']);
+        return html::array_to_list($self->_structure[$self->_actual_home]['sub'],
+                                   true);
     }
 
     static function get_advanced_list()
@@ -359,7 +377,8 @@ class navigator
                               (
                                   'marker',
                               ))
-              . html::array_to_list($self->_structure[$self->_actual_home]['sub']);
+              . html::array_to_list($self->_structure[$self->_actual_home]['sub'],
+                                    true);
 
         return html::divisor($code);
     }
