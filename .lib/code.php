@@ -726,8 +726,9 @@ class code
                                        '',
                                        $filename)] = filemtime($filename);
 
-        ksort(toolbox::filter($libraries,
-                              $exclude));
+        $libraries_list = toolbox::filter($libraries,
+                                          $exclude);
+        ksort($libraries_list);
 
         return $libraries;
     }
