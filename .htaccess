@@ -1,3 +1,11 @@
+# Server configuration required:
+#
+#<Directory />
+#   AllowOverride All
+#   Order allow,deny
+#   Allow from all
+#</Directory>
+
 ErrorDocument 400 /schrimp/error/400
 ErrorDocument 401 /schrimp/error/401
 ErrorDocument 403 /schrimp/error/403

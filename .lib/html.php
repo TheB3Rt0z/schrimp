@@ -352,7 +352,9 @@ class html
                                $classes = array())
     {
         if (!strpos($href, "://"))
-            $href = ru($href);
+            $href = ru(_SET_STEALTH_MODE
+                       ? $href
+                       : cu($href));
 
         $attributes = array
                       (

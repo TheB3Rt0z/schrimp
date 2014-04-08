@@ -64,7 +64,9 @@ class main
             $this->_uri = $uri;
             $this->_initialize(str_replace(_SET_LOCAL_PATH . "/",
                                            '',
-                                           $uri));
+                                           _SET_STEALTH_MODE
+                                           ? $uri
+                                           : cu($uri)));
         }
     }
 
@@ -174,7 +176,7 @@ class main
 
         $this->_path = _SET_APPLICATION_PATH; // using default modules
 
-        if ($components[0])
+        if (!empty($components[0]))
         {
             if (!substr_count($components[0], "_"))
             {
@@ -264,6 +266,42 @@ class main
         return file_exists(realpath($path)); // works only if read permissions on subdirs are available!
     }
 
+    static function convert_uri($uri) // 2-way, with auto-recognization
+    {
+        if (!substr_count($r_uri = str_replace(_SET_LOCAL_PATH . '/',
+                                               '',
+                                               $uri), '?')
+            && !empty($r_uri)) // schrimp format to w3c-RFC conversion
+        {
+            $uri_array = explode('/', $r_uri);
+
+            if (!empty($uri_array))
+            {
+                $uri = '?c=' . array_shift($uri_array);
+
+                if (!empty($uri_array))
+                {
+                    $uri .= '&a=' . array_shift($uri_array);
+
+                    if (!empty($uri_array))
+                    {
+                        $arg_num = 0;
+                        foreach ($uri_array as $arg)
+                            $uri .= '&arg' . $arg_num++ . '=' . $arg;
+                    }
+                }
+            }
+
+            return $uri;
+        }
+        elseif (!empty($r_uri)) // w3c-RFC to schrimp format conversion
+            return implode(array_filter(preg_split('/[?&](.*?)=/',
+                                                   $r_uri)),
+                           '/');
+        else
+            return $uri; // no conversion needed
+    }
+
     static function resolve_uri($uri = '')
     {
         return _SET_TRANSPORT_PROTOCOL . "://"
@@ -342,6 +380,16 @@ class main
                 rt("error");
         }
     }
+}
+
+/**
+ * 2-way uri conversion, schrimp to w3c-RFC and vice-versa, auto-recognized;
+ * @param string $uri
+ * @return string relative http unified resource identifier (after conversion)
+ */
+function cu($uri)
+{
+    return main::convert_uri($uri);
 }
 
 /**
