@@ -32,6 +32,7 @@ class code
 
     private static $_form_counters = array // encoded as checked on whole class files
     (
+        "\t",
         ")%20{\n",
         ")%20{\r",
         ")%20{\r",
@@ -184,7 +185,7 @@ class code
                                              $class_start,
                                              $class_line)
     {
-        return "- Form error(s) **" . $tofix . "** on file line **"
+        return "- Form error(s) **" . toolbox::format($tofix) . "** on file line **"
              . ($class_start + 2 + $class_line) . "**" . MD_NEWLINE_SEQUENCE;
     }
 
@@ -678,9 +679,13 @@ class code
                                              '',
                                              $class) . " " . $method . ".md";
 
-        array_walk($code, function(&$value)
+        array_walk($code, function(&$value) // cleans code identation before save
 	    {
-	        $value = substr($value, 8); // cleans code identation before save
+	        if ($value != "\n")
+	            $value = substr(str_replace("\t",
+	                                        "    ",
+	                                        $value),
+	                            8);
 	    });
 
         $content = "**" . $method . $infos . MD_NEWLINE_SEQUENCE

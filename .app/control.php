@@ -141,7 +141,7 @@ class control extends controller
 
 		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
 		                . HTML_BREADCRUMB_SEPARATOR
- 		                . $this->_translate(__FUNCTION__
+		                . $this->_translate(__FUNCTION__
  		                		          . (!empty($this->_args[0])
  		                		            ? '_' . $this->_args[0]
  		                		            : '')));

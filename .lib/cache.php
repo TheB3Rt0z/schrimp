@@ -2,10 +2,10 @@
 
 class cache
 {
-	static $todos = array
-	(
-	    'memcache support' => "verify in method, if at least one mem-server works",
-	);
+    static $todos = array
+    (
+        'memcache support' => "verify in method, if at least one mem-server works",
+    );
 
     static $tests = array();
 

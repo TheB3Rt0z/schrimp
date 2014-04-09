@@ -53,7 +53,19 @@ class toolbox
     		return "null";
     	}
 		elseif (!is_numeric($mixed))
-    		return "\"" . str_replace("\n", '\\n', $mixed) . "\"";
+    		return "\"" . str_replace(array
+    		                          (
+    		                              "\n",
+    		                              "\r",
+    		                              "\t",
+    		                          ),
+    		                          array
+    		                          (
+    		                              '\\n',
+    		                              '\\r',
+    		                              '\\t',
+	                                  ),
+    		                          $mixed) . "\"";
 		else
 			return $mixed; // fallback
 	}

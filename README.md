@@ -5,40 +5,40 @@ Table of contents
 -----------------  
   
 [General reference](#general-reference-- "")  
-[Library cache](#-class-cache-03032014-- "") &#10029;  (.lib/cache.php, Len: 15/20, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library code](#-class-code-09042014-- "") &#10029;&#10029;&#10029;  (.lib/code.php, Len: 814/955, CIS: 15 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  4 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
-[Library controller](#-class-controller-03032014-- "") (.lib/controller.php, Len: 98/127, CIS: 11 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library db](#-class-db-03032014-- "") &#10029;&#10029;&#10029;  (.lib/db.php, Len: 106/126, CIS: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[- db_object](#-class-db_object-03032014-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/db_object.php, Len: 120/148, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
+[Library cache](#-class-cache-09042014-- "") &#10029;  (.lib/cache.php, Len: 15/20, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library code](#-class-code-09042014-- "") &#10029;&#10029;&#10029;  (.lib/code.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "1 too long line(s) found!") Len: 819/960, CIS: 15 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  4 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!") to be fixed!  
+[Library controller](#-class-controller-03032014-- "") (.lib/controller.php, Len: 98/127, CIS: 11 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  to be fixed!  
+[Library db](#-class-db-03032014-- "") &#10029;&#10029;&#10029;  (.lib/db.php, Len: 106/126, CIS: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  to be fixed!  
+[- db_object](#-class-db_object-03032014-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/db_object.php, Len: 120/148, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!") to be fixed!  
 [- db_object_user](#-class-db_object_user-03032014-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/db_object_user.php, Len: 0/1, CIS: 0 )   
-[Library escort](#-class-escort-05032014-- "") (.lib/escort.php, Len: 32/40, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library escort](#-class-escort-05032014-- "") (.lib/escort.php, Len: 32/40, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  to be fixed!  
 [Library html](#-class-html-08042014-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/html.php, Len: 734/859, CIS: 23 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- html_doc](#-class-html_doc-03032014-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/html_doc.php, Len: 79/94, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- html_form](#-class-html_form-03032014-- "") &#10029;  (.lib/html_form.php, Len: 65/71, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library language](#-class-language-03032014-- "") &#10029;&#10029;&#10029;  (.lib/language.php, Len: 103/121, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
+[Library language](#-class-language-03032014-- "") &#10029;&#10029;&#10029;  (.lib/language.php, Len: 103/121, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!") to be fixed!  
 [Library main](#-class-main-08042014-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (.main.php, Len: 309/378, CIS: 31 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Class interface size could lead to a refactoring")) &#10140;  2 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
 [Library md](#-class-md-09042014-- "") (.lib/md.php, Len: 185/231, CIS: 14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library navigator](#-class-navigator-08042014-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/navigator.php, Len: 343/416, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  2 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!") 1 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!")  
-[Library pdf](#-class-pdf-03032014-- "") &#10029;  (.lib/pdf.php, Len: 5/6, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library navigator](#-class-navigator-08042014-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/navigator.php, Len: 343/416, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  2 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!") 1 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!") to be fixed!  
+[Library pdf](#-class-pdf-03032014-- "") &#10029;  (.lib/pdf.php, Len: 5/6, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  to be fixed!  
 [Library powerring](#-class-powerring-03032014-- "") (lib/powerring.php, Len: 127/142, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!") 2 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!")  
 [- powerring_status](#-class-powerring_status-03032014-- "") &#10029;&#10029;&#10029;  (lib/powerring_status.php, Len: 7/8, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library regex](#-class-regex-03032014-- "") &#10029;&#10029;&#10029;  (.lib/regex.php, Len: 12/14, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library toolbox](#-class-toolbox-09042014-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/toolbox.php, Len: 120/135, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Component admin](#-class-admin-03032014-- "") &#10029;  (.app/admin.php, Len: 15/19, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library regex](#-class-regex-03032014-- "") &#10029;&#10029;&#10029;  (.lib/regex.php, Len: 12/14, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  to be fixed!  
+[Library toolbox](#-class-toolbox-09042014-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/toolbox.php, Len: 132/147, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!") to be fixed!  
+[Component admin](#-class-admin-03032014-- "") &#10029;  (.app/admin.php, Len: 15/19, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  to be fixed!  
 [- admin_helper](#-class-admin_helper-03032014-- "") (.app/admin_helper.php, Len: 2/3, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Component control](#-class-control-03032014-- "") &#10029;&#10029;&#10029;  (.app/control.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "1 too long line(s) found!") Len: 203/239, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Component control](#-class-control-09042014-- "") &#10029;&#10029;&#10029;  (.app/control.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "1 too long line(s) found!") Len: 203/239, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  to be fixed!  
 [- control_helper](#-class-control_helper-03032014-- "") (.app/control_helper.php, Len: 65/81, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Component documentation](#-class-documentation-03032014-- "") (.app/documentation.php, Len: 36/44, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Component documentation](#-class-documentation-03032014-- "") (.app/documentation.php, Len: 36/44, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  to be fixed!  
 [- documentation_helper](#-class-documentation_helper-03032014-- "") (.app/documentation_helper.php, Len: 7/9, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Component error](#-class-error-03032014-- "") (.app/error.php, Len: 81/108, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Component error](#-class-error-03032014-- "") (.app/error.php, Len: 81/108, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  to be fixed!  
 [- error_helper](#-class-error_helper-03032014-- "") (.app/error_helper.php, Len: 2/3, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Component homepage](#-class-homepage-03032014-- "") (app/homepage.php, Len: 12/16, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Component homepage](#-class-homepage-03032014-- "") (app/homepage.php, Len: 12/16, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  to be fixed!  
 [- homepage_helper](#-class-homepage_helper-03032014-- "") (app/homepage_helper.php, Len: 2/3, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Component itoll](#-class-itoll-03032014-- "") &#10029;  (app/itoll.php, Len: 14/17, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Component itoll](#-class-itoll-03032014-- "") &#10029;  (app/itoll.php, Len: 14/17, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  to be fixed!  
 [- itoll_helper](#-class-itoll_helper-03032014-- "") (app/itoll_helper.php, Len: 2/3, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Component power](#-class-power-03032014-- "") &#10029;&#10029;  (app/power.php, Len: 16/19, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Component power](#-class-power-03032014-- "") &#10029;&#10029;  (app/power.php, Len: 16/19, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  to be fixed!  
 [- power_helper](#-class-power_helper-03032014-- "") (app/power_helper.php, Len: 2/3, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Component project](#-class-project-03032014-- "") &#10029;  (app/project.php, Len: 14/17, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Component project](#-class-project-03032014-- "") &#10029;  (app/project.php, Len: 14/17, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  to be fixed!  
 [- project_helper](#-class-project_helper-03032014-- "") (app/project_helper.php, Len: 2/3, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
   
 General reference  
@@ -80,10 +80,10 @@ General reference
 - **fe($path)** &#10140; .main.php on line 410, **returns boolean if realpath path exists on running server**
   @param string $path
   @return boolean true if realpath exists, false otherwise  
-- **fm($mixed)** &#10140; .lib/toolbox.php on line 147, **returns a beautiful formatted value, mixed variable-type-dependant**
+- **fm($mixed)** &#10140; .lib/toolbox.php on line 159, **returns a beautiful formatted value, mixed variable-type-dependant**
   @param mixed $mixed
   @return mixed depending on internally defined rules  
-- **ld($file)** &#10140; .lib/toolbox.php on line 157, **require (once) a file and launch a php warning if not successful
+- **ld($file)** &#10140; .lib/toolbox.php on line 169, **require (once) a file and launch a php warning if not successful
   @param string $file
   @return 1 on success or false on file not exists or require_once failure  
 - **le($msg)** &#10140; .main.php on line 440, **launches a customizable error 500, mit optional backtrace for debug**
@@ -92,7 +92,7 @@ General reference
 - **mf($file)** &#10140; .main.php on line 450, **triggers an error if a needed file is missing**
   @param string $file
   @return boolean indicating notification success  
-- **pr($source)** &#10140; .lib/toolbox.php on line 167, **returns a parsed output, source-type dependant**
+- **pr($source)** &#10140; .lib/toolbox.php on line 179, **returns a parsed output, source-type dependant**
   @param string $source
   @return mixed depending on source origin  
 - **rt($url = null)** &#10140; .main.php on line 430, **relocates to given relative url or to base path on default**
@@ -124,7 +124,7 @@ General reference
   
 ***  
   
-[⇧](# "to the top") Class CACHE (03.03.2014)  
+[⇧](# "to the top") Class CACHE (09.04.2014)  
 ------------------------  
   
 **CODE REFERENCE:**  
@@ -144,6 +144,16 @@ General reference
 [⇧](# "to the top") Class CODE (09.04.2014)  
 -----------------------  
   
+**TOFIX:**  
+  
+- Form error(s) **"\t"** on file line **683**  
+- Form error(s) **"\t"** on file line **684**  
+- Form error(s) **"\t"** on file line **685**  
+- Form error(s) **"\t"** on file line **686**  
+- Form error(s) **"\t"** on file line **687**  
+- Form error(s) **"\t"** on file line **688**  
+- Form error(s) **"\t"** on file line **689**  
+  
 **CODE REFERENCE:**  
   
 - **[_add_paragraph](https://github.com/TheB3Rt0z/schrimp/wiki/code _add_paragraph "")($data, $title)** (PriS, Len: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
@@ -157,7 +167,7 @@ General reference
 - **[_get_class_reference](https://github.com/TheB3Rt0z/schrimp/wiki/code _get_class_reference "")(ReflectionClass $class)** (PriS, Len: 21/26 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[_get_class_tests](https://github.com/TheB3Rt0z/schrimp/wiki/code _get_class_tests "")(ReflectionClass $class)** (PriS, Len: 4/6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[_get_class_todos](https://github.com/TheB3Rt0z/schrimp/wiki/code _get_class_todos "")(ReflectionClass $class)** (PriS, Len: 5/7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **[_get_class_tofix](https://github.com/TheB3Rt0z/schrimp/wiki/code _get_class_tofix "")($tofix, $class_start, $class_line)** (PriS, Len: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[_get_class_tofix](https://github.com/TheB3Rt0z/schrimp/wiki/code _get_class_tofix "")($tofix, $class_start, $class_line)** (PriS ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "1 too long line(s) found!") Len: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[_get_classes_information](https://github.com/TheB3Rt0z/schrimp/wiki/code _get_classes_information "")($classes = null)** (PriS, Len: 18/21 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[_get_clean_doccom](https://github.com/TheB3Rt0z/schrimp/wiki/code _get_clean_doccom "")(ReflectionFunction $function)** (PriS, Len: 15/16 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[_get_component_information](https://github.com/TheB3Rt0z/schrimp/wiki/code _get_component_information "")(ReflectionClass $class)** (PriS, Len: 29/31 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Method's length could be reduced..") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
@@ -172,7 +182,7 @@ General reference
 - **[_is_codeline_too_long](https://github.com/TheB3Rt0z/schrimp/wiki/code _is_codeline_too_long "")($code_line)** (PriS, Len: 4/5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[_list_method_parameters](https://github.com/TheB3Rt0z/schrimp/wiki/code _list_method_parameters "")($functional_code)** (PriS, Len: 11/13 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[_update_class_warning](https://github.com/TheB3Rt0z/schrimp/wiki/code _update_class_warning "")($class_name, $parameters, $length, $cyc)** (PriS, Len: 23/26 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **[_update_wiki_file](https://github.com/TheB3Rt0z/schrimp/wiki/code _update_wiki_file "")($class, $method, $infos, $code)** (PriS, Len: 13/16 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[_update_wiki_file](https://github.com/TheB3Rt0z/schrimp/wiki/code _update_wiki_file "")($class, $method, $infos, $code)** (PriS, Len: 17/20 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[analyse_method](https://github.com/TheB3Rt0z/schrimp/wiki/code analyse_method "")(ReflectionMethod $method)** (PubS, Len: 23/29 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[get_class_cis](https://github.com/TheB3Rt0z/schrimp/wiki/code get_class_cis "")(ReflectionClass $class)** (PubS, Len: 9/11 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[get_class_data](https://github.com/TheB3Rt0z/schrimp/wiki/code get_class_data "")(ReflectionClass $class)** (PubS, Len: 23/29 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
@@ -202,6 +212,105 @@ Uses: **code**, **main**, **md**, **toolbox**
   
 [⇧](# "to the top") Class CONTROLLER (03.03.2014)  
 -----------------------------  
+  
+**TOFIX:**  
+  
+- Form error(s) **"\t"** on file line **5**  
+- Form error(s) **"\t"** on file line **9**  
+- Form error(s) **"\t"** on file line **11**  
+- Form error(s) **"\t"** on file line **13**  
+- Form error(s) **"\t"** on file line **14**  
+- Form error(s) **"\t"** on file line **15**  
+- Form error(s) **"\t"** on file line **17**  
+- Form error(s) **"\t"** on file line **19**  
+- Form error(s) **"\t"** on file line **21**  
+- Form error(s) **"\t"** on file line **22**  
+- Form error(s) **"\t"** on file line **23**  
+- Form error(s) **"\t"** on file line **24**  
+- Form error(s) **"\t"** on file line **25**  
+- Form error(s) **"\t"** on file line **26**  
+- Form error(s) **"\t"** on file line **28**  
+- Form error(s) **"\t"** on file line **29**  
+- Form error(s) **"\t"** on file line **30**  
+- Form error(s) **"\t"** on file line **31**  
+- Form error(s) **"\t"** on file line **32**  
+- Form error(s) **"\t"** on file line **33**  
+- Form error(s) **"\t"** on file line **35**  
+- Form error(s) **"\t"** on file line **36**  
+- Form error(s) **"\t"** on file line **38**  
+- Form error(s) **"\t"** on file line **39**  
+- Form error(s) **"\t"** on file line **41**  
+- Form error(s) **"\t"** on file line **42**  
+- Form error(s) **"\t"** on file line **44**  
+- Form error(s) **"\t"** on file line **46**  
+- Form error(s) **"\t"** on file line **47**  
+- Form error(s) **"\t"** on file line **48**  
+- Form error(s) **"\t"** on file line **49**  
+- Form error(s) **"\t"** on file line **51**  
+- Form error(s) **"\t"** on file line **52**  
+- Form error(s) **"\t"** on file line **53**  
+- Form error(s) **"\t"** on file line **54**  
+- Form error(s) **"\t"** on file line **56**  
+- Form error(s) **"\t"** on file line **57**  
+- Form error(s) **"\t"** on file line **58**  
+- Form error(s) **"\t"** on file line **59**  
+- Form error(s) **"\t"** on file line **61**  
+- Form error(s) **"\t"** on file line **62**  
+- Form error(s) **"\t"** on file line **63**  
+- Form error(s) **"\t"** on file line **64**  
+- Form error(s) **"\t"** on file line **66**  
+- Form error(s) **"\t"** on file line **67**  
+- Form error(s) **"\t"** on file line **68**  
+- Form error(s) **"\t"** on file line **69**  
+- Form error(s) **"\t"** on file line **71**  
+- Form error(s) **"\t"** on file line **72**  
+- Form error(s) **"\t"** on file line **73**  
+- Form error(s) **"\t"** on file line **74**  
+- Form error(s) **"\t"** on file line **76**  
+- Form error(s) **"\t"** on file line **77**  
+- Form error(s) **"\t"** on file line **78**  
+- Form error(s) **"\t"** on file line **79**  
+- Form error(s) **"\t"** on file line **81**  
+- Form error(s) **"\t"** on file line **82**  
+- Form error(s) **"\t"** on file line **83**  
+- Form error(s) **"\t"** on file line **84**  
+- Form error(s) **"\t"** on file line **85**  
+- Form error(s) **"\t"** on file line **86**  
+- Form error(s) **"\t"** on file line **87**  
+- Form error(s) **"\t"** on file line **89**  
+- Form error(s) **"\t"** on file line **91**  
+- Form error(s) **"\t"** on file line **92**  
+- Form error(s) **"\t"** on file line **93**  
+- Form error(s) **"\t"** on file line **94**  
+- Form error(s) **"\t"** on file line **97**  
+- Form error(s) **"\t"** on file line **98**  
+- Form error(s) **"\t"** on file line **99**  
+- Form error(s) **"\t"** on file line **100**  
+- Form error(s) **"\t"** on file line **101**  
+- Form error(s) **"\t"** on file line **102**  
+- Form error(s) **"\t"** on file line **103**  
+- Form error(s) **"\t"** on file line **105**  
+- Form error(s) **"\t"** on file line **106**  
+- Form error(s) **"\t"** on file line **108**  
+- Form error(s) **"\t"** on file line **109**  
+- Form error(s) **"\t"** on file line **110**  
+- Form error(s) **"\t"** on file line **111**  
+- Form error(s) **"\t"** on file line **113**  
+- Form error(s) **"\t"** on file line **114**  
+- Form error(s) **"\t"** on file line **115**  
+- Form error(s) **"\t"** on file line **116**  
+- Form error(s) **"\t"** on file line **118**  
+- Form error(s) **"\t"** on file line **119**  
+- Form error(s) **"\t"** on file line **120**  
+- Form error(s) **"\t"** on file line **121**  
+- Form error(s) **"\t"** on file line **123**  
+- Form error(s) **"\t"** on file line **124**  
+- Form error(s) **"\t"** on file line **125**  
+- Form error(s) **"\t"** on file line **126**  
+- Form error(s) **"\t"** on file line **128**  
+- Form error(s) **"\t"** on file line **129**  
+- Form error(s) **"\t"** on file line **130**  
+- Form error(s) **"\t"** on file line **131**  
   
 **CLASS CONFIGURATION CONSTANTS:**  
   
@@ -239,6 +348,77 @@ Uses: **code**, **escort**, **html**, **navigator**
 [⇧](# "to the top") Class DB (03.03.2014)  
 ---------------------  
   
+**TOFIX:**  
+  
+- Form error(s) **"\t"** on file line **19**  
+- Form error(s) **"\t"** on file line **20**  
+- Form error(s) **"\t"** on file line **21**  
+- Form error(s) **"\t"** on file line **22**  
+- Form error(s) **"\t"** on file line **23**  
+- Form error(s) **"\t"** on file line **24**  
+- Form error(s) **"\t"** on file line **30**  
+- Form error(s) **"\t"** on file line **31**  
+- Form error(s) **"\t"** on file line **32**  
+- Form error(s) **"\t"** on file line **33**  
+- Form error(s) **"\t"** on file line **34**  
+- Form error(s) **"\t"** on file line **35**  
+- Form error(s) **"\t"** on file line **36**  
+- Form error(s) **"\t"** on file line **37**  
+- Form error(s) **"\t"** on file line **38**  
+- Form error(s) **"\t"** on file line **39**  
+- Form error(s) **"\t"** on file line **40**  
+- Form error(s) **"\t"** on file line **42**  
+- Form error(s) **"\t"** on file line **43**  
+- Form error(s) **"\t"** on file line **45**  
+- Form error(s) **"\t"** on file line **46**  
+- Form error(s) **"\t"** on file line **48**  
+- Form error(s) **"\t"** on file line **49**  
+- Form error(s) **"\t"** on file line **51**  
+- Form error(s) **"\t"** on file line **52**  
+- Form error(s) **"\t"** on file line **53**  
+- Form error(s) **"\t"** on file line **55**  
+- Form error(s) **"\t"** on file line **56**  
+- Form error(s) **"\t"** on file line **57**  
+- Form error(s) **"\t"** on file line **62**  
+- Form error(s) **"\t"** on file line **63**  
+- Form error(s) **"\t"** on file line **83**  
+- Form error(s) **"\t"** on file line **85**  
+- Form error(s) **"\t"** on file line **86**  
+- Form error(s) **"\t"** on file line **87**  
+- Form error(s) **"\t"** on file line **100**  
+- Form error(s) **"\t"** on file line **102**  
+- Form error(s) **"\t"** on file line **103**  
+- Form error(s) **"\t"** on file line **104**  
+- Form error(s) **"\t"** on file line **105**  
+- Form error(s) **"\t"** on file line **106**  
+- Form error(s) **"\t"** on file line **107**  
+- Form error(s) **"\t"** on file line **108**  
+- Form error(s) **"\t"** on file line **109**  
+- Form error(s) **"\t"** on file line **110**  
+- Form error(s) **"\t"** on file line **111**  
+- Form error(s) **"\t"** on file line **112**  
+- Form error(s) **"\t"** on file line **113**  
+- Form error(s) **"\t"** on file line **115**  
+- Form error(s) **"\t"** on file line **117**  
+- Form error(s) **"\t"** on file line **118**  
+- Form error(s) **"\t"** on file line **120**  
+- Form error(s) **"\t"** on file line **121**  
+- Form error(s) **"\t"** on file line **123**  
+- Form error(s) **"\t"** on file line **124**  
+- Form error(s) **"\t"** on file line **126**  
+- Form error(s) **"\t"** on file line **127**  
+- Form error(s) **"\t"** on file line **128**  
+- Form error(s) **"\t"** on file line **129**  
+- Form error(s) **"\t"** on file line **131**  
+- Form error(s) **"\t"** on file line **132**  
+- Form error(s) **"\t"** on file line **133**  
+- Form error(s) **"\t"** on file line **134**  
+- Form error(s) **"\t"** on file line **135**  
+- Form error(s) **"\t"** on file line **136**  
+- Form error(s) **"\t"** on file line **138**  
+- Form error(s) **"\t"** on file line **139**  
+- Form error(s) **"\t"** on file line **144**  
+  
 **CODE REFERENCE:**  
   
 - **[__construct](https://github.com/TheB3Rt0z/schrimp/wiki/db __construct "")()** (CPub, Len: 18/21 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
@@ -262,6 +442,35 @@ Uses: **escort**
   
 [⇧](# "to the top") Class DB_OBJECT (03.03.2014)  
 ----------------------------  
+  
+**TOFIX:**  
+  
+- Form error(s) **"\t"** on file line **36**  
+- Form error(s) **"\t"** on file line **37**  
+- Form error(s) **"\t"** on file line **38**  
+- Form error(s) **"\t"** on file line **39**  
+- Form error(s) **"\t"** on file line **40**  
+- Form error(s) **"\t"** on file line **41**  
+- Form error(s) **"\t"** on file line **42**  
+- Form error(s) **"\t"** on file line **43**  
+- Form error(s) **"\t"** on file line **59**  
+- Form error(s) **"\t"** on file line **60**  
+- Form error(s) **"\t"** on file line **61**  
+- Form error(s) **"\t"** on file line **62**  
+- Form error(s) **"\t"** on file line **63**  
+- Form error(s) **"\t"** on file line **64**  
+- Form error(s) **"\t"** on file line **65**  
+- Form error(s) **"\t"** on file line **67**  
+- Form error(s) **"\t"** on file line **68**  
+- Form error(s) **"\t"** on file line **70**  
+- Form error(s) **"\t"** on file line **73**  
+- Form error(s) **"\t"** on file line **76**  
+- Form error(s) **"\t"** on file line **102**  
+- Form error(s) **"\t"** on file line **104**  
+- Form error(s) **"\t"** on file line **105**  
+- Form error(s) **"\t"** on file line **106**  
+- Form error(s) **"\t"** on file line **113**  
+- Form error(s) **"\t"** on file line **134**  
   
 **CODE REFERENCE:**  
   
@@ -325,6 +534,39 @@ Uses: **db_object**
   
 [⇧](# "to the top") Class ESCORT (05.03.2014)  
 -------------------------  
+  
+**TOFIX:**  
+  
+- Form error(s) **"\t"** on file line **8**  
+- Form error(s) **"\t"** on file line **12**  
+- Form error(s) **"\t"** on file line **14**  
+- Form error(s) **"\t"** on file line **15**  
+- Form error(s) **"\t"** on file line **16**  
+- Form error(s) **"\t"** on file line **18**  
+- Form error(s) **"\t"** on file line **20**  
+- Form error(s) **"\t"** on file line **21**  
+- Form error(s) **"\t"** on file line **22**  
+- Form error(s) **"\t"** on file line **23**  
+- Form error(s) **"\t"** on file line **24**  
+- Form error(s) **"\t"** on file line **25**  
+- Form error(s) **"\t"** on file line **27**  
+- Form error(s) **"\t"** on file line **28**  
+- Form error(s) **"\t"** on file line **29**  
+- Form error(s) **"\t"** on file line **30**  
+- Form error(s) **"\t"** on file line **32**  
+- Form error(s) **"\t"** on file line **33**  
+- Form error(s) **"\t"** on file line **34**  
+- Form error(s) **"\t"** on file line **35**  
+- Form error(s) **"\t"** on file line **36**  
+- Form error(s) **"\t"** on file line **37**  
+- Form error(s) **"\t"** on file line **38**  
+- Form error(s) **"\t"** on file line **39**  
+- Form error(s) **"\t"** on file line **41**  
+- Form error(s) **"\t"** on file line **42**  
+- Form error(s) **"\t"** on file line **43**  
+- Form error(s) **"\t"** on file line **44**  
+- Form error(s) **"\t"** on file line **46**  
+- Form error(s) **"\t"** on file line **47**  
   
 **CODE REFERENCE:**  
   
@@ -507,6 +749,102 @@ Uses: **html**
 [⇧](# "to the top") Class LANGUAGE (03.03.2014)  
 ---------------------------  
   
+**TOFIX:**  
+  
+- Form error(s) **"\t"** on file line **7**  
+- Form error(s) **"\t"** on file line **8**  
+- Form error(s) **"\t"** on file line **9**  
+- Form error(s) **"\t"** on file line **10**  
+- Form error(s) **"\t"** on file line **11**  
+- Form error(s) **"\t"** on file line **12**  
+- Form error(s) **"\t"** on file line **16**  
+- Form error(s) **"\t"** on file line **19**  
+- Form error(s) **"\t"** on file line **20**  
+- Form error(s) **"\t"** on file line **23**  
+- Form error(s) **"\t"** on file line **24**  
+- Form error(s) **"\t"** on file line **25**  
+- Form error(s) **"\t"** on file line **26**  
+- Form error(s) **"\t"** on file line **27**  
+- Form error(s) **"\t"** on file line **30**  
+- Form error(s) **"\t"** on file line **32**  
+- Form error(s) **"\t"** on file line **33**  
+- Form error(s) **"\t"** on file line **36**  
+- Form error(s) **"\t"** on file line **37**  
+- Form error(s) **"\t"** on file line **39**  
+- Form error(s) **"\t"** on file line **40**  
+- Form error(s) **"\t"** on file line **41**  
+- Form error(s) **"\t"** on file line **42**  
+- Form error(s) **"\t"** on file line **44**  
+- Form error(s) **"\t"** on file line **45**  
+- Form error(s) **"\t"** on file line **47**  
+- Form error(s) **"\t"** on file line **48**  
+- Form error(s) **"\t"** on file line **49**  
+- Form error(s) **"\t"** on file line **50**  
+- Form error(s) **"\t"** on file line **51**  
+- Form error(s) **"\t"** on file line **52**  
+- Form error(s) **"\t"** on file line **53**  
+- Form error(s) **"\t"** on file line **54**  
+- Form error(s) **"\t"** on file line **56**  
+- Form error(s) **"\t"** on file line **57**  
+- Form error(s) **"\t"** on file line **58**  
+- Form error(s) **"\t"** on file line **59**  
+- Form error(s) **"\t"** on file line **61**  
+- Form error(s) **"\t"** on file line **62**  
+- Form error(s) **"\t"** on file line **64**  
+- Form error(s) **"\t"** on file line **65**  
+- Form error(s) **"\t"** on file line **66**  
+- Form error(s) **"\t"** on file line **67**  
+- Form error(s) **"\t"** on file line **69**  
+- Form error(s) **"\t"** on file line **70**  
+- Form error(s) **"\t"** on file line **71**  
+- Form error(s) **"\t"** on file line **72**  
+- Form error(s) **"\t"** on file line **74**  
+- Form error(s) **"\t"** on file line **75**  
+- Form error(s) **"\t"** on file line **76**  
+- Form error(s) **"\t"** on file line **77**  
+- Form error(s) **"\t"** on file line **78**  
+- Form error(s) **"\t"** on file line **80**  
+- Form error(s) **"\t"** on file line **81**  
+- Form error(s) **"\t"** on file line **82**  
+- Form error(s) **"\t"** on file line **84**  
+- Form error(s) **"\t"** on file line **85**  
+- Form error(s) **"\t"** on file line **86**  
+- Form error(s) **"\t"** on file line **87**  
+- Form error(s) **"\t"** on file line **89**  
+- Form error(s) **"\t"** on file line **90**  
+- Form error(s) **"\t"** on file line **91**  
+- Form error(s) **"\t"** on file line **92**  
+- Form error(s) **"\t"** on file line **93**  
+- Form error(s) **"\t"** on file line **94**  
+- Form error(s) **"\t"** on file line **95**  
+- Form error(s) **"\t"** on file line **96**  
+- Form error(s) **"\t"** on file line **97**  
+- Form error(s) **"\t"** on file line **98**  
+- Form error(s) **"\t"** on file line **99**  
+- Form error(s) **"\t"** on file line **101**  
+- Form error(s) **"\t"** on file line **102**  
+- Form error(s) **"\t"** on file line **103**  
+- Form error(s) **"\t"** on file line **104**  
+- Form error(s) **"\t"** on file line **105**  
+- Form error(s) **"\t"** on file line **106**  
+- Form error(s) **"\t"** on file line **107**  
+- Form error(s) **"\t"** on file line **108**  
+- Form error(s) **"\t"** on file line **110**  
+- Form error(s) **"\t"** on file line **111**  
+- Form error(s) **"\t"** on file line **112**  
+- Form error(s) **"\t"** on file line **113**  
+- Form error(s) **"\t"** on file line **115**  
+- Form error(s) **"\t"** on file line **116**  
+- Form error(s) **"\t"** on file line **117**  
+- Form error(s) **"\t"** on file line **119**  
+- Form error(s) **"\t"** on file line **120**  
+- Form error(s) **"\t"** on file line **122**  
+- Form error(s) **"\t"** on file line **123**  
+- Form error(s) **"\t"** on file line **124**  
+- Form error(s) **"\t"** on file line **125**  
+- Form error(s) **"\t"** on file line **126**  
+- Form error(s) **"\t"** on file line **127**  
+  
 **CODE REFERENCE:**  
   
 - **[_search_for_translation](https://github.com/TheB3Rt0z/schrimp/wiki/language _search_for_translation "")($translations, $marker)** (ProS, Len: 17/20 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 8 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Method's cyclomatic complexity could be reduced.."))  
@@ -613,6 +951,10 @@ Uses: **escort**
 [⇧](# "to the top") Class NAVIGATOR (08.04.2014)  
 ----------------------------  
   
+**TOFIX:**  
+  
+- Form error(s) **"\t"** on file line **364**  
+  
 **CODE REFERENCE:**  
   
 - **[__construct](https://github.com/TheB3Rt0z/schrimp/wiki/navigator __construct "")()** (CPub, Len: 23/26 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
@@ -651,6 +993,13 @@ Uses: **code**, **html**, **html_form**, **main**
   
 [⇧](# "to the top") Class PDF (03.03.2014)  
 ----------------------  
+  
+**TOFIX:**  
+  
+- Form error(s) **"\t"** on file line **5**  
+- Form error(s) **"\t"** on file line **6**  
+- Form error(s) **"\t"** on file line **7**  
+- Form error(s) **"\t"** on file line **8**  
   
 **TODOS:**  
   
@@ -704,6 +1053,15 @@ Uses: **db_object**
 [⇧](# "to the top") Class REGEX (03.03.2014)  
 ------------------------  
   
+**TOFIX:**  
+  
+- Form error(s) **"\t"** on file line **5**  
+- Form error(s) **"\t"** on file line **6**  
+- Form error(s) **"\t"** on file line **7**  
+- Form error(s) **"\t"** on file line **8**  
+- Form error(s) **"\t"** on file line **9**  
+- Form error(s) **"\t"** on file line **10**  
+  
 **TODOS:**  
   
 - **wanted methods** &#10140; check, search, replace and evoluted string modifies  
@@ -716,11 +1074,117 @@ Uses: **db_object**
 [⇧](# "to the top") Class TOOLBOX (09.04.2014)  
 --------------------------  
   
+**TOFIX:**  
+  
+- Form error(s) **"\t"** on file line **5**  
+- Form error(s) **"\t"** on file line **6**  
+- Form error(s) **"\t"** on file line **7**  
+- Form error(s) **"\t"** on file line **8**  
+- Form error(s) **"\t"** on file line **9**  
+- Form error(s) **"\t"** on file line **10**  
+- Form error(s) **"\t"** on file line **11**  
+- Form error(s) **"\t"** on file line **12**  
+- Form error(s) **"\t"** on file line **13**  
+- Form error(s) **"\t"** on file line **14**  
+- Form error(s) **"\t"** on file line **38**  
+- Form error(s) **"\t"** on file line **39**  
+- Form error(s) **"\t"** on file line **40**  
+- Form error(s) **"\t"** on file line **41**  
+- Form error(s) **"\t"** on file line **42**  
+- Form error(s) **"\t"** on file line **43**  
+- Form error(s) **"\t"** on file line **44**  
+- Form error(s) **"\t"** on file line **45**  
+- Form error(s) **"\t"** on file line **46**  
+- Form error(s) **"\t"** on file line **47**  
+- Form error(s) **"\t"** on file line **48**  
+- Form error(s) **"\t"** on file line **49**  
+- Form error(s) **"\t"** on file line **50**  
+- Form error(s) **"\t"** on file line **51**  
+- Form error(s) **"\t"** on file line **52**  
+- Form error(s) **"\t"** on file line **53**  
+- Form error(s) **"\t"** on file line **54**  
+- Form error(s) **"\t"** on file line **55**  
+- Form error(s) **"\t"** on file line **56**  
+- Form error(s) **"\t"** on file line **57**  
+- Form error(s) **"\t"** on file line **58**  
+- Form error(s) **"\t"** on file line **59**  
+- Form error(s) **"\t"** on file line **60**  
+- Form error(s) **"\t"** on file line **61**  
+- Form error(s) **"\t"** on file line **62**  
+- Form error(s) **"\t"** on file line **63**  
+- Form error(s) **"\t"** on file line **64**  
+- Form error(s) **"\t"** on file line **65**  
+- Form error(s) **"\t"** on file line **66**  
+- Form error(s) **"\t"** on file line **67**  
+- Form error(s) **"\t"** on file line **68**  
+- Form error(s) **"\t"** on file line **69**  
+- Form error(s) **"\t"** on file line **70**  
+- Form error(s) **"\t"** on file line **71**  
+- Form error(s) **"\t"** on file line **73**  
+- Form error(s) **"\t"** on file line **74**  
+- Form error(s) **"\t"** on file line **75**  
+- Form error(s) **"\t"** on file line **76**  
+- Form error(s) **"\t"** on file line **77**  
+- Form error(s) **"\t"** on file line **78**  
+- Form error(s) **"\t"** on file line **79**  
+- Form error(s) **"\t"** on file line **80**  
+- Form error(s) **"\t"** on file line **81**  
+- Form error(s) **"\t"** on file line **91**  
+- Form error(s) **"\t"** on file line **92**  
+- Form error(s) **"\t"** on file line **94**  
+- Form error(s) **"\t"** on file line **95**  
+- Form error(s) **"\t"** on file line **97**  
+- Form error(s) **"\t"** on file line **98**  
+- Form error(s) **"\t"** on file line **99**  
+- Form error(s) **"\t"** on file line **100**  
+- Form error(s) **"\t"** on file line **101**  
+- Form error(s) **"\t"** on file line **102**  
+- Form error(s) **"\t"** on file line **103**  
+- Form error(s) **"\t"** on file line **104**  
+- Form error(s) **"\t"** on file line **106**  
+- Form error(s) **"\t"** on file line **107**  
+- Form error(s) **"\t"** on file line **108**  
+- Form error(s) **"\t"** on file line **109**  
+- Form error(s) **"\t"** on file line **110**  
+- Form error(s) **"\t"** on file line **111**  
+- Form error(s) **"\t"** on file line **112**  
+- Form error(s) **"\t"** on file line **113**  
+- Form error(s) **"\t"** on file line **114**  
+- Form error(s) **"\t"** on file line **116**  
+- Form error(s) **"\t"** on file line **119**  
+- Form error(s) **"\t"** on file line **120**  
+- Form error(s) **"\t"** on file line **121**  
+- Form error(s) **"\t"** on file line **122**  
+- Form error(s) **"\t"** on file line **123**  
+- Form error(s) **"\t"** on file line **124**  
+- Form error(s) **"\t"** on file line **125**  
+- Form error(s) **"\t"** on file line **127**  
+- Form error(s) **"\t"** on file line **128**  
+- Form error(s) **"\t"** on file line **130**  
+- Form error(s) **"\t"** on file line **131**  
+- Form error(s) **"\t"** on file line **132**  
+- Form error(s) **"\t"** on file line **134**  
+- Form error(s) **"\t"** on file line **135**  
+- Form error(s) **"\t"** on file line **136**  
+- Form error(s) **"\t"** on file line **138**  
+- Form error(s) **"\t"** on file line **139**  
+- Form error(s) **"\t"** on file line **140**  
+- Form error(s) **"\t"** on file line **141**  
+- Form error(s) **"\t"** on file line **142**  
+- Form error(s) **"\t"** on file line **143**  
+- Form error(s) **"\t"** on file line **145**  
+- Form error(s) **"\t"** on file line **146**  
+- Form error(s) **"\t"** on file line **147**  
+- Form error(s) **"\t"** on file line **148**  
+- Form error(s) **"\t"** on file line **149**  
+- Form error(s) **"\t"** on file line **150**  
+- Form error(s) **"\t"** on file line **151**  
+  
 **CODE REFERENCE:**  
   
 - **[_filter_functions](https://github.com/TheB3Rt0z/schrimp/wiki/toolbox _filter_functions "")($code)** (PriS, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[filter](https://github.com/TheB3Rt0z/schrimp/wiki/toolbox filter "")($array, $key_s)** (PubS, Len: 9/10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **[format](https://github.com/TheB3Rt0z/schrimp/wiki/toolbox format "")($mixed)** (PubS, Len: 19 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[format](https://github.com/TheB3Rt0z/schrimp/wiki/toolbox format "")($mixed)** (PubS, Len: 31 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Method's length could be reduced..") CyC: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[fulltest](https://github.com/TheB3Rt0z/schrimp/wiki/toolbox fulltest "")()** (PubS, Len: 26/29 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[highlight](https://github.com/TheB3Rt0z/schrimp/wiki/toolbox highlight "")($string, $type = null, $filter = null)** (PubS, Len: 16/18 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[load](https://github.com/TheB3Rt0z/schrimp/wiki/toolbox load "")($file)** (PubS, Len: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
@@ -750,6 +1214,17 @@ Available components:
   
 [⇧](# "to the top") Class ADMIN (03.03.2014)  
 ------------------------  
+  
+**TOFIX:**  
+  
+- Form error(s) **"\t"** on file line **14**  
+- Form error(s) **"\t"** on file line **15**  
+- Form error(s) **"\t"** on file line **16**  
+- Form error(s) **"\t"** on file line **18**  
+- Form error(s) **"\t"** on file line **20**  
+- Form error(s) **"\t"** on file line **21**  
+- Form error(s) **"\t"** on file line **22**  
+- Form error(s) **"\t"** on file line **23**  
   
 **CLASS CONFIGURATION CONSTANTS:**  
   
@@ -794,8 +1269,205 @@ Uses: **controller**, **html**, **navigator**
   
 ***  
   
-[⇧](# "to the top") Class CONTROL (03.03.2014)  
+[⇧](# "to the top") Class CONTROL (09.04.2014)  
 --------------------------  
+  
+**TOFIX:**  
+  
+- Form error(s) **"\t"** on file line **14**  
+- Form error(s) **"\t"** on file line **15**  
+- Form error(s) **"\t"** on file line **16**  
+- Form error(s) **"\t"** on file line **18**  
+- Form error(s) **"\t"** on file line **19**  
+- Form error(s) **"\t"** on file line **20**  
+- Form error(s) **"\t"** on file line **22**  
+- Form error(s) **"\t"** on file line **23**  
+- Form error(s) **"\t"** on file line **24**  
+- Form error(s) **"\t"** on file line **26**  
+- Form error(s) **"\t"** on file line **27**  
+- Form error(s) **"\t"** on file line **28**  
+- Form error(s) **"\t"** on file line **29**  
+- Form error(s) **"\t"** on file line **30**  
+- Form error(s) **"\t"** on file line **31**  
+- Form error(s) **"\t"** on file line **32**  
+- Form error(s) **"\t"** on file line **33**  
+- Form error(s) **"\t"** on file line **34**  
+- Form error(s) **"\t"** on file line **36**  
+- Form error(s) **"\t"** on file line **37**  
+- Form error(s) **"\t"** on file line **38**  
+- Form error(s) **"\t"** on file line **39**  
+- Form error(s) **"\t"** on file line **41**  
+- Form error(s) **"\t"** on file line **42**  
+- Form error(s) **"\t"** on file line **43**  
+- Form error(s) **"\t"** on file line **44**  
+- Form error(s) **"\t"** on file line **45**  
+- Form error(s) **"\t"** on file line **46**  
+- Form error(s) **"\t"** on file line **48**  
+- Form error(s) **"\t"** on file line **49**  
+- Form error(s) **"\t"** on file line **50**  
+- Form error(s) **"\t"** on file line **51**  
+- Form error(s) **"\t"** on file line **52**  
+- Form error(s) **"\t"** on file line **53**  
+- Form error(s) **"\t"** on file line **55**  
+- Form error(s) **"\t"** on file line **56**  
+- Form error(s) **"\t"** on file line **57**  
+- Form error(s) **"\t"** on file line **58**  
+- Form error(s) **"\t"** on file line **59**  
+- Form error(s) **"\t"** on file line **60**  
+- Form error(s) **"\t"** on file line **62**  
+- Form error(s) **"\t"** on file line **63**  
+- Form error(s) **"\t"** on file line **64**  
+- Form error(s) **"\t"** on file line **65**  
+- Form error(s) **"\t"** on file line **66**  
+- Form error(s) **"\t"** on file line **67**  
+- Form error(s) **"\t"** on file line **69**  
+- Form error(s) **"\t"** on file line **70**  
+- Form error(s) **"\t"** on file line **71**  
+- Form error(s) **"\t"** on file line **72**  
+- Form error(s) **"\t"** on file line **73**  
+- Form error(s) **"\t"** on file line **74**  
+- Form error(s) **"\t"** on file line **76**  
+- Form error(s) **"\t"** on file line **77**  
+- Form error(s) **"\t"** on file line **78**  
+- Form error(s) **"\t"** on file line **79**  
+- Form error(s) **"\t"** on file line **80**  
+- Form error(s) **"\t"** on file line **81**  
+- Form error(s) **"\t"** on file line **83**  
+- Form error(s) **"\t"** on file line **84**  
+- Form error(s) **"\t"** on file line **85**  
+- Form error(s) **"\t"** on file line **86**  
+- Form error(s) **"\t"** on file line **87**  
+- Form error(s) **"\t"** on file line **88**  
+- Form error(s) **"\t"** on file line **90**  
+- Form error(s) **"\t"** on file line **91**  
+- Form error(s) **"\t"** on file line **92**  
+- Form error(s) **"\t"** on file line **93**  
+- Form error(s) **"\t"** on file line **94**  
+- Form error(s) **"\t"** on file line **95**  
+- Form error(s) **"\t"** on file line **96**  
+- Form error(s) **"\t"** on file line **97**  
+- Form error(s) **"\t"** on file line **99**  
+- Form error(s) **"\t"** on file line **100**  
+- Form error(s) **"\t"** on file line **101**  
+- Form error(s) **"\t"** on file line **102**  
+- Form error(s) **"\t"** on file line **104**  
+- Form error(s) **"\t"** on file line **105**  
+- Form error(s) **"\t"** on file line **106**  
+- Form error(s) **"\t"** on file line **107**  
+- Form error(s) **"\t"** on file line **108**  
+- Form error(s) **"\t"** on file line **109**  
+- Form error(s) **"\t"** on file line **111**  
+- Form error(s) **"\t"** on file line **112**  
+- Form error(s) **"\t"** on file line **113**  
+- Form error(s) **"\t"** on file line **114**  
+- Form error(s) **"\t"** on file line **115**  
+- Form error(s) **"\t"** on file line **116**  
+- Form error(s) **"\t"** on file line **118**  
+- Form error(s) **"\t"** on file line **119**  
+- Form error(s) **"\t"** on file line **120**  
+- Form error(s) **"\t"** on file line **121**  
+- Form error(s) **"\t"** on file line **122**  
+- Form error(s) **"\t"** on file line **123**  
+- Form error(s) **"\t"** on file line **124**  
+- Form error(s) **"\t"** on file line **126**  
+- Form error(s) **"\t"** on file line **128**  
+- Form error(s) **"\t"** on file line **129**  
+- Form error(s) **"\t"** on file line **130**  
+- Form error(s) **"\t"** on file line **131**  
+- Form error(s) **"\t"** on file line **132**  
+- Form error(s) **"\t"** on file line **133**  
+- Form error(s) **"\t"** on file line **134**  
+- Form error(s) **"\t"** on file line **135**  
+- Form error(s) **"\t"** on file line **136**  
+- Form error(s) **"\t"** on file line **137**  
+- Form error(s) **"\t"** on file line **138**  
+- Form error(s) **"\t"** on file line **140**  
+- Form error(s) **"\t"** on file line **142**  
+- Form error(s) **"\t"** on file line **143**  
+- Form error(s) **"\t"** on file line **144**  
+- Form error(s) **"\t"** on file line **145**  
+- Form error(s) **"\t"** on file line **146**  
+- Form error(s) **"\t"** on file line **147**  
+- Form error(s) **"\t"** on file line **148**  
+- Form error(s) **"\t"** on file line **150**  
+- Form error(s) **"\t"** on file line **151**  
+- Form error(s) **"\t"** on file line **152**  
+- Form error(s) **"\t"** on file line **153**  
+- Form error(s) **"\t"** on file line **154**  
+- Form error(s) **"\t"** on file line **155**  
+- Form error(s) **"\t"** on file line **157**  
+- Form error(s) **"\t"** on file line **158**  
+- Form error(s) **"\t"** on file line **159**  
+- Form error(s) **"\t"** on file line **160**  
+- Form error(s) **"\t"** on file line **161**  
+- Form error(s) **"\t"** on file line **162**  
+- Form error(s) **"\t"** on file line **164**  
+- Form error(s) **"\t"** on file line **165**  
+- Form error(s) **"\t"** on file line **166**  
+- Form error(s) **"\t"** on file line **167**  
+- Form error(s) **"\t"** on file line **168**  
+- Form error(s) **"\t"** on file line **169**  
+- Form error(s) **"\t"** on file line **171**  
+- Form error(s) **"\t"** on file line **172**  
+- Form error(s) **"\t"** on file line **173**  
+- Form error(s) **"\t"** on file line **174**  
+- Form error(s) **"\t"** on file line **175**  
+- Form error(s) **"\t"** on file line **176**  
+- Form error(s) **"\t"** on file line **178**  
+- Form error(s) **"\t"** on file line **179**  
+- Form error(s) **"\t"** on file line **180**  
+- Form error(s) **"\t"** on file line **181**  
+- Form error(s) **"\t"** on file line **182**  
+- Form error(s) **"\t"** on file line **183**  
+- Form error(s) **"\t"** on file line **185**  
+- Form error(s) **"\t"** on file line **186**  
+- Form error(s) **"\t"** on file line **187**  
+- Form error(s) **"\t"** on file line **188**  
+- Form error(s) **"\t"** on file line **189**  
+- Form error(s) **"\t"** on file line **190**  
+- Form error(s) **"\t"** on file line **191**  
+- Form error(s) **"\t"** on file line **193**  
+- Form error(s) **"\t"** on file line **195**  
+- Form error(s) **"\t"** on file line **196**  
+- Form error(s) **"\t"** on file line **197**  
+- Form error(s) **"\t"** on file line **198**  
+- Form error(s) **"\t"** on file line **199**  
+- Form error(s) **"\t"** on file line **200**  
+- Form error(s) **"\t"** on file line **201**  
+- Form error(s) **"\t"** on file line **202**  
+- Form error(s) **"\t"** on file line **203**  
+- Form error(s) **"\t"** on file line **205**  
+- Form error(s) **"\t"** on file line **207**  
+- Form error(s) **"\t"** on file line **208**  
+- Form error(s) **"\t"** on file line **209**  
+- Form error(s) **"\t"** on file line **210**  
+- Form error(s) **"\t"** on file line **211**  
+- Form error(s) **"\t"** on file line **212**  
+- Form error(s) **"\t"** on file line **213**  
+- Form error(s) **"\t"** on file line **214**  
+- Form error(s) **"\t"** on file line **215**  
+- Form error(s) **"\t"** on file line **216**  
+- Form error(s) **"\t"** on file line **218**  
+- Form error(s) **"\t"** on file line **219**  
+- Form error(s) **"\t"** on file line **220**  
+- Form error(s) **"\t"** on file line **221**  
+- Form error(s) **"\t"** on file line **222**  
+- Form error(s) **"\t"** on file line **223**  
+- Form error(s) **"\t"** on file line **224**  
+- Form error(s) **"\t"** on file line **225**  
+- Form error(s) **"\t"** on file line **226**  
+- Form error(s) **"\t"** on file line **227**  
+- Form error(s) **"\t"** on file line **228**  
+- Form error(s) **"\t"** on file line **229**  
+- Form error(s) **"\t"** on file line **231**  
+- Form error(s) **"\t"** on file line **232**  
+- Form error(s) **"\t"** on file line **233**  
+- Form error(s) **"\t"** on file line **234**  
+- Form error(s) **"\t"** on file line **235**  
+- Form error(s) **"\t"** on file line **236**  
+- Form error(s) **"\t"** on file line **238**  
+- Form error(s) **"\t"** on file line **239**  
+- Form error(s) **"\t"** on file line **243**  
   
 **CLASS CONFIGURATION CONSTANTS:**  
   
@@ -874,6 +1546,31 @@ Uses: **html**
 [⇧](# "to the top") Class DOCUMENTATION (03.03.2014)  
 --------------------------------  
   
+**TOFIX:**  
+  
+- Form error(s) **"\t"** on file line **5**  
+- Form error(s) **"\t"** on file line **7**  
+- Form error(s) **"\t"** on file line **9**  
+- Form error(s) **"\t"** on file line **10**  
+- Form error(s) **"\t"** on file line **11**  
+- Form error(s) **"\t"** on file line **29**  
+- Form error(s) **"\t"** on file line **31**  
+- Form error(s) **"\t"** on file line **32**  
+- Form error(s) **"\t"** on file line **33**  
+- Form error(s) **"\t"** on file line **34**  
+- Form error(s) **"\t"** on file line **36**  
+- Form error(s) **"\t"** on file line **37**  
+- Form error(s) **"\t"** on file line **38**  
+- Form error(s) **"\t"** on file line **39**  
+- Form error(s) **"\t"** on file line **40**  
+- Form error(s) **"\t"** on file line **41**  
+- Form error(s) **"\t"** on file line **43**  
+- Form error(s) **"\t"** on file line **44**  
+- Form error(s) **"\t"** on file line **45**  
+- Form error(s) **"\t"** on file line **46**  
+- Form error(s) **"\t"** on file line **47**  
+- Form error(s) **"\t"** on file line **48**  
+  
 **CLASS CONFIGURATION CONSTANTS:**  
   
 - **VISIBLE_IN_NAVIGATION** &#10140; true  
@@ -926,6 +1623,72 @@ Uses: **code**, **html**
 [⇧](# "to the top") Class ERROR (03.03.2014)  
 ------------------------  
   
+**TOFIX:**  
+  
+- Form error(s) **"\t"** on file line **5**  
+- Form error(s) **"\t"** on file line **7**  
+- Form error(s) **"\t"** on file line **9**  
+- Form error(s) **"\t"** on file line **11**  
+- Form error(s) **"\t"** on file line **13**  
+- Form error(s) **"\t"** on file line **14**  
+- Form error(s) **"\t"** on file line **15**  
+- Form error(s) **"\t"** on file line **16**  
+- Form error(s) **"\t"** on file line **17**  
+- Form error(s) **"\t"** on file line **18**  
+- Form error(s) **"\t"** on file line **19**  
+- Form error(s) **"\t"** on file line **20**  
+- Form error(s) **"\t"** on file line **21**  
+- Form error(s) **"\t"** on file line **22**  
+- Form error(s) **"\t"** on file line **23**  
+- Form error(s) **"\t"** on file line **25**  
+- Form error(s) **"\t"** on file line **26**  
+- Form error(s) **"\t"** on file line **27**  
+- Form error(s) **"\t"** on file line **29**  
+- Form error(s) **"\t"** on file line **30**  
+- Form error(s) **"\t"** on file line **31**  
+- Form error(s) **"\t"** on file line **32**  
+- Form error(s) **"\t"** on file line **34**  
+- Form error(s) **"\t"** on file line **37**  
+- Form error(s) **"\t"** on file line **40**  
+- Form error(s) **"\t"** on file line **41**  
+- Form error(s) **"\t"** on file line **43**  
+- Form error(s) **"\t"** on file line **44**  
+- Form error(s) **"\t"** on file line **45**  
+- Form error(s) **"\t"** on file line **48**  
+- Form error(s) **"\t"** on file line **51**  
+- Form error(s) **"\t"** on file line **53**  
+- Form error(s) **"\t"** on file line **55**  
+- Form error(s) **"\t"** on file line **56**  
+- Form error(s) **"\t"** on file line **57**  
+- Form error(s) **"\t"** on file line **60**  
+- Form error(s) **"\t"** on file line **63**  
+- Form error(s) **"\t"** on file line **65**  
+- Form error(s) **"\t"** on file line **67**  
+- Form error(s) **"\t"** on file line **68**  
+- Form error(s) **"\t"** on file line **69**  
+- Form error(s) **"\t"** on file line **72**  
+- Form error(s) **"\t"** on file line **75**  
+- Form error(s) **"\t"** on file line **77**  
+- Form error(s) **"\t"** on file line **79**  
+- Form error(s) **"\t"** on file line **80**  
+- Form error(s) **"\t"** on file line **81**  
+- Form error(s) **"\t"** on file line **84**  
+- Form error(s) **"\t"** on file line **87**  
+- Form error(s) **"\t"** on file line **91**  
+- Form error(s) **"\t"** on file line **93**  
+- Form error(s) **"\t"** on file line **94**  
+- Form error(s) **"\t"** on file line **95**  
+- Form error(s) **"\t"** on file line **98**  
+- Form error(s) **"\t"** on file line **101**  
+- Form error(s) **"\t"** on file line **102**  
+- Form error(s) **"\t"** on file line **103**  
+- Form error(s) **"\t"** on file line **105**  
+- Form error(s) **"\t"** on file line **107**  
+- Form error(s) **"\t"** on file line **109**  
+- Form error(s) **"\t"** on file line **110**  
+- Form error(s) **"\t"** on file line **111**  
+- Form error(s) **"\t"** on file line **112**  
+  
 **CLASS CONFIGURATION CONSTANTS:**  
   
 - **VISIBLE_IN_NAVIGATION** &#10140; false  
@@ -973,6 +1736,17 @@ Uses: **controller**, **html**, **main**, **navigator**
 [⇧](# "to the top") Class HOMEPAGE (03.03.2014)  
 ---------------------------  
   
+**TOFIX:**  
+  
+- Form error(s) **"\t"** on file line **14**  
+- Form error(s) **"\t"** on file line **15**  
+- Form error(s) **"\t"** on file line **16**  
+- Form error(s) **"\t"** on file line **18**  
+- Form error(s) **"\t"** on file line **20**  
+- Form error(s) **"\t"** on file line **21**  
+- Form error(s) **"\t"** on file line **22**  
+- Form error(s) **"\t"** on file line **23**  
+  
 **CLASS CONFIGURATION CONSTANTS:**  
   
 - **VISIBLE_IN_NAVIGATION** &#10140; false  
@@ -1014,6 +1788,17 @@ Uses: **controller**, **html**, **navigator**
   
 [⇧](# "to the top") Class ITOLL (03.03.2014)  
 ------------------------  
+  
+**TOFIX:**  
+  
+- Form error(s) **"\t"** on file line **15**  
+- Form error(s) **"\t"** on file line **16**  
+- Form error(s) **"\t"** on file line **17**  
+- Form error(s) **"\t"** on file line **19**  
+- Form error(s) **"\t"** on file line **21**  
+- Form error(s) **"\t"** on file line **22**  
+- Form error(s) **"\t"** on file line **23**  
+- Form error(s) **"\t"** on file line **24**  
   
 **CLASS CONFIGURATION CONSTANTS:**  
   
@@ -1061,6 +1846,18 @@ Uses: **controller**, **html**, **navigator**
 [⇧](# "to the top") Class POWER (03.03.2014)  
 ------------------------  
   
+**TOFIX:**  
+  
+- Form error(s) **"\t"** on file line **16**  
+- Form error(s) **"\t"** on file line **17**  
+- Form error(s) **"\t"** on file line **18**  
+- Form error(s) **"\t"** on file line **20**  
+- Form error(s) **"\t"** on file line **22**  
+- Form error(s) **"\t"** on file line **23**  
+- Form error(s) **"\t"** on file line **24**  
+- Form error(s) **"\t"** on file line **25**  
+- Form error(s) **"\t"** on file line **26**  
+  
 **CLASS CONFIGURATION CONSTANTS:**  
   
 - **VISIBLE_IN_NAVIGATION** &#10140; true  
@@ -1107,6 +1904,17 @@ Uses: **controller**, **html**, **navigator**, **powerring**
   
 [⇧](# "to the top") Class PROJECT (03.03.2014)  
 --------------------------  
+  
+**TOFIX:**  
+  
+- Form error(s) **"\t"** on file line **15**  
+- Form error(s) **"\t"** on file line **16**  
+- Form error(s) **"\t"** on file line **17**  
+- Form error(s) **"\t"** on file line **19**  
+- Form error(s) **"\t"** on file line **21**  
+- Form error(s) **"\t"** on file line **22**  
+- Form error(s) **"\t"** on file line **23**  
+- Form error(s) **"\t"** on file line **24**  
   
 **CLASS CONFIGURATION CONSTANTS:**  
   
