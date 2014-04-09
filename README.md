@@ -16,7 +16,7 @@ Table of contents
 [- html_doc](#-class-html_doc-03032014-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/html_doc.php, Len: 79/94, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- html_form](#-class-html_form-03032014-- "") &#10029;  (.lib/html_form.php, Len: 65/71, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library language](#-class-language-09042014-- "") &#10029;&#10029;&#10029;  (.lib/language.php, Len: 103/121, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
-[Library main](#-class-main-09042014-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (.main.php, Len: 308/377, CIS: 31 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Class interface size could lead to a refactoring")) &#10140;  2 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
+[Library main](#-class-main-09042014-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (.main.php, Len: 310/379, CIS: 31 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Class interface size could lead to a refactoring")) &#10140;  2 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
 [Library md](#-class-md-09042014-- "") (.lib/md.php, Len: 185/231, CIS: 14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library navigator](#-class-navigator-09042014-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/navigator.php, Len: 343/418, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  2 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!") 1 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!")  
 [Library pdf](#-class-pdf-09042014-- "") &#10029;  (.lib/pdf.php, Len: 5/6, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -74,10 +74,10 @@ General reference
 - **bs($infos)** &#10140; .main.php on line 461, **triggers an error if bad syntax events occur**
   @param string $msg
   @return boolean indicating notification success  
-- **cu($uri)** &#10140; .main.php on line 389, **2-way uri conversion, schrimp to w3c-RFC and vice-versa, auto-recognized**
+- **cu($uri)** &#10140; .main.php on line 391, **2-way uri conversion, schrimp to w3c-RFC and vice-versa, auto-recognized**
   @param string $uri
   @return string relative http unified resource identifier (after conversion)  
-- **fe($path)** &#10140; .main.php on line 409, **returns boolean if realpath path exists on running server**
+- **fe($path)** &#10140; .main.php on line 411, **returns boolean if realpath path exists on running server**
   @param string $path
   @return boolean true if realpath exists, false otherwise  
 - **fm($mixed)** &#10140; .lib/toolbox.php on line 159, **returns a beautiful formatted value, mixed variable-type-dependant**
@@ -95,10 +95,10 @@ General reference
 - **pr($source)** &#10140; .lib/toolbox.php on line 179, **returns a parsed output, source-type dependant**
   @param string $source
   @return mixed depending on source origin  
-- **rt($url = null)** &#10140; .main.php on line 429, **relocates to given relative url or to base path on default**
+- **rt($url = null)** &#10140; .main.php on line 431, **relocates to given relative url or to base path on default**
   @param string $url
   @return void  
-- **ru($uri = null)** &#10140; .main.php on line 419, **returns an absolute uri, based on current server configuration**
+- **ru($uri = null)** &#10140; .main.php on line 421, **returns an absolute uri, based on current server configuration**
   @param string $uri
   @return string absolute http unified resource identifier  
 - **sb()** &#10140; .main.php on line 470, **show call's backtrace with help of error base handler**
@@ -107,7 +107,7 @@ General reference
   @param string $component
   @param string $marker
   @return mixed callback function returned value(s)  
-- **vd($what)** &#10140; .main.php on line 399, **returns pre-formatted mixed variables**
+- **vd($what)** &#10140; .main.php on line 401, **returns pre-formatted mixed variables**
   @param multi $what
   @return void  
   
@@ -547,7 +547,7 @@ Uses: **html**
 - **[get_timestone](https://github.com/TheB3Rt0z/schrimp/wiki/main get_timestone "")()** (PubS, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[get_version](https://github.com/TheB3Rt0z/schrimp/wiki/main get_version "")($precision = 2)** (PubS, Len: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[launch_error](https://github.com/TheB3Rt0z/schrimp/wiki/main launch_error "")($msg)** (PubS, Len: 7/10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **[relocate_to](https://github.com/TheB3Rt0z/schrimp/wiki/main relocate_to "")($url = null)** (PubS, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[relocate_to](https://github.com/TheB3Rt0z/schrimp/wiki/main relocate_to "")($url = null)** (PubS, Len: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[resolve_uri](https://github.com/TheB3Rt0z/schrimp/wiki/main resolve_uri "")($uri = null)** (PubS, Len: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[set_buffer](https://github.com/TheB3Rt0z/schrimp/wiki/main set_buffer "")($buffer)** (PubS, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[show_backtrace](https://github.com/TheB3Rt0z/schrimp/wiki/main show_backtrace "")($tostring = true)** (PubS, Len: 13/15 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  

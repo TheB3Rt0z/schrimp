@@ -311,7 +311,9 @@ class main
 
     static function relocate_to($url = '')
     {
-        header("Location: " . ru($url)); // output check not required ATM
+        header("Location: " . ru(_SET_STEALTH_MODE
+                                 ? $url
+                                 : cu($url))); // output check not required ATM
     }
 
     static function launch_error($msg)
@@ -428,9 +430,7 @@ function ru($uri = '')
  */
 function rt($url = '')
 {
-    main::relocate_to(_SET_STEALTH_MODE
-                      ? $url
-                      : cu($url));
+    main::relocate_to($url);
 }
 
 /**
