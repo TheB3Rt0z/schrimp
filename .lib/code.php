@@ -680,13 +680,13 @@ class code
                                              $class) . " " . $method . ".md";
 
         array_walk($code, function(&$value) // cleans code identation before save
-	    {
-	        if ($value != "\n")
-	            $value = substr(str_replace("\t",
-	                                        "    ",
-	                                        $value),
-	                            8);
-	    });
+        {
+            if ($value != "\n")
+                $value = substr(str_replace("\t",
+                                            "    ",
+                                            $value),
+                                8);
+        });
 
         $content = "**" . $method . $infos . MD_NEWLINE_SEQUENCE
                  . '```php' . MD_NEWLINE_SEQUENCE

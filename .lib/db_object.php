@@ -33,14 +33,14 @@ define('_SQL_CREATE_TRAITS', "CREATE TABLE " . _DB_DATABASE_NAME . " . "
 
 class db_object extends db
 {
-	static $todos = array
-	(
-	    'set traits on construct event' => "if given data is a values array..",
-	    'index table specs' => "ID, id_traits, UKEY, date_created/updated, value?",
-	    'extra table for read events' => "ID, id_powering, UKEY etc + traits list",
-	    '_load output testing' => "is really boolean return working or not?",
-	    '_save event performance' => "please avoid reloading 'same' object again!",
-	);
+    static $todos = array
+    (
+        'set traits on construct event' => "if given data is a values array..",
+        'index table specs' => "ID, id_traits, UKEY, date_created/updated, value?",
+        'extra table for read events' => "ID, id_powering, UKEY etc + traits list",
+        '_load output testing' => "is really boolean return working or not?",
+        '_save event performance' => "please avoid reloading 'same' object again!",
+    );
 
     static $tests = array();
 
@@ -56,24 +56,24 @@ class db_object extends db
 
     public $UUID = null;
 
-	function __construct($identifier_or_data = null)
-	{
-	    if (empty($this->_db))
-	    {
-	        $this->_db = new parent;
-	        $this->_connection = $this->_db->_connection;
-	    }
+    function __construct($identifier_or_data = null)
+    {
+        if (empty($this->_db))
+        {
+            $this->_db = new parent;
+            $this->_connection = $this->_db->_connection;
+        }
 
-	    if (!empty($identifier_or_data)
-	        && !is_array($identifier_or_data))
+        if (!empty($identifier_or_data)
+            && !is_array($identifier_or_data))
             $this->_load($identifier_or_data);
-	}
+    }
 
     private function _prepare_object_data($traits = array())
-	{
+    {
         $data = array();
 
-	    foreach ($traits as $key => $value)
+        foreach ($traits as $key => $value)
         {
             $key = trim($key);
 
@@ -99,18 +99,18 @@ class db_object extends db
         $data['schrimp_version'] = "schrimp_version = " . main::get_version(3);
 
         return $data;
-	}
+    }
 
-	protected function _load($identifier) // works with integer ID or UKEY/UUID strings
-	{
-	    if (!$result = $this->_query("SELECT *
+    protected function _load($identifier) // works with integer ID or UKEY/UUID strings
+    {
+        if (!$result = $this->_query("SELECT *
                                       FROM " . _DB_INDEX_TABLE . "
                                       WHERE " . (is_numeric($identifier)
                                                 ? "ID = " . $identifier
                                                 : "UKEY LIKE '" . $identifier
                                                 . "' OR UUID LIKE '" . $identifier
                                                 . "'")))
-	        switch (mysqli_errno($this->_db->_connection))
+            switch (mysqli_errno($this->_db->_connection))
             {
                 case 1146 : // main table not exists, trying to create it
                 {
@@ -131,7 +131,7 @@ class db_object extends db
         }
 
         return false; // is this needed, check with break here up..
-	}
+    }
 
     protected function _save($traits = array())
     {

@@ -12,14 +12,14 @@ class itoll extends schrimp\controller
 
     static $tests = array();
 
-	function initialize()
-	{
-		$this->_set_title($this->_translate("COMPONENT VISIBLE NAME"));
+    function initialize()
+    {
+        $this->_set_title($this->_translate("COMPONENT VISIBLE NAME"));
         $this->_handler();
-	}
+    }
 
-	protected function _handler()
-	{
-		$this->_set_nav(html::box(navigator::get_list()));
-	}
+    protected function _handler()
+    {
+        $this->_set_nav(html::box(navigator::get_list()));
+    }
 }

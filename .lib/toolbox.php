@@ -2,16 +2,16 @@
 
 class toolbox
 {
-	static $todos = array
-	(
-	    'unit testing' => "..and what about a little code coverage measuring?",
-	    'error message' => "difference should be evidenced and a message showed",
-	    'fulltest procedure' => "add more tests and implement more testtypes..",
-	    'virus total' => "https://www.virustotal.com/it/documentation/public-api/",
-	    'wide-range tests' => "include controller-derived + helpers etc. classes?",
-	    'implement filter_functions' => "github-wiki-page / php.net-documentation",
-	    'xml parser/updater needed' => "maybe in a extra class, like md..?",
-	);
+    static $todos = array
+    (
+        'unit testing' => "..and what about a little code coverage measuring?",
+        'error message' => "difference should be evidenced and a message showed",
+        'fulltest procedure' => "add more tests and implement more testtypes..",
+        'virus total' => "https://www.virustotal.com/it/documentation/public-api/",
+        'wide-range tests' => "include controller-derived + helpers etc. classes?",
+        'implement filter_functions' => "github-wiki-page / php.net-documentation",
+        'xml parser/updater needed' => "maybe in a extra class, like md..?",
+    );
 
     static $tests = array();
 
@@ -35,50 +35,50 @@ class toolbox
         return $array;
     }
 
-	static function format($mixed)
-	{
-		if ($mixed === true
-		    || $mixed == "1")
-		{
-    		return "true";
-		}
-    	elseif ($mixed === false
-		    || $mixed == "0")
-		{
-    		return "false";
-		}
-    	elseif ($mixed === ''
-    		|| $mixed == null)
-    	{
-    		return "null";
-    	}
-		elseif (!is_numeric($mixed))
-    		return "\"" . str_replace(array
-    		                          (
-    		                              "\n",
-    		                              "\r",
-    		                              "\t",
-    		                          ),
-    		                          array
-    		                          (
-    		                              '\\n',
-    		                              '\\r',
-    		                              '\\t',
-	                                  ),
-    		                          $mixed) . "\"";
-		else
-			return $mixed; // fallback
-	}
+    static function format($mixed)
+    {
+        if ($mixed === true
+            || $mixed == "1")
+        {
+            return "true";
+        }
+        elseif ($mixed === false
+            || $mixed == "0")
+        {
+            return "false";
+        }
+        elseif ($mixed === ''
+            || $mixed == null)
+        {
+            return "null";
+        }
+        elseif (!is_numeric($mixed))
+            return "\"" . str_replace(array
+                                      (
+                                          "\n",
+                                          "\r",
+                                          "\t",
+                                      ),
+                                      array
+                                      (
+                                          '\\n',
+                                          '\\r',
+                                          '\\t',
+                                      ),
+                                      $mixed) . "\"";
+        else
+            return $mixed; // fallback
+    }
 
-	static function highlight($string,
-	                          $type = '', // default is php code (native)
-	                          $filter = '')
-	{
-	    switch ($type)
-	    {
-	        default : // this means php
-	        {
-	            $string = highlight_string($string, true);
+    static function highlight($string,
+                              $type = '', // default is php code (native)
+                              $filter = '')
+    {
+        switch ($type)
+        {
+            default : // this means php
+            {
+                $string = highlight_string($string, true);
 
                 if (!empty($filter))
                     switch ($filter)
@@ -88,67 +88,67 @@ class toolbox
                             $string = self::_filter_functions($string);
                         }
                     }
-	        }
-	    }
+            }
+        }
 
-	    return $string;
-	}
+        return $string;
+    }
 
-	static function fulltest() // only for libraries
-	{
-	    $tests = '.lib/toolbox.tsts';
-	    eval("\$results = array
-	                      (
-	                          " . pr($tests) . "
-	                      );"); // loads results file
-	    $check = true;
+    static function fulltest() // only for libraries
+    {
+        $tests = '.lib/toolbox.tsts';
+        eval("\$results = array
+                          (
+                              " . pr($tests) . "
+                          );"); // loads results file
+        $check = true;
 
-	    foreach (code::get_libraries_list() as $key => $value)
-	    {
-	        $fullkey = (class_exists($key)
-	                   ? $key
-	                   : code::_SET_NS_PREFIX . $key);
-	        $class = new \ReflectionClass($fullkey);
-	        $tests = $class->getStaticPropertyValue('tests');
-	        foreach ($tests as $subkey => $values)
-	        {
+        foreach (code::get_libraries_list() as $key => $value)
+        {
+            $fullkey = (class_exists($key)
+                       ? $key
+                       : code::_SET_NS_PREFIX . $key);
+            $class = new \ReflectionClass($fullkey);
+            $tests = $class->getStaticPropertyValue('tests');
+            foreach ($tests as $subkey => $values)
+            {
                 $result = call_user_func_array(array($fullkey, $values['method']),
-			                                   $values['parameters']);
+                                               $values['parameters']);
 
                 $answer = $results[$key][$subkey];
-	            if ($result !== $answer)
-	            {
-	                vd($values['error'] . ": " . $result . " vs " . $answer); // ups..
-	                $check = false;
-	            }
-	        }
-	    }
+                if ($result !== $answer)
+                {
+                    vd($values['error'] . ": " . $result . " vs " . $answer); // ups..
+                    $check = false;
+                }
+            }
+        }
 
-	    return $check;
-	}
+        return $check;
+    }
 
-	static function load($file)
-	{
-	    if (fe($file))
+    static function load($file)
+    {
+        if (fe($file))
             return require_once $file;
-	    else
-	        return false;
-	}
+        else
+            return false;
+    }
 
-	static function parse($source)
-	{
-	    if (fe($source))
-	        $output = file_get_contents($source);
-	    else
-	        return false;
+    static function parse($source)
+    {
+        if (fe($source))
+            $output = file_get_contents($source);
+        else
+            return false;
 
-	    if (substr_count(strtolower($source), ".csv"))
-	        return str_getcsv($output); // returns an array
-	    elseif (@simplexml_load_string($output))
-	        return new SimpleXmlElement($output);
-	    else
-	        return $output;
-	}
+        if (substr_count(strtolower($source), ".csv"))
+            return str_getcsv($output); // returns an array
+        elseif (@simplexml_load_string($output))
+            return new SimpleXmlElement($output);
+        else
+            return $output;
+    }
 }
 
 /**
@@ -158,7 +158,7 @@ class toolbox
  */
 function fm($mixed)
 {
-	return toolbox::format($mixed);
+    return toolbox::format($mixed);
 }
 
 /**
@@ -178,5 +178,5 @@ function ld($file)
  */
 function pr($source)
 {
-	return toolbox::parse($source);
+    return toolbox::parse($source);
 }

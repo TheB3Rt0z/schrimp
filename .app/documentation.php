@@ -2,13 +2,13 @@
 
 class documentation extends controller
 {
-	static $todos = array();
+    static $todos = array();
 
-	static $tests = array();
+    static $tests = array();
 
-	function initialize()
-	{
-	    $this->_set_nav(html::box(navigator::get_list()));
+    function initialize()
+    {
+        $this->_set_nav(html::box(navigator::get_list()));
 
         $fallback_method = '_handler' . (!empty($this->_action)
                                         ? '_' . $this->_action
@@ -26,24 +26,24 @@ class documentation extends controller
         }
         else
             rt("error/404");
-	}
+    }
 
-	protected function _handler()
-	{
-		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME'));
-	}
+    protected function _handler()
+    {
+        $this->_set_title($this->_translate('COMPONENT VISIBLE NAME'));
+    }
 
-	private function _handler_list()
-	{
-		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
-		                . HTML_BREADCRUMB_SEPARATOR
-		                . $this->_translate(__FUNCTION__));
-	}
+    private function _handler_list()
+    {
+        $this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
+                        . HTML_BREADCRUMB_SEPARATOR
+                        . $this->_translate(__FUNCTION__));
+    }
 
-	private function _handler_list_files()
-	{
-		$this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
-		                . HTML_BREADCRUMB_SEPARATOR
-		                . $this->_translate(__FUNCTION__));
-	}
+    private function _handler_list_files()
+    {
+        $this->_set_title($this->_translate('COMPONENT VISIBLE NAME')
+                        . HTML_BREADCRUMB_SEPARATOR
+                        . $this->_translate(__FUNCTION__));
+    }
 }

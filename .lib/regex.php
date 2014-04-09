@@ -2,12 +2,12 @@
 
 class regex
 {
-	static $todos = array
-	(
-	    'wanted methods' => "check, search, replace and evoluted string modifies",
-	    'direct pattern | pattern composer' => "string or options-array, sqllike",
-	    'string validation helper' => "see also PHP's validate filters in docs..",
-	);
+    static $todos = array
+    (
+        'wanted methods' => "check, search, replace and evoluted string modifies",
+        'direct pattern | pattern composer' => "string or options-array, sqllike",
+        'string validation helper' => "see also PHP's validate filters in docs..",
+    );
 
     static $tests = array();
 

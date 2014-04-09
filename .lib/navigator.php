@@ -361,7 +361,7 @@ class navigator
     static function get_list()
     {
         if (_SET_ADVANCED_INTERFACE)
-		    return self::get_advanced_list();
+            return self::get_advanced_list();
 
         $self = new self;
 
