@@ -16,7 +16,7 @@ Table of contents
 [- html_doc](#-class-html_doc-03032014-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/html_doc.php, Len: 79/94, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- html_form](#-class-html_form-03032014-- "") &#10029;  (.lib/html_form.php, Len: 65/71, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library language](#-class-language-09042014-- "") &#10029;&#10029;&#10029;  (.lib/language.php, Len: 103/121, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
-[Library main](#-class-main-08042014-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (.main.php, Len: 309/378, CIS: 31 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Class interface size could lead to a refactoring")) &#10140;  2 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
+[Library main](#-class-main-09042014-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (.main.php, Len: 308/377, CIS: 31 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Class interface size could lead to a refactoring")) &#10140;  2 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
 [Library md](#-class-md-09042014-- "") (.lib/md.php, Len: 185/231, CIS: 14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library navigator](#-class-navigator-09042014-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/navigator.php, Len: 343/418, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  2 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!") 1 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!")  
 [Library pdf](#-class-pdf-09042014-- "") &#10029;  (.lib/pdf.php, Len: 5/6, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -71,13 +71,13 @@ General reference
   
 **FUNCTION ALIASES:**  
   
-- **bs($infos)** &#10140; .main.php on line 460, **triggers an error if bad syntax events occur**
+- **bs($infos)** &#10140; .main.php on line 461, **triggers an error if bad syntax events occur**
   @param string $msg
   @return boolean indicating notification success  
-- **cu($uri)** &#10140; .main.php on line 390, **2-way uri conversion, schrimp to w3c-RFC and vice-versa, auto-recognized**
+- **cu($uri)** &#10140; .main.php on line 389, **2-way uri conversion, schrimp to w3c-RFC and vice-versa, auto-recognized**
   @param string $uri
   @return string relative http unified resource identifier (after conversion)  
-- **fe($path)** &#10140; .main.php on line 410, **returns boolean if realpath path exists on running server**
+- **fe($path)** &#10140; .main.php on line 409, **returns boolean if realpath path exists on running server**
   @param string $path
   @return boolean true if realpath exists, false otherwise  
 - **fm($mixed)** &#10140; .lib/toolbox.php on line 159, **returns a beautiful formatted value, mixed variable-type-dependant**
@@ -86,28 +86,28 @@ General reference
 - **ld($file)** &#10140; .lib/toolbox.php on line 169, **require (once) a file and launch a php warning if not successful
   @param string $file
   @return 1 on success or false on file not exists or require_once failure  
-- **le($msg)** &#10140; .main.php on line 440, **launches a customizable error 500, mit optional backtrace for debug**
+- **le($msg)** &#10140; .main.php on line 441, **launches a customizable error 500, mit optional backtrace for debug**
   @param string $msg
   @return boolean false after relocate  
-- **mf($file)** &#10140; .main.php on line 450, **triggers an error if a needed file is missing**
+- **mf($file)** &#10140; .main.php on line 451, **triggers an error if a needed file is missing**
   @param string $file
   @return boolean indicating notification success  
 - **pr($source)** &#10140; .lib/toolbox.php on line 179, **returns a parsed output, source-type dependant**
   @param string $source
   @return mixed depending on source origin  
-- **rt($url = null)** &#10140; .main.php on line 430, **relocates to given relative url or to base path on default**
+- **rt($url = null)** &#10140; .main.php on line 429, **relocates to given relative url or to base path on default**
   @param string $url
   @return void  
-- **ru($uri = null)** &#10140; .main.php on line 420, **returns an absolute uri, based on current server configuration**
+- **ru($uri = null)** &#10140; .main.php on line 419, **returns an absolute uri, based on current server configuration**
   @param string $uri
   @return string absolute http unified resource identifier  
-- **sb()** &#10140; .main.php on line 469, **show call's backtrace with help of error base handler**
+- **sb()** &#10140; .main.php on line 470, **show call's backtrace with help of error base handler**
   @return void  
 - **tr($component, $marker)** &#10140; .lib/language.php on line 136, **executes language translation of marker identifier, referring to given component**
   @param string $component
   @param string $marker
   @return mixed callback function returned value(s)  
-- **vd($what)** &#10140; .main.php on line 400, **returns pre-formatted mixed variables**
+- **vd($what)** &#10140; .main.php on line 399, **returns pre-formatted mixed variables**
   @param multi $what
   @return void  
   
@@ -524,7 +524,7 @@ Uses: **html**
   
 ***  
   
-[⇧](# "to the top") Class MAIN (08.04.2014)  
+[⇧](# "to the top") Class MAIN (09.04.2014)  
 -----------------------  
   
 **CODE REFERENCE:**  
@@ -568,7 +568,6 @@ Uses: **code**, **html**, **md**, **toolbox**
 - **css selectors** &#10140; uniform to html-class render-methods (default style)  
 - **css autoload** &#10140; automatically load ANY file in .inc/inc / css? nnouu..  
 - **error launchers** &#10140; should be moved to a library (navigator, toolbox)?  
-- **no stealth mode** &#10140; no uri interpretation + htaccess automatic creation  
 - **set_htmls_from_controller** &#10140; could we update here our sitemap.xml?  
 - **better css for error notifications** &#10140; ..and interface triggers style!  
 - **check var_dump/vd calls** &#10140; indirect use + ($)main->/::var_dump([X])..  

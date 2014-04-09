@@ -11,7 +11,6 @@ class main
         'css selectors' => "uniform to html-class render-methods (default style)",
         'css autoload' => "automatically load ANY file in .inc/inc / css? nnouu..",
         'error launchers' => "should be moved to a library (navigator, toolbox)?",
-        'no stealth mode' => "no uri interpretation + htaccess automatic creation",
         'set_htmls_from_controller' => "could we update here our sitemap.xml?",
         'better css for error notifications' => "..and interface triggers style!",
         'check var_dump/vd calls' => "indirect use + ($)main->/::var_dump([X])..",
@@ -429,7 +428,9 @@ function ru($uri = '')
  */
 function rt($url = '')
 {
-    main::relocate_to($url);
+    main::relocate_to(_SET_STEALTH_MODE
+                      ? $url
+                      : cu($url));
 }
 
 /**
