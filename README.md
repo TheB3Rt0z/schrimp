@@ -18,7 +18,7 @@ Table of contents
 [Library language](#-class-language-03032014-- "") &#10029;&#10029;&#10029;  (.lib/language.php, Len: 103/121, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
 [Library main](#-class-main-08042014-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (.main.php, Len: 309/378, CIS: 31 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Class interface size could lead to a refactoring")) &#10140;  2 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
 [Library md](#-class-md-03032014-- "") (.lib/md.php, Len: 185/231, CIS: 14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library navigator](#-class-navigator-03032014-- "") &#10029;&#10029;&#10029;&#10029;  (.lib/navigator.php, Len: 342/415, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  2 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!") 1 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!")  
+[Library navigator](#-class-navigator-08042014-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/navigator.php, Len: 343/416, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  2 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!") 1 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!")  
 [Library pdf](#-class-pdf-03032014-- "") &#10029;  (.lib/pdf.php, Len: 5/6, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library powerring](#-class-powerring-03032014-- "") (lib/powerring.php, Len: 127/142, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!") 2 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!")  
 [- powerring_status](#-class-powerring_status-03032014-- "") &#10029;&#10029;&#10029;  (lib/powerring_status.php, Len: 7/8, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -609,7 +609,7 @@ Uses: **escort**
   
 ***  
   
-[⇧](# "to the top") Class NAVIGATOR (03.03.2014)  
+[⇧](# "to the top") Class NAVIGATOR (08.04.2014)  
 ----------------------------  
   
 **CODE REFERENCE:**  
@@ -639,6 +639,7 @@ Uses: **code**, **html**, **html_form**, **main**
   
 **TODOS:**  
   
+- **stealth mode changings** &#10140; breadcrumbs urls should be now filtered..  
 - **function unification** &#10140; compress bc-renders to one render_bc(active)  
 - **fix (advanced) list/breadcrumb** &#10140; not right initialized in dev mode..  
 - **fix navi when no dev..** &#10140; breadcrumb false, no structure, errors..  

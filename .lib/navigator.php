@@ -4,6 +4,7 @@ class navigator
 {
     static $todos = array
     (
+        'stealth mode changings' => "breadcrumbs urls should be now filtered..",
         'function unification' => "compress bc-renders to one render_bc(active)",
         'fix (advanced) list/breadcrumb' => "not right initialized in dev mode..",
         'fix navi when no dev..' => "breadcrumb false, no structure, errors..",

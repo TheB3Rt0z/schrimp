@@ -678,7 +678,11 @@ class code
                                              '',
                                              $class) . " " . $method . ".md";
 
-        $content = "**" . $method . $infos . MD_NEWLINE_SEQUENCE . implode($code);
+        $content = "**" . $method . $infos . MD_NEWLINE_SEQUENCE . implode($code)
+                 . str_repeat(MD_NEWLINE_SEQUENCE, 3)
+                 . '<link rel="stylesheet" href="styles/default.css">' . MD_NEWLINE_SEQUENCE
+                 . '<script src="highlight.pack.js"></script>' . MD_NEWLINE_SEQUENCE
+                 . '<script>hljs.initHighlightingOnLoad();</script>' . MD_NEWLINE_SEQUENCE;
 
         file_put_contents($file,
                           $content);
