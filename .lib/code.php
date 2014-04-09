@@ -678,13 +678,15 @@ class code
                                              '',
                                              $class) . " " . $method . ".md";
 
-        $content = "**" . $method . $infos . MD_NEWLINE_SEQUENCE . implode($code)
-                 . MD_NEWLINE_SEQUENCE
-                 . '<link rel="stylesheet" href="' . SET_GITHUB_WIKIPATH
-                 . 'styles/default.css">' . MD_NEWLINE_SEQUENCE
-                 . '<script src="' . SET_GITHUB_WIKIPATH
-                 . 'highlight.pack.js"></script>' . MD_NEWLINE_SEQUENCE
-                 . '<script>hljs.initHighlightingOnLoad();</script>';
+        array_walk($code, function(&$value)
+	    {
+	        $value = substr($value, 8); // cleans code identation before save
+	    });
+
+        $content = "**" . $method . $infos . MD_NEWLINE_SEQUENCE
+                 . '```php' . MD_NEWLINE_SEQUENCE
+                   . implode($code)
+                 . '```';
 
         file_put_contents($file,
                           $content);
