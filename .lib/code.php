@@ -185,8 +185,11 @@ class code
                                              $class_start,
                                              $class_line)
     {
-        return "- Form error(s) **" . toolbox::format($tofix) . "** on file line **"
-             . ($class_start + 2 + $class_line) . "**" . MD_NEWLINE_SEQUENCE;
+        return "- Form error(s) **"
+               . toolbox::format($tofix)
+             . "** on file line **"
+               . ($class_start + 2 + $class_line)
+             . "**" . MD_NEWLINE_SEQUENCE;
     }
 
     private static function _get_class_constants(\ReflectionClass $class)

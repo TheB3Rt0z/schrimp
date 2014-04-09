@@ -4,7 +4,6 @@
     'web diagnostics tool' => "only if online and reachable ..embed in admin bar?", // http://developers.google.com/speed/pagespeed/insights/?url=http%3A%2F%2Fwww.choice-in-ecommerce.org%2F, http://www.webpagetest.org/compare?url=www.choice-in-ecommerce.org%2Fen%2F
     'siloing tests' => "based on google syntax operators, to build some indexes", // http://www.bruceclay.com/seo/silo.htm
     'framework mode usage' => "use namespace to avoid class-names conflicts..?",
-    'unuseful .doc tracking' => "to be removed, content either in src or ebook..", 
 ),
 
 '_set_development_mode' => false, // backend mode with doc generation

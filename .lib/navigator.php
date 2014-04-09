@@ -77,6 +77,7 @@ class navigator
     private function _add_branch($ctrl_name)
     {
         $full_ctrl_name = code::_SET_NS_PREFIX . $ctrl_name;
+
         if ($full_ctrl_name::VISIBLE_IN_NAVIGATION)
         {
             $this->_structure[$this->_actual_home]['sub'][$ctrl_name] = array
@@ -94,6 +95,7 @@ class navigator
                                    );
 
             $rc = new \ReflectionClass($full_ctrl_name);
+
             foreach ($rc->getMethods(\ReflectionMethod::IS_PRIVATE
                 | !\ReflectionMethod::IS_PROTECTED) as $object)
             {
