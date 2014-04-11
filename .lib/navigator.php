@@ -4,11 +4,12 @@ class navigator
 {
     static $todos = array
     (
+        'too many parameters -> too big methods' => "convert to \$self properties",
         'stealth mode changings' => "breadcrumbs urls should be now filtered..",
         'function unification' => "compress bc-renders to one render_bc(active)",
         'fix (advanced) list/breadcrumb' => "not right initialized in dev mode..",
         'fix navi when no dev..' => "breadcrumb false, no structure, errors..",
-        'render_list' => "this should be CSS3 and appear on a mouse gesture..",
+        'render_list' => "this could be in CSS3 and appear on a mouse gesture..",
     );
 
     static $tests = array();

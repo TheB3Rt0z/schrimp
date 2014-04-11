@@ -1,4 +1,4 @@
-![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Dokumentation v1.5 | 14.04  
+![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Dokumentation v1.6 | 14.04  
 ---------------------------------------------------------------------------------------------------------------------------------------  
   
 Table of contents  
@@ -6,7 +6,7 @@ Table of contents
   
 [General reference](#general-reference-- "")  
 [Library cache](#-class-cache-09042014-- "") &#10029;  (.lib/cache.php, Len: 15/20, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library code](#-class-code-09042014-- "") &#10029;&#10029;&#10029;  (.lib/code.php, Len: 822/963, CIS: 15 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  4 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
+[Library code](#-class-code-11042014-- "") &#10029;&#10029;&#10029;&#10029;  (.lib/code.php, Len: 823/964, CIS: 15 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  4 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
 [Library controller](#-class-controller-09042014-- "") (.lib/controller.php, Len: 98/127, CIS: 11 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library db](#-class-db-09042014-- "") &#10029;&#10029;&#10029;  (.lib/db.php, Len: 106/126, CIS: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- db_object](#-class-db_object-09042014-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/db_object.php, Len: 120/148, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
@@ -18,7 +18,7 @@ Table of contents
 [Library language](#-class-language-09042014-- "") &#10029;&#10029;&#10029;  (.lib/language.php, Len: 103/121, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
 [Library main](#-class-main-09042014-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (.main.php, Len: 310/379, CIS: 31 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Class interface size could lead to a refactoring")) &#10140;  2 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
 [Library md](#-class-md-09042014-- "") (.lib/md.php, Len: 185/231, CIS: 14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library navigator](#-class-navigator-09042014-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/navigator.php, Len: 343/418, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  2 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!") 1 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!")  
+[Library navigator](#-class-navigator-11042014-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/navigator.php, Len: 344/419, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  2 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!") 1 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!")  
 [Library pdf](#-class-pdf-09042014-- "") &#10029;  (.lib/pdf.php, Len: 5/6, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library powerring](#-class-powerring-03032014-- "") (lib/powerring.php, Len: 127/142, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!") 2 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!")  
 [- powerring_status](#-class-powerring_status-03032014-- "") &#10029;&#10029;&#10029;  (lib/powerring_status.php, Len: 7/8, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -140,7 +140,7 @@ General reference
   
 ***  
   
-[⇧](# "to the top") Class CODE (09.04.2014)  
+[⇧](# "to the top") Class CODE (11.04.2014)  
 -----------------------  
   
 **CODE REFERENCE:**  
@@ -192,6 +192,7 @@ Uses: **code**, **main**, **md**, **toolbox**
   
 **TODOS:**  
   
+- **to fix issues** &#10140; add blue (or maybe red?) dot on class/methods names  
 - **get_class_dependencies** &#10140; too inaccurate, see navigator-controller  
 - **static files form** &#10140; check backend&component css files + schrimp_*.js  
 - **test list in documentation footer** &#10140; see scaffold method for infos  
@@ -608,7 +609,7 @@ Uses: **escort**
   
 ***  
   
-[⇧](# "to the top") Class NAVIGATOR (09.04.2014)  
+[⇧](# "to the top") Class NAVIGATOR (11.04.2014)  
 ----------------------------  
   
 **CODE REFERENCE:**  
@@ -638,11 +639,12 @@ Uses: **code**, **html**, **html_form**, **main**
   
 **TODOS:**  
   
+- **too many parameters -> too big methods** &#10140; convert to $self properties  
 - **stealth mode changings** &#10140; breadcrumbs urls should be now filtered..  
 - **function unification** &#10140; compress bc-renders to one render_bc(active)  
 - **fix (advanced) list/breadcrumb** &#10140; not right initialized in dev mode..  
 - **fix navi when no dev..** &#10140; breadcrumb false, no structure, errors..  
-- **render_list** &#10140; this should be CSS3 and appear on a mouse gesture..  
+- **render_list** &#10140; this could be in CSS3 and appear on a mouse gesture..  
   
   
 ***  
