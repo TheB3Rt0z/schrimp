@@ -102,3 +102,87 @@ if (!_SET_DEVELOPMENT_MODE)
                      ob_get_clean());
 else
     echo ob_get_clean();
+
+if (_SET_DEBUG_MODE)
+{
+    echo schrimp\html::divisor('',
+                               array(),
+                               'schrimp-debug');
+    ob_start();
+    ?>
+    var s_d = document.getElementById('schrimp-debug');
+    var eol = "<?php echo schrimp\html::newline() ?>";
+
+    if (typeof angular != 'undefined')
+        s_d.innerHTML += "AngularJS v" + angular.version.full + " loaded" + eol;
+    else
+        s_d.innerHTML += '<?php echo schrimp\html::spanner("AngularJS not loaded",
+                                                           array
+                                                           (
+                                                               'schrimp-warning',
+                                                           )) ?>' + eol;
+
+    if (typeof jQuery != 'undefined')
+    {
+        var sd = jQuery('#schrimp-debug');
+
+        sd.append("jQuery v" + jQuery.fn.jquery
+                + " loaded" + eol);
+
+        if (typeof jQuery.ui != 'undefined')
+            sd.append("- jQuery UI v" + jQuery.ui.version
+                    + " loaded" + eol);
+        else
+            sd.append('<?php echo schrimp\html::spanner("jQuery.ui not loaded",
+                                                        array
+                                                        (
+                                                            'schrimp-warning',
+                                                        )) ?>' + eol);
+
+        if (typeof jQuery.jcarousel != 'undefined')
+            sd.append("- jCarousel v"
+                    + jQuery.jcarousel.fn.jcarousel
+                    + " loaded" + eol);
+        else
+            sd.append('<?php echo schrimp\html::spanner("jCarousel not loaded",
+                                                        array
+                                                        (
+                                                            'schrimp-warning',
+                                                        )) ?>' + eol);
+    }
+    else
+        s_d.innerHTML += '<?php echo schrimp\html::spanner("jQuery not loaded",
+                                                           array
+                                                           (
+                                                               'schrimp-error',
+                                                           )) ?>' + eol;
+
+    if (typeof Prototype != 'undefined')
+        s_d.innerHTML += "Prototype v" + Prototype.Version + " loaded" + eol;
+    else
+        s_d.innerHTML += '<?php echo schrimp\html::spanner("Prototype not loaded",
+                                                           array
+                                                           (
+                                                               'schrimp-warning',
+                                                           )) ?>' + eol;
+
+    if (typeof jwplayer != 'undefined')
+        s_d.innerHTML += "JW player v" + jwplayer.version + " loaded" + eol;
+    else
+        s_d.innerHTML += '<?php echo schrimp\html::spanner("JW player not loaded",
+                                                           array
+                                                           (
+                                                               'schrimp-warning',
+                                                           )) ?>' + eol;
+
+    if (typeof Modernizr != 'undefined')
+        s_d.innerHTML += "Modernizr v" + Modernizr._version + " loaded" + eol;
+    else
+        s_d.innerHTML += '<?php echo schrimp\html::spanner("Modernizr not loaded",
+                                                           array
+                                                           (
+                                                               'schrimp-warning',
+                                                           )) ?>' + eol;
+    <?php
+    echo schrimp\html::add_js_script(ob_get_clean());
+}

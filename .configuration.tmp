@@ -7,6 +7,7 @@
 ),
 
 '_set_development_mode' => false, // backend mode with doc generation
+'_set_debug_mode' => false, // extra information about runtime status
 '_set_design_mode' => false, // activates an extra css file + code debugging
 '_set_stealth_mode' => false, // experimental, anti-tracking, darkweb only
 '_set_advanced_interface' => false, // advanced controls will be used

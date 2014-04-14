@@ -185,6 +185,7 @@ class html
             'pre' => array(),
             'script' => array
             (
+                'charset' => 'UTF-8',
                 'src' => true,
                 'type' => array // for reference: http://www.iana.org/assignments/media-types
                 (
@@ -642,7 +643,7 @@ class html
         elseif (!empty($content)
             && !in_array($content, self::$_loaded_scripts))
         {
-            $attributes['charset'] = "utf-8"; // should be constant?
+            $attributes['charset'] = "UTF-8"; // should be constant?
             $self = new self('script',
                              $attributes,
                              $content);
