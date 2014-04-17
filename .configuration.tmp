@@ -1,7 +1,8 @@
 '_todos' => array
 (
+    '_SET_DEBUG_MODE code at index.php end' => "should be moved to.. html_doc..?",
     '? admin bar' => "optional control to measure run time performance (gApis)",
-    'web diagnostics tool' => "only if online and reachable ..embed in admin bar?", // http://developers.google.com/speed/pagespeed/insights/?url=http%3A%2F%2Fwww.choice-in-ecommerce.org%2F, http://www.webpagetest.org/compare?url=www.choice-in-ecommerce.org%2Fen%2F
+    'web diagnostics tool' => "only if online and reachable ..embed in admin bar?", // http://www.webpagetest.org/compare?url=www.choice-in-ecommerce.org%2Fen%2F
     'siloing tests' => "based on google syntax operators, to build some indexes", // http://www.bruceclay.com/seo/silo.htm
     'framework mode usage' => "use namespace to avoid class-names conflicts..?",
 ),

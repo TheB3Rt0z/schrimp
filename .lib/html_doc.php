@@ -26,11 +26,11 @@ class html_doc extends html
                 'name' => "author",
                 'content' => _STR_PROJECT_NAME . " " . main::get_version(),
             ),
-            array
+            /*array
             (
                 'name' => "copyright",
                 'content' => _STR_COPYRIGHT_SIGNATURE,
-            ),
+            ),*/
             array
             (
                 'name' => "robots",

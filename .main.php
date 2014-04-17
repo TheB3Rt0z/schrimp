@@ -291,7 +291,7 @@ class main
                 }
             }
 
-            return $uri;
+            return htmlentities($uri);
         }
         elseif (!empty($r_uri)) // w3c-RFC to schrimp format conversion
             return implode(array_filter(preg_split('/[?&](.*?)=/',
@@ -301,10 +301,15 @@ class main
             return $uri; // no conversion needed
     }
 
-    static function resolve_uri($uri = '')
+    static function resolve_uri($uri = '',
+                                $ip = false)
     {
+        $ip_service = 'http://what-is-my-ip.net/?text'; // or http://api.hostip.info/get_json.php or http://ip2country.sourceforge.net/ip2c.php?format=JSON, or http://ip-api.com/json..
+
         return _SET_TRANSPORT_PROTOCOL . "://"
-             . $_SERVER['HTTP_HOST']
+             . (!empty($ip)
+               ? file_get_contents($ip_service)// json_decode(file_get_contents($ip_service))->ip
+               : $_SERVER['HTTP_HOST'])
              . _SET_LOCAL_PATH
              . "/" . $uri;
     }

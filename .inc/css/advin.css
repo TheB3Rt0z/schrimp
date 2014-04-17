@@ -20,6 +20,7 @@ div#header > div.box
 	position: fixed;
 	top: 5px;
 	right: 5px;
+	z-index: 1;
 }
 
 div#header > div.box > div,

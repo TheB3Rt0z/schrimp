@@ -15,6 +15,54 @@ body
     box-shadow: inset 0 0 1px rgba(255, 255, 0, .5);
 }
 
+div#schrimp-toolbar
+{
+    padding: 0.25%;
+    background-color: #fff;
+    width: 99.5%;
+    color: #000;
+    top: 0;
+    left: 0;
+    position: absolute;
+    transition: .25s;
+        -webkit-transition: .25s;
+        -khtml-transition: .25s;
+        -moz-transition: .25s;
+        -ms-transition: .25s;
+        -o-transition: .25s;
+    opacity: .125;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 12px;
+    box-shadow: 0 1px 2px #fff;
+        -webkit-box-shadow: 0 1px 2px #fff;
+        -khtml-box-shadow: 0 1px 2px #fff;
+        -moz-box-shadow: 0 1px 2px #fff;
+        -ms-box-shadow: 0 1px 2px #fff;
+        -o-box-shadow: 0 1px 2px #fff;
+}
+    div#schrimp-toolbar:hover
+    {
+        opacity: .75;
+        z-index: 1;
+    }
+        div#schrimp-toolbar > span > *
+        {
+            margin-left: 5px;
+            float: left;
+            color: #000;
+            text-decoration: none;
+            text-shadow: none;
+        }
+        div#schrimp-toolbar > span > a
+        {
+            background-color: #eee;
+            padding: 2px 5px 0;
+        }
+            div#schrimp-toolbar > span > a:hover
+            {
+                opacity: .333;
+            }
+
 div#schrimp-debug
 {
     padding: 0.25%;
@@ -33,20 +81,19 @@ div#schrimp-debug
         -o-transition: .25s;
     opacity: .125;
     font-family: "Lucida Console", Monaco, monospace;
-    font-size: 4px;
-    cursor: none;
+    font-size: 5px;
     box-shadow: 0 -1px 2px #000;
-        -webkit-box-shadow: 0 2px 3px #000;
-        -khtml-box-shadow: 0 2px 1px #000;
-        -moz-box-shadow: 0 1px 1px #000;
-        -ms-box-shadow: 0 1px 1px #000;
-        -o-box-shadow: 0 1px 1px #000;
+        -webkit-box-shadow: 0 -1px 2px #000;
+        -khtml-box-shadow: 0 -1px 2px #000;
+        -moz-box-shadow: 0 -1px 2px #000;
+        -ms-box-shadow: 0 -1px 2px #000;
+        -o-box-shadow: 0 -1px 2px #000;
 }
     div#schrimp-debug:hover
     {
-        opacity: .875;
+        opacity: .75;
         z-index: 0;
-        font-size: 12px;
+        font-size: 10px;
     }
     div#schrimp-debug > .schrimp-warning {
         color: #ff0;

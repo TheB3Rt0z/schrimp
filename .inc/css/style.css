@@ -69,6 +69,31 @@ br.clearfix
     clear: both;
 }
 
+.button {
+    padding: 1px 3px;
+    border: solid 1px #000;
+    border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -khtml-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -ms-border-radius: 3px;
+        -o-border-radius: 3px;
+    transition: .25s;
+        -webkit-transition: .25s;
+        -khtml-transition: .25s;
+        -moz-transition: .25s;
+        -ms-transition: .25s;
+        -o-transition: .25s;
+}
+    span.button {
+        padding: 1px 3px;
+        float: left;
+    }
+    input.button:hover {
+        opacity: .333;
+        cursor: pointer;
+    }
+
 div
 {
     padding: 0;

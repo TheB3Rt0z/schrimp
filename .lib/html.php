@@ -123,7 +123,7 @@ class html
                 (
                     'application-name',
                     'author',
-                    'copyright',
+                    //'copyright',
                     'description',
                     'generator',
                     'keywords',

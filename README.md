@@ -12,11 +12,11 @@ Table of contents
 [- db_object](#-class-db_object-09042014-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/db_object.php, Len: 120/148, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
 [- db_object_user](#-class-db_object_user-03032014-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/db_object_user.php, Len: 0/1, CIS: 0 )   
 [Library escort](#-class-escort-09042014-- "") (.lib/escort.php, Len: 32/40, CIS: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library html](#-class-html-13042014-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/html.php, Len: 735/860, CIS: 23 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[- html_doc](#-class-html_doc-14042014-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/html_doc.php, Len: 79/94, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[Library html](#-class-html-17042014-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/html.php, Len: 735/860, CIS: 23 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[- html_doc](#-class-html_doc-17042014-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/html_doc.php, Len: 79/94, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- html_form](#-class-html_form-03032014-- "") &#10029;  (.lib/html_form.php, Len: 65/71, CIS: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library language](#-class-language-09042014-- "") &#10029;&#10029;&#10029;  (.lib/language.php, Len: 103/121, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
-[Library main](#-class-main-09042014-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (.main.php, Len: 310/379, CIS: 31 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Class interface size could lead to a refactoring")) &#10140;  2 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
+[Library main](#-class-main-17042014-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (.main.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "1 too long line(s) found!") Len: 314/384, CIS: 31 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Class interface size could lead to a refactoring")) &#10140;  2 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
 [Library md](#-class-md-09042014-- "") (.lib/md.php, Len: 185/231, CIS: 14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library navigator](#-class-navigator-11042014-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/navigator.php, Len: 344/419, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  2 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!") 1 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!")  
 [Library pdf](#-class-pdf-09042014-- "") &#10029;  (.lib/pdf.php, Len: 5/6, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -71,13 +71,13 @@ General reference
   
 **FUNCTION ALIASES:**  
   
-- **bs($infos)** &#10140; .main.php on line 461, **triggers an error if bad syntax events occur**
+- **bs($infos)** &#10140; .main.php on line 466, **triggers an error if bad syntax events occur**
   @param string $msg
   @return boolean indicating notification success  
-- **cu($uri)** &#10140; .main.php on line 391, **2-way uri conversion, schrimp to w3c-RFC and vice-versa, auto-recognized**
+- **cu($uri)** &#10140; .main.php on line 396, **2-way uri conversion, schrimp to w3c-RFC and vice-versa, auto-recognized**
   @param string $uri
   @return string relative http unified resource identifier (after conversion)  
-- **fe($path)** &#10140; .main.php on line 411, **returns boolean if realpath path exists on running server**
+- **fe($path)** &#10140; .main.php on line 416, **returns boolean if realpath path exists on running server**
   @param string $path
   @return boolean true if realpath exists, false otherwise  
 - **fm($mixed)** &#10140; .lib/toolbox.php on line 159, **returns a beautiful formatted value, mixed variable-type-dependant**
@@ -86,34 +86,35 @@ General reference
 - **ld($file)** &#10140; .lib/toolbox.php on line 169, **require (once) a file and launch a php warning if not successful
   @param string $file
   @return 1 on success or false on file not exists or require_once failure  
-- **le($msg)** &#10140; .main.php on line 441, **launches a customizable error 500, mit optional backtrace for debug**
+- **le($msg)** &#10140; .main.php on line 446, **launches a customizable error 500, mit optional backtrace for debug**
   @param string $msg
   @return boolean false after relocate  
-- **mf($file)** &#10140; .main.php on line 451, **triggers an error if a needed file is missing**
+- **mf($file)** &#10140; .main.php on line 456, **triggers an error if a needed file is missing**
   @param string $file
   @return boolean indicating notification success  
 - **pr($source)** &#10140; .lib/toolbox.php on line 179, **returns a parsed output, source-type dependant**
   @param string $source
   @return mixed depending on source origin  
-- **rt($url = null)** &#10140; .main.php on line 431, **relocates to given relative url or to base path on default**
+- **rt($url = null)** &#10140; .main.php on line 436, **relocates to given relative url or to base path on default**
   @param string $url
   @return void  
-- **ru($uri = null)** &#10140; .main.php on line 421, **returns an absolute uri, based on current server configuration**
+- **ru($uri = null)** &#10140; .main.php on line 426, **returns an absolute uri, based on current server configuration**
   @param string $uri
   @return string absolute http unified resource identifier  
-- **sb()** &#10140; .main.php on line 470, **show call's backtrace with help of error base handler**
+- **sb()** &#10140; .main.php on line 475, **show call's backtrace with help of error base handler**
   @return void  
 - **tr($component, $marker)** &#10140; .lib/language.php on line 136, **executes language translation of marker identifier, referring to given component**
   @param string $component
   @param string $marker
   @return mixed callback function returned value(s)  
-- **vd($what)** &#10140; .main.php on line 401, **returns pre-formatted mixed variables**
+- **vd($what)** &#10140; .main.php on line 406, **returns pre-formatted mixed variables**
   @param multi $what
   @return void  
   
   
 **TODOS:**  
   
+- **_SET_DEBUG_MODE code at index.php end** &#10140; should be moved to.. html_doc..?  
 - **? admin bar** &#10140; optional control to measure run time performance (gApis)  
 - **web diagnostics tool** &#10140; only if online and reachable ..embed in admin bar?  
 - **siloing tests** &#10140; based on google syntax operators, to build some indexes  
@@ -335,7 +336,7 @@ Uses: **db_object**
   
 ***  
   
-[⇧](# "to the top") Class HTML (13.04.2014)  
+[⇧](# "to the top") Class HTML (17.04.2014)  
 -----------------------  
   
 **CODE REFERENCE:**  
@@ -409,7 +410,7 @@ Uses: **escort**
   
 ***  
   
-[⇧](# "to the top") Class HTML_DOC (14.04.2014)  
+[⇧](# "to the top") Class HTML_DOC (17.04.2014)  
 ---------------------------  
   
 **CODE REFERENCE:**  
@@ -525,7 +526,7 @@ Uses: **html**
   
 ***  
   
-[⇧](# "to the top") Class MAIN (09.04.2014)  
+[⇧](# "to the top") Class MAIN (17.04.2014)  
 -----------------------  
   
 **CODE REFERENCE:**  
@@ -549,7 +550,7 @@ Uses: **html**
 - **[get_version](https://github.com/TheB3Rt0z/schrimp/wiki/main get_version "")($precision = 2)** (PubS, Len: 5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[launch_error](https://github.com/TheB3Rt0z/schrimp/wiki/main launch_error "")($msg)** (PubS, Len: 7/10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[relocate_to](https://github.com/TheB3Rt0z/schrimp/wiki/main relocate_to "")($url = null)** (PubS, Len: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **[resolve_uri](https://github.com/TheB3Rt0z/schrimp/wiki/main resolve_uri "")($uri = null)** (PubS, Len: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[resolve_uri](https://github.com/TheB3Rt0z/schrimp/wiki/main resolve_uri "")($uri = null, $ip = false)** (PubS ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_blue_boh.png "1 too long line(s) found!") Len: 7/8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[set_buffer](https://github.com/TheB3Rt0z/schrimp/wiki/main set_buffer "")($buffer)** (PubS, Len: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[show_backtrace](https://github.com/TheB3Rt0z/schrimp/wiki/main show_backtrace "")($tostring = true)** (PubS, Len: 13/15 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[trigger_error_bad_syntax](https://github.com/TheB3Rt0z/schrimp/wiki/main trigger_error_bad_syntax "")($infos)** (PubS, Len: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  

@@ -90,6 +90,8 @@ ob_start();
     </body>
 </html><?php
 
+$main->result = ob_get_clean();
+
 if (!_SET_DEVELOPMENT_MODE)
     echo str_replace(array
                      (
@@ -99,12 +101,39 @@ if (!_SET_DEVELOPMENT_MODE)
                          "  ",
                      ),
                      '',
-                     ob_get_clean());
+                     $main->result);
 else
-    echo ob_get_clean();
+    echo $main->result;
 
 if (_SET_DEBUG_MODE)
 {
+ob_start();
+?>
+<span style="float: right">
+    <form style="float: left;"
+          action="http://validator.w3.org/check" enctype="multipart/form-data" method="post" target="_blank">
+        <input type="hidden" name="fragment" value="<?php echo htmlspecialchars($main->result) ?>" />
+        <input type="hidden" value="0" name="prefill" />
+        <input type="hidden" value="Inline" name="doctype" />
+            <!--<input type="radio" checked="checked" value="0" id="directgroup_no" name="group">
+            <input type="radio" value="1" id="directgroup_yes" name="group">
+            <input type="checkbox" value="1" name="ss" id="direct-ss">
+            <input type="checkbox" value="1" name="st" id="direct-st">
+            <input type="checkbox" value="1" name="outline" id="direct-outline">
+            <input type="checkbox" value="1" name="No200" id="direct-No200">
+            <input type="checkbox" value="1" name="verbose" id="direct-verbose">-->
+        <input type="submit" value="W3C" title="WWW Consortium Markup Validation Service" class="button" />
+    </form>
+    <a href="http://developers.google.com/speed/pagespeed/insights/?url=<?php echo urlencode($main->resolve_uri($_SERVER['QUERY_STRING'], true)) ?>" target="_blank" title="Google Developers PageSpeed Insights" class="button">PSI</a>
+</span>
+<?php
+    echo schrimp\html::divisor(schrimp\html::spanner(_STR_PROJECT_NAME . " " . $main->get_version(),
+                                                     array
+                                                     (
+                                                         'button',
+                                                     )) . ob_get_clean(),
+                               array(),
+                               'schrimp-toolbar');
     echo schrimp\html::divisor('',
                                array(),
                                'schrimp-debug');
