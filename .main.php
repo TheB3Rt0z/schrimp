@@ -308,7 +308,7 @@ class main
 
         return _SET_TRANSPORT_PROTOCOL . "://"
              . (!empty($ip)
-               ? file_get_contents($ip_service)// json_decode(file_get_contents($ip_service))->ip
+               ? file_get_contents($ip_service) // json_decode(file_get_contents($ip_service))->ip
                : $_SERVER['HTTP_HOST'])
              . _SET_LOCAL_PATH
              . "/" . $uri;
