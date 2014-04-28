@@ -23,7 +23,7 @@ div#schrimp-toolbar
     color: #000;
     top: 0;
     left: 0;
-    position: absolute;
+    position: fixed;
     transition: .25s;
         -webkit-transition: .25s;
         -khtml-transition: .25s;
@@ -71,8 +71,7 @@ div#schrimp-debug
     color: #0f0;
     bottom: 0;
     left: 0;
-    position: absolute;
-    z-index: -1;
+    position: fixed;
     transition: .25s;
         -webkit-transition: .25s;
         -khtml-transition: .25s;
@@ -92,7 +91,7 @@ div#schrimp-debug
     div#schrimp-debug:hover
     {
         opacity: .75;
-        z-index: 0;
+        z-index: 1;
         font-size: 10px;
     }
     div#schrimp-debug > .schrimp-warning {

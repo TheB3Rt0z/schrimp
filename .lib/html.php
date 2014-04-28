@@ -229,9 +229,9 @@ class html
         'xml:lang' => true, // should be set automatic (trough class language?)
     );
 
-    private static $_linked_files = array();
+    protected static $_linked_files = array();
 
-    private static $_loaded_scripts = array();
+    protected static $_loaded_scripts = array();
 
     function __construct($tag,
                          $attributes = array(),

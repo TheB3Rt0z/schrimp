@@ -44,7 +44,7 @@ en||Translator
 it||Traduttore
 
 _handler_core_code
-de||Kode
+de||Code
 en||Code
 it||Codice
 

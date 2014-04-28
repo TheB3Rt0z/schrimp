@@ -1,4 +1,4 @@
-<?php
+<?php namespace schrimp;
 
 /* The S.C.H.R.I.M.P. Project - Main-application launcher
  *
@@ -25,17 +25,17 @@
 
 require_once ".main.php"; // loading main application
 
-$main = new schrimp\main($_SERVER['REQUEST_URI']);
+$main = new main($_SERVER['REQUEST_URI']);
 
 ob_start();
 
 ?><!DOCTYPE html>
     <head>
         <?php
-        echo schrimp\html_doc::get_head_metatags()
-           . schrimp\html_doc::get_head_favicon()
-           . schrimp\html_doc::get_head_links($main->get_fullpath())
-           . schrimp\html_doc::get_head_scripts() ?>
+        echo html_doc::get_head_metatags()
+           . html_doc::get_head_favicon();
+        $main->linked_files = html_doc::get_head_links($main->get_fullpath());
+        $main->loaded_scripts = html_doc::get_head_scripts() ?>
 
         <title><?php echo (_SET_DEVELOPMENT_MODE
                           ? _STR_PROJECT_NAME . " " . $main->get_version() . " | "
@@ -44,48 +44,48 @@ ob_start();
 
     <body>
         <header>
-            <?php echo schrimp\html::divisor($main->header,
-                                             null,
-                                             'header') . "\n" ?>
+            <?php echo html::divisor($main->header,
+                                     null,
+                                     'header') . "\n" ?>
         </header>
 
         <nav>
-            <?php echo schrimp\html::divisor($main->nav,
-                                             null,
-                                             'nav') . "\n" ?>
+            <?php echo html::divisor($main->nav,
+                                     null,
+                                     'nav') . "\n" ?>
         </nav>
 
         <section>
-            <?php echo schrimp\html::divisor($main->section,
-                                             null,
-                                             'section') . "\n" ?>
+            <?php echo html::divisor($main->section,
+                                     null,
+                                     'section') . "\n" ?>
 
             <article>
-                <?php echo schrimp\html::divisor($main->article,
-                                                 null,
-                                                 'article') . "\n" ?>
+                <?php echo html::divisor($main->article,
+                                         null,
+                                         'article') . "\n" ?>
             </article>
 
             <aside>
-                <?php echo schrimp\html::divisor($main->aside,
-                                                 null,
-                                                 'aside') . "\n" ?>
+                <?php echo html::divisor($main->aside,
+                                         null,
+                                         'aside') . "\n" ?>
             </aside>
         </section>
 
         <footer>
-            <?php echo schrimp\html::divisor($main->footer,
-                                             null,
-                                             'footer') . "\n" ?>
+            <?php echo html::divisor($main->footer,
+                                     null,
+                                     'footer') . "\n" ?>
         </footer>
 
-        <?php echo schrimp\html::clearfix() . "\n" ?>
+        <?php echo html::clearfix() . "\n" ?>
 
         <?php
         if (_SET_ADVANCED_INTERFACE)
-            echo schrimp\html::divisor('',
-                                       null,
-                                       'loading') . "\n"
+            echo html::divisor('',
+                               null,
+                               'loading') . "\n"
         ?>
     </body>
 </html><?php
@@ -107,49 +107,53 @@ else
 
 if (_SET_DEBUG_MODE)
 {
-ob_start();
-?>
-<span style="float: right">
-    <form style="float: left;"
-          action="http://validator.w3.org/check" enctype="multipart/form-data" method="post" target="_blank">
-        <input type="hidden" name="fragment" value="<?php echo htmlspecialchars($main->result) ?>" />
-        <input type="hidden" value="0" name="prefill" />
-        <input type="hidden" value="Inline" name="doctype" />
-            <!--<input type="radio" checked="checked" value="0" id="directgroup_no" name="group">
-            <input type="radio" value="1" id="directgroup_yes" name="group">
-            <input type="checkbox" value="1" name="ss" id="direct-ss">
-            <input type="checkbox" value="1" name="st" id="direct-st">
-            <input type="checkbox" value="1" name="outline" id="direct-outline">
-            <input type="checkbox" value="1" name="No200" id="direct-No200">
-            <input type="checkbox" value="1" name="verbose" id="direct-verbose">-->
-        <input type="submit" value="W3C" title="WWW Consortium Markup Validation Service" class="button" />
-    </form>
-    <a href="http://developers.google.com/speed/pagespeed/insights/?url=<?php echo urlencode($main->resolve_uri($_SERVER['QUERY_STRING'], true)) ?>" target="_blank" title="Google Developers PageSpeed Insights" class="button">PSI</a>
-</span>
-<?php
-    echo schrimp\html::divisor(schrimp\html::spanner(_STR_PROJECT_NAME . " " . $main->get_version(),
-                                                     array
-                                                     (
-                                                         'button',
-                                                     )) . ob_get_clean(),
-                               array(),
-                               'schrimp-toolbar');
-    echo schrimp\html::divisor('',
-                               array(),
-                               'schrimp-debug');
+    vd($main->clean_object());
+    ob_start();
+    ?>
+    <span style="float: right">
+        <form style="float: left;"
+              action="http://validator.w3.org/check" enctype="multipart/form-data" method="post" target="_blank">
+            <input type="hidden" name="fragment" value="<?php echo htmlspecialchars($main->result) ?>" />
+            <input type="hidden" value="0" name="prefill" />
+            <input type="hidden" value="Inline" name="doctype" />
+                <!--<input type="radio" checked="checked" value="0" id="directgroup_no" name="group">
+                <input type="radio" value="1" id="directgroup_yes" name="group">
+                <input type="checkbox" value="1" name="ss" id="direct-ss">
+                <input type="checkbox" value="1" name="st" id="direct-st">
+                <input type="checkbox" value="1" name="outline" id="direct-outline">
+                <input type="checkbox" value="1" name="No200" id="direct-No200">
+                <input type="checkbox" value="1" name="verbose" id="direct-verbose">-->
+            <input type="submit" value="W3C" title="WWW Consortium Markup Validation Service" class="button" />
+        </form>
+        <a href="http://developers.google.com/speed/pagespeed/insights/?url=<?php echo urlencode($main->resolve_uri($_SERVER['QUERY_STRING'], true)) ?>" target="_blank" title="Google Developers PageSpeed Insights" class="button">PSI</a>
+    </span>
+    <?php
+    echo html::divisor(html::spanner(_STR_PROJECT_NAME . " " . $main->get_version(),
+                                     array
+                                     (
+                                         'button',
+                                     )) . ob_get_clean(),
+                       array(),
+                       'schrimp-toolbar');
+    echo html::divisor('',
+                       array(),
+                       'schrimp-debug');
+    echo html::divisor('',
+                       array(),
+                       'schrimp-debug');
     ob_start();
     ?>
     var s_d = document.getElementById('schrimp-debug');
-    var eol = "<?php echo schrimp\html::newline() ?>";
+    var eol = "<?php echo html::newline() ?>";
 
     if (typeof angular != 'undefined')
         s_d.innerHTML += "AngularJS v" + angular.version.full + " loaded" + eol;
     else
-        s_d.innerHTML += '<?php echo schrimp\html::spanner("AngularJS not loaded",
-                                                           array
-                                                           (
-                                                               'schrimp-warning',
-                                                           )) ?>' + eol;
+        s_d.innerHTML += '<?php echo html::spanner("AngularJS not loaded",
+                                                   array
+                                                   (
+                                                       'schrimp-warning',
+                                                   )) ?>' + eol;
 
     if (typeof jQuery != 'undefined')
     {
@@ -162,7 +166,7 @@ ob_start();
             sd.append("- jQuery UI v" + jQuery.ui.version
                     + " loaded" + eol);
         else
-            sd.append('<?php echo schrimp\html::spanner("jQuery.ui not loaded",
+            sd.append('<?php echo html::spanner("jQuery.ui not loaded",
                                                         array
                                                         (
                                                             'schrimp-warning',
@@ -173,45 +177,47 @@ ob_start();
                     + jQuery.jcarousel.fn.jcarousel
                     + " loaded" + eol);
         else
-            sd.append('<?php echo schrimp\html::spanner("jCarousel not loaded",
-                                                        array
-                                                        (
-                                                            'schrimp-warning',
-                                                        )) ?>' + eol);
+            sd.append('<?php echo html::spanner("jCarousel not loaded",
+                                        array
+                                        (
+                                            'schrimp-warning',
+                                        )) ?>' + eol);
     }
     else
-        s_d.innerHTML += '<?php echo schrimp\html::spanner("jQuery not loaded",
-                                                           array
-                                                           (
-                                                               'schrimp-error',
-                                                           )) ?>' + eol;
+        s_d.innerHTML += '<?php echo html::spanner("jQuery not loaded",
+                                                   array
+                                                   (
+                                                       'schrimp-error',
+                                                   )) ?>' + eol;
 
     if (typeof Prototype != 'undefined')
         s_d.innerHTML += "Prototype v" + Prototype.Version + " loaded" + eol;
     else
-        s_d.innerHTML += '<?php echo schrimp\html::spanner("Prototype not loaded",
-                                                           array
-                                                           (
-                                                               'schrimp-warning',
-                                                           )) ?>' + eol;
+        s_d.innerHTML += '<?php echo html::spanner("Prototype not loaded",
+                                                   array
+                                                   (
+                                                       'schrimp-warning',
+                                                   )) ?>' + eol;
 
     if (typeof jwplayer != 'undefined')
         s_d.innerHTML += "JW player v" + jwplayer.version + " loaded" + eol;
     else
-        s_d.innerHTML += '<?php echo schrimp\html::spanner("JW player not loaded",
-                                                           array
-                                                           (
-                                                               'schrimp-warning',
-                                                           )) ?>' + eol;
+        s_d.innerHTML += '<?php echo html::spanner("JW player not loaded",
+                                                   array
+                                                   (
+                                                       'schrimp-warning',
+                                                   )) ?>' + eol;
 
     if (typeof Modernizr != 'undefined')
         s_d.innerHTML += "Modernizr v" + Modernizr._version + " loaded" + eol;
     else
-        s_d.innerHTML += '<?php echo schrimp\html::spanner("Modernizr not loaded",
-                                                           array
-                                                           (
-                                                               'schrimp-warning',
-                                                           )) ?>' + eol;
-    <?php
-    echo schrimp\html::add_js_script(ob_get_clean());
+        s_d.innerHTML += '<?php echo html::spanner("Modernizr not loaded",
+                                                   array
+                                                   (
+                                                       'schrimp-warning',
+                                                   )) ?>' + eol;
+
+    s_d.innerHTML += eol;
+    <?php echo toolbox::jsdebug(); // upper js code here please, the next raus!
+    echo html::add_js_script(ob_get_clean());
 }

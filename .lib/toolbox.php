@@ -4,6 +4,7 @@ class toolbox
 {
     static $todos = array
     (
+        'jsdebug javascript code' => "this should include modernizr & post-ops",
         'unit testing' => "..and what about a little code coverage measuring?",
         'error message' => "difference should be evidenced and a message showed",
         'fulltest procedure' => "add more tests and implement more testtypes..",
@@ -18,6 +19,11 @@ class toolbox
     private static function _filter_functions($code)
     {
         return $code;
+    }
+
+    static function jsdebug()
+    {
+
     }
 
     static function filter($array,
@@ -148,6 +154,11 @@ class toolbox
             return new SimpleXmlElement($output);
         else
             return $output;
+    }
+
+    static function toolbar()
+    {
+        // to be implemented..
     }
 }
 

@@ -51,6 +51,20 @@ class html_form extends html
         ),
     );
 
+    function __construct()
+    {
+        $this->_attributes = array();
+    }
+
+    function render()
+    {
+        $parent = new parent('form', // fabric fixed value
+                             $this->_attributes,
+                             'class generated content'); // extra tools methods
+
+        return $parent->_html;
+    }
+
     static function dropdown($options,
                              $selected = null,
                              $onchange = false)

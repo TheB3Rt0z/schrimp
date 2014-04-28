@@ -225,6 +225,21 @@ class main
         return $this->get_path() . self::$controller;
     }
 
+    function clean_object() // should be cycle, array driven..
+    {
+        unset($this->_call);
+        unset($this->title);
+        unset($this->header);
+        unset($this->nav);
+        unset($this->section);
+        unset($this->article);
+        unset($this->aside);
+        unset($this->footer);
+        unset($this->result);
+
+        return $this;
+    }
+
     static function var_dump($what)
     {
         $args = func_get_args();
