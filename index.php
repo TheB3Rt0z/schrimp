@@ -107,7 +107,6 @@ else
 
 if (_SET_DEBUG_MODE)
 {
-    vd($main->clean_object());
     ob_start();
     ?>
     <span style="float: right">
@@ -133,14 +132,20 @@ if (_SET_DEBUG_MODE)
                                      (
                                          'button',
                                      )) . ob_get_clean(),
-                       array(),
+                       array('debug',
+                             'fixed'),
                        'schrimp-toolbar');
     echo html::divisor('',
-                       array(),
+                       array('debug',
+                             'fixed'),
                        'schrimp-debug');
-    echo html::divisor('',
-                       array(),
-                       'schrimp-debug');
+
+    ob_start();
+    vd($main->clean_object());
+    echo html::divisor(ob_get_clean(),
+                       array('debug',
+                             'fixed'),
+                       'schrimp-object');
     ob_start();
     ?>
     var s_d = document.getElementById('schrimp-debug');
