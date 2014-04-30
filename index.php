@@ -221,8 +221,6 @@ if (_SET_DEBUG_MODE)
                                                    (
                                                        'schrimp-warning',
                                                    )) ?>' + eol;
-
-    s_d.innerHTML += eol;
     <?php echo toolbox::jsdebug(); // upper js code here please, the next raus!
     echo html::add_js_script(ob_get_clean());
 }
