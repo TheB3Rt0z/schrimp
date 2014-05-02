@@ -21,11 +21,6 @@ class toolbox
         return $code;
     }
 
-    static function jsdebug()
-    {
-
-    }
-
     static function filter($array,
                            $key_s)
     {
