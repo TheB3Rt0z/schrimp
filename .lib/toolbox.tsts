@@ -1,3 +1,8 @@
+'escort' => array
+(
+    'empty_get_object' => null,
+),
+
 'html_form' => array
 (
     'base_dropdown' => "<select><option value=\"0\"></option><option value=\"1\">name</option></select>",

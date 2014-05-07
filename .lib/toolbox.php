@@ -119,7 +119,12 @@ class toolbox
                 $answer = $results[$key][$subkey];
                 if ($result !== $answer)
                 {
-                    vd($values['error'] . ": " . $result . " vs " . $answer); // ups..
+                    echo $values['error'] . ":" . html::newline()
+                                          . htmlspecialchars(self::format($result))
+                                          . html::newline()
+                                          . " vs " . html::newline()
+                                          . htmlspecialchars(self::format($answer))
+                                          . html::clearfix(2);
                     $check = false;
                 }
             }

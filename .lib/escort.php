@@ -7,25 +7,25 @@ class escort
 {
     static $todos = array();
 
-    static $tests = array();
+    static $tests = array
+    (
+        'empty_get_object' => array
+        (
+            'method' => 'get_object',
+            'parameters' => array
+            (
+                'class' => '',
+                'identifier' => '',
+                'pos' => '',
+            ),
+            'error' => "no error should be returned, only null",
+        ),
+    );
 
     private static $_register = array();
 
-    static function register_object($object,
-                                    $identifier)
-    {
-        self::$_register[get_class($object)][$identifier][] = serialize($object);
-    }
-
-    static function get_object($class,
-                               $identifier,
-                               $pos)
-    {
-        return unserialize(self::$_register[$class][$identifier][$pos]);
-    }
-
-    static function get_objects($class = null,
-                                $identifier = null)
+    private static function get_objects($class = null,
+                                        $identifier = null)
     {
         $objects = self::$_register; // fallback
 
@@ -44,5 +44,24 @@ class escort
         });
 
         return $objects;
+    }
+
+    static function register_object($object,
+                                    $identifier)
+    {
+        self::$_register[get_class($object)][$identifier][] = serialize($object);
+    }
+
+    static function get_object($class,
+                               $identifier,
+                               $pos)
+    {   if (!empty(self::$_register[$class][$identifier][$pos]))
+            return unserialize(self::$_register[$class][$identifier][$pos]);
+        elseif (!empty(self::$_register[$class][$identifier]))
+            return unserialize(self::$_register[$class][$identifier]);
+        elseif (!empty(self::$_register[$class]))
+            return unserialize(self::$_register[$class]);
+        else
+            return null;
     }
 }

@@ -827,9 +827,9 @@ class html
         return self::_br();
     }
 
-    static function clearfix()
+    static function clearfix($lines = 1)
     {
-        return self::_br(1,
+        return self::_br($lines,
                          array
                          (
                              'clearfix',

@@ -10,9 +10,9 @@ class toolbox_js extends toolbox
     {
         ?>
         if (typeof angular != 'undefined')
-            s_d.innerHTML += "AngularJS v" + angular.version.full + " loaded" + eol;
+            db.innerHTML += "AngularJS v" + angular.version.full + " loaded" + eol;
         else
-            s_d.innerHTML += '<?php echo html::spanner("AngularJS not loaded",
+            db.innerHTML += '<?php echo html::spanner("AngularJS not loaded",
                                                        array
                                                        (
                                                            'schrimp-warning',
@@ -52,7 +52,7 @@ class toolbox_js extends toolbox
                                             )) ?>' + eol);
         }
         else
-            s_d.innerHTML += '<?php echo html::spanner("jQuery not loaded",
+            db.innerHTML += '<?php echo html::spanner("jQuery not loaded",
                                                        array
                                                        (
                                                            'schrimp-error',
@@ -64,9 +64,9 @@ class toolbox_js extends toolbox
     {
         ?>
         if (typeof Prototype != 'undefined')
-            s_d.innerHTML += "Prototype v" + Prototype.Version + " loaded" + eol;
+            db.innerHTML += "Prototype v" + Prototype.Version + " loaded" + eol;
         else
-            s_d.innerHTML += '<?php echo html::spanner("Prototype not loaded",
+            db.innerHTML += '<?php echo html::spanner("Prototype not loaded",
                                                        array
                                                        (
                                                            'schrimp-warning',
@@ -78,9 +78,9 @@ class toolbox_js extends toolbox
     {
         ?>
         if (typeof jwplayer != 'undefined')
-            s_d.innerHTML += "JW player v" + jwplayer.version + " loaded" + eol;
+            db.innerHTML += "JW player v" + jwplayer.version + " loaded" + eol;
         else
-            s_d.innerHTML += '<?php echo html::spanner("JW player not loaded",
+            db.innerHTML += '<?php echo html::spanner("JW player not loaded",
                                                        array
                                                        (
                                                            'schrimp-warning',
@@ -92,9 +92,9 @@ class toolbox_js extends toolbox
     {
         ?>
         if (typeof Modernizr != 'undefined')
-            s_d.innerHTML += "Modernizr v" + Modernizr._version + " loaded" + eol;
+            db.innerHTML += "Modernizr v" + Modernizr._version + " loaded" + eol;
         else
-            s_d.innerHTML += '<?php echo html::spanner("Modernizr not loaded",
+            db.innerHTML += '<?php echo html::spanner("Modernizr not loaded",
                                                        array
                                                        (
                                                            'schrimp-warning',
@@ -108,7 +108,7 @@ class toolbox_js extends toolbox
 
         ob_start();
         ?>
-        var s_d = document.getElementById('schrimp-debug');
+        var db = document.getElementById('schrimp-debug');
         var eol = "<?php echo html::newline() ?>";
         <?php
         $self->_print_angularjs_test();

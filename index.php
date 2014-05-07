@@ -88,24 +88,9 @@ ob_start();
                                'loading') . "\n"
         ?>
     </body>
-</html><?php
+</html><?php $main->render(ob_get_clean());
 
-$main->result = ob_get_clean();
-
-if (!_SET_DEVELOPMENT_MODE)
-    echo str_replace(array
-                     (
-                         "\t",
-                         "\n",
-                         "\r",
-                         "  ",
-                     ),
-                     '',
-                     $main->result);
-else
-    echo $main->result;
-
-if (_SET_DEBUG_MODE)
+if (_SET_DEBUG_MODE) // client-side additional html/js code
 {
     ob_start();
     ?>

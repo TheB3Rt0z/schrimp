@@ -235,9 +235,24 @@ class main
         unset($this->article);
         unset($this->aside);
         unset($this->footer);
-        unset($this->result);
 
         return $this;
+    }
+
+    function render($html)
+    {
+        if (!_SET_DEVELOPMENT_MODE)
+            echo str_replace(array
+                             (
+                                 "\t",
+                                 "\n",
+                                 "\r",
+                                 "  ",
+                             ),
+                             '',
+                             $html);
+        else
+            echo $html;
     }
 
     static function var_dump($what)
