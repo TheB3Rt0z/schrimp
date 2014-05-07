@@ -1,6 +1,7 @@
 <?php namespace schrimp;
 
 define('HTML_BREADCRUMB_SEPARATOR', " &rsaquo; ");
+define('HTML_ELEMENTS_SEPARATOR', " &#124; ");
 define('HTML_ARROW_LEFT', "&laquo;");
 define('HTML_ARROW_RIGHT', "&raquo;");
 define('HTML_ICON_NAVIGATION', "&#9784;");
@@ -329,9 +330,11 @@ class html
 
                 $attributes .= "\"";
             }
-            else
-                return bs(__CLASS__ . " " . CODE_ICON_ARROW . " " . $value . " | "
-                        . $key . " | " . $this->_tag . " (" . $this->_type . ")");
+            else // to be standardized and improved
+                return bs(__CLASS__ . " " . CODE_ICON_ARROW . " " . $value
+                        . HTML_ELEMENTS_SEPARATOR . $key
+                        . HTML_ELEMENTS_SEPARATOR . $this->_tag
+                        . " (" . $this->_type . ")");
         }
 
         $this->_html = str_replace("__ATTRIBUTES__",

@@ -135,6 +135,7 @@ if (_SET_DEBUG_MODE)
                        array('debug',
                              'fixed'),
                        'schrimp-toolbar');
+
     echo html::divisor('',
                        array('debug',
                              'fixed'),
@@ -146,81 +147,6 @@ if (_SET_DEBUG_MODE)
                        array('debug',
                              'fixed'),
                        'schrimp-object');
-    ob_start();
-    ?>
-    var s_d = document.getElementById('schrimp-debug');
-    var eol = "<?php echo html::newline() ?>";
 
-    if (typeof angular != 'undefined')
-        s_d.innerHTML += "AngularJS v" + angular.version.full + " loaded" + eol;
-    else
-        s_d.innerHTML += '<?php echo html::spanner("AngularJS not loaded",
-                                                   array
-                                                   (
-                                                       'schrimp-warning',
-                                                   )) ?>' + eol;
-
-    if (typeof jQuery != 'undefined')
-    {
-        var sd = jQuery('#schrimp-debug');
-
-        sd.append("jQuery v" + jQuery.fn.jquery
-                + " loaded" + eol);
-
-        if (typeof jQuery.ui != 'undefined')
-            sd.append("- jQuery UI v" + jQuery.ui.version
-                    + " loaded" + eol);
-        else
-            sd.append('<?php echo html::spanner("jQuery.ui not loaded",
-                                                        array
-                                                        (
-                                                            'schrimp-warning',
-                                                        )) ?>' + eol);
-
-        if (typeof jQuery.jcarousel != 'undefined')
-            sd.append("- jCarousel v"
-                    + jQuery.jcarousel.fn.jcarousel
-                    + " loaded" + eol);
-        else
-            sd.append('<?php echo html::spanner("jCarousel not loaded",
-                                        array
-                                        (
-                                            'schrimp-warning',
-                                        )) ?>' + eol);
-    }
-    else
-        s_d.innerHTML += '<?php echo html::spanner("jQuery not loaded",
-                                                   array
-                                                   (
-                                                       'schrimp-error',
-                                                   )) ?>' + eol;
-
-    if (typeof Prototype != 'undefined')
-        s_d.innerHTML += "Prototype v" + Prototype.Version + " loaded" + eol;
-    else
-        s_d.innerHTML += '<?php echo html::spanner("Prototype not loaded",
-                                                   array
-                                                   (
-                                                       'schrimp-warning',
-                                                   )) ?>' + eol;
-
-    if (typeof jwplayer != 'undefined')
-        s_d.innerHTML += "JW player v" + jwplayer.version + " loaded" + eol;
-    else
-        s_d.innerHTML += '<?php echo html::spanner("JW player not loaded",
-                                                   array
-                                                   (
-                                                       'schrimp-warning',
-                                                   )) ?>' + eol;
-
-    if (typeof Modernizr != 'undefined')
-        s_d.innerHTML += "Modernizr v" + Modernizr._version + " loaded" + eol;
-    else
-        s_d.innerHTML += '<?php echo html::spanner("Modernizr not loaded",
-                                                   array
-                                                   (
-                                                       'schrimp-warning',
-                                                   )) ?>' + eol;
-    <?php echo toolbox_js::debug(); // upper js code here please, the next raus!
-    echo html::add_js_script(ob_get_clean());
+    toolbox_js::debug();
 }
