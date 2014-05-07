@@ -55,7 +55,8 @@ class escort
     static function get_object($class,
                                $identifier,
                                $pos)
-    {   if (!empty(self::$_register[$class][$identifier][$pos]))
+    {
+        if (!empty(self::$_register[$class][$identifier][$pos]))
             return unserialize(self::$_register[$class][$identifier][$pos]);
         elseif (!empty(self::$_register[$class][$identifier]))
             return unserialize(self::$_register[$class][$identifier]);
