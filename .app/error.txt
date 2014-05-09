@@ -11,7 +11,7 @@ it||errore sconosciuto
 a ugly problem
 de||Hier ist ein beunruhigende Problem aufgetreten..
 en||Some disturbing problem occurred here..
-it||Qui √® capitato qualcosa di strano..
+it||Qui é capitato qualcosa di strano..
 
 _handler_400
 de||HTTP-Fehler 400
@@ -19,12 +19,12 @@ en||HTTP error 400
 it||Errore HTTP 400
 
 a bad request
-de||h√§, schlechte Anfrage
+de||hä, schlechte Anfrage
 en||that's a bad request
 it||ah che birba che sei
 
 little bad
-de||Es scheint, dass du ein wenig b√∂se bist
+de||Es scheint, dass du ein wenig böse bist
 en||It seems, that you are a little too bad
 it||Sembra che tu sia un tantino furbetto
 
@@ -54,7 +54,7 @@ en||resource forbidden
 it||accesso vietato
 
 no entry
-de||Sie versuchen, eingeschr√§nkte Inhalte zuzugreifen
+de||Sie versuchen, eingeschränkte Inhalte zuzugreifen
 en||You're trying to access our restricted contents
 it||Stai cercando di accedere a risorse riservate
 
@@ -89,7 +89,7 @@ en||Something has not worked right
 it||Qualcosa non ha funzionato proprio
 
 required file (%s) not exists
-de||Die ben√∂tigte Datei (%s) existiert scheibar nicht
+de||Die benötigte Datei (%s) existiert scheibar nicht
 en||Required file (%s) not seems to exist
 it||Il file richiesto (%s) non pare esistere
 
@@ -101,7 +101,7 @@ it||Sintassi non ammessa da correggere: %s
 documentation file "%s" not writable
 de||Dokumentationdatei "%s" kann nicht geschrieben werden
 en||Documentation file "%s" can not be (over)written ATM
-it||Il file di documentazione "%s" non pu√≤ essere scritto
+it||Il file di documentazione "%s" non può essere scritto
 
 unknown %s database type
 de||Datenbank-Typ "%s" nicht erkannt
@@ -109,19 +109,19 @@ en||Database type "%s" not recognized
 it||Tipo del database "%s" sconosciuto
 
 connection to database not possible
-de||Mit aktuellen Anmeldeinformationen ist keine Verbindung zum Datenbank m√∂glich
+de||Mit aktuellen Anmeldeinformationen ist keine Verbindung zum Datenbank möglich
 en||Unable to connect to database with current credentials
 it||Impossibile connettersi al database con le credenziali correnti
 
 unable to create database %s
 de||Der Prozess ist nicht in der Lage, die Datenbank "%s" zu erstellen
 en||Process was unable to create database "%s" on server
-it||Il processo non √© stato in grado di creare il database "%s"
+it||Il processo non é stato in grado di creare il database "%s"
 
 database server not available
-de||Datenbank-Server nicht zug√§nglich
+de||Datenbank-Server nicht zugänglich
 en||Database server not available for connection
-it||Il database online non √© disponibile
+it||Il database online non é disponibile
 
 searching main table not possible
 de||Hauptindex-Tabelle nicht lesbar
@@ -131,9 +131,14 @@ it||Impossibile leggere la tabella indice
 unable to create main table
 de||Der Prozess ist nicht in der Lage, die Haupttabelle zu erstellen
 en||Process was unable to create database main table
-it||Il processo non √© stato in grado di create la tabella principale
+it||Il processo non é stato in grado di create la tabella principale
 
 unknown %s component
 de||Komponente "%s" ist nirgendwo zu finden
 en||Unable to find "%s" component
 it||Il componente "%s" non si trova
+
+html tag %s not valid
+de||HTML Tag "%s" nicht erlaubt
+en||HTML Tag "%s" not permitted
+it||Tag HTML "%s" non ammesso

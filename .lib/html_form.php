@@ -51,9 +51,22 @@ class html_form extends html
         ),
     );
 
-    function __construct()
+    private $_attributes = array();
+
+    function __construct() {}
+
+    function append_input()
     {
-        $this->_attributes = array();
+
+    }
+
+    function get_html()
+    {
+        $parent = new parent('form', // fabric fixed value
+                             $this->_attributes,
+                             'class generated content'); // extra tools methods
+
+        return $parent->_get_html();
     }
 
     function render()
@@ -62,7 +75,7 @@ class html_form extends html
                              $this->_attributes,
                              'class generated content'); // extra tools methods
 
-        return $parent->_html;
+        echo $parent->_html;
     }
 
     static function dropdown($options,

@@ -28,8 +28,6 @@ class html
     private $_attributes = array();
     private $_content = '';
 
-    private $_html = '';
-
     private $_tags = array // this could carry extra information about tag..
     (
         'single' => array
@@ -164,6 +162,7 @@ class html
             ),
             'code' => array(),
             'div' => array(),
+            'form' => array(),
             'h1' => array(),
             'h2' => array(),
             'h3' => array(),
@@ -230,6 +229,8 @@ class html
         'xml:lang' => true, // should be set automatic (trough class language?)
     );
 
+    protected $_html = '';
+
     protected static $_linked_files = array();
 
     protected static $_loaded_scripts = array();
@@ -258,10 +259,15 @@ class html
 
             if ($this->_type == 'container')
                 $this->_set_content($content);
-        }
 
-        escort::register_object($this,
+            escort::register_object($this,
                                 $this->_tag);
+        }
+        else
+            trigger_error(tr('error',
+                             'html tag %s not valid',
+                             $this->_tag) . html::newline() . sb(),
+                          E_USER_ERROR);
     }
 
     private function _is_tag_single()
@@ -699,6 +705,11 @@ class html
                          $content);
 
         return $self->_html;
+    }
+
+    protected function _get_html()
+    {
+        return $this->_html;
     }
 
     function get_content()

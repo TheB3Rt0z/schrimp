@@ -10,6 +10,7 @@ class toolbox
         'fulltest procedure' => "add more tests and implement more testtypes..",
         'virus total' => "https://www.virustotal.com/it/documentation/public-api/",
         'wide-range tests' => "include controller-derived + helpers etc. classes?",
+        'test-solutions file' => "maybe under-folder with main-libraries testlist",
         'implement filter_functions' => "see more at php.net-documentation",
         'xml parser/updater needed' => "maybe in a extra class, like md..?",
     );

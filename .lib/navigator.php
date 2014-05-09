@@ -419,6 +419,7 @@ class navigator
 
         $sub_structure = $self->_structure[$self->_actual_home]['sub'];
 
-        return html::array_to_list($sub_structure, 'ol');
+        return html::array_to_list($sub_structure,
+                                   'ol');
     }
 }

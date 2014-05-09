@@ -369,7 +369,7 @@ class main
     {
         trigger_error(tr('error',
                          'required file (%s) not exists',
-                         $file) . html::newline() . self::show_backtrace(),
+                         $file) . html::newline() . sb(),
                       E_USER_ERROR);
     }
 
@@ -377,7 +377,7 @@ class main
     {
         trigger_error(tr('error',
                          'bad syntax to correct: %s',
-                         $infos) . html::newline() . self::show_backtrace(),
+                         $infos) . html::newline() . sb(),
                       E_USER_WARNING);
     }
 
@@ -414,6 +414,8 @@ class main
 
             if ($_SERVER['REQUEST_URI'] != (_SET_LOCAL_PATH . "/error"))
                 rt("error");
+
+            return null;
         }
     }
 }
@@ -500,9 +502,10 @@ function bs($infos)
 
 /**
  * show call's backtrace with help of error base handler;
- * @return void
+ * @param boolean $tostring
+ * @return backtrace string if required, null otherwise
  */
-function sb()
+function sb($tostring = true)
 {
-    main::show_backtrace();
+    return main::show_backtrace($tostring);
 }

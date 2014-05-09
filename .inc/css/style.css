@@ -1,5 +1,15 @@
 @CHARSET 'UTF-8';
 
+.left
+{
+    float: left;
+}
+
+.right
+{
+    float: right;
+}
+
 a
 {
     color: #CCC;

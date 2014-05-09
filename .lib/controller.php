@@ -102,7 +102,9 @@ abstract class controller
                 navigator::render_breadcrumb($this->_controller); // nothing shown on home page
         $breadcrumb = ob_get_clean();
 
-        return $this->_header . ($breadcrumb ? html::box($breadcrumb) : '');
+        return $this->_header . ($breadcrumb
+                                ? html::box($breadcrumb)
+                                : '');
     }
 
     function get_nav()
