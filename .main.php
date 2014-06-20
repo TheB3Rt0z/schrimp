@@ -22,6 +22,7 @@ class main
     private $_call = null;
     private $_path = '';
 
+    private $_conf_file = 'configuration';
     private $_configuration = null;
 
     var $title = '';
@@ -40,7 +41,7 @@ class main
 
     function __construct($uri = false)
     {
-        $this->_set_configuration("configuration"); // easy filename change if needed
+        $this->_set_configuration();
 
         $this->_load_libraries();
 
@@ -71,7 +72,7 @@ class main
 
     private function _define_configuration_constants()
     {
-        $user_file = "." . $this->_configuration;
+        $user_file = "." . $this->_conf_file;
         $base_file = $user_file . ".tmp";
 
         eval("\$base_conf = array
@@ -83,19 +84,21 @@ class main
                                 " . file_get_contents($user_file) . "
                             );");
 
-        $configuration = $user_conf + $base_conf;
+        $this->_configuration = $user_conf + $base_conf;
 
-        foreach ($configuration as $key => $value)
+        foreach ($this->_configuration as $key => $value)
             define(strtoupper($key), (is_array($value)
                                      ? serialize($value)
                                      : $value));
     }
 
-    private function _set_configuration($conf_name)
+    private function _set_configuration()
     {
-        $this->_configuration = trim($conf_name);
-
         $this->_define_configuration_constants();
+
+        if (_SET_USES_SESSIONS
+            && !session_id())
+            session_start(); // requires write rights on server's tmp (sub-)directory..
 
         if (_SET_DEVELOPMENT_MODE)
             error_reporting(E_ALL); // it would be better to test this thing..

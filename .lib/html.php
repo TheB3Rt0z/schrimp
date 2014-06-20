@@ -28,6 +28,8 @@ class html
     private $_attributes = array();
     private $_content = '';
 
+    private $_html = '';
+
     private $_tags = array // this could carry extra information about tag..
     (
         'single' => array
@@ -63,6 +65,16 @@ class html
             (
                 'alt' => true,
                 'src' => true,
+            ),
+            'input' => array
+            (
+                'type' => array
+                (
+                    'hidden',
+                    'submit',
+                ),
+                'name' => true,
+                'value' => true,
             ),
             'link' => array
             (
@@ -159,19 +171,46 @@ class html
                     //'subsection', // refers to a document serving as a subsection in a collection of documents
                     'tag', // a tag (keyword) for the current document
                 ),
+                'target' => array
+                (
+                    '_blank', // opens the linked document in a new window or tab
+                    '_self', // opens the linked document in the same frame as it was clicked (this is default)
+                    '_parent', // opens the linked document in the parent frame
+                    '_top', // opens the linked document in the full body of the window
+                    // [framename] : opens the linked document in a named frame, to be tested
+                ),
             ),
             'code' => array(),
             'div' => array(),
-            'form' => array(),
+            'form' => array
+            (
+                'action' => true,
+                'method' => array
+                (
+                    'post', // get not allowed due to security reasons
+                ),
+                'enctype' => array
+                (
+                    'multipart/form-data'
+                ),
+                'target' => array
+                (
+                    '_blank', // opens the linked document in a new window or tab
+                    '_self', // opens the linked document in the same frame as it was clicked (this is default)
+                    '_parent', // opens the linked document in the parent frame
+                    '_top', // opens the linked document in the full body of the window
+                    // [framename] : opens the linked document in a named frame, to be tested
+                ),
+            ),
             'h1' => array(),
             'h2' => array(),
             'h3' => array(),
             'h4' => array(),
             'h5' => array(),
             'h6' => array(),
-            'h7' => array(),
-            'h8' => array(),
-            'h9' => array(),
+            'h7' => array(), // warning, not compatible with IE8-
+            'h8' => array(), // warning, not compatible with IE8-
+            'h9' => array(), // warning, not compatible with IE8-
             'li' => array(),
             'map' => array(),
             'ol' => array(),
@@ -229,8 +268,6 @@ class html
         'xml:lang' => true, // should be set automatic (trough class language?)
     );
 
-    protected $_html = '';
-
     protected static $_linked_files = array();
 
     protected static $_loaded_scripts = array();
@@ -268,6 +305,8 @@ class html
                              'html tag %s not valid',
                              $this->_tag) . html::newline() . sb(),
                           E_USER_ERROR);
+
+        return $this; // for in-handler object initialization/configuration
     }
 
     private function _is_tag_single()
@@ -359,7 +398,8 @@ class html
 
     private static function _a($href,
                                $content,
-                               $classes = array())
+                               $classes = array(),
+                               $target = '_self')
     {
         if (!strpos($href, "://"))
             $href = ru(_SET_STEALTH_MODE
@@ -373,6 +413,9 @@ class html
 
         if (!empty($classes))
             $attributes['class'] = implode($classes, " ");
+
+        if (!empty($target))
+            $attributes['target'] = trim($target);
 
         $self = new self('a',
                          $attributes,
@@ -517,6 +560,26 @@ class html
                       );
 
         $self = new self('img',
+                         $attributes);
+
+        return $self->_html;
+    }
+
+    protected static function _input($type,
+                                     $name,
+                                     $value = '',
+                                     $classes = array())
+    {
+        $attributes = array
+                      (
+                          'type' => $type,
+                          'name' => $name,
+                          'value' => $value,
+                      );
+        if (!empty($classes))
+            $attributes['class'] = implode($classes, " ");
+
+        $self = new self('input',
                          $attributes);
 
         return $self->_html;
@@ -707,14 +770,20 @@ class html
         return $self->_html;
     }
 
-    protected function _get_html()
+    protected function _append_content($content)
     {
-        return $this->_html;
+        $new_content = $this->_content . $content;
+
+        $this->_html = str_replace(">" . $this->_content . "<",
+                                   ">" . $new_content . "<",
+                                   $this->_html);
+
+        $this->_content = $new_content;
     }
 
-    function get_content()
+    function get_html()
     {
-        return $this->_content;
+        return $this->_html;
     }
 
     static function add_metatags($metatags = array())
@@ -816,12 +885,16 @@ class html
     }
 
     static function hyperlink($href,
-                              $content = null)
+                              $content = null,
+                              $classes = array(),
+                              $target = '_self')
     {
         return self::_a($href,
                         (!$content
                         ? $href
-                        : $content));
+                        : $content),
+                        $classes,
+                        $target);
     }
 
     static function image($src,

@@ -18,10 +18,10 @@ abstract class controller
 
     private $_title = '';
 
-    private $_header = '';
+    private $_header = "<h1>&nbsp;</h1>"; // advisable as HTML5
     private $_nav = '';
-    private $_section = '';
-    private $_article = '';
+    private $_section = "<h2>&nbsp;</h2>"; // required as HTML5
+    private $_article = "<h3>&nbsp;</h3>"; // required as HTML5
     private $_aside = '';
     private $_footer = '';
 

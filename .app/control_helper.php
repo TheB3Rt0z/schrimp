@@ -61,7 +61,9 @@ class control_helper
         if (empty($output))
             $output .= html::hyperlink('http://www.php.net/manual-lookup.php?'
                                      . 'pattern=ini.variables-order',
-                                       "(?)");
+                                       "(?)",
+                                       array(),
+                                       '_blank');
 
         return $output;
     }

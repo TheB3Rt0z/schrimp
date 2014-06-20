@@ -98,7 +98,7 @@ class toolbox
 
     static function fulltest() // only for libraries
     {
-        $tests = '.lib/toolbox.tsts';
+        $tests = _SET_LIBRARIES_PATH . 'toolbox/test_solutions';
         eval("\$results = array
                           (
                               " . pr($tests) . "

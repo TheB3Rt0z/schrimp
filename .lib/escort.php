@@ -1,8 +1,5 @@
 <?php namespace schrimp;
 
-if (!session_id())
-    session_start(); // requires write rights on server's tmp (sub-)directory..
-
 class escort
 {
     static $todos = array();

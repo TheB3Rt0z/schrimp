@@ -5,7 +5,10 @@
     'web diagnostics tool' => "only if online and reachable ..embed in admin bar?", // http://www.webpagetest.org/compare?url=www.choice-in-ecommerce.org%2Fen%2F
     'siloing tests' => "based on google syntax operators, to build some indexes", // http://www.bruceclay.com/seo/silo.htm
     'framework mode usage' => "use namespace to avoid class-names conflicts..?",
+    'IE <9> support' => "add some flexible conditional style sheets structure", // http://www.paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
 ),
+
+'_set_uses_sessions' => false, // activates php session server mode
 
 '_set_development_mode' => false, // backend mode with doc generation
 '_set_debug_mode' => false, // extra information about runtime status

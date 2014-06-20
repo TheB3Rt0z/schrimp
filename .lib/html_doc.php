@@ -83,6 +83,7 @@ class html_doc extends html
         //parent::add_js_file(_SET_INCLUDES_PATH . "js/angular.js"); // https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js
 
         parent::add_js_file(_SET_INCLUDES_PATH . "js/jquery.js"); // parent::add_js_file("//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js");
+        parent::add_js_file(_SET_INCLUDES_PATH . "js/jquery.NO-OLD-IE.js"); // parent::add_js_file("//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js");
         //parent::add_js_file(_SET_INCLUDES_PATH . "js/jquery.ui.js"); // parent::add_js_file("//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js");
         //parent::add_js_file(_SET_INCLUDES_PATH . "js/jquery.jcarousel.js");
         //parent::add_js_file(_SET_INCLUDES_PATH . "js/jquery.gestures.js");
@@ -95,6 +96,7 @@ class html_doc extends html
         //parent::add_js_file(_SET_INCLUDES_PATH . "js/jwplayer.js");
         //parent::add_js_file(_SET_INCLUDES_PATH . "js/jwplayer.html5.js"); // not really needed..
 
+        parent::add_js_file(_SET_INCLUDES_PATH . "js/schrimp.js");
         if (_SET_ADVANCED_INTERFACE)
             parent::add_js_file(_SET_INCLUDES_PATH . "js/schrimp.advin.js");
 

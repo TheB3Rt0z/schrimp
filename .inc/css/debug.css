@@ -87,17 +87,18 @@ div#schrimp-object
     div#schrimp-object:hover
     {
         opacity: .75;
-        top: 33px;
+        top: 50px;
         height: 100%;
         font-size: 13px;
-        width: 99.5%;
-        left: 0;
+        width: 97%;
+        left: 1.5%;
         border-radius: 0;
             -webkit-border-radius: 0;
             -khtml-border-radius: 0;
             -moz-border-radius: 0;
             -ms-border-radius: 0;
             -o-border-radius: 0;
+        overflow-y: scroll;
     }
 
 div#schrimp-toolbar

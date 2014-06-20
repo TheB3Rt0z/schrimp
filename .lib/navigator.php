@@ -1,6 +1,6 @@
 <?php namespace schrimp;
 
-class navigator
+class navigator // is really singleton, compare http://www.yourinspirationweb.com/2012/05/15/design-pattern-il-pattern-singleton/
 {
     static $todos = array
     (

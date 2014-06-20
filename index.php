@@ -30,6 +30,10 @@ $main = new main($_SERVER['REQUEST_URI']);
 ob_start();
 
 ?><!DOCTYPE html>
+<!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
+<!--[if IE 7 ]> <html class="ie7"> <![endif]-->
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if gt IE 8]> <html class="ie"> <![endif]-->
     <head>
         <?php
         echo html_doc::get_head_metatags()
@@ -88,27 +92,39 @@ ob_start();
                                'loading') . "\n"
         ?>
     </body>
-</html><?php $main->render(ob_get_clean());
+</html><?php $main->render($result = ob_get_clean());
 
 if (_SET_DEBUG_MODE) // client-side additional html/js code
 {
+    $form = new html_form('http://validator.w3.org/check',
+                      array
+                      (
+                          'left',
+                      ),
+                      '_blank');
+
+    $form->add_hidden('fragment',
+                      htmlspecialchars($result))
+         ->add_hidden('prefill',
+                      0)
+         ->add_hidden('doctype',
+                      "Inline")
+         ->add_submit("W3C",
+                      "WWW Consortium Markup Validation Service",
+                      array
+                      (
+                          'button',
+                      ));
+
     ob_start();
     ?>
-    <span style="float: right">
-        <form style="float: left;"
-              action="http://validator.w3.org/check" enctype="multipart/form-data" method="post" target="_blank">
-            <input type="hidden" name="fragment" value="<?php echo htmlspecialchars($main->result) ?>" />
-            <input type="hidden" value="0" name="prefill" />
-            <input type="hidden" value="Inline" name="doctype" />
-                <!--<input type="radio" checked="checked" value="0" id="directgroup_no" name="group">
-                <input type="radio" value="1" id="directgroup_yes" name="group">
-                <input type="checkbox" value="1" name="ss" id="direct-ss">
-                <input type="checkbox" value="1" name="st" id="direct-st">
-                <input type="checkbox" value="1" name="outline" id="direct-outline">
-                <input type="checkbox" value="1" name="No200" id="direct-No200">
-                <input type="checkbox" value="1" name="verbose" id="direct-verbose">-->
-            <input type="submit" value="W3C" title="WWW Consortium Markup Validation Service" class="button" />
-        </form>
+    <span class="right">
+        <?php echo html::spanner($form->get_html(),
+                                 array
+                                 (
+                                     'right',
+                                 ));
+        ?>
         <a href="http://developers.google.com/speed/pagespeed/insights/?url=<?php echo urlencode($main->resolve_uri($_SERVER['QUERY_STRING'], true)) ?>" target="_blank" title="Google Developers PageSpeed Insights" class="button">PSI</a>
     </span>
     <?php
@@ -117,20 +133,29 @@ if (_SET_DEBUG_MODE) // client-side additional html/js code
                                      (
                                          'button',
                                      )) . ob_get_clean(),
-                       array('debug',
-                             'fixed'),
+                       array
+                       (
+                           'debug',
+                           'fixed',
+                       ),
                        'schrimp-toolbar');
 
     echo html::divisor('',
-                       array('debug',
-                             'fixed'),
+                       array
+                       (
+                           'debug',
+                           'fixed',
+                       ),
                        'schrimp-debug');
 
     ob_start();
     vd($main->clean_object());
     echo html::divisor(ob_get_clean(),
-                       array('debug',
-                             'fixed'),
+                       array
+                       (
+                           'debug',
+                           'fixed',
+                       ),
                        'schrimp-object');
 
     toolbox_js::debug();

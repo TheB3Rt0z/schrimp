@@ -51,31 +51,99 @@ class html_form extends html
         ),
     );
 
-    private $_attributes = array();
+    private $_action = '';
+    private $_method = 'post';
+    private $_enctype = 'multipart/form-data'; // default encoding type
 
-    function __construct() {}
+    private $_submit = null;
 
-    function append_input()
+    function __construct($identifier_or_url,
+                         $classes = array(),
+                         $target = '')
     {
+        $attributes = array
+        (
+            'method' => $this->_method,
+            'enctype' => $this->_enctype,
+        );
+        $attributes['action'] = $identifier_or_url; // to be expanded..
 
+        if (!empty($classes))
+            $attributes['class'] = implode($classes, " ");
+
+        if (!empty($target))
+            $attributes['target'] = $target;
+
+        return parent::__construct('form',
+                                   $attributes);
     }
 
-    function get_html()
+    protected function _add_field($attributes)
     {
-        $parent = new parent('form', // fabric fixed value
-                             $this->_attributes,
-                             'class generated content'); // extra tools methods
+        extract($attributes);
 
-        return $parent->_get_html();
+        parent::_append_content(parent::_input($type,
+                                               $name,
+                                               $value,
+                                               (!empty($classes)
+                                               ? $classes
+                                               : array())));
+
+        return $this;
     }
 
-    function render()
+    function add_hidden($name,
+                        $default = '')
     {
-        $parent = new parent('form', // fabric fixed value
-                             $this->_attributes,
-                             'class generated content'); // extra tools methods
+        $attributes = array
+        (
+            'type' => 'hidden',
+            'name' => strtolower(trim($name)),
+            'value' => trim($default),
+        );
 
-        echo $parent->_html;
+        $this->_add_field($attributes);
+
+        return $this;
+    }
+
+    function add_submit($value,
+                        $title = '',
+                        $classes = array())
+    {
+        if (empty($this->submit))
+        {
+            $attributes = array
+            (
+                'type' => 'submit',
+                'name' => 'submit',
+                'value' => $value,
+            );
+
+            if (!empty($title))
+                $attributes['title'] = $title;
+
+            if (!empty($classes))
+                $attributes['classes'] = $classes;
+
+            $this->_submit = $attributes;
+
+            $this->_add_field($this->_submit);
+        }
+
+        return $this;
+    }
+
+    static function render($classes = array())
+    {
+        if (!empty($classes))
+            $attributes['class'] = implode($classes, " ");
+
+        $parent = new parent('form', // fabric fixed value
+                             $attributes,
+                             'class generated content'); // to simulate extra tools methods..
+
+        echo $parent->_get_html();
     }
 
     static function dropdown($options,
