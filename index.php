@@ -96,43 +96,30 @@ ob_start();
 
 if (_SET_DEBUG_MODE) // client-side additional html/js code
 {
-    $form = new html_form('http://validator.w3.org/check',
-                      array
-                      (
-                          'left',
-                      ),
-                      '_blank');
-
-    $form->add_hidden('fragment',
-                      htmlspecialchars($result))
-         ->add_hidden('prefill',
-                      0)
-         ->add_hidden('doctype',
-                      "Inline")
-         ->add_submit("W3C",
-                      "WWW Consortium Markup Validation Service",
-                      array
-                      (
-                          'button',
-                      ));
-
-    ob_start();
-    ?>
-    <span class="right">
-        <?php echo html::spanner($form->get_html(),
-                                 array
-                                 (
-                                     'right',
-                                 ));
-        ?>
-        <a href="http://developers.google.com/speed/pagespeed/insights/?url=<?php echo urlencode($main->resolve_uri($_SERVER['QUERY_STRING'], true)) ?>" target="_blank" title="Google Developers PageSpeed Insights" class="button">PSI</a>
-    </span>
-    <?php
     echo html::divisor(html::spanner(_STR_PROJECT_NAME . " " . $main->get_version(),
                                      array
                                      (
                                          'button',
-                                     )) . ob_get_clean(),
+                                     ))
+                     . html::spanner(html_form::form('debug_w3c_validation',
+                                                     array
+                                                     (
+                                                         'left',
+                                                     ),
+                                                     '_blank',
+                                                     htmlspecialchars($result))
+                                   . html::hyperlink('http://developers.google.com/speed/pagespeed/insights/?url=' . urlencode($main->resolve_uri($_SERVER['QUERY_STRING'], true)),
+                                                     "PSI",
+                                                     array
+                                                     (
+                                                         'button',
+                                                     ),
+                                                     '_blank',
+                                                     "Google Developers PageSpeed Insights"),
+                                     array
+                                     (
+                                         'right',
+                                     )),
                        array
                        (
                            'debug',

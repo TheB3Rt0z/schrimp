@@ -57,7 +57,7 @@ class html_form extends html
 
     private $_submit = null;
 
-    function __construct($identifier_or_url,
+    function __construct($action,
                          $classes = array(),
                          $target = '')
     {
@@ -66,7 +66,7 @@ class html_form extends html
             'method' => $this->_method,
             'enctype' => $this->_enctype,
         );
-        $attributes['action'] = $identifier_or_url; // to be expanded..
+        $attributes['action'] = trim($action);
 
         if (!empty($classes))
             $attributes['class'] = implode($classes, " ");
@@ -85,9 +85,12 @@ class html_form extends html
         parent::_append_content(parent::_input($type,
                                                $name,
                                                $value,
-                                               (!empty($classes)
+                                               !empty($classes)
                                                ? $classes
-                                               : array())));
+                                               : array(),
+                                               !empty($title)
+                                               ? $title
+                                               : ''));
 
         return $this;
     }
@@ -134,16 +137,55 @@ class html_form extends html
         return $this;
     }
 
-    static function render($classes = array())
+    static function form($identifier,
+                         $classes = array(),
+                         $target = '')
     {
-        if (!empty($classes))
-            $attributes['class'] = implode($classes, " ");
+        $args = func_get_args();
 
-        $parent = new parent('form', // fabric fixed value
-                             $attributes,
-                             'class generated content'); // to simulate extra tools methods..
+        $settings = _SET_LIBRARIES_PATH
+                  . str_replace(code::_SET_NS_PREFIX,
+                                '',
+                                __CLASS__) . '/' . trim($identifier);
+        if (fe($settings))
+        {
+            eval("\$settings = array
+                               (
+                                   " . ((count($args) > 3)
+                                       ? vsprintf(file_get_contents($settings),
+                                                  array_slice($args, 3))
+                                       : file_get_contents($settings)) . "
+                               );");
 
-        echo $parent->_get_html();
+            $self = new self($settings['action'],
+                             $classes,
+                             $target);
+
+            if (!empty($settings['hidden']))
+                foreach ($settings['hidden'] as $name => $data)
+                    $self->add_hidden($name,
+                                      $data['value']);
+
+            if (!empty($settings['text']))
+                foreach ($settings['text'] as $name => $default)
+                    $self->add_text($name,
+                                    $data['value']);
+
+            if (!empty($settings['submit']))
+                $self->add_submit($settings['submit']['value'],
+                                  $settings['submit']['title'],
+                                  $settings['submit']['classes']);
+
+            return $self->get_html();
+        }
+    }
+
+    static function render($identifier,
+                           $classes = array(),
+                           $target = '')
+    {
+        echo call_user_func_array('self::form',
+                                  func_get_args());
     }
 
     static function dropdown($options,

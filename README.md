@@ -1,4 +1,4 @@
-![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Dokumentation v1.7 &#124; 14.06  
+![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Dokumentation v1.8 &#124; 14.06  
 --------------------------------------------------------------------------------------------------------------------------------------------  
   
 Table of contents  
@@ -12,9 +12,9 @@ Table of contents
 [- db_object](#-class-db_object-09042014-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/db_object.php, Len: 120/148, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
 [- db_object_user](#-class-db_object_user-03032014-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/db_object_user.php, Len: 0/1, CIS: 0 )   
 [Library escort](#-class-escort-12052014-- "") (.lib/escort.php, Len: 52/60, CIS: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library html](#-class-html-20062014-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/html.php, Len: 813/946, CIS: 23 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  2 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
+[Library html](#-class-html-23062014-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/html.php, Len: 816/951, CIS: 23 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  2 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
 [- html_doc](#-class-html_doc-19062014-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/html_doc.php, Len: 83/100, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[- html_form](#-class-html_form-20062014-- "") &#10029;  (.lib/html_form.php, Len: 139/166, CIS: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
+[- html_form](#-class-html_form-23062014-- "") &#10029;  (.lib/html_form.php, Len: 176/208, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Warning! Warning! Some red alert(s)!") to be fixed!  
 [Library language](#-class-language-09042014-- "") &#10029;&#10029;&#10029;  (.lib/language.php, Len: 103/121, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
 [Library main](#-class-main-19062014-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (.main.php, Len: 345/419, CIS: 33 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Class interface size could lead to a refactoring")) &#10140;  2 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
 [Library md](#-class-md-09042014-- "") (.lib/md.php, Len: 185/231, CIS: 14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
@@ -340,7 +340,7 @@ Uses: **db_object**
   
 ***  
   
-[⇧](# "to the top") Class HTML (20.06.2014)  
+[⇧](# "to the top") Class HTML (23.06.2014)  
 -----------------------  
   
 **CODE REFERENCE:**  
@@ -361,7 +361,7 @@ Uses: **db_object**
 - **[_h8](https://github.com/TheB3Rt0z/schrimp/wiki/html _h8 "")($content)** (PriS, Len: 4/5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[_h9](https://github.com/TheB3Rt0z/schrimp/wiki/html _h9 "")($content)** (PriS, Len: 4/5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[_img](https://github.com/TheB3Rt0z/schrimp/wiki/html _img "")($src, $alt, $title = null)** (PriS, Len: 11/14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **[_input](https://github.com/TheB3Rt0z/schrimp/wiki/html _input "")($type, $name, $value = null, $classes = null)** (ProS, Len: 11/13 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[_input](https://github.com/TheB3Rt0z/schrimp/wiki/html _input "")($type, $name, $value = null, $classes = null, $title = null)** (ProS, Len: 13/17 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[_is_attribute_valid](https://github.com/TheB3Rt0z/schrimp/wiki/html _is_attribute_valid "")($attribute, $value)** (Pri, Len: 15/17 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[_is_tag_container](https://github.com/TheB3Rt0z/schrimp/wiki/html _is_tag_container "")()** (Pri, Len: 4/5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[_is_tag_single](https://github.com/TheB3Rt0z/schrimp/wiki/html _is_tag_single "")()** (Pri, Len: 4/5 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
@@ -430,7 +430,7 @@ Uses: **escort**, **html**
   
 - **[__construct](https://github.com/TheB3Rt0z/schrimp/wiki/html __construct "")($tag, $attributes = null, $content = null)** (CPub, Len: 26/31 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Method's length could be reduced..") CyC: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[_append_content](https://github.com/TheB3Rt0z/schrimp/wiki/html _append_content "")($content)** (Pro, Len: 5/7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **[_input](https://github.com/TheB3Rt0z/schrimp/wiki/html _input "")($type, $name, $value = null, $classes = null)** (ProS, Len: 11/13 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[_input](https://github.com/TheB3Rt0z/schrimp/wiki/html _input "")($type, $name, $value = null, $classes = null, $title = null)** (ProS, Len: 13/17 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[_option](https://github.com/TheB3Rt0z/schrimp/wiki/html _option "")($value, $name, $selected = false)** (ProS, Len: 13/16 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[_select](https://github.com/TheB3Rt0z/schrimp/wiki/html _select "")($content, $attributes = null, $classes = null)** (ProS, Len: 6/8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[add_canonical](https://github.com/TheB3Rt0z/schrimp/wiki/html add_canonical "")($href)** (PubS, Len: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
@@ -469,22 +469,27 @@ Uses: **html**, **main**
   
 ***  
   
-[⇧](# "to the top") Class HTML_FORM (20.06.2014)  
+[⇧](# "to the top") Class HTML_FORM (23.06.2014)  
 ----------------------------  
+  
+**TOFIX:**  
+  
+- Form error(s) **"array('"** on file line **187**  
   
 **CODE REFERENCE:**  
   
-- **[__construct](https://github.com/TheB3Rt0z/schrimp/wiki/html_form __construct "")($identifier_or_url, $classes = null, $target = null)** (CPub, Len: 12/15 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **[_add_field](https://github.com/TheB3Rt0z/schrimp/wiki/html_form _add_field "")($attributes)** (Pro, Len: 8/10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[__construct](https://github.com/TheB3Rt0z/schrimp/wiki/html_form __construct "")($action, $classes = null, $target = null)** (CPub, Len: 12/15 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[_add_field](https://github.com/TheB3Rt0z/schrimp/wiki/html_form _add_field "")($attributes)** (Pro, Len: 11/13 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[add_hidden](https://github.com/TheB3Rt0z/schrimp/wiki/html_form add_hidden "")($name, $default = null)** (Pub, Len: 8/10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[add_submit](https://github.com/TheB3Rt0z/schrimp/wiki/html_form add_submit "")($value, $title = null, $classes = null)** (Pub, Len: 16/21 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[dropdown](https://github.com/TheB3Rt0z/schrimp/wiki/html_form dropdown "")($options, $selected = null, $onchange = false)** (PubS, Len: 13/17 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **[render](https://github.com/TheB3Rt0z/schrimp/wiki/html_form render "")($classes = null)** (PubS, Len: 6/8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[form](https://github.com/TheB3Rt0z/schrimp/wiki/html_form form "")($identifier, $classes = null, $target = null)** (PubS, Len: 31/37 ![(X)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_red_ics.png "Method's length should be reduced!") CyC: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[render](https://github.com/TheB3Rt0z/schrimp/wiki/html_form render "")($identifier, $classes = null, $target = null)** (PubS, Len: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
   
 **INHERITED METHODS:**  
   
 - **[_append_content](https://github.com/TheB3Rt0z/schrimp/wiki/html _append_content "")($content)** (Pro, Len: 5/7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
-- **[_input](https://github.com/TheB3Rt0z/schrimp/wiki/html _input "")($type, $name, $value = null, $classes = null)** (ProS, Len: 11/13 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
+- **[_input](https://github.com/TheB3Rt0z/schrimp/wiki/html _input "")($type, $name, $value = null, $classes = null, $title = null)** (ProS, Len: 13/17 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[_option](https://github.com/TheB3Rt0z/schrimp/wiki/html _option "")($value, $name, $selected = false)** (ProS, Len: 13/16 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[_select](https://github.com/TheB3Rt0z/schrimp/wiki/html _select "")($content, $attributes = null, $classes = null)** (ProS, Len: 6/8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "") CyC: 1 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
 - **[add_canonical](https://github.com/TheB3Rt0z/schrimp/wiki/html add_canonical "")($href)** (PubS, Len: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))  
@@ -510,7 +515,7 @@ Uses: **html**, **main**
   
 **DEPENDENCIES:**  
   
-Uses: **html**  
+Uses: **code**, **html**  
   
 **TODOS:**  
   

@@ -568,7 +568,8 @@ class html
     protected static function _input($type,
                                      $name,
                                      $value = '',
-                                     $classes = array())
+                                     $classes = array(),
+                                     $title = '')
     {
         $attributes = array
                       (
@@ -576,8 +577,12 @@ class html
                           'name' => $name,
                           'value' => $value,
                       );
+
         if (!empty($classes))
             $attributes['class'] = implode($classes, " ");
+
+        if (!empty($title))
+            $attributes['title'] = $title;
 
         $self = new self('input',
                          $attributes);

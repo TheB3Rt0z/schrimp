@@ -1,24 +1,25 @@
-'http://validator.w3.org/check' => array
+'action' => 'http://validator.w3.org/check',
+'hidden' => array
 (
-    'hidden' => array
+    'fragment' => array
     (
-        'fragment' => array
-        (
-            'value' => "%s",
-        ),
-        'prefill' => array
-        (
-            'value' => 0,
-        ),
-        'doctype' => array
-        (
-            'value' => "Inline",
-        ),
+        'value' => "%s",
     ),
-    'submit' => array
+    'prefill' => array
     (
-        'value' => "W3C",
-        'title' => "WWW Consortium Markup Validation Service",
-        'class' => "button",
+        'value' => 0,
+    ),
+    'doctype' => array
+    (
+        'value' => "Inline",
+    ),
+),
+'submit' => array
+(
+    'value' => "W3C",
+    'title' => "WWW Consortium Markup Validation Service",
+    'classes' => array
+    (
+        "button",
     ),
 ),
