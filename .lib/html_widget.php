@@ -6,15 +6,39 @@ class html_widget extends html
 
     static $tests = array();
 
+    private static function _add_toolbar_buttons($html,
+                                                 $psl)
+    {
+        return html::spanner(html_form::form('debug_w3c_validation',
+                                             array
+                                             (
+                                                 'left',
+                                             ),
+                                             '_blank',
+                                             htmlspecialchars($html))
+                           . html::hyperlink($psl,
+                                             "PSI",
+                                             array
+                                             (
+                                                 'button',
+                                             ),
+                                             '_blank',
+                                             "Google Developers PageSpeed Insights"),
+                             array
+                             (
+                                 'right',
+                             ));
+    }
+
     static function debug_javascript()
     {
         echo html::divisor('',
-                       array
-                       (
-                           'debug',
-                           'fixed',
-                       ),
-                       'schrimp-debug');
+                           array
+                           (
+                               'debug',
+                               'fixed',
+                           ),
+                           'schrimp-debug');
 
         toolbox_js::debug();
     }
@@ -40,38 +64,18 @@ class html_widget extends html
              . urlencode($main->resolve_uri($_SERVER['QUERY_STRING'],
                                             true));
 
-        echo html::divisor
-        (
-            html::spanner(_STR_PROJECT_NAME . " " . $main->get_version(),
-                          array
-                          (
-                              'button',
-                          ))
-          . html::spanner(html_form::form('debug_w3c_validation',
-                                          array
-                                          (
-                                              'left',
-                                          ),
-                                          '_blank',
-                                          htmlspecialchars($main->html))
-                        . html::hyperlink($psl,
-                                          "PSI",
-                                          array
-                                          (
-                                              'button',
-                                          ),
-                                          '_blank',
-                                          "Google Developers PageSpeed Insights"),
-                          array
-                          (
-                              'right',
-                          )),
-            array
-            (
-                'debug',
-                'fixed',
-            ),
-            'schrimp-toolbar'
-        );
+        echo html::divisor(html::spanner(_STR_PROJECT_NAME . " " . $main->get_version(),
+                                         array
+                                         (
+                                             'button',
+                                         ))
+                         . self::_add_toolbar_buttons($main->html,
+                                                      $psl),
+                           array
+                           (
+                               'debug',
+                               'fixed',
+                           ),
+                           'schrimp-toolbar');
     }
 }
