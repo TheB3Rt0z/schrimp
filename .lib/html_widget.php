@@ -36,36 +36,42 @@ class html_widget extends html
 
     static function debug_toolbar(main $main)
     {
-        echo html::divisor(html::spanner(_STR_PROJECT_NAME . " " . $main->get_version(),
-                                 array
-                                 (
-                                     'button',
-                                 ))
-                         . html::spanner(html_form::form('debug_w3c_validation',
-                                                         array
-                                                         (
-                                                             'left',
-                                                         ),
-                                                         '_blank',
-                                                         htmlspecialchars($main->html))
-                                       . html::hyperlink('http://developers.google.com/speed/pagespeed/insights/?url=' . urlencode($main->resolve_uri($_SERVER['QUERY_STRING'],
-                                                                                                                                                      true)),
-                                                         "PSI",
-                                                         array
-                                                         (
-                                                             'button',
-                                                         ),
-                                                         '_blank',
-                                                         "Google Developers PageSpeed Insights"),
-                                         array
-                                         (
-                                             'right',
-                                         )),
-                           array
-                           (
-                               'debug',
-                               'fixed',
-                           ),
-                           'schrimp-toolbar');
+        $psl = 'http://developers.google.com/speed/pagespeed/insights/?url='
+             . urlencode($main->resolve_uri($_SERVER['QUERY_STRING'],
+                                            true));
+
+        echo html::divisor
+        (
+            html::spanner(_STR_PROJECT_NAME . " " . $main->get_version(),
+                          array
+                          (
+                              'button',
+                          ))
+          . html::spanner(html_form::form('debug_w3c_validation',
+                                          array
+                                          (
+                                              'left',
+                                          ),
+                                          '_blank',
+                                          htmlspecialchars($main->html))
+                        . html::hyperlink($psl,
+                                          "PSI",
+                                          array
+                                          (
+                                              'button',
+                                          ),
+                                          '_blank',
+                                          "Google Developers PageSpeed Insights"),
+                          array
+                          (
+                              'right',
+                          )),
+            array
+            (
+                'debug',
+                'fixed',
+            ),
+            'schrimp-toolbar'
+        );
     }
 }

@@ -43,28 +43,28 @@ class code
             ")%20%20{\n",
             ")%20%20{\r",
             ")%20%20{\t",
-        "array(%22", // it means "
-            "array(%20%22",
-            "array(%20%20%22",
-        "array(%27", // it means '
-            "array(%20%27",
-            "array(%20%20%27",
+        "%20array(%22", // it means "
+            "%20array(%20%22",
+            "%20array(%20%20%22",
+        "%20array(%27", // it means '
+            "%20array(%20%27",
+            "%20array(%20%20%27",
         "%20array(%24", // it means $
             "%20array(%20%24",
             "%20array(%20%20%24",
-        "array(\n",
-            "array(%20\n",
-            "array(%20%20\n",
-        "array(\r",
-            "array(%20\r",
-            "array(%20%20\r",
-        "array(\t",
-            "array(%20\t",
-            "array(%20%20\t",
-        "array%20(",
+        "%20array(\n",
+            "%20array(%20\n",
+            "%20array(%20%20\n",
+        "%20array(\r",
+            "%20array(%20\r",
+            "%20array(%20%20\r",
+        "%20array(\t",
+            "%20array(%20\t",
+            "%20array(%20%20\t",
+        "%20array%20(",
             "array%20%20(",
-        "array(%20)",
-            "array(%20%20)",
+        "%20array(%20)",
+            "%20array(%20%20)",
     );
 
     private static $_cyc_counters = array // do we really really need failsafe falls?

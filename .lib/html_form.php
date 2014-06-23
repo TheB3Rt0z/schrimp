@@ -78,6 +78,24 @@ class html_form extends html
                                    $attributes);
     }
 
+    private function _add_fields($settings)
+    {
+        if (!empty($settings['hidden']))
+            foreach ($settings['hidden'] as $name => $data)
+                $this->add_hidden($name,
+                                  $data['value']);
+
+        if (!empty($settings['text']))
+            foreach ($settings['text'] as $name => $default)
+                $this->add_text($name,
+                                $data['value']);
+
+        if (!empty($settings['submit']))
+            $this->add_submit($settings['submit']['value'],
+                              $settings['submit']['title'],
+                              $settings['submit']['classes']);
+    }
+
     protected function _add_field($attributes)
     {
         extract($attributes);
@@ -161,20 +179,7 @@ class html_form extends html
                              $classes,
                              $target);
 
-            if (!empty($settings['hidden']))
-                foreach ($settings['hidden'] as $name => $data)
-                    $self->add_hidden($name,
-                                      $data['value']);
-
-            if (!empty($settings['text']))
-                foreach ($settings['text'] as $name => $default)
-                    $self->add_text($name,
-                                    $data['value']);
-
-            if (!empty($settings['submit']))
-                $self->add_submit($settings['submit']['value'],
-                                  $settings['submit']['title'],
-                                  $settings['submit']['classes']);
+            $self->_add_fields($settings);
 
             return $self->get_html();
         }
