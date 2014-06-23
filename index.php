@@ -96,54 +96,7 @@ ob_start();
 
 if (_SET_DEBUG_MODE) // client-side additional html/js code
 {
-    echo html::divisor(html::spanner(_STR_PROJECT_NAME . " " . $main->get_version(),
-                                     array
-                                     (
-                                         'button',
-                                     ))
-                     . html::spanner(html_form::form('debug_w3c_validation',
-                                                     array
-                                                     (
-                                                         'left',
-                                                     ),
-                                                     '_blank',
-                                                     htmlspecialchars($result))
-                                   . html::hyperlink('http://developers.google.com/speed/pagespeed/insights/?url=' . urlencode($main->resolve_uri($_SERVER['QUERY_STRING'], true)),
-                                                     "PSI",
-                                                     array
-                                                     (
-                                                         'button',
-                                                     ),
-                                                     '_blank',
-                                                     "Google Developers PageSpeed Insights"),
-                                     array
-                                     (
-                                         'right',
-                                     )),
-                       array
-                       (
-                           'debug',
-                           'fixed',
-                       ),
-                       'schrimp-toolbar');
-
-    echo html::divisor('',
-                       array
-                       (
-                           'debug',
-                           'fixed',
-                       ),
-                       'schrimp-debug');
-
-    ob_start();
-    vd($main->clean_object());
-    echo html::divisor(ob_get_clean(),
-                       array
-                       (
-                           'debug',
-                           'fixed',
-                       ),
-                       'schrimp-object');
-
-    toolbox_js::debug();
+    html_widget::debug_toolbar($main);
+    html_widget::debug_javascript();
+    html_widget::debug_object($main->clean_object());
 }

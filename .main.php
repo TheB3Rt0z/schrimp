@@ -34,6 +34,8 @@ class main
     var $aside = '';
     var $footer = '';
 
+    var $html = '';
+
     static $controller = '';
     static $action = null;
     static $args = array();
@@ -245,17 +247,19 @@ class main
     function render($html)
     {
         if (!_SET_DEVELOPMENT_MODE)
-            echo str_replace(array
-                             (
-                                 "\t",
-                                 "\n",
-                                 "\r",
-                                 "  ",
-                             ),
-                             '',
-                             $html);
-        else
-            echo $html;
+            $html = str_replace(array
+                                (
+                                    "\t",
+                                    "\n",
+                                    "\r",
+                                    "  ",
+                                ),
+                                '',
+                                $html);
+
+        $this->html = $html;
+
+        echo $this->html;
     }
 
     static function var_dump($what)

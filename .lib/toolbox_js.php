@@ -107,15 +107,18 @@ class toolbox_js extends toolbox
         $self = new self;
 
         ob_start();
+
         ?>
         var db = document.getElementById('schrimp-debug');
         var eol = "<?php echo html::newline() ?>";
         <?php
+
         $self->_print_angularjs_test();
         $self->_print_jquery_tests();
         $self->_print_prototype_test();
         $self->_print_jwplayer_test();
         $self->_print_modernizr_test();
+
         html::add_js_script(ob_get_clean());
     }
 }
