@@ -97,24 +97,33 @@ class navigator // is really singleton, compare http://www.yourinspirationweb.co
 
             $rc = new \ReflectionClass($full_ctrl_name);
 
-            foreach ($rc->getMethods(\ReflectionMethod::IS_PRIVATE
-                | !\ReflectionMethod::IS_PROTECTED) as $object)
-            {
-                $returns = $this->_add_handlers($ctrl_name,
-                                                $object,
-                                                $sub);
+            $this->_add_branch_methods($rc,
+                                       $ctrl_name,
+                                       $sub);
+        }
+    }
 
-                $static_variables = $object->getStaticVariables();
+    private function _add_branch_methods(\ReflectionClass $rc,
+                                         $ctrl_name,
+                                         &$sub)
+    {
+        foreach ($rc->getMethods(\ReflectionMethod::IS_PRIVATE
+            | !\ReflectionMethod::IS_PROTECTED) as $object)
+        {
+            $returns = $this->_add_handlers($ctrl_name,
+                                            $object,
+                                            $sub);
 
-                if (!empty($static_variables['options']))
-                    $this->_add_options($static_variables,
-                                        $returns['sub'],
-                                        $ctrl_name,
-                                        $returns['link'],
-                                        $object);
+            $static_variables = $object->getStaticVariables();
 
-                $sub =& $this->_structure[$this->_actual_home]['sub'][$ctrl_name];
-            }
+            if (!empty($static_variables['options']))
+                $this->_add_options($static_variables,
+                                    $returns['sub'],
+                                    $ctrl_name,
+                                    $returns['link'],
+                                    $object);
+
+            $sub =& $this->_structure[$this->_actual_home]['sub'][$ctrl_name];
         }
     }
 
