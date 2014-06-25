@@ -45,7 +45,9 @@ class html_doc extends html
         foreach ($list as $href)
             $result .= file_get_contents($href);
 
-        $content = toolbox::comprime($result);
+        $content = toolbox::comprime(str_replace("@CHARSET 'UTF-8';",
+                                                 '',
+                                                 $result));
 
         echo parent::_style($content);
 

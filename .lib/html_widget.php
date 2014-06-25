@@ -24,9 +24,7 @@ class html_widget extends html
                                          'left',
                                      ),
                                      '_blank',
-                                     htmlspecialchars(str_replace("@CHARSET 'UTF-8';",
-                                                                  '',
-                                                                  $css)))
+                                     htmlspecialchars($css))
                    : '')
                  . html::hyperlink($psl,
                                    "PSI",

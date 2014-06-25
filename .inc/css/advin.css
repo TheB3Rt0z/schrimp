@@ -2,17 +2,7 @@
 
 body {
 	transition: .5s;
-        -webkit-transition: .5s;
-        -khtml-transition: .5s;
-        -moz-transition: .5s;
-        -ms-transition: .5s;
-        -o-transition: .5s;
     opacity: 0;
-        -webkit-opacity: 0;
-        -khtml-opacity: 0;
-        -moz-opacity: 0;
-        -ms-opacity: 0;
-        -o-opacity: 0;
 }
 
 div#header > div.box
@@ -71,17 +61,7 @@ div#loading
 	background-size: auto 50%;
 	background-repeat: no-repeat;
 	opacity: 0;
-	    -webkit-opacity: 0;
-        -khtml-opacity: 0;
-        -moz-opacity: 0;
-        -ms-opacity: 0;
-        -o-opacity: 0;
 	transition: opacity .5s;
-	    -webkit-transition: opacity .5s;
-        -khtml-transition: opacity .5s;
-        -moz-transition: opacity .5s;
-        -ms-transition: opacity .5s;
-        -o-transition: opacity .5s;
 }
 
 div#nav > div.box

@@ -14,28 +14,13 @@ a
 {
     color: #CCC;
     text-shadow: 0 1px 1px #000;
-        -webkit-text-shadow: 0 1px 1px #000;
-        -khtml-text-shadow: 0 1px 1px #000;
-        -moz-text-shadow: 0 1px 1px #000;
-        -ms-text-shadow: 0 1px 1px #000;
-        -o-text-shadow: 0 1px 1px #000;
     transition: .125s;
-        -webkit-transition: .125s;
-        -khtml-transition: .125s;
-        -moz-transition: .125s;
-        -ms-transition: .125s;
-        -o-transition: .125s;
 }
 
     a:hover
     {
         color: #fff;
         text-shadow: 0 -1px 1px #fff;
-            -webkit-text-shadow: 0 -1px 1px #fff;
-            -khtml-text-shadow: 0 -1px 1px #fff;
-            -moz-text-shadow: 0 -1px 1px #fff;
-            -ms-text-shadow: 0 -1px 1px #fff;
-            -o-text-shadow: 0 -1px 1px #fff;
     }
 
 address
@@ -83,17 +68,7 @@ br.clearfix
     padding: 1px 3px;
     border: solid 1px #000;
     border-radius: 3px;
-        -webkit-border-radius: 3px;
-        -khtml-border-radius: 3px;
-        -moz-border-radius: 3px;
-        -ms-border-radius: 3px;
-        -o-border-radius: 3px;
     transition: .25s;
-        -webkit-transition: .25s;
-        -khtml-transition: .25s;
-        -moz-transition: .25s;
-        -ms-transition: .25s;
-        -o-transition: .25s;
 }
     span.button {
         padding: 1px 3px;
@@ -124,17 +99,7 @@ div.box
     border-right-color: #999;
     border-bottom-color: #ccc;
     border-radius: 5px;
-        -webkit-border-radius: 5px;
-        -khtml-border-radius: 5px;
-        -moz-border-radius: 5px;
-        -ms-border-radius: 5px;
-        -o-border-radius: 5px;
     transition: .5s;
-        -webkit-transition: .5s;
-        -khtml-transition: .5s;
-        -moz-transition: .5s;
-        -ms-transition: .5s;
-        -o-transition: .5s;
 }
 
     div.box:hover
@@ -150,22 +115,12 @@ div.high
 {
     background-color: #999;
     box-shadow: 0 1px 1px #000;
-        -webkit-box-shadow: 0 1px 1px #000;
-        -khtml-box-shadow: 0 1px 1px #000;
-        -moz-box-shadow: 0 1px 1px #000;
-        -ms-box-shadow: 0 1px 1px #000;
-        -o-box-shadow: 0 1px 1px #000;
 }
 
     div.high:hover
     {
         background-color: #ccc;
         box-shadow: 0 2px 2px #000;
-            -webkit-box-shadow: 0 2px 2px #000;
-            -khtml-box-shadow: 0 2px 2px #000;
-            -moz-box-shadow: 0 2px 2px #000;
-            -ms-box-shadow: 0 2px 2px #000;
-            -o-box-shadow: 0 2px 2px #000;
     }
 
 footer, div#footer
