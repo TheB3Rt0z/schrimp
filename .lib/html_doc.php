@@ -24,7 +24,7 @@ class html_doc extends html
             array
             (
                 'name' => "author",
-                'content' => _STR_PROJECT_NAME . " " . main::get_version(),
+                'content' => _STR_PROJECT_FULL,
             ),
             /*array
             (

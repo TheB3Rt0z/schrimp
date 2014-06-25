@@ -42,7 +42,7 @@ ob_start();
         $main->loaded_scripts = html_doc::get_head_scripts() ?>
 
         <title><?php echo (_SET_DEVELOPMENT_MODE
-                          ? _STR_PROJECT_NAME . " " . $main->get_version() . " | "
+                          ? _STR_PROJECT_FULL . " | "
                           : '') . $main->title ?></title>
     </head>
 

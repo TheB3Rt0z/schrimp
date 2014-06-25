@@ -92,6 +92,8 @@ class main
             define(strtoupper($key), (is_array($value)
                                      ? serialize($value)
                                      : $value));
+
+        define('_STR_PROJECT_FULL', _STR_PROJECT_NAME . " " . $this->get_version()); // dynamically rendered constant
     }
 
     private function _set_configuration()

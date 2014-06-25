@@ -9,21 +9,23 @@ class html_widget extends html
     private static function _add_toolbar_buttons($html,
                                                  $psl)
     {
-        return html::spanner(html_form::form('debug_w3c_validation',
-                                             array
-                                             (
-                                                 'left',
-                                             ),
-                                             '_blank',
-                                             htmlspecialchars($html))
-                           . html::hyperlink($psl,
-                                             "PSI",
-                                             array
-                                             (
-                                                 'button',
-                                             ),
-                                             '_blank',
-                                             "Google Developers PageSpeed Insights"),
+        $buttons = html_form::form('debug_w3c_validation',
+                                   array
+                                   (
+                                       'left',
+                                   ),
+                                   '_blank',
+                                   htmlspecialchars($html))
+                 . html::hyperlink($psl,
+                                   "PSI",
+                                   array
+                                   (
+                                       'button',
+                                   ),
+                                   '_blank',
+                                   "Google Developers PageSpeed Insights");
+
+        return html::spanner($buttons,
                              array
                              (
                                  'right',
@@ -64,7 +66,7 @@ class html_widget extends html
              . urlencode($main->resolve_uri($_SERVER['QUERY_STRING'],
                                             true));
 
-        echo html::divisor(html::spanner(_STR_PROJECT_NAME . " " . $main->get_version(),
+        echo html::divisor(html::spanner(_STR_PROJECT_FULL,
                                          array
                                          (
                                              'button',
