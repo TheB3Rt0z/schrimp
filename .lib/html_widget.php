@@ -7,6 +7,7 @@ class html_widget extends html
     static $tests = array();
 
     private static function _add_toolbar_buttons($html,
+                                                 $css,
                                                  $psl)
     {
         $buttons = html_form::form('debug_w3c_validation',
@@ -16,6 +17,17 @@ class html_widget extends html
                                    ),
                                    '_blank',
                                    htmlspecialchars($html))
+                 . (_SET_CSS_COMPRESSION
+                   ? html_form::form('debug_css_validation',
+                                     array
+                                     (
+                                         'left',
+                                     ),
+                                     '_blank',
+                                     htmlspecialchars(str_replace("@CHARSET 'UTF-8';",
+                                                                  '',
+                                                                  $css)))
+                   : '')
                  . html::hyperlink($psl,
                                    "PSI",
                                    array
@@ -66,12 +78,13 @@ class html_widget extends html
              . urlencode($main->resolve_uri($_SERVER['QUERY_STRING'],
                                             true));
 
-        echo html::divisor(html::spanner(_STR_PROJECT_FULL,
+        echo html::divisor(html::spanner(STR_PROJECT_FULL,
                                          array
                                          (
                                              'button',
                                          ))
                          . self::_add_toolbar_buttons($main->html,
+                                                      $main->linked_files,
                                                       $psl),
                            array
                            (

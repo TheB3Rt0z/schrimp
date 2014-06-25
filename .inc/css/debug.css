@@ -87,11 +87,11 @@ div#schrimp-object
     div#schrimp-object:hover
     {
         opacity: .75;
-        top: 50px;
-        height: 100%;
+        top: 5%;
+        height: 95%;
         font-size: 13px;
-        width: 97%;
-        left: 1.5%;
+        width: 95%;
+        left: 2.5%;
         border-radius: 0;
             -webkit-border-radius: 0;
             -khtml-border-radius: 0;

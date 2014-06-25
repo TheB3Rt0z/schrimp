@@ -134,7 +134,7 @@ class html
                 (
                     'application-name',
                     'author',
-                    //'copyright',
+                    //'copyright', // no longer valid..
                     'description',
                     'generator',
                     'keywords',
@@ -185,14 +185,8 @@ class html
             'form' => array
             (
                 'action' => true,
-                'method' => array
-                (
-                    'post', // get not allowed due to security reasons
-                ),
-                'enctype' => array
-                (
-                    'multipart/form-data'
-                ),
+                'method' => 'post', // get not allowed due to security reasons
+                'enctype' => 'multipart/form-data',
                 'target' => array
                 (
                     '_blank', // opens the linked document in a new window or tab
@@ -236,6 +230,10 @@ class html
                 'onchange' => true,
             ),
             'span' => array(),
+            'style' => array
+            (
+                'type' => 'text/css'
+            ),
             'ul' => array(),
         )
     );
@@ -733,6 +731,18 @@ class html
         return $self->_html . self::_HTML_HEAD_INDENTATION;
     }
 
+    protected static function _style($content)
+    {
+        $self = new self('style',
+                         array
+                         (
+                             'type' => "text/css",
+                         ),
+                         $content);
+
+        return $self->_html;
+    }
+
     protected static function _select($content,
                                       $attributes = array(),
                                       $classes = array())
@@ -941,6 +951,11 @@ class html
         return self::_span($content,
                            array(),
                            $classes);
+    }
+
+    static function styler($content)
+    {
+        return self::_style($content);
     }
 
     static function preform($content)

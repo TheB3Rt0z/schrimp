@@ -1,0 +1,17 @@
+'action' => 'http://jigsaw.w3.org/css-validator/validator',
+'hidden' => array
+(
+    'text' => array
+    (
+        'value' => "%s",
+    ),
+),
+'submit' => array
+(
+    'value' => "CSS",
+    'title' => "WWW Consortium CSS Validation Service",
+    'classes' => array
+    (
+        "button",
+    ),
+),

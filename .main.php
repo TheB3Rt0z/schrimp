@@ -93,7 +93,7 @@ class main
                                      ? serialize($value)
                                      : $value));
 
-        define('_STR_PROJECT_FULL', _STR_PROJECT_NAME . " " . $this->get_version()); // dynamically rendered constant
+        define('STR_PROJECT_FULL', _STR_PROJECT_NAME . " " . $this->get_version()); // dynamically rendered constant
     }
 
     private function _set_configuration()
@@ -242,6 +242,7 @@ class main
         unset($this->article);
         unset($this->aside);
         unset($this->footer);
+        unset($this->html);
 
         return $this;
     }
@@ -249,15 +250,7 @@ class main
     function render($html)
     {
         if (!_SET_DEVELOPMENT_MODE)
-            $html = str_replace(array
-                                (
-                                    "\t",
-                                    "\n",
-                                    "\r",
-                                    "  ",
-                                ),
-                                '',
-                                $html);
+            $html = toolbox::comprime($html);
 
         $this->html = $html;
 

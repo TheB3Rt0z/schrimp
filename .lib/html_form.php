@@ -161,18 +161,19 @@ class html_form extends html
     {
         $args = func_get_args();
 
-        $settings = _SET_LIBRARIES_PATH
-                  . str_replace(code::_SET_NS_PREFIX,
-                                '',
-                                __CLASS__) . '/' . trim($identifier);
-        if (fe($settings))
+        $url = _SET_LIBRARIES_PATH
+             . str_replace(code::_SET_NS_PREFIX,
+                           '',
+                           __CLASS__) . '/' . trim($identifier);
+
+        if (fe($url))
         {
             eval("\$settings = array
                                (
                                    " . ((count($args) > 3)
-                                       ? vsprintf(file_get_contents($settings),
+                                       ? vsprintf(file_get_contents($url),
                                                   array_slice($args, 3))
-                                       : file_get_contents($settings)) . "
+                                       : file_get_contents($url)) . "
                                );");
 
             $self = new self($settings['action'],

@@ -24,13 +24,8 @@ class html_doc extends html
             array
             (
                 'name' => "author",
-                'content' => _STR_PROJECT_FULL,
+                'content' => STR_PROJECT_FULL,
             ),
-            /*array
-            (
-                'name' => "copyright",
-                'content' => _STR_COPYRIGHT_SIGNATURE,
-            ),*/
             array
             (
                 'name' => "robots",
@@ -42,6 +37,19 @@ class html_doc extends html
                 'content' => "user-scalable=no, width=device-width",
             ),
         ));
+    }
+
+    private static function _add_compressed_styles($list)
+    {
+        $result = '';
+        foreach ($list as $href)
+            $result .= file_get_contents($href);
+
+        $content = toolbox::comprime($result);
+
+        echo parent::_style($content);
+
+        return $content;
     }
 
     static function get_head_favicon()
@@ -60,22 +68,31 @@ class html_doc extends html
             parent::add_favicon(_SET_INCLUDES_PATH . "img/schrimp_favicon.ico"); // parent::add_stylesheet("http://fonts.googleapis.com/css?family=Amaranth:700");
     }
 
-    static function get_head_links($fullpath) // SVG inline editing (php driven) if css + js != enough
+    static function get_head_links($fullpath,
+                                   $list = array()) // SVG inline editing (php driven) if css + js != enough
     {
-        parent::add_stylesheet(_SET_INCLUDES_PATH . "css/style.css");
+        $list[] = _SET_INCLUDES_PATH . "css/style.css";
         if (_SET_ADVANCED_INTERFACE)
-            parent::add_stylesheet(_SET_INCLUDES_PATH . "css/advin.css");
+            $list[] = _SET_INCLUDES_PATH . "css/advin.css";
 
-        parent::add_stylesheet(_SET_INCLUDES_PUBLICPATH . "css/style.css"); // base style sheet for frontend
-        if (SET_RESPONSIVE_DESIGN)
-            parent::add_stylesheet(_SET_INCLUDES_PUBLICPATH . "css/responsive.css"); // adds responsive media-queries based designs
+        $list[] = _SET_INCLUDES_PUBLICPATH . "css/style.css"; // base style sheet for frontend
+        if (_SET_RESPONSIVE_DESIGN)
+            $list[] = _SET_INCLUDES_PUBLICPATH . "css/responsive.css"; // adds responsive media-queries based designs
 
-        parent::add_stylesheet($fullpath . ".css"); // this adds extra controller css
+        $list[] = $fullpath . ".css"; // this adds extra controller css
 
         if (_SET_DESIGN_MODE)
-            parent::add_stylesheet(_SET_INCLUDES_PATH . "css/debug.css"); // overrides all css sheets, only if debug mode is active..
+            $list[] = _SET_INCLUDES_PATH . "css/debug.css"; // overrides all css sheets, only if debug mode is active..
 
-        return parent::$_linked_files;
+        if (_SET_CSS_COMPRESSION)
+            return self::_add_compressed_styles($list);
+        else
+        {
+            foreach ($list as $href)
+                parent::add_stylesheet($href);
+
+            return parent::$_linked_files;
+        }
     }
 
     static function get_head_scripts()

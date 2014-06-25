@@ -22,6 +22,19 @@ class toolbox
         return $code;
     }
 
+    static function comprime($str)
+    {
+        return str_replace(array
+                          (
+                              "\t",
+                              "\n",
+                              "\r",
+                              "  ",
+                          ),
+                          '',
+                          $str);
+    }
+
     static function filter($array,
                            $key_s)
     {
