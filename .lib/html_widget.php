@@ -26,14 +26,16 @@ class html_widget extends html
                                      '_blank',
                                      htmlspecialchars($css))
                    : '')
-                 . html::hyperlink($psl,
-                                   "PSI",
-                                   array
-                                   (
-                                       'button',
-                                   ),
-                                   '_blank',
-                                   "Google Developers PageSpeed Insights");
+                 . (!toolbox::localhosted()
+                   ? html::hyperlink($psl,
+                                     "PSI",
+                                     array
+                                     (
+                                         'button',
+                                     ),
+                                     '_blank',
+                                     "Google Developers PageSpeed Insights")
+                   : '' );
 
         return html::spanner($buttons,
                              array

@@ -155,6 +155,24 @@ class toolbox
             return false;
     }
 
+    static function localhosted()
+    {
+        return (in_array($_SERVER['REMOTE_ADDR'],
+                         array
+                         (
+                             '127.0.0.1',
+                             '::1',
+                         ))
+             && in_array($_SERVER['SERVER_ADDR'],
+                         array
+                         (
+                             '127.0.0.1',
+                             '::1',
+                         ))
+             && $_SERVER['HTTP_HOST'] == 'localhost'
+             && $_SERVER['SERVER_NAME'] == 'localhost');
+    }
+
     static function parse($source)
     {
         if (fe($source))
