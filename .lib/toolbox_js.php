@@ -102,6 +102,13 @@ class toolbox_js extends toolbox
         <?php
     }
 
+    static function comprime($code)
+    {
+        require_once('.jshrink.minifier.php');
+
+        return \JShrink\Minifier::minify($code);
+    }
+
     static function debug()
     {
         $self = new self;

@@ -167,13 +167,16 @@ class html_form extends html
                            __CLASS__) . '/' . trim($identifier);
 
         if (fe($url))
-        {
-            eval("\$settings = array
-                               (
-                                   " . ((count($args) > 3)
+        {/*echo addcslashes((count($args) > 3)
                                        ? vsprintf(file_get_contents($url),
                                                   array_slice($args, 3))
-                                       : file_get_contents($url)) . "
+                                       : file_get_contents($url), "$");DIE;*/
+            eval("\$settings = array
+                               (
+                                   " . addcslashes((count($args) > 3)
+                                       ? vsprintf(file_get_contents($url),
+                                                  array_slice($args, 3))
+                                       : file_get_contents($url), "$") . "
                                );");
 
             $self = new self($settings['action'],

@@ -39,17 +39,47 @@ class html_doc extends html
         ));
     }
 
-    private static function _add_compressed_styles($list)
+    private static function _add_compressed_scripts($list)
     {
         $result = '';
         foreach ($list as $href)
             $result .= file_get_contents($href);
 
-        $content = toolbox::comprime(str_replace("@CHARSET 'UTF-8';",
-                                                 '',
-                                                 $result));
+        $content = toolbox_js::comprime($result);
 
-        echo parent::_style($content);
+        echo parent::add_js_script($content);
+
+        return $content;
+    }
+
+    private static function _add_compressed_styles($list)
+    {
+        $result = '';
+        foreach ($list as $href)
+        {
+            $path = str_replace(implode(array_slice(explode('/',
+                                                            $href),
+                                                    -2),
+                                        '/'),
+                                '',
+                                $href);
+
+            $result .= str_replace(array
+                                   (
+                                       "@CHARSET 'UTF-8';",
+                                       "url('..",
+                                   ),
+                                   array
+                                   (
+                                       '',
+                                       "url('" . $path,
+                                   ),
+                                   file_get_contents($href));
+        }
+
+        $content = toolbox::comprime($result);
+
+        echo parent::_style($content) . parent::_HTML_HEAD_INDENTATION;
 
         return $content;
     }
@@ -97,28 +127,37 @@ class html_doc extends html
         }
     }
 
-    static function get_head_scripts()
+    static function get_head_scripts($list = array())
     {
-        //parent::add_js_file(_SET_INCLUDES_PATH . "js/angular.js"); // https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js
+        //$list[] = _SET_INCLUDES_PATH . "js/angular.js"; // https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js
 
-        parent::add_js_file(_SET_INCLUDES_PATH . "js/jquery.js"); // parent::add_js_file("//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js");
-        parent::add_js_file(_SET_INCLUDES_PATH . "js/jquery.NO-OLD-IE.js"); // parent::add_js_file("//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js");
-        //parent::add_js_file(_SET_INCLUDES_PATH . "js/jquery.ui.js"); // parent::add_js_file("//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js");
-        //parent::add_js_file(_SET_INCLUDES_PATH . "js/jquery.jcarousel.js");
-        //parent::add_js_file(_SET_INCLUDES_PATH . "js/jquery.gestures.js");
-        //parent::add_js_file(_SET_INCLUDES_PATH . "js/jquery.jgestures.js");
+        $list[] = _SET_INCLUDES_PATH . "js/jquery.js";
+        $list[] = _SET_INCLUDES_PATH . "js/jquery.NO-OLD-IE.js";
 
-        //parent::add_js_file(_SET_INCLUDES_PATH . "js/prototype.js");
+        //$list[] = _SET_INCLUDES_PATH . "js/jquery.ui.js"; // parent::add_js_file("//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js");
+        //$list[] = _SET_INCLUDES_PATH . "js/jquery.jcarousel.js";
+        //$list[] = _SET_INCLUDES_PATH . "js/jquery.gestures.js";
+        //$list[] = _SET_INCLUDES_PATH . "js/jquery.jgestures.js";
 
-        //parent::add_js_file(_SET_INCLUDES_PATH . "js/modernizr.js");
+        //$list[] = _SET_INCLUDES_PATH . "js/prototype.js";
 
-        //parent::add_js_file(_SET_INCLUDES_PATH . "js/jwplayer.js");
-        //parent::add_js_file(_SET_INCLUDES_PATH . "js/jwplayer.html5.js"); // not really needed..
+        //$list[] = _SET_INCLUDES_PATH . "js/modernizr.js";
 
-        parent::add_js_file(_SET_INCLUDES_PATH . "js/schrimp.js");
+        //$list[] = _SET_INCLUDES_PATH . "js/jwplayer.js";
+        //$list[] = _SET_INCLUDES_PATH . "js/jwplayer.html5.js"; // not really needed..
+
+        $list[] = _SET_INCLUDES_PATH . "js/schrimp.js";
         if (_SET_ADVANCED_INTERFACE)
-            parent::add_js_file(_SET_INCLUDES_PATH . "js/schrimp.advin.js");
+            $list[] = _SET_INCLUDES_PATH . "js/schrimp.advin.js";
 
-        return parent::$_loaded_scripts;
+        if (_SET_JS_COMPRESSION)
+            return self::_add_compressed_scripts($list);
+        else
+        {
+            foreach ($list as $href)
+                parent::add_js_file($href);
+
+            return parent::$_loaded_scripts;
+        }
     }
 }

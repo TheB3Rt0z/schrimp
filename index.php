@@ -30,23 +30,29 @@ $main = new main($_SERVER['REQUEST_URI']);
 ob_start();
 
 ?><!DOCTYPE html>
-<!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
-<!--[if IE 7 ]> <html class="ie7"> <![endif]-->
-<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
-<!--[if gt IE 8]> <html class="ie"> <![endif]-->
+    <!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
+    <!--[if IE 7 ]> <html class="ie7"> <![endif]-->
+    <!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+    <!--[if gt IE 8]> <html class="ie"> <![endif]-->
+
     <head>
-        <?php
-        echo html_doc::get_head_metatags()
-           . html_doc::get_head_favicon();
-        $main->linked_files = html_doc::get_head_links($main->get_fullpath());
-        $main->loaded_scripts = html_doc::get_head_scripts() ?>
 
         <title><?php echo (_SET_DEVELOPMENT_MODE
                           ? STR_PROJECT_FULL . " | "
                           : '') . $main->title ?></title>
+
+        <?php echo html_doc::get_head_metatags() ?>
+
+        <?php echo html_doc::get_head_favicon() ?>
+
+        <?php $main->linked_files = html_doc::get_head_links($main->get_fullpath()) ?>
+
+        <?php $main->loaded_scripts = html_doc::get_head_scripts() ?>
+
     </head>
 
     <body>
+
         <header>
             <?php echo html::divisor($main->header,
                                      null,
@@ -60,6 +66,7 @@ ob_start();
         </nav>
 
         <section>
+
             <?php echo html::divisor($main->section,
                                      null,
                                      'section') . "\n" ?>
@@ -75,6 +82,7 @@ ob_start();
                                          null,
                                          'aside') . "\n" ?>
             </aside>
+
         </section>
 
         <footer>
@@ -91,7 +99,9 @@ ob_start();
                                null,
                                'loading') . "\n"
         ?>
+
     </body>
+
 </html><?php $main->render($result = ob_get_clean());
 
 if (_SET_DEBUG_MODE) // client-side additional html/js code

@@ -8,6 +8,7 @@ class html_widget extends html
 
     private static function _add_toolbar_buttons($html,
                                                  $css,
+                                                 $js,
                                                  $psl)
     {
         $buttons = html_form::form('debug_w3c_validation',
@@ -26,6 +27,15 @@ class html_widget extends html
                                      '_blank',
                                      htmlspecialchars($css))
                    : '')
+                 /*. (_SET_JS_COMPRESSION
+                   ? html_form::form('debug_css_validation',
+                                     array
+                                     (
+                                         'left',
+                                     ),
+                                     '_blank',
+                                     htmlspecialchars($js))
+                   : '')*/
                  . (!toolbox::localhosted()
                    ? html::hyperlink($psl,
                                      "PSI",
@@ -85,6 +95,7 @@ class html_widget extends html
                                          ))
                          . self::_add_toolbar_buttons($main->html,
                                                       $main->linked_files,
+                                                      $main->loaded_scripts,
                                                       $psl),
                            array
                            (

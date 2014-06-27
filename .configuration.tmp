@@ -30,7 +30,7 @@
 
 '_set_responsive_design' => false, // adds responsive stylesheets if needed
 '_set_css_compression' => true, // activates compression/loading of css files
-'_set_js_compression' => false, // activates compression/loading of jss files
+'_set_js_compression' => true, // activates compression/loading of jss files
 
 '_str_kernel_salt' => "Sstm Cntrl Hdng_t_ Rw Incrs_f Mntl Prdctvt", // main salt string
 '_str_project_name' => "Das S.C.H.R.I.M.P.", // project's namecode
