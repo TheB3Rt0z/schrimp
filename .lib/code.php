@@ -12,7 +12,6 @@ class code
     static $todos = array
     (
         'to fix issues' => "add blue (or maybe red?) dot on class/methods names",
-        'get_class_dependencies' => "too inaccurate, see navigator-controller",
         'static files form' => "check backend&component css files + schrimp_*.js",
         'test list in documentation footer' => "see scaffold method for infos",
     );
@@ -780,7 +779,7 @@ class code
 
     static function get_class_dependencies(\ReflectionClass $class)
     {
-        $dependencies = array(); // calculation is imprecise..
+        $dependencies = array();
 
         foreach (self::get_libraries_list($class->name) as $key => $value)
             $dependencies[$key] = 0;

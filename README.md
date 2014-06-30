@@ -6,7 +6,7 @@ Table of contents
   
 [General reference](#general-reference-- "")  
 [Library cache](#-class-cache-09042014-- "") &#10029;  (.lib/cache.php, Len: 15/20, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
-[Library code](#-class-code-23062014-- "") &#10029;&#10029;&#10029;&#10029;  (.lib/code.php, Len: 824/965, CIS: 15 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  4 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
+[Library code](#-class-code-30062014-- "") &#10029;&#10029;&#10029;  (.lib/code.php, Len: 823/964, CIS: 15 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  4 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
 [Library controller](#-class-controller-06062014-- "") (.lib/controller.php, Len: 100/129, CIS: 11 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [Library db](#-class-db-09042014-- "") &#10029;&#10029;&#10029;  (.lib/db.php, Len: 106/126, CIS: 4 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png ""))   
 [- db_object](#-class-db_object-30062014-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/db_object.php, Len: 119/146, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_green_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon_16x16_yellow_ops.png "Attention! Some yellow alert(s)!")  
@@ -146,7 +146,7 @@ General reference
   
 ***  
   
-[⇧](# "to the top") Class CODE (23.06.2014)  
+[⇧](# "to the top") Class CODE (30.06.2014)  
 -----------------------  
   
 **CODE REFERENCE:**  
@@ -199,7 +199,6 @@ Uses: **code**, **main**, **md**, **toolbox**
 **TODOS:**  
   
 - **to fix issues** &#10140; add blue (or maybe red?) dot on class/methods names  
-- **get_class_dependencies** &#10140; too inaccurate, see navigator-controller  
 - **static files form** &#10140; check backend&component css files + schrimp_*.js  
 - **test list in documentation footer** &#10140; see scaffold method for infos  
   
