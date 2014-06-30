@@ -75,11 +75,9 @@ class db_object extends db
 
         foreach ($traits as $key => $value)
         {
-            $key = trim($key);
-
-            $data[$key] = $key . " = " . (is_numeric($value)
-                                         ? $value
-                                         : "'" . addslashes($value) . "'");
+            $data[trim($key)] = $key . " = " . (is_numeric($value)
+                                               ? $value
+                                               : "'" . addslashes($value) . "'");
 
             if (!in_array($key,
                           $this->_metas))

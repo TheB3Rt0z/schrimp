@@ -106,7 +106,9 @@ class toolbox_js extends toolbox
     {
         require_once('.jshrink.minifier.php');
 
-        return \JShrink\Minifier::minify($code);
+        return preg_replace('/[\x00-\x1F\x80-\xFF]/',
+                            '',
+                            \JShrink\Minifier::minify($code));
     }
 
     static function debug()

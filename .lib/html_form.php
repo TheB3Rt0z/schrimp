@@ -51,22 +51,21 @@ class html_form extends html
         ),
     );
 
-    private $_action = '';
     private $_method = 'post';
-    private $_enctype = 'multipart/form-data'; // default encoding type
 
     private $_submit = null;
 
     function __construct($action,
+                         $enctype,
                          $classes = array(),
                          $target = '')
     {
         $attributes = array
         (
             'method' => $this->_method,
-            'enctype' => $this->_enctype,
+            'enctype' => $enctype,
         );
-        $attributes['action'] = trim($action);
+        $attributes['action'] = $action;
 
         if (!empty($classes))
             $attributes['class'] = implode($classes, " ");
@@ -86,9 +85,17 @@ class html_form extends html
                                   $data['value']);
 
         if (!empty($settings['text']))
-            foreach ($settings['text'] as $name => $default)
+            foreach ($settings['text'] as $name => $data)
                 $this->add_text($name,
                                 $data['value']);
+
+        if (!empty($settings['textarea']))
+            foreach ($settings['textarea'] as $name => $data)
+                $this->add_textarea($name,
+                                    $data['value'],
+                                    !empty($data['classes'])
+                                    ? $data['classes']
+                                    : array());
 
         if (!empty($settings['submit']))
             $this->add_submit($settings['submit']['value'],
@@ -100,15 +107,22 @@ class html_form extends html
     {
         extract($attributes);
 
-        parent::_append_content(parent::_input($type,
-                                               $name,
-                                               $value,
-                                               !empty($classes)
-                                               ? $classes
-                                               : array(),
-                                               !empty($title)
-                                               ? $title
-                                               : ''));
+        if ($type == 'textarea')
+            parent::_append_content(parent::_textarea($name,
+                                                      $value,
+                                                      !empty($classes)
+                                                      ? $classes
+                                                      : array()));
+        else
+            parent::_append_content(parent::_input($type,
+                                                   $name,
+                                                   $value,
+                                                   !empty($classes)
+                                                   ? $classes
+                                                   : array(),
+                                                   !empty($title)
+                                                   ? $title
+                                                   : ''));
 
         return $this;
     }
@@ -120,7 +134,7 @@ class html_form extends html
         (
             'type' => 'hidden',
             'name' => strtolower(trim($name)),
-            'value' => trim($default),
+            'value' => $default,
         );
 
         $this->_add_field($attributes);
@@ -137,7 +151,7 @@ class html_form extends html
             $attributes = array
             (
                 'type' => 'submit',
-                'name' => 'submit',
+                'name' => false,
                 'value' => $value,
             );
 
@@ -155,6 +169,23 @@ class html_form extends html
         return $this;
     }
 
+    function add_textarea($name,
+                          $default = '',
+                          $classes = array())
+    {
+        $attributes = array
+        (
+            'type' => 'textarea',
+            'name' => strtolower(trim($name)),
+            'value' => $default,
+            'classes' => $classes,
+        );
+
+        $this->_add_field($attributes);
+
+        return $this;
+    }
+
     static function form($identifier,
                          $classes = array(),
                          $target = '')
@@ -164,13 +195,10 @@ class html_form extends html
         $url = _SET_LIBRARIES_PATH
              . str_replace(code::_SET_NS_PREFIX,
                            '',
-                           __CLASS__) . '/' . trim($identifier);
+                           __CLASS__) . '/' . $identifier;
 
         if (fe($url))
-        {/*echo addcslashes((count($args) > 3)
-                                       ? vsprintf(file_get_contents($url),
-                                                  array_slice($args, 3))
-                                       : file_get_contents($url), "$");DIE;*/
+        {
             eval("\$settings = array
                                (
                                    " . addcslashes((count($args) > 3)
@@ -180,6 +208,9 @@ class html_form extends html
                                );");
 
             $self = new self($settings['action'],
+                             !empty($settings['enctype'])
+                             ? $settings['enctype']
+                             : 'multipart/form-data', // default encoding type,
                              $classes,
                              $target);
 
@@ -214,9 +245,17 @@ class html_form extends html
 
         $attributes = array();
         if (!empty($onchange))
-            $attributes['onchange'] = trim($onchange);
+            $attributes['onchange'] = $onchange;
 
         return self::_select($content,
                              $attributes);
+    }
+
+    static function textarea($content)
+    {
+        $attributes = array();
+
+        return self::_textarea($content,
+                               $attributes);
     }
 }

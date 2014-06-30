@@ -1,0 +1,41 @@
+'action' => 'http://closure-compiler.appspot.com/compile',
+
+'enctype' => 'application/x-www-form-urlencoded',
+
+'hidden' => array
+(
+    'compilation_level' => array
+    (
+        'value' => "WHITESPACE_ONLY",
+    ),
+    'output_format' => array
+    (
+        'value' => "text",
+    ),
+    'output_info' => array
+    (
+        'value' => "compiled_code",
+    ),
+),
+
+'textarea' => array
+(
+    'js_code' => array
+    (
+        'value' => "%s",
+        'classes' => array
+        (
+            "hidden",
+        ),
+    ),
+),
+
+'submit' => array
+(
+    'value' => "JS",
+    'title' => "Closure Compiler JS Validation Service",
+    'classes' => array
+    (
+        "button",
+    ),
+),
