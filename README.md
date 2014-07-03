@@ -1,4 +1,4 @@
-![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Dokumentation v1.8 &#124; 14.06  
+![](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/schrimp_favicon_md.ico "") Das S.C.H.R.I.M.P.'s Dokumentation v1.8 &#124; 14.07  
 --------------------------------------------------------------------------------------------------------------------------------------------  
   
 Table of contents  
@@ -69,7 +69,7 @@ General reference
 - **SET_GITHUB_RAWPATH** &#10140; "https://raw.github.com/TheB3Rt0z/schrimp/master/" (global core constant)  
 - **SET_GITHUB_WIKIPATH** &#10140; "https://github.com/TheB3Rt0z/schrimp/wiki/" (global core constant)  
 - **SET_TRANSLATIONS_EXTENSION** &#10140; ".txt" (global core constant)  
-- **STR_PROJECT_FULL** &#10140; "Das S.C.H.R.I.M.P. v1.77" (global core constant)  
+- **STR_PROJECT_FULL** &#10140; "Das S.C.H.R.I.M.P. v1.78" (global core constant)  
   
   
 **FUNCTION ALIASES:**  
