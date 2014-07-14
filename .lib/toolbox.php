@@ -22,7 +22,7 @@ class toolbox
         return $code;
     }
 
-    static function comprime($str)
+    static function comprime($string)
     {
         return str_replace(array
                           (
@@ -32,7 +32,7 @@ class toolbox
                               "  ",
                           ),
                           '',
-                          $str);
+                          $string);
     }
 
     static function filter($array,
@@ -188,9 +188,25 @@ class toolbox
             return $output;
     }
 
-    static function toolbar()
+    static function strsize($string)
     {
-        // to be implemented..
+        $size = mb_strlen($string);
+
+        if ($size > 1024)
+        {
+            $size = $size / 1024;
+            $prefix = "k";
+        }
+
+        if ($size > 1024)
+        {
+            $size = $size / 1024;
+            $prefix = "M";
+        }
+
+        return number_format($size, 1) . (!empty($prefix)
+                                         ? $prefix
+                                         : '') . "Bs";
     }
 }
 

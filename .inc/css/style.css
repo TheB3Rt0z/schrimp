@@ -81,6 +81,8 @@ br.clearfix
     span.button {
         padding: 1px 3px;
         float: left;
+        margin-top: 1px;
+        height: 15px;
     }
     input.button:hover {
         opacity: .333;

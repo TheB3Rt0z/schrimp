@@ -34,29 +34,29 @@ class toolbox_js extends toolbox
                 sd.append("- jQuery UI v" + jQuery.ui.version
                         + " loaded" + eol);
             else
-                sd.append('<?php echo html::spanner("jQuery.ui not loaded",
-                                                            array
-                                                            (
-                                                                'schrimp-warning',
-                                                            )) ?>' + eol);
+                sd.append('<?php echo html::spanner("- jQuery.ui not loaded",
+                                                    array
+                                                    (
+                                                        'schrimp-warning',
+                                                    )) ?>' + eol);
 
             if (typeof jQuery.jcarousel != 'undefined')
                 sd.append("- jCarousel v"
                         + jQuery.jcarousel.fn.jcarousel
                         + " loaded" + eol);
             else
-                sd.append('<?php echo html::spanner("jCarousel not loaded",
-                                            array
-                                            (
-                                                'schrimp-warning',
-                                            )) ?>' + eol);
+                sd.append('<?php echo html::spanner("- jCarousel not loaded",
+                                                    array
+                                                    (
+                                                        'schrimp-warning',
+                                                    )) ?>' + eol);
         }
         else
             db.innerHTML += '<?php echo html::spanner("jQuery not loaded",
-                                                       array
-                                                       (
-                                                           'schrimp-error',
-                                                       )) ?>' + eol;
+                                                      array
+                                                      (
+                                                          'schrimp-error',
+                                                      )) ?>' + eol;
         <?php
     }
 
@@ -104,7 +104,7 @@ class toolbox_js extends toolbox
 
     static function comprime($code)
     {
-        require_once('.jshrink.minifier.php');
+        require_once('.jshrink_minifier.php');
 
         return preg_replace('/[\x00-\x1F\x80-\xFF]/',
                             '',

@@ -37,13 +37,20 @@ class html_widget extends html
 
     private function _get_form_html_validation()
     {
+        $html = $this->_main->html;
+
         return html_form::form('debug_w3c_validation',
                                array
                                (
                                    'left',
                                ),
                                '_blank',
-                               htmlspecialchars($this->_main->html));
+                               htmlspecialchars($html))
+             . html::spanner(toolbox::strsize($html),
+                             array
+                             (
+                                 'button',
+                             ));
     }
 
     private function _get_form_javascript_validation()
@@ -59,13 +66,20 @@ class html_widget extends html
 
     private function _get_form_stylesheets_validation()
     {
+        $css = $this->_main->linked_files;
+
         return html_form::form('debug_css_validation',
                                 array
                                 (
                                     'left',
                                 ),
                                 '_blank',
-                                htmlspecialchars($this->_main->linked_files));
+                                htmlspecialchars($css))
+             . html::spanner(toolbox::strsize($css),
+                             array
+                             (
+                                 'button',
+                             ));
     }
 
     private function _get_link_google_pagespeed()
