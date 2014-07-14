@@ -708,8 +708,8 @@ class code
 
         $content = "**" . addcslashes($method,
                                       '_') . $infos . MD_NEWLINE_SEQUENCE
-                 . self::get_code_autodoc($code) . MD_NEWLINE_SEQUENCE // uses indentation-cleaned code
-                 . '```php' . MD_NEWLINE_SEQUENCE
+                 . "\t" . self::get_code_autodoc($code) // uses indentation-cleaned code
+                 . MD_NEWLINE_SEQUENCE . '```php' . MD_NEWLINE_SEQUENCE
                    . implode($code)
                  . '```';
 
@@ -896,7 +896,7 @@ class code
     {
         $autodoc = '';
         $counter = 1;
-        $indentation = 0;
+        $indentation = 1;
         $single = false;
         foreach ($code as $line)
         {
@@ -921,7 +921,7 @@ class code
 
             $autodoc .= ($single === false
                         ? MD_NEWLINE_SEQUENCE . sprintf('%02s',
-                                                        $counter) . " "
+                                                        $counter)
                         . str_repeat("&nbsp;",
                                      $indentation * 4)
                         : '')
