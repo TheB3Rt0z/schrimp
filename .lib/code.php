@@ -127,6 +127,10 @@ class code
         "if (" => "if ",
         "elseif (" => "otherwise if ",
         "else" => "otherwise ",
+        " > " => " is greater than ",
+        " >= " => " is greater or equal than ",
+        " < " => " is lower than ",
+        " <= " => " is lower or equal than ",
         "return" => "it returns",
     );
 
@@ -708,7 +712,7 @@ class code
 
         $content = "**" . addcslashes($method,
                                       '_') . $infos . MD_NEWLINE_SEQUENCE
-                 . "\t" . self::get_code_autodoc($code) // uses indentation-cleaned code
+                 . self::get_code_autodoc($code) // uses indentation-cleaned code
                  . MD_NEWLINE_SEQUENCE . '```php' . MD_NEWLINE_SEQUENCE
                    . implode($code)
                  . '```';
