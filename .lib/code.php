@@ -120,6 +120,16 @@ class code
             "\t? ",
     );
 
+    private static $_autodoc_translations = array
+    (
+        ")\n" => "\n",
+        ";\n" => "\n",
+        "if (" => "if ",
+        "elseif (" => "otherwise if ",
+        "else" => "otherwise ",
+        "return" => "it returns",
+    );
+
     private static $_summary = array();
 
     private static $_class_warnings = array();
@@ -417,7 +427,8 @@ class code
                       . ($values['tofix'] ? " to be fixed!" : '')
                       . MD_NEWLINE_SEQUENCE;
 
-        return $summary . MD_NEWLINE_SEQUENCE;
+        return addcslashes($summary,
+                           '_') . MD_NEWLINE_SEQUENCE;
     }
 
     private static function _get_constants_information()
@@ -439,7 +450,8 @@ class code
                             . MD_NEWLINE_SEQUENCE;
             }
 
-        return $constants . MD_NEWLINE_SEQUENCE;
+        return addcslashes($constants,
+                           '_') . MD_NEWLINE_SEQUENCE;
     }
 
     private static function _get_functions_information($functions = '') // these are aliases..
@@ -473,7 +485,8 @@ class code
             $todos .= "- **" . $key . "** " . CODE_ICON_ARROW . " " . $value
                     . MD_NEWLINE_SEQUENCE;
 
-        return $todos . MD_NEWLINE_SEQUENCE;
+        return addcslashes($todos,
+                           '_') . MD_NEWLINE_SEQUENCE;
     }
 
     private static function _get_methods_information(\ReflectionMethod $method)
@@ -569,7 +582,8 @@ class code
                           . self::_get_class_information($class)
                           . md::hr();
 
-        return $classes . MD_NEWLINE_SEQUENCE;
+        return addcslashes($classes,
+                           '_') . MD_NEWLINE_SEQUENCE;
     }
 
     private static function _get_component_information(\ReflectionClass $class)
@@ -637,7 +651,8 @@ class code
             $components .= md::hr();
         }
 
-        return $components . MD_NEWLINE_SEQUENCE;
+        return addcslashes($components,
+                           '_') . MD_NEWLINE_SEQUENCE;
     }
 
     private static function _update_class_warning($class_name,
@@ -691,7 +706,9 @@ class code
                                 8);
         });
 
-        $content = "**" . $method . $infos . MD_NEWLINE_SEQUENCE
+        $content = "**" . addcslashes($method,
+                                      '_') . $infos . MD_NEWLINE_SEQUENCE
+                 . self::get_code_autodoc($code) . MD_NEWLINE_SEQUENCE // uses indentation-cleaned code
                  . '```php' . MD_NEWLINE_SEQUENCE
                    . implode($code)
                  . '```';
@@ -873,6 +890,62 @@ class code
              . ($method->isStatic() ? "S" : '')
              . ($method->isAbstract() ? "A" : '')
              . ($method->isFinal() ? "F" : ''); // last 2 should not be used together..
+    }
+
+    static function get_code_autodoc($code = array())
+    {
+        $autodoc = '';
+        $counter = 1;
+        $indentation = 0;
+        $single = false;
+        foreach ($code as $line)
+        {
+            if (trim($line) == "{")
+            {
+                if ($single === false)
+                    $indentation++;
+                else
+                    $single = false;
+
+                continue;
+            }
+            elseif (trim($line) == "}")
+            {
+                $indentation--;
+                continue;
+            }
+
+            $line = str_replace(array_keys(self::$_autodoc_translations),
+                                array_values(self::$_autodoc_translations),
+                                $line);
+
+            $autodoc .= ($single === false
+                        ? MD_NEWLINE_SEQUENCE . sprintf('%02s',
+                                                        $counter) . " "
+                        . str_repeat("&nbsp;",
+                                     $indentation * 4)
+                        : '')
+                      . addcslashes($line,
+                                    '_');
+
+            if (substr(ltrim($line), 0, 2) == "if"
+                || substr(ltrim($line), 0, 12) == "otherwise if"
+                || substr(ltrim($line), 0, 9) == "otherwise")
+            {
+                $indentation++;
+                $single = true;
+            }
+            elseif ($single === true)
+            {
+                $indentation--;
+                $single = false;
+                continue;
+            }
+
+            $counter++;
+        }
+
+        return $autodoc;
     }
 
     static function get_method_code(\ReflectionMethod $method,
