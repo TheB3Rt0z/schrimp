@@ -84,10 +84,13 @@ br.clearfix
         margin-top: 1px;
         height: 15px;
     }
-    input.button:hover {
-        opacity: .333;
-        cursor: pointer;
+    input.button {
+        box-shadow: 0 0 1px rgba(0, 0, 0, .25);
     }
+        input.button:hover {
+            opacity: .333;
+            cursor: pointer;
+        }
 
 div
 {

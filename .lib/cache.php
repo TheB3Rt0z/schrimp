@@ -5,11 +5,10 @@ class cache
     static $todos = array
     (
         'memcache support' => "verify in method, if at least one mem-server works",
+        'html5 web storage' => "local or session are available? only with js..",
     );
 
     static $tests = array();
-
-    static function is_webstoraged() {} // local and/or session storage are available? only with js..
 
     static function is_apced()
     {
@@ -20,6 +19,4 @@ class cache
     {
         return extension_loaded('memcache'); // ok, but check it please..
     }
-
-    static function is_varnished() {}// just a placeholder..
 }

@@ -131,6 +131,8 @@ class code
         " >= " => " is greater or equal than ",
         " < " => " is lower than ",
         " <= " => " is lower or equal than ",
+        "->" => " uses method ",
+        "::" => " static method ",
         "return" => "it returns",
     );
 
@@ -368,21 +370,18 @@ class code
 
     private static function _is_codeline_too_long($code_line)
     {
-        $code_line = explode(" // ", $code_line); // avoid calculating comments
+        $code_line = explode(" // ", $code_line)[0]; // avoid calculating comments
 
         return strlen(str_replace("\t", // avoid undesired tabs
                                   '    ', // 1 tab = 4 spaces
-                                  $code_line[0])) > MAX_BLOCK_COMPLEXITY;
+                                  $code_line)) > MAX_BLOCK_COMPLEXITY;
     }
 
     private static function _calculate_codeline_cyc($code_line)
     {
-        $code_line = explode(" // ", $code_line);
-        $code_line = $code_line[0];
-
         $cyc = 0;
         foreach (self::$_cyc_counters as $counter)
-            $cyc += substr_count($code_line, $counter);
+            $cyc += substr_count(explode(" // ", $code_line)[0], $counter);
 
         return $cyc;
     }
@@ -904,6 +903,8 @@ class code
         $single = false;
         foreach ($code as $line)
         {
+            $line = explode(" // ", $line)[0]; // nice syntax, uh?
+
             if (trim($line) == "{")
             {
                 if ($single === false)
