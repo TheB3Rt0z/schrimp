@@ -122,7 +122,7 @@ class code
 
     private static $_autodoc_translations = array
     (
-        ")\n" => "\n",
+        ",\n" => ", ",
         ";\n" => "\n",
         "if (" => "if ",
         "elseif (" => "otherwise if ",
@@ -131,6 +131,7 @@ class code
         " >= " => " is greater or equal than ",
         " < " => " is lower than ",
         " <= " => " is lower or equal than ",
+        "!empty" => "meaningful ",
         "->" => " uses method ",
         "::" => " static method ",
         "return" => "it returns",
@@ -901,7 +902,7 @@ class code
         $counter = 1;
         $indentation = 1;
         $single = false;
-        foreach ($code as $line)
+        foreach ($code as $key => $line)
         {
             $line = explode(" // ", $line)[0]; // nice syntax, uh?
 
@@ -932,6 +933,15 @@ class code
                         : '')
                       . addcslashes($line,
                                     '_');
+
+            if (substr($line, -2) == ", "
+                || (!empty($code[$key + 1])
+                    && substr(ltrim($code[$key + 1]), 0, 2) == ". "))
+            {
+                $single = true;
+                $indentation++;
+                continue;
+            }
 
             if (substr(ltrim($line), 0, 2) == "if"
                 || substr(ltrim($line), 0, 12) == "otherwise if"
