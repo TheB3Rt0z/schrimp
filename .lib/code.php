@@ -124,6 +124,7 @@ class code
     (
         ",\n" => ", ",
         ";\n" => "\n",
+        " = " => " contains ",
         "if (" => "if ",
         "elseif (" => "otherwise if ",
         "else" => "otherwise ",
@@ -133,6 +134,7 @@ class code
         " <= " => " is lower or equal than ",
         "!empty" => "meaningful ",
         "->" => " uses method ",
+        "::$" => " static variable $",
         "::" => " static method ",
         "return" => "it returns",
     );
@@ -143,8 +145,7 @@ class code
 
     private static function _add_summary_entry($data)
     {
-        $href = strtolower(str_replace(" ",
-                                       "-",
+        $href = strtolower(str_replace(" ", "-",
                                        str_replace(array
                                                    (
                                                        "(",
@@ -439,14 +440,14 @@ class code
     {
         $constants = '';
 
-        $user_constants = self::get_constants_list();
+        $user_constants = self::get_constants_list(true);
         foreach ($user_constants as $key => $value)
             if (substr($key, 0, 1) != '_')
             {
                 $components = explode('_', $key);
 
                 $constants .= "- **" . $key . "** " . CODE_ICON_ARROW . " "
-                            . fm($value) . " ("
+                            . $value . " ("
                             . (class_exists(self::_SET_NS_PREFIX
                                           . strtolower($components[0]))
                               ? "defined by " . $components[0]
@@ -721,11 +722,17 @@ class code
                           $content);
     }
 
-    static function get_constants_list()
+    static function get_constants_list($formatted = false)
     {
         $constants_list = get_defined_constants(true);
         $user_constants = $constants_list['user'];
         ksort($user_constants);
+
+        if (!empty($formatted))
+            array_walk($user_constants, function(&$value)
+                                        {
+                                            $value = fm($value);
+                                        });
 
         return $user_constants;
     }
@@ -902,9 +909,26 @@ class code
         $counter = 1;
         $indentation = 1;
         $single = false;
-        foreach ($code as $key => $line)
+        $array = false;
+        foreach (array_filter($code,
+                              function($value)
+                              {
+                                  return !empty(trim($value));
+                              }) as $key => $line)
         {
             $line = explode(" // ", $line)[0]; // nice syntax, uh?
+
+            if (trim($line) == "(")
+            {
+                $line = ltrim($line);
+                $indentation++;
+            }
+
+            if (trim($line) == "(")
+                $array = true;
+            if (!empty($code[$key - 2])
+                && trim($code[$key - 2]) == "),")
+                $array = false;
 
             if (trim($line) == "{")
             {
@@ -912,7 +936,6 @@ class code
                     $indentation++;
                 else
                     $single = false;
-
                 continue;
             }
             elseif (trim($line) == "}")
@@ -921,17 +944,24 @@ class code
                 continue;
             }
 
+            $constants_array = self::get_constants_list(true);
             $line = str_replace(array_keys(self::$_autodoc_translations),
                                 array_values(self::$_autodoc_translations),
-                                $line);
+                                str_replace(array_keys($constants_array),
+                                            array_values($constants_array),
+                                            $line));
 
             $autodoc .= ($single === false
+                            && trim($line) != "("
+                            && trim($line) != "),"
                         ? MD_NEWLINE_SEQUENCE . sprintf('%02s',
-                                                        $counter)
+                                                        $counter++)
                         . str_repeat("&nbsp;",
-                                     $indentation * 4)
+                                     ($indentation > 0
+                                     ? $indentation
+                                     : 1) * 4)
                         : '')
-                      . addcslashes($line,
+                      . addcslashes(rtrim($line),
                                     '_');
 
             if (substr($line, -2) == ", "
@@ -939,7 +969,8 @@ class code
                     && substr(ltrim($code[$key + 1]), 0, 2) == ". "))
             {
                 $single = true;
-                $indentation++;
+                if ($array === false)
+                    $indentation++;
                 continue;
             }
 
@@ -956,8 +987,6 @@ class code
                 $single = false;
                 continue;
             }
-
-            $counter++;
         }
 
         return $autodoc;
