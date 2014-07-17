@@ -120,25 +120,6 @@ class code
             "\t? ",
     );
 
-    private static $_autodoc_translations = array
-    (
-        ",\n" => ", ",
-        ";\n" => "\n",
-        " = " => " contains ",
-        "if (" => "if ",
-        "elseif (" => "otherwise if ",
-        "else" => "otherwise ",
-        " > " => " is greater than ",
-        " >= " => " is greater or equal than ",
-        " < " => " is lower than ",
-        " <= " => " is lower or equal than ",
-        "!empty" => "meaningful ",
-        "->" => " uses method ",
-        "::$" => " static variable $",
-        "::" => " static method ",
-        "return" => "it returns",
-    );
-
     private static $_summary = array();
 
     private static $_class_warnings = array();
@@ -383,7 +364,8 @@ class code
     {
         $cyc = 0;
         foreach (self::$_cyc_counters as $counter)
-            $cyc += substr_count(explode(" // ", $code_line)[0], $counter);
+            $cyc += substr_count(explode(rawurldecode("%20//%20"), $code_line)[0],
+                                 $counter);
 
         return $cyc;
     }
@@ -713,7 +695,7 @@ class code
 
         $content = "**" . addcslashes($method,
                                       '_') . $infos . MD_NEWLINE_SEQUENCE
-                 . self::get_code_autodoc($code) // uses indentation-cleaned code
+                 . code_autodoc::get_autodoc($code) // uses indentation-cleaned code
                  . MD_NEWLINE_SEQUENCE . '```php' . MD_NEWLINE_SEQUENCE
                    . implode($code)
                  . '```';
@@ -901,95 +883,6 @@ class code
              . ($method->isStatic() ? "S" : '')
              . ($method->isAbstract() ? "A" : '')
              . ($method->isFinal() ? "F" : ''); // last 2 should not be used together..
-    }
-
-    static function get_code_autodoc($code = array())
-    {
-        $autodoc = '';
-        $counter = 1;
-        $indentation = 1;
-        $single = false;
-        $array = false;
-        foreach (array_filter($code,
-                              function($value)
-                              {
-                                  return !empty(trim($value));
-                              }) as $key => $line)
-        {
-            $line = explode(" // ", $line)[0]; // nice syntax, uh?
-
-            if (trim($line) == "(")
-            {
-                $line = ltrim($line);
-                $indentation++;
-            }
-
-            if (trim($line) == "(")
-                $array = true;
-            if (!empty($code[$key - 2])
-                && trim($code[$key - 2]) == "),")
-                $array = false;
-
-            if (trim($line) == "{")
-            {
-                if ($single === false)
-                    $indentation++;
-                else
-                    $single = false;
-                continue;
-            }
-            elseif (trim($line) == "}")
-            {
-                $indentation--;
-                continue;
-            }
-
-            $constants_array = self::get_constants_list(true);
-            $line = str_replace(array_keys(self::$_autodoc_translations),
-                                array_values(self::$_autodoc_translations),
-                                str_replace(array_keys($constants_array),
-                                            array_values($constants_array),
-                                            $line));
-
-            $autodoc .= ($single === false
-                            && trim($line) != "("
-                            && trim($line) != "),"
-                        ? MD_NEWLINE_SEQUENCE . sprintf('%02s',
-                                                        $counter++)
-                        . str_repeat("&nbsp;",
-                                     ($indentation > 0
-                                     ? $indentation
-                                     : 1) * 4)
-                        : '')
-                      . addcslashes(rtrim($line),
-                                    '_');
-
-            if (substr($line, -2) == ", "
-                || (!empty($code[$key + 1])
-                    && substr(ltrim($code[$key + 1]), 0, 2) == ". "))
-            {
-                $single = true;
-                if ($array === false)
-                    $indentation++;
-                continue;
-            }
-
-            if (substr(ltrim($line), 0, 2) == "if"
-                || substr(ltrim($line), 0, 12) == "otherwise if"
-                || substr(ltrim($line), 0, 9) == "otherwise")
-            {
-                $indentation++;
-                $single = true;
-            }
-            elseif ($single === true)
-            {
-                $indentation--;
-                $single = false;
-                continue;
-            }
-        }
-
-        return $autodoc;
     }
 
     static function get_method_code(\ReflectionMethod $method,
