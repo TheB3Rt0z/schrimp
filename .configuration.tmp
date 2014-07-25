@@ -1,12 +1,11 @@
-'_todos' => array
-(
+'_todos' => [
     '_SET_DEBUG_MODE code at index.php end' => "should be moved to.. html_doc..?",
     '? admin bar' => "optional control to measure run time performance (gApis)",
     'web diagnostics tool' => "only if online and reachable ..embed in admin bar?", // http://www.webpagetest.org/compare?url=www.choice-in-ecommerce.org%2Fen%2F
     'siloing tests' => "based on google syntax operators, to build some indexes", // http://www.bruceclay.com/seo/silo.htm
     'framework mode usage' => "use namespace to avoid class-names conflicts..?",
     'IE <9> support' => "add some flexible conditional style sheets structure", // http://www.paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
-),
+],
 
 '_set_uses_sessions' => false, // activates php session server mode
 
@@ -36,14 +35,13 @@
 '_str_project_name' => "Das S.C.H.R.I.M.P.", // project's namecode
 '_str_copyright_signature' => "Copyright © 2011-" . date('Y') . " | The S.C.H.R.I.M.P. Project",
 
-'_db_connection_settings' => array // main (mysql) database connection settings
-(
+'_db_connection_settings' => [ // main (mysql) database connection settings
     'database_type' => '',
     'server_host' => '',
     'account_user' => '',
     'account_password' => '',
     'database_name' => '',
-),
+],
 
 'set_translations_extension' => ".txt", // components neede translation files extension
 

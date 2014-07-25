@@ -15,6 +15,18 @@ class html_widget extends html
 
     function __construct() {}
 
+    private function _add_speed_analisys() // requires global start (in schrimp.js)
+    {
+        html::add_js_script("jQuery(document).ready(function() {
+                                 jQuery('#one').html(Date.now() / 1000 - parseFloat(jQuery('#one').html()));
+                             });
+                             jQuery(window).load(function() {
+                                 jQuery('#two').html(Date.now() / 1000 - parseFloat(jQuery('#two').html()));
+                             });");
+
+        return html::spanner('<span id="one">' . time() . '</span>/<span id="two">' . time() . '</span>s', ['button']);
+    }
+
     private function _add_toolbar_buttons()
     {
         $buttons = $this->_get_form_html_validation()
@@ -28,7 +40,7 @@ class html_widget extends html
                    ? $this->_get_link_google_pagespeed()
                    : '' );
 
-        return html::spanner($buttons,
+        return html::spanner($this->_add_speed_analisys() . $buttons,
                              array
                              (
                                  'right',

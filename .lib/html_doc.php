@@ -133,6 +133,7 @@ class html_doc extends html
 
         $list[] = _SET_INCLUDES_PATH . "js/jquery.js";
         $list[] = _SET_INCLUDES_PATH . "js/jquery.NO-OLD-IE.js";
+        $list[] = _SET_INCLUDES_PATH . "js/bootstrap.js"; // //maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js
 
         //$list[] = _SET_INCLUDES_PATH . "js/jquery.ui.js"; // parent::add_js_file("//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js");
         //$list[] = _SET_INCLUDES_PATH . "js/jquery.jcarousel.js";

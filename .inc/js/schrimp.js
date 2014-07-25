@@ -1,3 +1,5 @@
+var start = Date.now();
+
 jQuery(document).ready(function()
 {
 	if (jQuery('html').is('.ie6, .ie7, .ie8'))
