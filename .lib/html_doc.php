@@ -144,6 +144,8 @@ class html_doc extends html
 
         //$list[] = _SET_INCLUDES_PATH . "js/modernizr.js";
 
+        //$list[] = _SET_INCLUDES_PATH . "js/absurd.js"; $list[] = _SET_INCLUDES_PATH . "js/absurd.organic.js"; to be tested..
+
         //$list[] = _SET_INCLUDES_PATH . "js/jwplayer.js";
         //$list[] = _SET_INCLUDES_PATH . "js/jwplayer.html5.js"; // not really needed..
 
