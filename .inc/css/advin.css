@@ -1,6 +1,7 @@
 @CHARSET 'UTF-8';
 
-body {
+body
+{
 	transition: .5s;
     opacity: 0;
 }

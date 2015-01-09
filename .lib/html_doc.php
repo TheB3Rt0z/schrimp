@@ -113,7 +113,7 @@ class html_doc extends html
 
         $list[] = $fullpath . ".css"; // this adds extra controller css
 
-        if (_SET_DESIGN_MODE)
+        if (_SET_DEBUG_MODE)
             $list[] = _SET_INCLUDES_PATH . "css/debug.css"; // overrides all css sheets, only if debug mode is active..
 
         if (_SET_CSS_COMPRESSION)

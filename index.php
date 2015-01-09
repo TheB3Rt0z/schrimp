@@ -100,13 +100,14 @@ ob_start();
                                'loading') . "\n"
         ?>
 
-    </body>
+    </body><?php $main->render($result = ob_get_clean());
 
-</html><?php $main->render($result = ob_get_clean());
+	if (_SET_DEBUG_MODE) // client-side additional html/js code
+	{
+	    html_widget::debug_toolbar($main);
+	    html_widget::debug_javascript();
+	    html_widget::debug_object($main->clean_object());
+	}
+	?>
 
-if (_SET_DEBUG_MODE) // client-side additional html/js code
-{
-    html_widget::debug_toolbar($main);
-    html_widget::debug_javascript();
-    html_widget::debug_object($main->clean_object());
-}
+</html>
