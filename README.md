@@ -18,7 +18,7 @@ Table of contents
 [- html\_form](#-class-html\_form-29092014-- "") &#10029;  (.lib/html\_form.php, Len: 216/256, CIS: 10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_green\_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_yellow\_ops.png "Attention! Some yellow alert(s)!")  
 [- html\_widget](#-class-html\_widget-09012015-- "") (.lib/html\_widget.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_blue\_boh.png "3 too long line(s) found!") Len: 134/157, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_green\_ok.png ""))   
 [Library language](#-class-language-29092014-- "") &#10029;&#10029;&#10029;  (.lib/language.php, Len: 103/121, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_green\_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_yellow\_ops.png "Attention! Some yellow alert(s)!")  
-[Library main](#-class-main-09012015-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (.main.php, Len: 345/425, CIS: 34 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_yellow\_ops.png "Class interface size could lead to a refactoring")) &#10140;  3 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_yellow\_ops.png "Attention! Some yellow alert(s)!") to be fixed!  
+[Library main](#-class-main-09012015-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (.main.php, Len: 345/425, CIS: 34 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_yellow\_ops.png "Class interface size could lead to a refactoring")) &#10140;  3 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_yellow\_ops.png "Attention! Some yellow alert(s)!")  
 [Library md](#-class-md-29092014-- "") (.lib/md.php, Len: 185/231, CIS: 14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_green\_ok.png ""))   
 [Library navigator](#-class-navigator-29092014-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/navigator.php, Len: 353/429, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_green\_ok.png "")) &#10140;  2 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_yellow\_ops.png "Attention! Some yellow alert(s)!")  
 [Library pdf](#-class-pdf-29092014-- "") &#10029;  (.lib/pdf.php, Len: 5/6, CIS: 2 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_green\_ok.png ""))   
@@ -640,10 +640,6 @@ Uses: **html**, **html\_form**, **toolbox**, **toolbox\_js**
   
 [⇧](# "to the top") Class MAIN (09.01.2015)  
 -----------------------  
-  
-**TOFIX:**  
-  
-- Form error(s) **"\t"** on file line **94**  
   
 **CODE REFERENCE:**  
   

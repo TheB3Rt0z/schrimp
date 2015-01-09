@@ -78,6 +78,10 @@ div#schrimp-object
         border-radius: 0;
         overflow-y: scroll;
     }
+    div#schrimp-object > pre
+    {
+        margin: 0 5px;
+    }
 
 div#schrimp-toolbar
 {

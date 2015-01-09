@@ -91,7 +91,7 @@ class main
                                     " . file_get_contents($user_file) . "
                                 );");
         else
-       	    $user_conf = array();
+            $user_conf = array();
 
         $this->_configuration = $user_conf + $base_conf;
 
