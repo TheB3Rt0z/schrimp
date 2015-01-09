@@ -56,8 +56,8 @@ class main
                     unlink($doc_file);
 
             if (!fe(_SET_WIKI_PATH))
-            	mkdir(_SET_WIKI_PATH); // creates documentation directory, if it not exists
-            
+                mkdir(_SET_WIKI_PATH); // creates documentation directory, if it not exists
+
             file_put_contents(_SET_WIKI_PATH . "Home.md", // main application executable
                               md::code(pr('index.php')));
 
@@ -84,14 +84,14 @@ class main
                             (
                                 " . file_get_contents($base_file) . "
                             );");
-        
+
         if (fe($user_file))
-        	eval("\$user_conf = array
+            eval("\$user_conf = array
                                 (
                                     " . file_get_contents($user_file) . "
                                 );");
         else
-        	$user_conf = array();
+       	    $user_conf = array();
 
         $this->_configuration = $user_conf + $base_conf;
 

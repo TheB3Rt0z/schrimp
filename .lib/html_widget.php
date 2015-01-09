@@ -17,10 +17,12 @@ class html_widget extends html
 
     private function _add_speed_analisys() // requires global start (in schrimp.js)
     {
-        html::add_js_script("jQuery(document).ready(function() {
+        html::add_js_script("jQuery(document).ready(function()
+                             {
                                  jQuery('#one').html(Date.now() / 1000 - parseFloat(jQuery('#one').html()));
                              });
-                             jQuery(window).load(function() {
+                             jQuery(window).load(function()
+                             {
                                  jQuery('#two').html(Date.now() / 1000 - parseFloat(jQuery('#two').html()));
                              });");
 
