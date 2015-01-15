@@ -19,12 +19,12 @@ class html_widget extends html
     {
         html::add_js_script("jQuery(document).ready(function()
                              {
-        		                 var time_ready = (Date.now() / 1000 - parseFloat(jQuery('#time-ready').html())).toFixed(3);
+                                 var time_ready = (Date.now() / 1000 - parseFloat(jQuery('#time-ready').html())).toFixed(3);
                                  jQuery('#time-ready').html(time_ready);
                              });
                              jQuery(window).load(function()
                              {
-        		                 var time_load = (Date.now() / 1000 - parseFloat(jQuery('#time-load').html())).toFixed(3);
+                                 var time_load = (Date.now() / 1000 - parseFloat(jQuery('#time-load').html())).toFixed(3);
                                  jQuery('#time-load').html(time_load);
                              });");
 
@@ -45,8 +45,8 @@ class html_widget extends html
                    : '' );
 
         return html::spanner(html::hyperlink(SET_GITHUB_PATH,
-        		                             html::image(_SET_INCLUDES_PATH
-        		                             		   . 'img/github_favicon_13x13.ico',
+                                             html::image(_SET_INCLUDES_PATH
+                                                       . 'img/github_favicon_13x13.ico',
                                                          "GitHub icon "),
                                              array
                                              (
@@ -54,7 +54,7 @@ class html_widget extends html
                                              ),
                                              '_blank',
                                              "GitHub / TheB3Rt0z / schrimp")
-        		           . $this->_add_speed_analisys() . $buttons,
+                           . $this->_add_speed_analisys() . $buttons,
                              array
                              (
                                  'right',
