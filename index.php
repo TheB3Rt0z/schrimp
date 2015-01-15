@@ -23,7 +23,7 @@
  * Make it work, make it ordently, make it performant, make it beautiful
  */
 
-require_once ".main.php"; // loading main application
+require_once '.main.php'; // loading main application
 
 $main = new main($_SERVER['REQUEST_URI']);
 

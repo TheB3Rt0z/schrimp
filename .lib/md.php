@@ -191,27 +191,31 @@ class md
 
     static function green_ok()
     {
-        return self::_img(_SET_INCLUDES_PATH . "img/icon_16x16_green_ok.png",
+        return self::_img(dirname(__FILE__) . '/../' . _SET_INCLUDES_PATH
+        		        . "img/icon_16x16_green_ok.png",
                           "(&radic;)");
     }
 
     static function blue_boh($title)
     {
-        return self::_img(_SET_INCLUDES_PATH . "img/icon_16x16_blue_boh.png",
+        return self::_img(dirname(__FILE__) . '/../' . _SET_INCLUDES_PATH
+        		        . "img/icon_16x16_blue_boh.png",
                           "(?)",
                           $title);
     }
 
     static function yellow_ops($title)
     {
-        return self::_img(_SET_INCLUDES_PATH . "img/icon_16x16_yellow_ops.png",
+        return self::_img(dirname(__FILE__) . '/../' . _SET_INCLUDES_PATH
+        		        . "img/icon_16x16_yellow_ops.png",
                           "(!)",
                           $title);
     }
 
     static function red_ics($title)
     {
-        return self::_img(_SET_INCLUDES_PATH . "img/icon_16x16_red_ics.png",
+        return self::_img(dirname(__FILE__) . '/../' . _SET_INCLUDES_PATH
+        		        . "img/icon_16x16_red_ics.png",
                           "(X)",
                           $title);
     }

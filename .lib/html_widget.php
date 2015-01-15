@@ -28,7 +28,12 @@ class html_widget extends html
                                  jQuery('#time-load').html(time_load);
                              });");
 
-        return html::spanner(number_format(time() + microtime() - $_SERVER['REQUEST_TIME'], 3) . '+<span id="time-ready">' . time() . '</span>/<span id="time-load">' . time() . '</span>s', ['button']);
+        $memory_usage = number_format(memory_get_usage() / (1024 * 1024), 3); // bytes to kilobites to megabytes
+
+        return html::spanner(number_format(time() + microtime() - $_SERVER['REQUEST_TIME'], 3)
+        		           . '+<span id="time-ready">' . time()
+        		           . '</span>/<span id="time-load">' . time()
+        		           . '</span>s x ' . $memory_usage . 'MBs', ['button']);
     }
 
     private function _add_toolbar_buttons()

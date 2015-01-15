@@ -61,8 +61,7 @@ class main
             file_put_contents(_SET_WIKI_PATH . "Home.md", // main application executable
                               md::code(pr('index.php')));
 
-            file_put_contents(SET_DOCUMENTATION_MD . ".md",
-                              code::get_documentation());
+            exec('nohup php .scr/code_get_documentation.php > /dev/null &'); // deferred (background) process generating documentation
         }
 
         if (!empty($uri)) { // using framework mode
@@ -77,7 +76,7 @@ class main
 
     private function _define_configuration_constants()
     {
-        $user_file = "." . $this->_conf_file;
+        $user_file = dirname(__FILE__) . "/." . $this->_conf_file;
         $base_file = $user_file . ".tmp";
 
         eval("\$base_conf = array
@@ -132,7 +131,7 @@ class main
 
     private function _load_libraries()
     {
-        foreach (glob(_SET_LIBRARIES_PATH . "*.php") as $filename) // core libraries first
+        foreach (glob(dirname(__FILE__) . "/" . _SET_LIBRARIES_PATH . "*.php") as $filename) // core libraries first
             require_once $filename; // now all internal classes/methods with alias are available
 
         foreach (glob(_SET_LIBRARIES_PUBLICPATH . "*.php") as $filename) // if file/class name was already used an error will be generated

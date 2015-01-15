@@ -700,7 +700,7 @@ class code
                    . implode($code)
                  . '```';
 
-        file_put_contents($file,
+        file_put_contents(dirname(__FILE__) . '/../' . $file,
                           $content);
     }
 
@@ -732,7 +732,7 @@ class code
     {
         $libraries = array
                      (
-                         'main' => filemtime(".main.php"), // hardcoded? mmm..
+                         'main' => filemtime(dirname(__FILE__) . '/../' . ".main.php"), // hardcoded? mmm..
                      );
 
         $substitutions = array
@@ -794,9 +794,9 @@ class code
         foreach (self::get_libraries_list($class->name) as $key => $value)
             $dependencies[$key] = 0;
         if ($parent = $class->getParentClass()) // includes extended class if available
-            $dependencies[str_replace(self::_SET_NS_PREFIX,
-                                      '',
-                                      $parent->name)]++;
+            @$dependencies[str_replace(self::_SET_NS_PREFIX, // silent notice not-exists
+                                       '',
+                                       $parent->name)]++;
 
         $class_length = $class->getEndLine() - $class->getStartLine() - 2;
         foreach (array_slice(file($class->getFileName()),
@@ -950,7 +950,8 @@ class code
 
     static function get_documentation_title()
     {
-        $title = md::image(_SET_INCLUDES_PATH . "img/schrimp_favicon_md.ico")
+        $title = md::image(dirname(__FILE__) . '/../' . _SET_INCLUDES_PATH
+        	   . "img/schrimp_favicon_md.ico")
                . " " . _STR_PROJECT_NAME
                . "'s Dokumentation v" . main::get_version(1)
                . HTML_ELEMENTS_SEPARATOR . main::get_timestone();
@@ -960,7 +961,7 @@ class code
 
     static function get_documentation()
     {
-        $documentation = md::title(2, "General reference")
+        $documentation = md::title(2, "General reference") // only in english
                        . self::_add_paragraph(self::_get_constants_information(),
                                               "Global configuration constants:")
                        . self::_add_paragraph(self::_get_functions_information(),
@@ -969,13 +970,12 @@ class code
                                               "TODOs:")
                        . md::hr()
                        . self::_get_classes_information()
-                       . self::_get_components_information() // adding more information?
-                     . str_repeat(MD_NEWLINE_SEQUENCE, 4)
-                     . md::text(_STR_COPYRIGHT_SIGNATURE);
+                       . self::_get_components_information(); // adding more information?
 
         return self::get_documentation_title()
              . self::_get_summary_information()
-             . $documentation;
+             . $documentation
+             . self::get_documentation_footer();
     }
 
     static function get_documentation_footer()
