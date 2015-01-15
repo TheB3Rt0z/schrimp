@@ -19,14 +19,16 @@ class html_widget extends html
     {
         html::add_js_script("jQuery(document).ready(function()
                              {
-                                 jQuery('#one').html(Date.now() / 1000 - parseFloat(jQuery('#one').html()));
+        		                 var time_ready = (Date.now() / 1000 - parseFloat(jQuery('#time-ready').html())).toFixed(3);
+                                 jQuery('#time-ready').html(time_ready);
                              });
                              jQuery(window).load(function()
                              {
-                                 jQuery('#two').html(Date.now() / 1000 - parseFloat(jQuery('#two').html()));
+        		                 var time_load = (Date.now() / 1000 - parseFloat(jQuery('#time-load').html())).toFixed(3);
+                                 jQuery('#time-load').html(time_load);
                              });");
 
-        return html::spanner('<span id="one">' . time() . '</span>/<span id="two">' . time() . '</span>s', ['button']);
+        return html::spanner(number_format(time() + microtime() - $_SERVER['REQUEST_TIME'], 3) . '+<span id="time-ready">' . time() . '</span>/<span id="time-load">' . time() . '</span>s', ['button']);
     }
 
     private function _add_toolbar_buttons()
@@ -42,7 +44,17 @@ class html_widget extends html
                    ? $this->_get_link_google_pagespeed()
                    : '' );
 
-        return html::spanner($this->_add_speed_analisys() . $buttons,
+        return html::spanner(html::hyperlink(SET_GITHUB_PATH,
+        		                             html::image(_SET_INCLUDES_PATH
+        		                             		   . 'img/github_favicon_13x13.ico',
+                                                         "GitHub icon "),
+                                             array
+                                             (
+                                                 'button',
+                                             ),
+                                             '_blank',
+                                             "GitHub / TheB3Rt0z / schrimp")
+        		           . $this->_add_speed_analisys() . $buttons,
                              array
                              (
                                  'right',

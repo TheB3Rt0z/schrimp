@@ -16,7 +16,7 @@ Table of contents
 [Library html](#-class-html-29092014-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/html.php, Len: 849/992, CIS: 24 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_green\_ok.png "")) &#10140;  2 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_yellow\_ops.png "Attention! Some yellow alert(s)!")  
 [- html\_doc](#-class-html\_doc-09012015-- "") &#10029;&#10029;&#10029;&#10029;&#10029;  (.lib/html\_doc.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_blue\_boh.png "1 too long line(s) found!") Len: 131/161, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_green\_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_yellow\_ops.png "Attention! Some yellow alert(s)!")  
 [- html\_form](#-class-html\_form-29092014-- "") &#10029;  (.lib/html\_form.php, Len: 216/256, CIS: 10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_green\_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_yellow\_ops.png "Attention! Some yellow alert(s)!")  
-[- html\_widget](#-class-html\_widget-09012015-- "") (.lib/html\_widget.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_blue\_boh.png "3 too long line(s) found!") Len: 134/157, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_green\_ok.png ""))   
+[- html\_widget](#-class-html\_widget-15012015-- "") (.lib/html\_widget.php ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_blue\_boh.png "4 too long line(s) found!") Len: 146/169, CIS: 6 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_green\_ok.png ""))  to be fixed!  
 [Library language](#-class-language-29092014-- "") &#10029;&#10029;&#10029;  (.lib/language.php, Len: 103/121, CIS: 8 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_green\_ok.png "")) &#10140;  1 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_yellow\_ops.png "Attention! Some yellow alert(s)!")  
 [Library main](#-class-main-09012015-- "") &#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;&#10029;  (.main.php, Len: 345/425, CIS: 34 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_yellow\_ops.png "Class interface size could lead to a refactoring")) &#10140;  3 ![(!)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_yellow\_ops.png "Attention! Some yellow alert(s)!")  
 [Library md](#-class-md-29092014-- "") (.lib/md.php, Len: 185/231, CIS: 14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_green\_ok.png ""))   
@@ -67,10 +67,11 @@ General reference
 - **MD\_NEWLINE\_SEQUENCE** &#10140; "  \n" (defined by MD)  
 - **SET\_COMPLEXITY\_INDEX** &#10140; 12 (global core constant)  
 - **SET\_DOCUMENTATION\_MD** &#10140; "README" (global core constant)  
+- **SET\_GITHUB\_PATH** &#10140; "https://github.com/TheB3Rt0z/schrimp/" (global core constant)  
 - **SET\_GITHUB\_RAWPATH** &#10140; "https://raw.github.com/TheB3Rt0z/schrimp/master/" (global core constant)  
 - **SET\_GITHUB\_WIKIPATH** &#10140; "https://github.com/TheB3Rt0z/schrimp/wiki/" (global core constant)  
 - **SET\_TRANSLATIONS\_EXTENSION** &#10140; ".txt" (global core constant)  
-- **STR\_PROJECT\_FULL** &#10140; "Das S.C.H.R.I.M.P. v2.30" (global core constant)  
+- **STR\_PROJECT\_FULL** &#10140; "Das S.C.H.R.I.M.P. v2.32" (global core constant)  
   
   
 **FUNCTION ALIASES:**  
@@ -564,14 +565,22 @@ Uses: **code**, **html**
   
 ***  
   
-[⇧](# "to the top") Class HTML\_WIDGET (09.01.2015)  
+[⇧](# "to the top") Class HTML\_WIDGET (15.01.2015)  
 ------------------------------  
+  
+**TOFIX:**  
+  
+- Form error(s) **"\t"** on file line **22**  
+- Form error(s) **"\t"** on file line **27**  
+- Form error(s) **"\t"** on file line **48**  
+- Form error(s) **"\t"** on file line **49**  
+- Form error(s) **"\t"** on file line **57**  
   
 **CODE REFERENCE:**  
   
-- **[\_\_construct](https://github.com/TheB3Rt0z/schrimp/wiki/html\_widget \_\_construct "")()** (CPub ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_blue\_boh.png "3 too long line(s) found!") Len: -  CyC: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_green\_ok.png ""))  
-- **[\_add\_speed\_analisys](https://github.com/TheB3Rt0z/schrimp/wiki/html\_widget \_add\_speed\_analisys "")()** (Pri ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_blue\_boh.png "3 too long line(s) found!") Len: 9/10 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_green\_ok.png ""))  
-- **[\_add\_toolbar\_buttons](https://github.com/TheB3Rt0z/schrimp/wiki/html\_widget \_add\_toolbar\_buttons "")()** (Pri, Len: 15/16 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_green\_ok.png "") CyC: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_green\_ok.png ""))  
+- **[\_\_construct](https://github.com/TheB3Rt0z/schrimp/wiki/html\_widget \_\_construct "")()** (CPub ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_blue\_boh.png "4 too long line(s) found!") Len: -  CyC: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_green\_ok.png ""))  
+- **[\_add\_speed\_analisys](https://github.com/TheB3Rt0z/schrimp/wiki/html\_widget \_add\_speed\_analisys "")()** (Pri ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_blue\_boh.png "3 too long line(s) found!") Len: 11/12 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_green\_ok.png ""))  
+- **[\_add\_toolbar\_buttons](https://github.com/TheB3Rt0z/schrimp/wiki/html\_widget \_add\_toolbar\_buttons "")()** (Pri ![(?)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_blue\_boh.png "1 too long line(s) found!") Len: 25/26 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_green\_ok.png "") CyC: 3 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_green\_ok.png ""))  
 - **[\_get\_form\_html\_validation](https://github.com/TheB3Rt0z/schrimp/wiki/html\_widget \_get\_form\_html\_validation "")()** (Pri, Len: 13/14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_green\_ok.png ""))  
 - **[\_get\_form\_javascript\_validation](https://github.com/TheB3Rt0z/schrimp/wiki/html\_widget \_get\_form\_javascript\_validation "")()** (Pri, Len: 7 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_green\_ok.png ""))  
 - **[\_get\_form\_stylesheets\_validation](https://github.com/TheB3Rt0z/schrimp/wiki/html\_widget \_get\_form\_stylesheets\_validation "")()** (Pri, Len: 13/14 ![(&radic;)](https://raw.github.com/TheB3Rt0z/schrimp/master/.inc/img/icon\_16x16\_green\_ok.png ""))  

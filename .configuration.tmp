@@ -45,6 +45,7 @@
 
 'set_translations_extension' => ".txt", // components neede translation files extension
 
+'set_github_path' => "https://github.com/TheB3Rt0z/schrimp/", // online repository
 'set_github_wikipath' => "https://github.com/TheB3Rt0z/schrimp/wiki/", // online wiki documentation
 'set_github_rawpath' => "https://raw.github.com/TheB3Rt0z/schrimp/master/", // prefix valid for static contents on github
 'set_documentation_md' => "README", // main documentation filename
