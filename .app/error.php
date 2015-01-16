@@ -17,7 +17,7 @@ class error extends controller
         elseif (is_numeric($this->_action)
             && method_exists(__CLASS__, '_handler_' . $this->_action))
         {
-            call_user_func(array(__CLASS__, '_handler_' . $this->_action));
+            call_user_func([__CLASS__, '_handler_' . $this->_action]);
         }
         else
             rt("error/404");

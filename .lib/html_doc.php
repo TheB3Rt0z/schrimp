@@ -64,16 +64,8 @@ class html_doc extends html
                                 '',
                                 $href);
 
-            $result .= str_replace(array
-                                   (
-                                       "@CHARSET 'UTF-8';",
-                                       "url('..",
-                                   ),
-                                   array
-                                   (
-                                       '',
-                                       "url('" . $path,
-                                   ),
+            $result .= str_replace(["@CHARSET 'UTF-8';", "url('.."],
+                                   ['', "url('" . $path],
                                    file_get_contents($href));
         }
 

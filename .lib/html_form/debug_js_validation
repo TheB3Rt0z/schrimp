@@ -23,10 +23,7 @@
     'js_code' => array
     (
         'value' => "%s",
-        'classes' => array
-        (
-            "hidden",
-        ),
+        'classes' => ['hidden'],
     ),
 ),
 
@@ -34,8 +31,5 @@
 (
     'value' => "JS",
     'title' => "Closure Compiler JS Validation Service",
-    'classes' => array
-    (
-        "button",
-    ),
+    'classes' => ['button'],
 ),

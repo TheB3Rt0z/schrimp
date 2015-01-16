@@ -12,8 +12,5 @@
 (
     'value' => "CSS",
     'title' => "WWW Consortium CSS Validation Service",
-    'classes' => array
-    (
-        "button",
-    ),
+    'classes' => ['button'],
 ),

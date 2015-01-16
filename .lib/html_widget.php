@@ -117,10 +117,7 @@ class html_widget extends html
                                 '_blank',
                                 htmlspecialchars($css))
              . html::spanner(toolbox::strsize($css),
-                             array
-                             (
-                                 'button',
-                             ));
+                             ['button']);
     }
 
     private function _get_link_google_pagespeed()

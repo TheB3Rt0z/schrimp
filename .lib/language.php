@@ -13,27 +13,22 @@ class language
 
     static $tests = array();
 
-    private static $_languages = array
-    (
-        'de',
-        'en',
-        'it',
-    );
+    private static $_languages = ['de', 'en', 'it'];
 
     static $_translations = array
     (
         'here' => array
-           (
-               'de' => "hier",
+        (
+            'de' => "hier",
             'en' => "here",
             'it' => "qua"
-           ),
+        ),
         'now' => array
         (
-               'de' => "jetzt",
+            'de' => "jetzt",
             'en' => "now",
             'it' => "ora",
-           )
+        ),
     );
 
     static protected function _search_for_translation($translations,
@@ -81,10 +76,7 @@ class language
                            . $component
                            . SET_TRANSLATIONS_EXTENSION;
 
-        $placeholder = array
-                       (
-                           '',
-                       );
+        $placeholder = [''];
 
         if (fe($translations_publicpath))
             return array_map('trim',

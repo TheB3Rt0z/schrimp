@@ -24,13 +24,7 @@ class toolbox
 
     static function comprime($string)
     {
-        return str_replace(array
-                          (
-                              "\t",
-                              "\n",
-                              "\r",
-                              "  ",
-                          ),
+        return str_replace(["\t", "\n", "\r", "  "],
                           '',
                           $string);
     }
@@ -68,18 +62,8 @@ class toolbox
             return "null";
         }
         elseif (!is_numeric($mixed))
-            return "\"" . str_replace(array
-                                      (
-                                          "\n",
-                                          "\r",
-                                          "\t",
-                                      ),
-                                      array
-                                      (
-                                          '\\n',
-                                          '\\r',
-                                          '\\t',
-                                      ),
+            return "\"" . str_replace(["\n", "\r", "\t"],
+                                      ['\\n', '\\r', '\\t'],
                                       $mixed) . "\"";
         else
             return $mixed; // fallback
@@ -127,7 +111,7 @@ class toolbox
             $tests = $class->getStaticPropertyValue('tests');
             foreach ($tests as $subkey => $values)
             {
-                $result = call_user_func_array(array($fullkey, $values['method']),
+                $result = call_user_func_array([$fullkey, $values['method']],
                                                $values['parameters']);
 
                 $answer = $results[$key][$subkey];
@@ -158,17 +142,9 @@ class toolbox
     static function localhosted()
     {
         return (in_array($_SERVER['REMOTE_ADDR'],
-                         array
-                         (
-                             '127.0.0.1',
-                             '::1',
-                         ))
+                         ['127.0.0.1', '::1'])
              && in_array($_SERVER['SERVER_ADDR'],
-                         array
-                         (
-                             '127.0.0.1',
-                             '::1',
-                         ))
+                         ['127.0.0.1', '::1'])
              && $_SERVER['HTTP_HOST'] == 'localhost'
              && $_SERVER['SERVER_NAME'] == 'localhost');
     }

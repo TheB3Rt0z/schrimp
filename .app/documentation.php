@@ -21,7 +21,7 @@ class documentation extends controller
         if (method_exists(__CLASS__, $method = $method)
             || method_exists(__CLASS__, $method = $fallback_method))
         {
-            call_user_func_array(array($this, $method),
+            call_user_func_array([$this, $method],
                                  array_slice($this->_args, 1));
         }
         else

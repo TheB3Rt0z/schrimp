@@ -34,11 +34,7 @@ class navigator // is really singleton, compare http://www.yourinspirationweb.co
             {
                 ld($filename);
 
-                $branch = str_replace(array
-                                      (
-                                          _SET_APPLICATION_PATH,
-                                          ".php",
-                                      ),
+                $branch = str_replace([_SET_APPLICATION_PATH, ".php"],
                                       '',
                                       $filename);
 
@@ -90,10 +86,7 @@ class navigator // is really singleton, compare http://www.yourinspirationweb.co
             $sub =& $this->_structure[$this->_actual_home]['sub'][$ctrl_name];
 
             if ($ctrl_name == main::$route)
-                 $sub['classes'] = array
-                                   (
-                                       'active',
-                                   );
+                 $sub['classes'] = ['active'];
 
             $rc = new \ReflectionClass($full_ctrl_name);
 
@@ -152,10 +145,7 @@ class navigator // is really singleton, compare http://www.yourinspirationweb.co
             $sub =& $sub['sub'][$link];
 
             if ($link == main::$route)
-                 $sub['classes'] = array
-                                   (
-                                       'active',
-                                   );
+                 $sub['classes'] = ['active'];
         }
 
         return array
@@ -196,10 +186,7 @@ class navigator // is really singleton, compare http://www.yourinspirationweb.co
                 $sub['sub'][$link . "/" . $key]['controller'] = $key;
 
             if ($link . "/" . $key == main::$route)
-                 $sub['sub'][$link . "/" . $key]['classes'] = array
-                                                              (
-                                                                  'active',
-                                                              );
+                 $sub['sub'][$link . "/" . $key]['classes'] = ['active'];
         }
     }
 
@@ -338,10 +325,7 @@ class navigator // is really singleton, compare http://www.yourinspirationweb.co
         $structure = $this->_structure[$this->_actual_home];
 
         $code = html::spanner(HTML_ICON_NAVIGATION,
-                              array
-                              (
-                                  'marker',
-                              ))
+                              ['marker'])
               . html::hyperlink('',
                                 $structure['name'])
               . HTML_BREADCRUMB_SEPARATOR;
@@ -386,10 +370,7 @@ class navigator // is really singleton, compare http://www.yourinspirationweb.co
         $self = new self;
 
         $code = html::spanner(HTML_ICON_LIST,
-                              array
-                              (
-                                  'marker',
-                              ))
+                              ['marker'])
               . html::array_to_list($self->_structure[$self->_actual_home]['sub'],
                                     true);
 

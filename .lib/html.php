@@ -744,7 +744,10 @@ class html
     protected static function _style($content)
     {
         $self = new self('style',
-                         ['type' => "text/css"],
+                         array
+        		         (
+                             'type' => "text/css",
+        		         ),
                          $content);
 
         return $self->_html;

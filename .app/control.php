@@ -26,7 +26,7 @@ class control extends controller
         if (method_exists(__CLASS__, $method = $method)
             || method_exists(__CLASS__, $method = $fallback_method))
         {
-            call_user_func_array(array($this, $method),
+            call_user_func_array([$this, $method],
                                  array_slice($this->_args, 1));
         }
         else
@@ -117,11 +117,7 @@ class control extends controller
 
     private function _handler_plugins() // from lib directory
     {
-        static $options = "\$substitutions = array
-                           (
-                               _SET_LIBRARIES_PUBLICPATH,
-                               \".php\",
-                           );
+        static $options = "\$subs = [_SET_LIBRARIES_PUBLICPATH, \".php\"];
 
                            \$output = array();
 
@@ -130,7 +126,7 @@ class control extends controller
                            {
                                if (!substr_count(\$filename, \"_\"))
                                {
-                                   \$option = str_replace(\$substitutions,
+                                   \$option = str_replace(\$subs,
                                                           '',
                                                           \$filename);
                                    \$output[\$option] = '_handler_plugins_'
@@ -185,11 +181,7 @@ class control extends controller
 
     private function _handler_application() // from app directory
     {
-        static $options = "\$substitutions = array
-                           (
-                               _SET_APPLICATION_PUBLICPATH,
-                               \".php\",
-                           );
+        static $options = "\$subs = [_SET_APPLICATION_PUBLICPATH, \".php\"];
 
                            \$output = array();
 
@@ -197,7 +189,7 @@ class control extends controller
                                     as \$filename)
                                if (!substr_count(\$filename, \"_\"))
                                {
-                                   \$option = str_replace(\$substitutions,
+                                   \$option = str_replace(\$subs,
                                                           '',
                                                           \$filename);
                                    \$output[\$option] = null;

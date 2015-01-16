@@ -126,19 +126,13 @@ class code
 
     private static function _add_summary_entry($data)
     {
-        $href = strtolower(str_replace(" ", "-",
-                                       str_replace(array
-                                                   (
-                                                       "(",
-                                                       ",",
-                                                       ".",
-                                                       ":",
-                                                       "+",
-                                                       ")",
-                                                       "@",
-                                                   ),
-                                                   '',
-                                                   $data['header'])));
+        $clean_header = str_replace(["(", ",", ".", ":", "+", ")", "@"],
+                                    '',
+                                    $data['header']);
+
+    	$href = strtolower(str_replace(" ",
+        		                       "-",
+        	                           $clean_header));
 
         self::$_summary["#-" . $href . "--"] = array
         (
@@ -269,18 +263,8 @@ class code
         $doc_com = $function->getDocComment();
 
         if (!empty($doc_com))
-            return ", **" . trim(str_replace(array
-                                             (
-                                                 "*",
-                                                 "/",
-                                                 ";",
-                                             ),
-                                             array
-                                             (
-                                                 '',
-                                                 '',
-                                                 '**',
-                                             ),
+            return ", **" . trim(str_replace(["*", "/", ";"],
+                                             ['', '', '**'],
                                              $doc_com));
     }
 
@@ -735,12 +719,7 @@ class code
                          'main' => filemtime(dirname(__FILE__) . '/../' . ".main.php"), // hardcoded? mmm..
                      );
 
-        $substitutions = array
-        (
-            _SET_LIBRARIES_PATH,
-            _SET_LIBRARIES_PUBLICPATH,
-            ".php",
-        );
+        $substitutions = [_SET_LIBRARIES_PATH, _SET_LIBRARIES_PUBLICPATH, ".php"];
 
         foreach (glob(_SET_LIBRARIES_PATH . "*.php") as $filename) // scans core directory
                 $libraries[str_replace($substitutions,
@@ -763,22 +742,17 @@ class code
     {
         $components = array();
 
-        $substitutions = array
-        (
-            _SET_APPLICATION_PATH,
-            _SET_APPLICATION_PUBLICPATH,
-            ".php",
-        );
+        $subs = [_SET_APPLICATION_PATH, _SET_APPLICATION_PUBLICPATH, ".php"];
 
         foreach (glob(_SET_APPLICATION_PATH . "*.php") as $filename) // scans modules directory
             if (!substr_count($filename, "_"))
-                $components[str_replace($substitutions,
+                $components[str_replace($subs,
                                         '',
                                         $filename)] = filemtime($filename);
 
         foreach (glob(_SET_APPLICATION_PUBLICPATH . "*.php") as $filename) // scans application directory
             if (!substr_count($filename, "_"))
-                $components[str_replace($substitutions,
+                $components[str_replace($subs,
                                         '',
                                         $filename)] = filemtime($filename);
 

@@ -20,8 +20,5 @@
 (
     'value' => "W3C",
     'title' => "WWW Consortium Markup Validation Service",
-    'classes' => array
-    (
-        "button",
-    ),
+    'classes' => ['button'],
 ),

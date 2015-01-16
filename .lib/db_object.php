@@ -46,13 +46,7 @@ class db_object extends db
 
     private $_db;
 
-    protected $_metas = array
-    (
-        'ID',
-        'UKEY',
-        'UUID',
-        'date_created',
-    );
+    protected $_metas = ['ID', 'UKEY', 'UUID', 'date_created'];
 
     public $UUID = null;
 
