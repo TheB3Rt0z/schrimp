@@ -61,7 +61,8 @@ class main
             file_put_contents(_SET_WIKI_PATH . "Home.md", // main application executable
                               md::code(pr('index.php')));
 
-            exec('nohup php .scr/code_get_documentation.php > /dev/null &'); // deferred (background) process generating documentation
+            $script = '.scr/code_get_documentation.php'; // md/doc documentation generator
+            $pid = shell_exec('nohup php ' . $script . ' > /dev/null & echo $!'); // deferred (background) process
         }
 
         if (!empty($uri)) { // using framework mode
@@ -125,6 +126,8 @@ class main
         define('MAX_METHODS_COMPLEXITY', SET_COMPLEXITY_INDEX * 3); // ATM 36 max code lines
         define('MAX_BLOCK_COMPLEXITY', SET_COMPLEXITY_INDEX * 7); // ATM 84 max code line length
         define('MAX_PARAMETERS_COMPLEXITY', SET_COMPLEXITY_INDEX / 2); // if more than 6 ATM..
+        define('MAX_SCRIPT_TIME', SET_COMPLEXITY_INDEX * 0.1); // ATM 1200ms
+        define('MAX_MEMORY_USAGE', SET_COMPLEXITY_INDEX / 1.2); // ATM up to 10 MBs
 
         define('_MAX_CLASS_COMPLEXITY', pow(MAX_BLOCK_COMPLEXITY, 2)); // ATM not used (private optional)
     }

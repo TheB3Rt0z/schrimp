@@ -744,10 +744,7 @@ class html
     protected static function _style($content)
     {
         $self = new self('style',
-                         array
-                         (
-                             'type' => "text/css",
-                         ),
+                         ['type' => "text/css"],
                          $content);
 
         return $self->_html;
@@ -914,20 +911,13 @@ class html
     static function box($content)
     {
         return self::_div($content,
-                          array
-                          (
-                              'box',
-                          ));
+                          ['box']);
     }
 
     static function highbox($content)
     {
         return self::_div($content,
-                          array
-                          (
-                              'box',
-                              'high',
-                          ));
+                          ['box', 'high']);
     }
 
     static function hyperlink($href,
@@ -960,10 +950,7 @@ class html
     static function clearfix($lines = 1)
     {
         return self::_br($lines,
-                         array
-                         (
-                             'clearfix',
-                         ));
+                         ['clearfix']);
     }
 
     static function codeblock($content)
@@ -977,10 +964,16 @@ class html
     }
 
     static function spanner($content,
-                            $classes = array())
+                            $classes = array(),
+                            $id = null)
     {
+    	$attributes = array();
+
+    	if (!empty($id))
+    		$attributes['id'] = $id;
+
         return self::_span($content,
-                           array(),
+                           $attributes,
                            $classes);
     }
 

@@ -1,5 +1,8 @@
 <?php namespace schrimp;
 
+define('_HTML_WIDGET_ST_THRESHOLD', MAX_SCRIPT_TIME / 6 * 5);
+define('_HTML_WIDGET_MU_THRESHOLD', MAX_MEMORY_USAGE / 5 * 4);
+
 class html_widget extends html
 {
     static $todos = array();
@@ -28,12 +31,35 @@ class html_widget extends html
                                  jQuery('#time-load').html(time_load);
                              });");
 
-        $memory_usage = number_format(memory_get_usage() / (1024 * 1024), 3); // bytes to kilobites to megabytes
+        $php_time = time() + microtime() - $_SERVER['REQUEST_TIME'];
 
-        return html::spanner(number_format(time() + microtime() - $_SERVER['REQUEST_TIME'], 3)
-        		           . '+<span id="time-ready">' . time()
-        		           . '</span>/<span id="time-load">' . time()
-        		           . '</span>s x ' . $memory_usage . 'MBs', ['button']);
+        return html::spanner(number_format($php_time, 3) . "+"
+        		           . html::spanner(time(),
+        		           		           array(),
+        		           		           "time-ready") . "/"
+        		           . html::spanner(time(),
+        		           		           array(),
+        		           		           "time-load") . "sec",
+                             array_merge(['button'],
+                             		     ($php_time <= _HTML_WIDGET_ST_THRESHOLD
+                             		     ? ['schrimp-valid']
+                                         : ($php_time <= MAX_SCRIPT_TIME
+                                           ? ['schrimp-warning']
+                                           : ['schrimp-error']))));
+    }
+
+    private function _add_memory_analisys()
+    {
+        $memory_usage = number_format(memory_get_usage() / pow(1024, 2),
+        		                      3); // bytes to kilobytes to megabytes
+
+        return html::spanner(html::spanner($memory_usage . "MBs"),
+        		             array_merge(['button'],
+                             		     ($memory_usage <= _HTML_WIDGET_MU_THRESHOLD
+                             		     ? ['schrimp-valid']
+                                         : ($memory_usage <= MAX_MEMORY_USAGE
+                                           ? ['schrimp-warning']
+                                           : ['schrimp-error']))));
     }
 
     private function _add_toolbar_buttons()
@@ -53,17 +79,13 @@ class html_widget extends html
                                              html::image(_SET_INCLUDES_PATH
                                                        . 'img/github_favicon_13x13.ico',
                                                          "GitHub icon "),
-                                             array
-                                             (
-                                                 'button',
-                                             ),
+                                             ['button'],
                                              '_blank',
                                              "GitHub / TheB3Rt0z / schrimp")
-                           . $this->_add_speed_analisys() . $buttons,
-                             array
-                             (
-                                 'right',
-                             ));
+                           . $this->_add_speed_analisys()
+        		           . $this->_add_memory_analisys()
+        		           . $buttons,
+                             ['right']);
     }
 
     private function _get_form_html_validation()
@@ -71,26 +93,17 @@ class html_widget extends html
         $html = $this->_main->html;
 
         return html_form::form('debug_w3c_validation',
-                               array
-                               (
-                                   'left',
-                               ),
+                               ['left'],
                                '_blank',
                                htmlspecialchars($html))
              . html::spanner(toolbox::strsize($html),
-                             array
-                             (
-                                 'button',
-                             ));
+                             ['button']);
     }
 
     private function _get_form_javascript_validation()
     {
         return html_form::form('debug_js_validation',
-                               array
-                               (
-                                   'left',
-                               ),
+                               ['left'],
                                '_blank',
                                htmlspecialchars($this->_main->loaded_scripts));
     }
@@ -100,10 +113,7 @@ class html_widget extends html
         $css = $this->_main->linked_files;
 
         return html_form::form('debug_css_validation',
-                                array
-                                (
-                                    'left',
-                                ),
+                                ['left'],
                                 '_blank',
                                 htmlspecialchars($css))
              . html::spanner(toolbox::strsize($css),
@@ -117,10 +127,7 @@ class html_widget extends html
     {
         return html::hyperlink($this->_psl,
                                "PSI",
-                               array
-                               (
-                                   'button',
-                               ),
+                               ['button'],
                                '_blank',
                                "Google Developers PageSpeed Insights");
     }
@@ -128,11 +135,7 @@ class html_widget extends html
     static function debug_javascript()
     {
         echo html::divisor('',
-                           array
-                           (
-                               'debug',
-                               'fixed',
-                           ),
+                           ['debug', 'fixed'],
                            'schrimp-debug');
 
         toolbox_js::debug();
@@ -145,11 +148,7 @@ class html_widget extends html
         vd($object);
 
         echo html::divisor(ob_get_clean(),
-                           array
-                           (
-                               'debug',
-                               'fixed',
-                           ),
+                           ['debug', 'fixed'],
                            'schrimp-object');
     }
 
@@ -164,16 +163,9 @@ class html_widget extends html
                                                           true));
 
         echo html::divisor(html::spanner(STR_PROJECT_FULL,
-                                         array
-                                         (
-                                             'button',
-                                         ))
+                                         ['button'])
                          . $self->_add_toolbar_buttons(),
-                           array
-                           (
-                               'debug',
-                               'fixed',
-                           ),
+                           ['debug', 'fixed'],
                            'schrimp-toolbar');
     }
 }

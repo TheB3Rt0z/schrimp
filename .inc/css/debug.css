@@ -118,6 +118,18 @@ div#schrimp-toolbar
             {
                 opacity: .333;
             }
+    div#schrimp-toolbar > span > span.schrimp-valid
+    {
+        color: #090;
+    }
+    div#schrimp-toolbar > span > span.schrimp-warning
+    {
+        color: #990;
+    }
+    div#schrimp-toolbar > span > span.schrimp-error
+    {
+        color: #900;
+    }
 
 footer, #footer
 {
