@@ -114,9 +114,14 @@ div#schrimp-toolbar
             background-color: #eee;
             padding: 2px 5px 0;
         }
-            div#schrimp-toolbar > span > a:hover
+            div#schrimp-toolbar > span > a:hover,
+            div#schrimp-toolbar > span > a:not([href])
             {
                 opacity: .333;
+            }
+            div#schrimp-toolbar > span > a:not([href])
+            {
+                cursor: not-allowed;
             }
     div#schrimp-toolbar > span > span.schrimp-valid
     {
@@ -129,6 +134,10 @@ div#schrimp-toolbar
     div#schrimp-toolbar > span > span.schrimp-error
     {
         color: #900;
+    }
+    div#schrimp-toolbar > span > a.button,
+    div#schrimp-toolbar > span > form > input.button {
+        margin-top: 1px;
     }
 
 footer, #footer

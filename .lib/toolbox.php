@@ -144,9 +144,7 @@ class toolbox
         return (in_array($_SERVER['REMOTE_ADDR'],
                          ['127.0.0.1', '::1'])
              && in_array($_SERVER['SERVER_ADDR'],
-                         ['127.0.0.1', '::1'])
-             && $_SERVER['HTTP_HOST'] == 'localhost'
-             && $_SERVER['SERVER_NAME'] == 'localhost');
+                         ['127.0.0.1', '::1'])); // ATM not safe: && $_SERVER['HTTP_HOST'] == 'localhost' && $_SERVER['SERVER_NAME'] == 'localhost'
     }
 
     static function parse($source)

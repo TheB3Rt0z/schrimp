@@ -71,9 +71,7 @@ class html_widget extends html
                  . (_SET_JS_COMPRESSION
                    ? $this->_get_form_javascript_validation()
                    : '')
-                 . (!toolbox::localhosted()
-                   ? $this->_get_link_google_pagespeed()
-                   : '' );
+                 . $this->_get_link_google_pagespeed();
 
         return html::spanner(html::hyperlink(SET_GITHUB_PATH,
                                              html::image(_SET_INCLUDES_PATH
@@ -122,7 +120,9 @@ class html_widget extends html
 
     private function _get_link_google_pagespeed()
     {
-        return html::hyperlink($this->_psl,
+    	return html::hyperlink(toolbox::localhosted()
+    			               ? false
+    			               : $this->_psl,
                                "PSI",
                                ['button'],
                                '_blank',

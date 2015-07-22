@@ -407,15 +407,18 @@ class html
                                $classes = array(),
                                $target = '_self')
     {
-        if (!strpos($href, "://"))
-            $href = ru(_SET_STEALTH_MODE
-                       ? $href
-                       : cu($href));
+        if ($href !== false) // this permits "real disabled" links without href-attribute
+        {
+        	if (!strpos($href, "://"))
+	            $href = ru(_SET_STEALTH_MODE
+	                       ? $href
+	                       : cu($href));
 
-        $attributes = array
-                      (
-                          'href' => $href,
-                      );
+	        $attributes = array
+	                      (
+	                          'href' => $href,
+	                      );
+        }
 
         if (!empty($classes))
             $attributes['class'] = implode($classes, " ");

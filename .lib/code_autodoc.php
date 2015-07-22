@@ -29,7 +29,7 @@ class code_autodoc extends code
         "return" => "**it returns**",
     );
 
-    static function get_autodoc($code = array())
+    static function get_autodoc($code = array()) // too long because still in development status..
     {
         $autodoc = '';
         $counter = 1;
