@@ -296,7 +296,7 @@ class code
             return md::yellow_ops(self::_STR_LENGTH_WARNING);
         else
             return md::red_ics(self::_STR_LENGTH_ERROR)
-                 . "(max: " . MAX_METHODS_COMPLEXITY . " lines)";
+                 . " max: " . MAX_METHODS_COMPLEXITY . " lines,";
     }
 
     private static function _get_cyc_marker($cyc)

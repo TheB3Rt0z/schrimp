@@ -62,7 +62,8 @@ class main
                               md::code(pr('index.php')));
 
             $script = '.scr/code_get_documentation.php'; // md/doc documentation generator
-            $pid = shell_exec('nohup php ' . $script . ' > /dev/null & echo $!'); // deferred (background) process
+            $script = 'nohup php ' . realpath($script) . ' > /dev/null & echo $!';
+            $pid = shell_exec($script); // deferred (background) process
         }
 
         if (!empty($uri)) { // using framework mode
