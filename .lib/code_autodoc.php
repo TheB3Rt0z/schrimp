@@ -39,7 +39,7 @@ class code_autodoc extends code
         foreach (array_filter($code,
                               function($value)
                               {
-                              	  $value = trim($value);
+                                  $value = trim($value);
                                   return !empty($value);
                               }) as $key => $line)
         {

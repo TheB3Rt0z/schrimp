@@ -295,7 +295,8 @@ class code
         elseif ($length <= MAX_METHODS_COMPLEXITY)
             return md::yellow_ops(self::_STR_LENGTH_WARNING);
         else
-            return md::red_ics(self::_STR_LENGTH_ERROR);
+            return md::red_ics(self::_STR_LENGTH_ERROR)
+                 . "(max: " . MAX_METHODS_COMPLEXITY . " lines)";
     }
 
     private static function _get_cyc_marker($cyc)
