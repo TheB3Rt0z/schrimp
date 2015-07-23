@@ -295,8 +295,8 @@ class code
         elseif ($length <= MAX_METHODS_COMPLEXITY)
             return md::yellow_ops(self::_STR_LENGTH_WARNING);
         else
-            return md::red_ics(self::_STR_LENGTH_ERROR)
-                 . " max: " . MAX_METHODS_COMPLEXITY . " lines,";
+            return md::red_ics(self::_STR_LENGTH_ERROR
+            		         . " (max: " . MAX_METHODS_COMPLEXITY . " lines)");
     }
 
     private static function _get_cyc_marker($cyc)
@@ -306,7 +306,8 @@ class code
         elseif ($cyc <= MAX_CYCLOMATIC_COMPLEXITY)
             return md::yellow_ops(self::_STR_CYC_WARNING);
         else
-            return md::red_ics(self::_STR_CYC_ERROR);
+            return md::red_ics(self::_STR_CYC_ERROR
+            		         . " (max: " . MAX_CYCLOMATIC_COMPLEXITY . " paths)");
     }
 
     private static function _get_class_codedata($code,
