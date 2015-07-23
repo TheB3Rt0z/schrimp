@@ -9,7 +9,7 @@ class main
         'get buffer effect' => "is file deletion really working? a better system?",
         'escort library' => "session by PHP and DB if webstore & memcache fail?",
         'css selectors' => "uniform to html-class render-methods (default style)",
-        'css autoload' => "automatically load ANY file in .inc/inc / css? nnouu..",
+        'css autoload' => "automatically load ANY file in .inc & inc /css? noou..",
         'error launchers' => "should be moved to a library (navigator, toolbox)?",
         'set_htmls_from_controller' => "could we update here our sitemap.xml?",
         'better css for error notifications' => "..and interface triggers style!",
